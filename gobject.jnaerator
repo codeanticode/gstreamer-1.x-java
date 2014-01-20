@@ -1,0 +1,6 @@
+-library java_gobject
+-I../libxml2/include
+
+-DTEST=1
+
+gobject/gobject.h

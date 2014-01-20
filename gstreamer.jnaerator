@@ -1,0 +1,8 @@
+-library java_gst
+-I../libxml2/include
+-I../glib/glib
+-I../glib
+
+-DTEST=1
+
+gst/gst.h
