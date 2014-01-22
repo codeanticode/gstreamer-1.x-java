@@ -1,8 +1,8 @@
--library java_gst
--I../libxml2/include
--I../glib/glib
--I../glib
-
--DTEST=1
+-package org.gstreamer.lowlevel
+-runtime JNA
+-direct
+-parseChunks
+-o gst_java
+-I ../glib
 
 gst/gst.h

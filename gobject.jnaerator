@@ -1,6 +1,8 @@
--library java_gobject
--I../libxml2/include
-
--DTEST=1
+-package org.glib
+-runtime JNA
+-direct
+-parseChunks
+-o gobject_java
+-I../libxml2
 
 gobject/gobject.h
