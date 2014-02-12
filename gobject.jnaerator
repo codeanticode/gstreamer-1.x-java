@@ -1,6 +1,6 @@
--library java_gobject
--I../libxml2/include
+glib/gobject/gobject.h
 
--DTEST=1
+-package org.glib
 
-gobject/gobject.h
+/* common config file */
+config.jnaerator

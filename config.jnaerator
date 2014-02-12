@@ -1,25 +1,18 @@
 /*
-Gstreamer 1.0 JNAeration
+Gstreamer 1.x JNAeration
 
 comments are basically from JNAerator doc
 http://code.google.com/p/jnaerator/wiki/CommandLineOptionsAndEnvironmentVariables
 
 */
--library java_gst
--I/usr/lib/x86_64-linux-gnu/glib-2.0/include
--I/usr/lib/gcc/x86_64-linux-gnu/4.8/include
--I/usr/include/gstreamer-1.0/
+
+// common include
 -Ilibxml2/include
--Iglib
--Iglib/glib
 
 -DTEST=1
 
-glib/gobject/gobject.h
-gstreamer/gst/gst.h
-
 // Generate getters and setters for struct fields (JNA & JNAerator runtimes only) 
--beautifyNames
+-beanStructs
 
 // JNAerate libraries that use JNA's faster direct call convention 
 -direct
@@ -41,7 +34,7 @@ Choose the output mode of JNAerator
 -mavenArtifactId com.googlecode.gstreamer-java
 
 // Set group id of the generated Maven project
--mavenGroupId gstreamer1_0-java
+-mavenGroupId gstreamer1_x-java
 
 // Set version of the generated Maven project 
 -mavenVersion 1.7-SNAPSHOT
@@ -53,16 +46,13 @@ Choose the output mode of JNAerator
 -o build
 
 //  Set the Java package in which all the output will reside (by default, set to the library name). 
--package org.gstreamer.lowlevel
+//-package org.gstreamer.lowlevel
 
 /* Choose target runtime library between JNA, JNAerator (based on JNA), BridJ (faster runtime that supports C++) (default: BridJ (faster runtime that supports C++)).  */
 -runtime JNA
 
 /* Splits the pre-processor output into multiple smaller parts and parse them separately (in theory everything should be parsed in one chunk, but in practice this means errors are not isolated from the rest of the parsing) */
 -parseChunks
-
-// Generate synchronized native methods 
--synchronized
 
 // Verbose output (both console and files) 
 -v
