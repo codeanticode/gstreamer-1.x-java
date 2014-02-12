@@ -1,8 +1,0 @@
--package org.gstreamer.lowlevel
--runtime JNA
--direct
--parseChunks
--o gst_java
--I ../glib
-
-gst/gst.h

@@ -1,8 +1,0 @@
--package org.glib
--runtime JNA
--direct
--parseChunks
--o gobject_java
--I../libxml2
-
-gobject/gobject.h
