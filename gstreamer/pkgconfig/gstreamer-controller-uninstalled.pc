@@ -1,0 +1,15 @@
+# the standard variables don't make sense for an uninstalled copy
+prefix=
+exec_prefix=
+libdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/controller
+includedir=
+girdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/controller
+typelibdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/controller
+
+Name: GStreamer controller, uninstalled
+Description: Dynamic parameter control for GStreamer elements, Not Installed
+Requires: gstreamer-1.0 = 1.2.2
+Version: 1.2.2
+
+Libs: /home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/controller/libgstcontroller-1.0.la
+Cflags: -I/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs -I/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs

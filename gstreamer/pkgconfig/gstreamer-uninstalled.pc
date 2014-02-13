@@ -1,0 +1,19 @@
+# the standard variables don't make sense for an uninstalled copy
+prefix=
+exec_prefix=
+libdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/gst
+# includedir is builddir because it is used to find gstconfig.h in places
+includedir=/home/sergio/Desktop/gstreamer-java-2/gstreamer
+toolsdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/tools
+pluginsdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer
+girdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/gst
+typelibdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/gst
+
+Name: GStreamer Uninstalled
+Description: Streaming media framework, Not Installed
+Version: 1.2.2
+Requires: glib-2.0, gobject-2.0
+Requires.private: gmodule-no-export-2.0
+Libs: /home/sergio/Desktop/gstreamer-java-2/gstreamer/gst/libgstreamer-1.0.la
+# FIXME: the libs dir doesn't really belong here
+Cflags: -I/home/sergio/Desktop/gstreamer-java-2/gstreamer -I/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs -I/home/sergio/Desktop/gstreamer-java-2/gstreamer -I/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs

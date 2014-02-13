@@ -1,0 +1,15 @@
+# the standard variables don't make sense for an uninstalled copy
+prefix=
+exec_prefix=
+libdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/check
+includedir=
+girdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/check
+typelibdir=/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/check
+
+Name: GStreamer check unit testing, uninstalled
+Description: Unit testing helper library for GStreamer modules, Not Installed
+Requires: gstreamer-1.0 = 1.2.2
+Version: 1.2.2
+
+Libs: /home/sergio/Desktop/gstreamer-java-2/gstreamer/libs/gst/check/libgstcheck-1.0.la -lm
+Cflags: -I/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs -I/home/sergio/Desktop/gstreamer-java-2/gstreamer/libs

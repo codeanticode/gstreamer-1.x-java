@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.gtk.GDBus.Examples.ObjectManager
+Exec=/home/sergio/Desktop/gstreamer-java-2/glib/gio/tests/gdbus-example-objectmanager-server
