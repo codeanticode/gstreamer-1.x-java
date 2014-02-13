@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GConverter</title>
+<title>GIO Reference Manual: GConverter</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="conversion.html" title="Data conversion">
 <link rel="prev" href="conversion.html" title="Data conversion">
 <link rel="next" href="GCharsetConverter.html" title="GCharsetConverter">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="conversion.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="conversion.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GCharsetConverter.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GConverter.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GConverter.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GConverter.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GConverter.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="conversion.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="conversion.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GCharsetConverter.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GConverter"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -86,13 +83,11 @@ GConverter is implemented by
 <p>
 <a class="link" href="GConverter.html" title="GConverter"><span class="type">GConverter</span></a> is implemented by objects that convert
 binary data in various ways. The conversion can be
-stateful and may fail at any place.
-</p>
+stateful and may fail at any place.</p>
 <p>
 Some example conversions are: character set conversion,
 compression, decompression and regular expression
-replace.
-</p>
+replace.</p>
 </div>
 <div class="refsect1">
 <a name="GConverter.details"></a><h2>Details</h2>
@@ -100,8 +95,7 @@ replace.
 <a name="GConverter-struct"></a><h3>GConverter</h3>
 <pre class="programlisting">typedef struct _GConverter GConverter;</pre>
 <p>
-Seek object for streaming operations.
-</p>
+Seek object for streaming operations.</p>
 <p class="since">Since 2.24</p>
 </div>
 <hr>
@@ -127,8 +121,7 @@ Seek object for streaming operations.
 <p>
 Provides an interface for converting data from one type
 to another type. The conversion can be stateful
-and may fail at any place.
-</p>
+and may fail at any place.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -162,8 +155,7 @@ and may fail at any place.
 } GConverterResult;
 </pre>
 <p>
-Results returned from <a class="link" href="GConverter.html#g-converter-convert" title="g_converter_convert ()"><code class="function">g_converter_convert()</code></a>.
-</p>
+Results returned from <a class="link" href="GConverter.html#g-converter-convert" title="g_converter_convert ()"><code class="function">g_converter_convert()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -204,8 +196,7 @@ Results returned from <a class="link" href="GConverter.html#g-converter-convert"
 } GConverterFlags;
 </pre>
 <p>
-Flags used when calling a <a class="link" href="GConverter.html#g-converter-convert" title="g_converter_convert ()"><code class="function">g_converter_convert()</code></a>.
-</p>
+Flags used when calling a <a class="link" href="GConverter.html#g-converter-convert" title="g_converter_convert ()"><code class="function">g_converter_convert()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -247,18 +238,15 @@ Flags used when calling a <a class="link" href="GConverter.html#g-converter-conv
 This is the main operation used when converting data. It is to be called
 multiple times in a loop, and each time it will do some work, i.e.
 producing some output (in <em class="parameter"><code>outbuf</code></em>) or consuming some input (from <em class="parameter"><code>inbuf</code></em>) or
-both. If its not possible to do any work an error is returned.
-</p>
+both. If its not possible to do any work an error is returned.</p>
 <p>
 Note that a single call may not consume all input (or any input at all).
 Also a call may produce output even if given no input, due to state stored
-in the converter producing output.
-</p>
+in the converter producing output.</p>
 <p>
 If any data was either produced or consumed, and then an error happens, then
 only the successful conversion is reported and the error is returned on the
-next call.
-</p>
+next call.</p>
 <p>
 A full conversion loop involves calling this method repeatedly, each time
 giving it new input and space output space. When there is no more input
@@ -268,25 +256,21 @@ each time until all data is consumed and all output is produced, then
 <a class="link" href="GConverter.html#G-CONVERTER-FINISHED:CAPS"><code class="literal">G_CONVERTER_FINISHED</code></a> is returned instead. Note, that <a class="link" href="GConverter.html#G-CONVERTER-FINISHED:CAPS"><code class="literal">G_CONVERTER_FINISHED</code></a>
 may be returned even if <a class="link" href="GConverter.html#G-CONVERTER-INPUT-AT-END:CAPS"><code class="literal">G_CONVERTER_INPUT_AT_END</code></a> is not set, for instance
 in a decompression converter where the end of data is detectable from the
-data (and there might even be other data after the end of the compressed data).
-</p>
+data (and there might even be other data after the end of the compressed data).</p>
 <p>
 When some data has successfully been converted <em class="parameter"><code>bytes_read</code></em> and is set to
 the number of bytes read from <em class="parameter"><code>inbuf</code></em>, and <em class="parameter"><code>bytes_written</code></em> is set to indicate
 how many bytes was written to <em class="parameter"><code>outbuf</code></em>. If there are more data to output
 or consume (i.e. unless the <a class="link" href="GConverter.html#G-CONVERTER-INPUT-AT-END:CAPS"><code class="literal">G_CONVERTER_INPUT_AT_END</code></a> is specified) then
 <a class="link" href="GConverter.html#G-CONVERTER-CONVERTED:CAPS"><code class="literal">G_CONVERTER_CONVERTED</code></a> is returned, and if no more data is to be output
-then <a class="link" href="GConverter.html#G-CONVERTER-FINISHED:CAPS"><code class="literal">G_CONVERTER_FINISHED</code></a> is returned.
-</p>
+then <a class="link" href="GConverter.html#G-CONVERTER-FINISHED:CAPS"><code class="literal">G_CONVERTER_FINISHED</code></a> is returned.</p>
 <p>
 On error <a class="link" href="GConverter.html#G-CONVERTER-ERROR:CAPS"><code class="literal">G_CONVERTER_ERROR</code></a> is returned and <em class="parameter"><code>error</code></em> is set accordingly.
-Some errors need special handling:
-</p>
+Some errors need special handling:</p>
 <p>
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-NO-SPACE:CAPS"><code class="literal">G_IO_ERROR_NO_SPACE</code></a> is returned if there is not enough space
 to write the resulting converted data, the application should
-call the function again with a larger <em class="parameter"><code>outbuf</code></em> to continue.
-</p>
+call the function again with a larger <em class="parameter"><code>outbuf</code></em> to continue.</p>
 <p>
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_IO_ERROR_PARTIAL_INPUT</code></a> is returned if there is not enough
 input to fully determine what the conversion should produce,
@@ -294,8 +278,7 @@ and the <a class="link" href="GConverter.html#G-CONVERTER-INPUT-AT-END:CAPS"><co
 example with an incomplete multibyte sequence when converting text,
 or when a regexp matches up to the end of the input (and may match
 further input). It may also happen when <em class="parameter"><code>inbuf_size</code></em> is zero and
-there is no more data to produce.
-</p>
+there is no more data to produce.</p>
 <p>
 When this happens the application should read more input and then
 call the function again. If further input shows that there is no
@@ -303,15 +286,13 @@ more data call the function again with the same data but with
 the <a class="link" href="GConverter.html#G-CONVERTER-INPUT-AT-END:CAPS"><code class="literal">G_CONVERTER_INPUT_AT_END</code></a> flag set. This may cause the conversion
 to finish as e.g. in the regexp match case (or, to fail again with
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_IO_ERROR_PARTIAL_INPUT</code></a> in e.g. a charset conversion where the
-input is actually partial).
-</p>
+input is actually partial).</p>
 <p>
 After <a class="link" href="GConverter.html#g-converter-convert" title="g_converter_convert ()"><code class="function">g_converter_convert()</code></a> has returned <a class="link" href="GConverter.html#G-CONVERTER-FINISHED:CAPS"><code class="literal">G_CONVERTER_FINISHED</code></a> the
 converter object is in an invalid state where its not allowed
 to call <a class="link" href="GConverter.html#g-converter-convert" title="g_converter_convert ()"><code class="function">g_converter_convert()</code></a> anymore. At this time you can only
 free the object or call <a class="link" href="GConverter.html#g-converter-reset" title="g_converter_reset ()"><code class="function">g_converter_reset()</code></a> to reset it to the
-initial state.
-</p>
+initial state.</p>
 <p>
 If the flag <a class="link" href="GConverter.html#G-CONVERTER-FLUSH:CAPS"><code class="literal">G_CONVERTER_FLUSH</code></a> is set then conversion is modified
 to try to write out all internal state to the output. The application
@@ -320,8 +301,7 @@ the available input has been consumed and all internal state has
 been produced then <a class="link" href="GConverter.html#G-CONVERTER-FLUSHED:CAPS"><code class="literal">G_CONVERTER_FLUSHED</code></a> (or <a class="link" href="GConverter.html#G-CONVERTER-FINISHED:CAPS"><code class="literal">G_CONVERTER_FINISHED</code></a> if
 really at the end) is returned instead of <a class="link" href="GConverter.html#G-CONVERTER-CONVERTED:CAPS"><code class="literal">G_CONVERTER_CONVERTED</code></a>.
 This is somewhat similar to what happens at the end of the input stream,
-but done in the middle of the data.
-</p>
+but done in the middle of the data.</p>
 <p>
 This has different meanings for different conversions. For instance
 in a compression converter it would mean that we flush all the
@@ -331,14 +311,12 @@ make the final file larger due to padding though. Another example
 is a regexp conversion, where if you at the end of the flushed data
 have a match, but there is also a potential longer match. In the
 non-flushed case we would ask for more input, but when flushing we
-treat this as the end of input and do the match.
-</p>
+treat this as the end of input and do the match.</p>
 <p>
 Flushing is not always possible (like if a charset converter flushes
 at a partial multibyte sequence). Converters are supposed to try
 to produce as much output as possible and then return an error
-(typically <a class="link" href="gio-GIOError.html#G-IO-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_IO_ERROR_PARTIAL_INPUT</code></a>).
-</p>
+(typically <a class="link" href="gio-GIOError.html#G-IO-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_IO_ERROR_PARTIAL_INPUT</code></a>).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -401,8 +379,7 @@ containing the data to convert. <span class="annotation">[<acronym title="Parame
 <p>
 Resets all internal state in the converter, making it behave
 as if it was just created. If the converter has any internal
-state that would produce output then that output is lost.
-</p>
+state that would produce output then that output is lost.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -423,6 +400,6 @@ state that would produce output then that output is lost.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

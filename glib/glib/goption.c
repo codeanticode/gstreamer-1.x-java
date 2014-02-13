@@ -14,9 +14,7 @@
  * Library General Public License for more details.
  *
  * You should have received a copy of the GNU Library General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /**
@@ -31,25 +29,25 @@
  * <literal>testtreemodel -r 1 --max-size 20 --rand --display=:1.0 -vb -- file1 file2</literal>
  *
  * The example demonstrates a number of features of the GOption
- * commandline parser
- * <itemizedlist><listitem><para>
- *   Options can be single letters, prefixed by a single dash. Multiple
- *   short options can be grouped behind a single dash.
- * </para></listitem><listitem><para>
- *   Long options are prefixed by two consecutive dashes.
- * </para></listitem><listitem><para>
- *   Options can have an extra argument, which can be a number, a string or
+ * commandline parser:
+ *
+ * - Options can be single letters, prefixed by a single dash.
+ *
+ * - Multiple short options can be grouped behind a single dash.
+ *
+ * - Long options are prefixed by two consecutive dashes.
+ *
+ * - Options can have an extra argument, which can be a number, a string or
  *   a filename. For long options, the extra argument can be appended with
  *   an equals sign after the option name, which is useful if the extra
  *   argument starts with a dash, which would otherwise cause it to be
  *   interpreted as another option.
- * </para></listitem><listitem><para>
- *   Non-option arguments are returned to the application as rest arguments.
- * </para></listitem><listitem><para>
- *   An argument consisting solely of two dashes turns off further parsing,
+ *
+ * - Non-option arguments are returned to the application as rest arguments.
+ *
+ * - An argument consisting solely of two dashes turns off further parsing,
  *   any remaining arguments (even those starting with a dash) are returned
  *   to the application as rest arguments.
- * </para></listitem></itemizedlist>
  *
  * Another important feature of GOption is that it can automatically
  * generate nicely formatted help output. Unless it is explicitly turned
@@ -79,7 +77,7 @@
  *   --rand                   Randomize the data
  * </screen></informalexample>
  *
- * GOption groups options in #GOptionGroup<!-- -->s, which makes it easy to
+ * GOption groups options in #GOptionGroups, which makes it easy to
  * incorporate options from multiple sources. The intended use for this is
  * to let applications collect option groups from the libraries it uses,
  * add them to their #GOptionContext, and parse all options by a single call
@@ -93,13 +91,12 @@
  *
  * Here is a complete example of setting up GOption to parse the example
  * commandline above and produce the example help output.
- *
- * <informalexample><programlisting>
+ * |[<!-- language="C" --> 
  * static gint repeats = 2;
  * static gint max_size = 8;
  * static gboolean verbose = FALSE;
  * static gboolean beep = FALSE;
- * static gboolean rand = FALSE;
+ * static gboolean randomize = FALSE;
  *
  * static GOptionEntry entries[] =
  * {
@@ -107,7 +104,7 @@
  *   { "max-size", 'm', 0, G_OPTION_ARG_INT, &max_size, "Test up to 2^M items", "M" },
  *   { "verbose", 'v', 0, G_OPTION_ARG_NONE, &verbose, "Be verbose", NULL },
  *   { "beep", 'b', 0, G_OPTION_ARG_NONE, &beep, "Beep when done", NULL },
- *   { "rand", 0, 0, G_OPTION_ARG_NONE, &rand, "Randomize the data", NULL },
+ *   { "rand", 0, 0, G_OPTION_ARG_NONE, &randomize, "Randomize the data", NULL },
  *   { NULL }
  * };
  *
@@ -129,7 +126,58 @@
  *   /&ast; ... &ast;/
  *
  * }
- * </programlisting></informalexample>
+ * ]|
+ *
+ * On UNIX systems, the argv that is passed to main() has no particular
+ * encoding, even to the extent that different parts of it may have
+ * different encodings.  In general, normal arguments and flags will be
+ * in the current locale and filenames should be considered to be opaque
+ * byte strings.  Proper use of %G_OPTION_ARG_FILENAME vs
+ * %G_OPTION_ARG_STRING is therefore important.
+ *
+ * Note that on Windows, filenames do have an encoding, but using
+ * #GOptionContext with the argv as passed to main() will result in a
+ * program that can only accept commandline arguments with characters
+ * from the system codepage.  This can cause problems when attempting to
+ * deal with filenames containing Unicode characters that fall outside
+ * of the codepage.
+ *
+ * A solution to this is to use g_win32_get_command_line() and
+ * g_option_context_parse_strv() which will properly handle full Unicode
+ * filenames.  If you are using #GApplication, this is done
+ * automatically for you.
+ *
+ * The following example shows how you can use #GOptionContext directly
+ * in order to correctly deal with Unicode filenames on Windows:
+ *
+ * |[<!-- language="C" --> 
+ * int
+ * main (int argc, char **argv)
+ * {
+ *   GError *error = NULL;
+ *   GOptionContext *context;
+ *   gchar **args;
+ *
+ * #ifdef G_OS_WIN32
+ *   args = g_win32_get_command_line ();
+ * #else
+ *   args = g_strdupv (argv);
+ * #endif
+ *
+ *   /&ast; ... setup context ... &ast;/
+ *
+ *   if (!g_option_context_parse_strv (context, &args, &error))
+ *     {
+ *       /&ast; ... error ... &ast;/
+ *     }
+ *
+ *   /&ast; ... &ast;/
+ *
+ *   g_strfreev (args);
+ *
+ *   /&ast; ... &ast;/
+ * }
+ * ]|
  */
 
 #include "config.h"
@@ -533,7 +581,7 @@ g_option_context_get_main_group (GOptionContext *context)
 /**
  * g_option_context_add_main_entries:
  * @context: a #GOptionContext
- * @entries: a %NULL-terminated array of #GOptionEntry<!-- -->s
+ * @entries: a %NULL-terminated array of #GOptionEntrys
  * @translation_domain: (allow-none): a translation domain to use for translating
  *    the <option>--help</option> output for the options in @entries
  *    with gettext(), or %NULL
@@ -1158,7 +1206,14 @@ parse_arg (GOptionContext *context,
       {
         gchar *data;
 
+#ifdef G_OS_WIN32
+        if (!context->strv_mode)
+          data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+        else
+          data = g_strdup (value);
+#else
         data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+#endif
 
         if (!data)
           return FALSE;
@@ -1177,7 +1232,14 @@ parse_arg (GOptionContext *context,
       {
         gchar *data;
 
+#ifdef G_OS_WIN32
+        if (!context->strv_mode)
+          data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+        else
+          data = g_strdup (value);
+#else
         data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+#endif
 
         if (!data)
           return FALSE;
@@ -1210,7 +1272,10 @@ parse_arg (GOptionContext *context,
         gchar *data;
 
 #ifdef G_OS_WIN32
-        data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+        if (!context->strv_mode)
+          data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+        else
+          data = g_strdup (value);
 
         if (!data)
           return FALSE;
@@ -1233,7 +1298,10 @@ parse_arg (GOptionContext *context,
         gchar *data;
 
 #ifdef G_OS_WIN32
-        data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+        if (!context->strv_mode)
+          data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+        else
+          data = g_strdup (value);
 
         if (!data)
           return FALSE;
@@ -1290,7 +1358,10 @@ parse_arg (GOptionContext *context,
         else if (entry->flags & G_OPTION_FLAG_FILENAME)
           {
 #ifdef G_OS_WIN32
-            data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+            if (!context->strv_mode)
+              data = g_locale_to_utf8 (value, -1, NULL, NULL, error);
+            else
+              data = g_strdup (value);
 #else
             data = g_strdup (value);
 #endif
@@ -2127,11 +2198,11 @@ g_option_group_new (const gchar    *name,
  * g_option_group_free:
  * @group: a #GOptionGroup
  *
- * Frees a #GOptionGroup. Note that you must <emphasis>not</emphasis>
- * free groups which have been added to a #GOptionContext.
+ * Frees a #GOptionGroup. Note that you must not free groups
+ * which have been added to a #GOptionContext.
  *
  * Since: 2.6
- **/
+ */
 void
 g_option_group_free (GOptionGroup *group)
 {
@@ -2156,7 +2227,7 @@ g_option_group_free (GOptionGroup *group)
 /**
  * g_option_group_add_entries:
  * @group: a #GOptionGroup
- * @entries: a %NULL-terminated array of #GOptionEntry<!-- -->s
+ * @entries: a %NULL-terminated array of #GOptionEntrys
  *
  * Adds the options specified in @entries to @group.
  *
@@ -2268,7 +2339,7 @@ g_option_group_set_error_hook (GOptionGroup     *group,
  *
  * Sets the function which is used to translate user-visible
  * strings, for <option>--help</option> output. Different
- * groups can use different #GTranslateFunc<!-- -->s. If @func
+ * groups can use different #GTranslateFuncs. If @func
  * is %NULL, strings are not translated.
  *
  * If you are using gettext(), you only need to set the translation
@@ -2472,7 +2543,8 @@ g_option_context_get_description (GOptionContext *context)
 /**
  * g_option_context_parse_strv:
  * @context: a #GOptionContext
- * @arguments: (inout) (array null-terminated=1): a pointer to the command line arguments
+ * @arguments: (inout) (array null-terminated=1): a pointer to the
+ *    command line arguments (which must be in UTF-8 on Windows)
  * @error: a return location for errors
  *
  * Parses the command line arguments.
@@ -2483,6 +2555,11 @@ g_option_context_get_description (GOptionContext *context)
  *
  * In particular, strings that are removed from the arguments list will
  * be freed using g_free().
+ *
+ * On Windows, the strings are expected to be in UTF-8.  This is in
+ * contrast to g_option_context_parse() which expects them to be in the
+ * system codepage, which is how they are passed as @argv to main().
+ * See g_win32_get_command_line() for a solution.
  *
  * This function is useful if you are trying to use #GOptionContext with
  * #GApplication.

@@ -1,14 +1,9 @@
--library java_gst
--I/usr/lib/x86_64-linux-gnu/glib-2.0/include
--I/usr/lib/gcc/x86_64-linux-gnu/4.8/include
--I/usr/include/gstreamer-1.0/
--Iglib
--Iglib/glib
-
 gstreamer/gst/gst.h
+-Igstreamer
 
 -package org.gstreamer.lowlevel
 
 /* common config file */
 config.jnaerator
+
 

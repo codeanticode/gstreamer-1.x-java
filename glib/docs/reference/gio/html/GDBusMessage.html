@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDBusMessage</title>
+<title>GIO Reference Manual: GDBusMessage</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Lowlevel D-Bus Support">
 <link rel="prev" href="gio-GDBusError.html" title="GDBusError">
 <link rel="next" href="GDBusConnection.html" title="GDBusConnection">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GDBusError.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="gdbus-lowlevel.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GDBusConnection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GDBusMessage.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GDBusMessage.description" class="shortcut">Description</a>
                    | 
                   <a href="#GDBusMessage.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GDBusMessage.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gdbus-lowlevel.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GDBusError.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GDBusConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GDBusMessage"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -161,8 +158,7 @@ const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.htm
 <a name="GDBusMessage.description"></a><h2>Description</h2>
 <p>
 A type for representing D-Bus messages that can be sent or received
-on a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a>.
-</p>
+on a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GDBusMessage.details"></a><h2>Details</h2>
@@ -171,8 +167,7 @@ on a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span c
 <pre class="programlisting">typedef struct _GDBusMessage GDBusMessage;</pre>
 <p>
 The <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> structure contains only private data and should
-only be accessed using the provided API.
-</p>
+only be accessed using the provided API.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -187,8 +182,7 @@ only be accessed using the provided API.
 } GDBusMessageType;
 </pre>
 <p>
-Message types used in <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.
-</p>
+Message types used in <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -234,8 +228,7 @@ Message types used in <a class="link" href="GDBusMessage.html" title="GDBusMessa
 } GDBusMessageFlags;
 </pre>
 <p>
-Message flags used in <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.
-</p>
+Message flags used in <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -279,8 +272,7 @@ owner for the destination name in response to this message.
 } GDBusMessageHeaderField;
 </pre>
 <p>
-Header fields used in <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.
-</p>
+Header fields used in <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -350,8 +342,7 @@ Header fields used in <a class="link" href="GDBusMessage.html" title="GDBusMessa
 } GDBusMessageByteOrder;
 </pre>
 <p>
-Enumeration used to describe the byte order of a D-Bus message.
-</p>
+Enumeration used to describe the byte order of a D-Bus message.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -377,8 +368,7 @@ Enumeration used to describe the byte order of a D-Bus message.
 <a name="g-dbus-message-new"></a><h3>g_dbus_message_new ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="returnvalue">GDBusMessage</span></a> *      g_dbus_message_new                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a new empty <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.
-</p>
+Creates a new empty <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -398,8 +388,7 @@ Creates a new empty <a class="link" href="GDBusMessage.html" title="GDBusMessage
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *interface_</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *signal</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> for a signal emission.
-</p>
+Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> for a signal emission.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -434,8 +423,7 @@ Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><spa
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *interface_</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *method</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> for a method call.
-</p>
+Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> for a method call.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -473,8 +461,7 @@ Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><spa
 <a name="g-dbus-message-new-method-reply"></a><h3>g_dbus_message_new_method_reply ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="returnvalue">GDBusMessage</span></a> *      g_dbus_message_new_method_reply     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *method_call_message</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> that is a reply to <em class="parameter"><code>method_call_message</code></em>.
-</p>
+Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> that is a reply to <em class="parameter"><code>method_call_message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -504,8 +491,7 @@ create a reply message to.</td>
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *error_message_format</code></em>,
                                                          <em class="parameter"><code>...</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> that is an error reply to <em class="parameter"><code>method_call_message</code></em>.
-</p>
+Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> that is an error reply to <em class="parameter"><code>method_call_message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -547,8 +533,7 @@ create a reply message to.</td>
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *error_message_format</code></em>,
                                                          <em class="parameter"><code><span class="type">va_list</span> var_args</code></em>);</pre>
 <p>
-Like <a class="link" href="GDBusMessage.html#g-dbus-message-new-method-error" title="g_dbus_message_new_method_error ()"><code class="function">g_dbus_message_new_method_error()</code></a> but intended for language bindings.
-</p>
+Like <a class="link" href="GDBusMessage.html#g-dbus-message-new-method-error" title="g_dbus_message_new_method_error ()"><code class="function">g_dbus_message_new_method_error()</code></a> but intended for language bindings.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -589,8 +574,7 @@ create a reply message to.</td>
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *error_name</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *error_message</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> that is an error reply to <em class="parameter"><code>method_call_message</code></em>.
-</p>
+Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> that is an error reply to <em class="parameter"><code>method_call_message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -625,46 +609,81 @@ create a reply message to.</td>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_dbus_message_print                (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> indent</code></em>);</pre>
 <p>
-Produces a human-readable multi-line description of <em class="parameter"><code>message</code></em>.
-</p>
+Produces a human-readable multi-line description of <em class="parameter"><code>message</code></em>.</p>
 <p>
 The contents of the description has no ABI guarantees, the contents
 and formatting is subject to change at any time. Typical output
 looks something like this:
 </p>
-<pre class="programlisting">
-Type:    method-call
-Flags:   none
-Version: 0
-Serial:  4
-Headers:
-  path -&gt; objectpath '/org/gtk/GDBus/TestObject'
-  interface -&gt; 'org.gtk.GDBus.TestInterface'
-  member -&gt; 'GimmeStdout'
-  destination -&gt; ':1.146'
-Body: ()
-UNIX File Descriptors:
-  (none)
-</pre>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">Type</span><span class="symbol">:</span><span class="normal">    method</span><span class="symbol">-</span><span class="normal">call</span>
+<span class="normal">Flags</span><span class="symbol">:</span><span class="normal">   none</span>
+<span class="normal">Version</span><span class="symbol">:</span><span class="normal"> </span><span class="number">0</span>
+<span class="normal">Serial</span><span class="symbol">:</span><span class="normal">  </span><span class="number">4</span>
+<span class="label">Headers:</span>
+<span class="normal">  path </span><span class="symbol">-&gt;</span><span class="normal"> objectpath </span><span class="string">'/org/gtk/GDBus/TestObject'</span>
+<span class="normal">  interface </span><span class="symbol">-&gt;</span><span class="normal"> </span><span class="string">'org.gtk.GDBus.TestInterface'</span>
+<span class="normal">  member </span><span class="symbol">-&gt;</span><span class="normal"> </span><span class="string">'GimmeStdout'</span>
+<span class="normal">  destination </span><span class="symbol">-&gt;</span><span class="normal"> </span><span class="string">':1.146'</span>
+<span class="normal">Body</span><span class="symbol">:</span><span class="normal"> </span><span class="symbol">()</span>
+<span class="normal">UNIX </span><span class="usertype">File</span><span class="normal"> Descriptors</span><span class="symbol">:</span>
+<span class="normal">  </span><span class="symbol">(</span><span class="normal">none</span><span class="symbol">)</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
 or
 </p>
-<pre class="programlisting">
-Type:    method-return
-Flags:   no-reply-expected
-Version: 0
-Serial:  477
-Headers:
-  reply-serial -&gt; uint32 4
-  destination -&gt; ':1.159'
-  sender -&gt; ':1.146'
-  num-unix-fds -&gt; uint32 1
-Body: ()
-UNIX File Descriptors:
-  fd 12: dev=0:10,mode=020620,ino=5,uid=500,gid=5,rdev=136:2,size=0,atime=1273085037,mtime=1273085851,ctime=1272982635
-</pre>
-<p>
-</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">Type</span><span class="symbol">:</span><span class="normal">    method</span><span class="symbol">-</span><span class="keyword">return</span>
+<span class="normal">Flags</span><span class="symbol">:</span><span class="normal">   no</span><span class="symbol">-</span><span class="normal">reply</span><span class="symbol">-</span><span class="normal">expected</span>
+<span class="normal">Version</span><span class="symbol">:</span><span class="normal"> </span><span class="number">0</span>
+<span class="normal">Serial</span><span class="symbol">:</span><span class="normal">  </span><span class="number">477</span>
+<span class="label">Headers:</span>
+<span class="normal">  reply</span><span class="symbol">-</span><span class="normal">serial </span><span class="symbol">-&gt;</span><span class="normal"> uint32 </span><span class="number">4</span>
+<span class="normal">  destination </span><span class="symbol">-&gt;</span><span class="normal"> </span><span class="string">':1.159'</span>
+<span class="normal">  sender </span><span class="symbol">-&gt;</span><span class="normal"> </span><span class="string">':1.146'</span>
+<span class="normal">  num</span><span class="symbol">-</span><span class="normal">unix</span><span class="symbol">-</span><span class="normal">fds </span><span class="symbol">-&gt;</span><span class="normal"> uint32 </span><span class="number">1</span>
+<span class="normal">Body</span><span class="symbol">:</span><span class="normal"> </span><span class="symbol">()</span>
+<span class="normal">UNIX </span><span class="usertype">File</span><span class="normal"> Descriptors</span><span class="symbol">:</span>
+<span class="normal">  fd </span><span class="number">12</span><span class="symbol">:</span><span class="normal"> dev</span><span class="symbol">=</span><span class="number">0</span><span class="symbol">:</span><span class="number">10</span><span class="symbol">,</span><span class="normal">mode</span><span class="symbol">=</span><span class="number">020620</span><span class="symbol">,</span><span class="normal">ino</span><span class="symbol">=</span><span class="number">5</span><span class="symbol">,</span><span class="normal">uid</span><span class="symbol">=</span><span class="number">500</span><span class="symbol">,</span><span class="normal">gid</span><span class="symbol">=</span><span class="number">5</span><span class="symbol">,</span><span class="normal">rdev</span><span class="symbol">=</span><span class="number">136</span><span class="symbol">:</span><span class="number">2</span><span class="symbol">,</span><span class="normal">size</span><span class="symbol">=</span><span class="number">0</span><span class="symbol">,</span><span class="normal">atime</span><span class="symbol">=</span><span class="number">1273085037</span><span class="symbol">,</span><span class="normal">mtime</span><span class="symbol">=</span><span class="number">1273085851</span><span class="symbol">,</span><span class="normal">ctime</span><span class="symbol">=</span><span class="number">1272982635</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -694,8 +713,7 @@ UNIX File Descriptors:
 <p>
 Checks whether <em class="parameter"><code>message</code></em> is locked. To monitor changes to this
 value, conncet to the <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#GObject-notify"><span class="type">"notify"</span></a> signal to listen for changes
-on the <a class="link" href="GDBusMessage.html#GDBusMessage--locked" title='The "locked" property'><span class="type">"locked"</span></a> property.
-</p>
+on the <a class="link" href="GDBusMessage.html#GDBusMessage--locked" title='The "locked" property'><span class="type">"locked"</span></a> property.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -720,8 +738,7 @@ on the <a class="link" href="GDBusMessage.html#GDBusMessage--locked" title='The 
 <a name="g-dbus-message-lock"></a><h3>g_dbus_message_lock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_lock                 (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-If <em class="parameter"><code>message</code></em> is locked, does nothing. Otherwise locks the message.
-</p>
+If <em class="parameter"><code>message</code></em> is locked, does nothing. Otherwise locks the message.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -742,12 +759,10 @@ If <em class="parameter"><code>message</code></em> is locked, does nothing. Othe
 <p>
 Copies <em class="parameter"><code>message</code></em>. The copy is a deep copy and the returned
 <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> is completely identical except that it is guaranteed
-to not be locked.
-</p>
+to not be locked.</p>
 <p>
 This operation can fail if e.g. <em class="parameter"><code>message</code></em> contains file descriptors
-and the per-process or system-wide open files limit is reached.
-</p>
+and the per-process or system-wide open files limit is reached.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -777,8 +792,7 @@ Free with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-B
 <a name="g-dbus-message-get-byte-order"></a><h3>g_dbus_message_get_byte_order ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusMessage.html#GDBusMessageByteOrder" title="enum GDBusMessageByteOrder"><span class="returnvalue">GDBusMessageByteOrder</span></a> g_dbus_message_get_byte_order     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets the byte order of <em class="parameter"><code>message</code></em>.
-</p>
+Gets the byte order of <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -802,8 +816,7 @@ Gets the byte order of <em class="parameter"><code>message</code></em>.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_byte_order       (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GDBusMessage.html#GDBusMessageByteOrder" title="enum GDBusMessageByteOrder"><span class="type">GDBusMessageByteOrder</span></a> byte_order</code></em>);</pre>
 <p>
-Sets the byte order of <em class="parameter"><code>message</code></em>.
-</p>
+Sets the byte order of <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -826,8 +839,7 @@ Sets the byte order of <em class="parameter"><code>message</code></em>.
 <a name="g-dbus-message-get-message-type"></a><h3>g_dbus_message_get_message_type ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusMessage.html#GDBusMessageType" title="enum GDBusMessageType"><span class="returnvalue">GDBusMessageType</span></a>    g_dbus_message_get_message_type     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets the type of <em class="parameter"><code>message</code></em>.
-</p>
+Gets the type of <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -852,8 +864,7 @@ Gets the type of <em class="parameter"><code>message</code></em>.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_message_type     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GDBusMessage.html#GDBusMessageType" title="enum GDBusMessageType"><span class="type">GDBusMessageType</span></a> type</code></em>);</pre>
 <p>
-Sets <em class="parameter"><code>message</code></em> to be of <em class="parameter"><code>type</code></em>.
-</p>
+Sets <em class="parameter"><code>message</code></em> to be of <em class="parameter"><code>type</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -877,8 +888,7 @@ Sets <em class="parameter"><code>message</code></em> to be of <em class="paramet
 <a name="g-dbus-message-get-serial"></a><h3>g_dbus_message_get_serial ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             g_dbus_message_get_serial           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets the serial for <em class="parameter"><code>message</code></em>.
-</p>
+Gets the serial for <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -903,8 +913,7 @@ Gets the serial for <em class="parameter"><code>message</code></em>.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_serial           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> serial</code></em>);</pre>
 <p>
-Sets the serial for <em class="parameter"><code>message</code></em>.
-</p>
+Sets the serial for <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -928,8 +937,7 @@ Sets the serial for <em class="parameter"><code>message</code></em>.
 <a name="g-dbus-message-get-flags"></a><h3>g_dbus_message_get_flags ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusMessage.html#GDBusMessageFlags" title="enum GDBusMessageFlags"><span class="returnvalue">GDBusMessageFlags</span></a>   g_dbus_message_get_flags            (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets the flags for <em class="parameter"><code>message</code></em>.
-</p>
+Gets the flags for <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -954,8 +962,7 @@ Gets the flags for <em class="parameter"><code>message</code></em>.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_flags            (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GDBusMessage.html#GDBusMessageFlags" title="enum GDBusMessageFlags"><span class="type">GDBusMessageFlags</span></a> flags</code></em>);</pre>
 <p>
-Sets the flags to set on <em class="parameter"><code>message</code></em>.
-</p>
+Sets the flags to set on <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -980,8 +987,7 @@ enumeration bitwise ORed together).</td>
 <a name="g-dbus-message-get-body"></a><h3>g_dbus_message_get_body ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *          g_dbus_message_get_body             (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets the body of a message.
-</p>
+Gets the body of a message.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1008,11 +1014,9 @@ Gets the body of a message.
 <p>
 Sets the body <em class="parameter"><code>message</code></em>. As a side-effect the
 <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SIGNATURE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE</code></a> header field is set to the
-type string of <em class="parameter"><code>body</code></em> (or cleared if <em class="parameter"><code>body</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).
-</p>
+type string of <em class="parameter"><code>body</code></em> (or cleared if <em class="parameter"><code>body</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).</p>
 <p>
-If <em class="parameter"><code>body</code></em> is floating, <em class="parameter"><code>message</code></em> assumes ownership of <em class="parameter"><code>body</code></em>.
-</p>
+If <em class="parameter"><code>body</code></em> is floating, <em class="parameter"><code>message</code></em> assumes ownership of <em class="parameter"><code>body</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1036,11 +1040,9 @@ If <em class="parameter"><code>body</code></em> is floating, <em class="paramete
 <a name="g-dbus-message-get-unix-fd-list"></a><h3>g_dbus_message_get_unix_fd_list ()</h3>
 <pre class="programlisting"><a class="link" href="GUnixFDList.html" title="GUnixFDList"><span class="returnvalue">GUnixFDList</span></a> *       g_dbus_message_get_unix_fd_list     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets the UNIX file descriptors associated with <em class="parameter"><code>message</code></em>, if any.
-</p>
+Gets the UNIX file descriptors associated with <em class="parameter"><code>message</code></em>, if any.</p>
 <p>
-This method is only available on UNIX.
-</p>
+This method is only available on UNIX.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1070,11 +1072,9 @@ associated. Do not free, this object is owned by <em class="parameter"><code>mes
 Sets the UNIX file descriptors associated with <em class="parameter"><code>message</code></em>. As a
 side-effect the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-NUM-UNIX-FDS:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS</code></a> header
 field is set to the number of fds in <em class="parameter"><code>fd_list</code></em> (or cleared if
-<em class="parameter"><code>fd_list</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).
-</p>
+<em class="parameter"><code>fd_list</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>).</p>
 <p>
-This method is only available on UNIX.
-</p>
+This method is only available on UNIX.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1099,8 +1099,7 @@ This method is only available on UNIX.
 <a name="g-dbus-message-get-num-unix-fds"></a><h3>g_dbus_message_get_num_unix_fds ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             g_dbus_message_get_num_unix_fds     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-NUM-UNIX-FDS:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-NUM-UNIX-FDS:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1125,8 +1124,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_num_unix_fds     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-NUM-UNIX-FDS:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-NUM-UNIX-FDS:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_NUM_UNIX_FDS</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1150,8 +1148,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-header-fields"></a><h3>g_dbus_message_get_header_fields ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="returnvalue">guchar</span></a> *            g_dbus_message_get_header_fields    (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Gets an array of all header fields on <em class="parameter"><code>message</code></em> that are set.
-</p>
+Gets an array of all header fields on <em class="parameter"><code>message</code></em> that are set.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1179,8 +1176,7 @@ is a <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *          g_dbus_message_get_header           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GDBusMessage.html#GDBusMessageHeaderField" title="enum GDBusMessageHeaderField"><span class="type">GDBusMessageHeaderField</span></a> header_field</code></em>);</pre>
 <p>
-Gets a header field on <em class="parameter"><code>message</code></em>.
-</p>
+Gets a header field on <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1211,11 +1207,9 @@ otherwise. Do not free, it is owned by <em class="parameter"><code>message</code
                                                          <em class="parameter"><code><a class="link" href="GDBusMessage.html#GDBusMessageHeaderField" title="enum GDBusMessageHeaderField"><span class="type">GDBusMessageHeaderField</span></a> header_field</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
 <p>
-Sets a header field on <em class="parameter"><code>message</code></em>.
-</p>
+Sets a header field on <em class="parameter"><code>message</code></em>.</p>
 <p>
-If <em class="parameter"><code>value</code></em> is floating, <em class="parameter"><code>message</code></em> assumes ownership of <em class="parameter"><code>value</code></em>.
-</p>
+If <em class="parameter"><code>value</code></em> is floating, <em class="parameter"><code>message</code></em> assumes ownership of <em class="parameter"><code>value</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1244,8 +1238,7 @@ If <em class="parameter"><code>value</code></em> is floating, <em class="paramet
 <a name="g-dbus-message-get-destination"></a><h3>g_dbus_message_get_destination ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_destination      (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-DESTINATION:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-DESTINATION:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1270,8 +1263,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_destination      (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-DESTINATION:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-DESTINATION:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_DESTINATION</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1295,8 +1287,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-error-name"></a><h3>g_dbus_message_get_error_name ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_error_name       (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-ERROR-NAME:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-ERROR-NAME:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1321,8 +1312,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_error_name       (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-ERROR-NAME:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-ERROR-NAME:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1346,8 +1336,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-interface"></a><h3>g_dbus_message_get_interface ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_interface        (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-INTERFACE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-INTERFACE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1372,8 +1361,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_interface        (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-INTERFACE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-INTERFACE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_INTERFACE</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1397,8 +1385,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-member"></a><h3>g_dbus_message_get_member ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_member           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-MEMBER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_MEMBER</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-MEMBER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_MEMBER</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1423,8 +1410,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_member           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-MEMBER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_MEMBER</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-MEMBER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_MEMBER</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1448,8 +1434,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-path"></a><h3>g_dbus_message_get_path ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_path             (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-PATH:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_PATH</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-PATH:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_PATH</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1474,8 +1459,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_path             (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-PATH:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_PATH</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-PATH:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_PATH</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1499,8 +1483,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-reply-serial"></a><h3>g_dbus_message_get_reply_serial ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="returnvalue">guint32</span></a>             g_dbus_message_get_reply_serial     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-REPLY-SERIAL:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-REPLY-SERIAL:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1525,8 +1508,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_reply_serial     (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint32"><span class="type">guint32</span></a> value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-REPLY-SERIAL:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-REPLY-SERIAL:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_REPLY_SERIAL</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1550,8 +1532,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-sender"></a><h3>g_dbus_message_get_sender ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_sender           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SENDER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SENDER</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SENDER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SENDER</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1576,8 +1557,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_sender           (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SENDER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SENDER</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SENDER:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SENDER</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1601,8 +1581,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-signature"></a><h3>g_dbus_message_get_signature ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_signature        (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SIGNATURE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE</code></a> header field.
-</p>
+Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SIGNATURE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1627,8 +1606,7 @@ Convenience getter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_message_set_signature        (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *value</code></em>);</pre>
 <p>
-Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SIGNATURE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE</code></a> header field.
-</p>
+Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-SIGNATURE:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_SIGNATURE</code></a> header field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1652,8 +1630,7 @@ Convenience setter for the <a class="link" href="GDBusMessage.html#G-DBUS-MESSAG
 <a name="g-dbus-message-get-arg0"></a><h3>g_dbus_message_get_arg0 ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_message_get_arg0             (<em class="parameter"><code><a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> *message</code></em>);</pre>
 <p>
-Convenience to get the first item in the body of <em class="parameter"><code>message</code></em>.
-</p>
+Convenience to get the first item in the body of <em class="parameter"><code>message</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1682,8 +1659,7 @@ Convenience to get the first item in the body of <em class="parameter"><code>mes
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Serializes <em class="parameter"><code>message</code></em> to a blob. The byte order returned by
-<a class="link" href="GDBusMessage.html#g-dbus-message-get-byte-order" title="g_dbus_message_get_byte_order ()"><code class="function">g_dbus_message_get_byte_order()</code></a> will be used.
-</p>
+<a class="link" href="GDBusMessage.html#g-dbus-message-get-byte-order" title="g_dbus_message_get_byte_order ()"><code class="function">g_dbus_message_get_byte_order()</code></a> will be used.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1725,8 +1701,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Utility function to calculate how many bytes are needed to
-completely deserialize the D-Bus message stored at <em class="parameter"><code>blob</code></em>.
-</p>
+completely deserialize the D-Bus message stored at <em class="parameter"><code>blob</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1766,8 +1741,7 @@ determine the size).</td>
 <p>
 Creates a new <a class="link" href="GDBusMessage.html" title="GDBusMessage"><span class="type">GDBusMessage</span></a> from the data stored at <em class="parameter"><code>blob</code></em>. The byte
 order that the message was in can be retrieved using
-<a class="link" href="GDBusMessage.html#g-dbus-message-get-byte-order" title="g_dbus_message_get_byte_order ()"><code class="function">g_dbus_message_get_byte_order()</code></a>.
-</p>
+<a class="link" href="GDBusMessage.html#g-dbus-message-get-byte-order" title="g_dbus_message_get_byte_order ()"><code class="function">g_dbus_message_get_byte_order()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1807,14 +1781,12 @@ order that the message was in can be retrieved using
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 If <em class="parameter"><code>message</code></em> is not of type <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-TYPE-ERROR:CAPS"><code class="literal">G_DBUS_MESSAGE_TYPE_ERROR</code></a> does
-nothing and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
-</p>
+nothing and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p>
 <p>
 Otherwise this method encodes the error in <em class="parameter"><code>message</code></em> as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>
 using <a class="link" href="gio-GDBusError.html#g-dbus-error-set-dbus-error" title="g_dbus_error_set_dbus_error ()"><code class="function">g_dbus_error_set_dbus_error()</code></a> using the information in the
 <a class="link" href="GDBusMessage.html#G-DBUS-MESSAGE-HEADER-FIELD-ERROR-NAME:CAPS"><code class="literal">G_DBUS_MESSAGE_HEADER_FIELD_ERROR_NAME</code></a> header field of <em class="parameter"><code>message</code></em> as
-well as the first string item in <em class="parameter"><code>message</code></em>'s body.
-</p>
+well as the first string item in <em class="parameter"><code>message</code></em>'s body.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1851,6 +1823,6 @@ well as the first string item in <em class="parameter"><code>message</code></em>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

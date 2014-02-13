@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -143,7 +141,7 @@ g_mutex_get_impl (GMutex *mutex)
  * It is not necessary to initialize a mutex that has been
  * statically allocated.
  *
- * |[
+ * |[<!-- language="C" --> 
  *   typedef struct {
  *     GMutex m;
  *     ...
@@ -197,10 +195,10 @@ g_mutex_clear (GMutex *mutex)
  * current thread will block until @mutex is unlocked by the other
  * thread.
  *
- * <note>#GMutex is neither guaranteed to be recursive nor to be
+ * #GMutex is neither guaranteed to be recursive nor to be
  * non-recursive.  As such, calling g_mutex_lock() on a #GMutex that has
  * already been locked by the same thread results in undefined behaviour
- * (including but not limited to deadlocks).</note>
+ * (including but not limited to deadlocks).
  */
 void
 g_mutex_lock (GMutex *mutex)
@@ -238,11 +236,10 @@ g_mutex_unlock (GMutex *mutex)
  * it immediately returns %FALSE. Otherwise it locks @mutex and returns
  * %TRUE.
  *
- * <note>#GMutex is neither guaranteed to be recursive nor to be
+ * #GMutex is neither guaranteed to be recursive nor to be
  * non-recursive.  As such, calling g_mutex_lock() on a #GMutex that has
  * already been locked by the same thread results in undefined behaviour
  * (including but not limited to deadlocks or arbitrary return values).
- * </note>
 
  * Returns: %TRUE if @mutex could be locked
  */
@@ -316,7 +313,7 @@ g_rec_mutex_get_impl (GRecMutex *rec_mutex)
  * It is not necessary to initialise a recursive mutex that has been
  * statically allocated.
  *
- * |[
+ * |[<!-- language="C" --> 
  *   typedef struct {
  *     GRecMutex m;
  *     ...
@@ -474,7 +471,7 @@ g_rw_lock_get_impl (GRWLock *lock)
  * necessary to initialise a reader-writer lock that has been statically
  * allocated.
  *
- * |[
+ * |[<!-- language="C" --> 
  *   typedef struct {
  *     GRWLock l;
  *     ...
@@ -807,10 +804,10 @@ g_cond_broadcast (GCond *cond)
  * passed.
  *
  * The following code shows how to correctly perform a timed wait on a
- * condition variable (extended the example presented in the
+ * condition variable (extending the example presented in the
  * documentation for #GCond):
  *
- * |[
+ * |[<!-- language="C" --> 
  * gpointer
  * pop_data_timed (void)
  * {
@@ -823,12 +820,12 @@ g_cond_broadcast (GCond *cond)
  *   while (!current_data)
  *     if (!g_cond_wait_until (&data_cond, &data_mutex, end_time))
  *       {
- *         // timeout has passed.
+ *         /&ast; timeout has passed. &ast;/
  *         g_mutex_unlock (&data_mutex);
  *         return NULL;
  *       }
  *
- *   // there is data for us
+ *   /&ast; there is data for us &ast;/
  *   data = current_data;
  *   current_data = NULL;
  *
@@ -898,7 +895,7 @@ g_cond_wait_until (GCond  *cond,
  * See G_PRIVATE_INIT() for a couple of examples.
  *
  * The #GPrivate structure should be considered opaque.  It should only
- * be accessed via the <function>g_private_</function> functions.
+ * be accessed via the g_private_ functions.
  */
 
 /**
@@ -920,10 +917,10 @@ g_cond_wait_until (GCond  *cond,
  * be properly initialised by default (ie: to all zeros).  See the
  * examples below.
  *
- * |[
+ * |[<!-- language="C" --> 
  * static GPrivate name_key = G_PRIVATE_INIT (g_free);
  *
- * // return value should not be freed
+ * /&ast; return value should not be freed &ast;/
  * const gchar *
  * get_local_name (void)
  * {
@@ -937,7 +934,7 @@ g_cond_wait_until (GCond  *cond,
  * }
  *
  *
- * static GPrivate count_key;   // no free function
+ * static GPrivate count_key;   /&ast; no free function &ast;/
  *
  * gint
  * get_local_count (void)

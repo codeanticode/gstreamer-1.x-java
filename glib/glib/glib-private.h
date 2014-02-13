@@ -12,9 +12,7 @@
  * Library General Public License for more details.
  *
  * You should have received a copy of the GNU Library General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifndef __GLIB_PRIVATE_H__
@@ -22,6 +20,12 @@
 
 #include <glib.h>
 #include "gwakeup.h"
+
+#if defined(__GNUC__)
+# define _g_alignof(type) (__alignof__ (type))
+#else
+# define _g_alignof(type) (G_STRUCT_OFFSET (struct { char a; type b; }, b))
+#endif
 
 GMainContext *          g_get_worker_context            (void);
 gboolean                g_check_setuid                  (void);

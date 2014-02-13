@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GThreadedSocketService</title>
+<title>GIO Reference Manual: GThreadedSocketService</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="highlevel-socket.html" title="High-level network functionallity">
 <link rel="prev" href="GSocketService.html" title="GSocketService">
 <link rel="next" href="GNetworkMonitor.html" title="GNetworkMonitor">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GSocketService.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GNetworkMonitor.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GThreadedSocketService.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GThreadedSocketService.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GThreadedSocketService.properties" class="shortcut">Properties</a>
                    | 
                   <a href="#GThreadedSocketService.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GSocketService.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GNetworkMonitor.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GThreadedSocketService"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -77,22 +74,18 @@
 A <a class="link" href="GThreadedSocketService.html" title="GThreadedSocketService"><span class="type">GThreadedSocketService</span></a> is a simple subclass of <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a>
 that handles incoming connections by creating a worker thread and
 dispatching the connection to it by emitting the
-<a class="link" href="GThreadedSocketService.html#GThreadedSocketService-run" title='The "run" signal'><span class="type">"run"</span></a> signal in the new thread.
-</p>
+<a class="link" href="GThreadedSocketService.html#GThreadedSocketService-run" title='The "run" signal'><span class="type">"run"</span></a> signal in the new thread.</p>
 <p>
 The signal handler may perform blocking IO and need not return
-until the connection is closed.
-</p>
+until the connection is closed.</p>
 <p>
 The service is implemented using a thread pool, so there is a
 limited amount of threads available to serve incoming requests.
 The service automatically stops the <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a> from accepting
-new connections when all threads are busy.
-</p>
+new connections when all threads are busy.</p>
 <p>
 As with <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a>, you may connect to <a class="link" href="GThreadedSocketService.html#GThreadedSocketService-run" title='The "run" signal'><span class="type">"run"</span></a>,
-or subclass and override the default handler.
-</p>
+or subclass and override the default handler.</p>
 </div>
 <div class="refsect1">
 <a name="GThreadedSocketService.details"></a><h2>Details</h2>
@@ -101,8 +94,7 @@ or subclass and override the default handler.
 <pre class="programlisting">typedef struct _GThreadedSocketService GThreadedSocketService;</pre>
 <p>
 A helper class for handling accepting incoming connections in the
-glib mainloop and handling them in a thread.
-</p>
+glib mainloop and handling them in a thread.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -111,8 +103,7 @@ glib mainloop and handling them in a thread.
 <pre class="programlisting"><a class="link" href="GSocketService.html" title="GSocketService"><span class="returnvalue">GSocketService</span></a> *    g_threaded_socket_service_new       (<em class="parameter"><code><span class="type">int</span> max_threads</code></em>);</pre>
 <p>
 Creates a new <a class="link" href="GThreadedSocketService.html" title="GThreadedSocketService"><span class="type">GThreadedSocketService</span></a> with no listeners. Listeners
-must be added with one of the <a class="link" href="GSocketListener.html" title="GSocketListener"><span class="type">GSocketListener</span></a> "add" methods.
-</p>
+must be added with one of the <a class="link" href="GSocketListener.html" title="GSocketListener"><span class="type">GSocketListener</span></a> "add" methods.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -155,8 +146,7 @@ handling incoming clients, -1 means no limit</td>
 The ::run signal is emitted in a worker thread in response to an
 incoming connection. This thread is dedicated to handling
 <em class="parameter"><code>connection</code></em> and may perform blocking IO. The signal handler need
-not return until the connection is closed.
-</p>
+not return until the connection is closed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -195,6 +185,6 @@ not return until the connection is closed.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

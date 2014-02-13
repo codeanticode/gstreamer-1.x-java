@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Ryan Lortie <desrt@desrt.ca>
  */
@@ -74,6 +72,8 @@
 G_DEFINE_QUARK (g-variant-parse-error-quark, g_variant_parse_error)
 
 /**
+ * g_variant_parser_get_error_quark:
+ *
  * Deprecated: Use g_variant_parse_error_quark() instead.
  */
 GQuark
@@ -2482,14 +2482,16 @@ g_variant_new_parsed_va (const gchar *format,
  * g_variant_new() would have collected.
  *
  * Consider this simple example:
- *
- * <informalexample><programlisting>
+ * |[<!-- language="C" --> 
  *  g_variant_new_parsed ("[('one', 1), ('two', %i), (%s, 3)]", 2, "three");
- * </programlisting></informalexample>
+ * ]|
  *
  * In the example, the variable argument parameters are collected and
  * filled in as if they were part of the original string to produce the
- * result of <code>[('one', 1), ('two', 2), ('three', 3)]</code>.
+ * result of
+ * |[<!-- language="C" --> 
+ * [('one', 1), ('two', 2), ('three', 3)]
+ * ]|
  *
  * This function is intended only to be used with @format as a string
  * literal.  Any parse error is fatal to the calling process.  If you
@@ -2530,7 +2532,7 @@ g_variant_new_parsed (const gchar *format,
  *
  * This function might be used as follows:
  *
- * |[
+ * |[<!-- language="C" --> 
  * GVariant *
  * make_pointless_dictionary (void)
  * {

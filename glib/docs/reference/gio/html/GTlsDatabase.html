@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GTlsDatabase</title>
+<title>GIO Reference Manual: GTlsDatabase</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="tls.html" title="TLS (SSL) support">
 <link rel="prev" href="GTlsBackend.html" title="GTlsBackend">
 <link rel="next" href="GTlsFileDatabase.html" title="GTlsFileDatabase">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GTlsBackend.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="tls.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GTlsFileDatabase.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GTlsDatabase.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GTlsDatabase.description" class="shortcut">Description</a>
                    | 
                   <a href="#GTlsDatabase.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GTlsDatabase.derived-interfaces" class="shortcut">Known Derived Interfaces</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="tls.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GTlsBackend.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GTlsFileDatabase.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GTlsDatabase"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -149,12 +146,10 @@ GTlsDatabase is required by
 <p>
 <a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a> is used to lookup certificates and other information
 from a certificate or key store. It is an abstract base class which
-TLS library specific subtypes override.
-</p>
+TLS library specific subtypes override.</p>
 <p>
 Most common client applications will not directly interact with
-<a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a>. It is used internally by <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span class="type">GTlsConnection</span></a>.
-</p>
+<a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a>. It is used internally by <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span class="type">GTlsConnection</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GTlsDatabase.details"></a><h2>Details</h2>
@@ -162,8 +157,7 @@ Most common client applications will not directly interact with
 <a name="GTlsDatabase-struct"></a><h3>GTlsDatabase</h3>
 <pre class="programlisting">typedef struct _GTlsDatabase GTlsDatabase;</pre>
 <p>
-Abstract base class for the backend-specific database types.
-</p>
+Abstract base class for the backend-specific database types.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -174,8 +168,7 @@ Abstract base class for the backend-specific database types.
 } GTlsDatabaseVerifyFlags;
 </pre>
 <p>
-Flags for <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a>.
-</p>
+Flags for <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -196,8 +189,7 @@ Flags for <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" t
 </pre>
 <p>
 The purpose used to verify the server certificate in a TLS connection. This
-is the most common purpose in use. Used by TLS clients.
-</p>
+is the most common purpose in use. Used by TLS clients.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -206,8 +198,7 @@ is the most common purpose in use. Used by TLS clients.
 </pre>
 <p>
 The purpose used to verify the client certificate in a TLS connection.
-Used by TLS servers.
-</p>
+Used by TLS servers.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -222,35 +213,29 @@ Used by TLS servers.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Verify's a certificate chain after looking up and adding any missing
-certificates to the chain.
-</p>
+certificates to the chain.</p>
 <p>
 <em class="parameter"><code>chain</code></em> is a chain of <a class="link" href="GTlsCertificate.html" title="GTlsCertificate"><span class="type">GTlsCertificate</span></a> objects each pointing to the next
 certificate in the chain by its <code class="literal">issuer</code> property. The chain may initially
 consist of one or more certificates. After the verification process is
 complete, <em class="parameter"><code>chain</code></em> may be modified by adding missing certificates, or removing
 extra certificates. If a certificate anchor was found, then it is added to
-the <em class="parameter"><code>chain</code></em>.
-</p>
+the <em class="parameter"><code>chain</code></em>.</p>
 <p>
 <em class="parameter"><code>purpose</code></em> describes the purpose (or usage) for which the certificate
 is being used. Typically <em class="parameter"><code>purpose</code></em> will be set to <a class="link" href="GTlsDatabase.html#G-TLS-DATABASE-PURPOSE-AUTHENTICATE-SERVER:CAPS" title="G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER"><span class="type">G_TLS_DATABASE_PURPOSE_AUTHENTICATE_SERVER</span></a>
 which means that the certificate is being used to authenticate a server
-(and we are acting as the client).
-</p>
+(and we are acting as the client).</p>
 <p>
 The <em class="parameter"><code>identity</code></em> is used to check for pinned certificates (trust exceptions)
 in the database. These will override the normal verification process on a
-host by host basis.
-</p>
+host by host basis.</p>
 <p>
 Currently there are no <em class="parameter"><code>flags</code></em>, and <a class="link" href="GTlsDatabase.html#G-TLS-DATABASE-VERIFY-NONE:CAPS"><code class="literal">G_TLS_DATABASE_VERIFY_NONE</code></a> should be
-used.
-</p>
+used.</p>
 <p>
 This function can block, use <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain-async" title="g_tls_database_verify_chain_async ()"><code class="function">g_tls_database_verify_chain_async()</code></a> to perform
-the verification operation asynchronously.
-</p>
+the verification operation asynchronously.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -318,8 +303,7 @@ result of verification.</td>
 <p>
 Asynchronously verify's a certificate chain after looking up and adding
 any missing certificates to the chain. See <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a>
-for more information.
-</p>
+for more information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -378,8 +362,7 @@ for more information.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finish an asynchronous verify chain operation. See
-<a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a> for more information. *
-</p>
+<a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a> for more information. *</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -420,8 +403,7 @@ result of verification.</td>
 <p>
 Flags for <code class="function">g_tls_database_lookup_certificate_handle()</code>,
 <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-issuer" title="g_tls_database_lookup_certificate_issuer ()"><code class="function">g_tls_database_lookup_certificate_issuer()</code></a>,
-and <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by" title="g_tls_database_lookup_certificates_issued_by ()"><code class="function">g_tls_database_lookup_certificates_issued_by()</code></a>.
-</p>
+and <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by" title="g_tls_database_lookup_certificates_issued_by ()"><code class="function">g_tls_database_lookup_certificates_issued_by()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -454,17 +436,14 @@ and <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-i
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Lookup the issuer of <em class="parameter"><code>certificate</code></em> in the database.
-</p>
+Lookup the issuer of <em class="parameter"><code>certificate</code></em> in the database.</p>
 <p>
 The <code class="literal">issuer</code> property
 of <em class="parameter"><code>certificate</code></em> is not modified, and the two certificates are not hooked
-into a chain.
-</p>
+into a chain.</p>
 <p>
 This function can block, use <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-issuer-async" title="g_tls_database_lookup_certificate_issuer_async ()"><code class="function">g_tls_database_lookup_certificate_issuer_async()</code></a> to perform
-the lookup operation asynchronously.
-</p>
+the lookup operation asynchronously.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -523,8 +502,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Asynchronously lookup the issuer of <em class="parameter"><code>certificate</code></em> in the database. See
-<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-issuer" title="g_tls_database_lookup_certificate_issuer ()"><code class="function">g_tls_database_lookup_certificate_issuer()</code></a> for more information.
-</p>
+<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-issuer" title="g_tls_database_lookup_certificate_issuer ()"><code class="function">g_tls_database_lookup_certificate_issuer()</code></a> for more information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -576,8 +554,7 @@ Asynchronously lookup the issuer of <em class="parameter"><code>certificate</cod
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finish an asynchronous lookup issuer operation. See
-<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-issuer" title="g_tls_database_lookup_certificate_issuer ()"><code class="function">g_tls_database_lookup_certificate_issuer()</code></a> for more information.
-</p>
+<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-issuer" title="g_tls_database_lookup_certificate_issuer ()"><code class="function">g_tls_database_lookup_certificate_issuer()</code></a> for more information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -619,12 +596,10 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Lookup certificates issued by this issuer in the database.
-</p>
+Lookup certificates issued by this issuer in the database.</p>
 <p>
 This function can block, use <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by-async" title="g_tls_database_lookup_certificates_issued_by_async ()"><code class="function">g_tls_database_lookup_certificates_issued_by_async()</code></a> to perform
-the lookup operation asynchronously.
-</p>
+the lookup operation asynchronously.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -682,13 +657,11 @@ objects. Use <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Th
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Asynchronously lookup certificates issued by this issuer in the database. See
-<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by" title="g_tls_database_lookup_certificates_issued_by ()"><code class="function">g_tls_database_lookup_certificates_issued_by()</code></a> for more information.
-</p>
+<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by" title="g_tls_database_lookup_certificates_issued_by ()"><code class="function">g_tls_database_lookup_certificates_issued_by()</code></a> for more information.</p>
 <p>
 The database may choose to hold a reference to the issuer byte array for the duration
 of of this asynchronous operation. The byte array should not be modified during
-this time.
-</p>
+this time.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -739,8 +712,7 @@ this time.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finish an asynchronous lookup of certificates. See
-<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by" title="g_tls_database_lookup_certificates_issued_by ()"><code class="function">g_tls_database_lookup_certificates_issued_by()</code></a> for more information.
-</p>
+<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificates-issued-by" title="g_tls_database_lookup_certificates_issued_by ()"><code class="function">g_tls_database_lookup_certificates_issued_by()</code></a> for more information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -781,13 +753,11 @@ objects. Use <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Th
 Create a handle string for the certificate. The database will only be able
 to create a handle for certificates that originate from the database. In
 cases where the database cannot create a handle for a certificate, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
-will be returned.
-</p>
+will be returned.</p>
 <p>
 This handle should be stable across various instances of the application,
 and between applications. If a certificate is modified in the database,
-then it is not guaranteed that this handle will continue to point to it.
-</p>
+then it is not guaranteed that this handle will continue to point to it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -823,22 +793,18 @@ then it is not guaranteed that this handle will continue to point to it.
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Lookup a certificate by its handle.
-</p>
+Lookup a certificate by its handle.</p>
 <p>
 The handle should have been created by calling
 <a class="link" href="GTlsDatabase.html#g-tls-database-create-certificate-handle" title="g_tls_database_create_certificate_handle ()"><code class="function">g_tls_database_create_certificate_handle()</code></a> on a <a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a> object of
 the same TLS backend. The handle is designed to remain valid across
-instantiations of the database.
-</p>
+instantiations of the database.</p>
 <p>
 If the handle is no longer valid, or does not point to a certificate in
-this database, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.
-</p>
+this database, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.</p>
 <p>
 This function can block, use <a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-for-handle-async" title="g_tls_database_lookup_certificate_for_handle_async ()"><code class="function">g_tls_database_lookup_certificate_for_handle_async()</code></a> to perform
-the lookup operation asynchronously.
-</p>
+the lookup operation asynchronously.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -896,8 +862,7 @@ the lookup operation asynchronously.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Asynchronously lookup a certificate by its handle in the database. See
-<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-for-handle" title="g_tls_database_lookup_certificate_for_handle ()"><code class="function">g_tls_database_lookup_certificate_for_handle()</code></a> for more information.
-</p>
+<a class="link" href="GTlsDatabase.html#g-tls-database-lookup-certificate-for-handle" title="g_tls_database_lookup_certificate_for_handle ()"><code class="function">g_tls_database_lookup_certificate_for_handle()</code></a> for more information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -948,12 +913,10 @@ Asynchronously lookup a certificate by its handle in the database. See
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finish an asynchronous lookup of a certificate by its handle. See
-<code class="function">g_tls_database_lookup_certificate_handle()</code> for more information.
-</p>
+<code class="function">g_tls_database_lookup_certificate_handle()</code> for more information.</p>
 <p>
 If the handle is no longer valid, or does not point to a certificate in
-this database, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.
-</p>
+this database, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -988,6 +951,6 @@ Use <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Ob
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

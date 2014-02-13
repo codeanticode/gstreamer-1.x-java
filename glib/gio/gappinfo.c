@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -123,7 +121,7 @@ g_app_info_dup (GAppInfo *appinfo)
  * @appinfo1: the first #GAppInfo.
  * @appinfo2: the second #GAppInfo.
  *
- * Checks if two #GAppInfo<!-- -->s are equal.
+ * Checks if two #GAppInfos are equal.
  *
  * Returns: %TRUE if @appinfo1 is equal to @appinfo2. %FALSE otherwise.
  **/
@@ -762,8 +760,8 @@ g_app_info_can_delete (GAppInfo *appinfo)
  * Tries to delete a #GAppInfo.
  *
  * On some platforms, there may be a difference between user-defined
- * #GAppInfo<!-- -->s which can be deleted, and system-wide ones which
- * cannot. See g_app_info_can_delete().
+ * #GAppInfos which can be deleted, and system-wide ones which cannot.
+ * See g_app_info_can_delete().
  *
  * Virtual: do_delete
  * Returns: %TRUE if @appinfo has been deleted

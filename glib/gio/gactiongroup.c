@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Ryan Lortie <desrt@desrt.ca>
  */
@@ -66,7 +64,7 @@
  * with actions.  'Internal' APIs (ie: ones meant only to be accessed by
  * the action group implementation) are found on subclasses.  This is
  * why you will find - for example - g_action_group_get_action_enabled()
- * but not an equivalent <function>set()</function> call.
+ * but not an equivalent set() call.
  *
  * Signals are emitted on the action group in response to state changes
  * on individual actions.

@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GRemoteActionGroup</title>
+<title>GIO Reference Manual: GRemoteActionGroup</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="application.html" title="Application support">
 <link rel="prev" href="gio-GPropertyAction.html" title="GPropertyAction">
 <link rel="next" href="gio-GActionGroup-exporter.html" title="GActionGroup exporter">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GPropertyAction.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="application.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-GActionGroup-exporter.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GRemoteActionGroup.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GRemoteActionGroup.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GRemoteActionGroup.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GRemoteActionGroup.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="application.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GPropertyAction.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-GActionGroup-exporter.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GRemoteActionGroup"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -86,8 +83,7 @@ GRemoteActionGroup is implemented by
 The GRemoteActionGroup interface is implemented by <a class="link" href="GActionGroup.html" title="GActionGroup"><span class="type">GActionGroup</span></a>
 instances that either transmit action invocations to other processes
 or receive action invocations in the local process from other
-processes.
-</p>
+processes.</p>
 <p>
 The interface has <code class="literal">_full</code> variants of the two
 methods on <a class="link" href="GActionGroup.html" title="GActionGroup"><span class="type">GActionGroup</span></a> used to activate actions:
@@ -95,19 +91,16 @@ methods on <a class="link" href="GActionGroup.html" title="GActionGroup"><span c
 <a class="link" href="GActionGroup.html#g-action-group-change-action-state" title="g_action_group_change_action_state ()"><code class="function">g_action_group_change_action_state()</code></a>.  These variants allow a
 "platform data" <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to be specified: a dictionary providing
 context for the action invocation (for example: timestamps, startup
-notification IDs, etc).
-</p>
+notification IDs, etc).</p>
 <p>
 <a class="link" href="GDBusActionGroup.html" title="GDBusActionGroup"><span class="type">GDBusActionGroup</span></a> implements <a class="link" href="GRemoteActionGroup.html" title="GRemoteActionGroup"><span class="type">GRemoteActionGroup</span></a>.  This provides a
-mechanism to send platform data for action invocations over D-Bus.
-</p>
+mechanism to send platform data for action invocations over D-Bus.</p>
 <p>
 Additionally, <a class="link" href="gio-GActionGroup-exporter.html#g-dbus-connection-export-action-group" title="g_dbus_connection_export_action_group ()"><code class="function">g_dbus_connection_export_action_group()</code></a> will check if
 the exported <a class="link" href="GActionGroup.html" title="GActionGroup"><span class="type">GActionGroup</span></a> implements <a class="link" href="GRemoteActionGroup.html" title="GRemoteActionGroup"><span class="type">GRemoteActionGroup</span></a> and use the
 <code class="literal">_full</code> variants of the calls if available.  This
 provides a mechanism by which to receive platform data for action
-invocations that arrive by way of D-Bus.
-</p>
+invocations that arrive by way of D-Bus.</p>
 </div>
 <div class="refsect1">
 <a name="GRemoteActionGroup.details"></a><h2>Details</h2>
@@ -133,8 +126,7 @@ invocations that arrive by way of D-Bus.
 };
 </pre>
 <p>
-The virtual function table for <a class="link" href="GRemoteActionGroup.html" title="GRemoteActionGroup"><span class="type">GRemoteActionGroup</span></a>.
-</p>
+The virtual function table for <a class="link" href="GRemoteActionGroup.html" title="GRemoteActionGroup"><span class="type">GRemoteActionGroup</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -168,18 +160,15 @@ The virtual function table for <a class="link" href="GRemoteActionGroup.html" ti
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *parameter</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *platform_data</code></em>);</pre>
 <p>
-Activates the remote action.
-</p>
+Activates the remote action.</p>
 <p>
 This is the same as <a class="link" href="GActionGroup.html#g-action-group-activate-action" title="g_action_group_activate_action ()"><code class="function">g_action_group_activate_action()</code></a> except that it
 allows for provision of "platform data" to be sent along with the
 activation request.  This typically contains details such as the user
-interaction timestamp or startup notification information.
-</p>
+interaction timestamp or startup notification information.</p>
 <p>
 <em class="parameter"><code>platform_data</code></em> must be non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and must have the type
-<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-VARDICT:CAPS"><code class="literal">G_VARIANT_TYPE_VARDICT</code></a>.  If it is floating, it will be consumed.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-VARDICT:CAPS"><code class="literal">G_VARIANT_TYPE_VARDICT</code></a>.  If it is floating, it will be consumed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -217,18 +206,15 @@ interaction timestamp or startup notification information.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *platform_data</code></em>);</pre>
 <p>
-Changes the state of a remote action.
-</p>
+Changes the state of a remote action.</p>
 <p>
 This is the same as <a class="link" href="GActionGroup.html#g-action-group-change-action-state" title="g_action_group_change_action_state ()"><code class="function">g_action_group_change_action_state()</code></a> except that
 it allows for provision of "platform data" to be sent along with the
 state change request.  This typically contains details such as the
-user interaction timestamp or startup notification information.
-</p>
+user interaction timestamp or startup notification information.</p>
 <p>
 <em class="parameter"><code>platform_data</code></em> must be non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and must have the type
-<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-VARDICT:CAPS"><code class="literal">G_VARIANT_TYPE_VARDICT</code></a>.  If it is floating, it will be consumed.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-VARDICT:CAPS"><code class="literal">G_VARIANT_TYPE_VARDICT</code></a>.  If it is floating, it will be consumed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -260,6 +246,6 @@ user interaction timestamp or startup notification information.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

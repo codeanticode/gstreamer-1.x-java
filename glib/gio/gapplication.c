@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Ryan Lortie <desrt@desrt.ca>
  */
@@ -77,17 +75,17 @@
  * On Linux, the D-Bus session bus is used for communication.
  *
  * The use of #GApplication differs from some other commonly-used
- * uniqueness libraries (such as libunique) in important ways.  The
- * application is not expected to manually register itself and check if
- * it is the primary instance.  Instead, the <code>main()</code>
- * function of a #GApplication should do very little more than
- * instantiating the application instance, possibly connecting signal
- * handlers, then calling g_application_run().  All checks for
- * uniqueness are done internally.  If the application is the primary
- * instance then the startup signal is emitted and the mainloop runs.
- * If the application is not the primary instance then a signal is sent
- * to the primary instance and g_application_run() promptly returns.
- * See the code examples below.
+ * uniqueness libraries (such as libunique) in important ways. The
+ * application is not expected to manually register itself and check
+ * if it is the primary instance. Instead, the main() function of a
+ * #GApplication should do very little more than instantiating the
+ * application instance, possibly connecting signal handlers, then
+ * calling g_application_run(). All checks for uniqueness are done
+ * internally. If the application is the primary instance then the
+ * startup signal is emitted and the mainloop runs. If the application
+ * is not the primary instance then a signal is sent to the primary
+ * instance and g_application_run() promptly returns. See the code
+ * examples below.
  *
  * If used, the expected form of an application identifier is very close
  * to that of of a
@@ -118,12 +116,15 @@
  * for remote access to exported #GMenuModels.
  *
  * There is a number of different entry points into a GApplication:
- * <itemizedlist>
- * <listitem>via 'Activate' (i.e. just starting the application)</listitem>
- * <listitem>via 'Open' (i.e. opening some files)</listitem>
- * <listitem>by handling a command-line</listitem>
- * <listitem>via activating an action</listitem>
- * </itemizedlist>
+ *
+ * - via 'Activate' (i.e. just starting the application)
+ *
+ * - via 'Open' (i.e. opening some files)
+ *
+ * - by handling a command-line
+ *
+ * - via activating an action
+ *
  * The #GApplication::startup signal lets you handle the application
  * initialization for all of these in a single place.
  *
@@ -164,14 +165,6 @@
  * <example id="gapplication-example-actions"><title>A GApplication with actions</title>
  * <programlisting>
  * <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="text" href="../../../../gio/tests/gapplication-example-actions.c">
- *   <xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback>
- * </xi:include>
- * </programlisting>
- * </example>
- *
- * <example id="gapplication-example-menu"><title>A GApplication with menus</title>
- * <programlisting>
- * <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="text" href="../../../../gio/tests/gapplication-example-menu.c">
  *   <xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback>
  * </xi:include>
  * </programlisting>
@@ -928,16 +921,23 @@ get_platform_data (GApplication *application)
  *
  * For convenience, the restrictions on application identifiers are
  * reproduced here:
- * <itemizedlist>
- *   <listitem>Application identifiers must contain only the ASCII characters "[A-Z][a-z][0-9]_-." and must not begin with a digit.</listitem>
- *   <listitem>Application identifiers must contain at least one '.' (period) character (and thus at least three elements).</listitem>
- *   <listitem>Application identifiers must not begin or end with a '.' (period) character.</listitem>
- *   <listitem>Application identifiers must not contain consecutive '.' (period) characters.</listitem>
- *   <listitem>Application identifiers must not exceed 255 characters.</listitem>
- * </itemizedlist>
+ *
+ * - Application identifiers must contain only the ASCII characters
+ *   "[A-Z][a-z][0-9]_-." and must not begin with a digit.
+ *
+ * - Application identifiers must contain at least one '.' (period)
+ *   character (and thus at least three elements).
+ *
+ * - Application identifiers must not begin or end with a '.' (period)
+ *   character.
+ *
+ * - Application identifiers must not contain consecutive '.' (period)
+ *   characters.
+ *
+ * - Application identifiers must not exceed 255 characters.
  *
  * Returns: %TRUE if @application_id is valid
- **/
+ */
 gboolean
 g_application_id_is_valid (const gchar *application_id)
 {
@@ -1505,15 +1505,18 @@ g_application_open (GApplication  *application,
  * is intended to be returned by main(). Although you are expected to pass
  * the @argc, @argv parameters from main() to this function, it is possible
  * to pass %NULL if @argv is not available or commandline handling is not
- * required.
+ * required.  Note that on Windows, @argc and @argv are ignored, and
+ * g_win32_get_command_line() is called internally (for proper support
+ * of Unicode commandline arguments).
  *
  * First, the local_command_line() virtual function is invoked.
  * This function always runs on the local instance. It gets passed a pointer
- * to a %NULL-terminated copy of @argv and is expected to remove the arguments
- * that it handled (shifting up remaining arguments). See
- * <xref linkend="gapplication-example-cmdline2"/> for an example of
- * parsing @argv manually. Alternatively, you may use the #GOptionContext API,
- * after setting <literal>argc = g_strv_length (argv);</literal>.
+ * to a %NULL-terminated copy of the command line and is expected to
+ * remove the arguments that it handled (shifting up remaining
+ * arguments). See <xref linkend="gapplication-example-cmdline2"/> for
+ * an example of parsing @argv manually. Alternatively, you may use the
+ * #GOptionContext API, but you must use g_option_context_parse_strv()
+ * in order to avoid memory leaks and encoding mismatches.
  *
  * The last argument to local_command_line() is a pointer to the @status
  * variable which can used to set the exit status that is returned from
@@ -1604,16 +1607,23 @@ g_application_run (GApplication  *application,
 {
   gchar **arguments;
   int status;
-  gint i;
 
   g_return_val_if_fail (G_IS_APPLICATION (application), 1);
   g_return_val_if_fail (argc == 0 || argv != NULL, 1);
   g_return_val_if_fail (!application->priv->must_quit_now, 1);
 
-  arguments = g_new (gchar *, argc + 1);
-  for (i = 0; i < argc; i++)
-    arguments[i] = g_strdup (argv[i]);
-  arguments[i] = NULL;
+#ifdef G_OS_WIN32
+  arguments = g_win32_get_command_line ();
+#else
+  {
+    gint i;
+
+    arguments = g_new (gchar *, argc + 1);
+    for (i = 0; i < argc; i++)
+      arguments[i] = g_strdup (argv[i]);
+    arguments[i] = NULL;
+  }
+#endif
 
   if (g_get_prgname () == NULL)
     {

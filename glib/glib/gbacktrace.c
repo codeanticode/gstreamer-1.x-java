@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -92,19 +90,19 @@ volatile gboolean glib_on_error_halt = TRUE;
 
 /**
  * g_on_error_query:
- * @prg_name: the program name, needed by <command>gdb</command>
- *     for the [S]tack trace option. If @prg_name is %NULL, g_get_prgname()
- *     is called to get the program name (which will work correctly if
- *     gdk_init() or gtk_init() has been called)
+ * @prg_name: the program name, needed by gdb for the "[S]tack trace"
+ *     option. If @prg_name is %NULL, g_get_prgname() is called to get
+ *     the program name (which will work correctly if gdk_init() or
+ *     gtk_init() has been called)
  *
  * Prompts the user with
- * <computeroutput>[E]xit, [H]alt, show [S]tack trace or [P]roceed</computeroutput>.
+ * <literal>[E]xit, [H]alt, show [S]tack trace or [P]roceed</literal>.
  * This function is intended to be used for debugging use only.
  * The following example shows how it can be used together with
  * the g_log() functions.
  *
- * |[
- * &num;include &lt;glib.h&gt;
+ * |[<!-- language="C" -->
+ * #include <glib.h>
  *
  * static void
  * log_handler (const gchar   *log_domain,
@@ -126,17 +124,17 @@ volatile gboolean glib_on_error_halt = TRUE;
  *                      G_LOG_LEVEL_CRITICAL,
  *                      log_handler,
  *                      NULL);
- *   /&ast; ... &ast;/
+ *   ...
  * ]|
  *
- * If [E]xit is selected, the application terminates with a call
- * to <literal>_exit(0)</literal>.
+ * If "[E]xit" is selected, the application terminates with a call
+ * to _exit(0).
  *
- * If [S]tack trace is selected, g_on_error_stack_trace() is called.
- * This invokes <command>gdb</command>, which attaches to the current
- * process and shows a stack trace. The prompt is then shown again.
+ * If "[S]tack" trace is selected, g_on_error_stack_trace() is called.
+ * This invokes gdb, which attaches to the current process and shows
+ * a stack trace. The prompt is then shown again.
  *
- * If [P]roceed is selected, the function returns.
+ * If "[P]roceed" is selected, the function returns.
  *
  * This function may cause different actions on non-UNIX platforms.
  */
@@ -211,14 +209,14 @@ g_on_error_query (const gchar *prg_name)
 
 /**
  * g_on_error_stack_trace:
- * @prg_name: the program name, needed by <command>gdb</command>
- *     for the [S]tack trace option.
+ * @prg_name: the program name, needed by gdb for the "[S]tack trace"
+ *     option
  *
- * Invokes <command>gdb</command>, which attaches to the current
- * process and shows a stack trace. Called by g_on_error_query()
- * when the [S]tack trace option is selected. You can get the current
- * process's "program name" with g_get_prgname(), assuming that you
- * have called gtk_init() or gdk_init().
+ * Invokes gdb, which attaches to the current process and shows a
+ * stack trace. Called by g_on_error_query() when the "[S]tack trace"
+ * option is selected. You can get the current process's program name
+ * with g_get_prgname(), assuming that you have called gtk_init() or
+ * gdk_init().
  *
  * This function may cause different actions on non-UNIX platforms.
  */

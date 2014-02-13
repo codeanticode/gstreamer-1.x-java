@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: David Zeuthen <davidz@redhat.com>
  */
@@ -582,7 +580,7 @@ g_dbus_method_invocation_return_value_with_unix_fd_list (GDBusMethodInvocation *
  * applications using GDBus.
  *
  * If you are writing an application intended to be portable,
- * <emphasis>always</emphasis> register errors with g_dbus_error_register_error()
+ * always register errors with g_dbus_error_register_error()
  * or use g_dbus_method_invocation_return_dbus_error().
  *
  * This method will free @invocation, you cannot use it afterwards.

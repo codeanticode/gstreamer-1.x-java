@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIOModule</title>
+<title>GIO Reference Manual: GIOModule</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="extending.html" title="Extending GIO">
 <link rel="prev" href="GVfs.html" title="GVfs">
 <link rel="next" href="gio-Extension-Points.html" title="Extension Points">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GVfs.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="extending.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-Extension-Points.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GIOModule.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GIOModule.description" class="shortcut">Description</a>
                    | 
                   <a href="#GIOModule.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GIOModule.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="extending.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GVfs.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-Extension-Points.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GIOModule"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -84,8 +81,7 @@ GIOModule implements
 <p>
 Provides an interface and default functions for loading and unloading 
 modules. This is used internally to make GIO extensible, but can also
-be used by others to implement module loading.
-</p>
+be used by others to implement module loading.</p>
 </div>
 <div class="refsect1">
 <a name="GIOModule.details"></a><h2>Details</h2>
@@ -93,8 +89,7 @@ be used by others to implement module loading.
 <a name="GIOModule-struct"></a><h3>GIOModule</h3>
 <pre class="programlisting">typedef struct _GIOModule GIOModule;</pre>
 <p>
-Opaque module base class for extending GIO.
-</p>
+Opaque module base class for extending GIO.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -102,12 +97,10 @@ Opaque module base class for extending GIO.
 <pre class="programlisting">typedef struct _GIOModuleScope GIOModuleScope;</pre>
 <p>
 Represents a scope for loading IO modules. A scope can be used for blocking
-duplicate modules, or blocking a module you don't want to load.
-</p>
+duplicate modules, or blocking a module you don't want to load.</p>
 <p>
 The scope can be used with <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory-with-scope" title="g_io_modules_load_all_in_directory_with_scope ()"><code class="function">g_io_modules_load_all_in_directory_with_scope()</code></a>
-or <a class="link" href="GIOModule.html#g-io-modules-scan-all-in-directory-with-scope" title="g_io_modules_scan_all_in_directory_with_scope ()"><code class="function">g_io_modules_scan_all_in_directory_with_scope()</code></a>.
-</p>
+or <a class="link" href="GIOModule.html#g-io-modules-scan-all-in-directory-with-scope" title="g_io_modules_scan_all_in_directory_with_scope ()"><code class="function">g_io_modules_scan_all_in_directory_with_scope()</code></a>.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -119,8 +112,7 @@ or <a class="link" href="GIOModule.html#g-io-modules-scan-all-in-directory-with-
 } GIOModuleScopeFlags;
 </pre>
 <p>
-Flags for use with <a class="link" href="GIOModule.html#g-io-module-scope-new" title="g_io_module_scope_new ()"><code class="function">g_io_module_scope_new()</code></a>.
-</p>
+Flags for use with <a class="link" href="GIOModule.html#g-io-module-scope-new" title="g_io_module_scope_new ()"><code class="function">g_io_module_scope_new()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -149,8 +141,7 @@ Flags for use with <a class="link" href="GIOModule.html#g-io-module-scope-new" t
 <pre class="programlisting"><a class="link" href="GIOModule.html" title="GIOModule"><span class="returnvalue">GIOModule</span></a> *         g_io_module_new                     (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *filename</code></em>);</pre>
 <p>
 Creates a new GIOModule that will load the specific
-shared library when in use.
-</p>
+shared library when in use.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -177,8 +168,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 <p>
 Block modules with the given <em class="parameter"><code>basename</code></em> from being loaded when
 this scope is used with <a class="link" href="GIOModule.html#g-io-modules-scan-all-in-directory-with-scope" title="g_io_modules_scan_all_in_directory_with_scope ()"><code class="function">g_io_modules_scan_all_in_directory_with_scope()</code></a>
-or <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory-with-scope" title="g_io_modules_load_all_in_directory_with_scope ()"><code class="function">g_io_modules_load_all_in_directory_with_scope()</code></a>.
-</p>
+or <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory-with-scope" title="g_io_modules_load_all_in_directory_with_scope ()"><code class="function">g_io_modules_load_all_in_directory_with_scope()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -202,8 +192,7 @@ or <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory-with-
 <a name="g-io-module-scope-free"></a><h3>g_io_module_scope_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_io_module_scope_free              (<em class="parameter"><code><a class="link" href="GIOModule.html#GIOModuleScope" title="GIOModuleScope"><span class="type">GIOModuleScope</span></a> *scope</code></em>);</pre>
 <p>
-Free a module scope.
-</p>
+Free a module scope.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -222,13 +211,11 @@ Free a module scope.
 <pre class="programlisting"><a class="link" href="GIOModule.html#GIOModuleScope" title="GIOModuleScope"><span class="returnvalue">GIOModuleScope</span></a> *    g_io_module_scope_new               (<em class="parameter"><code><a class="link" href="GIOModule.html#GIOModuleScopeFlags" title="enum GIOModuleScopeFlags"><span class="type">GIOModuleScopeFlags</span></a> flags</code></em>);</pre>
 <p>
 Create a new scope for loading of IO modules. A scope can be used for
-blocking duplicate modules, or blocking a module you don't want to load.
-</p>
+blocking duplicate modules, or blocking a module you don't want to load.</p>
 <p>
 Specify the <a class="link" href="GIOModule.html#G-IO-MODULE-SCOPE-BLOCK-DUPLICATES:CAPS"><code class="literal">G_IO_MODULE_SCOPE_BLOCK_DUPLICATES</code></a> flag to block modules
 which have the same base name as a module that has already been seen
-in this scope.
-</p>
+in this scope.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -253,13 +240,11 @@ in this scope.
 <a name="g-io-modules-load-all-in-directory"></a><h3>g_io_modules_load_all_in_directory ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             g_io_modules_load_all_in_directory  (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dirname</code></em>);</pre>
 <p>
-Loads all the modules in the specified directory.
-</p>
+Loads all the modules in the specified directory.</p>
 <p>
 If don't require all modules to be initialized (and thus registering
 all gtypes) then you can use <a class="link" href="GIOModule.html#g-io-modules-scan-all-in-directory" title="g_io_modules_scan_all_in_directory ()"><code class="function">g_io_modules_scan_all_in_directory()</code></a>
-which allows delayed/lazy loading of modules.
-</p>
+which allows delayed/lazy loading of modules.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -290,13 +275,11 @@ with <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Li
                                                         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *dirname</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GIOModule.html#GIOModuleScope" title="GIOModuleScope"><span class="type">GIOModuleScope</span></a> *scope</code></em>);</pre>
 <p>
-Loads all the modules in the specified directory.
-</p>
+Loads all the modules in the specified directory.</p>
 <p>
 If don't require all modules to be initialized (and thus registering
 all gtypes) then you can use <a class="link" href="GIOModule.html#g-io-modules-scan-all-in-directory" title="g_io_modules_scan_all_in_directory ()"><code class="function">g_io_modules_scan_all_in_directory()</code></a>
-which allows delayed/lazy loading of modules.
-</p>
+which allows delayed/lazy loading of modules.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -331,19 +314,16 @@ with <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Li
 <pre class="programlisting"><span class="returnvalue">void</span>                g_io_modules_scan_all_in_directory  (<em class="parameter"><code>const <span class="type">char</span> *dirname</code></em>);</pre>
 <p>
 Scans all the modules in the specified directory, ensuring that
-any extension point implemented by a module is registered.
-</p>
+any extension point implemented by a module is registered.</p>
 <p>
 This may not actually load and initialize all the types in each
 module, some modules may be lazily loaded and initialized when
 an extension point it implementes is used with e.g.
 <a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extensions" title="g_io_extension_point_get_extensions ()"><code class="function">g_io_extension_point_get_extensions()</code></a> or
-<a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extension-by-name" title="g_io_extension_point_get_extension_by_name ()"><code class="function">g_io_extension_point_get_extension_by_name()</code></a>.
-</p>
+<a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extension-by-name" title="g_io_extension_point_get_extension_by_name ()"><code class="function">g_io_extension_point_get_extension_by_name()</code></a>.</p>
 <p>
 If you need to guarantee that all types are loaded in all the modules,
-use <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory" title="g_io_modules_load_all_in_directory ()"><code class="function">g_io_modules_load_all_in_directory()</code></a>.
-</p>
+use <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory" title="g_io_modules_load_all_in_directory ()"><code class="function">g_io_modules_load_all_in_directory()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -364,19 +344,16 @@ use <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory" tit
                                                          <em class="parameter"><code><a class="link" href="GIOModule.html#GIOModuleScope" title="GIOModuleScope"><span class="type">GIOModuleScope</span></a> *scope</code></em>);</pre>
 <p>
 Scans all the modules in the specified directory, ensuring that
-any extension point implemented by a module is registered.
-</p>
+any extension point implemented by a module is registered.</p>
 <p>
 This may not actually load and initialize all the types in each
 module, some modules may be lazily loaded and initialized when
 an extension point it implementes is used with e.g.
 <a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extensions" title="g_io_extension_point_get_extensions ()"><code class="function">g_io_extension_point_get_extensions()</code></a> or
-<a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extension-by-name" title="g_io_extension_point_get_extension_by_name ()"><code class="function">g_io_extension_point_get_extension_by_name()</code></a>.
-</p>
+<a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extension-by-name" title="g_io_extension_point_get_extension_by_name ()"><code class="function">g_io_extension_point_get_extension_by_name()</code></a>.</p>
 <p>
 If you need to guarantee that all types are loaded in all the modules,
-use <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory" title="g_io_modules_load_all_in_directory ()"><code class="function">g_io_modules_load_all_in_directory()</code></a>.
-</p>
+use <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory" title="g_io_modules_load_all_in_directory ()"><code class="function">g_io_modules_load_all_in_directory()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -400,13 +377,11 @@ use <a class="link" href="GIOModule.html#g-io-modules-load-all-in-directory" tit
 <a name="g-io-module-load"></a><h3>g_io_module_load ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_io_module_load                    (<em class="parameter"><code><a class="link" href="GIOModule.html" title="GIOModule"><span class="type">GIOModule</span></a> *module</code></em>);</pre>
 <p>
-Required API for GIO modules to implement.
-</p>
+Required API for GIO modules to implement.</p>
 <p>
 This function is run after the module has been loaded into GIO,
 to initialize the module. Typically, this function will call
-<a class="link" href="gio-Extension-Points.html#g-io-extension-point-implement" title="g_io_extension_point_implement ()"><code class="function">g_io_extension_point_implement()</code></a>.
-</p>
+<a class="link" href="gio-Extension-Points.html#g-io-extension-point-implement" title="g_io_extension_point_implement ()"><code class="function">g_io_extension_point_implement()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -423,12 +398,10 @@ to initialize the module. Typically, this function will call
 <a name="g-io-module-unload"></a><h3>g_io_module_unload ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_io_module_unload                  (<em class="parameter"><code><a class="link" href="GIOModule.html" title="GIOModule"><span class="type">GIOModule</span></a> *module</code></em>);</pre>
 <p>
-Required API for GIO modules to implement.
-</p>
+Required API for GIO modules to implement.</p>
 <p>
 This function is run when the module is being unloaded from GIO,
-to finalize the module.
-</p>
+to finalize the module.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -445,35 +418,29 @@ to finalize the module.
 <a name="g-io-module-query"></a><h3>g_io_module_query ()</h3>
 <pre class="programlisting"><span class="returnvalue">char</span> **             g_io_module_query                   (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Optional API for GIO modules to implement.
-</p>
+Optional API for GIO modules to implement.</p>
 <p>
 Should return a list of all the extension points that may be
-implemented in this module.
-</p>
+implemented in this module.</p>
 <p>
 This method will not be called in normal use, however it may be
 called when probing existing modules and recording which extension
 points that this model is used for. This means we won't have to
-load and initialize this module unless its needed.
-</p>
+load and initialize this module unless its needed.</p>
 <p>
 If this function is not implemented by the module the module will
 always be loaded, initialized and then unloaded on application
-startup so that it can register its extension points during init.
-</p>
+startup so that it can register its extension points during init.</p>
 <p>
 Note that a module need not actually implement all the extension
 points that <a class="link" href="GIOModule.html#g-io-module-query" title="g_io_module_query ()"><code class="function">g_io_module_query()</code></a> returns, since the exact list of
 extension may depend on runtime issues. However all extension
 points actually implemented must be returned by <a class="link" href="GIOModule.html#g-io-module-query" title="g_io_module_query ()"><code class="function">g_io_module_query()</code></a>
-(if defined).
-</p>
+(if defined).</p>
 <p>
 When installing a module that implements <a class="link" href="GIOModule.html#g-io-module-query" title="g_io_module_query ()"><code class="function">g_io_module_query()</code></a> you must
 run gio-querymodules in order to build the cache files required for
-lazy loading.
-</p>
+lazy loading.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -493,6 +460,6 @@ must be suitable for freeing with <a href="http://library.gnome.org/devel/glib/u
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

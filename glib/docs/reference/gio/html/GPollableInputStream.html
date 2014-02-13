@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GPollableInputStream</title>
+<title>GIO Reference Manual: GPollableInputStream</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="streaming.html" title="Streaming I/O">
 <link rel="prev" href="gio-GConverterOutputstream.html" title="GConverterOutputstream">
 <link rel="next" href="GPollableOutputStream.html" title="GPollableOutputStream">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GConverterOutputstream.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="streaming.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GPollableOutputStream.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GPollableInputStream.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GPollableInputStream.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GPollableInputStream.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GPollableInputStream.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="streaming.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GConverterOutputstream.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GPollableOutputStream.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GPollableInputStream"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -87,8 +84,7 @@ GPollableInputStream is implemented by
 <a class="link" href="GPollableInputStream.html" title="GPollableInputStream"><span class="type">GPollableInputStream</span></a> is implemented by <a href="GInputStream.html"><span class="type">GInputStreams</span></a> that
 can be polled for readiness to read. This can be used when
 interfacing with a non-GIO API that expects
-UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.
-</p>
+UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.</p>
 </div>
 <div class="refsect1">
 <a name="GPollableInputStream.details"></a><h2>Details</h2>
@@ -96,8 +92,7 @@ UNIX-file-descriptor-style asynchronous I/O rather than GIO-style.
 <a name="GPollableInputStream-struct"></a><h3>GPollableInputStream</h3>
 <pre class="programlisting">typedef struct _GPollableInputStream GPollableInputStream;</pre>
 <p>
-An interface for a <a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a> that can be polled for readability.
-</p>
+An interface for a <a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a> that can be polled for readability.</p>
 <p class="since">Since 2.28</p>
 </div>
 <hr>
@@ -119,19 +114,16 @@ An interface for a <a class="link" href="GInputStream.html" title="GInputStream"
 };
 </pre>
 <p>
-The interface for pollable input streams.
-</p>
+The interface for pollable input streams.</p>
 <p>
-The default implementation of <em class="parameter"><code>can_poll</code></em> always returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
-</p>
+The default implementation of <em class="parameter"><code>can_poll</code></em> always returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <p>
 The default implementation of <em class="parameter"><code>read_nonblocking</code></em> calls
 <a class="link" href="GPollableInputStream.html#g-pollable-input-stream-is-readable" title="g_pollable_input_stream_is_readable ()"><code class="function">g_pollable_input_stream_is_readable()</code></a>, and then calls
 <a class="link" href="GInputStream.html#g-input-stream-read" title="g_input_stream_read ()"><code class="function">g_input_stream_read()</code></a> if it returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>. This means you only need
 to override it if it is possible that your <em class="parameter"><code>is_readable</code></em>
 implementation may return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> when the stream is not actually
-readable.
-</p>
+readable.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -172,12 +164,10 @@ readable.
 Checks if <em class="parameter"><code>stream</code></em> is actually pollable. Some classes may implement
 <a class="link" href="GPollableInputStream.html" title="GPollableInputStream"><span class="type">GPollableInputStream</span></a> but have only certain instances of that class
 be pollable. If this method returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then the behavior of
-other <a class="link" href="GPollableInputStream.html" title="GPollableInputStream"><span class="type">GPollableInputStream</span></a> methods is undefined.
-</p>
+other <a class="link" href="GPollableInputStream.html" title="GPollableInputStream"><span class="type">GPollableInputStream</span></a> methods is undefined.</p>
 <p>
 For any given stream, the value returned by this method is constant;
-a stream cannot switch from pollable to non-pollable or vice versa.
-</p>
+a stream cannot switch from pollable to non-pollable or vice versa.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -202,16 +192,14 @@ a stream cannot switch from pollable to non-pollable or vice versa.
 <a name="g-pollable-input-stream-is-readable"></a><h3>g_pollable_input_stream_is_readable ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_pollable_input_stream_is_readable (<em class="parameter"><code><a class="link" href="GPollableInputStream.html" title="GPollableInputStream"><span class="type">GPollableInputStream</span></a> *stream</code></em>);</pre>
 <p>
-Checks if <em class="parameter"><code>stream</code></em> can be read.
-</p>
+Checks if <em class="parameter"><code>stream</code></em> can be read.</p>
 <p>
 Note that some stream types may not be able to implement this 100%
 reliably, and it is possible that a call to <a class="link" href="GInputStream.html#g-input-stream-read" title="g_input_stream_read ()"><code class="function">g_input_stream_read()</code></a>
 after this returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> would still block. To guarantee
 non-blocking behavior, you should always use
 <a class="link" href="GPollableInputStream.html#g-pollable-input-stream-read-nonblocking" title="g_pollable_input_stream_read_nonblocking ()"><code class="function">g_pollable_input_stream_read_nonblocking()</code></a>, which will return a
-<a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error rather than blocking.
-</p>
+<a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error rather than blocking.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -243,14 +231,12 @@ next attempt to read will return the error.</td>
 <p>
 Creates a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a> that triggers when <em class="parameter"><code>stream</code></em> can be read, or
 <em class="parameter"><code>cancellable</code></em> is triggered or an error occurs. The callback on the
-source is of the <a class="link" href="gio-gpollableutils.html#GPollableSourceFunc" title="GPollableSourceFunc ()"><span class="type">GPollableSourceFunc</span></a> type.
-</p>
+source is of the <a class="link" href="gio-gpollableutils.html#GPollableSourceFunc" title="GPollableSourceFunc ()"><span class="type">GPollableSourceFunc</span></a> type.</p>
 <p>
 As with <a class="link" href="GPollableInputStream.html#g-pollable-input-stream-is-readable" title="g_pollable_input_stream_is_readable ()"><code class="function">g_pollable_input_stream_is_readable()</code></a>, it is possible that
 the stream may not actually be readable even after the source
 triggers, so you should use <a class="link" href="GPollableInputStream.html#g-pollable-input-stream-read-nonblocking" title="g_pollable_input_stream_read_nonblocking ()"><code class="function">g_pollable_input_stream_read_nonblocking()</code></a>
-rather than <a class="link" href="GInputStream.html#g-input-stream-read" title="g_input_stream_read ()"><code class="function">g_input_stream_read()</code></a> from the callback.
-</p>
+rather than <a class="link" href="GInputStream.html#g-input-stream-read" title="g_input_stream_read ()"><code class="function">g_input_stream_read()</code></a> from the callback.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -289,18 +275,15 @@ Attempts to read up to <em class="parameter"><code>count</code></em> bytes from 
 with <a class="link" href="GInputStream.html#g-input-stream-read" title="g_input_stream_read ()"><code class="function">g_input_stream_read()</code></a>. If <em class="parameter"><code>stream</code></em> is not currently readable,
 this will immediately return <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a>, and you can
 use <a class="link" href="GPollableInputStream.html#g-pollable-input-stream-create-source" title="g_pollable_input_stream_create_source ()"><code class="function">g_pollable_input_stream_create_source()</code></a> to create a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>
-that will be triggered when <em class="parameter"><code>stream</code></em> is readable.
-</p>
+that will be triggered when <em class="parameter"><code>stream</code></em> is readable.</p>
 <p>
 Note that since this method never blocks, you cannot actually
 use <em class="parameter"><code>cancellable</code></em> to cancel it. However, it will return an error
 if <em class="parameter"><code>cancellable</code></em> has already been cancelled when you call, which
 may happen if you call this method after a source triggers due
-to having been cancelled.
-</p>
+to having been cancelled.</p>
 <p>
-Virtual: read_nonblocking
-</p>
+Virtual: read_nonblocking</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -347,6 +330,6 @@ bytes long).</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

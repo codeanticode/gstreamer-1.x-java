@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDBusInterface</title>
+<title>GIO Reference Manual: GDBusInterface</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-convenience.html" title="Highlevel D-Bus Support">
 <link rel="prev" href="gio-Watching-Bus-Names.html" title="Watching Bus Names">
 <link rel="next" href="GDBusInterfaceSkeleton.html" title="GDBusInterfaceSkeleton">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-Watching-Bus-Names.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="gdbus-convenience.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GDBusInterfaceSkeleton.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GDBusInterface.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GDBusInterface.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GDBusInterface.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GDBusInterface.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gdbus-convenience.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-Watching-Bus-Names.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GDBusInterfaceSkeleton.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GDBusInterface"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -79,8 +76,7 @@ GDBusInterface is implemented by
 <p>
 The <a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> type is the base type for D-Bus interfaces both
 on the service side (see <a class="link" href="GDBusInterfaceSkeleton.html" title="GDBusInterfaceSkeleton"><span class="type">GDBusInterfaceSkeleton</span></a>) and client side
-(see <a class="link" href="GDBusProxy.html" title="GDBusProxy"><span class="type">GDBusProxy</span></a>).
-</p>
+(see <a class="link" href="GDBusProxy.html" title="GDBusProxy"><span class="type">GDBusProxy</span></a>).</p>
 </div>
 <div class="refsect1">
 <a name="GDBusInterface.details"></a><h2>Details</h2>
@@ -88,8 +84,7 @@ on the service side (see <a class="link" href="GDBusInterfaceSkeleton.html" titl
 <a name="GDBusInterface-struct"></a><h3>GDBusInterface</h3>
 <pre class="programlisting">typedef struct _GDBusInterface GDBusInterface;</pre>
 <p>
-Base type for D-Bus interfaces.
-</p>
+Base type for D-Bus interfaces.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -107,8 +102,7 @@ Base type for D-Bus interfaces.
 };
 </pre>
 <p>
-Base type for D-Bus interfaces.
-</p>
+Base type for D-Bus interfaces.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -145,8 +139,7 @@ Base type for D-Bus interfaces.
 <pre class="programlisting"><a class="link" href="gio-D-Bus-Introspection-Data.html#GDBusInterfaceInfo"><span class="returnvalue">GDBusInterfaceInfo</span></a> * g_dbus_interface_get_info          (<em class="parameter"><code><a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> *interface_</code></em>);</pre>
 <p>
 Gets D-Bus introspection information for the D-Bus interface
-implemented by <em class="parameter"><code>interface_</code></em>.
-</p>
+implemented by <em class="parameter"><code>interface_</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -171,17 +164,11 @@ implemented by <em class="parameter"><code>interface_</code></em>.
 <a name="g-dbus-interface-get-object"></a><h3>g_dbus_interface_get_object ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusObject.html" title="GDBusObject"><span class="returnvalue">GDBusObject</span></a> *       g_dbus_interface_get_object         (<em class="parameter"><code><a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> *interface_</code></em>);</pre>
 <p>
-Gets the <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> that <em class="parameter"><code>interface_</code></em> belongs to, if any.
-</p>
+Gets the <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> that <em class="parameter"><code>interface_</code></em> belongs to, if any.</p>
 <p>
-</p>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Warning</h3>It is not safe to use the returned object if <em class="parameter"><code>interface_</code></em>
-or the returned object is being used from other threads. See
-<a class="link" href="GDBusInterface.html#g-dbus-interface-dup-object" title="g_dbus_interface_dup_object ()"><code class="function">g_dbus_interface_dup_object()</code></a> for a thread-safe
-alternative.</div>
-<p>
-</p>
+It is not safe to use the returned object if <em class="parameter"><code>interface_</code></em> or
+the returned object is being used from other threads. See
+<a class="link" href="GDBusInterface.html#g-dbus-interface-dup-object" title="g_dbus_interface_dup_object ()"><code class="function">g_dbus_interface_dup_object()</code></a> for a thread-safe alternative.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -190,7 +177,7 @@ alternative.</div>
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>interface_</code></em> :</span></p></td>
-<td>An exported D-Bus interface.</td>
+<td>An exported D-Bus interface</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
@@ -207,8 +194,7 @@ reference belongs to <em class="parameter"><code>interface_</code></em> and shou
 <a name="g-dbus-interface-dup-object"></a><h3>g_dbus_interface_dup_object ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusObject.html" title="GDBusObject"><span class="returnvalue">GDBusObject</span></a> *       g_dbus_interface_dup_object         (<em class="parameter"><code><a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> *interface_</code></em>);</pre>
 <p>
-Gets the <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> that <em class="parameter"><code>interface_</code></em> belongs to, if any.
-</p>
+Gets the <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> that <em class="parameter"><code>interface_</code></em> belongs to, if any.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -235,11 +221,9 @@ reference should be freed with <a href="http://library.gnome.org/devel/gobject/u
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_interface_set_object         (<em class="parameter"><code><a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a> *interface_</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> *object</code></em>);</pre>
 <p>
-Sets the <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> for <em class="parameter"><code>interface_</code></em> to <em class="parameter"><code>object</code></em>.
-</p>
+Sets the <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> for <em class="parameter"><code>interface_</code></em> to <em class="parameter"><code>object</code></em>.</p>
 <p>
-Note that <em class="parameter"><code>interface_</code></em> will hold a weak reference to <em class="parameter"><code>object</code></em>.
-</p>
+Note that <em class="parameter"><code>interface_</code></em> will hold a weak reference to <em class="parameter"><code>object</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -263,6 +247,6 @@ Note that <em class="parameter"><code>interface_</code></em> will hold a weak re
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

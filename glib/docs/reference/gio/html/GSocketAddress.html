@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSocketAddress</title>
+<title>GIO Reference Manual: GSocketAddress</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="networking.html" title="Low-level network support">
 <link rel="prev" href="gio-GInetAddressMask.html" title="GInetAddressMask">
 <link rel="next" href="GInetSocketAddress.html" title="GInetSocketAddress">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GInetAddressMask.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="networking.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GInetSocketAddress.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSocketAddress.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSocketAddress.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GSocketAddress.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
                    | 
                   <a href="#GSocketAddress.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="networking.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GInetAddressMask.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GInetSocketAddress.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSocketAddress"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -83,11 +80,9 @@ GSocketAddress implements
 <div class="refsect1">
 <a name="GSocketAddress.description"></a><h2>Description</h2>
 <p>
-<a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> is the equivalent of <span class="type">struct sockaddr</span>
-in the BSD sockets API. This is an abstract class; use
-<a class="link" href="GInetSocketAddress.html" title="GInetSocketAddress"><span class="type">GInetSocketAddress</span></a> for internet sockets, or <a class="link" href="GUnixSocketAddress.html" title="GUnixSocketAddress"><span class="type">GUnixSocketAddress</span></a>
-for UNIX domain sockets.
-</p>
+<a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> is the equivalent of struct sockaddr in the BSD
+sockets API. This is an abstract class; use <a class="link" href="GInetSocketAddress.html" title="GInetSocketAddress"><span class="type">GInetSocketAddress</span></a>
+for internet sockets, or <a class="link" href="GUnixSocketAddress.html" title="GUnixSocketAddress"><span class="type">GUnixSocketAddress</span></a> for UNIX domain sockets.</p>
 </div>
 <div class="refsect1">
 <a name="GSocketAddress.details"></a><h2>Details</h2>
@@ -95,9 +90,8 @@ for UNIX domain sockets.
 <a name="GSocketAddress-struct"></a><h3>GSocketAddress</h3>
 <pre class="programlisting">typedef struct _GSocketAddress GSocketAddress;</pre>
 <p>
-A socket endpoint address, corresponding to <span class="type">struct sockaddr</span>
-or one of its subtypes.
-</p>
+A socket endpoint address, corresponding to struct sockaddr
+or one of its subtypes.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -112,8 +106,7 @@ or one of its subtypes.
 <p>
 The protocol family of a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a>. (These values are
 identical to the system defines <code class="literal">AF_INET</code>, <code class="literal">AF_INET6</code> and <code class="literal">AF_UNIX</code>,
-if available.)
-</p>
+if available.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -151,8 +144,7 @@ if available.)
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> len</code></em>);</pre>
 <p>
 Creates a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> subclass corresponding to the native
-<span class="type">struct sockaddr</span> <em class="parameter"><code>native</code></em>.
-</p>
+struct sockaddr <em class="parameter"><code>native</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -161,8 +153,7 @@ Creates a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><spa
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>native</code></em> :</span></p></td>
-<td>a pointer to a <span class="type">struct sockaddr</span>
-</td>
+<td>a pointer to a struct sockaddr</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
@@ -171,8 +162,9 @@ Creates a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><spa
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a new <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> if <em class="parameter"><code>native</code></em> could successfully be converted,
-otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</td>
+<td>a new <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> if <em class="parameter"><code>native</code></em> could successfully
+be converted, otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -183,8 +175,7 @@ otherwise <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Ma
 <a name="g-socket-address-get-family"></a><h3>g_socket_address_get_family ()</h3>
 <pre class="programlisting"><a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="returnvalue">GSocketFamily</span></a>       g_socket_address_get_family         (<em class="parameter"><code><a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> *address</code></em>);</pre>
 <p>
-Gets the socket family type of <em class="parameter"><code>address</code></em>.
-</p>
+Gets the socket family type of <em class="parameter"><code>address</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -198,7 +189,8 @@ Gets the socket family type of <em class="parameter"><code>address</code></em>.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the socket family type of <em class="parameter"><code>address</code></em>.</td>
+<td>the socket family type of <em class="parameter"><code>address</code></em>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -212,15 +204,12 @@ Gets the socket family type of <em class="parameter"><code>address</code></em>.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="type">gsize</span></a> destlen</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Converts a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> to a native <span class="type">struct
-sockaddr</span>, which can be passed to low-level functions like
-<code class="function">connect()</code> or <code class="function">bind()</code>.
-</p>
+Converts a <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> to a native struct sockaddr, which can
+be passed to low-level functions like <code class="function">connect()</code> or <code class="function">bind()</code>.</p>
 <p>
-If not enough space is available, a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NO-SPACE:CAPS"><code class="literal">G_IO_ERROR_NO_SPACE</code></a> error is
-returned. If the address type is not known on the system
-then a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> error is returned.
-</p>
+If not enough space is available, a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NO-SPACE:CAPS"><code class="literal">G_IO_ERROR_NO_SPACE</code></a> error
+is returned. If the address type is not known on the system
+then a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> error is returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -235,17 +224,18 @@ then a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><c
 <tr>
 <td><p><span class="term"><em class="parameter"><code>dest</code></em> :</span></p></td>
 <td>a pointer to a memory location that will contain the native
-<span class="type">struct sockaddr</span>.</td>
+struct sockaddr</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>destlen</code></em> :</span></p></td>
 <td>the size of <em class="parameter"><code>dest</code></em>. Must be at least as large as
-<a class="link" href="GSocketAddress.html#g-socket-address-get-native-size" title="g_socket_address_get_native_size ()"><code class="function">g_socket_address_get_native_size()</code></a>.</td>
+<a class="link" href="GSocketAddress.html#g-socket-address-get-native-size" title="g_socket_address_get_native_size ()"><code class="function">g_socket_address_get_native_size()</code></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
 <td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore.</td>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for error reporting, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> to ignore</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
@@ -261,10 +251,9 @@ then a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><c
 <a name="g-socket-address-get-native-size"></a><h3>g_socket_address_get_native_size ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gssize"><span class="returnvalue">gssize</span></a>              g_socket_address_get_native_size    (<em class="parameter"><code><a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> *address</code></em>);</pre>
 <p>
-Gets the size of <em class="parameter"><code>address</code></em>'s native <span class="type">struct sockaddr</span>.
+Gets the size of <em class="parameter"><code>address</code></em>'s native struct sockaddr.
 You can use this to allocate memory to pass to
-<a class="link" href="GSocketAddress.html#g-socket-address-to-native" title="g_socket_address_to_native ()"><code class="function">g_socket_address_to_native()</code></a>.
-</p>
+<a class="link" href="GSocketAddress.html#g-socket-address-to-native" title="g_socket_address_to_native ()"><code class="function">g_socket_address_to_native()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -278,7 +267,7 @@ You can use this to allocate memory to pass to
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the size of the native <span class="type">struct sockaddr</span> that
+<td>the size of the native struct sockaddr that
 <em class="parameter"><code>address</code></em> represents</td>
 </tr>
 </tbody>
@@ -298,6 +287,6 @@ You can use this to allocate memory to pass to
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

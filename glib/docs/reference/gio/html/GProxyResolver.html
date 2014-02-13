@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GProxyResolver</title>
+<title>GIO Reference Manual: GProxyResolver</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="resolver.html" title="DNS resolution">
 <link rel="prev" href="GResolver.html" title="GResolver">
 <link rel="next" href="GSimpleProxyResolver.html" title="GSimpleProxyResolver">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GResolver.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="resolver.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GSimpleProxyResolver.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GProxyResolver.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GProxyResolver.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GProxyResolver.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GProxyResolver.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="resolver.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GResolver.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GSimpleProxyResolver.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GProxyResolver"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -89,8 +86,7 @@ GProxyResolver is implemented by
 <p>
 <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a> provides synchronous and asynchronous network proxy
 resolution. <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a> is used within <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a> through
-the method <a class="link" href="GSocketConnectable.html#g-socket-connectable-proxy-enumerate" title="g_socket_connectable_proxy_enumerate ()"><code class="function">g_socket_connectable_proxy_enumerate()</code></a>.
-</p>
+the method <a class="link" href="GSocketConnectable.html#g-socket-connectable-proxy-enumerate" title="g_socket_connectable_proxy_enumerate ()"><code class="function">g_socket_connectable_proxy_enumerate()</code></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GProxyResolver.details"></a><h2>Details</h2>
@@ -98,8 +94,7 @@ the method <a class="link" href="GSocketConnectable.html#g-socket-connectable-pr
 <a name="GProxyResolver-struct"></a><h3>GProxyResolver</h3>
 <pre class="programlisting">typedef struct _GProxyResolver GProxyResolver;</pre>
 <p>
-A helper class to enumerate proxies base on URI.
-</p>
+A helper class to enumerate proxies base on URI.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -135,16 +130,14 @@ A helper class to enumerate proxies base on URI.
 </pre>
 <p>
 Extension point for proxy resolving functionality.
-See Extending GIO.
-</p>
+See Extending GIO.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-proxy-resolver-get-default"></a><h3>g_proxy_resolver_get_default ()</h3>
 <pre class="programlisting"><a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="returnvalue">GProxyResolver</span></a> *    g_proxy_resolver_get_default        (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Gets the default <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a> for the system.
-</p>
+Gets the default <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a> for the system.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -165,8 +158,7 @@ Gets the default <a class="link" href="GProxyResolver.html" title="GProxyResolve
 <p>
 Checks if <em class="parameter"><code>resolver</code></em> can be used on this system. (This is used
 internally; <a class="link" href="GProxyResolver.html#g-proxy-resolver-get-default" title="g_proxy_resolver_get_default ()"><code class="function">g_proxy_resolver_get_default()</code></a> will only return a proxy
-resolver that returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for this method.)
-</p>
+resolver that returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> for this method.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -199,20 +191,17 @@ Looks into the system proxy configuration to determine what proxy,
 if any, to use to connect to <em class="parameter"><code>uri</code></em>. The returned proxy URIs are of the
 form <code class="literal">&lt;protocol&gt;://[user[:password]@]host:port</code>
 or <code class="literal">direct://</code>, where &lt;protocol&gt; could be
-http, rtsp, socks or other proxying protocol.
-</p>
+http, rtsp, socks or other proxying protocol.</p>
 <p>
 If you don't know what network protocol is being used on the
 socket, you should use <code class="literal">none</code> as the URI protocol.
 In this case, the resolver might still return a generic proxy type
 (such as SOCKS), but would not return protocol-specific proxy types
-(such as http).
-</p>
+(such as http).</p>
 <p>
 <code class="literal">direct://</code> is used when no proxy is needed.
 Direct connection should not be attempted unless it is part of the
-returned array of proxies.
-</p>
+returned array of proxies.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -259,8 +248,7 @@ with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-F
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Asynchronous lookup of proxy. See <a class="link" href="GProxyResolver.html#g-proxy-resolver-lookup" title="g_proxy_resolver_lookup ()"><code class="function">g_proxy_resolver_lookup()</code></a> for more
-details.
-</p>
+details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -304,8 +292,7 @@ details.
 <p>
 Call this function to obtain the array of proxy URIs when
 <a class="link" href="GProxyResolver.html#g-proxy-resolver-lookup-async" title="g_proxy_resolver_lookup_async ()"><code class="function">g_proxy_resolver_lookup_async()</code></a> is complete. See
-<a class="link" href="GProxyResolver.html#g-proxy-resolver-lookup" title="g_proxy_resolver_lookup ()"><code class="function">g_proxy_resolver_lookup()</code></a> for more details.
-</p>
+<a class="link" href="GProxyResolver.html#g-proxy-resolver-lookup" title="g_proxy_resolver_lookup ()"><code class="function">g_proxy_resolver_lookup()</code></a> for more details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -342,6 +329,6 @@ with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-F
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

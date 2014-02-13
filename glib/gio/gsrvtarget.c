@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -44,7 +42,7 @@
  * then connect to whatever host was pointed to by that record.
  *
  * You can use g_resolver_lookup_service() or
- * g_resolver_lookup_service_async() to find the #GSrvTarget<!-- -->s
+ * g_resolver_lookup_service_async() to find the #GSrvTargets
  * for a given service. However, if you are simply planning to connect
  * to the remote service, you can use #GNetworkService's
  * #GSocketConnectable interface and not need to worry about
@@ -77,7 +75,7 @@ G_DEFINE_BOXED_TYPE (GSrvTarget, g_srv_target,
  *
  * Creates a new #GSrvTarget with the given parameters.
  *
- * You should not need to use this; normally #GSrvTarget<!-- -->s are
+ * You should not need to use this; normally #GSrvTargets are
  * created by #GResolver.
  *
  * Return value: a new #GSrvTarget.

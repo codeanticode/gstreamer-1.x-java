@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GTypeModule</title>
+<title>GObject Reference Manual: GTypeModule</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="GTypePlugin.html" title="GTypePlugin">
 <link rel="next" href="gobject-The-Base-Object-Type.html" title="GObject">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GTypePlugin.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GObject Reference Manual</th>
-<td><a accesskey="n" href="gobject-The-Base-Object-Type.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GTypeModule.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GTypeModule.description" class="shortcut">Description</a>
                    | 
                   <a href="#GTypeModule.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GTypeModule.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GTypePlugin.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gobject-The-Base-Object-Type.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GTypeModule"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -95,17 +92,15 @@ GTypeModule implements
 <p>
 <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> provides a simple implementation of the <a class="link" href="GTypePlugin.html" title="GTypePlugin"><span class="type">GTypePlugin</span></a>
 interface. The model of <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> is a dynamically loaded module
-which implements some number of types and interface
-implementations. When the module is loaded, it registers its types
-and interfaces using <a class="link" href="GTypeModule.html#g-type-module-register-type" title="g_type_module_register_type ()"><code class="function">g_type_module_register_type()</code></a> and
-<a class="link" href="GTypeModule.html#g-type-module-add-interface" title="g_type_module_add_interface ()"><code class="function">g_type_module_add_interface()</code></a>.  As long as any instances of these
-types and interface implementations are in use, the module is kept
-loaded. When the types and interfaces are gone, the module may be
-unloaded. If the types and interfaces become used again, the module
-will be reloaded. Note that the last unref cannot happen in module
-code, since that would lead to the caller's code being unloaded before
-<a class="link" href="gobject-The-Base-Object-Type.html#g-object-unref" title="g_object_unref ()"><code class="function">g_object_unref()</code></a> returns to it.
-</p>
+which implements some number of types and interface implementations.
+When the module is loaded, it registers its types and interfaces
+using <a class="link" href="GTypeModule.html#g-type-module-register-type" title="g_type_module_register_type ()"><code class="function">g_type_module_register_type()</code></a> and <a class="link" href="GTypeModule.html#g-type-module-add-interface" title="g_type_module_add_interface ()"><code class="function">g_type_module_add_interface()</code></a>.
+As long as any instances of these types and interface implementations
+are in use, the module is kept loaded. When the types and interfaces
+are gone, the module may be unloaded. If the types and interfaces
+become used again, the module will be reloaded. Note that the last
+unref cannot happen in module code, since that would lead to the
+caller's code being unloaded before <a class="link" href="gobject-The-Base-Object-Type.html#g-object-unref" title="g_object_unref ()"><code class="function">g_object_unref()</code></a> returns to it.</p>
 <p>
 Keeping track of whether the module should be loaded or not is done by
 using a use count - it starts at zero, and whenever it is greater than
@@ -115,14 +110,12 @@ the type system, but also can be explicitly controlled by
 a module for the first type, <a class="link" href="GTypeModule.html#g-type-module-use" title="g_type_module_use ()"><code class="function">g_type_module_use()</code></a> will be used to load
 it so that it can initialize its types. At some later point, when the
 module no longer needs to be loaded except for the type
-implementations it contains, <a class="link" href="GTypeModule.html#g-type-module-unuse" title="g_type_module_unuse ()"><code class="function">g_type_module_unuse()</code></a> is called.
-</p>
+implementations it contains, <a class="link" href="GTypeModule.html#g-type-module-unuse" title="g_type_module_unuse ()"><code class="function">g_type_module_unuse()</code></a> is called.</p>
 <p>
 <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> does not actually provide any implementation of module
 loading and unloading. To create a particular module type you must
 derive from <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> and implement the load and unload functions
-in <a class="link" href="GTypeModule.html#GTypeModuleClass" title="struct GTypeModuleClass"><span class="type">GTypeModuleClass</span></a>.
-</p>
+in <a class="link" href="GTypeModule.html#GTypeModuleClass" title="struct GTypeModuleClass"><span class="type">GTypeModuleClass</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GTypeModule.details"></a><h2>Details</h2>
@@ -134,8 +127,7 @@ in <a class="link" href="GTypeModule.html#GTypeModuleClass" title="struct GTypeM
 </pre>
 <p>
 The members of the <span class="structname">GTypeModule</span> structure should not 
-be accessed directly, except for the <em class="parameter"><code>name</code></em> field.
-</p>
+be accessed directly, except for the <em class="parameter"><code>name</code></em> field.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -159,8 +151,7 @@ be accessed directly, except for the <em class="parameter"><code>name</code></em
 </pre>
 <p>
 In order to implement dynamic loading of types based on <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a>, 
-the <em class="parameter"><code>load</code></em> and <em class="parameter"><code>unload</code></em> functions in <a class="link" href="GTypeModule.html#GTypeModuleClass" title="struct GTypeModuleClass"><span class="type">GTypeModuleClass</span></a> must be implemented.
-</p>
+the <em class="parameter"><code>load</code></em> and <em class="parameter"><code>unload</code></em> functions in <a class="link" href="GTypeModule.html#GTypeModuleClass" title="struct GTypeModuleClass"><span class="type">GTypeModuleClass</span></a> must be implemented.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -191,8 +182,7 @@ the <em class="parameter"><code>load</code></em> and <em class="parameter"><code
 Increases the use count of a <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> by one. If the
 use count was zero before, the plugin will be loaded.
 If loading the plugin fails, the use count is reset to 
-its prior value.
-</p>
+its prior value.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -222,8 +212,7 @@ Decreases the use count of a <a class="link" href="GTypeModule.html" title="GTyp
 result is zero, the module will be unloaded. (However, the
 <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> will not be freed, and types associated with the
 <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> are not unregistered. Once a <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> is
-initialized, it must exist forever.)
-</p>
+initialized, it must exist forever.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -242,8 +231,7 @@ initialized, it must exist forever.)
 <pre class="programlisting"><span class="returnvalue">void</span>                g_type_module_set_name              (<em class="parameter"><code><a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a> *module</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
 <p>
-Sets the name for a <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a>
-</p>
+Sets the name for a <a class="link" href="GTypeModule.html" title="GTypeModule"><span class="type">GTypeModule</span></a></p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -273,17 +261,14 @@ Sets the name for a <a class="link" href="GTypeModule.html" title="GTypeModule">
 Looks up or registers a type that is implemented with a particular
 type plugin. If a type with name <em class="parameter"><code>type_name</code></em> was previously registered,
 the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier for the type is returned, otherwise the type
-is newly registered, and the resulting <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier returned.
-</p>
+is newly registered, and the resulting <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier returned.</p>
 <p>
 When reregistering a type (typically because a module is unloaded
 then reloaded, and reinitialized), <em class="parameter"><code>module</code></em> and <em class="parameter"><code>parent_type</code></em> must
-be the same as they were previously.
-</p>
+be the same as they were previously.</p>
 <p>
 As long as any instances of the type exist, the type plugin will
-not be unloaded.
-</p>
+not be unloaded.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -328,12 +313,10 @@ not be unloaded.
 <p>
 Registers an additional interface for a type, whose interface lives
 in the given type plugin. If the interface was already registered
-for the type in this plugin, nothing will be done.
-</p>
+for the type in this plugin, nothing will be done.</p>
 <p>
 As long as any instances of the type exist, the type plugin will
-not be unloaded.
-</p>
+not be unloaded.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -370,12 +353,10 @@ not be unloaded.
 Looks up or registers an enumeration that is implemented with a particular
 type plugin. If a type with name <em class="parameter"><code>type_name</code></em> was previously registered,
 the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier for the type is returned, otherwise the type
-is newly registered, and the resulting <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier returned.
-</p>
+is newly registered, and the resulting <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier returned.</p>
 <p>
 As long as any instances of the type exist, the type plugin will
-not be unloaded.
-</p>
+not be unloaded.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -416,12 +397,10 @@ terminated by a struct with all members being
 Looks up or registers a flags type that is implemented with a particular
 type plugin. If a type with name <em class="parameter"><code>type_name</code></em> was previously registered,
 the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier for the type is returned, otherwise the type
-is newly registered, and the resulting <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier returned.
-</p>
+is newly registered, and the resulting <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> identifier returned.</p>
 <p>
 As long as any instances of the type exist, the type plugin will
-not be unloaded.
-</p>
+not be unloaded.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -465,8 +444,7 @@ class initialization function, an instance initialization function (see
 it defines a <code class="function">*_get_type()</code> and a static 
 <code class="function">*_register_type()</code> function for use in your
 <code class="function"><code class="function">module_init()</code></code>.
-See <a class="link" href="GTypeModule.html#G-DEFINE-DYNAMIC-TYPE-EXTENDED:CAPS" title="G_DEFINE_DYNAMIC_TYPE_EXTENDED()"><code class="function">G_DEFINE_DYNAMIC_TYPE_EXTENDED()</code></a> for an example.
-</p>
+See <a class="link" href="GTypeModule.html#G-DEFINE-DYNAMIC-TYPE-EXTENDED:CAPS" title="G_DEFINE_DYNAMIC_TYPE_EXTENDED()"><code class="function">G_DEFINE_DYNAMIC_TYPE_EXTENDED()</code></a> for an example.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -496,8 +474,7 @@ separated by '_'.</td>
 <pre class="programlisting">#define             G_DEFINE_DYNAMIC_TYPE_EXTENDED(TypeName, type_name, TYPE_PARENT, flags, CODE)</pre>
 <p>
 A more general version of <a class="link" href="GTypeModule.html#G-DEFINE-DYNAMIC-TYPE:CAPS" title="G_DEFINE_DYNAMIC_TYPE()"><code class="function">G_DEFINE_DYNAMIC_TYPE()</code></a> which
-allows to specify <a class="link" href="gobject-Type-Information.html#GTypeFlags" title="enum GTypeFlags"><span class="type">GTypeFlags</span></a> and custom code.
-</p>
+allows to specify <a class="link" href="gobject-Type-Information.html#GTypeFlags" title="enum GTypeFlags"><span class="type">GTypeFlags</span></a> and custom code.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -625,8 +602,6 @@ expands to
   </table>
 </div>
 
-<p>
-</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -667,13 +642,11 @@ separated by '_'.</td>
 <p>
 A convenience macro to ease interface addition in the <em class="parameter"><code>_C_</code></em> section
 of <a class="link" href="GTypeModule.html#G-DEFINE-DYNAMIC-TYPE-EXTENDED:CAPS" title="G_DEFINE_DYNAMIC_TYPE_EXTENDED()"><code class="function">G_DEFINE_DYNAMIC_TYPE_EXTENDED()</code></a>. See <a class="link" href="GTypeModule.html#G-DEFINE-DYNAMIC-TYPE-EXTENDED:CAPS" title="G_DEFINE_DYNAMIC_TYPE_EXTENDED()"><code class="function">G_DEFINE_DYNAMIC_TYPE_EXTENDED()</code></a>
-for an example.
-</p>
+for an example.</p>
 <p>
 Note that this macro can only be used together with the
 G_DEFINE_DYNAMIC_TYPE_EXTENDED macros, since it depends on variable
-names from that macro.
-</p>
+names from that macro.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -695,26 +668,11 @@ names from that macro.
 </div>
 <div class="refsect1">
 <a name="GTypeModule.see-also"></a><h2>See Also</h2>
-<div class="variablelist"><table border="0" class="variablelist">
-<colgroup>
-<col align="left" valign="top">
-<col>
-</colgroup>
-<tbody>
-<tr>
-<td><p><span class="term"><a class="link" href="GTypePlugin.html" title="GTypePlugin"><span class="type">GTypePlugin</span></a></span></p></td>
-<td><p>The abstract type loader interface.</p></td>
-</tr>
-<tr>
-<td><p><span class="term"><a href="http://library.gnome.org/devel/glib/unstable/glib-Dynamic-Loading-of-Modules.html#GModule"><span class="type">GModule</span></a></span></p></td>
-<td><p>Portable mechanism for dynamically loaded modules.</p></td>
-</tr>
-</tbody>
-</table></div>
+<a class="link" href="GTypePlugin.html" title="GTypePlugin"><span class="type">GTypePlugin</span></a>, <a href="http://library.gnome.org/devel/glib/unstable/glib-Dynamic-Loading-of-Modules.html#GModule"><span class="type">GModule</span></a>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

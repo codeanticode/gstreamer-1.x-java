@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSocketConnection</title>
+<title>GIO Reference Manual: GSocketConnection</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="highlevel-socket.html" title="High-level network functionallity">
 <link rel="prev" href="GSocketClient.html" title="GSocketClient">
 <link rel="next" href="GUnixConnection.html" title="GUnixConnection">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GSocketClient.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GUnixConnection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSocketConnection.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSocketConnection.description" class="shortcut">Description</a>
                    | 
                   <a href="#GSocketConnection.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GSocketConnection.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GSocketClient.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GUnixConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSocketConnection"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -101,19 +98,16 @@
 <p>
 <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> is a <a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a> for a connected socket. They
 can be created either by <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a> when connecting to a host,
-or by <a class="link" href="GSocketListener.html" title="GSocketListener"><span class="type">GSocketListener</span></a> when accepting a new client.
-</p>
+or by <a class="link" href="GSocketListener.html" title="GSocketListener"><span class="type">GSocketListener</span></a> when accepting a new client.</p>
 <p>
 The type of the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> object returned from these calls
 depends on the type of the underlying socket that is in use. For
-instance, for a TCP/IP connection it will be a <a class="link" href="GTcpConnection.html" title="GTcpConnection"><span class="type">GTcpConnection</span></a>.
-</p>
+instance, for a TCP/IP connection it will be a <a class="link" href="GTcpConnection.html" title="GTcpConnection"><span class="type">GTcpConnection</span></a>.</p>
 <p>
 Choosing what type of object to construct is done with the socket
 connection factory, and it is possible for 3rd parties to register
 custom socket connection types for specific combination of socket
-family/type/protocol using <a class="link" href="GSocketConnection.html#g-socket-connection-factory-register-type" title="g_socket_connection_factory_register_type ()"><code class="function">g_socket_connection_factory_register_type()</code></a>.
-</p>
+family/type/protocol using <a class="link" href="GSocketConnection.html#g-socket-connection-factory-register-type" title="g_socket_connection_factory_register_type ()"><code class="function">g_socket_connection_factory_register_type()</code></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GSocketConnection.details"></a><h2>Details</h2>
@@ -121,8 +115,7 @@ family/type/protocol using <a class="link" href="GSocketConnection.html#g-socket
 <a name="GSocketConnection-struct"></a><h3>GSocketConnection</h3>
 <pre class="programlisting">typedef struct _GSocketConnection GSocketConnection;</pre>
 <p>
-A socket connection GIOStream object for connection-oriented sockets.
-</p>
+A socket connection GIOStream object for connection-oriented sockets.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -133,8 +126,7 @@ A socket connection GIOStream object for connection-oriented sockets.
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Connect <em class="parameter"><code>connection</code></em> to the specified remote address.
-</p>
+Connect <em class="parameter"><code>connection</code></em> to the specified remote address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -178,15 +170,12 @@ Connect <em class="parameter"><code>connection</code></em> to the specified remo
                                                          <em class="parameter"><code><a class="link" href="GAsyncResult.html#GAsyncReadyCallback" title="GAsyncReadyCallback ()"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Asynchronously connect <em class="parameter"><code>connection</code></em> to the specified remote address.
-</p>
+Asynchronously connect <em class="parameter"><code>connection</code></em> to the specified remote address.</p>
 <p>
 This clears the <a class="link" href="GSocket.html#GSocket--blocking" title='The "blocking" property'><span class="type">"blocking"</span></a> flag on <em class="parameter"><code>connection</code></em>'s underlying
-socket if it is currently set.
-</p>
+socket if it is currently set.</p>
 <p>
-Use <a class="link" href="GSocketConnection.html#g-socket-connection-connect-finish" title="g_socket_connection_connect_finish ()"><code class="function">g_socket_connection_connect_finish()</code></a> to retrieve the result.
-</p>
+Use <a class="link" href="GSocketConnection.html#g-socket-connection-connect-finish" title="g_socket_connection_connect_finish ()"><code class="function">g_socket_connection_connect_finish()</code></a> to retrieve the result.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -228,8 +217,7 @@ Use <a class="link" href="GSocketConnection.html#g-socket-connection-connect-fin
                                                          <em class="parameter"><code><a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a> *result</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Gets the result of a <a class="link" href="GSocketConnection.html#g-socket-connection-connect-async" title="g_socket_connection_connect_async ()"><code class="function">g_socket_connection_connect_async()</code></a> call.
-</p>
+Gets the result of a <a class="link" href="GSocketConnection.html#g-socket-connection-connect-async" title="g_socket_connection_connect_async ()"><code class="function">g_socket_connection_connect_async()</code></a> call.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -266,8 +254,7 @@ Gets the result of a <a class="link" href="GSocketConnection.html#g-socket-conne
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_connection_is_connected    (<em class="parameter"><code><a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> *connection</code></em>);</pre>
 <p>
 Checks if <em class="parameter"><code>connection</code></em> is connected. This is equivalent to calling
-<a class="link" href="GSocket.html#g-socket-is-connected" title="g_socket_is_connected ()"><code class="function">g_socket_is_connected()</code></a> on <em class="parameter"><code>connection</code></em>'s underlying <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-is-connected" title="g_socket_is_connected ()"><code class="function">g_socket_is_connected()</code></a> on <em class="parameter"><code>connection</code></em>'s underlying <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -294,8 +281,7 @@ Checks if <em class="parameter"><code>connection</code></em> is connected. This 
                                                         (<em class="parameter"><code><a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> *connection</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Try to get the local address of a socket connection.
-</p>
+Try to get the local address of a socket connection.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -329,16 +315,14 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
                                                         (<em class="parameter"><code><a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> *connection</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Try to get the remote address of a socket connection.
-</p>
+Try to get the remote address of a socket connection.</p>
 <p>
 Since GLib 2.40, when used with <a class="link" href="GSocketClient.html#g-socket-client-connect" title="g_socket_client_connect ()"><code class="function">g_socket_client_connect()</code></a> or
 <a class="link" href="GSocketClient.html#g-socket-client-connect-async" title="g_socket_client_connect_async ()"><code class="function">g_socket_client_connect_async()</code></a>, during emission of
 <a class="link" href="GSocketClient.html#G-SOCKET-CLIENT-CONNECTING:CAPS"><code class="literal">G_SOCKET_CLIENT_CONNECTING</code></a>, this function will return the remote
 address that will be used for the connection.  This allows
 applications to print e.g. "Connecting to example.com
-(10.42.77.3)...".
-</p>
+(10.42.77.3)...".</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -372,8 +356,7 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 <p>
 Gets the underlying <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> object of the connection.
 This can be useful if you want to do something unusual on it
-not supported by the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> APIs.
-</p>
+not supported by the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> APIs.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -401,8 +384,7 @@ not supported by the <a class="link" href="GSocketConnection.html" title="GSocke
                                                         (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Creates a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> subclass of the right type for
-<em class="parameter"><code>socket</code></em>.
-</p>
+<em class="parameter"><code>socket</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -432,11 +414,9 @@ Creates a <a class="link" href="GSocketConnection.html" title="GSocketConnection
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> protocol_id</code></em>);</pre>
 <p>
 Looks up the <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> to be used when creating socket connections on
-sockets with the specified <em class="parameter"><code>family</code></em>, <em class="parameter"><code>type</code></em> and <em class="parameter"><code>protocol_id</code></em>.
-</p>
+sockets with the specified <em class="parameter"><code>family</code></em>, <em class="parameter"><code>type</code></em> and <em class="parameter"><code>protocol_id</code></em>.</p>
 <p>
-If no type is registered, the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> base type is returned.
-</p>
+If no type is registered, the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> base type is returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -476,11 +456,9 @@ If no type is registered, the <a class="link" href="GSocketConnection.html" titl
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> protocol</code></em>);</pre>
 <p>
 Looks up the <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> to be used when creating socket connections on
-sockets with the specified <em class="parameter"><code>family</code></em>, <em class="parameter"><code>type</code></em> and <em class="parameter"><code>protocol</code></em>.
-</p>
+sockets with the specified <em class="parameter"><code>family</code></em>, <em class="parameter"><code>type</code></em> and <em class="parameter"><code>protocol</code></em>.</p>
 <p>
-If no type is registered, the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> base type is returned.
-</p>
+If no type is registered, the <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> base type is returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -526,6 +504,6 @@ If no type is registered, the <a class="link" href="GSocketConnection.html" titl
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

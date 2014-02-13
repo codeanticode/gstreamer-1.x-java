@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -92,16 +90,14 @@ g_cancellable_class_init (GCancellableClass *klass)
    *
    * Note that disconnecting from this signal (or any signal) in a
    * multi-threaded program is prone to race conditions. For instance
-   * it is possible that a signal handler may be invoked even
-   * <emphasis>after</emphasis> a call to
-   * g_signal_handler_disconnect() for that handler has already
-   * returned.
+   * it is possible that a signal handler may be invoked even after
+   * a call to g_signal_handler_disconnect() for that handler has
+   * already returned.
    * 
-   * There is also a problem when cancellation happen
-   * right before connecting to the signal. If this happens the
-   * signal will unexpectedly not be emitted, and checking before
-   * connecting to the signal leaves a race condition where this is
-   * still happening.
+   * There is also a problem when cancellation happens right before
+   * connecting to the signal. If this happens the signal will
+   * unexpectedly not be emitted, and checking before connecting to
+   * the signal leaves a race condition where this is still happening.
    *
    * In order to make it safe and easy to connect handlers there
    * are two helper functions: g_cancellable_connect() and
@@ -109,13 +105,14 @@ g_cancellable_class_init (GCancellableClass *klass)
    * like this.
    *
    * An example of how to us this:
-   * |[
-   *     /<!-- -->* Make sure we don't do any unnecessary work if already cancelled *<!-- -->/
+   * |[<!-- language="C" -->
+   *     /&ast; Make sure we don't do unnecessary work if already cancelled &ast;/
    *     if (g_cancellable_set_error_if_cancelled (cancellable, error))
    *       return;
    *
-   *     /<!-- -->* Set up all the data needed to be able to
-   *      * handle cancellation of the operation *<!-- -->/
+   *     /&ast; Set up all the data needed to be able to
+   *      &ast; handle cancellation of the operation
+   *      &ast;/
    *     my_data = my_data_new (...);
    *
    *     id = 0;
@@ -124,12 +121,13 @@ g_cancellable_class_init (GCancellableClass *klass)
    *     			      G_CALLBACK (cancelled_handler)
    *     			      data, NULL);
    *
-   *     /<!-- -->* cancellable operation here... *<!-- -->/
+   *     /&ast; cancellable operation here... &ast;/
    *
    *     g_cancellable_disconnect (cancellable, id);
    *
-   *     /<!-- -->* cancelled_handler is never called after this, it
-   *      * is now safe to free the data *<!-- -->/
+   *     /&ast; cancelled_handler is never called after this,
+   *      &ast; it is now safe to free the data
+   *      &ast;/
    *     my_data_free (my_data);  
    * ]|
    *

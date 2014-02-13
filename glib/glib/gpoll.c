@@ -16,9 +16,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -110,7 +108,7 @@ extern gboolean _g_main_poll_debug;
  * file descriptor, but the situation is much more complicated on
  * Windows. If you need to use g_poll() in code that has to run on
  * Windows, the easiest solution is to construct all of your
- * #GPollFD<!-- -->s with g_io_channel_win32_make_pollfd().
+ * #GPollFDs with g_io_channel_win32_make_pollfd().
  *
  * Return value: the number of entries in @fds whose %revents fields
  * were filled in, or 0 if the operation timed out, or -1 on error or

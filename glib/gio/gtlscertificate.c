@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -448,7 +446,7 @@ g_tls_certificate_new_from_files (const gchar  *cert_file,
  * @file: file containing PEM-encoded certificates to import
  * @error: #GError for error reporting, or %NULL to ignore.
  *
- * Creates one or more #GTlsCertificate<!-- -->s from the PEM-encoded
+ * Creates one or more #GTlsCertificates from the PEM-encoded
  * data in @file. If @file cannot be read or parsed, the function will
  * return %NULL and set @error. If @file does not contain any
  * PEM-encoded certificates, this will return an empty list and not

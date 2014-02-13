@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307,
- * USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Ryan Lortie <desrt@desrt.ca>
  */
@@ -1205,8 +1203,7 @@ g_menu_item_new_submenu (const gchar *label,
  * second with the "Cut", "Copy" and "Paste" items.  The first and
  * second menus would then be added as submenus of the third.  In XML
  * format, this would look something like the following:
- *
- * <informalexample><programlisting><![CDATA[
+ * |[
  * <menu id='edit-menu'>
  *   <section>
  *     <item label='Undo'/>
@@ -1218,7 +1215,7 @@ g_menu_item_new_submenu (const gchar *label,
  *     <item label='Paste'/>
  *   </section>
  * </menu>
- * ]]></programlisting></informalexample>
+ * ]|
  *
  * The following example is exactly equivalent.  It is more illustrative
  * of the exact relationship between the menus and items (keeping in
@@ -1226,8 +1223,7 @@ g_menu_item_new_submenu (const gchar *label,
  * containing one).  The style of the second example is more verbose and
  * difficult to read (and therefore not recommended except for the
  * purpose of understanding what is really going on).
- *
- * <informalexample><programlisting><![CDATA[
+ * |[
  * <menu id='edit-menu'>
  *   <item>
  *     <link name='section'>
@@ -1243,7 +1239,7 @@ g_menu_item_new_submenu (const gchar *label,
  *     </link>
  *   </item>
  * </menu>
- * ]]></programlisting></informalexample>
+ * ]|
  *
  * Returns: a new #GMenuItem
  *

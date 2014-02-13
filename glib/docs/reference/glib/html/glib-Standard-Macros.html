@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Standard Macros</title>
+<title>GLib Reference Manual: Standard Macros</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-fundamentals.html" title="GLib Fundamentals">
 <link rel="prev" href="glib-Basic-Types.html" title="Basic Types">
 <link rel="next" href="glib-Type-Conversion-Macros.html" title="Type Conversion Macros">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Basic-Types.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-fundamentals.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Type-Conversion-Macros.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Standard-Macros.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Standard-Macros.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-fundamentals.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Basic-Types.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Type-Conversion-Macros.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Standard-Macros"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -82,8 +79,7 @@
 <div class="refsect1">
 <a name="glib-Standard-Macros.description"></a><h2>Description</h2>
 <p>
-These macros provide a few commonly-used features.
-</p>
+These macros provide a few commonly-used features.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Standard-Macros.details"></a><h2>Details</h2>
@@ -93,8 +89,7 @@ These macros provide a few commonly-used features.
 </pre>
 <p>
 This macro is defined only on Windows. So you can bracket
-Windows-specific code in "#ifdef G_OS_WIN32".
-</p>
+Windows-specific code in "#ifdef G_OS_WIN32".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -103,8 +98,7 @@ Windows-specific code in "#ifdef G_OS_WIN32".
 </pre>
 <p>
 This macro is defined only on UNIX. So you can bracket
-UNIX-specific code in "#ifdef G_OS_UNIX".
-</p>
+UNIX-specific code in "#ifdef G_OS_UNIX".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -113,8 +107,7 @@ UNIX-specific code in "#ifdef G_OS_UNIX".
 </pre>
 <p>
 The directory separator character.
-This is '/' on UNIX machines and '\' under Windows.
-</p>
+This is '/' on UNIX machines and '\' under Windows.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -123,8 +116,7 @@ This is '/' on UNIX machines and '\' under Windows.
 </pre>
 <p>
 The directory separator as a string.
-This is "/" on UNIX machines and "\" under Windows.
-</p>
+This is "/" on UNIX machines and "\" under Windows.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -134,8 +126,7 @@ This is "/" on UNIX machines and "\" under Windows.
 <p>
 Checks whether a character is a directory
 separator. It returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> for '/' on UNIX
-machines and for '\' or '/' under Windows.
-</p>
+machines and for '\' or '/' under Windows.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -155,8 +146,7 @@ machines and for '\' or '/' under Windows.
 </pre>
 <p>
 The search path separator character.
-This is ':' on UNIX machines and ';' under Windows.
-</p>
+This is ':' on UNIX machines and ';' under Windows.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -165,8 +155,7 @@ This is ':' on UNIX machines and ';' under Windows.
 </pre>
 <p>
 The search path separator as a string.
-This is ":" on UNIX machines and ";" under Windows.
-</p>
+This is ":" on UNIX machines and ";" under Windows.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -174,8 +163,7 @@ This is ":" on UNIX machines and ";" under Windows.
 <pre class="programlisting">#define TRUE (!FALSE)
 </pre>
 <p>
-Defines the <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> value for the <a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> type.
-</p>
+Defines the <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> value for the <a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> type.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -183,17 +171,15 @@ Defines the <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TR
 <pre class="programlisting">#define FALSE (0)
 </pre>
 <p>
-Defines the <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> value for the <a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> type.
-</p>
+Defines the <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> value for the <a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> type.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="NULL:CAPS"></a><h3>NULL</h3>
-<pre class="programlisting">#    define NULL        (0L)
+<pre class="programlisting">#  define NULL        (0L)
 </pre>
 <p>
-Defines the standard <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> pointer.
-</p>
+Defines the standard <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> pointer.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -201,8 +187,7 @@ Defines the standard <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" 
 <pre class="programlisting">#define MIN(a, b)  (((a) &lt; (b)) ? (a) : (b))
 </pre>
 <p>
-Calculates the minimum of <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em>.
-</p>
+Calculates the minimum of <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -230,8 +215,7 @@ Calculates the minimum of <em class="parameter"><code>a</code></em> and <em clas
 <pre class="programlisting">#define MAX(a, b)  (((a) &gt; (b)) ? (a) : (b))
 </pre>
 <p>
-Calculates the maximum of <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em>.
-</p>
+Calculates the maximum of <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -260,8 +244,7 @@ Calculates the maximum of <em class="parameter"><code>a</code></em> and <em clas
 </pre>
 <p>
 Calculates the absolute value of <em class="parameter"><code>a</code></em>.
-The absolute value is simply the number with any negative sign taken away.
-</p>
+The absolute value is simply the number with any negative sign taken away.</p>
 <p>
 For example,
 </p>
@@ -295,8 +278,7 @@ For example,
 </pre>
 <p>
 Ensures that <em class="parameter"><code>x</code></em> is between the limits set by <em class="parameter"><code>low</code></em> and <em class="parameter"><code>high</code></em>. If <em class="parameter"><code>low</code></em> is
-greater than <em class="parameter"><code>high</code></em> the result is undefined.
-</p>
+greater than <em class="parameter"><code>high</code></em> the result is undefined.</p>
 <p>
 For example,
 </p>
@@ -338,8 +320,7 @@ For example,
 <a name="G-STRUCT-MEMBER:CAPS"></a><h3>G_STRUCT_MEMBER()</h3>
 <pre class="programlisting">#define             G_STRUCT_MEMBER(member_type, struct_p, struct_offset)</pre>
 <p>
-Returns a member of a structure at a given offset, using the given type.
-</p>
+Returns a member of a structure at a given offset, using the given type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -371,8 +352,7 @@ in bytes</td>
 <a name="G-STRUCT-MEMBER-P:CAPS"></a><h3>G_STRUCT_MEMBER_P()</h3>
 <pre class="programlisting">#define             G_STRUCT_MEMBER_P(struct_p, struct_offset)</pre>
 <p>
-Returns an untyped pointer to a given offset of a struct.
-</p>
+Returns an untyped pointer to a given offset of a struct.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -399,8 +379,7 @@ Returns an untyped pointer to a given offset of a struct.
 <a name="G-STRUCT-OFFSET:CAPS"></a><h3>G_STRUCT_OFFSET()</h3>
 <pre class="programlisting">#define             G_STRUCT_OFFSET(struct_type, member)</pre>
 <p>
-Returns the offset, in bytes, of a member of a struct.
-</p>
+Returns the offset, in bytes, of a member of a struct.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -409,12 +388,12 @@ Returns the offset, in bytes, of a member of a struct.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>struct_type</code></em> :</span></p></td>
-<td>a structure type, e.g. <span class="structname">GtkWidget</span>
+<td>a structure type, e.g. <a href="http://library.gnome.org/devel/gtk3/GtkWidget.html"><span class="type">GtkWidget</span></a>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>member</code></em> :</span></p></td>
-<td>a field in the structure, e.g. <em class="structfield"><code>window</code></em>
+<td>a field in the structure, e.g. <em class="parameter"><code>window</code></em>
 </td>
 </tr>
 <tr>
@@ -432,31 +411,27 @@ Returns the offset, in bytes, of a member of a struct.
 </pre>
 <p>
 Indicates the number of bytes to which memory will be aligned on the
-current platform.
-</p>
+current platform.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="G-CONST-RETURN:CAPS"></a><h3>G_CONST_RETURN</h3>
 <pre class="programlisting">#define G_CONST_RETURN
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">G_CONST_RETURN</code> has been deprecated since version 2.30 and should not be used in newly-written code. API providers should replace all existing uses with
-    <code class="literal">const</code> and API consumers should adjust their code
-    accordingly</p>
+const and API consumers should adjust their code accordingly</p>
 </div>
 <p>
 If <code class="literal">G_DISABLE_CONST_RETURNS</code> is defined, this macro expands
-to nothing. By default, the macro expands to <code class="literal">const</code>.
-The macro should be used in place of <code class="literal">const</code> for
-functions that return a value that should not be modified. The
-purpose of this macro is to allow us to turn on <code class="literal">const</code>
-for returned constant strings by default, while allowing programmers
-who find that annoying to turn it off. This macro should only be used
-for return values and for <span class="emphasis"><em>out</em></span> parameters, it doesn't
-make sense for <span class="emphasis"><em>in</em></span> parameters.
-</p>
+to nothing. By default, the macro expands to const. The macro
+can be used in place of const for functions that return a value
+that should not be modified. The purpose of this macro is to allow
+us to turn on const for returned constant strings by default, while
+allowing programmers who find that annoying to turn it off. This macro
+should only be used for return values and for "out" parameters, it
+doesn't make sense for "in" parameters.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -467,8 +442,7 @@ make sense for <span class="emphasis"><em>in</em></span> parameters.
 Determines the number of elements in an array. The array must be
 declared so the compiler knows its size at compile-time; this
 macro will not work on an array allocated on the heap, only static
-arrays or arrays on the stack.
-</p>
+arrays or arrays on the stack.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -484,6 +458,6 @@ arrays or arrays on the stack.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

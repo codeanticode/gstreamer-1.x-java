@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GTcpWrapperConnection</title>
+<title>GIO Reference Manual: GTcpWrapperConnection</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="highlevel-socket.html" title="High-level network functionallity">
 <link rel="prev" href="GTcpConnection.html" title="GTcpConnection">
 <link rel="next" href="GSocketListener.html" title="GSocketListener">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GTcpConnection.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GSocketListener.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GTcpWrapperConnection.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GTcpWrapperConnection.description" class="shortcut">Description</a>
                    | 
                   <a href="#GTcpWrapperConnection.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GTcpWrapperConnection.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GTcpConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GSocketListener.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GTcpWrapperConnection"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -75,8 +72,7 @@ A <a class="link" href="GTcpWrapperConnection.html" title="GTcpWrapperConnection
 based on a <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>, but which is not actually a
 <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>. This is used by <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a> so that it can
 always return a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>, even when the connection it has
-actually created is not directly a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>.
-</p>
+actually created is not directly a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GTcpWrapperConnection.details"></a><h2>Details</h2>
@@ -90,8 +86,7 @@ actually created is not directly a <a class="link" href="GSocketConnection.html"
 <pre class="programlisting"><a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="returnvalue">GSocketConnection</span></a> * g_tcp_wrapper_connection_new        (<em class="parameter"><code><a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a> *base_io_stream</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
-Wraps <em class="parameter"><code>base_io_stream</code></em> and <em class="parameter"><code>socket</code></em> together as a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>.
-</p>
+Wraps <em class="parameter"><code>base_io_stream</code></em> and <em class="parameter"><code>socket</code></em> together as a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -121,8 +116,7 @@ Wraps <em class="parameter"><code>base_io_stream</code></em> and <em class="para
 <pre class="programlisting"><a class="link" href="GIOStream.html" title="GIOStream"><span class="returnvalue">GIOStream</span></a> *         g_tcp_wrapper_connection_get_base_io_stream
                                                         (<em class="parameter"><code><a class="link" href="GTcpWrapperConnection.html" title="GTcpWrapperConnection"><span class="type">GTcpWrapperConnection</span></a> *conn</code></em>);</pre>
 <p>
-Get's <em class="parameter"><code>conn</code></em>'s base <a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a>
-</p>
+Get's <em class="parameter"><code>conn</code></em>'s base <a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a></p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -159,6 +153,6 @@ Get's <em class="parameter"><code>conn</code></em>'s base <a class="link" href="
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

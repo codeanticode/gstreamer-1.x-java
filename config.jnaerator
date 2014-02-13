@@ -6,8 +6,11 @@ http://code.google.com/p/jnaerator/wiki/CommandLineOptionsAndEnvironmentVariable
 
 */
 
-// common include
--Ilibxml2/include
+// common includes
+-I/usr/include/linux
+-I/usr/include/x86_64-linux-gnu/c++/4.8
+-Iglib
+-Iglib/glib
 
 -DTEST=1
 
@@ -34,7 +37,7 @@ Choose the output mode of JNAerator
 -mavenArtifactId com.googlecode.gstreamer-java
 
 // Set group id of the generated Maven project
--mavenGroupId gstreamer1_x-java
+-mavenGroupId gstreamer-java
 
 // Set version of the generated Maven project 
 -mavenVersion 1.7-SNAPSHOT

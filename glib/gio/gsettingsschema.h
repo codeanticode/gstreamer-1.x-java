@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifndef __G_SETTINGS_SCHEMA_H__
@@ -72,10 +70,10 @@ GLIB_AVAILABLE_IN_2_32
 const gchar *           g_settings_schema_get_path                      (GSettingsSchema        *schema);
 GLIB_AVAILABLE_IN_2_40
 GSettingsSchemaKey *    g_settings_schema_get_key                       (GSettingsSchema        *schema,
-                                                                         const gchar            *key);
+                                                                         const gchar            *name);
 GLIB_AVAILABLE_IN_2_40
 gboolean                g_settings_schema_has_key                       (GSettingsSchema        *schema,
-                                                                         const gchar            *key);
+                                                                         const gchar            *name);
 
 #define                 G_TYPE_SETTINGS_SCHEMA_KEY                      (g_settings_schema_key_get_type ())
 GLIB_AVAILABLE_IN_2_40

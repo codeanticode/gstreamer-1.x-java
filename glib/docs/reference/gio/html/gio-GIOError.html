@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GIOError</title>
+<title>GIO Reference Manual: GIOError</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="file_ops.html" title="File Operations">
 <link rel="prev" href="GFileEnumerator.html" title="GFileEnumerator">
 <link rel="next" href="GMountOperation.html" title="GMountOperation">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GFileEnumerator.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="file_ops.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GMountOperation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-GIOError.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-GIOError.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="file_ops.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GFileEnumerator.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GMountOperation.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-GIOError"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -49,8 +46,7 @@ enum                <a class="link" href="gio-GIOError.html#GIOErrorEnum" title=
 <div class="refsect1">
 <a name="gio-GIOError.description"></a><h2>Description</h2>
 <p>
-Contains helper functions for reporting errors to the user.
-</p>
+Contains helper functions for reporting errors to the user.</p>
 </div>
 <div class="refsect1">
 <a name="gio-GIOError.details"></a><h2>Details</h2>
@@ -60,8 +56,7 @@ Contains helper functions for reporting errors to the user.
 </pre>
 <p>
 Error domain for GIO. Errors in this domain will be from the <a class="link" href="gio-GIOError.html#GIOErrorEnum" title="enum GIOErrorEnum"><span class="type">GIOErrorEnum</span></a> enumeration.
-See <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for more information on error domains.
-</p>
+See <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for more information on error domains.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -115,8 +110,7 @@ See <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.h
 } GIOErrorEnum;
 </pre>
 <p>
-Error codes returned by GIO functions.
-</p>
+Error codes returned by GIO functions.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -364,8 +358,7 @@ Error codes returned by GIO functions.
 <a name="g-io-error-from-errno"></a><h3>g_io_error_from_errno ()</h3>
 <pre class="programlisting"><a class="link" href="gio-GIOError.html#GIOErrorEnum" title="enum GIOErrorEnum"><span class="returnvalue">GIOErrorEnum</span></a>        g_io_error_from_errno               (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> err_no</code></em>);</pre>
 <p>
-Converts errno.h error codes into GIO error codes.
-</p>
+Converts errno.h error codes into GIO error codes.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -391,8 +384,7 @@ Converts errno.h error codes into GIO error codes.
 <p>
 Converts some common error codes into GIO error codes. The
 fallback value G_IO_ERROR_FAILED is returned for error codes not
-handled.
-</p>
+handled.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -416,6 +408,6 @@ handled.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

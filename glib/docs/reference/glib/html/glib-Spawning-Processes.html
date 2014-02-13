@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Spawning Processes</title>
+<title>GLib Reference Manual: Spawning Processes</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Timers.html" title="Timers">
 <link rel="next" href="glib-File-Utilities.html" title="File Utilities">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Timers.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-File-Utilities.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Spawning-Processes.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Spawning-Processes.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Timers.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-File-Utilities.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Spawning-Processes"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -73,6 +70,7 @@ enum                <a class="link" href="glib-Spawning-Processes.html#GSpawnFla
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> **standard_error</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *exit_status</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);
+#define             <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-EXIT-ERROR:CAPS" title="G_SPAWN_EXIT_ERROR">G_SPAWN_EXIT_ERROR</a>
 <a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="glib-Spawning-Processes.html#g-spawn-check-exit-status" title="g_spawn_check_exit_status ()">g_spawn_check_exit_status</a>           (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> exit_status</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);
 <a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            <a class="link" href="glib-Spawning-Processes.html#g-spawn-command-line-async" title="g_spawn_command_line_async ()">g_spawn_command_line_async</a>          (<em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *command_line</code></em>,
@@ -121,8 +119,7 @@ enum                <a class="link" href="glib-Spawning-Processes.html#GSpawnFla
 } GSpawnError;
 </pre>
 <p>
-Error codes returned by spawning processes.
-</p>
+Error codes returned by spawning processes.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -246,8 +243,7 @@ Error codes returned by spawning processes.
 <p>
 Error domain for spawning processes. Errors in this domain will
 be from the <a class="link" href="glib-Spawning-Processes.html#GSpawnError" title="enum GSpawnError"><span class="type">GSpawnError</span></a> enumeration. See <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> for information on
-error domains.
-</p>
+error domains.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -268,8 +264,7 @@ error domains.
 } GSpawnFlags;
 </pre>
 <p>
-Flags passed to <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a>, <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>.
-</p>
+Flags passed to <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a>, <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -352,21 +347,18 @@ Flags passed to <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync"
 <p>
 Specifies the type of the setup function passed to <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a>,
 <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>, which can, in very
-limited ways, be used to affect the child's execution.
-</p>
+limited ways, be used to affect the child's execution.</p>
 <p>
 On POSIX platforms, the function is called in the child after GLib
 has performed all the setup it plans to perform, but before calling
 <code class="function">exec()</code>. Actions taken in this function will only affect the child,
-not the parent.
-</p>
+not the parent.</p>
 <p>
 On Windows, the function is called in the parent. Its usefulness on
 Windows is thus questionable. In many cases executing the child setup
 function in the parent can have ill effects, and you should be very
 careful when porting software to Windows that uses child setup
-functions.
-</p>
+functions.</p>
 <p>
 However, even on POSIX, you are extremely limited in what you can
 safely do from a <a class="link" href="glib-Spawning-Processes.html#GSpawnChildSetupFunc" title="GSpawnChildSetupFunc ()"><span class="type">GSpawnChildSetupFunc</span></a>, because any mutexes that
@@ -376,16 +368,14 @@ never be unlocked (since the threads that held them don't exist in
 the child). POSIX allows only async-signal-safe functions (see
 <span class="citerefentry"><span class="refentrytitle">signal</span>(7)</span>)
 to be called in the child between <code class="function">fork()</code> and <code class="function">exec()</code>, which
-drastically limits the usefulness of child setup functions.
-</p>
+drastically limits the usefulness of child setup functions.</p>
 <p>
 In particular, it is not safe to call any function which may
 call <code class="function">malloc()</code>, which includes POSIX functions such as <code class="function">setenv()</code>.
 If you need to set up the child environment differently from
 the parent, you should use <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-get-environ" title="g_get_environ ()"><code class="function">g_get_environ()</code></a>, <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-environ-setenv" title="g_environ_setenv ()"><code class="function">g_environ_setenv()</code></a>,
 and <a class="link" href="glib-Miscellaneous-Utility-Functions.html#g-environ-unsetenv" title="g_environ_unsetenv ()"><code class="function">g_environ_unsetenv()</code></a>, and then pass the complete environment
-list to the <code class="literal">g_spawn...</code> function.
-</p>
+list to the <code class="literal">g_spawn...</code> function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -425,14 +415,12 @@ is used to search for the executable. If <em class="parameter"><code>flags</code
 <em class="parameter"><code>envp</code></em> is used to search for the executable.
 If both the <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> and <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH-FROM-ENVP:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH_FROM_ENVP</code></a>
 flags are set, the <code class="envar">PATH</code> variable from <em class="parameter"><code>envp</code></em> takes precedence 
-over the environment variable.
-</p>
+over the environment variable.</p>
 <p>
 If the program name is not a full path and <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> flag is not
 used, then the program will be run from the current directory (or
 <em class="parameter"><code>working_directory</code></em>, if specified); this might be unexpected or even
-dangerous in some cases when the current directory is world-writable.
-</p>
+dangerous in some cases when the current directory is world-writable.</p>
 <p>
 On Windows, note that all the string or string vector arguments to
 this function and the other g_spawn*() functions are in UTF-8, the
@@ -441,8 +429,7 @@ the system codepage passed in these arguments will be correctly
 available in the spawned program only if it uses wide character API
 to retrieve its command line. For C programs built with Microsoft's
 tools it is enough to make the program have a <code class="function">wmain()</code> instead of
-<code class="function">main()</code>. <code class="function">wmain()</code> has a wide character argument vector as parameter.
-</p>
+<code class="function">main()</code>. <code class="function">wmain()</code> has a wide character argument vector as parameter.</p>
 <p>
 At least currently, mingw doesn't support <code class="function">wmain()</code>, so if you use
 mingw to develop the spawned program, it will have to call the
@@ -451,37 +438,31 @@ argument vector and environment. See gspawn-win32-helper.c in the
 GLib sources or init.c in the mingw runtime sources for a prototype
 for that function. Alternatively, you can retrieve the Win32 system
 level wide character command line passed to the spawned program
-using the <code class="function">GetCommandLineW()</code> function.
-</p>
+using the <code class="function">GetCommandLineW()</code> function.</p>
 <p>
-On Windows the low-level child process creation API
-<code class="function"><code class="function">CreateProcess()</code></code> doesn't use argument vectors,
-but a command line. The C runtime library's
-<code class="function">spawn*()</code> family of functions (which
-<a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> eventually calls) paste the argument
-vector elements together into a command line, and the C runtime startup code
-does a corresponding reconstruction of an argument vector from the
-command line, to be passed to <code class="function">main()</code>. Complications arise when you have
-argument vector elements that contain spaces of double quotes. The
-<code class="function">spawn*()</code> functions don't do any quoting or
-escaping, but on the other hand the startup code does do unquoting
-and unescaping in order to enable receiving arguments with embedded
-spaces or double quotes. To work around this asymmetry,
-<a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> will do quoting and escaping on argument
-vector elements that need it before calling the C runtime
-<code class="function">spawn()</code> function.
-</p>
+On Windows the low-level child process creation API <code class="function">CreateProcess()</code>
+doesn't use argument vectors, but a command line. The C runtime
+library's spawn*() family of functions (which <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>
+eventually calls) paste the argument vector elements together into
+a command line, and the C runtime startup code does a corresponding
+reconstruction of an argument vector from the command line, to be
+passed to <code class="function">main()</code>. Complications arise when you have argument vector
+elements that contain spaces of double quotes. The spawn*() functions
+don't do any quoting or escaping, but on the other hand the startup
+code does do unquoting and unescaping in order to enable receiving
+arguments with embedded spaces or double quotes. To work around this
+asymmetry, <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> will do quoting and escaping on
+argument vector elements that need it before calling the C runtime
+<code class="function">spawn()</code> function.</p>
 <p>
 The returned <em class="parameter"><code>child_pid</code></em> on Windows is a handle to the child
 process, not its identifier. Process handles and process
-identifiers are different concepts on Windows.
-</p>
+identifiers are different concepts on Windows.</p>
 <p>
 <em class="parameter"><code>envp</code></em> is a <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>-terminated array of strings, where each string
 has the form <code class="literal">KEY=VALUE</code>. This will become
 the child's environment. If <em class="parameter"><code>envp</code></em> is <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the child inherits its
-parent's environment.
-</p>
+parent's environment.</p>
 <p>
 <em class="parameter"><code>flags</code></em> should be the bitwise OR of any flags you want to affect the
 function's behaviour. The <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-DO-NOT-REAP-CHILD:CAPS"><code class="literal">G_SPAWN_DO_NOT_REAP_CHILD</code></a> means that the
@@ -492,19 +473,17 @@ resources which may be associated with the child process. (On Unix,
 using a child watch is equivalent to calling <code class="function">waitpid()</code> or handling
 the <code class="literal">SIGCHLD</code> signal manually. On Windows, calling <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a>
 is equivalent to calling <code class="function">CloseHandle()</code> on the process handle returned
-in <em class="parameter"><code>child_pid</code></em>).  See <a class="link" href="glib-The-Main-Event-Loop.html#g-child-watch-add" title="g_child_watch_add ()"><code class="function">g_child_watch_add()</code></a>.
-</p>
+in <em class="parameter"><code>child_pid</code></em>). See <a class="link" href="glib-The-Main-Event-Loop.html#g-child-watch-add" title="g_child_watch_add ()"><code class="function">g_child_watch_add()</code></a>.</p>
 <p>
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-LEAVE-DESCRIPTORS-OPEN:CAPS"><code class="literal">G_SPAWN_LEAVE_DESCRIPTORS_OPEN</code></a> means that the parent's open file
-descriptors will be inherited by the child; otherwise all
-descriptors except stdin/stdout/stderr will be closed before
-calling <code class="function">exec()</code> in the child. <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> 
-means that <code class="literal">argv[0]</code> need not be an absolute path, it
-will be looked for in the <code class="envar">PATH</code> environment variable.
-<a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH-FROM-ENVP:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH_FROM_ENVP</code></a> means need not be an absolute path, it
-will be looked for in the <code class="envar">PATH</code> variable from <em class="parameter"><code>envp</code></em>. If
-both <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> and <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH-FROM-ENVP:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH_FROM_ENVP</code></a> are used,
-the value from <em class="parameter"><code>envp</code></em> takes precedence over the environment.
+descriptors will be inherited by the child; otherwise all descriptors
+except stdin/stdout/stderr will be closed before calling <code class="function">exec()</code> in the
+child. <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> means that <em class="parameter"><code>argv</code></em>[0] need not be an absolute
+path, it will be looked for in the <code class="envar">PATH</code> environment
+variable. <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH-FROM-ENVP:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH_FROM_ENVP</code></a> means need not be an absolute
+path, it will be looked for in the <code class="envar">PATH</code> variable from
+<em class="parameter"><code>envp</code></em>. If both <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> and <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH-FROM-ENVP:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH_FROM_ENVP</code></a>
+are used, the value from <em class="parameter"><code>envp</code></em> takes precedence over the environment.
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-STDOUT-TO-DEV-NULL:CAPS"><code class="literal">G_SPAWN_STDOUT_TO_DEV_NULL</code></a> means that the child's standard output will 
 be discarded, instead of going to the same location as the parent's 
 standard output. If you use this flag, <em class="parameter"><code>standard_output</code></em> must be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
@@ -515,90 +494,69 @@ standard error. If you use this flag, <em class="parameter"><code>standard_error
 standard input (by default, the child's standard input is attached to
 /dev/null). If you use this flag, <em class="parameter"><code>standard_input</code></em> must be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-FILE-AND-ARGV-ZERO:CAPS"><code class="literal">G_SPAWN_FILE_AND_ARGV_ZERO</code></a> means that the first element of <em class="parameter"><code>argv</code></em> is
-the file to execute, while the remaining elements are the
-actual argument vector to pass to the file. Normally
-<a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> uses <em class="parameter"><code>argv</code></em>[0] as the file to execute, and
-passes all of <em class="parameter"><code>argv</code></em> to the child.
-</p>
+the file to execute, while the remaining elements are the actual
+argument vector to pass to the file. Normally <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a>
+uses <em class="parameter"><code>argv</code></em>[0] as the file to execute, and passes all of <em class="parameter"><code>argv</code></em> to the child.</p>
 <p>
 <em class="parameter"><code>child_setup</code></em> and <em class="parameter"><code>user_data</code></em> are a function and user data. On POSIX
 platforms, the function is called in the child after GLib has
 performed all the setup it plans to perform (including creating
-pipes, closing file descriptors, etc.) but before calling
-<code class="function">exec()</code>. That is, <em class="parameter"><code>child_setup</code></em> is called just
-before calling <code class="function">exec()</code> in the child. Obviously
-actions taken in this function will only affect the child, not the
-parent.
-</p>
+pipes, closing file descriptors, etc.) but before calling <code class="function">exec()</code>.
+That is, <em class="parameter"><code>child_setup</code></em> is called just before calling <code class="function">exec()</code> in the
+child. Obviously actions taken in this function will only affect
+the child, not the parent.</p>
 <p>
-On Windows, there is no separate <code class="function">fork()</code> and <code class="function">exec()</code>
-functionality. Child processes are created and run with a single
-API call, <code class="function">CreateProcess()</code>. There is no sensible thing <em class="parameter"><code>child_setup</code></em>
-could be used for on Windows so it is ignored and not called.
-</p>
+On Windows, there is no separate <code class="function">fork()</code> and <code class="function">exec()</code> functionality.
+Child processes are created and run with a single API call,
+<code class="function">CreateProcess()</code>. There is no sensible thing <em class="parameter"><code>child_setup</code></em>
+could be used for on Windows so it is ignored and not called.</p>
 <p>
 If non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, <em class="parameter"><code>child_pid</code></em> will on Unix be filled with the child's
-process ID. You can use the process ID to send signals to the
-child, or to use <a class="link" href="glib-The-Main-Event-Loop.html#g-child-watch-add" title="g_child_watch_add ()"><code class="function">g_child_watch_add()</code></a> (or <code class="function">waitpid()</code>) if you specified the
+process ID. You can use the process ID to send signals to the child,
+or to use <a class="link" href="glib-The-Main-Event-Loop.html#g-child-watch-add" title="g_child_watch_add ()"><code class="function">g_child_watch_add()</code></a> (or <code class="function">waitpid()</code>) if you specified the
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-DO-NOT-REAP-CHILD:CAPS"><code class="literal">G_SPAWN_DO_NOT_REAP_CHILD</code></a> flag. On Windows, <em class="parameter"><code>child_pid</code></em> will be
 filled with a handle to the child process only if you specified the
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-DO-NOT-REAP-CHILD:CAPS"><code class="literal">G_SPAWN_DO_NOT_REAP_CHILD</code></a> flag. You can then access the child
 process using the Win32 API, for example wait for its termination
-with the <code class="function">WaitFor*()</code> functions, or examine its
-exit code with <code class="function">GetExitCodeProcess()</code>. You should close the handle 
-with <code class="function">CloseHandle()</code> or <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a> when you no longer need it.
-</p>
+with the WaitFor*() functions, or examine its exit code with
+<code class="function">GetExitCodeProcess()</code>. You should close the handle with <code class="function">CloseHandle()</code>
+or <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a> when you no longer need it.</p>
 <p>
 If non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the <em class="parameter"><code>standard_input</code></em>, <em class="parameter"><code>standard_output</code></em>, <em class="parameter"><code>standard_error</code></em>
 locations will be filled with file descriptors for writing to the child's
 standard input or reading from its standard output or standard error.
 The caller of <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> must close these file descriptors
-when they are no longer in use. If these parameters are <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the corresponding
-pipe won't be created.
-</p>
+when they are no longer in use. If these parameters are <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the
+corresponding pipe won't be created.</p>
 <p>
 If <em class="parameter"><code>standard_input</code></em> is NULL, the child's standard input is attached to 
-/dev/null unless <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-CHILD-INHERITS-STDIN:CAPS"><code class="literal">G_SPAWN_CHILD_INHERITS_STDIN</code></a> is set.
-</p>
+/dev/null unless <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-CHILD-INHERITS-STDIN:CAPS"><code class="literal">G_SPAWN_CHILD_INHERITS_STDIN</code></a> is set.</p>
 <p>
 If <em class="parameter"><code>standard_error</code></em> is NULL, the child's standard error goes to the same 
 location as the parent's standard error unless <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-STDERR-TO-DEV-NULL:CAPS"><code class="literal">G_SPAWN_STDERR_TO_DEV_NULL</code></a> 
-is set.
-</p>
+is set.</p>
 <p>
 If <em class="parameter"><code>standard_output</code></em> is NULL, the child's standard output goes to the same 
 location as the parent's standard output unless <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-STDOUT-TO-DEV-NULL:CAPS"><code class="literal">G_SPAWN_STDOUT_TO_DEV_NULL</code></a> 
-is set.
-</p>
+is set.</p>
 <p>
 <em class="parameter"><code>error</code></em> can be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to ignore errors, or non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to report errors.
-If an error is set, the function returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>. Errors
-are reported even if they occur in the child (for example if the
-executable in <code class="literal">argv[0]</code> is not found). Typically
-the <code class="literal">message</code> field of returned errors should be displayed
-to users. Possible errors are those from the <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-ERROR:CAPS" title="G_SPAWN_ERROR"><span class="type">G_SPAWN_ERROR</span></a> domain.
-</p>
+If an error is set, the function returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>. Errors are reported
+even if they occur in the child (for example if the executable in
+<em class="parameter"><code>argv</code></em>[0] is not found). Typically the <code class="literal">message</code> field
+of returned errors should be displayed to users. Possible errors are
+those from the <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-ERROR:CAPS" title="G_SPAWN_ERROR"><span class="type">G_SPAWN_ERROR</span></a> domain.</p>
 <p>
 If an error occurs, <em class="parameter"><code>child_pid</code></em>, <em class="parameter"><code>standard_input</code></em>, <em class="parameter"><code>standard_output</code></em>,
-and <em class="parameter"><code>standard_error</code></em> will not be filled with valid values.
-</p>
+and <em class="parameter"><code>standard_error</code></em> will not be filled with valid values.</p>
 <p>
 If <em class="parameter"><code>child_pid</code></em> is not <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> and an error does not occur then the returned
-process reference must be closed using <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a>.
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+process reference must be closed using <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a>.</p>
 <p>
 If you are writing a GTK+ application, and the program you 
 are spawning is a graphical application, too, then you may
-want to use <code class="function">gdk_spawn_on_screen_with_pipes()</code> instead to ensure that
-the spawned program opens its windows on the right screen.
-</p>
-</div>
-<p>
-</p>
+want to use <a href="http://library.gnome.org/devel/gdk3/GdkScreen.html#gdk-spawn-on-screen-with-pipes"><code class="function">gdk_spawn_on_screen_with_pipes()</code></a> instead to ensure that
+the spawned program opens its windows on the right screen.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -680,36 +638,19 @@ the spawned program opens its windows on the right screen.
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 See <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> for a full description; this function
-simply calls the <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> without any pipes.
-</p>
+simply calls the <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> without any pipes.</p>
 <p>
 You should call <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a> on the returned child process
-reference when you don't need it any more.
-</p>
+reference when you don't need it any more.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+If you are writing a GTK+ application, and the program you are
+spawning is a graphical application, too, then you may want to
+use <a href="http://library.gnome.org/devel/gdk3/GdkScreen.html#gdk-spawn-on-screen"><code class="function">gdk_spawn_on_screen()</code></a> instead to ensure that the spawned program
+opens its windows on the right screen.</p>
 <p>
-If you are writing a GTK+ application, and the program you 
-are spawning is a graphical application, too, then you may
-want to use <code class="function">gdk_spawn_on_screen()</code> instead to ensure that
-the spawned program opens its windows on the right screen.
-</p>
-</div>
-<p>
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p> Note that the returned <em class="parameter"><code>child_pid</code></em> on Windows is a
-handle to the child process and not its identifier. Process handles
-and process identifiers are different concepts on Windows.
-</p>
-</div>
-<p>
-</p>
+Note that the returned <em class="parameter"><code>child_pid</code></em> on Windows is a handle to the child
+process and not its identifier. Process handles and process identifiers
+are different concepts on Windows.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -781,24 +722,20 @@ Executes a child synchronously (waits for the child to exit before returning).
 All output from the child is stored in <em class="parameter"><code>standard_output</code></em> and <em class="parameter"><code>standard_error</code></em>,
 if those parameters are non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. Note that you must set the  
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-STDOUT-TO-DEV-NULL:CAPS"><code class="literal">G_SPAWN_STDOUT_TO_DEV_NULL</code></a> and <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-STDERR-TO-DEV-NULL:CAPS"><code class="literal">G_SPAWN_STDERR_TO_DEV_NULL</code></a> flags when
-passing <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> for <em class="parameter"><code>standard_output</code></em> and <em class="parameter"><code>standard_error</code></em>.
-</p>
+passing <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> for <em class="parameter"><code>standard_output</code></em> and <em class="parameter"><code>standard_error</code></em>.</p>
 <p>
 If <em class="parameter"><code>exit_status</code></em> is non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the platform-specific exit status of
 the child is stored there; see the documentation of
 <a class="link" href="glib-Spawning-Processes.html#g-spawn-check-exit-status" title="g_spawn_check_exit_status ()"><code class="function">g_spawn_check_exit_status()</code></a> for how to use and interpret this.
 Note that it is invalid to pass <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-DO-NOT-REAP-CHILD:CAPS"><code class="literal">G_SPAWN_DO_NOT_REAP_CHILD</code></a> in
-<em class="parameter"><code>flags</code></em>.
-</p>
+<em class="parameter"><code>flags</code></em>.</p>
 <p>
 If an error occurs, no data is returned in <em class="parameter"><code>standard_output</code></em>,
-<em class="parameter"><code>standard_error</code></em>, or <em class="parameter"><code>exit_status</code></em>.
-</p>
+<em class="parameter"><code>standard_error</code></em>, or <em class="parameter"><code>exit_status</code></em>.</p>
 <p>
 This function calls <a class="link" href="glib-Spawning-Processes.html#g-spawn-async-with-pipes" title="g_spawn_async_with_pipes ()"><code class="function">g_spawn_async_with_pipes()</code></a> internally; see that
 function for full details on the other parameters and details on
-how these functions work on Windows.
-</p>
+how these functions work on Windows.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -858,10 +795,19 @@ how these functions work on Windows.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error was set.</td>
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if an error was set</td>
 </tr>
 </tbody>
 </table></div>
+</div>
+<hr>
+<div class="refsect2">
+<a name="G-SPAWN-EXIT-ERROR:CAPS"></a><h3>G_SPAWN_EXIT_ERROR</h3>
+<pre class="programlisting">#define G_SPAWN_EXIT_ERROR g_spawn_exit_error_quark ()
+</pre>
+<p>
+Error domain used by <a class="link" href="glib-Spawning-Processes.html#g-spawn-check-exit-status" title="g_spawn_check_exit_status ()"><code class="function">g_spawn_check_exit_status()</code></a>.  The code
+will be the program exit code.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -870,51 +816,41 @@ how these functions work on Windows.
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Set <em class="parameter"><code>error</code></em> if <em class="parameter"><code>exit_status</code></em> indicates the child exited abnormally
-(e.g. with a nonzero exit code, or via a fatal signal).
-</p>
+(e.g. with a nonzero exit code, or via a fatal signal).</p>
 <p>
 The <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a> and <a class="link" href="glib-The-Main-Event-Loop.html#g-child-watch-add" title="g_child_watch_add ()"><code class="function">g_child_watch_add()</code></a> family of APIs return an
 exit status for subprocesses encoded in a platform-specific way.
-On Unix, this is guaranteed to be in the same format
-<code class="literal">waitpid(2)</code> returns, and on Windows it is
-guaranteed to be the result of
-<code class="literal"><code class="function">GetExitCodeProcess()</code></code>.  Prior to the introduction
-of this function in GLib 2.34, interpreting <em class="parameter"><code>exit_status</code></em> required
-use of platform-specific APIs, which is problematic for software
-using GLib as a cross-platform layer.
-</p>
+On Unix, this is guaranteed to be in the same format <code class="function">waitpid()</code> returns,
+and on Windows it is guaranteed to be the result of <code class="function">GetExitCodeProcess()</code>.</p>
+<p>
+Prior to the introduction of this function in GLib 2.34, interpreting
+<em class="parameter"><code>exit_status</code></em> required use of platform-specific APIs, which is problematic
+for software using GLib as a cross-platform layer.</p>
 <p>
 Additionally, many programs simply want to determine whether or not
 the child exited successfully, and either propagate a <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> or
-print a message to standard error.  In that common case, this
-function can be used.  Note that the error message in <em class="parameter"><code>error</code></em> will
-contain human-readable information about the exit status.
-</p>
+print a message to standard error. In that common case, this function
+can be used. Note that the error message in <em class="parameter"><code>error</code></em> will contain
+human-readable information about the exit status.</p>
 <p>
-The <code class="literal">domain</code> and <code class="literal">code</code> of <em class="parameter"><code>error</code></em>
-have special semantics in the case where the process has an "exit
-code", as opposed to being killed by a signal.  On Unix, this
-happens if <code class="literal">WIFEXITED</code> would be true of
-<em class="parameter"><code>exit_status</code></em>.  On Windows, it is always the case.
-</p>
+The <em class="parameter"><code>domain</code></em> and <em class="parameter"><code>code</code></em> of <em class="parameter"><code>error</code></em> have special semantics in the case
+where the process has an "exit code", as opposed to being killed by
+a signal. On Unix, this happens if <code class="function">WIFEXITED()</code> would be true of
+<em class="parameter"><code>exit_status</code></em>. On Windows, it is always the case.</p>
 <p>
 The special semantics are that the actual exit code will be the
-code set in <em class="parameter"><code>error</code></em>, and the domain will be <code class="literal">G_SPAWN_EXIT_ERROR</code>.
-This allows you to differentiate between different exit codes.
-</p>
+code set in <em class="parameter"><code>error</code></em>, and the domain will be <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-EXIT-ERROR:CAPS" title="G_SPAWN_EXIT_ERROR"><code class="literal">G_SPAWN_EXIT_ERROR</code></a>.
+This allows you to differentiate between different exit codes.</p>
 <p>
 If the process was terminated by some means other than an exit
 status, the domain will be <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-ERROR:CAPS" title="G_SPAWN_ERROR"><code class="literal">G_SPAWN_ERROR</code></a>, and the code will be
-<a class="link" href="glib-Spawning-Processes.html#G-SPAWN-ERROR-FAILED:CAPS"><code class="literal">G_SPAWN_ERROR_FAILED</code></a>.
-</p>
+<a class="link" href="glib-Spawning-Processes.html#G-SPAWN-ERROR-FAILED:CAPS"><code class="literal">G_SPAWN_ERROR_FAILED</code></a>.</p>
 <p>
 This function just offers convenience; you can of course also check
 the available platform via a macro such as <a class="link" href="glib-Standard-Macros.html#G-OS-UNIX:CAPS" title="G_OS_UNIX"><code class="literal">G_OS_UNIX</code></a>, and use
-<code class="literal"><code class="function">WIFEXITED()</code></code> and <code class="literal"><code class="function">WEXITSTATUS()</code></code>
-on <em class="parameter"><code>exit_status</code></em> directly.  Do not attempt to scan or parse the
-error message string; it may be translated and/or change in future
-versions of GLib.
-</p>
+<code class="function">WIFEXITED()</code> and <code class="function">WEXITSTATUS()</code> on <em class="parameter"><code>exit_status</code></em> directly. Do not attempt
+to scan or parse the error message string; it may be translated and/or
+change in future versions of GLib.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -934,7 +870,8 @@ versions of GLib.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if child exited successfully, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> otherwise (and <em class="parameter"><code>error</code></em> will be set)</td>
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if child exited successfully, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> otherwise (and
+<em class="parameter"><code>error</code></em> will be set)</td>
 </tr>
 </tbody>
 </table></div>
@@ -952,11 +889,9 @@ command line in the background. Unlike <a class="link" href="glib-Spawning-Proce
 <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> flag is enabled, other flags are not. Note
 that <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> can have security implications, so
 consider using <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a> directly if appropriate. Possible
-errors are those from <a class="link" href="glib-Shell-related-Utilities.html#g-shell-parse-argv" title="g_shell_parse_argv ()"><code class="function">g_shell_parse_argv()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a>.
-</p>
+errors are those from <a class="link" href="glib-Shell-related-Utilities.html#g-shell-parse-argv" title="g_shell_parse_argv ()"><code class="function">g_shell_parse_argv()</code></a> and <a class="link" href="glib-Spawning-Processes.html#g-spawn-async" title="g_spawn_async ()"><code class="function">g_spawn_async()</code></a>.</p>
 <p>
-The same concerns on Windows apply as for <a class="link" href="glib-Spawning-Processes.html#g-spawn-command-line-sync" title="g_spawn_command_line_sync ()"><code class="function">g_spawn_command_line_sync()</code></a>.
-</p>
+The same concerns on Windows apply as for <a class="link" href="glib-Spawning-Processes.html#g-spawn-command-line-sync" title="g_spawn_command_line_sync ()"><code class="function">g_spawn_command_line_sync()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -974,7 +909,7 @@ The same concerns on Windows apply as for <a class="link" href="glib-Spawning-Pr
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if error is set.</td>
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> on success, <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if error is set</td>
 </tr>
 </tbody>
 </table></div>
@@ -995,13 +930,11 @@ removed, taking a command line instead of an argument vector.  See
 is enabled. Note that <a class="link" href="glib-Spawning-Processes.html#G-SPAWN-SEARCH-PATH:CAPS"><code class="literal">G_SPAWN_SEARCH_PATH</code></a> can have security
 implications, so consider using <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a> directly if
 appropriate. Possible errors are those from <a class="link" href="glib-Spawning-Processes.html#g-spawn-sync" title="g_spawn_sync ()"><code class="function">g_spawn_sync()</code></a> and those
-from <a class="link" href="glib-Shell-related-Utilities.html#g-shell-parse-argv" title="g_shell_parse_argv ()"><code class="function">g_shell_parse_argv()</code></a>.
-</p>
+from <a class="link" href="glib-Shell-related-Utilities.html#g-shell-parse-argv" title="g_shell_parse_argv ()"><code class="function">g_shell_parse_argv()</code></a>.</p>
 <p>
 If <em class="parameter"><code>exit_status</code></em> is non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, the platform-specific exit status of
 the child is stored there; see the documentation of
-<a class="link" href="glib-Spawning-Processes.html#g-spawn-check-exit-status" title="g_spawn_check_exit_status ()"><code class="function">g_spawn_check_exit_status()</code></a> for how to use and interpret this.
-</p>
+<a class="link" href="glib-Spawning-Processes.html#g-spawn-check-exit-status" title="g_spawn_check_exit_status ()"><code class="function">g_spawn_check_exit_status()</code></a> for how to use and interpret this.</p>
 <p>
 On Windows, please note the implications of <a class="link" href="glib-Shell-related-Utilities.html#g-shell-parse-argv" title="g_shell_parse_argv ()"><code class="function">g_shell_parse_argv()</code></a>
 parsing <em class="parameter"><code>command_line</code></em>. Parsing is done according to Unix shell rules, not 
@@ -1011,8 +944,7 @@ special. Thus you cannot simply pass a <em class="parameter"><code>command_line<
 canonical Windows paths, like "c:\\program files\\app\\app.exe", as
 the backslashes will be eaten, and the space will act as a
 separator. You need to enclose such paths with single quotes, like
-"'c:\\program files\\app\\app.exe' 'e:\\folder\\argument.txt'".
-</p>
+"'c:\\program files\\app\\app.exe' 'e:\\folder\\argument.txt'".</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1058,8 +990,7 @@ separator. You need to enclose such paths with single quotes, like
 On some platforms, notably Windows, the <a class="link" href="glib-The-Main-Event-Loop.html#GPid" title="GPid"><span class="type">GPid</span></a> type represents a resource
 which must be closed to prevent resource leaking. <a class="link" href="glib-Spawning-Processes.html#g-spawn-close-pid" title="g_spawn_close_pid ()"><code class="function">g_spawn_close_pid()</code></a>
 is provided for this purpose. It should be used on all platforms, even
-though it doesn't do anything under UNIX.
-</p>
+though it doesn't do anything under UNIX.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1075,6 +1006,6 @@ though it doesn't do anything under UNIX.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

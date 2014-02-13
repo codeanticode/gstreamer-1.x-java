@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GFileAttribute</title>
+<title>GIO Reference Manual: GFileAttribute</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="file_ops.html" title="File Operations">
 <link rel="prev" href="GFile.html" title="GFile">
 <link rel="next" href="GFileInfo.html" title="GFileInfo">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GFile.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="file_ops.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GFileInfo.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-GFileAttribute.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-GFileAttribute.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="file_ops.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GFile.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GFileInfo.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-GFileAttribute"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -61,32 +58,27 @@ const <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfo" title="G
 <div class="refsect1">
 <a name="gio-GFileAttribute.description"></a><h2>Description</h2>
 <p>
-File attributes in GIO consist of a list of key-value pairs.
-</p>
+File attributes in GIO consist of a list of key-value pairs.</p>
 <p>
 Keys are strings that contain a key namespace and a key name, separated
 by a colon, e.g. "namespace::keyname". Namespaces are included to sort
 key-value pairs by namespaces for relevance. Keys can be retrived
 using wildcards, e.g. "standard::*" will return all of the keys in the
-"standard" namespace.
-</p>
+"standard" namespace.</p>
 <p>
 The list of possible attributes for a filesystem (pointed to by a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a>) is
 available as a <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="type">GFileAttributeInfoList</span></a>. This list is queryable by key names
-as indicated earlier.
-</p>
+as indicated earlier.</p>
 <p>
 Information is stored within the list in <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfo" title="GFileAttributeInfo"><span class="type">GFileAttributeInfo</span></a> structures.
 The info structure can store different types, listed in the enum
 <a class="link" href="gio-GFileAttribute.html#GFileAttributeType" title="enum GFileAttributeType"><span class="type">GFileAttributeType</span></a>. Upon creation of a <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfo" title="GFileAttributeInfo"><span class="type">GFileAttributeInfo</span></a>, the type will
-be set to <a class="link" href="gio-GFileAttribute.html#G-FILE-ATTRIBUTE-TYPE-INVALID:CAPS"><code class="literal">G_FILE_ATTRIBUTE_TYPE_INVALID</code></a>.
-</p>
+be set to <a class="link" href="gio-GFileAttribute.html#G-FILE-ATTRIBUTE-TYPE-INVALID:CAPS"><code class="literal">G_FILE_ATTRIBUTE_TYPE_INVALID</code></a>.</p>
 <p>
 Classes that implement <a class="link" href="GFile.html#GFileIface" title="struct GFileIface"><span class="type">GFileIface</span></a> will create a <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="type">GFileAttributeInfoList</span></a> and
 install default keys and values for their given file system, architecture,
 and other possible implementation details (e.g., on a UNIX system, a file
-attribute key will be registered for the user id for a given file).
-</p>
+attribute key will be registered for the user id for a given file).</p>
 <p>
 </p>
 <p>
@@ -208,14 +200,10 @@ is only available if GLib has been built with SELinux support.</td>
 <p><br class="table-break">
 </p>
 <p>
-</p>
-<p>
 Please note that these are not all of the possible namespaces.
 More namespaces can be added from GIO modules or by individual applications.
-For more information about writing GIO modules, see <a class="link" href="GIOModule.html" title="GIOModule"><span class="type">GIOModule</span></a>.
-</p>
+For more information about writing GIO modules, see <a class="link" href="GIOModule.html" title="GIOModule"><span class="type">GIOModule</span></a>.</p>
 <p>
-
 </p>
 <p>
 </p>
@@ -563,8 +551,6 @@ For more information about writing GIO modules, see <a class="link" href="GIOMod
 </div>
 <p><br class="table-break"></p>
 <p>
-</p>
-<p>
 Note that there are no predefined keys in the "xattr" and "xattr-sys"
 namespaces. Keys for the "xattr" namespace are constructed by stripping
 away the "user." prefix from the extended user attribute, and prepending
@@ -572,8 +558,7 @@ away the "user." prefix from the extended user attribute, and prepending
 concatenating "xattr-sys::" with the extended attribute name. All extended
 attribute values are returned as hex-encoded strings in which bytes outside
 the ASCII range are encoded as hexadecimal escape sequences of the form
-\x<em class="replaceable"><code>nn</code></em>.
-</p>
+\x<em class="replaceable"><code>nn</code></em>.</p>
 </div>
 <div class="refsect1">
 <a name="gio-GFileAttribute.details"></a><h2>Details</h2>
@@ -593,8 +578,7 @@ the ASCII range are encoded as hexadecimal escape sequences of the form
 } GFileAttributeType;
 </pre>
 <p>
-The data types for file attributes.
-</p>
+The data types for file attributes.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -664,8 +648,7 @@ The data types for file attributes.
 } GFileAttributeInfoFlags;
 </pre>
 <p>
-Flags specifying the behaviour of an attribute.
-</p>
+Flags specifying the behaviour of an attribute.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -700,8 +683,7 @@ Flags specifying the behaviour of an attribute.
 } GFileAttributeStatus;
 </pre>
 <p>
-Used by <a class="link" href="GFile.html#g-file-set-attributes-from-info" title="g_file_set_attributes_from_info ()"><code class="function">g_file_set_attributes_from_info()</code></a> when setting file attributes.
-</p>
+Used by <a class="link" href="GFile.html#g-file-set-attributes-from-info" title="g_file_set_attributes_from_info ()"><code class="function">g_file_set_attributes_from_info()</code></a> when setting file attributes.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -736,8 +718,7 @@ Used by <a class="link" href="GFile.html#g-file-set-attributes-from-info" title=
 } GFileAttributeInfo;
 </pre>
 <p>
-Information about a specific attribute.
-</p>
+Information about a specific attribute.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -769,8 +750,7 @@ Information about a specific attribute.
 </pre>
 <p>
 Acts as a lightweight registry for possible valid file attributes.
-The registry stores Key-Value pair formats as <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfo" title="GFileAttributeInfo"><span class="type">GFileAttributeInfo</span></a>s.
-</p>
+The registry stores Key-Value pair formats as <a class="link" href="gio-GFileAttribute.html#GFileAttributeInfo" title="GFileAttributeInfo"><span class="type">GFileAttributeInfo</span></a>s.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -793,8 +773,7 @@ The registry stores Key-Value pair formats as <a class="link" href="gio-GFileAtt
 <a name="g-file-attribute-info-list-new"></a><h3>g_file_attribute_info_list_new ()</h3>
 <pre class="programlisting"><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="returnvalue">GFileAttributeInfoList</span></a> * g_file_attribute_info_list_new (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a new file attribute info list.
-</p>
+Creates a new file attribute info list.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -811,8 +790,7 @@ Creates a new file attribute info list.
 <a name="g-file-attribute-info-list-ref"></a><h3>g_file_attribute_info_list_ref ()</h3>
 <pre class="programlisting"><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="returnvalue">GFileAttributeInfoList</span></a> * g_file_attribute_info_list_ref (<em class="parameter"><code><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="type">GFileAttributeInfoList</span></a> *list</code></em>);</pre>
 <p>
-References a file attribute info list.
-</p>
+References a file attribute info list.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -837,8 +815,7 @@ References a file attribute info list.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_file_attribute_info_list_unref    (<em class="parameter"><code><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="type">GFileAttributeInfoList</span></a> *list</code></em>);</pre>
 <p>
 Removes a reference from the given <em class="parameter"><code>list</code></em>. If the reference count
-falls to zero, the <em class="parameter"><code>list</code></em> is deleted.
-</p>
+falls to zero, the <em class="parameter"><code>list</code></em> is deleted.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -855,8 +832,7 @@ falls to zero, the <em class="parameter"><code>list</code></em> is deleted.
 <a name="g-file-attribute-info-list-dup"></a><h3>g_file_attribute_info_list_dup ()</h3>
 <pre class="programlisting"><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="returnvalue">GFileAttributeInfoList</span></a> * g_file_attribute_info_list_dup (<em class="parameter"><code><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="type">GFileAttributeInfoList</span></a> *list</code></em>);</pre>
 <p>
-Makes a duplicate of a file attribute info list.
-</p>
+Makes a duplicate of a file attribute info list.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -881,8 +857,7 @@ Makes a duplicate of a file attribute info list.
                                                         (<em class="parameter"><code><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoList" title="GFileAttributeInfoList"><span class="type">GFileAttributeInfoList</span></a> *list</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *name</code></em>);</pre>
 <p>
-Gets the file attribute with the name <em class="parameter"><code>name</code></em> from <em class="parameter"><code>list</code></em>.
-</p>
+Gets the file attribute with the name <em class="parameter"><code>name</code></em> from <em class="parameter"><code>list</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -914,8 +889,7 @@ attribute isn't found.</td>
                                                          <em class="parameter"><code><a class="link" href="gio-GFileAttribute.html#GFileAttributeInfoFlags" title="enum GFileAttributeInfoFlags"><span class="type">GFileAttributeInfoFlags</span></a> flags</code></em>);</pre>
 <p>
 Adds a new attribute with <em class="parameter"><code>name</code></em> to the <em class="parameter"><code>list</code></em>, setting
-its <em class="parameter"><code>type</code></em> and <em class="parameter"><code>flags</code></em>.
-</p>
+its <em class="parameter"><code>type</code></em> and <em class="parameter"><code>flags</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -950,6 +924,6 @@ its <em class="parameter"><code>type</code></em> and <em class="parameter"><code
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

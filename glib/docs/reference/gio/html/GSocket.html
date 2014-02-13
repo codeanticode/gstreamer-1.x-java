@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSocket</title>
+<title>GIO Reference Manual: GSocket</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="networking.html" title="Low-level network support">
 <link rel="prev" href="networking.html" title="Low-level network support">
 <link rel="next" href="GInetAddress.html" title="GInetAddress">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="networking.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="networking.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GInetAddress.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSocket.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSocket.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GSocket.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
                    | 
                   <a href="#GSocket.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="networking.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="networking.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GInetAddress.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSocket"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -246,22 +243,19 @@ GSocket implements
 <p>
 A <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> is a low-level networking primitive. It is a more or less
 direct mapping of the BSD socket API in a portable GObject based API.
-It supports both the UNIX socket implementations and winsock2 on Windows.
-</p>
+It supports both the UNIX socket implementations and winsock2 on Windows.</p>
 <p>
 <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> is the platform independent base upon which the higher level
 network primitives are based. Applications are not typically meant to
 use it directly, but rather through classes like <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a>,
 <a class="link" href="GSocketService.html" title="GSocketService"><span class="type">GSocketService</span></a> and <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a>. However there may be cases where
-direct use of <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> is useful.
-</p>
+direct use of <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> is useful.</p>
 <p>
 <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> implements the <a class="link" href="GInitable.html" title="GInitable"><span class="type">GInitable</span></a> interface, so if it is manually constructed
 by e.g. <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-new"><code class="function">g_object_new()</code></a> you must call <a class="link" href="GInitable.html#g-initable-init" title="g_initable_init ()"><code class="function">g_initable_init()</code></a> and check the
 results before using the object. This is done automatically in
 <a class="link" href="GSocket.html#g-socket-new" title="g_socket_new ()"><code class="function">g_socket_new()</code></a> and <a class="link" href="GSocket.html#g-socket-new-from-fd" title="g_socket_new_from_fd ()"><code class="function">g_socket_new_from_fd()</code></a>, so these functions can return
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>
 Sockets operate in two general modes, blocking or non-blocking. When
 in blocking mode all operations block until the requested operation
@@ -271,33 +265,28 @@ To know when a call would successfully run you can call <a class="link" href="GS
 or <a class="link" href="GSocket.html#g-socket-condition-wait" title="g_socket_condition_wait ()"><code class="function">g_socket_condition_wait()</code></a>. You can also use <a class="link" href="GSocket.html#g-socket-create-source" title="g_socket_create_source ()"><code class="function">g_socket_create_source()</code></a> and
 attach it to a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> to get callbacks when I/O is possible.
 Note that all sockets are always set to non blocking mode in the system, and
-blocking mode is emulated in GSocket.
-</p>
+blocking mode is emulated in GSocket.</p>
 <p>
 When working in non-blocking mode applications should always be able to
 handle getting a <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error even when some other
 function said that I/O was possible. This can easily happen in case
 of a race condition in the application, but it can also happen for other
 reasons. For instance, on Windows a socket is always seen as writable
-until a write returns <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a>.
-</p>
+until a write returns <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a>.</p>
 <p>
-<a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>s can be either connection oriented or datagram based.
+<a href="GSocket.html"><span class="type">GSockets</span></a> can be either connection oriented or datagram based.
 For connection oriented types you must first establish a connection by
 either connecting to an address or accepting a connection from another
 address. For connectionless socket types the target/source address is
-specified or received in each I/O operation.
-</p>
+specified or received in each I/O operation.</p>
 <p>
-All socket file descriptors are set to be close-on-exec.
-</p>
+All socket file descriptors are set to be close-on-exec.</p>
 <p>
 Note that creating a <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> causes the signal <code class="literal">SIGPIPE</code> to be
 ignored for the remainder of the program. If you are writing a
 command-line utility that uses <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>, you may need to take into
 account the fact that your program will not automatically be killed
-if it tries to write to <code class="literal">stdout</code> after it has been closed.
-</p>
+if it tries to write to <code class="literal">stdout</code> after it has been closed.</p>
 </div>
 <div class="refsect1">
 <a name="GSocket.details"></a><h2>Details</h2>
@@ -305,8 +294,7 @@ if it tries to write to <code class="literal">stdout</code> after it has been cl
 <a name="GSocket-struct"></a><h3>GSocket</h3>
 <pre class="programlisting">typedef struct _GSocket GSocket;</pre>
 <p>
-A lowlevel network socket object.
-</p>
+A lowlevel network socket object.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -317,8 +305,7 @@ A lowlevel network socket object.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 This is the function type of the callback used for the <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>
-returned by <a class="link" href="GSocket.html#g-socket-create-source" title="g_socket_create_source ()"><code class="function">g_socket_create_source()</code></a>.
-</p>
+returned by <a class="link" href="GSocket.html#g-socket-create-source" title="g_socket_create_source ()"><code class="function">g_socket_create_source()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -358,8 +345,7 @@ returned by <a class="link" href="GSocket.html#g-socket-create-source" title="g_
 </pre>
 <p>
 Flags used when creating a <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>. Some protocols may not implement
-all the socket types.
-</p>
+all the socket types.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -406,13 +392,11 @@ all the socket types.
 <p>
 A protocol identifier is specified when creating a <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>, which is a
 family/type specific identifier, where 0 means the default protocol for
-the particular family/type.
-</p>
+the particular family/type.</p>
 <p>
 This enum contains a set of commonly available and used protocols. You
 can also pass any other identifiers handled by the platform in order to
-use protocols not listed here.
-</p>
+use protocols not listed here.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -463,8 +447,7 @@ Flags used in <a class="link" href="GSocket.html#g-socket-receive-message" title
 The flags listed in the enum are some commonly available flags, but the
 values used for them are the same as on the platform, and any other flags
 are passed in/out as is. So to use a platform specific flag, just include
-the right system header and pass in the flag.
-</p>
+the right system header and pass in the flag.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -509,8 +492,7 @@ the right system header and pass in the flag.
 Structure used for scatter/gather data input.
 You generally pass in an array of <a class="link" href="GSocket.html#GInputVector" title="struct GInputVector"><span class="type">GInputVector</span></a>s
 and the operation will store the read data starting in the
-first buffer, switching to the next as needed.
-</p>
+first buffer, switching to the next as needed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -541,8 +523,7 @@ first buffer, switching to the next as needed.
 Structure used for scatter/gather data output.
 You generally pass in an array of <a class="link" href="GSocket.html#GOutputVector" title="struct GOutputVector"><span class="type">GOutputVector</span></a>s
 and the operation will use all the buffers as if they were
-one buffer.
-</p>
+one buffer.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -571,20 +552,17 @@ one buffer.
 <p>
 Creates a new <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> with the defined family, type and protocol.
 If <em class="parameter"><code>protocol</code></em> is 0 (<a class="link" href="GSocket.html#G-SOCKET-PROTOCOL-DEFAULT:CAPS"><code class="literal">G_SOCKET_PROTOCOL_DEFAULT</code></a>) the default protocol type
-for the family and type is used.
-</p>
+for the family and type is used.</p>
 <p>
 The <em class="parameter"><code>protocol</code></em> is a family and type specific int that specifies what
 kind of protocol to use. <a class="link" href="GSocket.html#GSocketProtocol" title="enum GSocketProtocol"><span class="type">GSocketProtocol</span></a> lists several common ones.
 Many families only support one protocol, and use 0 for this, others
 support several and using 0 means to use the default protocol for
-the family and type.
-</p>
+the family and type.</p>
 <p>
 The protocol id is passed directly to the operating
 system, so you can use protocols not listed in <a class="link" href="GSocket.html#GSocketProtocol" title="enum GSocketProtocol"><span class="type">GSocketProtocol</span></a> if you
-know the protocol number used for it.
-</p>
+know the protocol number used for it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -624,14 +602,12 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Creates a new <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> from a native file descriptor
-or winsock SOCKET handle.
-</p>
+or winsock SOCKET handle.</p>
 <p>
 This reads all the settings from the file descriptor so that
 all properties should work. Note that the file descriptor
 will be set to non-blocking mode, independent on the blocking
-mode of the <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>.
-</p>
+mode of the <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -666,14 +642,12 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 <p>
 When a socket is created it is attached to an address family, but it
 doesn't have an address in this family. <a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a> assigns the
-address (sometimes called name) of the socket.
-</p>
+address (sometimes called name) of the socket.</p>
 <p>
 It is generally required to bind to a local address before you can
 receive connections. (See <a class="link" href="GSocket.html#g-socket-listen" title="g_socket_listen ()"><code class="function">g_socket_listen()</code></a> and <a class="link" href="GSocket.html#g-socket-accept" title="g_socket_accept ()"><code class="function">g_socket_accept()</code></a> ).
 In certain situations, you may also want to bind a socket that will be
-used to initiate connections, though this is not normally required.
-</p>
+used to initiate connections, though this is not normally required.</p>
 <p>
 If <em class="parameter"><code>socket</code></em> is a TCP socket, then <em class="parameter"><code>allow_reuse</code></em> controls the setting
 of the <code class="literal">SO_REUSEADDR</code> socket option; normally it
@@ -681,16 +655,14 @@ should be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Ma
 eventually call <a class="link" href="GSocket.html#g-socket-accept" title="g_socket_accept ()"><code class="function">g_socket_accept()</code></a> on), and <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> for client
 sockets. (Failing to set this flag on a server socket may cause
 <a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a> to return <a class="link" href="gio-GIOError.html#G-IO-ERROR-ADDRESS-IN-USE:CAPS"><code class="literal">G_IO_ERROR_ADDRESS_IN_USE</code></a> if the server
-program is stopped and then immediately restarted.)
-</p>
+program is stopped and then immediately restarted.)</p>
 <p>
 If <em class="parameter"><code>socket</code></em> is a UDP socket, then <em class="parameter"><code>allow_reuse</code></em> determines whether or
 not other UDP sockets can be bound to the same address at the same
 time. In particular, you can have several UDP sockets bound to the
 same address, and they will all receive all of the multicast and
 broadcast packets sent to that address. (The behavior of unicast
-UDP packets to an address with multiple listeners is not defined.)
-</p>
+UDP packets to an address with multiple listeners is not defined.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -730,16 +702,13 @@ UDP packets to an address with multiple listeners is not defined.)
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Marks the socket as a server socket, i.e. a socket that is used
-to accept incoming requests using <a class="link" href="GSocket.html#g-socket-accept" title="g_socket_accept ()"><code class="function">g_socket_accept()</code></a>.
-</p>
+to accept incoming requests using <a class="link" href="GSocket.html#g-socket-accept" title="g_socket_accept ()"><code class="function">g_socket_accept()</code></a>.</p>
 <p>
 Before calling this the socket must be bound to a local address using
-<a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a>.</p>
 <p>
 To set the maximum amount of outstanding clients, use
-<a class="link" href="GSocket.html#g-socket-set-listen-backlog" title="g_socket_set_listen_backlog ()"><code class="function">g_socket_set_listen_backlog()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-set-listen-backlog" title="g_socket_set_listen_backlog ()"><code class="function">g_socket_set_listen_backlog()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -773,17 +742,14 @@ To set the maximum amount of outstanding clients, use
 <p>
 Accept incoming connections on a connection-based socket. This removes
 the first outstanding connection request from the listening socket and
-creates a <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> object for it.
-</p>
+creates a <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> object for it.</p>
 <p>
 The <em class="parameter"><code>socket</code></em> must be bound to a local address with <a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a> and
-must be listening for incoming connections (<a class="link" href="GSocket.html#g-socket-listen" title="g_socket_listen ()"><code class="function">g_socket_listen()</code></a>).
-</p>
+must be listening for incoming connections (<a class="link" href="GSocket.html#g-socket-listen" title="g_socket_listen ()"><code class="function">g_socket_listen()</code></a>).</p>
 <p>
 If there are no outstanding connections then the operation will block
 or return <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> if non-blocking I/O is enabled.
-To be notified of an incoming connection, wait for the <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> condition.
-</p>
+To be notified of an incoming connection, wait for the <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> condition.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -822,26 +788,22 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Connect the socket to the specified remote address.
-</p>
+Connect the socket to the specified remote address.</p>
 <p>
 For connection oriented socket this generally means we attempt to make
 a connection to the <em class="parameter"><code>address</code></em>. For a connection-less socket it sets
 the default address for <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> and discards all incoming datagrams
-from other sources.
-</p>
+from other sources.</p>
 <p>
 Generally connection oriented sockets can only connect once, but
 connection-less sockets can connect multiple times to change the
-default address.
-</p>
+default address.</p>
 <p>
 If the connect call needs to do network I/O it will block, unless
 non-blocking I/O is enabled. Then <a class="link" href="gio-GIOError.html#G-IO-ERROR-PENDING:CAPS"><code class="literal">G_IO_ERROR_PENDING</code></a> is returned
 and the user can be notified of the connection finishing by waiting
 for the G_IO_OUT condition. The result of the connection must then be
-checked with <a class="link" href="GSocket.html#g-socket-check-connect-result" title="g_socket_check_connect_result ()"><code class="function">g_socket_check_connect_result()</code></a>.
-</p>
+checked with <a class="link" href="GSocket.html#g-socket-check-connect-result" title="g_socket_check_connect_result ()"><code class="function">g_socket_check_connect_result()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -883,8 +845,7 @@ checked with <a class="link" href="GSocket.html#g-socket-check-connect-result" t
 <p>
 Checks and resets the pending connect error for the socket.
 This is used to check for errors when <a class="link" href="GSocket.html#g-socket-connect" title="g_socket_connect ()"><code class="function">g_socket_connect()</code></a> is
-used in non-blocking mode.
-</p>
+used in non-blocking mode.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -921,32 +882,27 @@ used in non-blocking mode.
 <p>
 Receive data (up to <em class="parameter"><code>size</code></em> bytes) from a socket. This is mainly used by
 connection-oriented sockets; it is identical to <a class="link" href="GSocket.html#g-socket-receive-from" title="g_socket_receive_from ()"><code class="function">g_socket_receive_from()</code></a>
-with <em class="parameter"><code>address</code></em> set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+with <em class="parameter"><code>address</code></em> set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>
 For <a class="link" href="GSocket.html#G-SOCKET-TYPE-DATAGRAM:CAPS"><code class="literal">G_SOCKET_TYPE_DATAGRAM</code></a> and <a class="link" href="GSocket.html#G-SOCKET-TYPE-SEQPACKET:CAPS"><code class="literal">G_SOCKET_TYPE_SEQPACKET</code></a> sockets,
 <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> will always read either 0 or 1 complete messages from
 the socket. If the received message is too large to fit in <em class="parameter"><code>buffer</code></em>, then
 the data beyond <em class="parameter"><code>size</code></em> bytes will be discarded, without any explicit
-indication that this has occurred.
-</p>
+indication that this has occurred.</p>
 <p>
 For <a class="link" href="GSocket.html#G-SOCKET-TYPE-STREAM:CAPS"><code class="literal">G_SOCKET_TYPE_STREAM</code></a> sockets, <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> can return any
 number of bytes, up to <em class="parameter"><code>size</code></em>. If more than <em class="parameter"><code>size</code></em> bytes have been
 received, the additional data will be returned in future calls to
-<a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a>.</p>
 <p>
 If the socket is in blocking mode the call will block until there
 is some data to receive, the connection is closed, or there is an
 error. If there is no data available and the socket is in
 non-blocking mode, a <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error will be
 returned. To be notified when data is available, wait for the
-<a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> condition.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> condition.</p>
 <p>
-On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.
-</p>
+On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -997,16 +953,13 @@ the peer, or -1 on error</td>
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Receive data (up to <em class="parameter"><code>size</code></em> bytes) from a socket.
-</p>
+Receive data (up to <em class="parameter"><code>size</code></em> bytes) from a socket.</p>
 <p>
 If <em class="parameter"><code>address</code></em> is non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then <em class="parameter"><code>address</code></em> will be set equal to the
 source address of the received packet.
-<em class="parameter"><code>address</code></em> is owned by the caller.
-</p>
+<em class="parameter"><code>address</code></em> is owned by the caller.</p>
 <p>
-See <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> for additional information.
-</p>
+See <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> for additional information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1068,26 +1021,22 @@ the peer, or -1 on error</td>
 <p>
 Receive data from a socket.  This is the most complicated and
 fully-featured version of this call. For easier use, see
-<a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> and <a class="link" href="GSocket.html#g-socket-receive-from" title="g_socket_receive_from ()"><code class="function">g_socket_receive_from()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> and <a class="link" href="GSocket.html#g-socket-receive-from" title="g_socket_receive_from ()"><code class="function">g_socket_receive_from()</code></a>.</p>
 <p>
 If <em class="parameter"><code>address</code></em> is non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then <em class="parameter"><code>address</code></em> will be set equal to the
 source address of the received packet.
-<em class="parameter"><code>address</code></em> is owned by the caller.
-</p>
+<em class="parameter"><code>address</code></em> is owned by the caller.</p>
 <p>
 <em class="parameter"><code>vector</code></em> must point to an array of <a class="link" href="GSocket.html#GInputVector" title="struct GInputVector"><span class="type">GInputVector</span></a> structs and
 <em class="parameter"><code>num_vectors</code></em> must be the length of this array.  These structs
 describe the buffers that received data will be scattered into.
 If <em class="parameter"><code>num_vectors</code></em> is -1, then <em class="parameter"><code>vectors</code></em> is assumed to be terminated
-by a <a class="link" href="GSocket.html#GInputVector" title="struct GInputVector"><span class="type">GInputVector</span></a> with a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> buffer pointer.
-</p>
+by a <a class="link" href="GSocket.html#GInputVector" title="struct GInputVector"><span class="type">GInputVector</span></a> with a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> buffer pointer.</p>
 <p>
 As a special case, if <em class="parameter"><code>num_vectors</code></em> is 0 (in which case, <em class="parameter"><code>vectors</code></em>
 may of course be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>), then a single byte is received and
 discarded. This is to facilitate the common practice of sending a
-single '\0' byte for the purposes of transferring ancillary data.
-</p>
+single '\0' byte for the purposes of transferring ancillary data.</p>
 <p>
 <em class="parameter"><code>messages</code></em>, if non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be set to point to a newly-allocated
 array of <a class="link" href="GSocketControlMessage.html" title="GSocketControlMessage"><span class="type">GSocketControlMessage</span></a> instances or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if no such
@@ -1096,24 +1045,20 @@ received from the kernel, one <a class="link" href="GSocketControlMessage.html" 
 from the kernel. This array is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated and must be freed
 by the caller using <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a> after calling <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> on each
 element. If <em class="parameter"><code>messages</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, any control messages received will
-be discarded.
-</p>
+be discarded.</p>
 <p>
 <em class="parameter"><code>num_messages</code></em>, if non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, will be set to the number of control
-messages received.
-</p>
+messages received.</p>
 <p>
 If both <em class="parameter"><code>messages</code></em> and <em class="parameter"><code>num_messages</code></em> are non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then
 <em class="parameter"><code>num_messages</code></em> gives the number of <a class="link" href="GSocketControlMessage.html" title="GSocketControlMessage"><span class="type">GSocketControlMessage</span></a> instances
-in <em class="parameter"><code>messages</code></em> (ie: not including the <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminator).
-</p>
+in <em class="parameter"><code>messages</code></em> (ie: not including the <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminator).</p>
 <p>
 <em class="parameter"><code>flags</code></em> is an in/out parameter. The commonly available arguments
 for this are available in the <a class="link" href="GSocket.html#GSocketMsgFlags" title="enum GSocketMsgFlags"><span class="type">GSocketMsgFlags</span></a> enum, but the
 values there are the same as the system values, and the flags
 are passed in as-is, so you can pass in system-specific flags too
-(and <a class="link" href="GSocket.html#g-socket-receive-message" title="g_socket_receive_message ()"><code class="function">g_socket_receive_message()</code></a> may pass system-specific flags out).
-</p>
+(and <a class="link" href="GSocket.html#g-socket-receive-message" title="g_socket_receive_message ()"><code class="function">g_socket_receive_message()</code></a> may pass system-specific flags out).</p>
 <p>
 As with <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a>, data may be discarded if <em class="parameter"><code>socket</code></em> is
 <a class="link" href="GSocket.html#G-SOCKET-TYPE-DATAGRAM:CAPS"><code class="literal">G_SOCKET_TYPE_DATAGRAM</code></a> or <a class="link" href="GSocket.html#G-SOCKET-TYPE-SEQPACKET:CAPS"><code class="literal">G_SOCKET_TYPE_SEQPACKET</code></a> and you do not
@@ -1121,19 +1066,16 @@ provide enough buffer space to read a complete message. You can pass
 <a class="link" href="GSocket.html#G-SOCKET-MSG-PEEK:CAPS"><code class="literal">G_SOCKET_MSG_PEEK</code></a> in <em class="parameter"><code>flags</code></em> to peek at the current message without
 removing it from the receive queue, but there is no portable way to find
 out the length of the message other than by reading it into a
-sufficiently-large buffer.
-</p>
+sufficiently-large buffer.</p>
 <p>
 If the socket is in blocking mode the call will block until there
 is some data to receive, the connection is closed, or there is an
 error. If there is no data available and the socket is in
 non-blocking mode, a <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error will be
 returned. To be notified when data is available, wait for the
-<a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> condition.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> condition.</p>
 <p>
-On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.
-</p>
+On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1207,8 +1149,7 @@ the peer, or -1 on error</td>
 <p>
 This behaves exactly the same as <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a>, except that
 the choice of blocking or non-blocking behavior is determined by
-the <em class="parameter"><code>blocking</code></em> argument rather than by <em class="parameter"><code>socket</code></em>'s properties.
-</p>
+the <em class="parameter"><code>blocking</code></em> argument rather than by <em class="parameter"><code>socket</code></em>'s properties.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1264,8 +1205,7 @@ the peer, or -1 on error</td>
 <p>
 Tries to send <em class="parameter"><code>size</code></em> bytes from <em class="parameter"><code>buffer</code></em> on the socket. This is
 mainly used by connection-oriented sockets; it is identical to
-<a class="link" href="GSocket.html#g-socket-send-to" title="g_socket_send_to ()"><code class="function">g_socket_send_to()</code></a> with <em class="parameter"><code>address</code></em> set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-send-to" title="g_socket_send_to ()"><code class="function">g_socket_send_to()</code></a> with <em class="parameter"><code>address</code></em> set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p>
 If the socket is in blocking mode the call will block until there is
 space for the data in the socket queue. If there is no space available
@@ -1274,11 +1214,9 @@ will be returned. To be notified when space is available, wait for the
 <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-OUT:CAPS"><code class="literal">G_IO_OUT</code></a> condition. Note though that you may still receive
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> from <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> even if you were previously
 notified of a <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-OUT:CAPS"><code class="literal">G_IO_OUT</code></a> condition. (On Windows in particular, this is
-very common due to the way the underlying APIs work.)
-</p>
+very common due to the way the underlying APIs work.)</p>
 <p>
-On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.
-</p>
+On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1331,11 +1269,9 @@ on error</td>
 <p>
 Tries to send <em class="parameter"><code>size</code></em> bytes from <em class="parameter"><code>buffer</code></em> to <em class="parameter"><code>address</code></em>. If <em class="parameter"><code>address</code></em> is
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then the message is sent to the default receiver (set by
-<a class="link" href="GSocket.html#g-socket-connect" title="g_socket_connect ()"><code class="function">g_socket_connect()</code></a>).
-</p>
+<a class="link" href="GSocket.html#g-socket-connect" title="g_socket_connect ()"><code class="function">g_socket_connect()</code></a>).</p>
 <p>
-See <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> for additional information.
-</p>
+See <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> for additional information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1396,35 +1332,30 @@ on error</td>
 <p>
 Send data to <em class="parameter"><code>address</code></em> on <em class="parameter"><code>socket</code></em>.  This is the most complicated and
 fully-featured version of this call. For easier use, see
-<a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> and <a class="link" href="GSocket.html#g-socket-send-to" title="g_socket_send_to ()"><code class="function">g_socket_send_to()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> and <a class="link" href="GSocket.html#g-socket-send-to" title="g_socket_send_to ()"><code class="function">g_socket_send_to()</code></a>.</p>
 <p>
 If <em class="parameter"><code>address</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then the message is sent to the default receiver
-(set by <a class="link" href="GSocket.html#g-socket-connect" title="g_socket_connect ()"><code class="function">g_socket_connect()</code></a>).
-</p>
+(set by <a class="link" href="GSocket.html#g-socket-connect" title="g_socket_connect ()"><code class="function">g_socket_connect()</code></a>).</p>
 <p>
 <em class="parameter"><code>vectors</code></em> must point to an array of <a class="link" href="GSocket.html#GOutputVector" title="struct GOutputVector"><span class="type">GOutputVector</span></a> structs and
 <em class="parameter"><code>num_vectors</code></em> must be the length of this array. (If <em class="parameter"><code>num_vectors</code></em> is -1,
 then <em class="parameter"><code>vectors</code></em> is assumed to be terminated by a <a class="link" href="GSocket.html#GOutputVector" title="struct GOutputVector"><span class="type">GOutputVector</span></a> with a
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> buffer pointer.) The <a class="link" href="GSocket.html#GOutputVector" title="struct GOutputVector"><span class="type">GOutputVector</span></a> structs describe the buffers
 that the sent data will be gathered from. Using multiple
-<a class="link" href="GSocket.html#GOutputVector" title="struct GOutputVector"><span class="type">GOutputVector</span></a>s is more memory-efficient than manually copying
+<a href="GSocket.html#GOutputVector"><span class="type">GOutputVectors</span></a> is more memory-efficient than manually copying
 data from multiple sources into a single buffer, and more
-network-efficient than making multiple calls to <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a>.
-</p>
+network-efficient than making multiple calls to <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a>.</p>
 <p>
 <em class="parameter"><code>messages</code></em>, if non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, is taken to point to an array of <em class="parameter"><code>num_messages</code></em>
 <a class="link" href="GSocketControlMessage.html" title="GSocketControlMessage"><span class="type">GSocketControlMessage</span></a> instances. These correspond to the control
 messages to be sent on the socket.
 If <em class="parameter"><code>num_messages</code></em> is -1 then <em class="parameter"><code>messages</code></em> is treated as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated
-array.
-</p>
+array.</p>
 <p>
 <em class="parameter"><code>flags</code></em> modify how the message is sent. The commonly available arguments
 for this are available in the <a class="link" href="GSocket.html#GSocketMsgFlags" title="enum GSocketMsgFlags"><span class="type">GSocketMsgFlags</span></a> enum, but the
 values there are the same as the system values, and the flags
-are passed in as-is, so you can pass in system-specific flags too.
-</p>
+are passed in as-is, so you can pass in system-specific flags too.</p>
 <p>
 If the socket is in blocking mode the call will block until there is
 space for the data in the socket queue. If there is no space available
@@ -1433,11 +1364,9 @@ will be returned. To be notified when space is available, wait for the
 <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-OUT:CAPS"><code class="literal">G_IO_OUT</code></a> condition. Note though that you may still receive
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> from <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a> even if you were previously
 notified of a <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-OUT:CAPS"><code class="literal">G_IO_OUT</code></a> condition. (On Windows in particular, this is
-very common due to the way the underlying APIs work.)
-</p>
+very common due to the way the underlying APIs work.)</p>
 <p>
-On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.
-</p>
+On error -1 is returned and <em class="parameter"><code>error</code></em> is set accordingly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1508,8 +1437,7 @@ on error</td>
 <p>
 This behaves exactly the same as <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a>, except that
 the choice of blocking or non-blocking behavior is determined by
-the <em class="parameter"><code>blocking</code></em> argument rather than by <em class="parameter"><code>socket</code></em>'s properties.
-</p>
+the <em class="parameter"><code>blocking</code></em> argument rather than by <em class="parameter"><code>socket</code></em>'s properties.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1560,23 +1488,19 @@ on error</td>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_close                      (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Closes the socket, shutting down any active connection.
-</p>
+Closes the socket, shutting down any active connection.</p>
 <p>
 Closing a socket does not wait for all outstanding I/O operations
 to finish, so the caller should not rely on them to be guaranteed
-to complete even if the close returns with no error.
-</p>
+to complete even if the close returns with no error.</p>
 <p>
 Once the socket is closed, all other operations will return
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-CLOSED:CAPS"><code class="literal">G_IO_ERROR_CLOSED</code></a>. Closing a socket multiple times will not
-return an error.
-</p>
+return an error.</p>
 <p>
 Sockets will be automatically closed when the last reference
 is dropped, but you might want to call this function to make sure
-resources are released as early as possible.
-</p>
+resources are released as early as possible.</p>
 <p>
 Beware that due to the way that TCP works, it is possible for
 recently-sent data to be lost if either you close a socket while the
@@ -1592,8 +1516,7 @@ connection, after which the server can safely call <a class="link" href="GSocket
 (This is what <a class="link" href="GTcpConnection.html" title="GTcpConnection"><span class="type">GTcpConnection</span></a> does if you call
 <a class="link" href="GTcpConnection.html#g-tcp-connection-set-graceful-disconnect" title="g_tcp_connection_set_graceful_disconnect ()"><code class="function">g_tcp_connection_set_graceful_disconnect()</code></a>. But of course, this
 only works if the client will close its connection after the server
-does.)
-</p>
+does.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1624,8 +1547,7 @@ does.)
 <a name="g-socket-is-closed"></a><h3>g_socket_is_closed ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_is_closed                  (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
-Checks whether a socket is closed.
-</p>
+Checks whether a socket is closed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1654,24 +1576,19 @@ Checks whether a socket is closed.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> shutdown_write</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Shut down part of a full-duplex connection.
-</p>
+Shut down part of a full-duplex connection.</p>
 <p>
 If <em class="parameter"><code>shutdown_read</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> then the receiving side of the connection
-is shut down, and further reading is disallowed.
-</p>
+is shut down, and further reading is disallowed.</p>
 <p>
 If <em class="parameter"><code>shutdown_write</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> then the sending side of the connection
-is shut down, and further writing is disallowed.
-</p>
+is shut down, and further writing is disallowed.</p>
 <p>
-It is allowed for both <em class="parameter"><code>shutdown_read</code></em> and <em class="parameter"><code>shutdown_write</code></em> to be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
-</p>
+It is allowed for both <em class="parameter"><code>shutdown_read</code></em> and <em class="parameter"><code>shutdown_write</code></em> to be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <p>
 One example where this is used is graceful disconnect for TCP connections
 where you close the sending side, then wait for the other side to close
-the connection, thus ensuring that the other side saw all sent data.
-</p>
+the connection, thus ensuring that the other side saw all sent data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1711,8 +1628,7 @@ the connection, thus ensuring that the other side saw all sent data.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_is_connected               (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Check whether the socket is connected. This is only useful for
-connection-oriented sockets.
-</p>
+connection-oriented sockets.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1740,29 +1656,24 @@ connection-oriented sockets.
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>);</pre>
 <p>
 Creates a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><code class="literal">GSource</code></a> that can be attached to a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><code class="literal">GMainContext</code></a> to monitor
-for the availibility of the specified <em class="parameter"><code>condition</code></em> on the socket.
-</p>
+for the availibility of the specified <em class="parameter"><code>condition</code></em> on the socket.</p>
 <p>
-The callback on the source is of the <a class="link" href="GSocket.html#GSocketSourceFunc" title="GSocketSourceFunc ()"><span class="type">GSocketSourceFunc</span></a> type.
-</p>
+The callback on the source is of the <a class="link" href="GSocket.html#GSocketSourceFunc" title="GSocketSourceFunc ()"><span class="type">GSocketSourceFunc</span></a> type.</p>
 <p>
 It is meaningless to specify <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-ERR:CAPS"><code class="literal">G_IO_ERR</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-HUP:CAPS"><code class="literal">G_IO_HUP</code></a> in <em class="parameter"><code>condition</code></em>;
-these conditions will always be reported output if they are true.
-</p>
+these conditions will always be reported output if they are true.</p>
 <p>
 <em class="parameter"><code>cancellable</code></em> if not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> can be used to cancel the source, which will
 cause the source to trigger, reporting the current condition (which
 is likely 0 unless cancellation happened at the same time as a
 condition change). You can check for this in the callback using
-<a class="link" href="GCancellable.html#g-cancellable-is-cancelled" title="g_cancellable_is_cancelled ()"><code class="function">g_cancellable_is_cancelled()</code></a>.
-</p>
+<a class="link" href="GCancellable.html#g-cancellable-is-cancelled" title="g_cancellable_is_cancelled ()"><code class="function">g_cancellable_is_cancelled()</code></a>.</p>
 <p>
 If <em class="parameter"><code>socket</code></em> has a timeout set, and it is reached before <em class="parameter"><code>condition</code></em>
 occurs, the source will then trigger anyway, reporting <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-IN:CAPS"><code class="literal">G_IO_IN</code></a> or
 <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-OUT:CAPS"><code class="literal">G_IO_OUT</code></a> depending on <em class="parameter"><code>condition</code></em>. However, <em class="parameter"><code>socket</code></em> will have been
 marked as having had a timeout, and so the next <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> I/O method
-you call will then fail with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.
-</p>
+you call will then fail with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1801,8 +1712,7 @@ you call will then fail with a <a class="link" href="gio-GIOError.html#G-IO-ERRO
 Checks on the readiness of <em class="parameter"><code>socket</code></em> to perform operations.
 The operations specified in <em class="parameter"><code>condition</code></em> are checked for and masked
 against the currently-satisfied conditions on <em class="parameter"><code>socket</code></em>. The result
-is returned.
-</p>
+is returned.</p>
 <p>
 Note that on Windows, it is possible for an operation to return
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> even immediately after
@@ -1810,15 +1720,12 @@ Note that on Windows, it is possible for an operation to return
 writing. Rather than calling <a class="link" href="GSocket.html#g-socket-condition-check" title="g_socket_condition_check ()"><code class="function">g_socket_condition_check()</code></a> and then
 writing to the socket if it succeeds, it is generally better to
 simply try writing to the socket right away, and try again later if
-the initial attempt returns <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a>.
-</p>
+the initial attempt returns <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a>.</p>
 <p>
 It is meaningless to specify <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-ERR:CAPS"><code class="literal">G_IO_ERR</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#G-IO-HUP:CAPS"><code class="literal">G_IO_HUP</code></a> in condition;
-these conditions will always be set in the output if they are true.
-</p>
+these conditions will always be set in the output if they are true.</p>
 <p>
-This call never blocks.
-</p>
+This call never blocks.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1851,18 +1758,15 @@ This call never blocks.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Waits for <em class="parameter"><code>condition</code></em> to become true on <em class="parameter"><code>socket</code></em>. When the condition
-is met, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> is returned.
-</p>
+is met, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> is returned.</p>
 <p>
 If <em class="parameter"><code>cancellable</code></em> is cancelled before the condition is met, or if the
 socket has a timeout set and it is reached before the condition is
 met, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned and <em class="parameter"><code>error</code></em>, if non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, is set to
 the appropriate value (<a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> or
-<a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>).
-</p>
+<a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>).</p>
 <p>
-See also <a class="link" href="GSocket.html#g-socket-condition-timed-wait" title="g_socket_condition_timed_wait ()"><code class="function">g_socket_condition_timed_wait()</code></a>.
-</p>
+See also <a class="link" href="GSocket.html#g-socket-condition-timed-wait" title="g_socket_condition_timed_wait ()"><code class="function">g_socket_condition_timed_wait()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1907,25 +1811,21 @@ See also <a class="link" href="GSocket.html#g-socket-condition-timed-wait" title
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Waits for up to <em class="parameter"><code>timeout</code></em> microseconds for <em class="parameter"><code>condition</code></em> to become true
-on <em class="parameter"><code>socket</code></em>. If the condition is met, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> is returned.
-</p>
+on <em class="parameter"><code>socket</code></em>. If the condition is met, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> is returned.</p>
 <p>
 If <em class="parameter"><code>cancellable</code></em> is cancelled before the condition is met, or if
 <em class="parameter"><code>timeout</code></em> (or the socket's <a class="link" href="GSocket.html#GSocket--timeout" title='The "timeout" property'><span class="type">"timeout"</span></a>) is reached before the
 condition is met, then <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned and <em class="parameter"><code>error</code></em>, if non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
 is set to the appropriate value (<a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> or
-<a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>).
-</p>
+<a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>).</p>
 <p>
 If you don't want a timeout, use <a class="link" href="GSocket.html#g-socket-condition-wait" title="g_socket_condition_wait ()"><code class="function">g_socket_condition_wait()</code></a>.
-(Alternatively, you can pass -1 for <em class="parameter"><code>timeout</code></em>.)
-</p>
+(Alternatively, you can pass -1 for <em class="parameter"><code>timeout</code></em>.)</p>
 <p>
 Note that although <em class="parameter"><code>timeout</code></em> is in microseconds for consistency with
 other GLib APIs, this function actually only has millisecond
 resolution, and the behavior is undefined if <em class="parameter"><code>timeout</code></em> is not an
-exact number of milliseconds.
-</p>
+exact number of milliseconds.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1969,21 +1869,18 @@ exact number of milliseconds.
 <a name="g-socket-get-available-bytes"></a><h3>g_socket_get_available_bytes ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gssize"><span class="returnvalue">gssize</span></a>              g_socket_get_available_bytes        (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
-Get the amount of data pending in the OS input buffer.
-</p>
+Get the amount of data pending in the OS input buffer.</p>
 <p>
 If <em class="parameter"><code>socket</code></em> is a UDP or SCTP socket, this will return the size of
 just the next packet, even if additional packets are buffered after
-that one.
-</p>
+that one.</p>
 <p>
 Note that on Windows, this function is rather inefficient in the
 UDP case, and so if you know any plausible upper bound on the size
 of the incoming packet, it is better to just do a
 <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a> with a buffer of that size, rather than calling
 <a class="link" href="GSocket.html#g-socket-get-available-bytes" title="g_socket_get_available_bytes ()"><code class="function">g_socket_get_available_bytes()</code></a> first and then doing a receive of
-exactly the right size.
-</p>
+exactly the right size.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2013,12 +1910,10 @@ without blocking or truncating, or -1 on error.</td>
 Sets the maximum number of outstanding connections allowed
 when listening on this socket. If more clients than this are
 connecting to the socket and the application is not handling them
-on time then the new connections will be refused.
-</p>
+on time then the new connections will be refused.</p>
 <p>
 Note that this must be called before <a class="link" href="GSocket.html#g-socket-listen" title="g_socket_listen ()"><code class="function">g_socket_listen()</code></a> and has no
-effect if called after that.
-</p>
+effect if called after that.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2043,8 +1938,7 @@ effect if called after that.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                g_socket_get_listen_backlog         (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the listen backlog setting of the socket. For details on this,
-see <a class="link" href="GSocket.html#g-socket-set-listen-backlog" title="g_socket_set_listen_backlog ()"><code class="function">g_socket_set_listen_backlog()</code></a>.
-</p>
+see <a class="link" href="GSocket.html#g-socket-set-listen-backlog" title="g_socket_set_listen_backlog ()"><code class="function">g_socket_set_listen_backlog()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2069,8 +1963,7 @@ see <a class="link" href="GSocket.html#g-socket-set-listen-backlog" title="g_soc
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_get_blocking               (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the blocking mode of the socket. For details on blocking I/O,
-see <a class="link" href="GSocket.html#g-socket-set-blocking" title="g_socket_set_blocking ()"><code class="function">g_socket_set_blocking()</code></a>.
-</p>
+see <a class="link" href="GSocket.html#g-socket-set-blocking" title="g_socket_set_blocking ()"><code class="function">g_socket_set_blocking()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2099,13 +1992,11 @@ see <a class="link" href="GSocket.html#g-socket-set-blocking" title="g_socket_se
 Sets the blocking mode of the socket. In blocking mode
 all operations block until they succeed or there is an error. In
 non-blocking mode all functions return results immediately or
-with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error.
-</p>
+with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-WOULD-BLOCK:CAPS"><code class="literal">G_IO_ERROR_WOULD_BLOCK</code></a> error.</p>
 <p>
 All sockets are created in blocking mode. However, note that the
 platform level socket is always non-blocking, and blocking mode
-is a GSocket level feature.
-</p>
+is a GSocket level feature.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2130,8 +2021,7 @@ is a GSocket level feature.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_get_keepalive              (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the keepalive mode of the socket. For details on this,
-see <a class="link" href="GSocket.html#g-socket-set-keepalive" title="g_socket_set_keepalive ()"><code class="function">g_socket_set_keepalive()</code></a>.
-</p>
+see <a class="link" href="GSocket.html#g-socket-set-keepalive" title="g_socket_set_keepalive ()"><code class="function">g_socket_set_keepalive()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2162,19 +2052,16 @@ this flag is set on a socket, the system will attempt to verify that the
 remote socket endpoint is still present if a sufficiently long period of
 time passes with no data being exchanged. If the system is unable to
 verify the presence of the remote endpoint, it will automatically close
-the connection.
-</p>
+the connection.</p>
 <p>
 This option is only functional on certain kinds of sockets. (Notably,
-<a class="link" href="GSocket.html#G-SOCKET-PROTOCOL-TCP:CAPS"><code class="literal">G_SOCKET_PROTOCOL_TCP</code></a> sockets.)
-</p>
+<a class="link" href="GSocket.html#G-SOCKET-PROTOCOL-TCP:CAPS"><code class="literal">G_SOCKET_PROTOCOL_TCP</code></a> sockets.)</p>
 <p>
 The exact time between pings is system- and protocol-dependent, but will
 normally be at least two hours. Most commonly, you would set this flag
 on a server socket if you want to allow clients to remain idle for long
 periods of time, but also want to ensure that connections are eventually
-garbage-collected if clients crash or become unreachable.
-</p>
+garbage-collected if clients crash or become unreachable.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2199,8 +2086,7 @@ garbage-collected if clients crash or become unreachable.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_socket_get_timeout                (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the timeout setting of the socket. For details on this, see
-<a class="link" href="GSocket.html#g-socket-set-timeout" title="g_socket_set_timeout ()"><code class="function">g_socket_set_timeout()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-set-timeout" title="g_socket_set_timeout ()"><code class="function">g_socket_set_timeout()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2226,13 +2112,11 @@ Gets the timeout setting of the socket. For details on this, see
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> timeout</code></em>);</pre>
 <p>
 Sets the time in seconds after which I/O operations on <em class="parameter"><code>socket</code></em> will
-time out if they have not yet completed.
-</p>
+time out if they have not yet completed.</p>
 <p>
 On a blocking socket, this means that any blocking <a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a>
 operation will time out after <em class="parameter"><code>timeout</code></em> seconds of inactivity,
-returning <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.
-</p>
+returning <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.</p>
 <p>
 On a non-blocking socket, calls to <a class="link" href="GSocket.html#g-socket-condition-wait" title="g_socket_condition_wait ()"><code class="function">g_socket_condition_wait()</code></a> will
 also fail with <a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a> after the given time. Sources
@@ -2240,16 +2124,13 @@ created with <a class="link" href="GSocket.html#g-socket-create-source" title="g
 <em class="parameter"><code>timeout</code></em> seconds of inactivity, with the requested condition
 set, at which point calling <a class="link" href="GSocket.html#g-socket-receive" title="g_socket_receive ()"><code class="function">g_socket_receive()</code></a>, <a class="link" href="GSocket.html#g-socket-send" title="g_socket_send ()"><code class="function">g_socket_send()</code></a>,
 <a class="link" href="GSocket.html#g-socket-check-connect-result" title="g_socket_check_connect_result ()"><code class="function">g_socket_check_connect_result()</code></a>, etc, will fail with
-<a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.
-</p>
+<a class="link" href="gio-GIOError.html#G-IO-ERROR-TIMED-OUT:CAPS"><code class="literal">G_IO_ERROR_TIMED_OUT</code></a>.</p>
 <p>
 If <em class="parameter"><code>timeout</code></em> is 0 (the default), operations will never time out
-on their own.
-</p>
+on their own.</p>
 <p>
 Note that if an I/O operation is interrupted by a signal, this may
-cause the timeout to be reset.
-</p>
+cause the timeout to be reset.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2275,8 +2156,7 @@ cause the timeout to be reset.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> ttl</code></em>);</pre>
 <p>
 Sets the time-to-live for outgoing unicast packets on <em class="parameter"><code>socket</code></em>.
-By default the platform-specific default value is used.
-</p>
+By default the platform-specific default value is used.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2302,8 +2182,7 @@ By default the platform-specific default value is used.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_socket_get_ttl                    (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the unicast time-to-live setting on <em class="parameter"><code>socket</code></em>; see
-<a class="link" href="GSocket.html#g-socket-set-ttl" title="g_socket_set_ttl ()"><code class="function">g_socket_set_ttl()</code></a> for more details.
-</p>
+<a class="link" href="GSocket.html#g-socket-set-ttl" title="g_socket_set_ttl ()"><code class="function">g_socket_set_ttl()</code></a> for more details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2330,8 +2209,7 @@ Gets the unicast time-to-live setting on <em class="parameter"><code>socket</cod
 <p>
 Gets the broadcast setting on <em class="parameter"><code>socket</code></em>; if <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>,
 it is possible to send packets to broadcast
-addresses.
-</p>
+addresses.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2358,8 +2236,7 @@ addresses.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> broadcast</code></em>);</pre>
 <p>
 Sets whether <em class="parameter"><code>socket</code></em> should allow sending to broadcast addresses.
-This is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> by default.
-</p>
+This is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> by default.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2391,20 +2268,17 @@ addresses</td>
 Gets the value of an integer-valued option on <em class="parameter"><code>socket</code></em>, as with
 <code class="literal"><code class="function">getsockopt()</code></code>. (If you need to fetch a
 non-integer-valued option, you will need to call
-<code class="literal"><code class="function">getsockopt()</code></code> directly.)
-</p>
+<code class="literal"><code class="function">getsockopt()</code></code> directly.)</p>
 <p>
 The <a class="link" href="gio-gnetworking.h.html" title="gnetworking.h"><code class="literal">&lt;gio/gnetworking.h&gt;</code></a>
 header pulls in system headers that will define most of the
 standard/portable socket options. For unusual socket protocols or
 platform-dependent options, you may need to include additional
-headers.
-</p>
+headers.</p>
 <p>
 Note that even for socket options that are a single byte in size,
 <em class="parameter"><code>value</code></em> is still a pointer to a <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> variable, not a <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guchar"><span class="type">guchar</span></a>;
-<a class="link" href="GSocket.html#g-socket-get-option" title="g_socket_get_option ()"><code class="function">g_socket_get_option()</code></a> will handle the conversion internally.
-</p>
+<a class="link" href="GSocket.html#g-socket-get-option" title="g_socket_get_option ()"><code class="function">g_socket_get_option()</code></a> will handle the conversion internally.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2457,15 +2331,13 @@ result of the <code class="literal"><code class="function">getsockopt()</code></
 Sets the value of an integer-valued option on <em class="parameter"><code>socket</code></em>, as with
 <code class="literal"><code class="function">setsockopt()</code></code>. (If you need to set a
 non-integer-valued option, you will need to call
-<code class="literal"><code class="function">setsockopt()</code></code> directly.)
-</p>
+<code class="literal"><code class="function">setsockopt()</code></code> directly.)</p>
 <p>
 The <a class="link" href="gio-gnetworking.h.html" title="gnetworking.h"><code class="literal">&lt;gio/gnetworking.h&gt;</code></a>
 header pulls in system headers that will define most of the
 standard/portable socket options. For unusual socket protocols or
 platform-dependent options, you may need to include additional
-headers.
-</p>
+headers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2510,8 +2382,7 @@ result of the <code class="literal"><code class="function">setsockopt()</code></
 <a name="g-socket-get-family"></a><h3>g_socket_get_family ()</h3>
 <pre class="programlisting"><a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="returnvalue">GSocketFamily</span></a>       g_socket_get_family                 (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
-Gets the socket family of the socket.
-</p>
+Gets the socket family of the socket.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2540,8 +2411,7 @@ Returns the underlying OS socket object. On unix this
 is a socket file descriptor, and on Windows this is
 a Winsock2 SOCKET handle. This may be useful for
 doing platform specific or otherwise unusual operations
-on the socket.
-</p>
+on the socket.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2568,8 +2438,7 @@ on the socket.
 <p>
 Try to get the local address of a bound socket. This is only
 useful if the socket has been bound to a local address,
-either explicitly or implicitly when connecting.
-</p>
+either explicitly or implicitly when connecting.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2601,8 +2470,7 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 <pre class="programlisting"><a class="link" href="GSocket.html#GSocketProtocol" title="enum GSocketProtocol"><span class="returnvalue">GSocketProtocol</span></a>     g_socket_get_protocol               (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the socket protocol id the socket was created with.
-In case the protocol is unknown, -1 is returned.
-</p>
+In case the protocol is unknown, -1 is returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2628,8 +2496,7 @@ In case the protocol is unknown, -1 is returned.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Try to get the remove address of a connected socket. This is only
-useful for connection oriented sockets that have been connected.
-</p>
+useful for connection oriented sockets that have been connected.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2660,8 +2527,7 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 <a name="g-socket-get-socket-type"></a><h3>g_socket_get_socket_type ()</h3>
 <pre class="programlisting"><a class="link" href="GSocket.html#GSocketType" title="enum GSocketType"><span class="returnvalue">GSocketType</span></a>         g_socket_get_socket_type            (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
-Gets the socket type of the socket.
-</p>
+Gets the socket type of the socket.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2686,18 +2552,15 @@ Gets the socket type of the socket.
 <a name="g-socket-speaks-ipv4"></a><h3>g_socket_speaks_ipv4 ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_socket_speaks_ipv4                (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
-Checks if a socket is capable of speaking IPv4.
-</p>
+Checks if a socket is capable of speaking IPv4.</p>
 <p>
 IPv4 sockets are capable of speaking IPv4.  On some operating systems
 and under some combinations of circumstances IPv6 sockets are also
 capable of speaking IPv4.  See RFC 3493 section 3.7 for more
-information.
-</p>
+information.</p>
 <p>
 No other types of sockets are currently considered as being capable
-of speaking IPv4.
-</p>
+of speaking IPv4.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2726,19 +2589,16 @@ of speaking IPv4.
 <p>
 Returns the credentials of the foreign process connected to this
 socket, if any (e.g. it is only supported for <a class="link" href="GSocketAddress.html#G-SOCKET-FAMILY-UNIX:CAPS"><code class="literal">G_SOCKET_FAMILY_UNIX</code></a>
-sockets).
-</p>
+sockets).</p>
 <p>
 If this operation isn't supported on the OS, the method fails with
 the <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> error. On Linux this is implemented
-by reading the <code class="literal">SO_PEERCRED</code> option on the underlying socket.
-</p>
+by reading the <code class="literal">SO_PEERCRED</code> option on the underlying socket.</p>
 <p>
 Other ways to obtain credentials from a foreign peer includes the
 <a class="link" href="GUnixCredentialsMessage.html" title="GUnixCredentialsMessage"><span class="type">GUnixCredentialsMessage</span></a> type and
 <a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials" title="g_unix_connection_send_credentials ()"><code class="function">g_unix_connection_send_credentials()</code></a> /
-<a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials" title="g_unix_connection_receive_credentials ()"><code class="function">g_unix_connection_receive_credentials()</code></a> functions.
-</p>
+<a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials" title="g_unix_connection_receive_credentials ()"><code class="function">g_unix_connection_receive_credentials()</code></a> functions.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2777,17 +2637,14 @@ that must be freed with <a href="http://library.gnome.org/devel/gobject/unstable
 Registers <em class="parameter"><code>socket</code></em> to receive multicast messages sent to <em class="parameter"><code>group</code></em>.
 <em class="parameter"><code>socket</code></em> must be a <a class="link" href="GSocket.html#G-SOCKET-TYPE-DATAGRAM:CAPS"><code class="literal">G_SOCKET_TYPE_DATAGRAM</code></a> socket, and must have
 been bound to an appropriate interface and port with
-<a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a>.
-</p>
+<a class="link" href="GSocket.html#g-socket-bind" title="g_socket_bind ()"><code class="function">g_socket_bind()</code></a>.</p>
 <p>
 If <em class="parameter"><code>iface</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the system will automatically pick an interface
-to bind to based on <em class="parameter"><code>group</code></em>.
-</p>
+to bind to based on <em class="parameter"><code>group</code></em>.</p>
 <p>
 If <em class="parameter"><code>source_specific</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, source-specific multicast as defined
 in RFC 4604 is used. Note that on older platforms this may fail
-with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> error.
-</p>
+with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> error.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2837,12 +2694,10 @@ with a <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><c
 <p>
 Removes <em class="parameter"><code>socket</code></em> from the multicast group defined by <em class="parameter"><code>group</code></em>, <em class="parameter"><code>iface</code></em>,
 and <em class="parameter"><code>source_specific</code></em> (which must all have the same values they had
-when you joined the group).
-</p>
+when you joined the group).</p>
 <p>
 <em class="parameter"><code>socket</code></em> remains bound to its address and port, and can still receive
-unicast messages after calling this.
-</p>
+unicast messages after calling this.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2888,8 +2743,7 @@ unicast messages after calling this.
 <p>
 Gets the multicast loopback setting on <em class="parameter"><code>socket</code></em>; if <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> (the
 default), outgoing multicast packets will be looped back to
-multicast listeners on the same host.
-</p>
+multicast listeners on the same host.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2917,8 +2771,7 @@ multicast listeners on the same host.
 <p>
 Sets whether outgoing multicast packets will be received by sockets
 listening on that multicast address on the same host. This is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>
-by default.
-</p>
+by default.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2944,8 +2797,7 @@ multicast groups from the local host</td>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_socket_get_multicast_ttl          (<em class="parameter"><code><a class="link" href="GSocket.html" title="GSocket"><span class="type">GSocket</span></a> *socket</code></em>);</pre>
 <p>
 Gets the multicast time-to-live setting on <em class="parameter"><code>socket</code></em>; see
-<a class="link" href="GSocket.html#g-socket-set-multicast-ttl" title="g_socket_set_multicast_ttl ()"><code class="function">g_socket_set_multicast_ttl()</code></a> for more details.
-</p>
+<a class="link" href="GSocket.html#g-socket-set-multicast-ttl" title="g_socket_set_multicast_ttl ()"><code class="function">g_socket_set_multicast_ttl()</code></a> for more details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2973,8 +2825,7 @@ Gets the multicast time-to-live setting on <em class="parameter"><code>socket</c
 <p>
 Sets the time-to-live for outgoing multicast datagrams on <em class="parameter"><code>socket</code></em>.
 By default, this is 1, meaning that multicast packets will not leave
-the local network.
-</p>
+the local network.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3008,8 +2859,7 @@ the local network.
 <a name="GSocket--broadcast"></a><h3>The <code class="literal">"broadcast"</code> property</h3>
 <pre class="programlisting">  "broadcast"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
 <p>
-Whether the socket should allow sending to broadcast addresses.
-</p>
+Whether the socket should allow sending to broadcast addresses.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.32</p>
 </div>
@@ -3053,8 +2903,7 @@ Whether the socket should allow sending to broadcast addresses.
 <a name="GSocket--multicast-loopback"></a><h3>The <code class="literal">"multicast-loopback"</code> property</h3>
 <pre class="programlisting">  "multicast-loopback"       <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
 <p>
-Whether outgoing multicast packets loop back to the local host.
-</p>
+Whether outgoing multicast packets loop back to the local host.</p>
 <p>Default value: TRUE</p>
 <p class="since">Since 2.32</p>
 </div>
@@ -3063,8 +2912,7 @@ Whether outgoing multicast packets loop back to the local host.
 <a name="GSocket--multicast-ttl"></a><h3>The <code class="literal">"multicast-ttl"</code> property</h3>
 <pre class="programlisting">  "multicast-ttl"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
 <p>
-Time-to-live out outgoing multicast packets
-</p>
+Time-to-live out outgoing multicast packets</p>
 <p>Default value: 1</p>
 <p class="since">Since 2.32</p>
 </div>
@@ -3086,8 +2934,7 @@ Time-to-live out outgoing multicast packets
 <a name="GSocket--timeout"></a><h3>The <code class="literal">"timeout"</code> property</h3>
 <pre class="programlisting">  "timeout"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
 <p>
-The timeout in seconds on socket I/O
-</p>
+The timeout in seconds on socket I/O</p>
 <p>Default value: 0</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -3096,8 +2943,7 @@ The timeout in seconds on socket I/O
 <a name="GSocket--ttl"></a><h3>The <code class="literal">"ttl"</code> property</h3>
 <pre class="programlisting">  "ttl"                      <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write</pre>
 <p>
-Time-to-live for outgoing unicast packets
-</p>
+Time-to-live for outgoing unicast packets</p>
 <p>Default value: 0</p>
 <p class="since">Since 2.32</p>
 </div>
@@ -3116,6 +2962,6 @@ Time-to-live for outgoing unicast packets
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

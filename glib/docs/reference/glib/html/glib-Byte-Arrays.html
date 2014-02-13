@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Byte Arrays</title>
+<title>GLib Reference Manual: Byte Arrays</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Pointer-Arrays.html" title="Pointer Arrays">
 <link rel="next" href="glib-Balanced-Binary-Trees.html" title="Balanced Binary Trees">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Pointer-Arrays.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-data-types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Balanced-Binary-Trees.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Byte-Arrays.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Byte-Arrays.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-data-types.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Pointer-Arrays.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Balanced-Binary-Trees.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Byte-Arrays"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -104,23 +101,18 @@ struct              <a class="link" href="glib-Byte-Arrays.html#GByteArray" titl
 <a name="glib-Byte-Arrays.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> is a mutable array of bytes based on <a class="link" href="glib-Arrays.html#GArray" title="struct GArray"><span class="type">GArray</span></a>, to provide arrays
-of bytes which grow automatically as elements are added.
-</p>
+of bytes which grow automatically as elements are added.</p>
 <p>
 To create a new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-new" title="g_byte_array_new ()"><code class="function">g_byte_array_new()</code></a>. To add elements to a
-<a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-append" title="g_byte_array_append ()"><code class="function">g_byte_array_append()</code></a>, and <a class="link" href="glib-Byte-Arrays.html#g-byte-array-prepend" title="g_byte_array_prepend ()"><code class="function">g_byte_array_prepend()</code></a>.
-</p>
+<a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-append" title="g_byte_array_append ()"><code class="function">g_byte_array_append()</code></a>, and <a class="link" href="glib-Byte-Arrays.html#g-byte-array-prepend" title="g_byte_array_prepend ()"><code class="function">g_byte_array_prepend()</code></a>.</p>
 <p>
-To set the size of a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-set-size" title="g_byte_array_set_size ()"><code class="function">g_byte_array_set_size()</code></a>.
-</p>
+To set the size of a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-set-size" title="g_byte_array_set_size ()"><code class="function">g_byte_array_set_size()</code></a>.</p>
 <p>
-To free a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free" title="g_byte_array_free ()"><code class="function">g_byte_array_free()</code></a>.
-</p>
+To free a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free" title="g_byte_array_free ()"><code class="function">g_byte_array_free()</code></a>.</p>
 <p>
+An example for using a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>:
 </p>
-<div class="example">
-<a name="id-1.6.12.4.6.1"></a><p class="title"><b>Example 16. Using a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a></b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -161,13 +153,9 @@ To free a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct 
   </table>
 </div>
 
-</div>
-<p><br class="example-break">
-</p>
 <p>
 See <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> if you are interested in an immutable object representing a
-sequence of bytes.
-</p>
+sequence of bytes.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Byte-Arrays.details"></a><h2>Details</h2>
@@ -179,9 +167,7 @@ sequence of bytes.
 };
 </pre>
 <p>
-The <span class="structname">GByteArray</span> struct allows access to the
-public fields of a <span class="structname">GByteArray</span>.
-</p>
+Contains the public fields of a GByteArray.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -191,11 +177,13 @@ public fields of a <span class="structname">GByteArray</span>.
 <tr>
 <td><p><span class="term"><a class="link" href="glib-Basic-Types.html#guint8" title="guint8"><span class="type">guint8</span></a> *<em class="structfield"><code><a name="GByteArray.data"></a>data</code></em>;</span></p></td>
 <td>a pointer to the element data. The data may be moved as
-elements are added to the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+elements are added to the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> <em class="structfield"><code><a name="GByteArray.len"></a>len</code></em>;</span></p></td>
-<td>the number of elements in the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the number of elements in the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -205,8 +193,7 @@ elements are added to the <a class="link" href="glib-Byte-Arrays.html#GByteArray
 <a name="g-byte-array-new"></a><h3>g_byte_array_new ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="returnvalue">GByteArray</span></a> *        g_byte_array_new                    (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> with a reference count of 1.
-</p>
+Creates a new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> with a reference count of 1.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -226,8 +213,7 @@ Creates a new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="str
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> len</code></em>);</pre>
 <p>
 Create byte array containing the data. The data will be owned by the array
-and will be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>, i.e. it could be allocated using <a class="link" href="glib-String-Utility-Functions.html#g-strdup" title="g_strdup ()"><code class="function">g_strdup()</code></a>.
-</p>
+and will be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>, i.e. it could be allocated using <a class="link" href="glib-String-Utility-Functions.html#g-strdup" title="g_strdup ()"><code class="function">g_strdup()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -261,8 +247,7 @@ and will be freed with <a class="link" href="glib-Memory-Allocation.html#g-free"
 Creates a new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> with <em class="parameter"><code>reserved_size</code></em> bytes preallocated.
 This avoids frequent reallocation, if you are going to add many
 bytes to the array. Note however that the size of the array is still
-0.
-</p>
+0.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -271,11 +256,12 @@ bytes to the array. Note however that the size of the array is still
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>reserved_size</code></em> :</span></p></td>
-<td>number of bytes preallocated.</td>
+<td>number of bytes preallocated</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the new <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -285,9 +271,8 @@ bytes to the array. Note however that the size of the array is still
 <a name="g-byte-array-ref"></a><h3>g_byte_array_ref ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="returnvalue">GByteArray</span></a> *        g_byte_array_ref                    (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> *array</code></em>);</pre>
 <p>
-Atomically increments the reference count of <em class="parameter"><code>array</code></em> by one. This
-function is MT-safe and may be called from any thread.
-</p>
+Atomically increments the reference count of <em class="parameter"><code>array</code></em> by one.
+This function is thread-safe and may be called from any thread.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -296,11 +281,13 @@ function is MT-safe and may be called from any thread.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>A <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>A <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>The passed in <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>The passed in <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -313,9 +300,8 @@ function is MT-safe and may be called from any thread.
 <p>
 Atomically decrements the reference count of <em class="parameter"><code>array</code></em> by one. If the
 reference count drops to 0, all memory allocated by the array is
-released. This function is MT-safe and may be called from any
-thread.
-</p>
+released. This function is thread-safe and may be called from any
+thread.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -323,7 +309,8 @@ thread.
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>A <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>A <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr></tbody>
 </table></div>
 <p class="since">Since 2.22</p>
@@ -335,9 +322,8 @@ thread.
                                                          <em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#guint8" title="guint8"><span class="type">guint8</span></a> *data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> len</code></em>);</pre>
 <p>
-Adds the given bytes to the end of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. The array will
-grow in size automatically if necessary.
-</p>
+Adds the given bytes to the end of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.
+The array will grow in size automatically if necessary.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -346,19 +332,21 @@ grow in size automatically if necessary.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
-<td>the byte data to be added.</td>
+<td>the byte data to be added</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
-<td>the number of bytes to add.</td>
+<td>the number of bytes to add</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -370,9 +358,8 @@ grow in size automatically if necessary.
                                                          <em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#guint8" title="guint8"><span class="type">guint8</span></a> *data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> len</code></em>);</pre>
 <p>
-Adds the given data to the start of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. The array will
-grow in size automatically if necessary.
-</p>
+Adds the given data to the start of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.
+The array will grow in size automatically if necessary.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -381,19 +368,21 @@ grow in size automatically if necessary.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>data</code></em> :</span></p></td>
-<td>the byte data to be added.</td>
+<td>the byte data to be added</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
-<td>the number of bytes to add.</td>
+<td>the number of bytes to add</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -404,9 +393,8 @@ grow in size automatically if necessary.
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="returnvalue">GByteArray</span></a> *        g_byte_array_remove_index           (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> index_</code></em>);</pre>
 <p>
-Removes the byte at the given index from a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. The
-following bytes are moved down one place.
-</p>
+Removes the byte at the given index from a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.
+The following bytes are moved down one place.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -415,15 +403,17 @@ following bytes are moved down one place.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>index_</code></em> :</span></p></td>
-<td>the index of the byte to remove.</td>
+<td>the index of the byte to remove</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -437,8 +427,7 @@ following bytes are moved down one place.
 Removes the byte at the given index from a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. The last
 element in the array is used to fill in the space, so this function
 does not preserve the order of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. But it is faster
-than <a class="link" href="glib-Byte-Arrays.html#g-byte-array-remove-index" title="g_byte_array_remove_index ()"><code class="function">g_byte_array_remove_index()</code></a>.
-</p>
+than <a class="link" href="glib-Byte-Arrays.html#g-byte-array-remove-index" title="g_byte_array_remove_index ()"><code class="function">g_byte_array_remove_index()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -447,15 +436,17 @@ than <a class="link" href="glib-Byte-Arrays.html#g-byte-array-remove-index" titl
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>index_</code></em> :</span></p></td>
-<td>the index of the byte to remove.</td>
+<td>the index of the byte to remove</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -468,8 +459,7 @@ than <a class="link" href="glib-Byte-Arrays.html#g-byte-array-remove-index" titl
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> length</code></em>);</pre>
 <p>
 Removes the given number of bytes starting at the given index from a
-<a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.  The following elements are moved to close the gap.
-</p>
+<a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.  The following elements are moved to close the gap.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -478,19 +468,21 @@ Removes the given number of bytes starting at the given index from a
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <em class="parameter"><code>GByteArray</code></em>.</td>
+<td>a <em class="parameter"><code>GByteArray</code></em>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>index_</code></em> :</span></p></td>
-<td>the index of the first byte to remove.</td>
+<td>the index of the first byte to remove</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
-<td>the number of bytes to remove.</td>
+<td>the number of bytes to remove</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -505,15 +497,13 @@ Removes the given number of bytes starting at the given index from a
 Sorts a byte array, using <em class="parameter"><code>compare_func</code></em> which should be a
 <code class="function">qsort()</code>-style comparison function (returns less than zero for first
 arg is less than second arg, zero for equal, greater than zero if
-first arg is greater than second arg).
-</p>
+first arg is greater than second arg).</p>
 <p>
 If two array elements compare equal, their order in the sorted array
 is undefined. If you want equal elements to keep their order (i.e.
 you want a stable sort) you can write a comparison function that,
 if two elements would otherwise compare equal, compares them by
-their addresses.
-</p>
+their addresses.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -522,11 +512,12 @@ their addresses.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>compare_func</code></em> :</span></p></td>
-<td>comparison function.</td>
+<td>comparison function</td>
 </tr>
 </tbody>
 </table></div>
@@ -539,8 +530,7 @@ their addresses.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Like <a class="link" href="glib-Byte-Arrays.html#g-byte-array-sort" title="g_byte_array_sort ()"><code class="function">g_byte_array_sort()</code></a>, but the comparison function takes an extra
-user data argument.
-</p>
+user data argument.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -549,15 +539,17 @@ user data argument.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>compare_func</code></em> :</span></p></td>
-<td>comparison function.</td>
+<td>comparison function</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>user_data</code></em> :</span></p></td>
-<td>data to pass to <em class="parameter"><code>compare_func</code></em>.</td>
+<td>data to pass to <em class="parameter"><code>compare_func</code></em>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -568,8 +560,7 @@ user data argument.
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="returnvalue">GByteArray</span></a> *        g_byte_array_set_size               (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> *array</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> length</code></em>);</pre>
 <p>
-Sets the size of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, expanding it if necessary.
-</p>
+Sets the size of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, expanding it if necessary.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -578,15 +569,18 @@ Sets the size of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" tit
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>length</code></em> :</span></p></td>
-<td>the new size of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the new size of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -600,8 +594,7 @@ Sets the size of the <a class="link" href="glib-Byte-Arrays.html#GByteArray" tit
 Frees the memory allocated by the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. If <em class="parameter"><code>free_segment</code></em> is
 <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> it frees the actual byte data. If the reference count of
 <em class="parameter"><code>array</code></em> is greater than one, the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> wrapper is preserved but
-the size of <em class="parameter"><code>array</code></em> will be set to zero.
-</p>
+the size of <em class="parameter"><code>array</code></em> will be set to zero.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -610,11 +603,12 @@ the size of <em class="parameter"><code>array</code></em> will be set to zero.
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>array</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>.</td>
+<td>a <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>free_segment</code></em> :</span></p></td>
-<td>if <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> the actual byte data is freed as well.</td>
+<td>if <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> the actual byte data is freed as well</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
@@ -629,17 +623,14 @@ the size of <em class="parameter"><code>array</code></em> will be set to zero.
 <a name="g-byte-array-free-to-bytes"></a><h3>g_byte_array_free_to_bytes ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="returnvalue">GBytes</span></a> *            g_byte_array_free_to_bytes          (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> *array</code></em>);</pre>
 <p>
-Transfers the data from the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> into a new immutable <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.
-</p>
+Transfers the data from the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> into a new immutable <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.</p>
 <p>
 The <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> is freed unless the reference count of <em class="parameter"><code>array</code></em> is greater
 than one, the <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> wrapper is preserved but the size of <em class="parameter"><code>array</code></em>
-will be set to zero.
-</p>
+will be set to zero.</p>
 <p>
 This is identical to using <a class="link" href="glib-Byte-Arrays.html#g-bytes-new-take" title="g_bytes_new_take ()"><code class="function">g_bytes_new_take()</code></a> and <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free" title="g_byte_array_free ()"><code class="function">g_byte_array_free()</code></a>
-together.
-</p>
+together.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -653,8 +644,8 @@ together.
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a new immutable <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> representing same byte
-data that was in the array. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+<td>a new immutable <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> representing same
+byte data that was in the array. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr>
 </tbody>
@@ -667,34 +658,29 @@ data that was in the array. <span class="annotation">[<acronym title="Free data 
 <pre class="programlisting">typedef struct _GBytes GBytes;</pre>
 <p>
 A simple refcounted data type representing an immutable sequence of zero or
-more bytes from an unspecified origin.
-</p>
+more bytes from an unspecified origin.</p>
 <p>
 The purpose of a <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> is to keep the memory region that it holds
 alive for as long as anyone holds a reference to the bytes.  When
 the last reference count is dropped, the memory is released. Multiple
 unrelated callers can use byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> without coordinating
 their activities, resting assured that the byte data will not change or
-move while they hold a reference.
-</p>
+move while they hold a reference.</p>
 <p>
 A <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> can come from many different origins that may have
 different procedures for freeing the memory region.  Examples are
 memory from <a class="link" href="glib-Memory-Allocation.html#g-malloc" title="g_malloc ()"><code class="function">g_malloc()</code></a>, from memory slices, from a <a class="link" href="glib-File-Utilities.html#GMappedFile" title="GMappedFile"><span class="type">GMappedFile</span></a> or
-memory from other allocators.
-</p>
+memory from other allocators.</p>
 <p>
 <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> work well as keys in <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>. Use <a class="link" href="glib-Byte-Arrays.html#g-bytes-equal" title="g_bytes_equal ()"><code class="function">g_bytes_equal()</code></a> and
 <a class="link" href="glib-Byte-Arrays.html#g-bytes-hash" title="g_bytes_hash ()"><code class="function">g_bytes_hash()</code></a> as parameters to <a class="link" href="glib-Hash-Tables.html#g-hash-table-new" title="g_hash_table_new ()"><code class="function">g_hash_table_new()</code></a> or <a class="link" href="glib-Hash-Tables.html#g-hash-table-new-full" title="g_hash_table_new_full ()"><code class="function">g_hash_table_new_full()</code></a>.
 <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> can also be used as keys in a <a class="link" href="glib-Balanced-Binary-Trees.html#GTree" title="GTree"><span class="type">GTree</span></a> by passing the <a class="link" href="glib-Byte-Arrays.html#g-bytes-compare" title="g_bytes_compare ()"><code class="function">g_bytes_compare()</code></a>
-function to <a class="link" href="glib-Balanced-Binary-Trees.html#g-tree-new" title="g_tree_new ()"><code class="function">g_tree_new()</code></a>.
-</p>
+function to <a class="link" href="glib-Balanced-Binary-Trees.html#g-tree-new" title="g_tree_new ()"><code class="function">g_tree_new()</code></a>.</p>
 <p>
 The data pointed to by this bytes must not be modified. For a mutable
 array of bytes see <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>. Use <a class="link" href="glib-Byte-Arrays.html#g-bytes-unref-to-array" title="g_bytes_unref_to_array ()"><code class="function">g_bytes_unref_to_array()</code></a> to create a
 mutable array for a <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> sequence. To create an immutable <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from
-a mutable <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use the <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free-to-bytes" title="g_byte_array_free_to_bytes ()"><code class="function">g_byte_array_free_to_bytes()</code></a> function.
-</p>
+a mutable <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a>, use the <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free-to-bytes" title="g_byte_array_free_to_bytes ()"><code class="function">g_byte_array_free_to_bytes()</code></a> function.</p>
 <p class="since">Since 2.32</p>
 </div>
 <hr>
@@ -703,11 +689,9 @@ a mutable <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct 
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="returnvalue">GBytes</span></a> *            g_bytes_new                         (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> size</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from <em class="parameter"><code>data</code></em>.
-</p>
+Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from <em class="parameter"><code>data</code></em>.</p>
 <p>
-<em class="parameter"><code>data</code></em> is copied. If <em class="parameter"><code>size</code></em> is 0, <em class="parameter"><code>data</code></em> may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-</p>
+<em class="parameter"><code>data</code></em> is copied. If <em class="parameter"><code>size</code></em> is 0, <em class="parameter"><code>data</code></em> may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -739,22 +723,18 @@ Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="returnvalue">GBytes</span></a> *            g_bytes_new_take                    (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> size</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from <em class="parameter"><code>data</code></em>.
-</p>
+Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from <em class="parameter"><code>data</code></em>.</p>
 <p>
 After this call, <em class="parameter"><code>data</code></em> belongs to the bytes and may no longer be
 modified by the caller.  <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a> will be called on <em class="parameter"><code>data</code></em> when the
 bytes is no longer in use. Because of this <em class="parameter"><code>data</code></em> must have been created by
 a call to <a class="link" href="glib-Memory-Allocation.html#g-malloc" title="g_malloc ()"><code class="function">g_malloc()</code></a>, <a class="link" href="glib-Memory-Allocation.html#g-malloc0" title="g_malloc0 ()"><code class="function">g_malloc0()</code></a> or <a class="link" href="glib-Memory-Allocation.html#g-realloc" title="g_realloc ()"><code class="function">g_realloc()</code></a> or by one of the many
-functions that wrap these calls (such as <a class="link" href="glib-Memory-Allocation.html#g-new" title="g_new()"><code class="function">g_new()</code></a>, <a class="link" href="glib-String-Utility-Functions.html#g-strdup" title="g_strdup ()"><code class="function">g_strdup()</code></a>, etc).
-</p>
+functions that wrap these calls (such as <a class="link" href="glib-Memory-Allocation.html#g-new" title="g_new()"><code class="function">g_new()</code></a>, <a class="link" href="glib-String-Utility-Functions.html#g-strdup" title="g_strdup ()"><code class="function">g_strdup()</code></a>, etc).</p>
 <p>
 For creating <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> with memory from other allocators, see
-<a class="link" href="glib-Byte-Arrays.html#g-bytes-new-with-free-func" title="g_bytes_new_with_free_func ()"><code class="function">g_bytes_new_with_free_func()</code></a>.
-</p>
+<a class="link" href="glib-Byte-Arrays.html#g-bytes-new-with-free-func" title="g_bytes_new_with_free_func ()"><code class="function">g_bytes_new_with_free_func()</code></a>.</p>
 <p>
-<em class="parameter"><code>data</code></em> may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if <em class="parameter"><code>size</code></em> is 0.
-</p>
+<em class="parameter"><code>data</code></em> may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if <em class="parameter"><code>size</code></em> is 0.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -786,12 +766,10 @@ For creating <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes">
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="returnvalue">GBytes</span></a> *            g_bytes_new_static                  (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> size</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from static data.
-</p>
+Creates a new <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from static data.</p>
 <p>
 <em class="parameter"><code>data</code></em> must be static (ie: never modified or freed). It may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if <em class="parameter"><code>size</code></em>
-is 0.
-</p>
+is 0.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -825,19 +803,15 @@ is 0.
                                                          <em class="parameter"><code><a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> free_func</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Creates a <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from <em class="parameter"><code>data</code></em>.
-</p>
+Creates a <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> from <em class="parameter"><code>data</code></em>.</p>
 <p>
 When the last reference is dropped, <em class="parameter"><code>free_func</code></em> will be called with the
-<em class="parameter"><code>user_data</code></em> argument.
-</p>
+<em class="parameter"><code>user_data</code></em> argument.</p>
 <p>
 <em class="parameter"><code>data</code></em> must not be modified after this call is made until <em class="parameter"><code>free_func</code></em> has
-been called to indicate that the bytes is no longer in use.
-</p>
+been called to indicate that the bytes is no longer in use.</p>
 <p>
-<em class="parameter"><code>data</code></em> may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if <em class="parameter"><code>size</code></em> is 0.
-</p>
+<em class="parameter"><code>data</code></em> may be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if <em class="parameter"><code>size</code></em> is 0.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -880,12 +854,10 @@ been called to indicate that the bytes is no longer in use.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> length</code></em>);</pre>
 <p>
 Creates a <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> which is a subsection of another <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>. The <em class="parameter"><code>offset</code></em> +
-<em class="parameter"><code>length</code></em> may not be longer than the size of <em class="parameter"><code>bytes</code></em>.
-</p>
+<em class="parameter"><code>length</code></em> may not be longer than the size of <em class="parameter"><code>bytes</code></em>.</p>
 <p>
 A reference to <em class="parameter"><code>bytes</code></em> will be held by the newly created <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> until
-the byte data is no longer needed.
-</p>
+the byte data is no longer needed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -920,16 +892,13 @@ the byte data is no longer needed.
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="returnvalue">gconstpointer</span></a>       g_bytes_get_data                    (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> *bytes</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> *size</code></em>);</pre>
 <p>
-Get the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>. This data should not be modified.
-</p>
+Get the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>. This data should not be modified.</p>
 <p>
-This function will always return the same pointer for a given <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.
-</p>
+This function will always return the same pointer for a given <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.</p>
 <p>
 <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> may be returned if <em class="parameter"><code>size</code></em> is 0. This is not guaranteed, as the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>
 may represent an empty string with <em class="parameter"><code>data</code></em> non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> and <em class="parameter"><code>size</code></em> as 0. <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will
-not be returned if <em class="parameter"><code>size</code></em> is non-zero.
-</p>
+not be returned if <em class="parameter"><code>size</code></em> is non-zero.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -961,11 +930,9 @@ byte data, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="
 <a name="g-bytes-get-size"></a><h3>g_bytes_get_size ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="returnvalue">gsize</span></a>               g_bytes_get_size                    (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
 <p>
-Get the size of the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.
-</p>
+Get the size of the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.</p>
 <p>
-This function will always return the same value for a given <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.
-</p>
+This function will always return the same value for a given <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -990,12 +957,10 @@ This function will always return the same value for a given <a class="link" href
 <a name="g-bytes-hash"></a><h3>g_bytes_hash ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>               g_bytes_hash                        (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> bytes</code></em>);</pre>
 <p>
-Creates an integer hash code for the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.
-</p>
+Creates an integer hash code for the byte data in the <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a>.</p>
 <p>
 This function can be passed to <a class="link" href="glib-Hash-Tables.html#g-hash-table-new" title="g_hash_table_new ()"><code class="function">g_hash_table_new()</code></a> as the <em class="parameter"><code>key_equal_func</code></em>
-parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> pointers as keys in a <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.
-</p>
+parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> pointers as keys in a <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1022,12 +987,10 @@ parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:C
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> bytes2</code></em>);</pre>
 <p>
 Compares the two <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> values being pointed to and returns
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if they are equal.
-</p>
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if they are equal.</p>
 <p>
 This function can be passed to <a class="link" href="glib-Hash-Tables.html#g-hash-table-new" title="g_hash_table_new ()"><code class="function">g_hash_table_new()</code></a> as the <em class="parameter"><code>key_equal_func</code></em>
-parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> pointers as keys in a <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.
-</p>
+parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> pointers as keys in a <a class="link" href="glib-Hash-Tables.html#GHashTable" title="GHashTable"><span class="type">GHashTable</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1059,11 +1022,9 @@ parameter, when using non-<a class="link" href="glib-Standard-Macros.html#NULL:C
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>                g_bytes_compare                     (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> bytes1</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> bytes2</code></em>);</pre>
 <p>
-Compares the two <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> values.
-</p>
+Compares the two <a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> values.</p>
 <p>
-This function can be used to sort GBytes instances in lexographical order.
-</p>
+This function can be used to sort GBytes instances in lexographical order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1094,8 +1055,7 @@ greater, and zero if bytes2 is equal to bytes1</td>
 <a name="g-bytes-ref"></a><h3>g_bytes_ref ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="returnvalue">GBytes</span></a> *            g_bytes_ref                         (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
 <p>
-Increase the reference count on <em class="parameter"><code>bytes</code></em>.
-</p>
+Increase the reference count on <em class="parameter"><code>bytes</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1122,8 +1082,7 @@ Increase the reference count on <em class="parameter"><code>bytes</code></em>.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_bytes_unref                       (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
 <p>
 Releases a reference on <em class="parameter"><code>bytes</code></em>.  This may result in the bytes being
-freed.
-</p>
+freed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1144,14 +1103,12 @@ freed.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> *size</code></em>);</pre>
 <p>
 Unreferences the bytes, and returns a pointer the same byte data
-contents.
-</p>
+contents.</p>
 <p>
 As an optimization, the byte data is returned without copying if this was
 the last reference to bytes and bytes was created with <a class="link" href="glib-Byte-Arrays.html#g-bytes-new" title="g_bytes_new ()"><code class="function">g_bytes_new()</code></a>,
 <a class="link" href="glib-Byte-Arrays.html#g-bytes-new-take" title="g_bytes_new_take ()"><code class="function">g_bytes_new_take()</code></a> or <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free-to-bytes" title="g_byte_array_free_to_bytes ()"><code class="function">g_byte_array_free_to_bytes()</code></a>. In all other cases the
-data is copied.
-</p>
+data is copied.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1183,14 +1140,12 @@ be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g
 <pre class="programlisting"><a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="returnvalue">GByteArray</span></a> *        g_bytes_unref_to_array              (<em class="parameter"><code><a class="link" href="glib-Byte-Arrays.html#GBytes" title="GBytes"><span class="type">GBytes</span></a> *bytes</code></em>);</pre>
 <p>
 Unreferences the bytes, and returns a new mutable <a class="link" href="glib-Byte-Arrays.html#GByteArray" title="struct GByteArray"><span class="type">GByteArray</span></a> containing
-the same byte data.
-</p>
+the same byte data.</p>
 <p>
 As an optimization, the byte data is transferred to the array without copying
 if this was the last reference to bytes and bytes was created with
 <a class="link" href="glib-Byte-Arrays.html#g-bytes-new" title="g_bytes_new ()"><code class="function">g_bytes_new()</code></a>, <a class="link" href="glib-Byte-Arrays.html#g-bytes-new-take" title="g_bytes_new_take ()"><code class="function">g_bytes_new_take()</code></a> or <a class="link" href="glib-Byte-Arrays.html#g-byte-array-free-to-bytes" title="g_byte_array_free_to_bytes ()"><code class="function">g_byte_array_free_to_bytes()</code></a>. In all
-other cases the data is copied.
-</p>
+other cases the data is copied.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1215,6 +1170,6 @@ other cases the data is copied.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

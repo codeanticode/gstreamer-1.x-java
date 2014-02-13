@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GFileIOStream</title>
+<title>GIO Reference Manual: GFileIOStream</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="streaming.html" title="Streaming I/O">
 <link rel="prev" href="GFileOutputStream.html" title="GFileOutputStream">
 <link rel="next" href="GFileDescriptorBased.html" title="GFileDescriptorBased">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GFileOutputStream.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="streaming.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GFileDescriptorBased.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GFileIOStream.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GFileIOStream.description" class="shortcut">Description</a>
                    | 
                   <a href="#GFileIOStream.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GFileIOStream.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="streaming.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GFileOutputStream.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GFileDescriptorBased.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GFileIOStream"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -79,30 +76,25 @@ GFileIOStream implements
 <a name="GFileIOStream.description"></a><h2>Description</h2>
 <p>
 GFileIOStream provides io streams that both read and write to the same
-file handle.
-</p>
+file handle.</p>
 <p>
 GFileIOStream implements <a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a>, which allows the io
 stream to jump to arbitrary positions in the file and to truncate
 the file, provided the filesystem of the file supports these
-operations.
-</p>
+operations.</p>
 <p>
 To find the position of a file io stream, use
-<a class="link" href="GSeekable.html#g-seekable-tell" title="g_seekable_tell ()"><code class="function">g_seekable_tell()</code></a>.
-</p>
+<a class="link" href="GSeekable.html#g-seekable-tell" title="g_seekable_tell ()"><code class="function">g_seekable_tell()</code></a>.</p>
 <p>
 To find out if a file io stream supports seeking, use <a class="link" href="GSeekable.html#g-seekable-can-seek" title="g_seekable_can_seek ()"><code class="function">g_seekable_can_seek()</code></a>.
 To position a file io stream, use <a class="link" href="GSeekable.html#g-seekable-seek" title="g_seekable_seek ()"><code class="function">g_seekable_seek()</code></a>.
 To find out if a file io stream supports truncating, use
 <a class="link" href="GSeekable.html#g-seekable-can-truncate" title="g_seekable_can_truncate ()"><code class="function">g_seekable_can_truncate()</code></a>. To truncate a file io
-stream, use <a class="link" href="GSeekable.html#g-seekable-truncate" title="g_seekable_truncate ()"><code class="function">g_seekable_truncate()</code></a>.
-</p>
+stream, use <a class="link" href="GSeekable.html#g-seekable-truncate" title="g_seekable_truncate ()"><code class="function">g_seekable_truncate()</code></a>.</p>
 <p>
 The default implementation of all the <a class="link" href="GFileIOStream.html" title="GFileIOStream"><span class="type">GFileIOStream</span></a> operations
 and the implementation of <a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> just call into the same operations
-on the output stream.
-</p>
+on the output stream.</p>
 </div>
 <div class="refsect1">
 <a name="GFileIOStream.details"></a><h2>Details</h2>
@@ -111,11 +103,9 @@ on the output stream.
 <pre class="programlisting">typedef struct _GFileIOStream GFileIOStream;</pre>
 <p>
 A subclass of GIOStream for opened files. This adds
-a few file-specific operations and seeking and truncating.
-</p>
+a few file-specific operations and seeking and truncating.</p>
 <p>
-<a class="link" href="GFileIOStream.html" title="GFileIOStream"><span class="type">GFileIOStream</span></a> implements GSeekable.
-</p>
+<a class="link" href="GFileIOStream.html" title="GFileIOStream"><span class="type">GFileIOStream</span></a> implements GSeekable.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -124,8 +114,7 @@ a few file-specific operations and seeking and truncating.
 <p>
 Gets the entity tag for the file when it has been written.
 This must be called after the stream has been written
-and closed, as the etag can change while writing.
-</p>
+and closed, as the etag can change while writing.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -157,21 +146,18 @@ This function blocks while querying the stream. For the asynchronous
 version of this function, see <a class="link" href="GFileIOStream.html#g-file-io-stream-query-info-async" title="g_file_io_stream_query_info_async ()"><code class="function">g_file_io_stream_query_info_async()</code></a>.
 While the stream is blocked, the stream will set the pending flag
 internally, and any other operations on the stream will fail with
-<a class="link" href="gio-GIOError.html#G-IO-ERROR-PENDING:CAPS"><code class="literal">G_IO_ERROR_PENDING</code></a>.
-</p>
+<a class="link" href="gio-GIOError.html#G-IO-ERROR-PENDING:CAPS"><code class="literal">G_IO_ERROR_PENDING</code></a>.</p>
 <p>
 Can fail if the stream was already closed (with <em class="parameter"><code>error</code></em> being set to
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-CLOSED:CAPS"><code class="literal">G_IO_ERROR_CLOSED</code></a>), the stream has pending operations (with <em class="parameter"><code>error</code></em> being
 set to <a class="link" href="gio-GIOError.html#G-IO-ERROR-PENDING:CAPS"><code class="literal">G_IO_ERROR_PENDING</code></a>), or if querying info is not supported for
 the stream's interface (with <em class="parameter"><code>error</code></em> being set to <a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a>). I
-all cases of failure, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.
-</p>
+all cases of failure, <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will be returned.</p>
 <p>
 If <em class="parameter"><code>cancellable</code></em> is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the operation can be cancelled by
 triggering the cancellable object from another thread. If the operation
 was cancelled, the error <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> will be set, and <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> will
-be returned.
-</p>
+be returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -216,12 +202,10 @@ be returned.
 <p>
 Asynchronously queries the <em class="parameter"><code>stream</code></em> for a <a class="link" href="GFileInfo.html" title="GFileInfo"><span class="type">GFileInfo</span></a>. When completed,
 <em class="parameter"><code>callback</code></em> will be called with a <a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a> which can be used to
-finish the operation with <a class="link" href="GFileIOStream.html#g-file-io-stream-query-info-finish" title="g_file_io_stream_query_info_finish ()"><code class="function">g_file_io_stream_query_info_finish()</code></a>.
-</p>
+finish the operation with <a class="link" href="GFileIOStream.html#g-file-io-stream-query-info-finish" title="g_file_io_stream_query_info_finish ()"><code class="function">g_file_io_stream_query_info_finish()</code></a>.</p>
 <p>
 For the synchronous version of this function, see
-<a class="link" href="GFileIOStream.html#g-file-io-stream-query-info" title="g_file_io_stream_query_info ()"><code class="function">g_file_io_stream_query_info()</code></a>.
-</p>
+<a class="link" href="GFileIOStream.html#g-file-io-stream-query-info" title="g_file_io_stream_query_info ()"><code class="function">g_file_io_stream_query_info()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -268,8 +252,7 @@ of the request.</td>
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finalizes the asynchronous query started
-by <a class="link" href="GFileIOStream.html#g-file-io-stream-query-info-async" title="g_file_io_stream_query_info_async ()"><code class="function">g_file_io_stream_query_info_async()</code></a>.
-</p>
+by <a class="link" href="GFileIOStream.html#g-file-io-stream-query-info-async" title="g_file_io_stream_query_info_async ()"><code class="function">g_file_io_stream_query_info_async()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -305,6 +288,6 @@ by <a class="link" href="GFileIOStream.html#g-file-io-stream-query-info-async" t
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

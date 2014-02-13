@@ -31,7 +31,7 @@ m4_define(glib_configure_ac)
 
 m4_define([glib_major_version], [2])
 m4_define([glib_minor_version], [39])
-m4_define([glib_micro_version], [3])
+m4_define([glib_micro_version], [4])
 m4_define([glib_interface_age], [0])
 m4_define([glib_binary_age],
           [m4_eval(100 * glib_minor_version + glib_micro_version)])
@@ -61,7 +61,7 @@ AC_CONFIG_SRCDIR([glib/glib.h])
 AC_CONFIG_MACRO_DIR([m4macros])
 
 # Save this value here, since automake will set cflags later
-cflags_set=${CFLAGS+set}
+cflags_set=${CFLAGS:+set}
 
 AM_INIT_AUTOMAKE([1.11 -Wno-portability no-define no-dist-gzip dist-xz tar-ustar])
 AM_MAINTAINER_MODE([enable])
@@ -285,7 +285,7 @@ AC_SYS_LARGEFILE
 PKG_PROG_PKG_CONFIG(0.16)
 
 if test "x$enable_debug" = "xyes"; then
-  if test x$cflags_set != xset ; then
+  if test "x$cflags_set" != "x" ; then
       case " $CFLAGS " in
       *[[\ \	]]-g[[\ \	]]*) ;;
       *) CFLAGS="$CFLAGS -g" ;;

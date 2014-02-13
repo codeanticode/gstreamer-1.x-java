@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Matthias Clasen <mclasen@redhat.com>
  *         Clemens N. Buss <cebuzz@gmail.com>
@@ -198,7 +196,7 @@ g_emblemed_icon_get_icon (GEmblemedIcon *emblemed)
  * Gets the list of emblems for the @icon.
  *
  * Returns: (element-type Gio.Emblem) (transfer none): a #GList of
- *          #GEmblem <!-- -->s that is owned by @emblemed
+ *     #GEmblems that is owned by @emblemed
  *
  * Since: 2.18
  **/
@@ -252,7 +250,7 @@ g_emblem_comp (GEmblem *a,
  * @emblemed: a #GEmblemedIcon
  * @emblem: a #GEmblem
  *
- * Adds @emblem to the #GList of #GEmblem <!-- -->s.
+ * Adds @emblem to the #GList of #GEmblems.
  *
  * Since: 2.18
  **/

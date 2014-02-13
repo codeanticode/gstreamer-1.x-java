@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GProxy</title>
+<title>GIO Reference Manual: GProxy</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="networking.html" title="Low-level network support">
 <link rel="prev" href="GUnixCredentialsMessage.html" title="GUnixCredentialsMessage">
 <link rel="next" href="GProxyAddress.html" title="GProxyAddress">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GUnixCredentialsMessage.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="networking.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GProxyAddress.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GProxy.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GProxy.description" class="shortcut">Description</a>
                    | 
                   <a href="#GProxy.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GProxy.prerequisites" class="shortcut">Prerequisites</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="networking.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GUnixCredentialsMessage.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GProxyAddress.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GProxy"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -86,8 +83,7 @@ proxy server. It is implemented by the 'gio-proxy' extension point.
 The extensions are named after their proxy protocol name. As an
 example, a SOCKS5 proxy implementation can be retrieved with the
 name 'socks5' using the function
-<a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extension-by-name" title="g_io_extension_point_get_extension_by_name ()"><code class="function">g_io_extension_point_get_extension_by_name()</code></a>.
-</p>
+<a class="link" href="gio-Extension-Points.html#g-io-extension-point-get-extension-by-name" title="g_io_extension_point_get_extension_by_name ()"><code class="function">g_io_extension_point_get_extension_by_name()</code></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GProxy.details"></a><h2>Details</h2>
@@ -95,8 +91,7 @@ name 'socks5' using the function
 <a name="GProxy-struct"></a><h3>GProxy</h3>
 <pre class="programlisting">typedef struct _GProxy GProxy;</pre>
 <p>
-Interface that handles proxy connection and payload.
-</p>
+Interface that handles proxy connection and payload.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -128,8 +123,7 @@ Interface that handles proxy connection and payload.
 };
 </pre>
 <p>
-Provides an interface for handling proxy connection and payload.
-</p>
+Provides an interface for handling proxy connection and payload.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -169,8 +163,7 @@ to handle payload.</td>
 </pre>
 <p>
 Extension point for proxy functionality.
-See Extending GIO.
-</p>
+See Extending GIO.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -185,8 +178,7 @@ See Extending GIO.
 Given <em class="parameter"><code>connection</code></em> to communicate with a proxy (eg, a
 <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> that is connected to the proxy server), this
 does the necessary handshake to connect to <em class="parameter"><code>proxy_address</code></em>, and if
-required, wraps the <a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a> to handle proxy payload.
-</p>
+required, wraps the <a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a> to handle proxy payload.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -239,8 +231,7 @@ will be added. <span class="annotation">[<acronym title="Free data after the cod
                                                          <em class="parameter"><code><a class="link" href="GAsyncResult.html#GAsyncReadyCallback" title="GAsyncReadyCallback ()"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Asynchronous version of <a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()"><code class="function">g_proxy_connect()</code></a>.
-</p>
+Asynchronous version of <a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()"><code class="function">g_proxy_connect()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -288,8 +279,7 @@ Asynchronous version of <a class="link" href="GProxy.html#g-proxy-connect" title
                                                          <em class="parameter"><code><a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a> *result</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-See <a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()"><code class="function">g_proxy_connect()</code></a>.
-</p>
+See <a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()"><code class="function">g_proxy_connect()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -326,8 +316,7 @@ See <a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()
 <pre class="programlisting"><a class="link" href="GProxy.html" title="GProxy"><span class="returnvalue">GProxy</span></a> *            g_proxy_get_default_for_protocol    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *protocol</code></em>);</pre>
 <p>
 Lookup "gio-proxy" extension point for a proxy implementation that supports
-specified protocol.
-</p>
+specified protocol.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -359,8 +348,7 @@ not allow this. This function will return <a href="http://library.gnome.org/deve
 implementing such a protocol. When <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> is returned, the caller
 should resolve the destination hostname first, and then pass a
 <a class="link" href="GProxyAddress.html" title="GProxyAddress"><span class="type">GProxyAddress</span></a> containing the stringified IP address to
-<a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()"><code class="function">g_proxy_connect()</code></a> or <a class="link" href="GProxy.html#g-proxy-connect-async" title="g_proxy_connect_async ()"><code class="function">g_proxy_connect_async()</code></a>.
-</p>
+<a class="link" href="GProxy.html#g-proxy-connect" title="g_proxy_connect ()"><code class="function">g_proxy_connect()</code></a> or <a class="link" href="GProxy.html#g-proxy-connect-async" title="g_proxy_connect_async ()"><code class="function">g_proxy_connect_async()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -385,6 +373,6 @@ should resolve the destination hostname first, and then pass a
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

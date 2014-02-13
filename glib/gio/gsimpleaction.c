@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Ryan Lortie <desrt@desrt.ca>
  */
@@ -205,7 +203,28 @@ g_simple_action_activate (GAction  *action,
     g_variant_ref_sink (parameter);
 
   if (simple->enabled)
-    g_signal_emit (simple, g_simple_action_signals[SIGNAL_ACTIVATE], 0, parameter);
+    {
+      /* If the user connected a signal handler then they are responsible
+       * for handling activation.
+       */
+      if (g_signal_has_handler_pending (action, g_simple_action_signals[SIGNAL_ACTIVATE], 0, TRUE))
+        g_signal_emit (action, g_simple_action_signals[SIGNAL_ACTIVATE], 0, parameter);
+
+      /* If not, do some reasonable defaults for stateful actions. */
+      else if (simple->state)
+        {
+          /* If we have no parameter and this is a boolean action, toggle. */
+          if (parameter == NULL && g_variant_is_of_type (simple->state, G_VARIANT_TYPE_BOOLEAN))
+            {
+              gboolean was_enabled = g_variant_get_boolean (simple->state);
+              g_simple_action_change_state (action, g_variant_new_boolean (!was_enabled));
+            }
+
+          /* else, if the parameter and state type are the same, do a change-state */
+          else if (g_variant_is_of_type (simple->state, g_variant_get_type (parameter)))
+            g_simple_action_change_state (action, parameter);
+        }
+    }
 
   if (parameter != NULL)
     g_variant_unref (parameter);
@@ -343,6 +362,14 @@ g_simple_action_class_init (GSimpleActionClass *class)
    * @parameter will always be of the expected type.  In the event that
    * an incorrect type was given, no signal will be emitted.
    *
+   * Since GLib 2.40, if no handler is connected to this signal then the
+   * default behaviour for boolean-stated actions with a %NULL parameter
+   * type is to toggle them via the #GSimpleAction::change-state signal.
+   * For stateful actions where the state type is equal to the parameter
+   * type, the default is to forward them directly to
+   * #GSimpleAction::change-state.  This should allow almost all users
+   * of #GSimpleAction to connect only one handler or the other.
+   *
    * Since: 2.28
    */
   g_simple_action_signals[SIGNAL_ACTIVATE] =
@@ -367,13 +394,12 @@ g_simple_action_class_init (GSimpleActionClass *class)
    *
    * If no handler is connected to this signal then the default
    * behaviour is to call g_simple_action_set_state() to set the state
-   * to the requested value.  If you connect a signal handler then no
-   * default action is taken.  If the state should change then you must
+   * to the requested value. If you connect a signal handler then no
+   * default action is taken. If the state should change then you must
    * call g_simple_action_set_state() from the handler.
    *
-   * <example>
-   * <title>Example 'change-state' handler</title>
-   * <programlisting>
+   * An example of a 'change-state' handler:
+   * |[<!-- language="C" -->
    * static void
    * change_volume_state (GSimpleAction *action,
    *                      GVariant      *value,
@@ -383,15 +409,14 @@ g_simple_action_class_init (GSimpleActionClass *class)
    *
    *   requested = g_variant_get_int32 (value);
    *
-   *   // Volume only goes from 0 to 10
+   *   /&ast; Volume only goes from 0 to 10 &ast;/
    *   if (0 <= requested && requested <= 10)
    *     g_simple_action_set_state (action, value);
    * }
-   * </programlisting>
-   * </example>
+   * ]|
    *
-   * The handler need not set the state to the requested value.  It
-   * could set it to any value at all, or take some other action.
+   * The handler need not set the state to the requested value.
+   * It could set it to any value at all, or take some other action.
    *
    * Since: 2.30
    */
@@ -407,7 +432,7 @@ g_simple_action_class_init (GSimpleActionClass *class)
   /**
    * GSimpleAction:name:
    *
-   * The name of the action.  This is mostly meaningful for identifying
+   * The name of the action. This is mostly meaningful for identifying
    * the action once it has been added to a #GSimpleActionGroup.
    *
    * Since: 2.28

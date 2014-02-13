@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GFilenameCompleter</title>
+<title>GIO Reference Manual: GFilenameCompleter</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="utils.html" title="File-related Utilities">
 <link rel="prev" href="utils.html" title="File-related Utilities">
 <link rel="next" href="async.html" title="Asynchronous I/O">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="utils.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="utils.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="async.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GFilenameCompleter.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GFilenameCompleter.description" class="shortcut">Description</a>
                    | 
                   <a href="#GFilenameCompleter.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GFilenameCompleter.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="utils.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="utils.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="async.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GFilenameCompleter"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -74,8 +71,7 @@
 <p>
 Completes partial file and directory names given a partial string by
 looking in the file system for clues. Can return a list of possible 
-completion strings for widget implementations.
-</p>
+completion strings for widget implementations.</p>
 </div>
 <div class="refsect1">
 <a name="GFilenameCompleter.details"></a><h2>Details</h2>
@@ -83,16 +79,14 @@ completion strings for widget implementations.
 <a name="GFilenameCompleter-struct"></a><h3>GFilenameCompleter</h3>
 <pre class="programlisting">typedef struct _GFilenameCompleter GFilenameCompleter;</pre>
 <p>
-Completes filenames based on files that exist within the file system.
-</p>
+Completes filenames based on files that exist within the file system.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-filename-completer-new"></a><h3>g_filename_completer_new ()</h3>
 <pre class="programlisting"><a class="link" href="GFilenameCompleter.html" title="GFilenameCompleter"><span class="returnvalue">GFilenameCompleter</span></a> * g_filename_completer_new           (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a new filename completer.
-</p>
+Creates a new filename completer.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -111,8 +105,7 @@ Creates a new filename completer.
                                                         (<em class="parameter"><code><a class="link" href="GFilenameCompleter.html" title="GFilenameCompleter"><span class="type">GFilenameCompleter</span></a> *completer</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *initial_text</code></em>);</pre>
 <p>
-Obtains a completion for <em class="parameter"><code>initial_text</code></em> from <em class="parameter"><code>completer</code></em>.
-</p>
+Obtains a completion for <em class="parameter"><code>initial_text</code></em> from <em class="parameter"><code>completer</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -143,8 +136,7 @@ when finished.</td>
                                                         (<em class="parameter"><code><a class="link" href="GFilenameCompleter.html" title="GFilenameCompleter"><span class="type">GFilenameCompleter</span></a> *completer</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *initial_text</code></em>);</pre>
 <p>
-Gets an array of completion strings for a given initial text.
-</p>
+Gets an array of completion strings for a given initial text.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -175,8 +167,7 @@ This array must be freed by <a href="http://library.gnome.org/devel/glib/unstabl
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> dirs_only</code></em>);</pre>
 <p>
 If <em class="parameter"><code>dirs_only</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, <em class="parameter"><code>completer</code></em> will only 
-complete directory names, and not file names.
-</p>
+complete directory names, and not file names.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -202,8 +193,7 @@ complete directory names, and not file names.
 <pre class="programlisting"><span class="returnvalue">void</span>                user_function                      (<a class="link" href="GFilenameCompleter.html" title="GFilenameCompleter"><span class="type">GFilenameCompleter</span></a> *arg0,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when the file name completion information comes available.
-</p>
+Emitted when the file name completion information comes available.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -219,6 +209,6 @@ Emitted when the file name completion information comes available.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

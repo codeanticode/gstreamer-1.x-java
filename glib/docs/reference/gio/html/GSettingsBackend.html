@@ -2,32 +2,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSettingsBackend</title>
+<title>GIO Reference Manual: GSettingsBackend</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="settings.html" title="Settings">
 <link rel="prev" href="GSettings.html" title="GSettings">
 <link rel="next" href="gio-GSettingsSchema-GSettingsSchemaSource.html" title="GSettingsSchema, GSettingsSchemaSource">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GSettings.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="settings.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-GSettingsSchema-GSettingsSchemaSource.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSettingsBackend.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSettingsBackend.description" class="shortcut">Description</a>
                    | 
                   <a href="#GSettingsBackend.object-hierarchy" class="shortcut">Object Hierarchy</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="settings.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GSettings.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-GSettingsSchema-GSettingsSchemaSource.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSettingsBackend"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -89,38 +86,26 @@ The <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span 
 non-strictly-typed data that is stored in a hierarchy. To implement
 an alternative storage backend for <a class="link" href="GSettings.html" title="GSettings"><span class="type">GSettings</span></a>, you need to implement
 the <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a> interface and then make it implement the
-extension point <a class="link" href="GSettingsBackend.html#G-SETTINGS-BACKEND-EXTENSION-POINT-NAME:CAPS" title="G_SETTINGS_BACKEND_EXTENSION_POINT_NAME"><span class="type">G_SETTINGS_BACKEND_EXTENSION_POINT_NAME</span></a>.
-</p>
+extension point <a class="link" href="GSettingsBackend.html#G-SETTINGS-BACKEND-EXTENSION-POINT-NAME:CAPS" title="G_SETTINGS_BACKEND_EXTENSION_POINT_NAME"><span class="type">G_SETTINGS_BACKEND_EXTENSION_POINT_NAME</span></a>.</p>
 <p>
 The interface defines methods for reading and writing values, a
 method for determining if writing of certain values will fail
-(lockdown) and a change notification mechanism.
-</p>
+(lockdown) and a change notification mechanism.</p>
 <p>
 The semantics of the interface are very precisely defined and
 implementations must carefully adhere to the expectations of
-callers that are documented on each of the interface methods.
-</p>
+callers that are documented on each of the interface methods.</p>
 <p>
 Some of the GSettingsBackend functions accept or return a <a href="http://library.gnome.org/devel/glib/unstable/glib-Balanced-Binary-Trees.html#GTree"><span class="type">GTree</span></a>.
 These trees always have strings as keys and <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> as values.
 <code class="function">g_settings_backend_create_tree()</code> is a convenience function to create
-suitable trees.
-</p>
+suitable trees.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>
-The <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a> API is exported to allow third-party
+The GSettingsBackend API is exported to allow third-party
 implementations, but does not carry the same stability guarantees
 as the public GIO API. For this reason, you have to define the
-C preprocessor symbol <span class="type">G_SETTINGS_ENABLE_BACKEND</span> before including
-<code class="filename">gio/gsettingsbackend.h</code>
-</p>
-</div>
-<p>
-</p>
+C preprocessor symbol <code class="literal">G_SETTINGS_ENABLE_BACKEND</code> before including
+<code class="filename">gio/gsettingsbackend.h</code></p>
 </div>
 <div class="refsect1">
 <a name="GSettingsBackend.details"></a><h2>Details</h2>
@@ -128,8 +113,7 @@ C preprocessor symbol <span class="type">G_SETTINGS_ENABLE_BACKEND</span> before
 <a name="GSettingsBackend-struct"></a><h3>GSettingsBackend</h3>
 <pre class="programlisting">typedef struct _GSettingsBackend GSettingsBackend;</pre>
 <p>
-An implementation of a settings storage repository.
-</p>
+An implementation of a settings storage repository.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -179,8 +163,7 @@ An implementation of a settings storage repository.
 <pre class="programlisting">#define G_SETTINGS_BACKEND_EXTENSION_POINT_NAME "gsettings-backend"
 </pre>
 <p>
-Extension point for <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a> functionality.
-</p>
+Extension point for <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a> functionality.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -189,11 +172,9 @@ Extension point for <a class="link" href="GSettingsBackend.html" title="GSetting
 <p>
 Returns the default <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>. It is possible to override
 the default by setting the <code class="envar">GSETTINGS_BACKEND</code>
-environment variable to the name of a settings backend.
-</p>
+environment variable to the name of a settings backend.</p>
 <p>
-The user gets a reference to the backend.
-</p>
+The user gets a reference to the backend.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -216,31 +197,26 @@ The user gets a reference to the backend.
 <p>
 Signals that a single key has possibly changed.  Backend
 implementations should call this if a key has possibly changed its
-value.
-</p>
+value.</p>
 <p>
 <em class="parameter"><code>key</code></em> must be a valid key (ie starting with a slash, not containing
-'//', and not ending with a slash).
-</p>
+'//', and not ending with a slash).</p>
 <p>
 The implementation must call this function during any call to
 <code class="function">g_settings_backend_write()</code>, before the call returns (except in the
 case that no keys are actually changed and it cares to detect this
 fact).  It may not rely on the existence of a mainloop for
-dispatching the signal later.
-</p>
+dispatching the signal later.</p>
 <p>
 The implementation may call this function at any other time it likes
 in response to other events (such as changes occurring outside of the
 program).  These calls may originate from a mainloop or may originate
 in response to any other action (including from calls to
-<code class="function">g_settings_backend_write()</code>).
-</p>
+<code class="function">g_settings_backend_write()</code>).</p>
 <p>
 In the case that this call is in response to a call to
 <code class="function">g_settings_backend_write()</code> then <em class="parameter"><code>origin_tag</code></em> must be set to the same
-value that was passed to that call.
-</p>
+value that was passed to that call.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -272,30 +248,25 @@ value that was passed to that call.
 <p>
 Signals that all keys below a given path may have possibly changed.
 Backend implementations should call this if an entire path of keys
-have possibly changed their values.
-</p>
+have possibly changed their values.</p>
 <p>
 <em class="parameter"><code>path</code></em> must be a valid path (ie starting and ending with a slash and
-not containing '//').
-</p>
+not containing '//').</p>
 <p>
 The meaning of this signal is that any of the key which has a name
-starting with <em class="parameter"><code>path</code></em> may have changed.
-</p>
+starting with <em class="parameter"><code>path</code></em> may have changed.</p>
 <p>
 The same rules for when notifications must occur apply as per
 <a class="link" href="GSettingsBackend.html#g-settings-backend-changed" title="g_settings_backend_changed ()"><code class="function">g_settings_backend_changed()</code></a>.  This call might be an appropriate
 reasponse to a 'reset' call but implementations are also free to
 explicitly list the keys that were affected by that call if they can
-easily do so.
-</p>
+easily do so.</p>
 <p>
 For efficiency reasons, the implementation should strive for <em class="parameter"><code>path</code></em> to
 be as long as possible (ie: the longest common prefix of all of the
 keys that were changed) but this is not strictly required.  As an
 example, if this function is called with the path of "/" then every
-single key in the application will be notified of a possible change.
-</p>
+single key in the application will be notified of a possible change.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -328,30 +299,25 @@ single key in the application will be notified of a possible change.
 <p>
 Signals that a list of keys have possibly changed.  Backend
 implementations should call this if keys have possibly changed their
-values.
-</p>
+values.</p>
 <p>
 <em class="parameter"><code>path</code></em> must be a valid path (ie starting and ending with a slash and
 not containing '//').  Each string in <em class="parameter"><code>items</code></em> must form a valid key
 name when <em class="parameter"><code>path</code></em> is prefixed to it (ie: each item must not start or
-end with '/' and must not contain '//').
-</p>
+end with '/' and must not contain '//').</p>
 <p>
 The meaning of this signal is that any of the key names resulting
 from the contatenation of <em class="parameter"><code>path</code></em> with each item in <em class="parameter"><code>items</code></em> may have
-changed.
-</p>
+changed.</p>
 <p>
 The same rules for when notifications must occur apply as per
 <a class="link" href="GSettingsBackend.html#g-settings-backend-changed" title="g_settings_backend_changed ()"><code class="function">g_settings_backend_changed()</code></a>.  These two calls can be used
 interchangeably if exactly one item has changed (although in that
-case <a class="link" href="GSettingsBackend.html#g-settings-backend-changed" title="g_settings_backend_changed ()"><code class="function">g_settings_backend_changed()</code></a> is definitely preferred).
-</p>
+case <a class="link" href="GSettingsBackend.html#g-settings-backend-changed" title="g_settings_backend_changed ()"><code class="function">g_settings_backend_changed()</code></a> is definitely preferred).</p>
 <p>
 For efficiency reasons, the implementation should strive for <em class="parameter"><code>path</code></em> to
 be as long as possible (ie: the longest common prefix of all of the
-keys that were changed) but this is not strictly required.
-</p>
+keys that were changed) but this is not strictly required.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -387,12 +353,10 @@ keys that were changed) but this is not strictly required.
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *path</code></em>);</pre>
 <p>
 Signals that the writability of all keys below a given path may have
-changed.
-</p>
+changed.</p>
 <p>
 Since GSettings performs no locking operations for itself, this call
-will always be made in response to external events.
-</p>
+will always be made in response to external events.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -417,12 +381,10 @@ will always be made in response to external events.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_settings_backend_writable_changed (<em class="parameter"><code><a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a> *backend</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *key</code></em>);</pre>
 <p>
-Signals that the writability of a single key has possibly changed.
-</p>
+Signals that the writability of a single key has possibly changed.</p>
 <p>
 Since GSettings performs no locking operations for itself, this call
-will always be made in response to external events.
-</p>
+will always be made in response to external events.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -450,8 +412,7 @@ will always be made in response to external events.
 <p>
 This call is a convenience wrapper.  It gets the list of changes from
 <em class="parameter"><code>tree</code></em>, computes the longest common prefix and calls
-<a class="link" href="GSettingsBackend.html#g-settings-backend-changed" title="g_settings_backend_changed ()"><code class="function">g_settings_backend_changed()</code></a>.
-</p>
+<a class="link" href="GSettingsBackend.html#g-settings-backend-changed" title="g_settings_backend_changed ()"><code class="function">g_settings_backend_changed()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -484,13 +445,11 @@ This call is a convenience wrapper.  It gets the list of changes from
 <p>
 Calculate the longest common prefix of all keys in a tree and write
 out an array of the key names relative to that prefix and,
-optionally, the value to store at each of those keys.
-</p>
+optionally, the value to store at each of those keys.</p>
 <p>
 You must free the value returned in <em class="parameter"><code>path</code></em>, <em class="parameter"><code>keys</code></em> and <em class="parameter"><code>values</code></em> using
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Allocation.html#g-free"><code class="function">g_free()</code></a>.  You should not attempt to free or unref the contents of
-<em class="parameter"><code>keys</code></em> or <em class="parameter"><code>values</code></em>.
-</p>
+<em class="parameter"><code>keys</code></em> or <em class="parameter"><code>values</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -528,23 +487,19 @@ location to save the relative keys. <span class="annotation">[<acronym title="Pa
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *root_path</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *root_group</code></em>);</pre>
 <p>
-Creates a keyfile-backed <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>.
-</p>
+Creates a keyfile-backed <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>.</p>
 <p>
-The filename of the keyfile to use is given by <em class="parameter"><code>filename</code></em>.
-</p>
+The filename of the keyfile to use is given by <em class="parameter"><code>filename</code></em>.</p>
 <p>
 All settings read to or written from the backend must fall under the
 path given in <em class="parameter"><code>root_path</code></em> (which must start and end with a slash and
-not contain two consecutive slashes).  <em class="parameter"><code>root_path</code></em> may be "/".
-</p>
+not contain two consecutive slashes).  <em class="parameter"><code>root_path</code></em> may be "/".</p>
 <p>
 If <em class="parameter"><code>root_group</code></em> is non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then it specifies the name of the keyfile
 group used for keys that are written directly below <em class="parameter"><code>root_path</code></em>.  For
 example, if <em class="parameter"><code>root_path</code></em> is "/apps/example/" and <em class="parameter"><code>root_group</code></em> is
 "toplevel", then settings the key "/apps/example/enabled" to a value
-of <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> will cause the following to appear in the keyfile:
-</p>
+of <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> will cause the following to appear in the keyfile:</p>
 <p>
 </p>
 <div class="informalexample">
@@ -561,18 +516,14 @@ of <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 </div>
 
 <p>
-</p>
-<p>
 If <em class="parameter"><code>root_group</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> then it is not permitted to store keys
-directly below the <em class="parameter"><code>root_path</code></em>.
-</p>
+directly below the <em class="parameter"><code>root_path</code></em>.</p>
 <p>
 For keys not stored directly below <em class="parameter"><code>root_path</code></em> (ie: in a sub-path),
 the name of the subpath (with the final slash stripped) is used as
 the name of the keyfile group.  To continue the example, if
 "/apps/example/profiles/default/font-size" were set to
-12 then the following would appear in the keyfile:
-</p>
+12 then the following would appear in the keyfile:</p>
 <p>
 </p>
 <div class="informalexample">
@@ -589,21 +540,17 @@ the name of the keyfile group.  To continue the example, if
 </div>
 
 <p>
-</p>
-<p>
 The backend will refuse writes (and return writability as being
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>) for keys outside of <em class="parameter"><code>root_path</code></em> and, in the event that
 <em class="parameter"><code>root_group</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, also for keys directly under <em class="parameter"><code>root_path</code></em>.
 Writes will also be refused if the backend detects that it has the
 inability to rewrite the keyfile (ie: the containing directory is not
-writable).
-</p>
+writable).</p>
 <p>
 There is no checking done for your key namespace clashing with the
 syntax of the key file format.  For example, if you have '[' or ']'
 characters in your path names or '=' in your key names you may be in
-trouble.
-</p>
+trouble.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -637,13 +584,11 @@ trouble.
 <a name="g-memory-settings-backend-new"></a><h3>g_memory_settings_backend_new ()</h3>
 <pre class="programlisting"><a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="returnvalue">GSettingsBackend</span></a> *  g_memory_settings_backend_new       (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a memory-backed <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>.
-</p>
+Creates a memory-backed <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>.</p>
 <p>
 This backend allows changes to settings, but does not write them
 to any backing storage, so the next time you run your application,
-the memory backend will start out with the default values again.
-</p>
+the memory backend will start out with the default values again.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -662,12 +607,10 @@ the memory backend will start out with the default values again.
 <a name="g-null-settings-backend-new"></a><h3>g_null_settings_backend_new ()</h3>
 <pre class="programlisting"><a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="returnvalue">GSettingsBackend</span></a> *  g_null_settings_backend_new         (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a readonly <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>.
-</p>
+Creates a readonly <a class="link" href="GSettingsBackend.html" title="GSettingsBackend"><span class="type">GSettingsBackend</span></a>.</p>
 <p>
 This backend does not allow changes to settings, so all settings
-will always have their default values.
-</p>
+will always have their default values.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -689,6 +632,6 @@ will always have their default values.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

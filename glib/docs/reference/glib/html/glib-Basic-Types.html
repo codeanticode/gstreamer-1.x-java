@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Basic Types</title>
+<title>GLib Reference Manual: Basic Types</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-fundamentals.html" title="GLib Fundamentals">
 <link rel="prev" href="glib-Version-Information.html" title="Version Information">
 <link rel="next" href="glib-Standard-Macros.html" title="Standard Macros">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Version-Information.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-fundamentals.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Standard-Macros.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Basic-Types.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Basic-Types.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-fundamentals.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Version-Information.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Standard-Macros.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Basic-Types"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -144,12 +141,9 @@ into 4 groups:
   <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>, <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>.</p></li>
 </ul></div>
 <p>
-</p>
-<p>
 GLib also defines macros for the limits of some of the standard
 integer and floating point types, as well as macros for suitable
-<code class="function">printf()</code> formats for these types.
-</p>
+<code class="function">printf()</code> formats for these types.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Basic-Types.details"></a><h2>Details</h2>
@@ -160,8 +154,7 @@ integer and floating point types, as well as macros for suitable
 <p>
 A standard boolean type.
 Variables of this type should only contain the value
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> or <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>.
-</p>
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> or <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -170,9 +163,7 @@ Variables of this type should only contain the value
 </pre>
 <p>
 An untyped pointer.
-<a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> looks better and is easier to use
-than <span class="type">void*</span>.
-</p>
+<a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> looks better and is easier to use than void*.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -181,12 +172,10 @@ than <span class="type">void*</span>.
 </pre>
 <p>
 An untyped pointer to constant data.
-The data pointed to should not be changed.
-</p>
+The data pointed to should not be changed.</p>
 <p>
 This is typically used in function prototypes to indicate
-that the data pointed to will not be altered by the function.
-</p>
+that the data pointed to will not be altered by the function.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -194,8 +183,7 @@ that the data pointed to will not be altered by the function.
 <pre class="programlisting">typedef char   gchar;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">char</span> type.
-</p>
+Corresponds to the standard C char type.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -203,8 +191,7 @@ Corresponds to the standard C <span class="type">char</span> type.
 <pre class="programlisting">typedef unsigned char   guchar;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">unsigned char</span> type.
-</p>
+Corresponds to the standard C unsigned char type.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -212,9 +199,8 @@ Corresponds to the standard C <span class="type">unsigned char</span> type.
 <pre class="programlisting">typedef int    gint;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">int</span> type.
-Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MININT:CAPS" title="G_MININT"><span class="type">G_MININT</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXINT:CAPS" title="G_MAXINT"><span class="type">G_MAXINT</span></a>.
-</p>
+Corresponds to the standard C int type.
+Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MININT:CAPS" title="G_MININT"><span class="type">G_MININT</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXINT:CAPS" title="G_MAXINT"><span class="type">G_MAXINT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -222,8 +208,7 @@ Values of this type can range from <a class="link" href="glib-Basic-Types.html#G
 <pre class="programlisting">#define G_MININT INT_MIN
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -231,8 +216,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXINT INT_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -240,9 +224,8 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">typedef unsigned int    guint;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">unsigned int</span> type.
-Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT:CAPS" title="G_MAXUINT"><span class="type">G_MAXUINT</span></a>.
-</p>
+Corresponds to the standard C unsigned int type.
+Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT:CAPS" title="G_MAXUINT"><span class="type">G_MAXUINT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -250,8 +233,7 @@ Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.h
 <pre class="programlisting">#define G_MAXUINT UINT_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -259,9 +241,8 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">typedef short  gshort;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">short</span> type.
-Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MINSHORT:CAPS" title="G_MINSHORT"><span class="type">G_MINSHORT</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXSHORT:CAPS" title="G_MAXSHORT"><span class="type">G_MAXSHORT</span></a>.
-</p>
+Corresponds to the standard C short type.
+Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MINSHORT:CAPS" title="G_MINSHORT"><span class="type">G_MINSHORT</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXSHORT:CAPS" title="G_MAXSHORT"><span class="type">G_MAXSHORT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -269,8 +250,7 @@ Values of this type can range from <a class="link" href="glib-Basic-Types.html#G
 <pre class="programlisting">#define G_MINSHORT SHRT_MIN
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gshort" title="gshort"><span class="type">gshort</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gshort" title="gshort"><span class="type">gshort</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -278,8 +258,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXSHORT SHRT_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gshort" title="gshort"><span class="type">gshort</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gshort" title="gshort"><span class="type">gshort</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -287,9 +266,8 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">typedef unsigned short  gushort;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">unsigned short</span> type.
-Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUSHORT:CAPS" title="G_MAXUSHORT"><span class="type">G_MAXUSHORT</span></a>.
-</p>
+Corresponds to the standard C unsigned short type.
+Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUSHORT:CAPS" title="G_MAXUSHORT"><span class="type">G_MAXUSHORT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -297,8 +275,7 @@ Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.h
 <pre class="programlisting">#define G_MAXUSHORT USHRT_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gushort" title="gushort"><span class="type">gushort</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gushort" title="gushort"><span class="type">gushort</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -306,9 +283,8 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">typedef long   glong;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">long</span> type.
-Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MINLONG:CAPS" title="G_MINLONG"><span class="type">G_MINLONG</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXLONG:CAPS" title="G_MAXLONG"><span class="type">G_MAXLONG</span></a>.
-</p>
+Corresponds to the standard C long type.
+Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MINLONG:CAPS" title="G_MINLONG"><span class="type">G_MINLONG</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXLONG:CAPS" title="G_MAXLONG"><span class="type">G_MAXLONG</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -316,8 +292,7 @@ Values of this type can range from <a class="link" href="glib-Basic-Types.html#G
 <pre class="programlisting">#define G_MINLONG LONG_MIN
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -325,8 +300,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXLONG LONG_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -334,9 +308,8 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">typedef unsigned long   gulong;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">unsigned long</span> type.
-Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXULONG:CAPS" title="G_MAXULONG"><span class="type">G_MAXULONG</span></a>.
-</p>
+Corresponds to the standard C unsigned long type.
+Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXULONG:CAPS" title="G_MAXULONG"><span class="type">G_MAXULONG</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -344,8 +317,7 @@ Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.h
 <pre class="programlisting">#define G_MAXULONG ULONG_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -355,8 +327,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <p>
 A signed integer guaranteed to be 8 bits on all platforms.
 Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MININT8:CAPS" title="G_MININT8"><span class="type">G_MININT8</span></a> (= -128) to
-<a class="link" href="glib-Basic-Types.html#G-MAXINT8:CAPS" title="G_MAXINT8"><span class="type">G_MAXINT8</span></a> (= 127).
-</p>
+<a class="link" href="glib-Basic-Types.html#G-MAXINT8:CAPS" title="G_MAXINT8"><span class="type">G_MAXINT8</span></a> (= 127).</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -364,8 +335,7 @@ Values of this type can range from <a class="link" href="glib-Basic-Types.html#G
 <pre class="programlisting">#define G_MININT8 ((gint8)  0x80)
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint8" title="gint8"><span class="type">gint8</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint8" title="gint8"><span class="type">gint8</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -374,8 +344,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXINT8 ((gint8)  0x7f)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint8" title="gint8"><span class="type">gint8</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint8" title="gint8"><span class="type">gint8</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -385,8 +354,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 </pre>
 <p>
 An unsigned integer guaranteed to be 8 bits on all platforms.
-Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT8:CAPS" title="G_MAXUINT8"><span class="type">G_MAXUINT8</span></a> (= 255).
-</p>
+Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT8:CAPS" title="G_MAXUINT8"><span class="type">G_MAXUINT8</span></a> (= 255).</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -394,8 +362,7 @@ Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.h
 <pre class="programlisting">#define G_MAXUINT8 ((guint8) 0xff)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint8" title="guint8"><span class="type">guint8</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint8" title="guint8"><span class="type">guint8</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -406,12 +373,10 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <p>
 A signed integer guaranteed to be 16 bits on all platforms.
 Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MININT16:CAPS" title="G_MININT16"><span class="type">G_MININT16</span></a> (= -32,768) to
-<a class="link" href="glib-Basic-Types.html#G-MAXINT16:CAPS" title="G_MAXINT16"><span class="type">G_MAXINT16</span></a> (= 32,767).
-</p>
+<a class="link" href="glib-Basic-Types.html#G-MAXINT16:CAPS" title="G_MAXINT16"><span class="type">G_MAXINT16</span></a> (= 32,767).</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><code class="literal">G_GINT16_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><code class="literal">G_GINT16_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><code class="literal">G_GINT16_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><code class="literal">G_GINT16_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -419,8 +384,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MININT16 ((gint16)  0x8000)
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -429,8 +393,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXINT16 ((gint16)  0x7fff)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -443,8 +406,7 @@ The platform dependent length modifier for conversion specifiers
 for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> or <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a>. It
 is a string literal, but doesn't include the percent-sign, such
 that you can add precision and length modifiers between percent-sign
-and conversion specifier and append a conversion specifier.
-</p>
+and conversion specifier and append a conversion specifier.</p>
 <p>
 The following example prints "0x7b";
 </p>
@@ -461,8 +423,6 @@ The following example prints "0x7b";
   </table>
 </div>
 
-<p>
-</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -474,8 +434,7 @@ The following example prints "0x7b";
 This is the platform dependent conversion specifier for scanning and
 printing values of type <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a>. It is a string literal, but doesn't
 include the percent-sign, such that you can add precision and length
-modifiers between percent-sign and conversion specifier.
-</p>
+modifiers between percent-sign and conversion specifier.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -497,8 +456,6 @@ modifiers between percent-sign and conversion specifier.
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -507,12 +464,10 @@ modifiers between percent-sign and conversion specifier.
 </pre>
 <p>
 An unsigned integer guaranteed to be 16 bits on all platforms.
-Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT16:CAPS" title="G_MAXUINT16"><span class="type">G_MAXUINT16</span></a> (= 65,535).
-</p>
+Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT16:CAPS" title="G_MAXUINT16"><span class="type">G_MAXUINT16</span></a> (= 65,535).</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><code class="literal">G_GINT16_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT16-FORMAT:CAPS" title="G_GUINT16_FORMAT"><code class="literal">G_GUINT16_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><code class="literal">G_GINT16_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT16-FORMAT:CAPS" title="G_GUINT16_FORMAT"><code class="literal">G_GUINT16_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -520,8 +475,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MAXUINT16 ((guint16) 0xffff)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -531,8 +485,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a></p>
 </div>
 <hr>
 <div class="refsect2">
@@ -542,12 +495,10 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#guint16"
 <p>
 A signed integer guaranteed to be 32 bits on all platforms.
 Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MININT32:CAPS" title="G_MININT32"><span class="type">G_MININT32</span></a> (= -2,147,483,648)
-to <a class="link" href="glib-Basic-Types.html#G-MAXINT32:CAPS" title="G_MAXINT32"><span class="type">G_MAXINT32</span></a> (= 2,147,483,647).
-</p>
+to <a class="link" href="glib-Basic-Types.html#G-MAXINT32:CAPS" title="G_MAXINT32"><span class="type">G_MAXINT32</span></a> (= 2,147,483,647).</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINT32-MODIFIER:CAPS" title="G_GINT32_MODIFIER"><code class="literal">G_GINT32_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINT32-FORMAT:CAPS" title="G_GINT32_FORMAT"><code class="literal">G_GINT32_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT32-MODIFIER:CAPS" title="G_GINT32_MODIFIER"><code class="literal">G_GINT32_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINT32-FORMAT:CAPS" title="G_GINT32_FORMAT"><code class="literal">G_GINT32_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -555,8 +506,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MININT32 ((gint32)  0x80000000)
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -565,8 +515,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXINT32 ((gint32)  0x7fffffff)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -577,8 +526,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <p>
 The platform dependent length modifier for conversion specifiers
 for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> or <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a>. It
-is a string literal. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><span class="type">G_GINT16_MODIFIER</span></a>.
-</p>
+is a string literal. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><span class="type">G_GINT16_MODIFIER</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -588,8 +536,7 @@ is a string literal. See also <a class="link" href="glib-Basic-Types.html#G-GINT
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -598,12 +545,10 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#gint32" 
 </pre>
 <p>
 An unsigned integer guaranteed to be 32 bits on all platforms.
-Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT32:CAPS" title="G_MAXUINT32"><span class="type">G_MAXUINT32</span></a> (= 4,294,967,295).
-</p>
+Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT32:CAPS" title="G_MAXUINT32"><span class="type">G_MAXUINT32</span></a> (= 4,294,967,295).</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINT32-MODIFIER:CAPS" title="G_GINT32_MODIFIER"><code class="literal">G_GINT32_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT32-FORMAT:CAPS" title="G_GUINT32_FORMAT"><code class="literal">G_GUINT32_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT32-MODIFIER:CAPS" title="G_GINT32_MODIFIER"><code class="literal">G_GINT32_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT32-FORMAT:CAPS" title="G_GUINT32_FORMAT"><code class="literal">G_GUINT32_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -611,8 +556,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MAXUINT32 ((guint32) 0xffffffff)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -622,8 +566,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -634,12 +577,10 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#guint32"
 A signed integer guaranteed to be 64 bits on all platforms.
 Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MININT64:CAPS" title="G_MININT64"><span class="type">G_MININT64</span></a>
 (= -9,223,372,036,854,775,808) to <a class="link" href="glib-Basic-Types.html#G-MAXINT64:CAPS" title="G_MAXINT64"><span class="type">G_MAXINT64</span></a>
-(= 9,223,372,036,854,775,807).
-</p>
+(= 9,223,372,036,854,775,807).</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><code class="literal">G_GINT64_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><code class="literal">G_GINT64_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><code class="literal">G_GINT64_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><code class="literal">G_GINT64_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -647,8 +588,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MININT64 ((gint64) G_GINT64_CONSTANT(0x8000000000000000))
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -656,8 +596,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXINT64 G_GINT64_CONSTANT(0x7fffffffffffffff)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -667,20 +606,11 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <p>
 The platform dependent length modifier for conversion specifiers
 for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> or <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a>.
-It is a string literal.
-</p>
+It is a string literal.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>
-Some platforms do not support printing 64 bit integers, even
-though the types are supported. On such platforms <a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><span class="type">G_GINT64_MODIFIER</span></a>
-is not defined.
-</p>
-</div>
-<p>
-</p>
+Some platforms do not support printing 64-bit integers, even
+though the types are supported. On such platforms <a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><code class="literal">G_GINT64_MODIFIER</code></a>
+is not defined.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -690,23 +620,14 @@ is not defined.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>
-Some platforms do not support scanning and printing 64 bit integers,
-even though the types are supported. On such platforms <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><span class="type">G_GINT64_FORMAT</span></a>
-is not defined. Note that <code class="function">scanf()</code> may not support 64 bit integers, even
-if <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><span class="type">G_GINT64_FORMAT</span></a> is defined. Due to its weak error handling, <code class="function">scanf()</code>
+Some platforms do not support scanning and printing 64-bit integers,
+even though the types are supported. On such platforms <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><code class="literal">G_GINT64_FORMAT</code></a>
+is not defined. Note that <code class="function">scanf()</code> may not support 64-bit integers, even
+if <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><code class="literal">G_GINT64_FORMAT</code></a> is defined. Due to its weak error handling, <code class="function">scanf()</code>
 is not recommended for parsing anyway; consider using <a class="link" href="glib-String-Utility-Functions.html#g-ascii-strtoull" title="g_ascii_strtoull ()"><code class="function">g_ascii_strtoull()</code></a>
-instead.
-</p>
-</div>
-<p>
-</p>
+instead.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -715,8 +636,7 @@ instead.
 </pre>
 <p>
 This macro is used to insert 64-bit integer literals
-into the source code.
-</p>
+into the source code.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -734,14 +654,12 @@ into the source code.
 <pre class="programlisting">typedef unsigned long guint64;
 </pre>
 <p>
-An unsigned integer guaranteed to be 64 bits on all platforms.
+An unsigned integer guaranteed to be 64-bits on all platforms.
 Values of this type can range from 0 to <a class="link" href="glib-Basic-Types.html#G-MAXUINT64:CAPS" title="G_MAXUINT64"><span class="type">G_MAXUINT64</span></a>
-(= 18,446,744,073,709,551,615).
-</p>
+(= 18,446,744,073,709,551,615).</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><code class="literal">G_GINT64_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT64-FORMAT:CAPS" title="G_GUINT64_FORMAT"><code class="literal">G_GUINT64_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><code class="literal">G_GINT64_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT64-FORMAT:CAPS" title="G_GUINT64_FORMAT"><code class="literal">G_GUINT64_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -749,8 +667,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MAXUINT64 G_GINT64_CONSTANT(0xffffffffffffffffU)
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -759,23 +676,14 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>
-Some platforms do not support scanning and printing 64 bit integers,
-even though the types are supported. On such platforms <a class="link" href="glib-Basic-Types.html#G-GUINT64-FORMAT:CAPS" title="G_GUINT64_FORMAT"><span class="type">G_GUINT64_FORMAT</span></a>
-is not defined.  Note that <code class="function">scanf()</code> may not support 64 bit integers, even
-if <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><span class="type">G_GINT64_FORMAT</span></a> is defined. Due to its weak error handling, <code class="function">scanf()</code>
+Some platforms do not support scanning and printing 64-bit integers,
+even though the types are supported. On such platforms <a class="link" href="glib-Basic-Types.html#G-GUINT64-FORMAT:CAPS" title="G_GUINT64_FORMAT"><code class="literal">G_GUINT64_FORMAT</code></a>
+is not defined.  Note that <code class="function">scanf()</code> may not support 64-bit integers, even
+if <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><code class="literal">G_GINT64_FORMAT</code></a> is defined. Due to its weak error handling, <code class="function">scanf()</code>
 is not recommended for parsing anyway; consider using <a class="link" href="glib-String-Utility-Functions.html#g-ascii-strtoull" title="g_ascii_strtoull ()"><code class="function">g_ascii_strtoull()</code></a>
-instead.
-</p>
-</div>
-<p>
-</p>
+instead.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -784,8 +692,7 @@ instead.
 </pre>
 <p>
 This macro is used to insert 64-bit unsigned integer
-literals into the source code.
-</p>
+literals into the source code.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -804,9 +711,8 @@ literals into the source code.
 <pre class="programlisting">typedef float   gfloat;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">float</span> type.
-Values of this type can range from -<a class="link" href="glib-Basic-Types.html#G-MAXFLOAT:CAPS" title="G_MAXFLOAT"><span class="type">G_MAXFLOAT</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXFLOAT:CAPS" title="G_MAXFLOAT"><span class="type">G_MAXFLOAT</span></a>.
-</p>
+Corresponds to the standard C float type.
+Values of this type can range from -<a class="link" href="glib-Basic-Types.html#G-MAXFLOAT:CAPS" title="G_MAXFLOAT"><span class="type">G_MAXFLOAT</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXFLOAT:CAPS" title="G_MAXFLOAT"><span class="type">G_MAXFLOAT</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -814,12 +720,10 @@ Values of this type can range from -<a class="link" href="glib-Basic-Types.html#
 <pre class="programlisting">#define G_MINFLOAT FLT_MIN
 </pre>
 <p>
-The minimum positive value which can be held in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>.
-</p>
+The minimum positive value which can be held in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>.</p>
 <p>
 If you are interested in the smallest value which can be held
-in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>, use -G_MAXFLOAT.
-</p>
+in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>, use -<a class="link" href="glib-Basic-Types.html#G-MAXFLOAT:CAPS" title="G_MAXFLOAT"><code class="literal">G_MAXFLOAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -827,8 +731,7 @@ in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span cl
 <pre class="programlisting">#define G_MAXFLOAT FLT_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gfloat" title="gfloat"><span class="type">gfloat</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -836,9 +739,8 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">typedef double  gdouble;
 </pre>
 <p>
-Corresponds to the standard C <span class="type">double</span> type.
-Values of this type can range from -<a class="link" href="glib-Basic-Types.html#G-MAXDOUBLE:CAPS" title="G_MAXDOUBLE"><span class="type">G_MAXDOUBLE</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXDOUBLE:CAPS" title="G_MAXDOUBLE"><span class="type">G_MAXDOUBLE</span></a>.
-</p>
+Corresponds to the standard C double type.
+Values of this type can range from -<a class="link" href="glib-Basic-Types.html#G-MAXDOUBLE:CAPS" title="G_MAXDOUBLE"><span class="type">G_MAXDOUBLE</span></a> to <a class="link" href="glib-Basic-Types.html#G-MAXDOUBLE:CAPS" title="G_MAXDOUBLE"><span class="type">G_MAXDOUBLE</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -846,12 +748,10 @@ Values of this type can range from -<a class="link" href="glib-Basic-Types.html#
 <pre class="programlisting">#define G_MINDOUBLE DBL_MIN
 </pre>
 <p>
-The minimum positive value which can be held in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>.
-</p>
+The minimum positive value which can be held in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>.</p>
 <p>
 If you are interested in the smallest value which can be held
-in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>, use -G_MAXDOUBLE.
-</p>
+in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>, use -<a class="link" href="glib-Basic-Types.html#G-MAXDOUBLE:CAPS" title="G_MAXDOUBLE"><code class="literal">G_MAXDOUBLE</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -859,8 +759,7 @@ in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span 
 <pre class="programlisting">#define G_MAXDOUBLE DBL_MAX
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gdouble" title="gdouble"><span class="type">gdouble</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -869,16 +768,14 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 </pre>
 <p>
 An unsigned integer type of the result of the sizeof operator,
-corresponding to the <span class="type">size_t</span> type defined in C99.
+corresponding to the size_t type defined in C99.
 This type is wide enough to hold the numeric value of a pointer,
-so it is usually 32bit wide on a 32bit platform and 64bit wide
-on a 64bit platform. Values of this type can range from 0 to
-<a class="link" href="glib-Basic-Types.html#G-MAXSIZE:CAPS" title="G_MAXSIZE"><span class="type">G_MAXSIZE</span></a>.
-</p>
+so it is usually 32 bit wide on a 32-bit platform and 64 bit wide
+on a 64-bit platform. Values of this type can range from 0 to
+<a class="link" href="glib-Basic-Types.html#G-MAXSIZE:CAPS" title="G_MAXSIZE"><span class="type">G_MAXSIZE</span></a>.</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GSIZE-MODIFIER:CAPS" title="G_GSIZE_MODIFIER"><code class="literal">G_GSIZE_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GSIZE-FORMAT:CAPS" title="G_GSIZE_FORMAT"><code class="literal">G_GSIZE_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GSIZE-MODIFIER:CAPS" title="G_GSIZE_MODIFIER"><code class="literal">G_GSIZE_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GSIZE-FORMAT:CAPS" title="G_GSIZE_FORMAT"><code class="literal">G_GSIZE_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -886,8 +783,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MAXSIZE G_MAXULONG
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a>.</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -898,8 +794,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <p>
 The platform dependent length modifier for conversion specifiers
 for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> or <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>. It
-is a string literal.
-</p>
+is a string literal.</p>
 <p class="since">Since 2.6</p>
 </div>
 <hr>
@@ -909,8 +804,7 @@ is a string literal.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.</p>
 <p class="since">Since 2.6</p>
 </div>
 <hr>
@@ -920,14 +814,12 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#gsize" t
 </pre>
 <p>
 A signed variant of <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a>, corresponding to the
-<span class="type">ssize_t</span> defined on most platforms.
+ssize_t defined on most platforms.
 Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MINSSIZE:CAPS" title="G_MINSSIZE"><span class="type">G_MINSSIZE</span></a>
-to <a class="link" href="glib-Basic-Types.html#G-MAXSSIZE:CAPS" title="G_MAXSSIZE"><span class="type">G_MAXSSIZE</span></a>.
-</p>
+to <a class="link" href="glib-Basic-Types.html#G-MAXSSIZE:CAPS" title="G_MAXSSIZE"><span class="type">G_MAXSSIZE</span></a>.</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GSIZE-MODIFIER:CAPS" title="G_GSIZE_MODIFIER"><code class="literal">G_GSIZE_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GSSIZE-FORMAT:CAPS" title="G_GSSIZE_FORMAT"><code class="literal">G_GSSIZE_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GSIZE-MODIFIER:CAPS" title="G_GSIZE_MODIFIER"><code class="literal">G_GSIZE_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GSSIZE-FORMAT:CAPS" title="G_GSSIZE_FORMAT"><code class="literal">G_GSSIZE_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -935,8 +827,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MINSSIZE G_MINLONG
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>.</p>
 <p class="since">Since 2.14</p>
 </div>
 <hr>
@@ -945,8 +836,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXSSIZE G_MAXLONG
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>.</p>
 <p class="since">Since 2.14</p>
 </div>
 <hr>
@@ -956,8 +846,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT16-FORMAT:CAPS" title="G_GINT16_FORMAT"><span class="type">G_GINT16_FORMAT</span></a>.</p>
 <p class="since">Since 2.6</p>
 </div>
 <hr>
@@ -967,14 +856,12 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#gssize" 
 </pre>
 <p>
 A signed integer type that is used for file offsets,
-corresponding to the C99 type <span class="type">off64_t</span>.
+corresponding to the C99 type off64_t.
 Values of this type can range from <a class="link" href="glib-Basic-Types.html#G-MINOFFSET:CAPS" title="G_MINOFFSET"><span class="type">G_MINOFFSET</span></a> to
-<a class="link" href="glib-Basic-Types.html#G-MAXOFFSET:CAPS" title="G_MAXOFFSET"><span class="type">G_MAXOFFSET</span></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-MAXOFFSET:CAPS" title="G_MAXOFFSET"><span class="type">G_MAXOFFSET</span></a>.</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GOFFSET-MODIFIER:CAPS" title="G_GOFFSET_MODIFIER"><code class="literal">G_GOFFSET_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GOFFSET-FORMAT:CAPS" title="G_GOFFSET_FORMAT"><code class="literal">G_GOFFSET_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GOFFSET-MODIFIER:CAPS" title="G_GOFFSET_MODIFIER"><code class="literal">G_GOFFSET_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GOFFSET-FORMAT:CAPS" title="G_GOFFSET_FORMAT"><code class="literal">G_GOFFSET_FORMAT</code></a>.</p>
 <p class="since">Since 2.14</p>
 </div>
 <hr>
@@ -983,8 +870,7 @@ To print or scan values of this type, use
 <pre class="programlisting">#define G_MINOFFSET G_MININT64
 </pre>
 <p>
-The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>.
-</p>
+The minimum value which can be held in a <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -992,8 +878,7 @@ The minimum value which can be held in a <a class="link" href="glib-Basic-Types.
 <pre class="programlisting">#define G_MAXOFFSET G_MAXINT64
 </pre>
 <p>
-The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>.
-</p>
+The maximum value which can be held in a <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1003,8 +888,7 @@ The maximum value which can be held in a <a class="link" href="glib-Basic-Types.
 <p>
 The platform dependent length modifier for conversion specifiers
 for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>. It is a string
-literal. See also <a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><span class="type">G_GINT64_MODIFIER</span></a>.
-</p>
+literal. See also <a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:CAPS" title="G_GINT64_MODIFIER"><span class="type">G_GINT64_MODIFIER</span></a>.</p>
 <p class="since">Since 2.20</p>
 </div>
 <hr>
@@ -1014,8 +898,7 @@ literal. See also <a class="link" href="glib-Basic-Types.html#G-GINT64-MODIFIER:
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><span class="type">G_GINT64_FORMAT</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a>. See also <a class="link" href="glib-Basic-Types.html#G-GINT64-FORMAT:CAPS" title="G_GINT64_FORMAT"><span class="type">G_GINT64_FORMAT</span></a>.</p>
 <p class="since">Since 2.20</p>
 </div>
 <hr>
@@ -1025,11 +908,9 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#goffset"
 </pre>
 <p>
 This macro is used to insert <a class="link" href="glib-Basic-Types.html#goffset" title="goffset"><span class="type">goffset</span></a> 64-bit integer literals
-into the source code.
-</p>
+into the source code.</p>
 <p>
-See also <a class="link" href="glib-Basic-Types.html#G-GINT64-CONSTANT:CAPS" title="G_GINT64_CONSTANT()"><span class="type">G_GINT64_CONSTANT</span></a>.
-</p>
+See also <a class="link" href="glib-Basic-Types.html#G-GINT64-CONSTANT:CAPS" title="G_GINT64_CONSTANT()"><span class="type">G_GINT64_CONSTANT</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1048,13 +929,11 @@ See also <a class="link" href="glib-Basic-Types.html#G-GINT64-CONSTANT:CAPS" tit
 <pre class="programlisting">typedef signed long gintptr;
 </pre>
 <p>
-Corresponds to the C99 type <span class="type">intptr_t</span>,
-a signed integer type that can hold any pointer.
-</p>
+Corresponds to the C99 type intptr_t,
+a signed integer type that can hold any pointer.</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINTPTR-MODIFIER:CAPS" title="G_GINTPTR_MODIFIER"><code class="literal">G_GINTPTR_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINTPTR-FORMAT:CAPS" title="G_GINTPTR_FORMAT"><code class="literal">G_GINTPTR_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINTPTR-MODIFIER:CAPS" title="G_GINTPTR_MODIFIER"><code class="literal">G_GINTPTR_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GINTPTR-FORMAT:CAPS" title="G_GINTPTR_FORMAT"><code class="literal">G_GINTPTR_FORMAT</code></a>.</p>
 <p class="since">Since 2.18</p>
 </div>
 <hr>
@@ -1065,8 +944,7 @@ To print or scan values of this type, use
 <p>
 The platform dependent length modifier for conversion specifiers
 for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#gintptr" title="gintptr"><span class="type">gintptr</span></a> or <a class="link" href="glib-Basic-Types.html#guintptr" title="guintptr"><span class="type">guintptr</span></a>.
-It is a string literal.
-</p>
+It is a string literal.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -1076,8 +954,7 @@ It is a string literal.
 </pre>
 <p>
 This is the platform dependent conversion specifier for scanning
-and printing values of type <a class="link" href="glib-Basic-Types.html#gintptr" title="gintptr"><span class="type">gintptr</span></a>.
-</p>
+and printing values of type <a class="link" href="glib-Basic-Types.html#gintptr" title="gintptr"><span class="type">gintptr</span></a>.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -1086,13 +963,11 @@ and printing values of type <a class="link" href="glib-Basic-Types.html#gintptr"
 <pre class="programlisting">typedef unsigned long guintptr;
 </pre>
 <p>
-Corresponds to the C99 type <span class="type">uintptr_t</span>,
-an unsigned integer type that can hold any pointer.
-</p>
+Corresponds to the C99 type uintptr_t,
+an unsigned integer type that can hold any pointer.</p>
 <p>
 To print or scan values of this type, use
-<a class="link" href="glib-Basic-Types.html#G-GINTPTR-MODIFIER:CAPS" title="G_GINTPTR_MODIFIER"><code class="literal">G_GINTPTR_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINTPTR-FORMAT:CAPS" title="G_GUINTPTR_FORMAT"><code class="literal">G_GUINTPTR_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINTPTR-MODIFIER:CAPS" title="G_GINTPTR_MODIFIER"><code class="literal">G_GINTPTR_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINTPTR-FORMAT:CAPS" title="G_GUINTPTR_FORMAT"><code class="literal">G_GUINTPTR_FORMAT</code></a>.</p>
 <p class="since">Since 2.18</p>
 </div>
 <hr>
@@ -1102,14 +977,13 @@ To print or scan values of this type, use
 </pre>
 <p>
 This is the platform dependent conversion specifier
-for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#guintptr" title="guintptr"><span class="type">guintptr</span></a>.
-</p>
+for scanning and printing values of type <a class="link" href="glib-Basic-Types.html#guintptr" title="guintptr"><span class="type">guintptr</span></a>.</p>
 <p class="since">Since 2.22</p>
 </div>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

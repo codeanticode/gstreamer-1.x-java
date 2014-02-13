@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * this code is based on the original GtkSignal implementation
  * for the Gtk+ library by Peter Mattis <petm@xcf.berkeley.edu>
@@ -45,58 +43,56 @@
  *     and a general purpose notification mechanism
  * @title: Signals
  *
- * The basic concept of the signal system is that of the
- * <emphasis>emission</emphasis> of a signal. Signals are introduced
- * per-type and are identified through strings.  Signals introduced
- * for a parent type are available in derived types as well, so
- * basically they are a per-type facility that is inherited.  A signal
- * emission mainly involves invocation of a certain set of callbacks
- * in precisely defined manner. There are two main categories of such
- * callbacks, per-object 
- * <footnote><para>Although signals can deal with any kind of instantiatable 
- * type, i'm referring to those types as "object types" in the following, 
- * simply because that is the context most users will encounter signals in.
- * </para></footnote>
- * ones and user provided ones.
+ * The basic concept of the signal system is that of the emission
+ * of a signal. Signals are introduced per-type and are identified
+ * through strings. Signals introduced for a parent type are available
+ * in derived types as well, so basically they are a per-type facility
+ * that is inherited.
+ *
+ * A signal emission mainly involves invocation of a certain set of
+ * callbacks in precisely defined manner. There are two main categories
+ * of such callbacks, per-object ones and user provided ones.
+ * (Although signals can deal with any kind of instantiatable type, I'm
+ * referring to those types as "object types" in the following, simply
+ * because that is the context most users will encounter signals in.)
  * The per-object callbacks are most often referred to as "object method
  * handler" or "default (signal) handler", while user provided callbacks are
  * usually just called "signal handler".
+ *
  * The object method handler is provided at signal creation time (this most
  * frequently happens at the end of an object class' creation), while user
- * provided handlers are frequently connected and disconnected to/from a certain
- * signal on certain object instances.
+ * provided handlers are frequently connected and disconnected to/from a
+ * certain signal on certain object instances.
  *
  * A signal emission consists of five stages, unless prematurely stopped:
- * <variablelist>
- * <varlistentry><term></term><listitem><para>
- * 	1 - Invocation of the object method handler for %G_SIGNAL_RUN_FIRST signals
- * </para></listitem></varlistentry>
- * <varlistentry><term></term><listitem><para>
- * 	2 - Invocation of normal user-provided signal handlers (<emphasis>after</emphasis> flag %FALSE)
- * </para></listitem></varlistentry>
- * <varlistentry><term></term><listitem><para>
- * 	3 - Invocation of the object method handler for %G_SIGNAL_RUN_LAST signals
- * </para></listitem></varlistentry>
- * <varlistentry><term></term><listitem><para>
- * 	4 - Invocation of user provided signal handlers, connected with an <emphasis>after</emphasis> flag of %TRUE
- * </para></listitem></varlistentry>
- * <varlistentry><term></term><listitem><para>
- * 	5 - Invocation of the object method handler for %G_SIGNAL_RUN_CLEANUP signals
- * </para></listitem></varlistentry>
- * </variablelist>
+ *
+ * 1. Invocation of the object method handler for %G_SIGNAL_RUN_FIRST signals
+ *
+ * 2. Invocation of normal user-provided signal handlers (where the @after
+ *    flag is not set)
+ *
+ * 3. Invocation of the object method handler for %G_SIGNAL_RUN_LAST signals
+ *
+ * 4. Invocation of user provided signal handlers (where the @after flag is set)
+ *
+ * 5. Invocation of the object method handler for %G_SIGNAL_RUN_CLEANUP signals
+ 
  * The user-provided signal handlers are called in the order they were
  * connected in.
+ *
  * All handlers may prematurely stop a signal emission, and any number of
  * handlers may be connected, disconnected, blocked or unblocked during
  * a signal emission.
+ *
  * There are certain criteria for skipping user handlers in stages 2 and 4
  * of a signal emission.
- * First, user handlers may be <emphasis>blocked</emphasis>, blocked handlers are omitted
- * during callback invocation, to return from the "blocked" state, a
- * handler has to get unblocked exactly the same amount of times
- * it has been blocked before.
+ *
+ * First, user handlers may be blocked. Blocked handlers are omitted during
+ * callback invocation, to return from the blocked state, a handler has to
+ * get unblocked exactly the same amount of times it has been blocked before.
+ *
  * Second, upon emission of a %G_SIGNAL_DETAILED signal, an additional
- * "detail" argument passed in to g_signal_emit() has to match the detail
+ * @detail argument passed in to g_signal_emit() has to match the detail
  * argument of the signal handler currently subject to invocation.
  * Specification of no detail argument for signal handlers (omission of the
  * detail part of the signal specification upon connection) serves as a
@@ -1369,9 +1365,8 @@ g_signal_query (guint         signal_id,
  * be used, but they cannot be mixed.
  *
  * If 0 is used for @class_offset subclasses cannot override the class handler
- * in their <code>class_init</code> method by doing
- * <code>super_class->signal_handler = my_signal_handler</code>. Instead they
- * will have to use g_signal_override_class_handler().
+ * in their class_init method by doing super_class->signal_handler = my_signal_handler.
+ * Instead they will have to use g_signal_override_class_handler().
  *
  * If c_marshaller is %NULL, g_cclosure_marshal_generic() will be used as
  * the marshaller for this signal.
@@ -3758,8 +3753,8 @@ type_debug_name (GType type)
  * that a return of %TRUE stops the signal emission: no further
  * callbacks will be invoked, while a return of %FALSE allows
  * the emission to continue. The idea here is that a %TRUE return
- * indicates that the callback <emphasis>handled</emphasis> the signal,
- * and no further handling is needed.
+ * indicates that the callback handled the signal, and no further
+ * handling is needed.
  *
  * Since: 2.4
  *

@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -1231,7 +1229,7 @@ void     g_file_replace_contents_async       (GFile                  *file,
 					      gpointer                user_data);
 GLIB_AVAILABLE_IN_2_40
 void     g_file_replace_contents_bytes_async (GFile                  *file,
-					      GBytes                 *bytes,
+					      GBytes                 *contents,
 					      const char             *etag,
 					      gboolean                make_backup,
 					      GFileCreateFlags        flags,

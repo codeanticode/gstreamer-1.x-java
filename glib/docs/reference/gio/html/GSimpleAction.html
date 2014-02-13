@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSimpleAction</title>
+<title>GIO Reference Manual: GSimpleAction</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="application.html" title="Application support">
 <link rel="prev" href="GAction.html" title="GAction">
 <link rel="next" href="gio-GPropertyAction.html" title="GPropertyAction">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GAction.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="application.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-GPropertyAction.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSimpleAction.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSimpleAction.description" class="shortcut">Description</a>
                    | 
@@ -32,8 +25,12 @@
                   <a href="#GSimpleAction.properties" class="shortcut">Properties</a>
                    | 
                   <a href="#GSimpleAction.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="application.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GAction.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-GPropertyAction.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSimpleAction"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -97,11 +94,9 @@ GSimpleAction implements
 <p>
 A <a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> is the obvious simple implementation of the <a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a>
 interface. This is the easiest way to create an action for purposes of
-adding it to a <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.
-</p>
+adding it to a <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.</p>
 <p>
-See also <a href="http://developer.gnome.org/gtk2/GtkAction.html"><span class="type">GtkAction</span></a>.
-</p>
+See also <a href="http://library.gnome.org/devel/gtk3/GtkAction.html"><span class="type">GtkAction</span></a>.</p>
 </div>
 <div class="refsect1">
 <a name="GSimpleAction.details"></a><h2>Details</h2>
@@ -115,11 +110,9 @@ See also <a href="http://developer.gnome.org/gtk2/GtkAction.html"><span class="t
 <pre class="programlisting"><a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="returnvalue">GSimpleAction</span></a> *     g_simple_action_new                 (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a> *parameter_type</code></em>);</pre>
 <p>
-Creates a new action.
-</p>
+Creates a new action.</p>
 <p>
-The created action is stateless.  See <a class="link" href="GSimpleAction.html#g-simple-action-new-stateful" title="g_simple_action_new_stateful ()"><code class="function">g_simple_action_new_stateful()</code></a>.
-</p>
+The created action is stateless.  See <a class="link" href="GSimpleAction.html#g-simple-action-new-stateful" title="g_simple_action_new_stateful ()"><code class="function">g_simple_action_new_stateful()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -151,15 +144,12 @@ The created action is stateless.  See <a class="link" href="GSimpleAction.html#g
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a> *parameter_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *state</code></em>);</pre>
 <p>
-Creates a new stateful action.
-</p>
+Creates a new stateful action.</p>
 <p>
 <em class="parameter"><code>state</code></em> is the initial state of the action.  All future state values
-must have the same <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a> as the initial state.
-</p>
+must have the same <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a> as the initial state.</p>
 <p>
-If the <em class="parameter"><code>state</code></em> GVariant is floating, it is consumed.
-</p>
+If the <em class="parameter"><code>state</code></em> GVariant is floating, it is consumed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -194,16 +184,13 @@ If the <em class="parameter"><code>state</code></em> GVariant is floating, it is
 <pre class="programlisting"><span class="returnvalue">void</span>                g_simple_action_set_enabled         (<em class="parameter"><code><a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> *simple</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> enabled</code></em>);</pre>
 <p>
-Sets the action as enabled or not.
-</p>
+Sets the action as enabled or not.</p>
 <p>
 An action must be enabled in order to be activated or in order to
-have its state changed from outside callers.
-</p>
+have its state changed from outside callers.</p>
 <p>
 This should only be called by the implementor of the action.  Users
-of the action should not attempt to modify its enabled flag.
-</p>
+of the action should not attempt to modify its enabled flag.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -229,20 +216,16 @@ of the action should not attempt to modify its enabled flag.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_simple_action_set_state           (<em class="parameter"><code><a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> *simple</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>);</pre>
 <p>
-Sets the state of the action.
-</p>
+Sets the state of the action.</p>
 <p>
-This directly updates the 'state' property to the given value.
-</p>
+This directly updates the 'state' property to the given value.</p>
 <p>
 This should only be called by the implementor of the action.  Users
 of the action should not attempt to directly modify the 'state'
 property.  Instead, they should call <a class="link" href="GAction.html#g-action-change-state" title="g_action_change_state ()"><code class="function">g_action_change_state()</code></a> to
-request the change.
-</p>
+request the change.</p>
 <p>
-If the <em class="parameter"><code>value</code></em> GVariant is floating, it is consumed.
-</p>
+If the <em class="parameter"><code>value</code></em> GVariant is floating, it is consumed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -269,12 +252,10 @@ If the <em class="parameter"><code>value</code></em> GVariant is floating, it is
 <a name="GSimpleAction--enabled"></a><h3>The <code class="literal">"enabled"</code> property</h3>
 <pre class="programlisting">  "enabled"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
 <p>
-If <em class="parameter"><code>action</code></em> is currently enabled.
-</p>
+If <em class="parameter"><code>action</code></em> is currently enabled.</p>
 <p>
 If the action is disabled then calls to <a class="link" href="GAction.html#g-action-activate" title="g_action_activate ()"><code class="function">g_action_activate()</code></a> and
-<a class="link" href="GAction.html#g-action-change-state" title="g_action_change_state ()"><code class="function">g_action_change_state()</code></a> have no effect.
-</p>
+<a class="link" href="GAction.html#g-action-change-state" title="g_action_change_state ()"><code class="function">g_action_change_state()</code></a> have no effect.</p>
 <p>Default value: TRUE</p>
 <p class="since">Since 2.28</p>
 </div>
@@ -283,9 +264,8 @@ If the action is disabled then calls to <a class="link" href="GAction.html#g-act
 <a name="GSimpleAction--name"></a><h3>The <code class="literal">"name"</code> property</h3>
 <pre class="programlisting">  "name"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
 <p>
-The name of the action.  This is mostly meaningful for identifying
-the action once it has been added to a <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.
-</p>
+The name of the action. This is mostly meaningful for identifying
+the action once it has been added to a <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.28</p>
 </div>
@@ -295,8 +275,7 @@ the action once it has been added to a <a class="link" href="GSimpleActionGroup.
 <pre class="programlisting">  "parameter-type"           <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a>*         : Read / Write / Construct Only</pre>
 <p>
 The type of the parameter that must be given when activating the
-action.
-</p>
+action.</p>
 <p class="since">Since 2.28</p>
 </div>
 <hr>
@@ -304,8 +283,7 @@ action.
 <a name="GSimpleAction--state"></a><h3>The <code class="literal">"state"</code> property</h3>
 <pre class="programlisting">  "state"                    <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>*             : Read / Write / Construct</pre>
 <p>
-The state of the action, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the action is stateless.
-</p>
+The state of the action, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the action is stateless.</p>
 <p>Allowed values: GVariant&lt;*&gt;</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.28</p>
@@ -316,8 +294,7 @@ The state of the action, or <a href="http://library.gnome.org/devel/glib/unstabl
 <pre class="programlisting">  "state-type"               <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a>*         : Read</pre>
 <p>
 The <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a> of the state that the action has, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> if the
-action is stateless.
-</p>
+action is stateless.</p>
 <p class="since">Since 2.28</p>
 </div>
 </div>
@@ -329,12 +306,18 @@ action is stateless.
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a>      *parameter,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Indicates that the action was just activated.
-</p>
+Indicates that the action was just activated.</p>
 <p>
 <em class="parameter"><code>parameter</code></em> will always be of the expected type.  In the event that
-an incorrect type was given, no signal will be emitted.
-</p>
+an incorrect type was given, no signal will be emitted.</p>
+<p>
+Since GLib 2.40, if no handler is connected to this signal then the
+default behaviour for boolean-stated actions with a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> parameter
+type is to toggle them via the <a class="link" href="GSimpleAction.html#GSimpleAction-change-state" title='The "change-state" signal'><span class="type">"change-state"</span></a> signal.
+For stateful actions where the state type is equal to the parameter
+type, the default is to forward them directly to
+<a class="link" href="GSimpleAction.html#GSimpleAction-change-state" title='The "change-state" signal'><span class="type">"change-state"</span></a>.  This should allow almost all users
+of <a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> to connect only one handler or the other.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -367,24 +350,20 @@ an incorrect type was given, no signal will be emitted.
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>       user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
 Indicates that the action just received a request to change its
-state.
-</p>
+state.</p>
 <p>
 <em class="parameter"><code>value</code></em> will always be of the correct state type.  In the event that
-an incorrect type was given, no signal will be emitted.
-</p>
+an incorrect type was given, no signal will be emitted.</p>
 <p>
 If no handler is connected to this signal then the default
 behaviour is to call <a class="link" href="GSimpleAction.html#g-simple-action-set-state" title="g_simple_action_set_state ()"><code class="function">g_simple_action_set_state()</code></a> to set the state
-to the requested value.  If you connect a signal handler then no
-default action is taken.  If the state should change then you must
-call <a class="link" href="GSimpleAction.html#g-simple-action-set-state" title="g_simple_action_set_state ()"><code class="function">g_simple_action_set_state()</code></a> from the handler.
-</p>
+to the requested value. If you connect a signal handler then no
+default action is taken. If the state should change then you must
+call <a class="link" href="GSimpleAction.html#g-simple-action-set-state" title="g_simple_action_set_state ()"><code class="function">g_simple_action_set_state()</code></a> from the handler.</p>
 <p>
+An example of a 'change-state' handler:
 </p>
-<div class="example">
-<a name="id-1.4.22.8.11.3.7.1"></a><p class="title"><b>Example 26. Example 'change-state' handler</b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -410,7 +389,7 @@ call <a class="link" href="GSimpleAction.html#g-simple-action-set-state" title="
 
 <span class="normal">  requested </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#g-variant-get-int32">g_variant_get_int32</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">value</span><span class="symbol">);</span>
 
-<span class="normal">  </span><span class="comment">// Volume only goes from 0 to 10</span>
+<span class="normal">  </span><span class="comment">/* Volume only goes from 0 to 10 */</span>
 <span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="number">0</span><span class="normal"> </span><span class="symbol">&lt;=</span><span class="normal"> requested </span><span class="symbol">&amp;&amp;</span><span class="normal"> requested </span><span class="symbol">&lt;=</span><span class="normal"> </span><span class="number">10</span><span class="symbol">)</span>
 <span class="normal">    </span><span class="function"><a href="GSimpleAction.html#g-simple-action-set-state">g_simple_action_set_state</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">action</span><span class="symbol">,</span><span class="normal"> value</span><span class="symbol">);</span>
 <span class="cbracket">}</span></pre></td>
@@ -419,13 +398,9 @@ call <a class="link" href="GSimpleAction.html#g-simple-action-set-state" title="
   </table>
 </div>
 
-</div>
-<p><br class="example-break">
-</p>
 <p>
-The handler need not set the state to the requested value.  It
-could set it to any value at all, or take some other action.
-</p>
+The handler need not set the state to the requested value.
+It could set it to any value at all, or take some other action.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -454,6 +429,6 @@ could set it to any value at all, or take some other action.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Unicode Manipulation</title>
+<title>GLib Reference Manual: Unicode Manipulation</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Character-Set-Conversion.html" title="Character Set Conversion">
 <link rel="next" href="glib-Base64-Encoding.html" title="Base64 Encoding">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Character-Set-Conversion.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Base64-Encoding.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Unicode-Manipulation.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Unicode-Manipulation.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Character-Set-Conversion.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Base64-Encoding.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Unicode-Manipulation"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -191,16 +188,14 @@ traditional <code class="filename">ctype.h</code> character classification
 and case conversion functions, UTF-8 analogues of some string utility
 functions, functions to perform normalization, case conversion and
 collation on UTF-8 strings and finally functions to convert between
-the UTF-8, UTF-16 and UCS-4 encodings of Unicode.
-</p>
+the UTF-8, UTF-16 and UCS-4 encodings of Unicode.</p>
 <p>
 The implementations of the Unicode functions in GLib are based
 on the Unicode Character Data tables, which are available from
 <a class="ulink" href="http://www.unicode.org/" target="_top">www.unicode.org</a>.
 GLib 2.8 supports Unicode 4.0, GLib 2.10 supports Unicode 4.1,
 GLib 2.12 supports Unicode 5.0, GLib 2.16.3 supports Unicode 5.1,
-GLib 2.30 supports Unicode 6.0.
-</p>
+GLib 2.30 supports Unicode 6.0.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Unicode-Manipulation.details"></a><h2>Details</h2>
@@ -210,17 +205,14 @@ GLib 2.30 supports Unicode 6.0.
 </pre>
 <p>
 A type which can hold any UTF-32 or UCS-4 character code,
-also known as a Unicode code point.
-</p>
+also known as a Unicode code point.</p>
 <p>
 If you want to produce the UTF-8 representation of a <a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a>,
 use <a class="link" href="glib-Unicode-Manipulation.html#g-ucs4-to-utf8" title="g_ucs4_to_utf8 ()"><code class="function">g_ucs4_to_utf8()</code></a>. See also <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-to-ucs4" title="g_utf8_to_ucs4 ()"><code class="function">g_utf8_to_ucs4()</code></a> for the reverse
-process.
-</p>
+process.</p>
 <p>
 To print/scan values of this type as integer, use
-<a class="link" href="glib-Basic-Types.html#G-GINT32-MODIFIER:CAPS" title="G_GINT32_MODIFIER"><code class="literal">G_GINT32_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT32-FORMAT:CAPS" title="G_GUINT32_FORMAT"><code class="literal">G_GUINT32_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT32-MODIFIER:CAPS" title="G_GINT32_MODIFIER"><code class="literal">G_GINT32_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT32-FORMAT:CAPS" title="G_GUINT32_FORMAT"><code class="literal">G_GUINT32_FORMAT</code></a>.</p>
 <p>
 The notation to express a Unicode code point in running text is
 as a hexadecimal number with four to six digits and uppercase
@@ -228,8 +220,7 @@ letters, prefixed by the string "U+". Leading zeros are omitted,
 unless the code point would have fewer than four hexadecimal digits.
 For example, "U+0041 LATIN CAPITAL LETTER A". To print a code point
 in the U+-notation, use the format string "U+%04"G_GINT32_FORMAT"X".
-To scan, use the format string "U+%06"G_GINT32_FORMAT"X".
-</p>
+To scan, use the format string "U+%06"G_GINT32_FORMAT"X".</p>
 <p>
 </p>
 <div class="informalexample">
@@ -247,8 +238,6 @@ To scan, use the format string "U+%06"G_GINT32_FORMAT"X".
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -257,16 +246,13 @@ To scan, use the format string "U+%06"G_GINT32_FORMAT"X".
 </pre>
 <p>
 A type which can hold any UTF-16 code
-point<a href="#ftn.utf16_surrogate_pairs" class="footnote" name="utf16_surrogate_pairs"><sup class="footnote">[4]</sup></a>.
-</p>
+point<a href="#ftn.utf16_surrogate_pairs" class="footnote" name="utf16_surrogate_pairs"><sup class="footnote">[1]</sup></a>.</p>
 <p>
 To print/scan values of this type to/from text you need to convert
-to/from UTF-8, using <a class="link" href="glib-Unicode-Manipulation.html#g-utf16-to-utf8" title="g_utf16_to_utf8 ()"><code class="function">g_utf16_to_utf8()</code></a>/<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-to-utf16" title="g_utf8_to_utf16 ()"><code class="function">g_utf8_to_utf16()</code></a>.
-</p>
+to/from UTF-8, using <a class="link" href="glib-Unicode-Manipulation.html#g-utf16-to-utf8" title="g_utf16_to_utf8 ()"><code class="function">g_utf16_to_utf8()</code></a>/<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-to-utf16" title="g_utf8_to_utf16 ()"><code class="function">g_utf8_to_utf16()</code></a>.</p>
 <p>
 To print/scan values of this type as integer, use
-<a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><code class="literal">G_GINT16_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT16-FORMAT:CAPS" title="G_GUINT16_FORMAT"><code class="literal">G_GUINT16_FORMAT</code></a>.
-</p>
+<a class="link" href="glib-Basic-Types.html#G-GINT16-MODIFIER:CAPS" title="G_GINT16_MODIFIER"><code class="literal">G_GINT16_MODIFIER</code></a> and/or <a class="link" href="glib-Basic-Types.html#G-GUINT16-FORMAT:CAPS" title="G_GUINT16_FORMAT"><code class="literal">G_GUINT16_FORMAT</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -275,8 +261,7 @@ To print/scan values of this type as integer, use
 <p>
 Checks whether <em class="parameter"><code>ch</code></em> is a valid Unicode character. Some possible
 integer values of <em class="parameter"><code>ch</code></em> will not be valid. 0 is considered a valid
-character, though it's normally a string terminator.
-</p>
+character, though it's normally a string terminator.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -302,8 +287,7 @@ character, though it's normally a string terminator.
 <p>
 Determines whether a character is alphanumeric.
 Given some UTF-8 text, obtain a character value
-with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -329,8 +313,7 @@ with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title
 <p>
 Determines whether a character is alphabetic (i.e. a letter).
 Given some UTF-8 text, obtain a character value with
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -356,8 +339,7 @@ Given some UTF-8 text, obtain a character value with
 <p>
 Determines whether a character is a control character.
 Given some UTF-8 text, obtain a character value with
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -382,8 +364,7 @@ Given some UTF-8 text, obtain a character value with
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_unichar_isdefined                 (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
 Determines if a given character is assigned in the Unicode
-standard.
-</p>
+standard.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -409,8 +390,7 @@ standard.
 <p>
 Determines whether a character is numeric (i.e. a digit).  This
 covers ASCII 0-9 and also digits in other languages/scripts.  Given
-some UTF-8 text, obtain a character value with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+some UTF-8 text, obtain a character value with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -438,8 +418,7 @@ Determines whether a character is printable and not a space
 (returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> for control characters, format characters, and
 spaces). <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-isprint" title="g_unichar_isprint ()"><code class="function">g_unichar_isprint()</code></a> is similar, but returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> for
 spaces. Given some UTF-8 text, obtain a character value with
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -465,8 +444,7 @@ spaces. Given some UTF-8 text, obtain a character value with
 <p>
 Determines whether a character is a lowercase letter.
 Given some UTF-8 text, obtain a character value with
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -493,14 +471,12 @@ Given some UTF-8 text, obtain a character value with
 Determines whether a character is a mark (non-spacing mark,
 combining mark, or enclosing mark in Unicode speak).
 Given some UTF-8 text, obtain a character value
-with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <p>
 Note: in most cases where isalpha characters are allowed,
 ismark characters should be allowed to as they are essential
 for writing most European languages as well as many non-Latin
-scripts.
-</p>
+scripts.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -528,8 +504,7 @@ scripts.
 Determines whether a character is printable.
 Unlike <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-isgraph" title="g_unichar_isgraph ()"><code class="function">g_unichar_isgraph()</code></a>, returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> for spaces.
 Given some UTF-8 text, obtain a character value with
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -555,8 +530,7 @@ Given some UTF-8 text, obtain a character value with
 <p>
 Determines whether a character is punctuation or a symbol.
 Given some UTF-8 text, obtain a character value with
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -582,13 +556,11 @@ Given some UTF-8 text, obtain a character value with
 <p>
 Determines whether a character is a space, tab, or line separator
 (newline, carriage return, etc.).  Given some UTF-8 text, obtain a
-character value with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.
-</p>
+character value with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>.</p>
 <p>
 (Note: don't use this to do word breaking; you have to use
 Pango or equivalent to get word breaking right, the algorithm
-is fairly complex.)
-</p>
+is fairly complex.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -617,8 +589,7 @@ Unicode which are composites, such as the DZ digraph
 have three case variants instead of just two. The titlecase
 form is used at the beginning of a word where only the
 first letter is capitalized. The titlecase form of the DZ
-digraph is U+01F2 LATIN CAPITAL LETTTER D WITH SMALL LETTER Z.
-</p>
+digraph is U+01F2 LATIN CAPITAL LETTTER D WITH SMALL LETTER Z.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -642,8 +613,7 @@ digraph is U+01F2 LATIN CAPITAL LETTTER D WITH SMALL LETTER Z.
 <a name="g-unichar-isupper"></a><h3>g_unichar_isupper ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_unichar_isupper                   (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
-Determines if a character is uppercase.
-</p>
+Determines if a character is uppercase.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -667,8 +637,7 @@ Determines if a character is uppercase.
 <a name="g-unichar-isxdigit"></a><h3>g_unichar_isxdigit ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_unichar_isxdigit                  (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
-Determines if a character is a hexidecimal digit.
-</p>
+Determines if a character is a hexidecimal digit.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -693,8 +662,7 @@ Determines if a character is a hexidecimal digit.
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_unichar_iswide                    (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
 Determines if a character is typically rendered in a double-width
-cell.
-</p>
+cell.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -723,13 +691,11 @@ cell under legacy East Asian locales.  If a character is wide according to
 <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-iswide" title="g_unichar_iswide ()"><code class="function">g_unichar_iswide()</code></a>, then it is also reported wide with this function, but
 the converse is not necessarily true.  See the
 <a class="ulink" href="http://www.unicode.org/reports/tr11/" target="_top">Unicode Standard
-Annex #11</a> for details.
-</p>
+Annex #11</a> for details.</p>
 <p>
 If a character passes the <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-iswide" title="g_unichar_iswide ()"><code class="function">g_unichar_iswide()</code></a> test then it will also pass
 this test, but not the other way around.  Note that some characters may
-pas both this test and <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-iszerowidth" title="g_unichar_iszerowidth ()"><code class="function">g_unichar_iszerowidth()</code></a>.
-</p>
+pas both this test and <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-iszerowidth" title="g_unichar_iszerowidth ()"><code class="function">g_unichar_iszerowidth()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -757,14 +723,12 @@ pas both this test and <a class="link" href="glib-Unicode-Manipulation.html#g-un
 Determines if a given character typically takes zero width when rendered.
 The return value is <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> for all non-spacing and enclosing marks
 (e.g., combining accents), format characters, zero-width
-space, but not U+00AD SOFT HYPHEN.
-</p>
+space, but not U+00AD SOFT HYPHEN.</p>
 <p>
 A typical use of this function is with one of <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-iswide" title="g_unichar_iswide ()"><code class="function">g_unichar_iswide()</code></a> or
 <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-iswide-cjk" title="g_unichar_iswide_cjk ()"><code class="function">g_unichar_iswide_cjk()</code></a> to determine the number of cells a string occupies
 when displayed on a grid display (terminals).  However, note that not all
-terminals support zero-width rendering of zero-width marks.
-</p>
+terminals support zero-width rendering of zero-width marks.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -789,8 +753,7 @@ terminals support zero-width rendering of zero-width marks.
 <a name="g-unichar-toupper"></a><h3>g_unichar_toupper ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="returnvalue">gunichar</span></a>            g_unichar_toupper                   (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
-Converts a character to uppercase.
-</p>
+Converts a character to uppercase.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -815,8 +778,7 @@ or has no upper case equivalent <em class="parameter"><code>c</code></em> is ret
 <a name="g-unichar-tolower"></a><h3>g_unichar_tolower ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="returnvalue">gunichar</span></a>            g_unichar_tolower                   (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
-Converts a character to lower case.
-</p>
+Converts a character to lower case.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -841,8 +803,7 @@ or has no lowercase equivalent <em class="parameter"><code>c</code></em> is retu
 <a name="g-unichar-totitle"></a><h3>g_unichar_totitle ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="returnvalue">gunichar</span></a>            g_unichar_totitle                   (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
-Converts a character to the titlecase.
-</p>
+Converts a character to the titlecase.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -868,8 +829,7 @@ If <em class="parameter"><code>c</code></em> is not an uppercase or lowercase ch
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>                g_unichar_digit_value               (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
 Determines the numeric value of a character as a decimal
-digit.
-</p>
+digit.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -894,8 +854,7 @@ digit.
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>                g_unichar_xdigit_value              (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
 Determines the numeric value of a character as a hexidecimal
-digit.
-</p>
+digit.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -922,8 +881,7 @@ digit.
                                                          <em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> *ch</code></em>);</pre>
 <p>
 Performs a single composition step of the
-Unicode canonical composition algorithm.
-</p>
+Unicode canonical composition algorithm.</p>
 <p>
 This function includes algorithmic Hangul Jamo composition,
 but it is not exactly the inverse of <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-decompose" title="g_unichar_decompose ()"><code class="function">g_unichar_decompose()</code></a>.
@@ -931,15 +889,12 @@ No composition can have either of <em class="parameter"><code>a</code></em> or <
 To be precise, this function composes if and only if
 there exists a Primary Composite P which is canonically
 equivalent to the sequence &lt;<em class="parameter"><code>a</code></em>,<em class="parameter"><code>b</code></em>&gt;.  See the Unicode
-Standard for the definition of Primary Composite.
-</p>
+Standard for the definition of Primary Composite.</p>
 <p>
-If <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em> do not compose a new character, <em class="parameter"><code>ch</code></em> is set to zero.
-</p>
+If <em class="parameter"><code>a</code></em> and <em class="parameter"><code>b</code></em> do not compose a new character, <em class="parameter"><code>ch</code></em> is set to zero.</p>
 <p>
 See <a class="ulink" href="http://unicode.org/reports/tr15/" target="_top">UAX#15</a>
-for details.
-</p>
+for details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -975,32 +930,27 @@ for details.
                                                          <em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> *b</code></em>);</pre>
 <p>
 Performs a single decomposition step of the
-Unicode canonical decomposition algorithm.
-</p>
+Unicode canonical decomposition algorithm.</p>
 <p>
 This function does not include compatibility
 decompositions. It does, however, include algorithmic
 Hangul Jamo decomposition, as well as 'singleton'
 decompositions which replace a character by a single
 other character. In the case of singletons *<em class="parameter"><code>b</code></em> will
-be set to zero.
-</p>
+be set to zero.</p>
 <p>
 If <em class="parameter"><code>ch</code></em> is not decomposable, *<em class="parameter"><code>a</code></em> is set to <em class="parameter"><code>ch</code></em> and *<em class="parameter"><code>b</code></em>
-is set to zero.
-</p>
+is set to zero.</p>
 <p>
 Note that the way Unicode decomposition pairs are
 defined, it is guaranteed that <em class="parameter"><code>b</code></em> would not decompose
 further, but <em class="parameter"><code>a</code></em> may itself decompose.  To get the full
 canonical decomposition for <em class="parameter"><code>ch</code></em>, one would need to
 recursively call this function on <em class="parameter"><code>a</code></em>.  Or use
-<a class="link" href="glib-Unicode-Manipulation.html#g-unichar-fully-decompose" title="g_unichar_fully_decompose ()"><code class="function">g_unichar_fully_decompose()</code></a>.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-unichar-fully-decompose" title="g_unichar_fully_decompose ()"><code class="function">g_unichar_fully_decompose()</code></a>.</p>
 <p>
 See <a class="ulink" href="http://unicode.org/reports/tr15/" target="_top">UAX#15</a>
-for details.
-</p>
+for details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1041,8 +991,7 @@ for details.
 Computes the canonical or compatibility decomposition of a
 Unicode character.  For compatibility decomposition,
 pass <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> for <em class="parameter"><code>compat</code></em>; for canonical decomposition
-pass <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> for <em class="parameter"><code>compat</code></em>.
-</p>
+pass <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> for <em class="parameter"><code>compat</code></em>.</p>
 <p>
 The decomposed sequence is placed in <em class="parameter"><code>result</code></em>.  Only up to
 <em class="parameter"><code>result_len</code></em> characters are written into <em class="parameter"><code>result</code></em>.  The length
@@ -1053,12 +1002,10 @@ this may change in the future (very unlikely though).
 At any rate, Unicode does guarantee that a buffer of length
 18 is always enough for both compatibility and canonical
 decompositions, so that is the size recommended. This is provided
-as <a class="link" href="glib-Unicode-Manipulation.html#G-UNICHAR-MAX-DECOMPOSITION-LENGTH:CAPS" title="G_UNICHAR_MAX_DECOMPOSITION_LENGTH"><code class="literal">G_UNICHAR_MAX_DECOMPOSITION_LENGTH</code></a>.
-</p>
+as <a class="link" href="glib-Unicode-Manipulation.html#G-UNICHAR-MAX-DECOMPOSITION-LENGTH:CAPS" title="G_UNICHAR_MAX_DECOMPOSITION_LENGTH"><code class="literal">G_UNICHAR_MAX_DECOMPOSITION_LENGTH</code></a>.</p>
 <p>
 See <a class="ulink" href="http://unicode.org/reports/tr15/" target="_top">UAX#15</a>
-for details.
-</p>
+for details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1098,11 +1045,9 @@ for details.
 </pre>
 <p>
 The maximum length (in codepoints) of a compatibility or canonical
-decomposition of a single Unicode character.
-</p>
+decomposition of a single Unicode character.</p>
 <p>
-This is as defined by Unicode 6.1.
-</p>
+This is as defined by Unicode 6.1.</p>
 <p class="since">Since 2.32</p>
 </div>
 <hr>
@@ -1144,8 +1089,7 @@ This is as defined by Unicode 6.1.
 <p>
 These are the possible character classifications from the
 Unicode specification.
-See <a class="ulink" href="http://www.unicode.org/Public/UNIDATA/UnicodeData.html" target="_top">http://www.unicode.org/Public/UNIDATA/UnicodeData.html</a>.
-</p>
+See <a class="ulink" href="http://www.unicode.org/Public/UNIDATA/UnicodeData.html" target="_top">http://www.unicode.org/Public/UNIDATA/UnicodeData.html</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1310,21 +1254,19 @@ See <a class="ulink" href="http://www.unicode.org/Public/UNIDATA/UnicodeData.htm
 <a name="G-UNICODE-COMBINING-MARK:CAPS"></a><h3>G_UNICODE_COMBINING_MARK</h3>
 <pre class="programlisting">#define G_UNICODE_COMBINING_MARK G_UNICODE_SPACING_MARK
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">G_UNICODE_COMBINING_MARK</code> has been deprecated since version 2.30 and should not be used in newly-written code. Use <a class="link" href="glib-Unicode-Manipulation.html#G-UNICODE-SPACING-MARK:CAPS"><code class="literal">G_UNICODE_SPACING_MARK</code></a>.</p>
 </div>
 <p>
-Older name for <a class="link" href="glib-Unicode-Manipulation.html#G-UNICODE-SPACING-MARK:CAPS"><code class="literal">G_UNICODE_SPACING_MARK</code></a>.
-</p>
+Older name for <a class="link" href="glib-Unicode-Manipulation.html#G-UNICODE-SPACING-MARK:CAPS"><code class="literal">G_UNICODE_SPACING_MARK</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-unichar-type"></a><h3>g_unichar_type ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Unicode-Manipulation.html#GUnicodeType" title="enum GUnicodeType"><span class="returnvalue">GUnicodeType</span></a>        g_unichar_type                      (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>);</pre>
 <p>
-Classifies a Unicode character by type.
-</p>
+Classifies a Unicode character by type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1389,15 +1331,12 @@ Classifies a Unicode character by type.
 } GUnicodeBreakType;
 </pre>
 <p>
-These are the possible line break classifications.
-</p>
+These are the possible line break classifications.</p>
 <p>
 Since new unicode versions may add new types here, applications should be ready 
-to handle unknown values. They may be regarded as <a class="link" href="glib-Unicode-Manipulation.html#G-UNICODE-BREAK-UNKNOWN:CAPS"><code class="literal">G_UNICODE_BREAK_UNKNOWN</code></a>.
-</p>
+to handle unknown values. They may be regarded as <a class="link" href="glib-Unicode-Manipulation.html#G-UNICODE-BREAK-UNKNOWN:CAPS"><code class="literal">G_UNICODE_BREAK_UNKNOWN</code></a>.</p>
 <p>
-See <a class="ulink" href="http://www.unicode.org/unicode/reports/tr14/" target="_top">http://www.unicode.org/unicode/reports/tr14/</a>.
-</p>
+See <a class="ulink" href="http://www.unicode.org/unicode/reports/tr14/" target="_top">http://www.unicode.org/unicode/reports/tr14/</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1617,8 +1556,7 @@ Determines the break type of <em class="parameter"><code>c</code></em>. <em clas
 <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char" title="g_utf8_get_char ()"><code class="function">g_utf8_get_char()</code></a>). The break type is used to find word and line
 breaks ("text boundaries"), Pango implements the Unicode boundary
 resolution algorithms and normally you would use a function such
-as <a href="/usr/share/gtk-doc/html/pango/pango-Text-Processing.html#pango-break"><code class="function">pango_break()</code></a> instead of caring about break types yourself.
-</p>
+as <a href="/home/mclasen/gnome/share/gtk-doc/html/pango/pango-Text-Processing.html#pango-break"><code class="function">pango_break()</code></a> instead of caring about break types yourself.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1642,8 +1580,7 @@ as <a href="/usr/share/gtk-doc/html/pango/pango-Text-Processing.html#pango-break
 <a name="g-unichar-combining-class"></a><h3>g_unichar_combining_class ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>                g_unichar_combining_class           (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> uc</code></em>);</pre>
 <p>
-Determines the canonical combining class of a Unicode character.
-</p>
+Determines the canonical combining class of a Unicode character.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1671,8 +1608,7 @@ Determines the canonical combining class of a Unicode character.
 Computes the canonical ordering of a string in-place.  
 This rearranges decomposed characters in the string 
 according to their combining classes.  See the Unicode 
-manual for more information.
-</p>
+manual for more information.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1695,14 +1631,13 @@ manual for more information.
 <a name="g-unicode-canonical-decomposition"></a><h3>g_unicode_canonical_decomposition ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="returnvalue">gunichar</span></a> *          g_unicode_canonical_decomposition   (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> ch</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> *result_len</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_unicode_canonical_decomposition</code> has been deprecated since version 2.30 and should not be used in newly-written code. Use the more flexible <a class="link" href="glib-Unicode-Manipulation.html#g-unichar-fully-decompose" title="g_unichar_fully_decompose ()"><code class="function">g_unichar_fully_decompose()</code></a>
   instead.</p>
 </div>
 <p>
-Computes the canonical decomposition of a Unicode character.
-</p>
+Computes the canonical decomposition of a Unicode character.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1734,14 +1669,12 @@ Computes the canonical decomposition of a Unicode character.
 In Unicode, some characters are <em class="firstterm">mirrored</em>. This
 means that their images are mirrored horizontally in text that is laid
 out from right to left. For instance, "(" would become its mirror image,
-")", in right-to-left text.
-</p>
+")", in right-to-left text.</p>
 <p>
 If <em class="parameter"><code>ch</code></em> has the Unicode mirrored property and there is another unicode
 character that typically has a glyph that is the mirror image of <em class="parameter"><code>ch</code></em>'s
 glyph and <em class="parameter"><code>mirrored_ch</code></em> is set, it puts that character in the address
-pointed to by <em class="parameter"><code>mirrored_ch</code></em>.  Otherwise the original character is put.
-</p>
+pointed to by <em class="parameter"><code>mirrored_ch</code></em>.  Otherwise the original character is put.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1894,14 +1827,12 @@ pointed to by <em class="parameter"><code>mirrored_ch</code></em>.  Otherwise th
 The <a class="link" href="glib-Unicode-Manipulation.html#GUnicodeScript" title="enum GUnicodeScript"><span class="type">GUnicodeScript</span></a> enumeration identifies different writing
 systems. The values correspond to the names as defined in the
 Unicode standard. The enumeration has been added in GLib 2.14,
-and is interchangeable with <a href="/usr/share/gtk-doc/html/pango/pango-Scripts-and-Languages.html#PangoScript"><span class="type">PangoScript</span></a>.
-</p>
+and is interchangeable with <a href="/home/mclasen/gnome/share/gtk-doc/html/pango/pango-Scripts-and-Languages.html#PangoScript"><span class="type">PangoScript</span></a>.</p>
 <p>
 Note that new types may be added in the future. Applications
 should be ready to handle unknown values.
 See <a class="ulink" href="http://www.unicode.org/reports/tr24/" target="_top">Unicode Standard Annex
-#24: Script names</a>.
-</p>
+#24: Script names</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2440,12 +2371,10 @@ i                             base glyph to which it is attached
 Looks up the <a class="link" href="glib-Unicode-Manipulation.html#GUnicodeScript" title="enum GUnicodeScript"><span class="type">GUnicodeScript</span></a> for a particular character (as defined 
 by Unicode Standard Annex #24). No check is made for <em class="parameter"><code>ch</code></em> being a
 valid Unicode character; if you pass in invalid character, the
-result is undefined.
-</p>
+result is undefined.</p>
 <p>
-This function is equivalent to <a href="/usr/share/gtk-doc/html/pango/pango-Scripts-and-Languages.html#pango-script-for-unichar"><code class="function">pango_script_for_unichar()</code></a> and the
-two are interchangeable.
-</p>
+This function is equivalent to <a href="/home/mclasen/gnome/share/gtk-doc/html/pango/pango-Scripts-and-Languages.html#pango-script-for-unichar"><code class="function">pango_script_for_unichar()</code></a> and the
+two are interchangeable.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2473,12 +2402,10 @@ Looks up the Unicode script for <em class="parameter"><code>iso15924</code></em>
 codes to scripts.  For example, the code for Arabic is 'Arab'.
 This function accepts four letter codes encoded as a <em class="parameter"><code>guint32</code></em> in a
 big-endian fashion.  That is, the code expected for Arabic is
-0x41726162 (0x41 is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
-</p>
+0x41726162 (0x41 is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).</p>
 <p>
 See <a class="ulink" href="http://unicode.org/iso15924/codelists.html" target="_top">Codes for the
-representation of names of scripts</a> for details.
-</p>
+representation of names of scripts</a> for details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2508,12 +2435,10 @@ Looks up the ISO 15924 code for <em class="parameter"><code>script</code></em>. 
 codes to scripts.  For example, the code for Arabic is 'Arab'.  The
 four letter codes are encoded as a <em class="parameter"><code>guint32</code></em> by this function in a
 big-endian fashion.  That is, the code returned for Arabic is
-0x41726162 (0x41 is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).
-</p>
+0x41726162 (0x41 is ASCII code for 'A', 0x72 is ASCII code for 'r', etc).</p>
 <p>
 See <a class="ulink" href="http://unicode.org/iso15924/codelists.html" target="_top">Codes for the
-representation of names of scripts</a> for details.
-</p>
+representation of names of scripts</a> for details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2544,8 +2469,7 @@ valid; this macro is as fast as possible, and has no error-checking.
 You would use this macro to iterate over a string character by
 character. The macro returns the start of the next UTF-8 character.
 Before using this macro, use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> to validate strings
-that may contain invalid UTF-8.
-</p>
+that may contain invalid UTF-8.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2562,12 +2486,12 @@ that may contain invalid UTF-8.
 <a name="g-utf8-get-char"></a><h3>g_utf8_get_char ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="returnvalue">gunichar</span></a>            g_utf8_get_char                     (<em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *p</code></em>);</pre>
 <p>
-Converts a sequence of bytes encoded as UTF-8 to a Unicode character.
-If <em class="parameter"><code>p</code></em> does not point to a valid UTF-8 encoded character, results are
-undefined. If you are not sure that the bytes are complete
+Converts a sequence of bytes encoded as UTF-8 to a Unicode character.</p>
+<p>
+If <em class="parameter"><code>p</code></em> does not point to a valid UTF-8 encoded character, results
+are undefined. If you are not sure that the bytes are complete
 valid Unicode characters, you should use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-get-char-validated" title="g_utf8_get_char_validated ()"><code class="function">g_utf8_get_char_validated()</code></a>
-instead.
-</p>
+instead.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2594,8 +2518,7 @@ instead.
 Convert a sequence of bytes encoded as UTF-8 to a Unicode character.
 This function checks for incomplete characters, for invalid characters
 such as characters that are out of the range of Unicode, and for
-overlong encodings of valid characters.
-</p>
+overlong encodings of valid characters.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2629,30 +2552,18 @@ Unicode character, returns (gunichar)-1.</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> offset</code></em>);</pre>
 <p>
 Converts from an integer character offset to a pointer to a position
-within the string.
-</p>
+within the string.</p>
 <p>
 Since 2.10, this function allows to pass a negative <em class="parameter"><code>offset</code></em> to
 step backwards. It is usually worth stepping backwards from the end
 instead of forwards if <em class="parameter"><code>offset</code></em> is in the last fourth of the string,
-since moving forward is about 3 times faster than moving backward.
-</p>
+since moving forward is about 3 times faster than moving backward.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>
-This function doesn't abort when reaching the end of <em class="parameter"><code>str</code></em>. Therefore
-you should be sure that <em class="parameter"><code>offset</code></em> is within string boundaries before
-calling that function. Call <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strlen" title="g_utf8_strlen ()"><code class="function">g_utf8_strlen()</code></a> when unsure.
-</p>
-<p>
+Note that this function doesn't abort when reaching the end of <em class="parameter"><code>str</code></em>.
+Therefore you should be sure that <em class="parameter"><code>offset</code></em> is within string boundaries
+before calling that function. Call <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strlen" title="g_utf8_strlen ()"><code class="function">g_utf8_strlen()</code></a> when unsure.
 This limitation exists as this function is called frequently during
-text rendering and therefore has to be as fast as possible.
-</p>
-</div>
-<p>
-</p>
+text rendering and therefore has to be as fast as possible.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2682,12 +2593,10 @@ text rendering and therefore has to be as fast as possible.
                                                          <em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *pos</code></em>);</pre>
 <p>
 Converts from a pointer to position within a string to a integer
-character offset.
-</p>
+character offset.</p>
 <p>
 Since 2.10, this function allows <em class="parameter"><code>pos</code></em> to be before <em class="parameter"><code>str</code></em>, and returns
-a negative offset in this case.
-</p>
+a negative offset in this case.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2715,14 +2624,12 @@ a negative offset in this case.
 <a name="g-utf8-prev-char"></a><h3>g_utf8_prev_char ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="returnvalue">gchar</span></a> *             g_utf8_prev_char                    (<em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *p</code></em>);</pre>
 <p>
-Finds the previous UTF-8 character in the string before <em class="parameter"><code>p</code></em>.
-</p>
+Finds the previous UTF-8 character in the string before <em class="parameter"><code>p</code></em>.</p>
 <p>
 <em class="parameter"><code>p</code></em> does not have to be at the beginning of a UTF-8 character. No check
 is made to see if the character found is actually valid other than
 it starts with an appropriate byte. If <em class="parameter"><code>p</code></em> might be the first
-character of the string, you must use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-find-prev-char" title="g_utf8_find_prev_char ()"><code class="function">g_utf8_find_prev_char()</code></a> instead.
-</p>
+character of the string, you must use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-find-prev-char" title="g_utf8_find_prev_char ()"><code class="function">g_utf8_find_prev_char()</code></a> instead.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2735,7 +2642,7 @@ character of the string, you must use <a class="link" href="glib-Unicode-Manipul
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a pointer to the found character.</td>
+<td>a pointer to the found character</td>
 </tr>
 </tbody>
 </table></div>
@@ -2746,13 +2653,11 @@ character of the string, you must use <a class="link" href="glib-Unicode-Manipul
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="returnvalue">gchar</span></a> *             g_utf8_find_next_char               (<em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *p</code></em>,
                                                          <em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *end</code></em>);</pre>
 <p>
-Finds the start of the next UTF-8 character in the string after <em class="parameter"><code>p</code></em>.
-</p>
+Finds the start of the next UTF-8 character in the string after <em class="parameter"><code>p</code></em>.</p>
 <p>
 <em class="parameter"><code>p</code></em> does not have to be at the beginning of a UTF-8 character. No check
 is made to see if the character found is actually valid other than
-it starts with an appropriate byte.
-</p>
+it starts with an appropriate byte.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2766,7 +2671,7 @@ it starts with an appropriate byte.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>end</code></em> :</span></p></td>
 <td>a pointer to the byte following the end of the string,
-or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to indicate that the string is nul-terminated.</td>
+or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to indicate that the string is nul-terminated</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
@@ -2784,13 +2689,11 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 <p>
 Given a position <em class="parameter"><code>p</code></em> with a UTF-8 encoded string <em class="parameter"><code>str</code></em>, find the start
 of the previous UTF-8 character starting before <em class="parameter"><code>p</code></em>. Returns <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if no
-UTF-8 characters are present in <em class="parameter"><code>str</code></em> before <em class="parameter"><code>p</code></em>.
-</p>
+UTF-8 characters are present in <em class="parameter"><code>str</code></em> before <em class="parameter"><code>p</code></em>.</p>
 <p>
 <em class="parameter"><code>p</code></em> does not have to be at the beginning of a UTF-8 character. No check
 is made to see if the character found is actually valid other than
-it starts with an appropriate byte.
-</p>
+it starts with an appropriate byte.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2821,8 +2724,7 @@ it starts with an appropriate byte.
 <p>
 Computes the length of the string in characters, not including
 the terminating nul character. If the <em class="parameter"><code>max</code></em>'th byte falls in the
-middle of a character, the last (partial) character is not counted.
-</p>
+middle of a character, the last (partial) character is not counted.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2855,12 +2757,10 @@ bytes are examined</td>
                                                          <em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *src</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> n</code></em>);</pre>
 <p>
-Like the standard C <code class="function">strncpy()</code> function, but 
-copies a given number of characters instead of a given number of 
-bytes. The <em class="parameter"><code>src</code></em> string must be valid UTF-8 encoded text. 
-(Use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> on all text before trying to use UTF-8 
-utility functions with it.)
-</p>
+Like the standard C <code class="function">strncpy()</code> function, but copies a given number
+of characters instead of a given number of bytes. The <em class="parameter"><code>src</code></em> string
+must be valid UTF-8 encoded text. (Use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> on all
+text before trying to use UTF-8 utility functions with it.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2896,8 +2796,7 @@ utility functions with it.)
 <p>
 Finds the leftmost occurrence of the given Unicode character
 in a UTF-8 encoded string, while limiting the search to <em class="parameter"><code>len</code></em> bytes.
-If <em class="parameter"><code>len</code></em> is -1, allow unbounded search.
-</p>
+If <em class="parameter"><code>len</code></em> is -1, allow unbounded search.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2921,8 +2820,8 @@ If <em class="parameter"><code>len</code></em> is -1, allow unbounded search.
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
 <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if the string does not contain the character,
-otherwise, a pointer to the start of the leftmost occurrence of
-the character in the string.</td>
+otherwise, a pointer to the start of the leftmost occurrence
+of the character in the string.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2936,8 +2835,7 @@ the character in the string.</td>
 <p>
 Find the rightmost occurrence of the given Unicode character
 in a UTF-8 encoded string, while limiting the search to <em class="parameter"><code>len</code></em> bytes.
-If <em class="parameter"><code>len</code></em> is -1, allow unbounded search.
-</p>
+If <em class="parameter"><code>len</code></em> is -1, allow unbounded search.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2961,8 +2859,8 @@ If <em class="parameter"><code>len</code></em> is -1, allow unbounded search.
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
 <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if the string does not contain the character,
-otherwise, a pointer to the start of the rightmost occurrence of the
-character in the string.</td>
+otherwise, a pointer to the start of the rightmost occurrence
+of the character in the string.</td>
 </tr>
 </tbody>
 </table></div>
@@ -2975,20 +2873,17 @@ character in the string.</td>
 <p>
 Reverses a UTF-8 string. <em class="parameter"><code>str</code></em> must be valid UTF-8 encoded text. 
 (Use <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> on all text before trying to use UTF-8 
-utility functions with it.)
-</p>
+utility functions with it.)</p>
 <p>
 This function is intended for programmatic uses of reversed strings.
 It pays no attention to decomposed characters, combining marks, byte 
 order marks, directional indicators (LRM, LRO, etc) and similar 
 characters which might need special handling when reversing a string 
-for display purposes.
-</p>
+for display purposes.</p>
 <p>
 Note that unlike <a class="link" href="glib-String-Utility-Functions.html#g-strreverse" title="g_strreverse ()"><code class="function">g_strreverse()</code></a>, this function returns
 newly-allocated memory, which should be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a> when
-no longer needed.
-</p>
+no longer needed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3006,7 +2901,8 @@ then the string is nul-terminated.</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>a newly-allocated string which is the reverse of <em class="parameter"><code>str</code></em>.</td>
+<td>a newly-allocated string which is the reverse of <em class="parameter"><code>str</code></em>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -3020,9 +2916,7 @@ then the string is nul-terminated.</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> end_pos</code></em>);</pre>
 <p>
 Copies a substring out of a UTF-8 encoded string.
-The substring will contain <em class="parameter"><code>end_pos</code></em> - <em class="parameter"><code>start_pos</code></em>
-characters.
-</p>
+The substring will contain <em class="parameter"><code>end_pos</code></em> - <em class="parameter"><code>start_pos</code></em> characters.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3065,18 +2959,15 @@ if <em class="parameter"><code>str</code></em> is nul-terminated, then <em class
 If <em class="parameter"><code>end</code></em> is non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then the end of the valid range
 will be stored there (i.e. the start of the first invalid 
 character if some bytes were invalid, or the end of the text 
-being validated otherwise).
-</p>
+being validated otherwise).</p>
 <p>
 Note that <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if <em class="parameter"><code>max_len</code></em> is 
-positive and any of the <em class="parameter"><code>max_len</code></em> bytes are NUL.
-</p>
+positive and any of the <em class="parameter"><code>max_len</code></em> bytes are nul.</p>
 <p>
 Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if all of <em class="parameter"><code>str</code></em> was valid. Many GLib and GTK+
-routines <span class="emphasis"><em>require</em></span> valid UTF-8 as input;
-so data read from a file or the network should be checked
-with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> before doing anything else with it.
-</p>
+routines require valid UTF-8 as input; so data read from a file
+or the network should be checked with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-validate" title="g_utf8_validate ()"><code class="function">g_utf8_validate()</code></a> before
+doing anything else with it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3115,8 +3006,7 @@ Converts all Unicode characters in the string that have a case
 to uppercase. The exact manner that this is done depends
 on the current locale, and may result in the number of
 characters in the string increasing. (For instance, the
-German ess-zet will be changed to SS.)
-</p>
+German ess-zet will be changed to SS.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3148,8 +3038,7 @@ converted to uppercase.</td>
 Converts all Unicode characters in the string that have a case
 to lowercase. The exact manner that this is done depends
 on the current locale, and may result in the number of
-characters in the string changing.
-</p>
+characters in the string changing.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3181,16 +3070,14 @@ converted to lowercase.</td>
 Converts a string into a form that is independent of case. The
 result will not correspond to any particular case, but can be
 compared for equality or ordered with the results of calling
-<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-casefold" title="g_utf8_casefold ()"><code class="function">g_utf8_casefold()</code></a> on other strings.
-</p>
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-casefold" title="g_utf8_casefold ()"><code class="function">g_utf8_casefold()</code></a> on other strings.</p>
 <p>
 Note that calling <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-casefold" title="g_utf8_casefold ()"><code class="function">g_utf8_casefold()</code></a> followed by <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-collate" title="g_utf8_collate ()"><code class="function">g_utf8_collate()</code></a> is
 only an approximation to the correct linguistic case insensitive
 ordering, though it is a fairly good one. Getting this exactly
 right would require a more sophisticated collation function that
 takes case sensitivity into account. GLib does not currently
-provide such a function.
-</p>
+provide such a function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3226,8 +3113,7 @@ is represented as a base character and combining
 accent or as a single precomposed character. The
 string has to be valid UTF-8, otherwise <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> is
 returned. You should generally call <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-normalize" title="g_utf8_normalize ()"><code class="function">g_utf8_normalize()</code></a>
-before comparing two Unicode strings.
-</p>
+before comparing two Unicode strings.</p>
 <p>
 The normalization mode <a class="link" href="glib-Unicode-Manipulation.html#G-NORMALIZE-DEFAULT:CAPS"><code class="literal">G_NORMALIZE_DEFAULT</code></a> only
 standardizes differences that do not affect the
@@ -3237,8 +3123,7 @@ the "compatibility" characters in Unicode, such
 as SUPERSCRIPT THREE to the standard forms
 (in this case DIGIT THREE). Formatting information
 may be lost but for most text operations such
-characters should be considered the same.
-</p>
+characters should be considered the same.</p>
 <p>
 <a class="link" href="glib-Unicode-Manipulation.html#G-NORMALIZE-DEFAULT-COMPOSE:CAPS"><code class="literal">G_NORMALIZE_DEFAULT_COMPOSE</code></a> and <a class="link" href="glib-Unicode-Manipulation.html#G-NORMALIZE-ALL-COMPOSE:CAPS"><code class="literal">G_NORMALIZE_ALL_COMPOSE</code></a>
 are like <a class="link" href="glib-Unicode-Manipulation.html#G-NORMALIZE-DEFAULT:CAPS"><code class="literal">G_NORMALIZE_DEFAULT</code></a> and <a class="link" href="glib-Unicode-Manipulation.html#G-NORMALIZE-ALL:CAPS"><code class="literal">G_NORMALIZE_ALL</code></a>,
@@ -3246,8 +3131,7 @@ but returned a result with composed forms rather
 than a maximally decomposed form. This is often
 useful if you intend to convert the string to
 a legacy encoding or pass it to a system with
-less capable Unicode handling.
-</p>
+less capable Unicode handling.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3294,8 +3178,7 @@ Defines how a Unicode string is transformed in a canonical
 form, standardizing such issues as whether a character with
 an accent is represented as a base character and combining
 accent or as a single precomposed character. Unicode strings
-should generally be normalized before comparing them.
-</p>
+should generally be normalized before comparing them.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3363,8 +3246,7 @@ correct rules for the <a class="link" href="glib-running.html#setlocale" title="
 When sorting a large number of strings, it will be significantly 
 faster to obtain collation keys with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-collate-key" title="g_utf8_collate_key ()"><code class="function">g_utf8_collate_key()</code></a> and 
 compare the keys with <code class="function">strcmp()</code> when sorting instead of sorting 
-the original strings.
-</p>
+the original strings.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3395,17 +3277,14 @@ the original strings.
 <p>
 Converts a string into a collation key that can be compared
 with other collation keys produced by the same function using 
-<code class="function">strcmp()</code>. 
-</p>
+<code class="function">strcmp()</code>. </p>
 <p>
 The results of comparing the collation keys of two strings 
 with <code class="function">strcmp()</code> will always be the same as comparing the two 
-original keys with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-collate" title="g_utf8_collate ()"><code class="function">g_utf8_collate()</code></a>.
-</p>
+original keys with <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-collate" title="g_utf8_collate ()"><code class="function">g_utf8_collate()</code></a>.</p>
 <p>
 Note that this function depends on the 
-<a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.
-</p>
+<a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3435,20 +3314,17 @@ be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> len</code></em>);</pre>
 <p>
 Converts a string into a collation key that can be compared
-with other collation keys produced by the same function using <code class="function">strcmp()</code>. 
-</p>
+with other collation keys produced by the same function using <code class="function">strcmp()</code>. </p>
 <p>
 In order to sort filenames correctly, this function treats the dot '.' 
 as a special case. Most dictionary orderings seem to consider it
 insignificant, thus producing the ordering "event.c" "eventgenerator.c"
 "event.h" instead of "event.c" "event.h" "eventgenerator.c". Also, we
 would like to treat numbers intelligently so that "file1" "file10" "file5"
-is sorted as "file1" "file5" "file10".
-</p>
+is sorted as "file1" "file5" "file10".</p>
 <p>
 Note that this function depends on the 
-<a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.
-</p>
+<a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3482,8 +3358,7 @@ be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Convert a string from UTF-8 to UTF-16. A 0 character will be
-added to the result after the converted text.
-</p>
+added to the result after the converted text.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3501,18 +3376,17 @@ If <em class="parameter"><code>len</code></em> &lt; 0, then the string is nul-te
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_read</code></em> :</span></p></td>
-<td>location to store number of bytes read, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-If <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then <a class="link" href="glib-Character-Set-Conversion.html#G-CONVERT-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_CONVERT_ERROR_PARTIAL_INPUT</code></a> will be
-returned in case <em class="parameter"><code>str</code></em> contains a trailing partial
-character. If an error occurs then the index of the
-invalid input is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of bytes read,
+or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. If <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then <a class="link" href="glib-Character-Set-Conversion.html#G-CONVERT-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_CONVERT_ERROR_PARTIAL_INPUT</code></a> will be
+returned in case <em class="parameter"><code>str</code></em> contains a trailing partial character. If
+an error occurs then the index of the invalid input is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store number of <span class="type">gunichar2</span> written,
-or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-The value stored here does not include the trailing 0. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of <a class="link" href="glib-Unicode-Manipulation.html#gunichar2" title="gunichar2"><span class="type">gunichar2</span></a>
+written, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value stored here does not include the
+trailing 0. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -3524,9 +3398,8 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to a newly allocated UTF-16 string.
-This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an
-error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and
-<em class="parameter"><code>error</code></em> set.</td>
+This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an error occurs,
+<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em> set.</td>
 </tr>
 </tbody>
 </table></div>
@@ -3542,8 +3415,7 @@ error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="
 <p>
 Convert a string from UTF-8 to a 32-bit fixed width
 representation as UCS-4. A trailing 0 character will be added to the
-string after the converted text.
-</p>
+string after the converted text.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3570,9 +3442,9 @@ invalid input is stored here. <span class="annotation">[<acronym title="NULL is 
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store number of characters written or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-The value here stored does not include the trailing 0
-character. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of characters
+written or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value here stored does not include the
+trailing 0 character. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -3584,9 +3456,8 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to a newly allocated UCS-4 string.
-This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an
-error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and
-<em class="parameter"><code>error</code></em> set.</td>
+This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an error occurs,
+<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em> set.</td>
 </tr>
 </tbody>
 </table></div>
@@ -3602,8 +3473,7 @@ Convert a string from UTF-8 to a 32-bit fixed width
 representation as UCS-4, assuming valid UTF-8 input.
 This function is roughly twice as fast as <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-to-ucs4" title="g_utf8_to_ucs4 ()"><code class="function">g_utf8_to_ucs4()</code></a>
 but does no error checking on the input. A trailing 0 character
-will be added to the string after the converted text.
-</p>
+will be added to the string after the converted text.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3621,8 +3491,8 @@ then the string is nul-terminated.</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store the number of characters in the
-result, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store the number of
+characters in the result, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -3643,8 +3513,7 @@ This value must be freed with <a class="link" href="glib-Memory-Allocation.html#
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Convert a string from UTF-16 to UCS-4. The result will be
-nul-terminated.
-</p>
+nul-terminated.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3657,22 +3526,21 @@ nul-terminated.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
-<td>the maximum length (number of <span class="type">gunichar2</span>) of <em class="parameter"><code>str</code></em> to use.
+<td>the maximum length (number of <a class="link" href="glib-Unicode-Manipulation.html#gunichar2" title="gunichar2"><span class="type">gunichar2</span></a>) of <em class="parameter"><code>str</code></em> to use.
 If <em class="parameter"><code>len</code></em> &lt; 0, then the string is nul-terminated.</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_read</code></em> :</span></p></td>
-<td>location to store number of words read, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-If <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then <a class="link" href="glib-Character-Set-Conversion.html#G-CONVERT-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_CONVERT_ERROR_PARTIAL_INPUT</code></a> will be
-returned in case <em class="parameter"><code>str</code></em> contains a trailing partial
-character. If an error occurs then the index of the
-invalid input is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of words read,
+or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. If <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then <a class="link" href="glib-Character-Set-Conversion.html#G-CONVERT-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_CONVERT_ERROR_PARTIAL_INPUT</code></a> will be
+returned in case <em class="parameter"><code>str</code></em> contains a trailing partial character. If
+an error occurs then the index of the invalid input is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store number of characters written, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-The value stored here does not include the trailing
+<td>location to store number of characters
+written, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value stored here does not include the trailing
 0 character. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
@@ -3685,9 +3553,8 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to a newly allocated UCS-4 string.
-This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an
-error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and
-<em class="parameter"><code>error</code></em> set.</td>
+This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an error occurs,
+<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em> set.</td>
 </tr>
 </tbody>
 </table></div>
@@ -3702,21 +3569,18 @@ error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Convert a string from UTF-16 to UTF-8. The result will be
-terminated with a 0 byte.
-</p>
+terminated with a 0 byte.</p>
 <p>
 Note that the input is expected to be already in native endianness,
 an initial byte-order-mark character is not handled specially.
 <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a> can be used to convert a byte buffer of UTF-16 data of
-ambiguous endianess.
-</p>
+ambiguous endianess.</p>
 <p>
 Further note that this function does not validate the result
 string; it may e.g. include embedded NUL characters. The only
 validation done by this function is to ensure that the input can
 be correctly interpreted as UTF-16, i.e. it doesn't contain
-things unpaired surrogates.
-</p>
+things unpaired surrogates.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3729,23 +3593,21 @@ things unpaired surrogates.
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
-<td>the maximum length (number of <span class="type">gunichar2</span>) of <em class="parameter"><code>str</code></em> to use.
+<td>the maximum length (number of <a class="link" href="glib-Unicode-Manipulation.html#gunichar2" title="gunichar2"><span class="type">gunichar2</span></a>) of <em class="parameter"><code>str</code></em> to use.
 If <em class="parameter"><code>len</code></em> &lt; 0, then the string is nul-terminated.</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_read</code></em> :</span></p></td>
-<td>location to store number of words read, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-If <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then <a class="link" href="glib-Character-Set-Conversion.html#G-CONVERT-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_CONVERT_ERROR_PARTIAL_INPUT</code></a> will be
-returned in case <em class="parameter"><code>str</code></em> contains a trailing partial
-character. If an error occurs then the index of the
-invalid input is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of words read,
+or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. If <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, then <a class="link" href="glib-Character-Set-Conversion.html#G-CONVERT-ERROR-PARTIAL-INPUT:CAPS"><code class="literal">G_CONVERT_ERROR_PARTIAL_INPUT</code></a> will be
+returned in case <em class="parameter"><code>str</code></em> contains a trailing partial character. If
+an error occurs then the index of the invalid input is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store number of bytes written, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-The value stored here does not include the trailing
-0 byte. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of bytes written,
+or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value stored here does not include the trailing 0 byte. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -3757,9 +3619,8 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to a newly allocated UTF-8 string.
-This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an
-error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and
-<em class="parameter"><code>error</code></em> set.</td>
+This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an error occurs,
+<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em> set.</td>
 </tr>
 </tbody>
 </table></div>
@@ -3774,8 +3635,7 @@ error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Convert a string from UCS-4 to UTF-16. A 0 character will be
-added to the result after the converted text.
-</p>
+added to the result after the converted text.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3793,16 +3653,16 @@ If <em class="parameter"><code>len</code></em> &lt; 0, then the string is nul-te
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_read</code></em> :</span></p></td>
-<td>location to store number of bytes read, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-If an error occurs then the index of the invalid input
+<td>location to store number of bytes read,
+or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. If an error occurs then the index of the invalid input
 is stored here. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store number of <span class="type">gunichar2</span>
-written, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value stored here does not
-include the trailing 0. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of <a class="link" href="glib-Unicode-Manipulation.html#gunichar2" title="gunichar2"><span class="type">gunichar2</span></a>
+written, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value stored here does not include the
+trailing 0. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -3814,9 +3674,8 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to a newly allocated UTF-16 string.
-This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an
-error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and
-<em class="parameter"><code>error</code></em> set.</td>
+This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an error occurs,
+<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em> set.</td>
 </tr>
 </tbody>
 </table></div>
@@ -3831,8 +3690,7 @@ error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Convert a string from a 32-bit fixed width representation as UCS-4.
-to UTF-8. The result will be terminated with a 0 byte.
-</p>
+to UTF-8. The result will be terminated with a 0 byte.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3850,14 +3708,15 @@ If <em class="parameter"><code>len</code></em> &lt; 0, then the string is nul-te
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_read</code></em> :</span></p></td>
-<td>location to store number of characters read, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of characters
+read, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>items_written</code></em> :</span></p></td>
-<td>location to store number of bytes written or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-The value here stored does not include the trailing 0
-byte. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
+<td>location to store number of bytes
+written or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>. The value here stored does not include the
+trailing 0 byte. <span class="annotation">[<acronym title="NULL is ok, both for passing and for returning."><span class="acronym">allow-none</span></acronym>]</span>
 </td>
 </tr>
 <tr>
@@ -3869,11 +3728,9 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a pointer to a newly allocated UTF-8 string.
-This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an
-error occurs, <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and
-<em class="parameter"><code>error</code></em> set. In that case, <em class="parameter"><code>items_read</code></em> will be
-set to the position of the first invalid input
-character.</td>
+This value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. If an error occurs,
+<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> will be returned and <em class="parameter"><code>error</code></em> set. In that case, <em class="parameter"><code>items_read</code></em>
+will be set to the position of the first invalid input character.</td>
 </tr>
 </tbody>
 </table></div>
@@ -3884,8 +3741,7 @@ character.</td>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="returnvalue">gint</span></a>                g_unichar_to_utf8                   (<em class="parameter"><code><a class="link" href="glib-Unicode-Manipulation.html#gunichar" title="gunichar"><span class="type">gunichar</span></a> c</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *outbuf</code></em>);</pre>
 <p>
-Converts a single character to UTF-8.
-</p>
+Converts a single character to UTF-8.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -3916,11 +3772,11 @@ g_locale_to_utf8(), <a class="link" href="glib-Character-Set-Conversion.html#g-l
 </div>
 <div class="footnotes">
 <br><hr style="width:100; text-align:left;margin-left: 0">
-<div id="ftn.utf16_surrogate_pairs" class="footnote"><em class="firstterm"><a href="#utf16_surrogate_pairs" class="firstterm"><sup>[4] </sup></a>surrogate pairs</em></div>
+<div id="ftn.utf16_surrogate_pairs" class="footnote"><em class="firstterm"><a href="#utf16_surrogate_pairs" class="firstterm"><sup>[1] </sup></a>surrogate pairs</em></div>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

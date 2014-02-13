@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Ryan Lortie <desrt@desrt.ca>
  */
@@ -51,7 +49,7 @@ G_DEFINE_INTERFACE (GAction, g_action, G_TYPE_OBJECT)
  *
  * #GAction is merely the interface to the concept of an action, as
  * described above.  Various implementations of actions exist, including
- * #GSimpleAction and #GtkAction.
+ * #GSimpleAction.
  *
  * In all cases, the implementing class is responsible for storing the
  * name of the action, the parameter type, the enabled state, the

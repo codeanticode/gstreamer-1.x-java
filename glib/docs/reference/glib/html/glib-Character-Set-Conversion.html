@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Character Set Conversion</title>
+<title>GLib Reference Manual: Character Set Conversion</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-String-Utility-Functions.html" title="String Utility Functions">
 <link rel="next" href="glib-Unicode-Manipulation.html" title="Unicode Manipulation">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-String-Utility-Functions.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Unicode-Manipulation.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Character-Set-Conversion.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Character-Set-Conversion.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-String-Utility-Functions.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Unicode-Manipulation.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Character-Set-Conversion"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -103,60 +100,56 @@ enum                <a class="link" href="glib-Character-Set-Conversion.html#GCo
 <div class="refsect1">
 <a name="glib-Character-Set-Conversion.description"></a><h2>Description</h2>
 <p>
-The <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a> family of function wraps the functionality of <code class="function">iconv()</code>. In
-addition to pure character set conversions, GLib has functions to deal
-with the extra complications of encodings for file names.
-</p>
+The <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a> family of function wraps the functionality of <code class="function">iconv()</code>.
+In addition to pure character set conversions, GLib has functions to
+deal with the extra complications of encodings for file names.</p>
 <p>
 </p>
-<div class="refsect2">
-<a name="file-name-encodings"></a><h3>File Name Encodings</h3>
+<div class="refsect3">
+<a name="id-1.5.3.4.4"></a><h4>File Name Encodings</h4>
 <p>
-Historically, Unix has not had a defined encoding for file
-names:  a file name is valid as long as it does not have path
-separators in it ("/").  However, displaying file names may
-require conversion:  from the character set in which they were
-created, to the character set in which the application
-operates.  Consider the Spanish file name
-"<code class="filename">Presentación.sxi</code>".  If the
-application which created it uses ISO-8859-1 for its encoding,
+Historically, UNIX has not had a defined encoding for file names:
+a file name is valid as long as it does not have path separators
+in it ("/"). However, displaying file names may require conversion:
+from the character set in which they were created, to the character
+set in which the application operates. Consider the Spanish file name
+"Presentación.sxi". If the application which created it uses
+ISO-8859-1 for its encoding,
 </p>
-<a name="filename-iso8859-1"></a><pre class="programlisting">
+<pre class="programlisting">
 Character:  P  r  e  s  e  n  t  a  c  i  ó  n  .  s  x  i
 Hex code:   50 72 65 73 65 6e 74 61 63 69 f3 6e 2e 73 78 69
 </pre>
 <p>
 However, if the application use UTF-8, the actual file name on
 disk would look like this:
-</p>
-<a name="filename-utf-8"></a><pre class="programlisting">
+<a name="filename-utf-8"></a></p>
+<pre class="programlisting">
 Character:  P  r  e  s  e  n  t  a  c  i  ó     n  .  s  x  i
 Hex code:   50 72 65 73 65 6e 74 61 63 69 c3 b3 6e 2e 73 78 69
 </pre>
 <p>
-Glib uses UTF-8 for its strings, and GUI toolkits like GTK+
-that use Glib do the same thing.  If you get a file name from
-the file system, for example, from readdir(3) or from <a class="link" href="glib-File-Utilities.html#g-dir-read-name" title="g_dir_read_name ()"><code class="function">g_dir_read_name()</code></a>,
-and you wish to display the file name to the user, you
-<span class="emphasis"><em>will</em></span> need to convert it into UTF-8.  The
-opposite case is when the user types the name of a file he
-wishes to save:  the toolkit will give you that string in
-UTF-8 encoding, and you will need to convert it to the
-character set used for file names before you can create the
-file with open(2) or fopen(3).
-</p>
+Glib uses UTF-8 for its strings, and GUI toolkits like GTK+ that use
+Glib do the same thing. If you get a file name from the file system,
+for example, from <code class="function">readdir()</code> or from <a class="link" href="glib-File-Utilities.html#g-dir-read-name" title="g_dir_read_name ()"><code class="function">g_dir_read_name()</code></a>, and you wish
+to display the file name to the user, you  will need to convert it
+into UTF-8. The opposite case is when the user types the name of a
+file he wishes to save: the toolkit will give you that string in
+UTF-8 encoding, and you will need to convert it to the character
+set used for file names before you can create the file with <code class="function">open()</code>
+or <code class="function">fopen()</code>.</p>
 <p>
 By default, Glib assumes that file names on disk are in UTF-8
-encoding.  This is a valid assumption for file systems which
-were created relatively recently:  most applications use UTF-8
+encoding. This is a valid assumption for file systems which
+were created relatively recently: most applications use UTF-8
 encoding for their strings, and that is also what they use for
-the file names they create.  However, older file systems may
+the file names they create. However, older file systems may
 still contain file names created in "older" encodings, such as
 ISO-8859-1. In this case, for compatibility reasons, you may
 want to instruct Glib to use that particular encoding for file
-names rather than UTF-8.  You can do this by specifying the
+names rather than UTF-8. You can do this by specifying the
 encoding for file names in the <a class="link" href="glib-running.html#G_FILENAME_ENCODING" title="G_FILENAME_ENCODING"><code class="envar">G_FILENAME_ENCODING</code></a>
-environment variable.  For example, if your installation uses
+environment variable. For example, if your installation uses
 ISO-8859-1 for file names, you can put this in your
 <code class="filename">~/.profile</code>:
 </p>
@@ -165,61 +158,64 @@ export G_FILENAME_ENCODING=ISO-8859-1
 </pre>
 <p>
 Glib provides the functions <a class="link" href="glib-Character-Set-Conversion.html#g-filename-to-utf8" title="g_filename_to_utf8 ()"><code class="function">g_filename_to_utf8()</code></a> and
-<a class="link" href="glib-Character-Set-Conversion.html#g-filename-from-utf8" title="g_filename_from_utf8 ()"><code class="function">g_filename_from_utf8()</code></a> to perform the necessary conversions. These
-functions convert file names from the encoding specified in
-<code class="envar">G_FILENAME_ENCODING</code> to UTF-8 and vice-versa.
+<a class="link" href="glib-Character-Set-Conversion.html#g-filename-from-utf8" title="g_filename_from_utf8 ()"><code class="function">g_filename_from_utf8()</code></a> to perform the necessary conversions.
+These functions convert file names from the encoding specified
+in <code class="envar">G_FILENAME_ENCODING</code> to UTF-8 and vice-versa.
 <a class="xref" href="glib-Character-Set-Conversion.html#file-name-encodings-diagram" title="Figure 2. Conversion between File Name Encodings">Figure 2, “Conversion between File Name Encodings”</a> illustrates how
 these functions are used to convert between UTF-8 and the
-encoding for file names in the file system.
+encoding for file names in the file system.</p>
+<p>
 </p>
 <div class="figure">
 <a name="file-name-encodings-diagram"></a><p class="title"><b>Figure 2. Conversion between File Name Encodings</b></p>
 <div class="figure-contents"><div><img src="file-name-encodings.png" alt="Conversion between File Name Encodings"></div></div>
 </div>
-<br class="figure-break"><div class="refsect3">
-<a name="file-name-encodings-checklist"></a><h4>Checklist for Application Writers</h4>
+<p><br class="figure-break"></p>
+<p>
+</p>
+</div>
+<div class="refsect3">
+<a name="id-1.5.3.4.5"></a><h4>Checklist for Application Writers</h4>
 <p>
 This section is a practical summary of the detailed
-description above.  You can use this as a checklist of
+ 
 things to do to make sure your applications process file
-name encodings correctly.
-</p>
-<div class="orderedlist"><ol class="orderedlist" type="1">
-<li class="listitem"><p>
-If you get a file name from the file system from a function
-such as readdir(3) or <a href="http://developer.gnome.org/gtk2/GtkFileChooser.html#gtk-file-chooser-get-filename"><code class="function">gtk_file_chooser_get_filename()</code></a>,
-you do not need to do any conversion to pass that
-file name to functions like open(2), rename(2), or
-fopen(3) — those are "raw" file names which the file
-system understands.
-</p></li>
-<li class="listitem"><p>
-If you need to display a file name, convert it to UTF-8 first by
-using <a class="link" href="glib-Character-Set-Conversion.html#g-filename-to-utf8" title="g_filename_to_utf8 ()"><code class="function">g_filename_to_utf8()</code></a>. If conversion fails, display a string like
-"<code class="literal">Unknown file name</code>". <span class="emphasis"><em>Do not</em></span>
-convert this string back into the encoding used for file names if you
-wish to pass it to the file system; use the original file name instead.
-For example, the document window of a word processor could display
-"Unknown file name" in its title bar but still let the user save the
-file, as it would keep the raw file name internally. This can happen
-if the user has not set the <code class="envar">G_FILENAME_ENCODING</code>
-environment variable even though he has files whose names are not
-encoded in UTF-8.
-</p></li>
-<li class="listitem"><p>
-If your user interface lets the user type a file name for saving or
-renaming, convert it to the encoding used for file names in the file
-system by using <a class="link" href="glib-Character-Set-Conversion.html#g-filename-from-utf8" title="g_filename_from_utf8 ()"><code class="function">g_filename_from_utf8()</code></a>. Pass the converted file name
-to functions like fopen(3). If conversion fails, ask the user to enter
-a different file name. This can happen if the user types Japanese
-characters when <code class="envar">G_FILENAME_ENCODING</code> is set to
-<code class="literal">ISO-8859-1</code>, for example.
-</p></li>
-</ol></div>
-</div>
-</div>
+name encodings correctly.</p>
 <p>
 </p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>If you get a file name from the file system from a function
+   such as <code class="function">readdir()</code> or <a href="http://library.gnome.org/devel/gtk3/GtkFileChooser.html#gtk-file-chooser-get-filename"><code class="function">gtk_file_chooser_get_filename()</code></a>, you do
+   not need to do any conversion to pass that file name to
+   functions like <code class="function">open()</code>, <code class="function">rename()</code>, or <code class="function">fopen()</code> -- those are "raw"
+   file names which the file system understands.
+</p></li>
+<li class="listitem">
+<p>If you need to display a file name, convert it to UTF-8 first
+   by using <a class="link" href="glib-Character-Set-Conversion.html#g-filename-to-utf8" title="g_filename_to_utf8 ()"><code class="function">g_filename_to_utf8()</code></a>. If conversion fails, display a
+   string like "Unknown file name". Do not convert this string back
+   into the encoding used for file names if you wish to pass it to
+   the file system; use the original file name instead.</p>
+<p>
+   For example, the document window of a word processor could display
+   "Unknown file name" in its title bar but still let the user save
+   the file, as it would keep the raw file name internally. This can
+   happen if the user has not set the <code class="envar">G_FILENAME_ENCODING</code>
+   environment variable even though he has files whose names are not
+   encoded in UTF-8.
+</p>
+</li>
+<li class="listitem"><p>If your user interface lets the user type a file name for saving
+   or renaming, convert it to the encoding used for file names in
+   the file system by using <a class="link" href="glib-Character-Set-Conversion.html#g-filename-from-utf8" title="g_filename_from_utf8 ()"><code class="function">g_filename_from_utf8()</code></a>. Pass the converted
+   file name to functions like <code class="function">fopen()</code>. If conversion fails, ask the
+   user to enter a different file name. This can happen if the user
+   types Japanese characters when <code class="envar">G_FILENAME_ENCODING</code>
+   is set to <code class="literal">ISO-8859-1</code>, for example.</p></li>
+</ol></div>
+<p>
+</p>
+</div>
 </div>
 <div class="refsect1">
 <a name="glib-Character-Set-Conversion.details"></a><h2>Details</h2>
@@ -233,12 +229,17 @@ characters when <code class="envar">G_FILENAME_ENCODING</code> is set to
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> *bytes_written</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Converts a string from one character set to another.
-</p>
+Converts a string from one character set to another.</p>
 <p>
-Note that you should use <a class="link" href="glib-Character-Set-Conversion.html#g-iconv" title="g_iconv ()"><code class="function">g_iconv()</code></a> for streaming 
-conversions<a href="glib-Character-Set-Conversion.html#ftn.streaming-state" class="footnoteref"><sup class="footnoteref">[3]</sup></a>.
-</p>
+Note that you should use <a class="link" href="glib-Character-Set-Conversion.html#g-iconv" title="g_iconv ()"><code class="function">g_iconv()</code></a> for streaming conversions. 
+Despite the fact that <em class="parameter"><code>byes_read</code></em> can return information about partial 
+characters, the g_convert_... functions are not generally suitable
+for streaming. If the underlying converter maintains internal state,
+then this won't be preserved across successive calls to <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>,
+<a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-iconv" title="g_convert_with_iconv ()"><code class="function">g_convert_with_iconv()</code></a> or <a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-fallback" title="g_convert_with_fallback ()"><code class="function">g_convert_with_fallback()</code></a>. (An example of
+this is the GNU C converter for CP1255 which does not emit a base
+character until it knows that the next character is not a mark that
+could combine with the base character.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -252,7 +253,9 @@ conversions<a href="glib-Character-Set-Conversion.html#ftn.streaming-state" clas
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
 <td>the length of the string, or -1 if the string is
-nul-terminated<a href="#ftn.nul-unsafe" class="footnote" name="nul-unsafe"><sup class="footnote">[2]</sup></a>.</td>
+nul-terminated (Note that some encodings may allow nul
+bytes to occur inside strings. In that case, using -1
+for the <em class="parameter"><code>len</code></em> parameter is unsafe)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>to_codeset</code></em> :</span></p></td>
@@ -313,12 +316,17 @@ in the output. Note that it is not guaranteed that the specification
 for the fallback sequences in <em class="parameter"><code>fallback</code></em> will be honored. Some
 systems may do an approximate conversion from <em class="parameter"><code>from_codeset</code></em>
 to <em class="parameter"><code>to_codeset</code></em> in their <code class="function">iconv()</code> functions, 
-in which case GLib will simply return that approximate conversion.
-</p>
+in which case GLib will simply return that approximate conversion.</p>
 <p>
-Note that you should use <a class="link" href="glib-Character-Set-Conversion.html#g-iconv" title="g_iconv ()"><code class="function">g_iconv()</code></a> for streaming 
-conversions<a href="glib-Character-Set-Conversion.html#ftn.streaming-state" class="footnoteref"><sup class="footnoteref">[3]</sup></a>.
-</p>
+Note that you should use <a class="link" href="glib-Character-Set-Conversion.html#g-iconv" title="g_iconv ()"><code class="function">g_iconv()</code></a> for streaming conversions. 
+Despite the fact that <em class="parameter"><code>byes_read</code></em> can return information about partial 
+characters, the g_convert_... functions are not generally suitable
+for streaming. If the underlying converter maintains internal state,
+then this won't be preserved across successive calls to <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>,
+<a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-iconv" title="g_convert_with_iconv ()"><code class="function">g_convert_with_iconv()</code></a> or <a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-fallback" title="g_convert_with_fallback ()"><code class="function">g_convert_with_fallback()</code></a>. (An example of
+this is the GNU C converter for CP1255 which does not emit a base
+character until it knows that the next character is not a mark that
+could combine with the base character.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -332,7 +340,9 @@ conversions<a href="glib-Character-Set-Conversion.html#ftn.streaming-state" clas
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
 <td>the length of the string, or -1 if the string is
-nul-terminated<a href="glib-Character-Set-Conversion.html#ftn.nul-unsafe" class="footnoteref"><sup class="footnoteref">[2]</sup></a>.</td>
+nul-terminated (Note that some encodings may allow nul
+bytes to occur inside strings. In that case, using -1
+for the <em class="parameter"><code>len</code></em> parameter is unsafe)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>to_codeset</code></em> :</span></p></td>
@@ -393,12 +403,17 @@ nul-terminated string, which must be freed with
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> *bytes_written</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Converts a string from one character set to another. 
-</p>
+Converts a string from one character set to another. </p>
 <p>
-Note that you should use <a class="link" href="glib-Character-Set-Conversion.html#g-iconv" title="g_iconv ()"><code class="function">g_iconv()</code></a> for streaming 
-conversions<a href="#ftn.streaming-state" class="footnote" name="streaming-state"><sup class="footnote">[3]</sup></a>.
-</p>
+Note that you should use <a class="link" href="glib-Character-Set-Conversion.html#g-iconv" title="g_iconv ()"><code class="function">g_iconv()</code></a> for streaming conversions. 
+Despite the fact that <em class="parameter"><code>byes_read</code></em> can return information about partial 
+characters, the g_convert_... functions are not generally suitable
+for streaming. If the underlying converter maintains internal state,
+then this won't be preserved across successive calls to <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>,
+<a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-iconv" title="g_convert_with_iconv ()"><code class="function">g_convert_with_iconv()</code></a> or <a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-fallback" title="g_convert_with_fallback ()"><code class="function">g_convert_with_fallback()</code></a>. (An example of
+this is the GNU C converter for CP1255 which does not emit a base
+character until it knows that the next character is not a mark that
+could combine with the base character.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -412,7 +427,9 @@ conversions<a href="#ftn.streaming-state" class="footnote" name="streaming-state
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
 <td>the length of the string, or -1 if the string is
-nul-terminated<a href="glib-Character-Set-Conversion.html#ftn.nul-unsafe" class="footnoteref"><sup class="footnoteref">[2]</sup></a>.</td>
+nul-terminated (Note that some encodings may allow nul
+bytes to occur inside strings. In that case, using -1
+for the <em class="parameter"><code>len</code></em> parameter is unsafe)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>converter</code></em> :</span></p></td>
@@ -457,8 +474,7 @@ nul-terminated string, which must be freed with
 <p>
 Error domain for character set conversions. Errors in this domain will
 be from the <a class="link" href="glib-Character-Set-Conversion.html#GConvertError" title="enum GConvertError"><span class="type">GConvertError</span></a> enumeration. See <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> for information on
-error domains.
-</p>
+error domains.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -468,12 +484,10 @@ error domains.
 <p>
 Same as the standard UNIX routine <code class="function">iconv_open()</code>, but
 may be implemented via libiconv on UNIX flavors that lack
-a native implementation.
-</p>
+a native implementation.</p>
 <p>
 GLib provides <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a> and <a class="link" href="glib-Character-Set-Conversion.html#g-locale-to-utf8" title="g_locale_to_utf8 ()"><code class="function">g_locale_to_utf8()</code></a> which are likely
-more convenient than the raw iconv wrappers.
-</p>
+more convenient than the raw iconv wrappers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -507,12 +521,10 @@ opening the converter failed.</td>
 <p>
 Same as the standard UNIX routine <code class="function">iconv()</code>, but
 may be implemented via libiconv on UNIX flavors that lack
-a native implementation.
-</p>
+a native implementation.</p>
 <p>
 GLib provides <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a> and <a class="link" href="glib-Character-Set-Conversion.html#g-locale-to-utf8" title="g_locale_to_utf8 ()"><code class="function">g_locale_to_utf8()</code></a> which are likely
-more convenient than the raw iconv wrappers.
-</p>
+more convenient than the raw iconv wrappers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -558,12 +570,10 @@ Same as the standard UNIX routine <code class="function">iconv_close()</code>, b
 may be implemented via libiconv on UNIX flavors that lack
 a native implementation. Should be called to clean up
 the conversion descriptor from <a class="link" href="glib-Character-Set-Conversion.html#g-iconv-open" title="g_iconv_open ()"><code class="function">g_iconv_open()</code></a> when
-you are done converting things.
-</p>
+you are done converting things.</p>
 <p>
 GLib provides <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a> and <a class="link" href="glib-Character-Set-Conversion.html#g-locale-to-utf8" title="g_locale_to_utf8 ()"><code class="function">g_locale_to_utf8()</code></a> which are likely
-more convenient than the raw iconv wrappers.
-</p>
+more convenient than the raw iconv wrappers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -594,8 +604,7 @@ more convenient than the raw iconv wrappers.
 Converts a string which is in the encoding used for strings by
 the C runtime (usually the same as that used by the operating
 system) in the <a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a> into a
-UTF-8 string.
-</p>
+UTF-8 string.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -610,7 +619,9 @@ this means the system codepage.</td>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
 <td>the length of the string, or -1 if the string is
-nul-terminated<a href="glib-Character-Set-Conversion.html#ftn.nul-unsafe" class="footnoteref"><sup class="footnoteref">[2]</sup></a>.</td>
+nul-terminated (Note that some encodings may allow nul
+bytes to occur inside strings. In that case, using -1
+for the <em class="parameter"><code>len</code></em> parameter is unsafe)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>bytes_read</code></em> :</span></p></td>
@@ -653,8 +664,7 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 Converts a string which is in the encoding used by GLib for
 filenames into a UTF-8 string. Note that on Windows GLib uses UTF-8
 for filenames; on other platforms, this function indirectly depends on 
-the <a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.
-</p>
+the <a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -668,7 +678,9 @@ the <a class="link" href="glib-running.html#setlocale" title="Locale">current lo
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
 <td>the length of the string, or -1 if the string is
-nul-terminated<a href="glib-Character-Set-Conversion.html#ftn.nul-unsafe" class="footnoteref"><sup class="footnoteref">[2]</sup></a>.</td>
+nul-terminated (Note that some encodings may allow nul
+bytes to occur inside strings. In that case, using -1
+for the <em class="parameter"><code>len</code></em> parameter is unsafe)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>bytes_read</code></em> :</span></p></td>
@@ -710,8 +722,7 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 Converts a string from UTF-8 to the encoding GLib uses for
 filenames. Note that on Windows GLib uses UTF-8 for filenames;
 on other platforms, this function indirectly depends on the 
-<a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.
-</p>
+<a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -766,15 +777,13 @@ errors. Any of the errors in <a class="link" href="glib-Character-Set-Conversion
 Determines the preferred character sets used for filenames.
 The first character set from the <em class="parameter"><code>charsets</code></em> is the filename encoding, the
 subsequent character sets are used when trying to generate a displayable
-representation of a filename, see <a class="link" href="glib-Character-Set-Conversion.html#g-filename-display-name" title="g_filename_display_name ()"><code class="function">g_filename_display_name()</code></a>.
-</p>
+representation of a filename, see <a class="link" href="glib-Character-Set-Conversion.html#g-filename-display-name" title="g_filename_display_name ()"><code class="function">g_filename_display_name()</code></a>.</p>
 <p>
 On Unix, the character sets are determined by consulting the
 environment variables <code class="envar">G_FILENAME_ENCODING</code> and
 <code class="envar">G_BROKEN_FILENAMES</code>. On Windows, the character set
 used in the GLib API is always UTF-8 and said environment variables
-have no effect.
-</p>
+have no effect.</p>
 <p>
 <code class="envar">G_FILENAME_ENCODING</code> may be set to a comma-separated list 
 of character set names. The special token "@locale" is taken to 
@@ -783,16 +792,13 @@ locale</a>. If <code class="envar">G_FILENAME_ENCODING</code> is not set, but
 <code class="envar">G_BROKEN_FILENAMES</code> is, the character set of the current 
 locale is taken as the filename encoding. If neither environment variable 
 is set, UTF-8 is taken as the filename encoding, but the character
-set of the current locale is also put in the list of encodings.
-</p>
+set of the current locale is also put in the list of encodings.</p>
 <p>
-The returned <em class="parameter"><code>charsets</code></em> belong to GLib and must not be freed.
-</p>
+The returned <em class="parameter"><code>charsets</code></em> belong to GLib and must not be freed.</p>
 <p>
 Note that on Unix, regardless of the locale character set or
 <code class="envar">G_FILENAME_ENCODING</code> value, the actual file names present 
-on a system might be in any random encoding or just gibberish.
-</p>
+on a system might be in any random encoding or just gibberish.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -821,20 +827,17 @@ Converts a filename into a valid UTF-8 string. The conversion is
 not necessarily reversible, so you should keep the original around 
 and use the return value of this function only for display purposes.
 Unlike <a class="link" href="glib-Character-Set-Conversion.html#g-filename-to-utf8" title="g_filename_to_utf8 ()"><code class="function">g_filename_to_utf8()</code></a>, the result is guaranteed to be non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> 
-even if the filename actually isn't in the GLib file name encoding.
-</p>
+even if the filename actually isn't in the GLib file name encoding.</p>
 <p>
 If GLib cannot make sense of the encoding of <em class="parameter"><code>filename</code></em>, as a last resort it 
 replaces unknown characters with U+FFFD, the Unicode replacement character.
 You can search the result for the UTF-8 encoding of this character (which is
 "\357\277\275" in octal notation) to find out if <em class="parameter"><code>filename</code></em> was in an invalid
-encoding.
-</p>
+encoding.</p>
 <p>
 If you know the whole pathname of the file you should use
 <a class="link" href="glib-Character-Set-Conversion.html#g-filename-display-basename" title="g_filename_display_basename ()"><code class="function">g_filename_display_basename()</code></a>, since that allows location-based
-translation of filenames.
-</p>
+translation of filenames.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -862,23 +865,19 @@ a rendition of the filename in valid UTF-8</td>
 Returns the display basename for the particular filename, guaranteed
 to be valid UTF-8. The display name might not be identical to the filename,
 for instance there might be problems converting it to UTF-8, and some files
-can be translated in the display.
-</p>
+can be translated in the display.</p>
 <p>
 If GLib cannot make sense of the encoding of <em class="parameter"><code>filename</code></em>, as a last resort it 
 replaces unknown characters with U+FFFD, the Unicode replacement character.
 You can search the result for the UTF-8 encoding of this character (which is
 "\357\277\275" in octal notation) to find out if <em class="parameter"><code>filename</code></em> was in an invalid
-encoding.
-</p>
+encoding.</p>
 <p>
 You must pass the whole absolute pathname to this functions so that
-translation of well known locations can be done.
-</p>
+translation of well known locations can be done.</p>
 <p>
 This function is preferred over <a class="link" href="glib-Character-Set-Conversion.html#g-filename-display-name" title="g_filename_display_name ()"><code class="function">g_filename_display_name()</code></a> if you know the
-whole path, as it allows translation.
-</p>
+whole path, as it allows translation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -910,8 +909,7 @@ a rendition of the basename of the filename in valid UTF-8</td>
 Converts a string from UTF-8 to the encoding used for strings by
 the C runtime (usually the same as that used by the operating
 system) in the <a class="link" href="glib-running.html#setlocale" title="Locale">current locale</a>. On
-Windows this means the system codepage.
-</p>
+Windows this means the system codepage.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -925,7 +923,9 @@ Windows this means the system codepage.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>len</code></em> :</span></p></td>
 <td>the length of the string, or -1 if the string is
-nul-terminated<a href="glib-Character-Set-Conversion.html#ftn.nul-unsafe" class="footnoteref"><sup class="footnoteref">[2]</sup></a>.</td>
+nul-terminated (Note that some encodings may allow nul
+bytes to occur inside strings. In that case, using -1
+for the <em class="parameter"><code>len</code></em> parameter is unsafe)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>bytes_read</code></em> :</span></p></td>
@@ -970,8 +970,7 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 } GConvertError;
 </pre>
 <p>
-Error codes returned by character set conversion routines.
-</p>
+Error codes returned by character set conversion routines.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1026,23 +1025,19 @@ Obtains the character set for the <a class="link" href="glib-running.html#setloc
 locale</a>; you might use this character set as an argument to
 <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>, to convert from the current locale's encoding to some
 other encoding. (Frequently <a class="link" href="glib-Character-Set-Conversion.html#g-locale-to-utf8" title="g_locale_to_utf8 ()"><code class="function">g_locale_to_utf8()</code></a> and <a class="link" href="glib-Character-Set-Conversion.html#g-locale-from-utf8" title="g_locale_from_utf8 ()"><code class="function">g_locale_from_utf8()</code></a>
-are nice shortcuts, though.)
-</p>
+are nice shortcuts, though.)</p>
 <p>
 On Windows the character set returned by this function is the
 so-called system default ANSI code-page. That is the character set
 used by the "narrow" versions of C library and Win32 functions that
 handle file names. It might be different from the character set
-used by the C library's current locale.
-</p>
+used by the C library's current locale.</p>
 <p>
 The return value is <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the locale's encoding is UTF-8, in that
-case you can perhaps avoid calling <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>.
-</p>
+case you can perhaps avoid calling <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>.</p>
 <p>
 The string returned in <em class="parameter"><code>charset</code></em> is not allocated, and should not be
-freed.
-</p>
+freed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1066,8 +1061,7 @@ freed.
 <a name="g-get-codeset"></a><h3>g_get_codeset ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="returnvalue">gchar</span></a> *             g_get_codeset                       (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Gets the character set for the current locale.
-</p>
+Gets the character set for the current locale.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1081,28 +1075,9 @@ of the character set. This string must be freed with <a class="link" href="glib-
 </table></div>
 </div>
 </div>
-<div class="footnotes">
-<br><hr style="width:100; text-align:left;margin-left: 0">
-<div id="ftn.nul-unsafe" class="footnote"><p><a href="#nul-unsafe" class="para"><sup class="para">[2] </sup></a>
-Note that some encodings may allow nul bytes to
-occur inside strings. In that case, using -1 for
-the <em class="parameter"><code>len</code></em> parameter is unsafe.
-</p></div>
-<div id="ftn.streaming-state" class="footnote"><p><a href="#streaming-state" class="para"><sup class="para">[3] </sup></a>
-Despite the fact that <em class="parameter"><code>byes_read</code></em> can return information about partial 
-characters, the <code class="literal">g_convert_...</code> functions
-are not generally suitable for streaming. If the underlying converter 
-being used maintains internal state, then this won't be preserved 
-across successive calls to <a class="link" href="glib-Character-Set-Conversion.html#g-convert" title="g_convert ()"><code class="function">g_convert()</code></a>, <a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-iconv" title="g_convert_with_iconv ()"><code class="function">g_convert_with_iconv()</code></a> or 
-<a class="link" href="glib-Character-Set-Conversion.html#g-convert-with-fallback" title="g_convert_with_fallback ()"><code class="function">g_convert_with_fallback()</code></a>. (An example of this is the GNU C converter 
-for CP1255 which does not emit a base character until it knows that 
-the next character is not a mark that could combine with the base 
-character.)
- </p></div>
-</div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

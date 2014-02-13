@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -791,11 +789,10 @@ enumerate_mimetypes_dir (const char *dir,
  *
  * Gets a list of strings containing all the registered content types
  * known to the system. The list and its data should be freed using
- * <programlisting>
- * g_list_free_full (list, g_free);
- * </programlisting>
+ * g_list_free_full (list, g_free).
  *
- * Returns: (element-type utf8) (transfer full): #GList of the registered content types
+ * Returns: (element-type utf8) (transfer full): list of the registered
+ *     content types
  */
 GList *
 g_content_types_get_registered (void)

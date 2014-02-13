@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Byte Order Macros</title>
+<title>GLib Reference Manual: Byte Order Macros</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-fundamentals.html" title="GLib Fundamentals">
 <link rel="prev" href="glib-Type-Conversion-Macros.html" title="Type Conversion Macros">
 <link rel="next" href="glib-Numerical-Definitions.html" title="Numerical Definitions">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Type-Conversion-Macros.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-fundamentals.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Numerical-Definitions.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Byte-Order-Macros.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Byte-Order-Macros.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-fundamentals.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Type-Conversion-Macros.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Numerical-Definitions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Byte-Order-Macros"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -125,25 +122,21 @@
 <a name="glib-Byte-Order-Macros.description"></a><h2>Description</h2>
 <p>
 These macros provide a portable way to determine the host byte order
-and to convert values between different byte orders.
-</p>
+and to convert values between different byte orders.</p>
 <p>
 The byte order is the order in which bytes are stored to create larger
 data types such as the <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> and <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> values.
-The host byte order is the byte order used on the current machine.
-</p>
+The host byte order is the byte order used on the current machine.</p>
 <p>
 Some processors store the most significant bytes (i.e. the bytes that
 hold the largest part of the value) first. These are known as big-endian
 processors. Other processors (notably the x86 family) store the most
-significant byte last. These are known as little-endian processors.
-</p>
+significant byte last. These are known as little-endian processors.</p>
 <p>
 Finally, to complicate matters, some other processors store the bytes in
 a rather curious order known as PDP-endian. For a 4-byte word, the 3rd
 most significant byte is stored first, then the 4th, then the 1st and
-finally the 2nd.
-</p>
+finally the 2nd.</p>
 <p>
 Obviously there is a problem when these different processors communicate
 with each other, for example over networks or by using binary file formats.
@@ -151,13 +144,11 @@ This is where these macros come in. They are typically used to convert
 values into a byte order which has been agreed on for use when
 communicating between different processors. The Internet uses what is
 known as 'network byte order' as the standard byte order (which is in
-fact the big-endian byte order).
-</p>
+fact the big-endian byte order).</p>
 <p>
 Note that the byte order conversion macros may evaluate their arguments
 multiple times, thus you should not use them with arguments which have
-side-effects.
-</p>
+side-effects.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Byte-Order-Macros.details"></a><h2>Details</h2>
@@ -168,8 +159,7 @@ side-effects.
 <p>
 The host byte order.
 This can be either <a class="link" href="glib-Byte-Order-Macros.html#G-LITTLE-ENDIAN:CAPS" title="G_LITTLE_ENDIAN"><span class="type">G_LITTLE_ENDIAN</span></a> or <a class="link" href="glib-Byte-Order-Macros.html#G-BIG-ENDIAN:CAPS" title="G_BIG_ENDIAN"><span class="type">G_BIG_ENDIAN</span></a> (support for
-<a class="link" href="glib-Byte-Order-Macros.html#G-PDP-ENDIAN:CAPS" title="G_PDP_ENDIAN"><span class="type">G_PDP_ENDIAN</span></a> may be added in future.)
-</p>
+<a class="link" href="glib-Byte-Order-Macros.html#G-PDP-ENDIAN:CAPS" title="G_PDP_ENDIAN"><span class="type">G_PDP_ENDIAN</span></a> may be added in future.)</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -178,8 +168,7 @@ This can be either <a class="link" href="glib-Byte-Order-Macros.html#G-LITTLE-EN
 </pre>
 <p>
 Specifies one of the possible types of byte order.
-See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="G_BYTE_ORDER"><span class="type">G_BYTE_ORDER</span></a>.
-</p>
+See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="G_BYTE_ORDER"><span class="type">G_BYTE_ORDER</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -188,8 +177,7 @@ See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="
 </pre>
 <p>
 Specifies one of the possible types of byte order.
-See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="G_BYTE_ORDER"><span class="type">G_BYTE_ORDER</span></a>.
-</p>
+See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="G_BYTE_ORDER"><span class="type">G_BYTE_ORDER</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -198,16 +186,14 @@ See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="
 </pre>
 <p>
 Specifies one of the possible types of byte order
-(currently unused). See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="G_BYTE_ORDER"><span class="type">G_BYTE_ORDER</span></a>.
-</p>
+(currently unused). See <a class="link" href="glib-Byte-Order-Macros.html#G-BYTE-ORDER:CAPS" title="G_BYTE_ORDER"><span class="type">G_BYTE_ORDER</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-htonl"></a><h3>g_htonl()</h3>
 <pre class="programlisting">#define             g_htonl(val)</pre>
 <p>
-Converts a 32-bit integer value from host to network byte order.
-</p>
+Converts a 32-bit integer value from host to network byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -231,8 +217,7 @@ Converts a 32-bit integer value from host to network byte order.
 <a name="g-htons"></a><h3>g_htons()</h3>
 <pre class="programlisting">#define             g_htons(val)</pre>
 <p>
-Converts a 16-bit integer value from host to network byte order.
-</p>
+Converts a 16-bit integer value from host to network byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -256,8 +241,7 @@ Converts a 16-bit integer value from host to network byte order.
 <a name="g-ntohl"></a><h3>g_ntohl()</h3>
 <pre class="programlisting">#define             g_ntohl(val)</pre>
 <p>
-Converts a 32-bit integer value from network to host byte order.
-</p>
+Converts a 32-bit integer value from network to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -281,8 +265,7 @@ Converts a 32-bit integer value from network to host byte order.
 <a name="g-ntohs"></a><h3>g_ntohs()</h3>
 <pre class="programlisting">#define             g_ntohs(val)</pre>
 <p>
-Converts a 16-bit integer value from network to host byte order.
-</p>
+Converts a 16-bit integer value from network to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -307,8 +290,7 @@ Converts a 16-bit integer value from network to host byte order.
 <pre class="programlisting">#define GINT_FROM_BE(val) (GINT_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -333,8 +315,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span 
 <pre class="programlisting">#define GINT_FROM_LE(val) (GINT_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -359,8 +340,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span 
 <pre class="programlisting">#define GINT_TO_BE(val)		((gint) GINT32_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -385,8 +365,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span 
 <pre class="programlisting">#define GINT_TO_LE(val)		((gint) GINT32_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -411,8 +390,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint" title="gint"><span 
 <pre class="programlisting">#define GUINT_FROM_BE(val) (GUINT_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -437,8 +415,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><spa
 <pre class="programlisting">#define GUINT_FROM_LE(val) (GUINT_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -463,8 +440,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><spa
 <pre class="programlisting">#define GUINT_TO_BE(val) ((guint) GUINT32_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -489,8 +465,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><spa
 <pre class="programlisting">#define GUINT_TO_LE(val) ((guint) GUINT32_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -515,8 +490,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint" title="guint"><spa
 <pre class="programlisting">#define GLONG_FROM_BE(val) (GLONG_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from big-endian to the host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from big-endian to the host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -541,8 +515,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><spa
 <pre class="programlisting">#define GLONG_FROM_LE(val) (GLONG_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -567,8 +540,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><spa
 <pre class="programlisting">#define GLONG_TO_BE(val) ((glong) GINT64_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -593,8 +565,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><spa
 <pre class="programlisting">#define GLONG_TO_LE(val) ((glong) GINT64_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><span class="type">glong</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -619,8 +590,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#glong" title="glong"><spa
 <pre class="programlisting">#define GULONG_FROM_BE(val) (GULONG_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -645,8 +615,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><s
 <pre class="programlisting">#define GULONG_FROM_LE(val) (GULONG_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -671,8 +640,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><s
 <pre class="programlisting">#define GULONG_TO_BE(val) ((gulong) GUINT64_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -697,8 +665,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><s
 <pre class="programlisting">#define GULONG_TO_LE(val) ((gulong) GUINT64_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -723,8 +690,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><s
 <pre class="programlisting">#define GSIZE_FROM_BE(val) (GSIZE_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from big-endian to the host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from big-endian to the host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -749,8 +715,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><spa
 <pre class="programlisting">#define GSIZE_FROM_LE(val) (GSIZE_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -775,8 +740,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><spa
 <pre class="programlisting">#define GSIZE_TO_BE(val) ((gsize) GUINT64_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -801,8 +765,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><spa
 <pre class="programlisting">#define GSIZE_TO_LE(val) ((gsize) GUINT64_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -827,8 +790,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><spa
 <pre class="programlisting">#define GSSIZE_FROM_BE(val) (GSSIZE_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -853,8 +815,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><s
 <pre class="programlisting">#define GSSIZE_FROM_LE(val) (GSSIZE_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -879,8 +840,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><s
 <pre class="programlisting">#define GSSIZE_TO_BE(val) ((gssize) GINT64_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -905,8 +865,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><s
 <pre class="programlisting">#define GSSIZE_TO_LE(val) ((gssize) GINT64_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><span class="type">gssize</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -931,8 +890,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gssize" title="gssize"><s
 <pre class="programlisting">#define GINT16_FROM_BE(val) (GINT16_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -957,8 +915,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><s
 <pre class="programlisting">#define GINT16_FROM_LE(val) (GINT16_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -983,8 +940,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><s
 <pre class="programlisting">#define GINT16_TO_BE(val) ((gint16) GUINT16_SWAP_LE_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1009,8 +965,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><s
 <pre class="programlisting">#define GINT16_TO_LE(val) ((gint16) (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><span class="type">gint16</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1035,8 +990,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint16" title="gint16"><s
 <pre class="programlisting">#define GUINT16_FROM_BE(val) (GUINT16_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1061,8 +1015,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16">
 <pre class="programlisting">#define GUINT16_FROM_LE(val) (GUINT16_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1087,8 +1040,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16">
 <pre class="programlisting">#define GUINT16_TO_BE(val) (GUINT16_SWAP_LE_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1113,8 +1065,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16">
 <pre class="programlisting">#define GUINT16_TO_LE(val) ((guint16) (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1139,8 +1090,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16">
 <pre class="programlisting">#define GINT32_FROM_BE(val) (GINT32_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1165,8 +1115,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><s
 <pre class="programlisting">#define GINT32_FROM_LE(val) (GINT32_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1191,8 +1140,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><s
 <pre class="programlisting">#define GINT32_TO_BE(val) ((gint32) GUINT32_SWAP_LE_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1217,8 +1165,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><s
 <pre class="programlisting">#define GINT32_TO_LE(val) ((gint32) (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><span class="type">gint32</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1243,8 +1190,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint32" title="gint32"><s
 <pre class="programlisting">#define GUINT32_FROM_BE(val) (GUINT32_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1269,8 +1215,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32">
 <pre class="programlisting">#define GUINT32_FROM_LE(val) (GUINT32_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1295,8 +1240,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32">
 <pre class="programlisting">#define GUINT32_TO_BE(val) (GUINT32_SWAP_LE_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1321,8 +1265,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32">
 <pre class="programlisting">#define GUINT32_TO_LE(val) ((guint32) (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1347,8 +1290,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32">
 <pre class="programlisting">#define GINT64_FROM_BE(val) (GINT64_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1373,8 +1315,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><s
 <pre class="programlisting">#define GINT64_FROM_LE(val) (GINT64_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1399,8 +1340,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><s
 <pre class="programlisting">#define GINT64_TO_BE(val) ((gint64) GUINT64_SWAP_LE_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1425,8 +1365,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><s
 <pre class="programlisting">#define GINT64_TO_LE(val) ((gint64) (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><span class="type">gint64</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1451,8 +1390,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#gint64" title="gint64"><s
 <pre class="programlisting">#define GUINT64_FROM_BE(val) (GUINT64_TO_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from big-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from big-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1477,8 +1415,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64">
 <pre class="programlisting">#define GUINT64_FROM_LE(val) (GUINT64_TO_LE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from little-endian to host byte order.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from little-endian to host byte order.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1503,8 +1440,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64">
 <pre class="programlisting">#define GUINT64_TO_BE(val) (GUINT64_SWAP_LE_BE (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from host byte order to big-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from host byte order to big-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1529,8 +1465,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64">
 <pre class="programlisting">#define GUINT64_TO_LE(val) ((guint64) (val))
 </pre>
 <p>
-Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from host byte order to little-endian.
-</p>
+Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value from host byte order to little-endian.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1556,8 +1491,7 @@ Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64">
 </pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value between big-endian and pdp-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1583,8 +1517,7 @@ The conversion is symmetric so it can be used both ways.
 </pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value between little-endian and big-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1610,8 +1543,7 @@ The conversion is symmetric so it can be used both ways.
 </pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint16" title="guint16"><span class="type">guint16</span></a> value between little-endian and pdp-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1636,8 +1568,7 @@ The conversion is symmetric so it can be used both ways.
 <pre class="programlisting">#define             GUINT32_SWAP_BE_PDP(val)</pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value between big-endian and pdp-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1663,8 +1594,7 @@ The conversion is symmetric so it can be used both ways.
 </pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value between little-endian and big-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1689,8 +1619,7 @@ The conversion is symmetric so it can be used both ways.
 <pre class="programlisting">#define             GUINT32_SWAP_LE_PDP(val)</pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint32" title="guint32"><span class="type">guint32</span></a> value between little-endian and pdp-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1716,8 +1645,7 @@ The conversion is symmetric so it can be used both ways.
 </pre>
 <p>
 Converts a <a class="link" href="glib-Basic-Types.html#guint64" title="guint64"><span class="type">guint64</span></a> value between little-endian and big-endian byte order.
-The conversion is symmetric so it can be used both ways.
-</p>
+The conversion is symmetric so it can be used both ways.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1740,6 +1668,6 @@ The conversion is symmetric so it can be used both ways.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

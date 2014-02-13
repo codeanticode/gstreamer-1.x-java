@@ -37,7 +37,6 @@
 #include "ghash.h"
 #include "glibintl.h"
 #include "glist.h"
-#include "gslist.h"
 #include "gmain.h"
 #include "gmarkup.h"
 #include "gmem.h"
@@ -80,7 +79,8 @@
  * the bookmark as "private" to the applications and groups that has it
  * registered; the URI and MIME type of an icon, to be used when displaying
  * the bookmark inside a GUI.
- * |[<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" parse="text" href="../../../../glib/tests/bookmarks.xbel"><xi:fallback>FIXME: MISSING XINCLUDE CONTENT</xi:fallback></xi:include>]|
+ *
+ * Here is an example of a bookmark file: <ulink url="https://git.gnome.org/browse/glib/tree/glib/tests/bookmarks.xbel">bookmarks.xbel</ulink>
  *
  * A bookmark file might contain more than one bookmark; each bookmark
  * is accessed through its URI.

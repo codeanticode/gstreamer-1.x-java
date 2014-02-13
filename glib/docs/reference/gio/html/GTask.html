@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GTask</title>
+<title>GIO Reference Manual: GTask</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="async.html" title="Asynchronous I/O">
 <link rel="prev" href="GAsyncResult.html" title="GAsyncResult">
 <link rel="next" href="gio-GIOScheduler.html" title="GIOScheduler">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GAsyncResult.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="async.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-GIOScheduler.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GTask.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GTask.description" class="shortcut">Description</a>
                    | 
                   <a href="#GTask.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GTask.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="async.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GAsyncResult.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-GIOScheduler.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GTask"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -141,33 +138,30 @@ GTask implements
 <div class="refsect1">
 <a name="GTask.description"></a><h2>Description</h2>
 <p>
-</p>
-<p>
-  A <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> represents and manages a cancellable "task".
-</p>
+A <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> represents and manages a cancellable "task".</p>
 <p>
 </p>
-<div class="refsect2">
-<a name="id-1.4.5.4.6.2.2"></a><h3>Asynchronous operations</h3>
+<div class="refsect3">
+<a name="id-1.4.5.4.6.4"></a><h4>Asynchronous operations</h4>
 <p>
-    The most common usage of <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> is as a <a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a>, to
-    manage data during an asynchronous operation. You call
-    <a class="link" href="GTask.html#g-task-new" title="g_task_new ()"><code class="function">g_task_new()</code></a> in the "start" method, followed by
-    <a class="link" href="GTask.html#g-task-set-task-data" title="g_task_set_task_data ()"><code class="function">g_task_set_task_data()</code></a> and the like if you need to keep some
-    additional data associated with the task, and then pass the
-    task object around through your asynchronous operation.
-    Eventually, you will call a method such as
-    <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> or <a class="link" href="GTask.html#g-task-return-error" title="g_task_return_error ()"><code class="function">g_task_return_error()</code></a>, which will
-    save the value you give it and then invoke the task's callback
-    function (waiting until the next iteration of the main
-    loop first, if necessary). The caller will pass the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> back
-    to the operation's finish function (as a <a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a>), and
-    you can use <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a> or the like to extract
-    the return value.
-  </p>
-<div class="example">
-<a name="gtask-async"></a><p class="title"><b>Example 1. GTask as a GAsyncResult</b></p>
-<div class="example-contents">
+The most common usage of <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> is as a <a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a>, to
+manage data during an asynchronous operation. You call
+<a class="link" href="GTask.html#g-task-new" title="g_task_new ()"><code class="function">g_task_new()</code></a> in the "start" method, followed by
+<a class="link" href="GTask.html#g-task-set-task-data" title="g_task_set_task_data ()"><code class="function">g_task_set_task_data()</code></a> and the like if you need to keep some
+additional data associated with the task, and then pass the
+task object around through your asynchronous operation.
+Eventually, you will call a method such as
+<a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> or <a class="link" href="GTask.html#g-task-return-error" title="g_task_return_error ()"><code class="function">g_task_return_error()</code></a>, which will
+save the value you give it and then invoke the task's callback
+function (waiting until the next iteration of the main
+loop first, if necessary). The caller will pass the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> back
+to the operation's finish function (as a <a class="link" href="GAsyncResult.html" title="GAsyncResult"><span class="type">GAsyncResult</span></a>), and
+you can use <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a> or the like to extract
+the return value.</p>
+<p>
+Here is an example for using GTask as a GAsyncResult:
+</p>
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -358,28 +352,25 @@ GTask implements
   </table>
 </div>
 
-</div>
-<br class="example-break">
-</div>
 <p>
 </p>
-<hr>
-<div class="refsect2">
-<a name="id-1.4.5.4.6.2.3"></a><h3>Chained asynchronous operations</h3>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.6.5"></a><h4>Chained asynchronous operations</h4>
 <p>
-    <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> also tries to simplify asynchronous operations that
-    internally chain together several smaller asynchronous
-    operations. <a class="link" href="GTask.html#g-task-get-cancellable" title="g_task_get_cancellable ()"><code class="function">g_task_get_cancellable()</code></a>, <a class="link" href="GTask.html#g-task-get-context" title="g_task_get_context ()"><code class="function">g_task_get_context()</code></a>, and
-    <a class="link" href="GTask.html#g-task-get-priority" title="g_task_get_priority ()"><code class="function">g_task_get_priority()</code></a> allow you to get back the task's
-    <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>, <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>, and <a class="link" href="GAsyncResult.html#io-priority">I/O priority</a> when starting a new
-    subtask, so you don't have to keep track of them yourself.
-    <a class="link" href="GTask.html#g-task-attach-source" title="g_task_attach_source ()"><code class="function">g_task_attach_source()</code></a> simplifies the case of waiting for a
-    source to fire (automatically using the correct <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>
-    and priority).
+<a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> also tries to simplify asynchronous operations that
+internally chain together several smaller asynchronous
+operations. <a class="link" href="GTask.html#g-task-get-cancellable" title="g_task_get_cancellable ()"><code class="function">g_task_get_cancellable()</code></a>, <a class="link" href="GTask.html#g-task-get-context" title="g_task_get_context ()"><code class="function">g_task_get_context()</code></a>, and
+<a class="link" href="GTask.html#g-task-get-priority" title="g_task_get_priority ()"><code class="function">g_task_get_priority()</code></a> allow you to get back the task's
+<a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>, <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>, and <a class="link" href="GAsyncResult.html#io-priority">I/O priority</a> when starting a new
+subtask, so you don't have to keep track of them yourself.
+<a class="link" href="GTask.html#g-task-attach-source" title="g_task_attach_source ()"><code class="function">g_task_attach_source()</code></a> simplifies the case of waiting for a
+source to fire (automatically using the correct <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>
+and priority).</p>
+<p>
+Here is an example for chained asynchronous operations:
   </p>
-<div class="example">
-<a name="gtask-chained"></a><p class="title"><b>Example 2. Chained asynchronous operations</b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -636,23 +627,20 @@ GTask implements
   </table>
 </div>
 
-</div>
-<br class="example-break">
-</div>
 <p>
 </p>
-<hr>
-<div class="refsect2">
-<a name="id-1.4.5.4.6.2.4"></a><h3>Asynchronous operations from synchronous ones</h3>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.6.6"></a><h4>Asynchronous operations from synchronous ones</h4>
 <p>
-    You can use <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> to turn a synchronous
-    operation into an asynchronous one, by running it in a thread
-    which will then dispatch the result back to the caller's
-    <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> when it completes.
+You can use <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> to turn a synchronous
+operation into an asynchronous one, by running it in a thread
+which will then dispatch the result back to the caller's
+<a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> when it completes.</p>
+<p>
+Running a task in a thread:
   </p>
-<div class="example">
-<a name="gtask-run-in-thread"></a><p class="title"><b>Example 3. <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a></b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -793,30 +781,27 @@ GTask implements
   </table>
 </div>
 
-</div>
-<br class="example-break">
-</div>
 <p>
 </p>
-<hr>
-<div class="refsect2">
-<a name="id-1.4.5.4.6.2.5"></a><h3>Adding cancellability to uncancellable tasks</h3>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.6.7"></a><h4>Adding cancellability to uncancellable tasks</h4>
 <p>
-    Finally, <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> and <a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>
-    can be used to turn an uncancellable operation into a
-    cancellable one. If you call <a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a>,
-    passing <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then if the task's <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> is cancelled,
-    it will return control back to the caller immediately, while
-    allowing the task thread to continue running in the background
-    (and simply discarding its result when it finally does finish).
-    Provided that the task thread is careful about how it uses
-    locks and other externally-visible resources, this allows you
-    to make "GLib-friendly" asynchronous and cancellable
-    synchronous variants of blocking APIs.
+Finally, <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> and <a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>
+can be used to turn an uncancellable operation into a
+cancellable one. If you call <a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a>,
+passing <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then if the task's <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> is cancelled,
+it will return control back to the caller immediately, while
+allowing the task thread to continue running in the background
+(and simply discarding its result when it finally does finish).
+Provided that the task thread is careful about how it uses
+locks and other externally-visible resources, this allows you
+to make "GLib-friendly" asynchronous and cancellable
+synchronous variants of blocking APIs.</p>
+<p>
+Cancelling a task:
   </p>
-<div class="example">
-<a name="gtask-cancellable"></a><p class="title"><b>Example 4. <a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a></b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -959,7 +944,7 @@ GTask implements
 <span class="normal">                       </span><span class="usertype">GAsyncReadyCallback</span><span class="normal">  callback</span><span class="symbol">,</span>
 <span class="normal">                       </span><span class="usertype">gpointer</span><span class="normal">             user_data</span><span class="symbol">)</span>
 <span class="cbracket">{</span>
-<span class="normal">  </span><span class="usertype">CakeData</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">cake_data</span><span class="symbol">;</span>
+<span class="normal"> J</span><span class="symbol">*</span><span class="normal">       </span><span class="usertype">CakeData</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">cake_data</span><span class="symbol">;</span>
 <span class="normal">  </span><span class="usertype">GTask</span><span class="normal"> </span><span class="symbol">*</span><span class="normal">task</span><span class="symbol">;</span>
 
 <span class="normal">  cake_data </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="http://library.gnome.org/devel/glib/unstable/glib-Memory-Slices.html#g-slice-new">g_slice_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">CakeData</span><span class="symbol">);</span>
@@ -1001,87 +986,71 @@ GTask implements
   </table>
 </div>
 
-</div>
-<br class="example-break">
-</div>
 <p>
 </p>
-<hr>
-<div class="refsect2">
-<a name="id-1.4.5.4.6.2.6"></a><h3>Porting from <code class="literal">GSimpleAsyncResult</code>
-</h3>
+</div>
+<div class="refsect3">
+<a name="id-1.4.5.4.6.8"></a><h4>Porting from GSimpleAsyncResult</h4>
 <p>
-    <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a>'s API attempts to be simpler than <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a>'s
-    in several ways:
-  </p>
+<a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a>'s API attempts to be simpler than <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a>'s
+in several ways:
+</p>
 <div class="itemizedlist"><ul class="itemizedlist" style="list-style-type: disc; ">
-<li class="listitem"><p>
-      You can save task-specific data with <a class="link" href="GTask.html#g-task-set-task-data" title="g_task_set_task_data ()"><code class="function">g_task_set_task_data()</code></a>, and
-      retrieve it later with <a class="link" href="GTask.html#g-task-get-task-data" title="g_task_get_task_data ()"><code class="function">g_task_get_task_data()</code></a>. This replaces the
-      abuse of <a class="link" href="GSimpleAsyncResult.html#g-simple-async-result-set-op-res-gpointer" title="g_simple_async_result_set_op_res_gpointer ()"><code class="function">g_simple_async_result_set_op_res_gpointer()</code></a> for the same
-      purpose with <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a>.
-    </p></li>
-<li class="listitem"><p>
-      In addition to the task data, <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> also keeps track of the
-      <a class="link" href="GAsyncResult.html#io-priority">priority</a>, <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>, and
-      <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> associated with the task, so tasks that consist of
-      a chain of simpler asynchronous operations will have easy access
-      to those values when starting each sub-task.
-    </p></li>
-<li class="listitem"><p>
-      <a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a> provides simplified
-      handling for cancellation. In addition, cancellation
-      overrides any other <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> return value by default, like
-      <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a> does when
-      <a class="link" href="GSimpleAsyncResult.html#g-simple-async-result-set-check-cancellable" title="g_simple_async_result_set_check_cancellable ()"><code class="function">g_simple_async_result_set_check_cancellable()</code></a> is called.
-      (You can use <a class="link" href="GTask.html#g-task-set-check-cancellable" title="g_task_set_check_cancellable ()"><code class="function">g_task_set_check_cancellable()</code></a> to turn off that
-      behavior.) On the other hand, <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a>
-      guarantees that it will always run your
-      <code class="literal">task_func</code>, even if the task's <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>
-      is already cancelled before the task gets a chance to run;
-      you can start your <code class="literal">task_func</code> with a
-      <a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a> check if you need the
-      old behavior.
-    </p></li>
-<li class="listitem"><p>
-      The "return" methods (eg, <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a>)
-      automatically cause the task to be "completed" as well, and
-      there is no need to worry about the "complete" vs "complete
-      in idle" distinction. (<a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> automatically figures out
-      whether the task's callback can be invoked directly, or
-      if it needs to be sent to another <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>, or delayed
-      until the next iteration of the current <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.)
-    </p></li>
-<li class="listitem"><p>
-      The "finish" functions for <span class="type">GTask-based</span> operations are generally
-      much simpler than <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a> ones, normally consisting
-      of only a single call to <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a> or the like.
-      Since <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a> "steals" the return value from
-      the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a>, it is not necessary to juggle pointers around to
-      prevent it from being freed twice.
-    </p></li>
-<li class="listitem"><p>
-      With <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a>, it was common to call
-      <a class="link" href="GSimpleAsyncResult.html#g-simple-async-result-propagate-error" title="g_simple_async_result_propagate_error ()"><code class="function">g_simple_async_result_propagate_error()</code></a> from the
-      <code class="literal"><code class="function">_finish()</code></code> wrapper function, and have
-      virtual method implementations only deal with successful
-      returns. This behavior is deprecated, because it makes it
-      difficult for a subclass to chain to a parent class's async
-      methods. Instead, the wrapper function should just be a
-      simple wrapper, and the virtual method should call an
-      appropriate <code class="literal">g_task_propagate_</code> function.
-      Note that wrapper methods can now use
-      <a class="link" href="GAsyncResult.html#g-async-result-legacy-propagate-error" title="g_async_result_legacy_propagate_error ()"><code class="function">g_async_result_legacy_propagate_error()</code></a> to do old-style
-      <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a> error-returning behavior, and
-      <a class="link" href="GAsyncResult.html#g-async-result-is-tagged" title="g_async_result_is_tagged ()"><code class="function">g_async_result_is_tagged()</code></a> to check if a result is tagged as
-      having come from the <code class="literal"><a class="link" href="async.html" title="Asynchronous I/O"><code class="function">_async()</code></a></code> wrapper
-      function (for "short-circuit" results, such as when passing
-      0 to <a class="link" href="GInputStream.html#g-input-stream-read-async" title="g_input_stream_read_async ()"><code class="function">g_input_stream_read_async()</code></a>).
-    </p></li>
+<li class="listitem"><p>You can save task-specific data with <a class="link" href="GTask.html#g-task-set-task-data" title="g_task_set_task_data ()"><code class="function">g_task_set_task_data()</code></a>, and
+  retrieve it later with <a class="link" href="GTask.html#g-task-get-task-data" title="g_task_get_task_data ()"><code class="function">g_task_get_task_data()</code></a>. This replaces the
+  abuse of <a class="link" href="GSimpleAsyncResult.html#g-simple-async-result-set-op-res-gpointer" title="g_simple_async_result_set_op_res_gpointer ()"><code class="function">g_simple_async_result_set_op_res_gpointer()</code></a> for the same
+  purpose with <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a>.</p></li>
+<li class="listitem"><p>In addition to the task data, <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> also keeps track of the
+  <a class="link" href="GAsyncResult.html#io-priority">priority</a>, <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>, and
+  <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> associated with the task, so tasks that consist of
+  a chain of simpler asynchronous operations will have easy access
+  to those values when starting each sub-task.</p></li>
+<li class="listitem"><p><a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a> provides simplified
+  handling for cancellation. In addition, cancellation
+  overrides any other <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> return value by default, like
+  <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a> does when
+  <a class="link" href="GSimpleAsyncResult.html#g-simple-async-result-set-check-cancellable" title="g_simple_async_result_set_check_cancellable ()"><code class="function">g_simple_async_result_set_check_cancellable()</code></a> is called.
+  (You can use <a class="link" href="GTask.html#g-task-set-check-cancellable" title="g_task_set_check_cancellable ()"><code class="function">g_task_set_check_cancellable()</code></a> to turn off that
+  behavior.) On the other hand, <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a>
+  guarantees that it will always run your
+  <code class="literal">task_func</code>, even if the task's <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>
+  is already cancelled before the task gets a chance to run;
+  you can start your <code class="literal">task_func</code> with a
+  <a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a> check if you need the
+  old behavior.</p></li>
+<li class="listitem"><p>The "return" methods (eg, <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a>)
+  automatically cause the task to be "completed" as well, and
+  there is no need to worry about the "complete" vs "complete
+  in idle" distinction. (<a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> automatically figures out
+  whether the task's callback can be invoked directly, or
+  if it needs to be sent to another <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>, or delayed
+  until the next iteration of the current <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.)</p></li>
+<li class="listitem"><p>The "finish" functions for <span class="type">GTask-based</span> operations are generally
+  much simpler than <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a> ones, normally consisting
+  of only a single call to <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a> or the like.
+  Since <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a> "steals" the return value from
+  the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a>, it is not necessary to juggle pointers around to
+  prevent it from being freed twice.</p></li>
+<li class="listitem"><p>With <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a>, it was common to call
+  <a class="link" href="GSimpleAsyncResult.html#g-simple-async-result-propagate-error" title="g_simple_async_result_propagate_error ()"><code class="function">g_simple_async_result_propagate_error()</code></a> from the
+  <code class="literal"><code class="function">_finish()</code></code> wrapper function, and have
+  virtual method implementations only deal with successful
+  returns. This behavior is deprecated, because it makes it
+  difficult for a subclass to chain to a parent class's async
+  methods. Instead, the wrapper function should just be a
+  simple wrapper, and the virtual method should call an
+  appropriate <code class="literal">g_task_propagate_</code> function.
+  Note that wrapper methods can now use
+  <a class="link" href="GAsyncResult.html#g-async-result-legacy-propagate-error" title="g_async_result_legacy_propagate_error ()"><code class="function">g_async_result_legacy_propagate_error()</code></a> to do old-style
+  <a class="link" href="GSimpleAsyncResult.html" title="GSimpleAsyncResult"><span class="type">GSimpleAsyncResult</span></a> error-returning behavior, and
+  <a class="link" href="GAsyncResult.html#g-async-result-is-tagged" title="g_async_result_is_tagged ()"><code class="function">g_async_result_is_tagged()</code></a> to check if a result is tagged as
+  having come from the <code class="literal"><a class="link" href="async.html" title="Asynchronous I/O"><code class="function">_async()</code></a></code> wrapper
+  function (for "short-circuit" results, such as when passing
+  0 to <a class="link" href="GInputStream.html#g-input-stream-read-async" title="g_input_stream_read_async ()"><code class="function">g_input_stream_read_async()</code></a>).</p></li>
 </ul></div>
-</div>
 <p>
 </p>
+</div>
 </div>
 <div class="refsect1">
 <a name="GTask.details"></a><h2>Details</h2>
@@ -1090,8 +1059,7 @@ GTask implements
 <pre class="programlisting">typedef struct _GTask GTask;</pre>
 <p>
 The opaque object representing a synchronous or asynchronous task
-and its result.
-</p>
+and its result.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1103,14 +1071,12 @@ and its result.
 <p>
 Creates a <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> acting on <em class="parameter"><code>source_object</code></em>, which will eventually be
 used to invoke <em class="parameter"><code>callback</code></em> in the current <GTKDOCLINK HREF="g-main-context-push-thread-default">thread-default main
-context</GTKDOCLINK>.
-</p>
+context</GTKDOCLINK>.</p>
 <p>
 Call this in the "start" method of your asynchronous method, and
 pass the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> around throughout the asynchronous operation. You
 can use <a class="link" href="GTask.html#g-task-set-task-data" title="g_task_set_task_data ()"><code class="function">g_task_set_task_data()</code></a> to attach task-specific data to the
-object, which you can retrieve later via <a class="link" href="GTask.html#g-task-get-task-data" title="g_task_get_task_data ()"><code class="function">g_task_get_task_data()</code></a>.
-</p>
+object, which you can retrieve later via <a class="link" href="GTask.html#g-task-get-task-data" title="g_task_get_task_data ()"><code class="function">g_task_get_task_data()</code></a>.</p>
 <p>
 By default, if <em class="parameter"><code>cancellable</code></em> is cancelled, then the return value of
 the task will always be <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a>, even if the task had
@@ -1118,8 +1084,7 @@ already completed before the cancellation. This allows for
 simplified handling in cases where cancellation may imply that
 other objects that the task depends on have been destroyed. If you
 do not want this behavior, you can use
-<a class="link" href="GTask.html#g-task-set-check-cancellable" title="g_task_set_check_cancellable ()"><code class="function">g_task_set_check_cancellable()</code></a> to change it.
-</p>
+<a class="link" href="GTask.html#g-task-set-check-cancellable" title="g_task_set_check_cancellable ()"><code class="function">g_task_set_check_cancellable()</code></a> to change it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1162,8 +1127,7 @@ this task, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standar
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> task_data</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> task_data_destroy</code></em>);</pre>
 <p>
-Sets <em class="parameter"><code>task</code></em>'s task data (freeing the existing task data, if any).
-</p>
+Sets <em class="parameter"><code>task</code></em>'s task data (freeing the existing task data, if any).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1197,14 +1161,12 @@ Sets <em class="parameter"><code>task</code></em>'s task data (freeing the exist
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> priority</code></em>);</pre>
 <p>
 Sets <em class="parameter"><code>task</code></em>'s priority. If you do not call this, it will default to
-<a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#G-PRIORITY-DEFAULT:CAPS"><code class="literal">G_PRIORITY_DEFAULT</code></a>.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#G-PRIORITY-DEFAULT:CAPS"><code class="literal">G_PRIORITY_DEFAULT</code></a>.</p>
 <p>
 This will affect the priority of <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSources</span></a> created with
 <a class="link" href="GTask.html#g-task-attach-source" title="g_task_attach_source ()"><code class="function">g_task_attach_source()</code></a> and the scheduling of tasks run in threads,
 and can also be explicitly retrieved later via
-<a class="link" href="GTask.html#g-task-get-priority" title="g_task_get_priority ()"><code class="function">g_task_get_priority()</code></a>.
-</p>
+<a class="link" href="GTask.html#g-task-get-priority" title="g_task_get_priority ()"><code class="function">g_task_get_priority()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1237,17 +1199,14 @@ Sets or clears <em class="parameter"><code>task</code></em>'s check-cancellable 
 if it has been cancelled, then they will consider the task to have
 returned an "Operation was cancelled" error
 (<a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a>), regardless of any other error or return
-value the task may have had.
-</p>
+value the task may have had.</p>
 <p>
 If <em class="parameter"><code>check_cancellable</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> will not check the
 cancellable itself, and it is up to <em class="parameter"><code>task</code></em>'s owner to do this (eg,
-via <a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a>).
-</p>
+via <a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a>).</p>
 <p>
 If you are using <a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> as well, then
-you must leave check-cancellable set <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
-</p>
+you must leave check-cancellable set <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1276,14 +1235,12 @@ its <a class="link" href="GCancellable.html" title="GCancellable"><span class="t
 <p>
 Sets or clears <em class="parameter"><code>task</code></em>'s return-on-cancel flag. This is only
 meaningful for tasks run via <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> or
-<a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>.
-</p>
+<a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>.</p>
 <p>
 If <em class="parameter"><code>return_on_cancel</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, then cancelling <em class="parameter"><code>task</code></em>'s
 <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> will immediately cause it to return, as though the
 task's <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> had called
-<a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a> and then returned.
-</p>
+<a class="link" href="GTask.html#g-task-return-error-if-cancelled" title="g_task_return_error_if_cancelled ()"><code class="function">g_task_return_error_if_cancelled()</code></a> and then returned.</p>
 <p>
 This allows you to create a cancellable wrapper around an
 uninterruptable function. The <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> just needs to be
@@ -1293,20 +1250,17 @@ it has been cancelled. To do that, the thread should call
 return-on-cancel <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> before making externally-visible changes;
 if the task gets cancelled before the return-on-cancel flag could
 be changed, <a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> will indicate this by
-returning <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
-</p>
+returning <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p>
 <p>
 You can disable and re-enable this flag multiple times if you wish.
 If the task's <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> is cancelled while return-on-cancel is
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>, then calling <a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> to set it <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>
-again will cause the task to be cancelled at that point.
-</p>
+again will cause the task to be cancelled at that point.</p>
 <p>
 If the task's <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> is already cancelled before you call
 <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a>/<a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>, then the
 <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> will still be run (for consistency), but the task
-will also be completed right away.
-</p>
+will also be completed right away.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1345,8 +1299,7 @@ value with a particular pointer (usually a pointer to the function
 doing the tagging) and then later check it using
 <a class="link" href="GTask.html#g-task-get-source-tag" title="g_task_get_source_tag ()"><code class="function">g_task_get_source_tag()</code></a> (or <a class="link" href="GAsyncResult.html#g-async-result-is-tagged" title="g_async_result_is_tagged ()"><code class="function">g_async_result_is_tagged()</code></a>) in the
 task's "finish" function, to figure out if the response came from a
-particular place.
-</p>
+particular place.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1380,11 +1333,9 @@ on it. Use this in the wrapper function of an asynchronous method
 when you want to avoid even calling the virtual method. You can
 then use <a class="link" href="GAsyncResult.html#g-async-result-is-tagged" title="g_async_result_is_tagged ()"><code class="function">g_async_result_is_tagged()</code></a> in the finish method wrapper to
 check if the result there is tagged as having been created by the
-wrapper method, and deal with it appropriately if so.
-</p>
+wrapper method, and deal with it appropriately if so.</p>
 <p>
-See also <a class="link" href="GTask.html#g-task-report-new-error" title="g_task_report_new_error ()"><code class="function">g_task_report_new_error()</code></a>.
-</p>
+See also <a class="link" href="GTask.html#g-task-report-new-error" title="g_task_report_new_error ()"><code class="function">g_task_report_new_error()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1438,11 +1389,9 @@ of an asynchronous method when you want to avoid even calling the
 virtual method. You can then use <a class="link" href="GAsyncResult.html#g-async-result-is-tagged" title="g_async_result_is_tagged ()"><code class="function">g_async_result_is_tagged()</code></a> in the
 finish method wrapper to check if the result there is tagged as
 having been created by the wrapper method, and deal with it
-appropriately if so.
-</p>
+appropriately if so.</p>
 <p>
-See also <a class="link" href="GTask.html#g-task-report-error" title="g_task_report_error ()"><code class="function">g_task_report_error()</code></a>.
-</p>
+See also <a class="link" href="GTask.html#g-task-report-error" title="g_task_report_error ()"><code class="function">g_task_report_error()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1494,8 +1443,7 @@ this task, or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standar
 <a name="g-task-get-task-data"></a><h3>g_task_get_task_data ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            g_task_get_task_data                (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
-Gets <em class="parameter"><code>task</code></em>'s <code class="literal">task_data</code>.
-</p>
+Gets <em class="parameter"><code>task</code></em>'s <code class="literal">task_data</code>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1522,8 +1470,7 @@ Gets <em class="parameter"><code>task</code></em>'s <code class="literal">task_d
 <a name="g-task-get-priority"></a><h3>g_task_get_priority ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                g_task_get_priority                 (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
-Gets <em class="parameter"><code>task</code></em>'s priority
-</p>
+Gets <em class="parameter"><code>task</code></em>'s priority</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1549,8 +1496,7 @@ Gets <em class="parameter"><code>task</code></em>'s priority
 <a name="g-task-get-cancellable"></a><h3>g_task_get_cancellable ()</h3>
 <pre class="programlisting"><a class="link" href="GCancellable.html" title="GCancellable"><span class="returnvalue">GCancellable</span></a> *      g_task_get_cancellable              (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
-Gets <em class="parameter"><code>task</code></em>'s <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a>
-</p>
+Gets <em class="parameter"><code>task</code></em>'s <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a></p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1578,8 +1524,7 @@ Gets <em class="parameter"><code>task</code></em>'s <a class="link" href="GCance
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_task_get_check_cancellable        (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
 Gets <em class="parameter"><code>task</code></em>'s check-cancellable flag. See
-<a class="link" href="GTask.html#g-task-set-check-cancellable" title="g_task_set_check_cancellable ()"><code class="function">g_task_set_check_cancellable()</code></a> for more details.
-</p>
+<a class="link" href="GTask.html#g-task-set-check-cancellable" title="g_task_set_check_cancellable ()"><code class="function">g_task_set_check_cancellable()</code></a> for more details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1599,8 +1544,7 @@ Gets <em class="parameter"><code>task</code></em>'s check-cancellable flag. See
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_task_get_return_on_cancel         (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
 Gets <em class="parameter"><code>task</code></em>'s return-on-cancel flag. See
-<a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> for more details.
-</p>
+<a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> for more details.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1621,12 +1565,10 @@ Gets <em class="parameter"><code>task</code></em>'s return-on-cancel flag. See
 <p>
 Gets the <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> that <em class="parameter"><code>task</code></em> will return its result in (that
 is, the context that was the <GTKDOCLINK HREF="g-main-context-push-thread-default">thread-default main
-context</GTKDOCLINK> at the point when <em class="parameter"><code>task</code></em> was created).
-</p>
+context</GTKDOCLINK> at the point when <em class="parameter"><code>task</code></em> was created).</p>
 <p>
 This will always return a non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> value, even if the task's
-context is the default <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.
-</p>
+context is the default <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1654,8 +1596,7 @@ context is the default <a href="http://library.gnome.org/devel/glib/unstable/gli
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            g_task_get_source_object            (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
 Gets the source object from <em class="parameter"><code>task</code></em>. Like
-<a class="link" href="GAsyncResult.html#g-async-result-get-source-object" title="g_async_result_get_source_object ()"><code class="function">g_async_result_get_source_object()</code></a>, but does not ref the object.
-</p>
+<a class="link" href="GAsyncResult.html#g-async-result-get-source-object" title="g_async_result_get_source_object ()"><code class="function">g_async_result_get_source_object()</code></a>, but does not ref the object.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1682,8 +1623,7 @@ Gets the source object from <em class="parameter"><code>task</code></em>. Like
 <a name="g-task-get-source-tag"></a><h3>g_task_get_source_tag ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            g_task_get_source_tag               (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
-Gets <em class="parameter"><code>task</code></em>'s source tag. See <a class="link" href="GTask.html#g-task-set-source-tag" title="g_task_set_source_tag ()"><code class="function">g_task_set_source_tag()</code></a>.
-</p>
+Gets <em class="parameter"><code>task</code></em>'s source tag. See <a class="link" href="GTask.html#g-task-set-source-tag" title="g_task_set_source_tag ()"><code class="function">g_task_set_source_tag()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1713,8 +1653,7 @@ Gets <em class="parameter"><code>task</code></em>'s source tag. See <a class="li
 <p>
 Sets <em class="parameter"><code>task</code></em>'s result to <em class="parameter"><code>result</code></em> and completes the task (see
 <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> for more discussion of exactly what this
-means).
-</p>
+means).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1741,8 +1680,7 @@ means).
 <p>
 Sets <em class="parameter"><code>task</code></em>'s result to <em class="parameter"><code>result</code></em> and completes the task (see
 <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> for more discussion of exactly what this
-means).
-</p>
+means).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1771,8 +1709,7 @@ means).
 Sets <em class="parameter"><code>task</code></em>'s result to <em class="parameter"><code>result</code></em> and completes the task. If <em class="parameter"><code>result</code></em>
 is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then <em class="parameter"><code>result_destroy</code></em> will be used to free <em class="parameter"><code>result</code></em> if
 the caller does not take ownership of it with
-<a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a>.
-</p>
+<a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a>.</p>
 <p>
 "Completes the task" means that for an ordinary asynchronous task
 it will either invoke the task's callback, or else queue that
@@ -1781,14 +1718,12 @@ iteration of the current <a href="http://library.gnome.org/devel/glib/unstable/g
 <a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> or <a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>, calling this
 method will save <em class="parameter"><code>result</code></em> to be returned to the caller later, but
 the task will not actually be completed until the <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a>
-exits.
-</p>
+exits.</p>
 <p>
 Note that since the task may be completed before returning from
 <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a>, you cannot assume that <em class="parameter"><code>result</code></em> is still
 valid after calling this, unless you are still holding another
-reference on it.
-</p>
+reference on it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1823,18 +1758,15 @@ function. <span class="annotation">[<acronym title="NULL is ok, both for passing
 <p>
 Sets <em class="parameter"><code>task</code></em>'s result to <em class="parameter"><code>error</code></em> (which <em class="parameter"><code>task</code></em> assumes ownership of)
 and completes the task (see <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> for more
-discussion of exactly what this means).
-</p>
+discussion of exactly what this means).</p>
 <p>
 Note that since the task takes ownership of <em class="parameter"><code>error</code></em>, and since the
 task may be completed before returning from <a class="link" href="GTask.html#g-task-return-error" title="g_task_return_error ()"><code class="function">g_task_return_error()</code></a>,
 you cannot assume that <em class="parameter"><code>error</code></em> is still valid after calling this.
 Call <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#g-error-copy"><code class="function">g_error_copy()</code></a> on the error if you need to keep a local copy
-as well.
-</p>
+as well.</p>
 <p>
-See also <a class="link" href="GTask.html#g-task-return-new-error" title="g_task_return_new_error ()"><code class="function">g_task_return_new_error()</code></a>.
-</p>
+See also <a class="link" href="GTask.html#g-task-return-new-error" title="g_task_return_new_error ()"><code class="function">g_task_return_new_error()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1866,11 +1798,9 @@ See also <a class="link" href="GTask.html#g-task-return-new-error" title="g_task
 Sets <em class="parameter"><code>task</code></em>'s result to a new <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> created from <em class="parameter"><code>domain</code></em>, <em class="parameter"><code>code</code></em>,
 <em class="parameter"><code>format</code></em>, and the remaining arguments, and completes the task (see
 <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> for more discussion of exactly what this
-means).
-</p>
+means).</p>
 <p>
-See also <a class="link" href="GTask.html#g-task-return-error" title="g_task_return_error ()"><code class="function">g_task_return_error()</code></a>.
-</p>
+See also <a class="link" href="GTask.html#g-task-return-error" title="g_task_return_error ()"><code class="function">g_task_return_error()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1909,8 +1839,7 @@ See also <a class="link" href="GTask.html#g-task-return-error" title="g_task_ret
 Checks if <em class="parameter"><code>task</code></em>'s <a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> has been cancelled, and if so, sets
 <em class="parameter"><code>task</code></em>'s error accordingly and completes the task (see
 <a class="link" href="GTask.html#g-task-return-pointer" title="g_task_return_pointer ()"><code class="function">g_task_return_pointer()</code></a> for more discussion of exactly what this
-means).
-</p>
+means).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1937,16 +1866,13 @@ means).
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_task_propagate_boolean            (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Gets the result of <em class="parameter"><code>task</code></em> as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>.
-</p>
+Gets the result of <em class="parameter"><code>task</code></em> as a <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>.</p>
 <p>
 If the task resulted in an error, or was cancelled, then this will
-instead return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and set <em class="parameter"><code>error</code></em>.
-</p>
+instead return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a> and set <em class="parameter"><code>error</code></em>.</p>
 <p>
 Since this method transfers ownership of the return value (or
-error) to the caller, you may only call it once.
-</p>
+error) to the caller, you may only call it once.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1976,16 +1902,13 @@ error) to the caller, you may only call it once.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gssize"><span class="returnvalue">gssize</span></a>              g_task_propagate_int                (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Gets the result of <em class="parameter"><code>task</code></em> as an integer (<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gssize"><span class="type">gssize</span></a>).
-</p>
+Gets the result of <em class="parameter"><code>task</code></em> as an integer (<a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gssize"><span class="type">gssize</span></a>).</p>
 <p>
 If the task resulted in an error, or was cancelled, then this will
-instead return -1 and set <em class="parameter"><code>error</code></em>.
-</p>
+instead return -1 and set <em class="parameter"><code>error</code></em>.</p>
 <p>
 Since this method transfers ownership of the return value (or
-error) to the caller, you may only call it once.
-</p>
+error) to the caller, you may only call it once.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2016,16 +1939,13 @@ error) to the caller, you may only call it once.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Gets the result of <em class="parameter"><code>task</code></em> as a pointer, and transfers ownership
-of that value to the caller.
-</p>
+of that value to the caller.</p>
 <p>
 If the task resulted in an error, or was cancelled, then this will
-instead return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and set <em class="parameter"><code>error</code></em>.
-</p>
+instead return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and set <em class="parameter"><code>error</code></em>.</p>
 <p>
 Since this method transfers ownership of the return value (or
-error) to the caller, you may only call it once.
-</p>
+error) to the caller, you may only call it once.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2056,8 +1976,7 @@ error) to the caller, you may only call it once.
 <a name="g-task-had-error"></a><h3>g_task_had_error ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_task_had_error                    (<em class="parameter"><code><a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> *task</code></em>);</pre>
 <p>
-Tests if <em class="parameter"><code>task</code></em> resulted in an error.
-</p>
+Tests if <em class="parameter"><code>task</code></em> resulted in an error.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2084,14 +2003,11 @@ Tests if <em class="parameter"><code>task</code></em> resulted in an error.
                                                          <em class="parameter"><code><a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> task_func</code></em>);</pre>
 <p>
 Runs <em class="parameter"><code>task_func</code></em> in another thread. When <em class="parameter"><code>task_func</code></em> returns, <em class="parameter"><code>task</code></em>'s
-<a class="link" href="GAsyncResult.html#GAsyncReadyCallback" title="GAsyncReadyCallback ()"><span class="type">GAsyncReadyCallback</span></a> will be invoked in <em class="parameter"><code>task</code></em>'s <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.
-</p>
+<a class="link" href="GAsyncResult.html#GAsyncReadyCallback" title="GAsyncReadyCallback ()"><span class="type">GAsyncReadyCallback</span></a> will be invoked in <em class="parameter"><code>task</code></em>'s <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.</p>
 <p>
-This takes a ref on <em class="parameter"><code>task</code></em> until the task completes.
-</p>
+This takes a ref on <em class="parameter"><code>task</code></em> until the task completes.</p>
 <p>
-See <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> for more details about how <em class="parameter"><code>task_func</code></em> is handled.
-</p>
+See <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> for more details about how <em class="parameter"><code>task_func</code></em> is handled.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2120,16 +2036,13 @@ See <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"
 <p>
 Runs <em class="parameter"><code>task_func</code></em> in another thread, and waits for it to return or be
 cancelled. You can use <a class="link" href="GTask.html#g-task-propagate-pointer" title="g_task_propagate_pointer ()"><code class="function">g_task_propagate_pointer()</code></a>, etc, afterward
-to get the result of <em class="parameter"><code>task_func</code></em>.
-</p>
+to get the result of <em class="parameter"><code>task_func</code></em>.</p>
 <p>
-See <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> for more details about how <em class="parameter"><code>task_func</code></em> is handled.
-</p>
+See <a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> for more details about how <em class="parameter"><code>task_func</code></em> is handled.</p>
 <p>
 Normally this is used with tasks created with a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>
 <code class="literal">callback</code>, but note that even if the task does
-have a callback, it will not be invoked when <em class="parameter"><code>task_func</code></em> returns.
-</p>
+have a callback, it will not be invoked when <em class="parameter"><code>task_func</code></em> returns.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2159,8 +2072,7 @@ have a callback, it will not be invoked when <em class="parameter"><code>task_fu
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>);</pre>
 <p>
 The prototype for a task function to be run in a thread via
-<a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> or <a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>.
-</p>
+<a class="link" href="GTask.html#g-task-run-in-thread" title="g_task_run_in_thread ()"><code class="function">g_task_run_in_thread()</code></a> or <a class="link" href="GTask.html#g-task-run-in-thread-sync" title="g_task_run_in_thread_sync ()"><code class="function">g_task_run_in_thread_sync()</code></a>.</p>
 <p>
 If the return-on-cancel flag is set on <em class="parameter"><code>task</code></em>, and <em class="parameter"><code>cancellable</code></em> gets
 cancelled, then the <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a> will be completed immediately (as though
@@ -2169,13 +2081,11 @@ waiting for the task function to complete. However, the task
 function will continue running in its thread in the background. The
 function therefore needs to be careful about how it uses
 externally-visible state in this case. See
-<a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> for more details.
-</p>
+<a class="link" href="GTask.html#g-task-set-return-on-cancel" title="g_task_set_return_on_cancel ()"><code class="function">g_task_set_return_on_cancel()</code></a> for more details.</p>
 <p>
 Other than in that case, <em class="parameter"><code>task</code></em> will be completed when the
-<a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> returns, <span class="emphasis"><em>not</em></span> when it calls
-a <code class="literal">g_task_return_</code> function.
-</p>
+<a class="link" href="GTask.html#GTaskThreadFunc" title="GTaskThreadFunc ()"><span class="type">GTaskThreadFunc</span></a> returns, not when it calls a
+<code class="literal">g_task_return_</code> function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2219,11 +2129,9 @@ A utility function for dealing with async operations where you need
 to wait for a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a> to trigger. Attaches <em class="parameter"><code>source</code></em> to <em class="parameter"><code>task</code></em>'s
 <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a> with <em class="parameter"><code>task</code></em>'s <a class="link" href="GAsyncResult.html#io-priority">priority</a>, and sets <em class="parameter"><code>source</code></em>'s callback
 to <em class="parameter"><code>callback</code></em>, with <em class="parameter"><code>task</code></em> as the callback's
-<code class="literal">user_data</code>.
-</p>
+<code class="literal">user_data</code>.</p>
 <p>
-This takes a reference on <em class="parameter"><code>task</code></em> until <em class="parameter"><code>source</code></em> is destroyed.
-</p>
+This takes a reference on <em class="parameter"><code>task</code></em> until <em class="parameter"><code>source</code></em> is destroyed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2255,8 +2163,7 @@ This takes a reference on <em class="parameter"><code>task</code></em> until <em
 <p>
 Checks that <em class="parameter"><code>result</code></em> is a <a class="link" href="GTask.html" title="GTask"><span class="type">GTask</span></a>, and that <em class="parameter"><code>source_object</code></em> is its
 source object (or that <em class="parameter"><code>source_object</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and <em class="parameter"><code>result</code></em> has no
-source object). This can be used in <a href="http://library.gnome.org/devel/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail"><code class="function">g_return_if_fail()</code></a> checks.
-</p>
+source object). This can be used in <a href="http://library.gnome.org/devel/glib/unstable/glib-Warnings-and-Assertions.html#g-return-if-fail"><code class="function">g_return_if_fail()</code></a> checks.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -2292,6 +2199,6 @@ if not</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

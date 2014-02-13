@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GParamSpec</title>
+<title>GObject Reference Manual: GParamSpec</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="gobject-Standard-Parameter-and-Value-Types.html" title="Parameters and Values">
 <link rel="next" href="gobject-Varargs-Value-Collection.html" title="Varargs Value Collection">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gobject-Standard-Parameter-and-Value-Types.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GObject Reference Manual</th>
-<td><a accesskey="n" href="gobject-Varargs-Value-Collection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gobject-GParamSpec.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gobject-GParamSpec.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gobject-Standard-Parameter-and-Value-Types.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gobject-Varargs-Value-Collection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gobject-GParamSpec"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -119,8 +116,7 @@ struct              <a class="link" href="gobject-GParamSpec.html#GParamSpecType
 <a name="gobject-GParamSpec.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> is an object structure that encapsulates the metadata
-required to specify parameters, such as e.g. <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> properties.
-</p>
+required to specify parameters, such as e.g. <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> properties.</p>
 <p>
 </p>
 <p><a name="canonical-parameter-name"></a>
@@ -130,8 +126,6 @@ All other characters are replaced by a '-' during construction.
 The result of this replacement is called the canonical name of the
 parameter.
 </p>
-<p>
-</p>
 </div>
 <div class="refsect1">
 <a name="gobject-GParamSpec.details"></a><h2>Details</h2>
@@ -140,8 +134,7 @@ parameter.
 <pre class="programlisting">#define G_TYPE_IS_PARAM(type)		(G_TYPE_FUNDAMENTAL (type) == G_TYPE_PARAM)
 </pre>
 <p>
-Checks whether <em class="parameter"><code>type</code></em> "is a" <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a>.
-</p>
+Checks whether <em class="parameter"><code>type</code></em> "is a" <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -160,8 +153,7 @@ Checks whether <em class="parameter"><code>type</code></em> "is a" <a class="lin
 </pre>
 <p>
 Casts a derived <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> object (e.g. of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecInt" title="struct GParamSpecInt"><span class="type">GParamSpecInt</span></a>) into
-a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> object.
-</p>
+a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> object.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -181,8 +173,7 @@ a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParam
 </pre>
 <p>
 Checks whether <em class="parameter"><code>pspec</code></em> "is a" valid <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> structure of type <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a>
-or derived.
-</p>
+or derived.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -201,8 +192,7 @@ or derived.
 <pre class="programlisting">#define G_PARAM_SPEC_CLASS(pclass)      (G_TYPE_CHECK_CLASS_CAST ((pclass), G_TYPE_PARAM, GParamSpecClass))
 </pre>
 <p>
-Casts a derived <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> structure into a <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> structure.
-</p>
+Casts a derived <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> structure into a <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> structure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -222,8 +212,7 @@ Casts a derived <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" t
 </pre>
 <p>
 Checks whether <em class="parameter"><code>pclass</code></em> "is a" valid <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> structure of type 
-<a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a> or derived.
-</p>
+<a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><code class="literal">G_TYPE_PARAM</code></a> or derived.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -242,8 +231,7 @@ Checks whether <em class="parameter"><code>pclass</code></em> "is a" valid <a cl
 <pre class="programlisting">#define G_PARAM_SPEC_GET_CLASS(pspec) (G_TYPE_INSTANCE_GET_CLASS ((pspec), G_TYPE_PARAM, GParamSpecClass))
 </pre>
 <p>
-Retrieves the <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.
-</p>
+Retrieves the <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" title="struct GParamSpecClass"><span class="type">GParamSpecClass</span></a> of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -262,8 +250,7 @@ Retrieves the <a class="link" href="gobject-GParamSpec.html#GParamSpecClass" tit
 <pre class="programlisting">#define G_PARAM_SPEC_TYPE(pspec) (G_TYPE_FROM_INSTANCE (pspec))
 </pre>
 <p>
-Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> of this <em class="parameter"><code>pspec</code></em>.
-</p>
+Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> of this <em class="parameter"><code>pspec</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -282,8 +269,7 @@ Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="
 <pre class="programlisting">#define G_PARAM_SPEC_TYPE_NAME(pspec) (g_type_name (G_PARAM_SPEC_TYPE (pspec)))
 </pre>
 <p>
-Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> name of this <em class="parameter"><code>pspec</code></em>.
-</p>
+Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> name of this <em class="parameter"><code>pspec</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -302,8 +288,7 @@ Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="
 <pre class="programlisting">#define G_PARAM_SPEC_VALUE_TYPE(pspec) (G_PARAM_SPEC (pspec)-&gt;value_type)
 </pre>
 <p>
-Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> to initialize a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> for this parameter.
-</p>
+Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> to initialize a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> for this parameter.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -330,8 +315,7 @@ Retrieves the <a class="link" href="gobject-Type-Information.html#GType" title="
 </pre>
 <p>
 All other fields of the <span class="structname">GParamSpec</span> struct are private and
-should not be used directly.
-</p>
+should not be used directly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -386,8 +370,7 @@ should not be used directly.
 <p>
 The class structure for the <span class="structname">GParamSpec</span> type.
 Normally, <span class="structname">GParamSpec</span> classes are filled by
-<a class="link" href="gobject-GParamSpec.html#g-param-type-register-static" title="g_param_type_register_static ()"><code class="function">g_param_type_register_static()</code></a>.
-</p>
+<a class="link" href="gobject-GParamSpec.html#g-param-type-register-static" title="g_param_type_register_static ()"><code class="function">g_param_type_register_static()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -446,10 +429,13 @@ specifications set out by this type (optional), see
   G_PARAM_DEPRECATED          = 1 &lt;&lt; 31
 } GParamFlags;
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">GParamFlags</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Through the <a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> flag values, certain aspects of parameters
-can be configured. See also <a class="link" href="gobject-GParamSpec.html#G-PARAM-READWRITE:CAPS" title="G_PARAM_READWRITE"><span class="type">G_PARAM_READWRITE</span></a> and <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-STRINGS:CAPS" title="G_PARAM_STATIC_STRINGS"><span class="type">G_PARAM_STATIC_STRINGS</span></a>.
-</p>
+can be configured. See also <a class="link" href="gobject-GParamSpec.html#G-PARAM-READWRITE:CAPS" title="G_PARAM_READWRITE"><span class="type">G_PARAM_READWRITE</span></a> and <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-STRINGS:CAPS" title="G_PARAM_STATIC_STRINGS"><span class="type">G_PARAM_STATIC_STRINGS</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -528,8 +514,7 @@ can be configured. See also <a class="link" href="gobject-GParamSpec.html#G-PARA
 <pre class="programlisting">#define G_PARAM_READWRITE (G_PARAM_READABLE | G_PARAM_WRITABLE)
 </pre>
 <p>
-<a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> value alias for <a class="link" href="gobject-GParamSpec.html#G-PARAM-READABLE:CAPS"><code class="literal">G_PARAM_READABLE</code></a> | <a class="link" href="gobject-GParamSpec.html#G-PARAM-WRITABLE:CAPS"><code class="literal">G_PARAM_WRITABLE</code></a>.
-</p>
+<a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> value alias for <a class="link" href="gobject-GParamSpec.html#G-PARAM-READABLE:CAPS"><code class="literal">G_PARAM_READABLE</code></a> | <a class="link" href="gobject-GParamSpec.html#G-PARAM-WRITABLE:CAPS"><code class="literal">G_PARAM_WRITABLE</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -537,11 +522,9 @@ can be configured. See also <a class="link" href="gobject-GParamSpec.html#G-PARA
 <pre class="programlisting">#define G_PARAM_STATIC_STRINGS (G_PARAM_STATIC_NAME | G_PARAM_STATIC_NICK | G_PARAM_STATIC_BLURB)
 </pre>
 <p>
-<a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> value alias for <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-NAME:CAPS"><code class="literal">G_PARAM_STATIC_NAME</code></a> | <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-NICK:CAPS"><code class="literal">G_PARAM_STATIC_NICK</code></a> | <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-BLURB:CAPS"><code class="literal">G_PARAM_STATIC_BLURB</code></a>.
-</p>
+<a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> value alias for <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-NAME:CAPS"><code class="literal">G_PARAM_STATIC_NAME</code></a> | <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-NICK:CAPS"><code class="literal">G_PARAM_STATIC_NICK</code></a> | <a class="link" href="gobject-GParamSpec.html#G-PARAM-STATIC-BLURB:CAPS"><code class="literal">G_PARAM_STATIC_BLURB</code></a>.</p>
 <p>
-Since 2.13.0
-</p>
+Since 2.13.0</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -549,8 +532,7 @@ Since 2.13.0
 <pre class="programlisting">#define G_PARAM_MASK		(0x000000ff)
 </pre>
 <p>
-Mask containing the bits of <a class="link" href="gobject-GParamSpec.html#GParamSpec.flags"><span class="type">GParamSpec.flags</span></a> which are reserved for GLib.
-</p>
+Mask containing the bits of <a class="link" href="gobject-GParamSpec.html#GParamSpec.flags"><span class="type">GParamSpec.flags</span></a> which are reserved for GLib.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -559,16 +541,14 @@ Mask containing the bits of <a class="link" href="gobject-GParamSpec.html#GParam
 </pre>
 <p>
 Minimum shift count to be used for user defined flags, to be stored in
-<a class="link" href="gobject-GParamSpec.html#GParamSpec.flags"><span class="type">GParamSpec.flags</span></a>. The maximum allowed is 30 + G_PARAM_USER_SHIFT.
-</p>
+<a class="link" href="gobject-GParamSpec.html#GParamSpec.flags"><span class="type">GParamSpec.flags</span></a>. The maximum allowed is 30 + G_PARAM_USER_SHIFT.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-param-spec-ref"></a><h3>g_param_spec_ref ()</h3>
 <pre class="programlisting"><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="returnvalue">GParamSpec</span></a> *        g_param_spec_ref                    (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Increments the reference count of <em class="parameter"><code>pspec</code></em>.
-</p>
+Increments the reference count of <em class="parameter"><code>pspec</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -592,8 +572,7 @@ Increments the reference count of <em class="parameter"><code>pspec</code></em>.
 <a name="g-param-spec-unref"></a><h3>g_param_spec_unref ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_param_spec_unref                  (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Decrements the reference count of a <em class="parameter"><code>pspec</code></em>.
-</p>
+Decrements the reference count of a <em class="parameter"><code>pspec</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -617,8 +596,7 @@ yet. So the initial reference count is flagged as "floating", until
 someone calls <code class="literal">g_param_spec_ref (pspec); g_param_spec_sink
 (pspec);</code> in sequence on it, taking over the initial
 reference count (thus ending up with a <em class="parameter"><code>pspec</code></em> that has a reference
-count of 1 still, but is not flagged "floating" anymore).
-</p>
+count of 1 still, but is not flagged "floating" anymore).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -636,8 +614,7 @@ count of 1 still, but is not flagged "floating" anymore).
 <a name="g-param-spec-ref-sink"></a><h3>g_param_spec_ref_sink ()</h3>
 <pre class="programlisting"><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="returnvalue">GParamSpec</span></a> *        g_param_spec_ref_sink               (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Convenience function to ref and sink a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.
-</p>
+Convenience function to ref and sink a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -668,8 +645,7 @@ Convenience function to ref and sink a <a class="link" href="gobject-GParamSpec.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_param_value_set_default           (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
 <p>
-Sets <em class="parameter"><code>value</code></em> to its default value as specified in <em class="parameter"><code>pspec</code></em>.
-</p>
+Sets <em class="parameter"><code>value</code></em> to its default value as specified in <em class="parameter"><code>pspec</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -695,8 +671,7 @@ Sets <em class="parameter"><code>value</code></em> to its default value as speci
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_param_value_defaults              (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
 <p>
-Checks whether <em class="parameter"><code>value</code></em> contains the default value as specified in <em class="parameter"><code>pspec</code></em>.
-</p>
+Checks whether <em class="parameter"><code>value</code></em> contains the default value as specified in <em class="parameter"><code>pspec</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -732,8 +707,7 @@ set out by <em class="parameter"><code>pspec</code></em>. For example, a <a clas
 that integers stored in <em class="parameter"><code>value</code></em> may not be smaller than -42 and not be
 greater than +42. If <em class="parameter"><code>value</code></em> contains an integer outside of this range,
 it is modified accordingly, so the resulting value will fit into the
-range -42 .. +42.
-</p>
+range -42 .. +42.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -768,12 +742,10 @@ range -42 .. +42.
 Transforms <em class="parameter"><code>src_value</code></em> into <em class="parameter"><code>dest_value</code></em> if possible, and then
 validates <em class="parameter"><code>dest_value</code></em>, in order for it to conform to <em class="parameter"><code>pspec</code></em>.  If
 <em class="parameter"><code>strict_validation</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a> this function will only succeed if the
-transformed <em class="parameter"><code>dest_value</code></em> complied to <em class="parameter"><code>pspec</code></em> without modifications.
-</p>
+transformed <em class="parameter"><code>dest_value</code></em> complied to <em class="parameter"><code>pspec</code></em> without modifications.</p>
 <p>
 See also <a class="link" href="gobject-Generic-values.html#g-value-type-transformable" title="g_value_type_transformable ()"><code class="function">g_value_type_transformable()</code></a>, <a class="link" href="gobject-Generic-values.html#g-value-transform" title="g_value_transform ()"><code class="function">g_value_transform()</code></a> and
-<a class="link" href="gobject-GParamSpec.html#g-param-value-validate" title="g_param_value_validate ()"><code class="function">g_param_value_validate()</code></a>.
-</p>
+<a class="link" href="gobject-GParamSpec.html#g-param-value-validate" title="g_param_value_validate ()"><code class="function">g_param_value_validate()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -819,8 +791,7 @@ without modifications</td>
 <p>
 Compares <em class="parameter"><code>value1</code></em> with <em class="parameter"><code>value2</code></em> according to <em class="parameter"><code>pspec</code></em>, and return -1, 0 or +1,
 if <em class="parameter"><code>value1</code></em> is found to be less than, equal to or greater than <em class="parameter"><code>value2</code></em>,
-respectively.
-</p>
+respectively.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -854,12 +825,10 @@ respectively.
 <a name="g-param-spec-get-name"></a><h3>g_param_spec_get_name ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_param_spec_get_name               (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Get the name of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.
-</p>
+Get the name of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.</p>
 <p>
 The name is always an "interned" string (as per <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#g-intern-string"><code class="function">g_intern_string()</code></a>).
-This allows for pointer-value comparisons.
-</p>
+This allows for pointer-value comparisons.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -883,8 +852,7 @@ This allows for pointer-value comparisons.
 <a name="g-param-spec-get-nick"></a><h3>g_param_spec_get_nick ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_param_spec_get_nick               (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Get the nickname of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.
-</p>
+Get the nickname of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -908,8 +876,7 @@ Get the nickname of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" 
 <a name="g-param-spec-get-blurb"></a><h3>g_param_spec_get_blurb ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_param_spec_get_blurb              (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Get the short description of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.
-</p>
+Get the short description of a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -934,8 +901,7 @@ Get the short description of a <a class="link" href="gobject-GParamSpec.html#GPa
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            g_param_spec_get_qdata              (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#GQuark"><span class="type">GQuark</span></a> quark</code></em>);</pre>
 <p>
-Gets back user data pointers stored via <a class="link" href="gobject-GParamSpec.html#g-param-spec-set-qdata" title="g_param_spec_set_qdata ()"><code class="function">g_param_spec_set_qdata()</code></a>.
-</p>
+Gets back user data pointers stored via <a class="link" href="gobject-GParamSpec.html#g-param-spec-set-qdata" title="g_param_spec_set_qdata ()"><code class="function">g_param_spec_set_qdata()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -971,8 +937,7 @@ specified through a <a href="http://library.gnome.org/devel/glib/unstable/glib-Q
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Quarks.html#g-quark-from-static-string"><code class="function">g_quark_from_static_string()</code></a>), and the pointer can be gotten back
 from the <em class="parameter"><code>pspec</code></em> with <a class="link" href="gobject-GParamSpec.html#g-param-spec-get-qdata" title="g_param_spec_get_qdata ()"><code class="function">g_param_spec_get_qdata()</code></a>.  Setting a
 previously set user data pointer, overrides (frees) the old pointer
-set, using <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> as pointer essentially removes the data stored.
-</p>
+set, using <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> as pointer essentially removes the data stored.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1006,8 +971,7 @@ This function works like <a class="link" href="gobject-GParamSpec.html#g-param-s
 a <code class="literal">void (*destroy) (gpointer)</code> function may be
 specified which is called with <em class="parameter"><code>data</code></em> as argument when the <em class="parameter"><code>pspec</code></em> is
 finalized, or the data is being overwritten by a call to
-<a class="link" href="gobject-GParamSpec.html#g-param-spec-set-qdata" title="g_param_spec_set_qdata ()"><code class="function">g_param_spec_set_qdata()</code></a> with the same <em class="parameter"><code>quark</code></em>.
-</p>
+<a class="link" href="gobject-GParamSpec.html#g-param-spec-set-qdata" title="g_param_spec_set_qdata ()"><code class="function">g_param_spec_set_qdata()</code></a> with the same <em class="parameter"><code>quark</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1043,8 +1007,7 @@ be freed</td>
 Gets back user data pointers stored via <a class="link" href="gobject-GParamSpec.html#g-param-spec-set-qdata" title="g_param_spec_set_qdata ()"><code class="function">g_param_spec_set_qdata()</code></a>
 and removes the <em class="parameter"><code>data</code></em> from <em class="parameter"><code>pspec</code></em> without invoking its <code class="function">destroy()</code>
 function (if any was set).  Usually, calling this function is only
-required to update user data pointers with a destroy notifier.
-</p>
+required to update user data pointers with a destroy notifier.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1078,8 +1041,7 @@ providing a new implementation of a property in a derived
 type while preserving all the properties from the parent
 type. Redirection is established by creating a property
 of type <a class="link" href="gobject-Standard-Parameter-and-Value-Types.html#GParamSpecOverride" title="struct GParamSpecOverride"><span class="type">GParamSpecOverride</span></a>. See <a class="link" href="gobject-The-Base-Object-Type.html#g-object-class-override-property" title="g_object_class_override_property ()"><code class="function">g_object_class_override_property()</code></a>
-for an example of the use of this capability.
-</p>
+for an example of the use of this capability.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1110,27 +1072,23 @@ paramspec should be redirected, or <a href="http://library.gnome.org/devel/glib/
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *blurb</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamFlags" title="enum GParamFlags"><span class="type">GParamFlags</span></a> flags</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance.
-</p>
+Creates a new <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> instance.</p>
 <p>
 A property name consists of segments consisting of ASCII letters and
 digits, separated by either the '-' or '_' character. The first
 character of a property name must be a letter. Names which violate these
-rules lead to undefined behaviour.
-</p>
+rules lead to undefined behaviour.</p>
 <p>
 When creating and looking up a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>, either separator can be
 used, but they cannot be mixed. Using '-' is considerably more
 efficient and in fact required when using property names as detail
-strings for signals.
-</p>
+strings for signals.</p>
 <p>
-Beyond the name, <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>s have two more descriptive
+Beyond the name, <a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a> have two more descriptive
 strings associated with them, the <em class="parameter"><code>nick</code></em>, which should be suitable
 for use as a label for the property in a property editor, and the
 <em class="parameter"><code>blurb</code></em>, which should be a somewhat longer description, suitable for
-e.g. a tooltip. The <em class="parameter"><code>nick</code></em> and <em class="parameter"><code>blurb</code></em> should ideally be localized.
-</p>
+e.g. a tooltip. The <em class="parameter"><code>nick</code></em> and <em class="parameter"><code>blurb</code></em> should ideally be localized.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1194,8 +1152,7 @@ instances thereof.
 The initialized structure is passed to the <a class="link" href="gobject-GParamSpec.html#g-param-type-register-static" title="g_param_type_register_static ()"><code class="function">g_param_type_register_static()</code></a> 
 The type system will perform a deep copy of this structure, so its memory 
 does not need to be persistent across invocation of 
-<a class="link" href="gobject-GParamSpec.html#g-param-type-register-static" title="g_param_type_register_static ()"><code class="function">g_param_type_register_static()</code></a>.
-</p>
+<a class="link" href="gobject-GParamSpec.html#g-param-type-register-static" title="g_param_type_register_static ()"><code class="function">g_param_type_register_static()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1252,8 +1209,7 @@ specifications set out by <em class="parameter"><code>pspec</code></em> (optiona
 Registers <em class="parameter"><code>name</code></em> as the name of a new static type derived from
 <a class="link" href="gobject-Type-Information.html#G-TYPE-PARAM:CAPS" title="G_TYPE_PARAM"><span class="type">G_TYPE_PARAM</span></a>. The type system uses the information contained in
 the <a class="link" href="gobject-GParamSpec.html#GParamSpecTypeInfo" title="struct GParamSpecTypeInfo"><span class="type">GParamSpecTypeInfo</span></a> structure pointed to by <em class="parameter"><code>info</code></em> to manage the
-<a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> type and its instances.
-</p>
+<a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> type and its instances.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1280,25 +1236,22 @@ the <a class="link" href="gobject-GParamSpec.html#GParamSpecTypeInfo" title="str
 <a name="GParamSpecPool"></a><h3>GParamSpecPool</h3>
 <pre class="programlisting">typedef struct _GParamSpecPool GParamSpecPool;</pre>
 <p>
-A <a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="type">GParamSpecPool</span></a> maintains a collection of <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>s which can be
+A <a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="type">GParamSpecPool</span></a> maintains a collection of <a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a> which can be
 quickly accessed by owner and name. The implementation of the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> property
 system uses such a pool to store the <a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a> of the properties all object
-types.
-</p>
+types.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-param-spec-pool-new"></a><h3>g_param_spec_pool_new ()</h3>
 <pre class="programlisting"><a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="returnvalue">GParamSpecPool</span></a> *    g_param_spec_pool_new               (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> type_prefixing</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="type">GParamSpecPool</span></a>.
-</p>
+Creates a new <a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="type">GParamSpecPool</span></a>.</p>
 <p>
 If <em class="parameter"><code>type_prefixing</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>, lookups in the newly created pool will
 allow to specify the owner as a colon-separated prefix of the
 property name, like "GtkContainer:border-width". This feature is
-deprecated, so you should always set <em class="parameter"><code>type_prefixing</code></em> to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.
-</p>
+deprecated, so you should always set <em class="parameter"><code>type_prefixing</code></em> to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#FALSE:CAPS"><code class="literal">FALSE</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1324,8 +1277,7 @@ deprecated, so you should always set <em class="parameter"><code>type_prefixing<
                                                          <em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> owner_type</code></em>);</pre>
 <p>
-Inserts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> in the pool.
-</p>
+Inserts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> in the pool.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1354,8 +1306,7 @@ Inserts a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struc
 <pre class="programlisting"><span class="returnvalue">void</span>                g_param_spec_pool_remove            (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="type">GParamSpecPool</span></a> *pool</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Removes a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> from the pool.
-</p>
+Removes a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> from the pool.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1382,8 +1333,7 @@ Removes a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struc
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> owner_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> walk_ancestors</code></em>);</pre>
 <p>
-Looks up a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> in the pool.
-</p>
+Looks up a <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a> in the pool.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1424,9 +1374,8 @@ matching <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> owner_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> *n_pspecs_p</code></em>);</pre>
 <p>
-Gets an array of all <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>s owned by <em class="parameter"><code>owner_type</code></em> in
-the pool.
-</p>
+Gets an array of all <a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a> owned by <em class="parameter"><code>owner_type</code></em> in
+the pool.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1463,9 +1412,8 @@ owned by <em class="parameter"><code>owner_type</code></em> in the pool. <span c
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             g_param_spec_pool_list_owned        (<em class="parameter"><code><a class="link" href="gobject-GParamSpec.html#GParamSpecPool" title="GParamSpecPool"><span class="type">GParamSpecPool</span></a> *pool</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> owner_type</code></em>);</pre>
 <p>
-Gets an <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of all <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>s owned by <em class="parameter"><code>owner_type</code></em> in
-the pool.
-</p>
+Gets an <a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of all <a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a> owned by <em class="parameter"><code>owner_type</code></em> in
+the pool.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1484,8 +1432,8 @@ the pool.
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>a
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of all <a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>s owned by <em class="parameter"><code>owner_type</code></em> in
-the pool<a class="link" href="gobject-GParamSpec.html#GParamSpec" title="struct GParamSpec"><span class="type">GParamSpec</span></a>s. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GObject.ParamSpec]</span>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of all <a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a> owned by <em class="parameter"><code>owner_type</code></em> in
+the pool<a href="gobject-GParamSpec.html#GParamSpec"><span class="type">GParamSpecs</span></a>. <span class="annotation">[<acronym title="Free data container after the code is done."><span class="acronym">transfer container</span></acronym>][<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> GObject.ParamSpec]</span>
 </td>
 </tr>
 </tbody>
@@ -1501,6 +1449,6 @@ g_object_class_install_property(), <a class="link" href="gobject-The-Base-Object
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

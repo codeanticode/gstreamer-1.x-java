@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -59,7 +57,7 @@
  * however, the "_finish()" function may be called at most once.
  *
  * Example of a typical asynchronous operation flow:
- * |[
+ * |[<!-- language="C" -->
  * void _theoretical_frobnitz_async (Theoretical         *t,
  *                                   GCancellable        *c,
  *                                   GAsyncReadyCallback  cb,
@@ -83,20 +81,20 @@
  *   else
  *     g_printf ("Uh oh!\n");
  *
- *   /<!-- -->* ... *<!-- -->/
+ *   ...
  *
  * }
  *
  * int main (int argc, void *argv[])
  * {
- *    /<!-- -->* ... *<!-- -->/
+ *    ...
  *
  *    _theoretical_frobnitz_async (theoretical_data,
  *                                 NULL,
  *                                 frobnitz_result_func,
  *                                 NULL);
  *
- *    /<!-- -->* ... *<!-- -->/
+ *    ...
  * }
  * ]|
  *
@@ -104,16 +102,15 @@
  * always called, even in the case of a cancelled operation. On cancellation
  * the result is a %G_IO_ERROR_CANCELLED error.
  *
- * <para id="io-priority"><indexterm><primary>I/O
- * priority</primary></indexterm> Many I/O-related asynchronous
- * operations have a priority parameter, which is used in certain
- * cases to determine the order in which operations are executed. They
- * are <emphasis>not</emphasis> used to determine system-wide I/O
- * scheduling. Priorities are integers, with lower numbers indicating
+ * <para id="io-priority">
+ * Many I/O-related asynchronous operations have a priority parameter,
+ * which is used in certain cases to determine the order in which
+ * operations are executed. They are not used to determine system-wide
+ * I/O scheduling. Priorities are integers, with lower numbers indicating
  * higher priority. It is recommended to choose priorities between
- * %G_PRIORITY_LOW and %G_PRIORITY_HIGH, with %G_PRIORITY_DEFAULT as a
- * default. </para>
- **/
+ * %G_PRIORITY_LOW and %G_PRIORITY_HIGH, with %G_PRIORITY_DEFAULT
+ * as a default.</para>
+ */
 
 typedef GAsyncResultIface GAsyncResultInterface;
 G_DEFINE_INTERFACE (GAsyncResult, g_async_result, G_TYPE_OBJECT)

@@ -653,11 +653,6 @@
     <keyword type="function" name="g_async_result_get_source_object ()" link="GAsyncResult.html#g-async-result-get-source-object"/>
     <keyword type="function" name="g_async_result_is_tagged ()" link="GAsyncResult.html#g-async-result-is-tagged" since="2.34"/>
     <keyword type="function" name="g_async_result_legacy_propagate_error ()" link="GAsyncResult.html#g-async-result-legacy-propagate-error" since="2.34"/>
-    <keyword type="" name="Asynchronous operations" link="GTask.html#id-1.4.5.4.6.2.2"/>
-    <keyword type="" name="Chained asynchronous operations" link="GTask.html#id-1.4.5.4.6.2.3"/>
-    <keyword type="" name="Asynchronous operations from synchronous ones" link="GTask.html#id-1.4.5.4.6.2.4"/>
-    <keyword type="" name="Adding cancellability to uncancellable tasks" link="GTask.html#id-1.4.5.4.6.2.5"/>
-    <keyword type="" name="Porting from GSimpleAsyncResult" link="GTask.html#id-1.4.5.4.6.2.6"/>
     <keyword type="struct" name="GTask" link="GTask.html#GTask-struct"/>
     <keyword type="function" name="g_task_new ()" link="GTask.html#g-task-new" since="2.36"/>
     <keyword type="function" name="g_task_set_task_data ()" link="GTask.html#g-task-set-task-data" since="2.36"/>
@@ -1481,7 +1476,7 @@
     <keyword type="function" name="g_unix_fd_list_peek_fds ()" link="GUnixFDList.html#g-unix-fd-list-peek-fds" since="2.24"/>
     <keyword type="function" name="g_unix_fd_list_steal_fds ()" link="GUnixFDList.html#g-unix-fd-list-steal-fds" since="2.24"/>
     <keyword type="function" name="g_unix_fd_list_append ()" link="GUnixFDList.html#g-unix-fd-list-append" since="2.24"/>
-    <keyword type="struct" name="GUnixFDMessage" link="GUnixFDMessage.html#GUnixFDMessage-struct"/>
+    <keyword type="struct" name="struct GUnixFDMessage" link="GUnixFDMessage.html#GUnixFDMessage-struct"/>
     <keyword type="function" name="g_unix_fd_message_new_with_fd_list ()" link="GUnixFDMessage.html#g-unix-fd-message-new-with-fd-list" since="2.24"/>
     <keyword type="function" name="g_unix_fd_message_new ()" link="GUnixFDMessage.html#g-unix-fd-message-new" since="2.22"/>
     <keyword type="function" name="g_unix_fd_message_get_fd_list ()" link="GUnixFDMessage.html#g-unix-fd-message-get-fd-list" since="2.24"/>
@@ -1587,7 +1582,7 @@
     <keyword type="function" name="g_socket_connection_factory_lookup_type ()" link="GSocketConnection.html#g-socket-connection-factory-lookup-type" since="2.22"/>
     <keyword type="function" name="g_socket_connection_factory_register_type ()" link="GSocketConnection.html#g-socket-connection-factory-register-type" since="2.22"/>
     <keyword type="property" name="The &quot;socket&quot; property" link="GSocketConnection.html#GSocketConnection--socket"/>
-    <keyword type="struct" name="GUnixConnection" link="GUnixConnection.html#GUnixConnection-struct"/>
+    <keyword type="struct" name="struct GUnixConnection" link="GUnixConnection.html#GUnixConnection-struct"/>
     <keyword type="function" name="g_unix_connection_receive_fd ()" link="GUnixConnection.html#g-unix-connection-receive-fd" since="2.22"/>
     <keyword type="function" name="g_unix_connection_send_fd ()" link="GUnixConnection.html#g-unix-connection-send-fd" since="2.22"/>
     <keyword type="function" name="g_unix_connection_receive_credentials ()" link="GUnixConnection.html#g-unix-connection-receive-credentials" since="2.26"/>
@@ -2226,8 +2221,6 @@
     <keyword type="property" name="The &quot;object-path&quot; property" link="GDBusObjectManagerClient.html#GDBusObjectManagerClient--object-path"/>
     <keyword type="signal" name="The &quot;interface-proxy-properties-changed&quot; signal" link="GDBusObjectManagerClient.html#GDBusObjectManagerClient-interface-proxy-properties-changed"/>
     <keyword type="signal" name="The &quot;interface-proxy-signal&quot; signal" link="GDBusObjectManagerClient.html#GDBusObjectManagerClient-interface-proxy-signal"/>
-    <keyword type="" name="Vendor overrides" link="GSettings.html#id-1.4.19.2.7.15.1"/>
-    <keyword type="" name="Binding" link="GSettings.html#id-1.4.19.2.7.16.1"/>
     <keyword type="struct" name="GSettings" link="GSettings.html#GSettings-struct"/>
     <keyword type="function" name="g_settings_new ()" link="GSettings.html#g-settings-new" since="2.26"/>
     <keyword type="function" name="g_settings_new_with_path ()" link="GSettings.html#g-settings-new-with-path" since="2.26"/>
@@ -2568,10 +2561,10 @@
     <keyword type="function" name="g_notification_set_urgent ()" link="gio-GNotification.html#g-notification-set-urgent" since="2.40"/>
     <keyword type="function" name="g_notification_set_default_action ()" link="gio-GNotification.html#g-notification-set-default-action" since="2.40"/>
     <keyword type="function" name="g_notification_set_default_action_and_target ()" link="gio-GNotification.html#g-notification-set-default-action-and-target" since="2.40"/>
-    <keyword type="function" name="g_notification_set_default_action_and_target_value ()" link="gio-GNotification.html#g-notification-set-default-action-and-target-value"/>
+    <keyword type="function" name="g_notification_set_default_action_and_target_value ()" link="gio-GNotification.html#g-notification-set-default-action-and-target-value" since="2.40"/>
     <keyword type="function" name="g_notification_add_button ()" link="gio-GNotification.html#g-notification-add-button" since="2.40"/>
     <keyword type="function" name="g_notification_add_button_with_target ()" link="gio-GNotification.html#g-notification-add-button-with-target" since="2.40"/>
-    <keyword type="function" name="g_notification_add_button_with_target_value ()" link="gio-GNotification.html#g-notification-add-button-with-target-value"/>
+    <keyword type="function" name="g_notification_add_button_with_target_value ()" link="gio-GNotification.html#g-notification-add-button-with-target-value" since="2.40"/>
     <keyword type="struct" name="GVfs" link="GVfs.html#GVfs-struct"/>
     <keyword type="macro" name="G_VFS_EXTENSION_POINT_NAME" link="GVfs.html#G-VFS-EXTENSION-POINT-NAME:CAPS"/>
     <keyword type="function" name="g_vfs_get_file_for_path ()" link="GVfs.html#g-vfs-get-file-for-path"/>
@@ -2614,7 +2607,6 @@
     <keyword type="" name="From the commandline" link="gapplication-tool.html#id-1.4.24.9.7.2"/>
     <keyword type="" name="&#10;        From the Exec lines of a .desktop file&#10;      " link="gapplication-tool.html#id-1.4.24.9.7.3"/>
     <keyword type="" name="From a script" link="gapplication-tool.html#id-1.4.24.9.7.4"/>
-    <keyword type="" name="Creating unit tests using GTestDBus" link="GTestDBus.html#gio-D-Bus-Test-Scaffolding"/>
     <keyword type="struct" name="GTestDBus" link="GTestDBus.html#GTestDBus-struct"/>
     <keyword type="enum" name="enum GTestDBusFlags" link="GTestDBus.html#GTestDBusFlags-enum"/>
     <keyword type="function" name="g_test_dbus_new ()" link="GTestDBus.html#g-test-dbus-new"/>

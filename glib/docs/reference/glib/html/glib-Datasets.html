@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Datasets</title>
+<title>GLib Reference Manual: Datasets</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Keyed-Data-Lists.html" title="Keyed Data Lists">
 <link rel="next" href="glib-GVariantType.html" title="GVariantType">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Keyed-Data-Lists.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-data-types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-GVariantType.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Datasets.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Datasets.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-data-types.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Keyed-Data-Lists.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-GVariantType.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Datasets"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -86,8 +83,7 @@ Datasets associate groups of data elements with particular memory
 locations. These are useful if you need to associate data with a
 structure returned from an external library. Since you cannot modify
 the structure, you use its location in memory as the key into a
-dataset, where you can associate any number of data elements with it.
-</p>
+dataset, where you can associate any number of data elements with it.</p>
 <p>
 There are two forms of most of the dataset functions. The first form
 uses strings to identify the data elements associated with a
@@ -95,32 +91,25 @@ location. The second form uses <a class="link" href="glib-Quarks.html#GQuark" ti
 created with a call to <a class="link" href="glib-Quarks.html#g-quark-from-string" title="g_quark_from_string ()"><code class="function">g_quark_from_string()</code></a> or
 <a class="link" href="glib-Quarks.html#g-quark-from-static-string" title="g_quark_from_static_string ()"><code class="function">g_quark_from_static_string()</code></a>. The second form is quicker, since it
 does not require looking up the string in the hash table of <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a>
-identifiers.
-</p>
+identifiers.</p>
 <p>
 There is no function to create a dataset. It is automatically
-created as soon as you add elements to it.
-</p>
+created as soon as you add elements to it.</p>
 <p>
 To add data elements to a dataset use <a class="link" href="glib-Datasets.html#g-dataset-id-set-data" title="g_dataset_id_set_data()"><code class="function">g_dataset_id_set_data()</code></a>,
 <a class="link" href="glib-Datasets.html#g-dataset-id-set-data-full" title="g_dataset_id_set_data_full ()"><code class="function">g_dataset_id_set_data_full()</code></a>, <a class="link" href="glib-Datasets.html#g-dataset-set-data" title="g_dataset_set_data()"><code class="function">g_dataset_set_data()</code></a> and
-<a class="link" href="glib-Datasets.html#g-dataset-set-data-full" title="g_dataset_set_data_full()"><code class="function">g_dataset_set_data_full()</code></a>.
-</p>
+<a class="link" href="glib-Datasets.html#g-dataset-set-data-full" title="g_dataset_set_data_full()"><code class="function">g_dataset_set_data_full()</code></a>.</p>
 <p>
 To get data elements from a dataset use <a class="link" href="glib-Datasets.html#g-dataset-id-get-data" title="g_dataset_id_get_data ()"><code class="function">g_dataset_id_get_data()</code></a> and
-<a class="link" href="glib-Datasets.html#g-dataset-get-data" title="g_dataset_get_data()"><code class="function">g_dataset_get_data()</code></a>.
-</p>
+<a class="link" href="glib-Datasets.html#g-dataset-get-data" title="g_dataset_get_data()"><code class="function">g_dataset_get_data()</code></a>.</p>
 <p>
 To iterate over all data elements in a dataset use
-<a class="link" href="glib-Datasets.html#g-dataset-foreach" title="g_dataset_foreach ()"><code class="function">g_dataset_foreach()</code></a> (not thread-safe).
-</p>
+<a class="link" href="glib-Datasets.html#g-dataset-foreach" title="g_dataset_foreach ()"><code class="function">g_dataset_foreach()</code></a> (not thread-safe).</p>
 <p>
 To remove data elements from a dataset use
-<a class="link" href="glib-Datasets.html#g-dataset-id-remove-data" title="g_dataset_id_remove_data()"><code class="function">g_dataset_id_remove_data()</code></a> and <a class="link" href="glib-Datasets.html#g-dataset-remove-data" title="g_dataset_remove_data()"><code class="function">g_dataset_remove_data()</code></a>.
-</p>
+<a class="link" href="glib-Datasets.html#g-dataset-id-remove-data" title="g_dataset_id_remove_data()"><code class="function">g_dataset_id_remove_data()</code></a> and <a class="link" href="glib-Datasets.html#g-dataset-remove-data" title="g_dataset_remove_data()"><code class="function">g_dataset_remove_data()</code></a>.</p>
 <p>
-To destroy a dataset, use <a class="link" href="glib-Datasets.html#g-dataset-destroy" title="g_dataset_destroy ()"><code class="function">g_dataset_destroy()</code></a>.
-</p>
+To destroy a dataset, use <a class="link" href="glib-Datasets.html#g-dataset-destroy" title="g_dataset_destroy ()"><code class="function">g_dataset_destroy()</code></a>.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Datasets.details"></a><h2>Details</h2>
@@ -130,8 +119,7 @@ To destroy a dataset, use <a class="link" href="glib-Datasets.html#g-dataset-des
 <p>
 Sets the data element associated with the given <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a> id. Any
 previous data with the same key is removed, and its destroy function
-is called.
-</p>
+is called.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -164,8 +152,7 @@ is called.
 Sets the data element associated with the given <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a> id, and also
 the function to call when the data element is destroyed. Any
 previous data with the same key is removed, and its destroy function
-is called.
-</p>
+is called.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -201,8 +188,7 @@ for it.</td>
 <p>
 Specifies the type of function which is called when a data element
 is destroyed. It is passed the pointer to the data element and
-should free any memory and resources allocated for it.
-</p>
+should free any memory and resources allocated for it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -220,8 +206,7 @@ should free any memory and resources allocated for it.
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="returnvalue">gpointer</span></a>            g_dataset_id_get_data               (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> dataset_location</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a> key_id</code></em>);</pre>
 <p>
-Gets the data element corresponding to a <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a>.
-</p>
+Gets the data element corresponding to a <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -250,8 +235,7 @@ it is not found.</td>
 <pre class="programlisting">#define             g_dataset_id_remove_data(l, k)</pre>
 <p>
 Removes a data element from a dataset. The data element's destroy
-function is called if it has been set.
-</p>
+function is called if it has been set.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -276,8 +260,7 @@ function is called if it has been set.
                                                          <em class="parameter"><code><a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a> key_id</code></em>);</pre>
 <p>
 Removes an element, without calling its destroy notification
-function.
-</p>
+function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -304,8 +287,7 @@ function.
 <a name="g-dataset-set-data"></a><h3>g_dataset_set_data()</h3>
 <pre class="programlisting">#define             g_dataset_set_data(l, k, d)</pre>
 <p>
-Sets the data corresponding to the given string identifier.
-</p>
+Sets the data corresponding to the given string identifier.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -333,8 +315,7 @@ Sets the data corresponding to the given string identifier.
 <pre class="programlisting">#define             g_dataset_set_data_full(l, k, d, f)</pre>
 <p>
 Sets the data corresponding to the given string identifier, and the
-function to call when the data element is destroyed.
-</p>
+function to call when the data element is destroyed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -367,8 +348,7 @@ free any memory allocated for it.</td>
 <a name="g-dataset-get-data"></a><h3>g_dataset_get_data()</h3>
 <pre class="programlisting">#define             g_dataset_get_data(l, k)</pre>
 <p>
-Gets the data element corresponding to a string.
-</p>
+Gets the data element corresponding to a string.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -397,8 +377,7 @@ it is not found.</td>
 <pre class="programlisting">#define             g_dataset_remove_data(l, k)</pre>
 <p>
 Removes a data element corresponding to a string. Its destroy
-function is called if it has been set.
-</p>
+function is called if it has been set.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -421,8 +400,7 @@ function is called if it has been set.
 <a name="g-dataset-remove-no-notify"></a><h3>g_dataset_remove_no_notify()</h3>
 <pre class="programlisting">#define             g_dataset_remove_no_notify(l, k)</pre>
 <p>
-Removes an element, without calling its destroy notifier.
-</p>
+Removes an element, without calling its destroy notifier.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -450,8 +428,7 @@ Removes an element, without calling its destroy notifier.
 Calls the given function for each data element which is associated
 with the given location. Note that this function is NOT thread-safe.
 So unless <em class="parameter"><code>datalist</code></em> can be protected from any modifications during
-invocation of this function, it should not be called.
-</p>
+invocation of this function, it should not be called.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -482,8 +459,7 @@ invocation of this function, it should not be called.
 <p>
 Specifies the type of function passed to <a class="link" href="glib-Datasets.html#g-dataset-foreach" title="g_dataset_foreach ()"><code class="function">g_dataset_foreach()</code></a>. It is
 called with each <a class="link" href="glib-Quarks.html#GQuark" title="GQuark"><span class="type">GQuark</span></a> id and associated data element, together
-with the <em class="parameter"><code>user_data</code></em> parameter supplied to <a class="link" href="glib-Datasets.html#g-dataset-foreach" title="g_dataset_foreach ()"><code class="function">g_dataset_foreach()</code></a>.
-</p>
+with the <em class="parameter"><code>user_data</code></em> parameter supplied to <a class="link" href="glib-Datasets.html#g-dataset-foreach" title="g_dataset_foreach ()"><code class="function">g_dataset_foreach()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -511,8 +487,7 @@ with the <em class="parameter"><code>user_data</code></em> parameter supplied to
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dataset_destroy                   (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> dataset_location</code></em>);</pre>
 <p>
 Destroys the dataset, freeing all memory allocated, and calling any
-destroy functions set for data elements.
-</p>
+destroy functions set for data elements.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -528,6 +503,6 @@ destroy functions set for data elements.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

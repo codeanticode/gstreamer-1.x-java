@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -331,7 +329,7 @@ g_boxed_type_register_static (const gchar   *name,
  * 
  * Provide a copy of a boxed structure @src_boxed which is of type @boxed_type.
  * 
- * Returns: The newly created copy of the boxed structure.
+ * Returns: (transfer full): The newly created copy of the boxed structure.
  */
 gpointer
 g_boxed_copy (GType         boxed_type,

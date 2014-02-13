@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -240,22 +238,31 @@ g_unix_is_mount_path_system_internal (const char *mount_path)
     "/",              /* we already have "Filesystem root" in Nautilus */ 
     "/bin",
     "/boot",
+    "/compat/linux/proc",
+    "/compat/linux/sys",
     "/dev",
     "/etc",
     "/home",
     "/lib",
     "/lib64",
+    "/libexec",
     "/live/cow",
     "/live/image",
     "/media",
     "/mnt",
     "/opt",
+    "/rescue",
     "/root",
     "/sbin",
     "/srv",
     "/tmp",
     "/usr",
+    "/usr/X11R6",
     "/usr/local",
+    "/usr/obj",
+    "/usr/ports",
+    "/usr/src",
+    "/usr/xobj",
     "/var",
     "/var/crash",
     "/var/local",
@@ -296,8 +303,11 @@ guess_system_internal (const char *mountpoint,
     "devfs",
     "devpts",
     "ecryptfs",
+    "fdescfs",
     "kernfs",
     "linprocfs",
+    "mfs",
+    "nullfs",
     "proc",
     "procfs",
     "ptyfs",

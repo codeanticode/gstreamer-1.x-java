@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -68,18 +66,15 @@ static GMemVTable glib_mem_vtable = {
  * 
  * These functions provide support for allocating and freeing memory.
  * 
- * <note>
  * If any call to allocate memory fails, the application is terminated.
  * This also means that there is no need to check if the call succeeded.
- * </note>
  * 
- * <note>
- * It's important to match g_malloc() with g_free(), plain malloc() with free(),
- * and (if you're using C++) new with delete and new[] with delete[]. Otherwise
- * bad things can happen, since these allocators may use different memory
- * pools (and new/delete call constructors and destructors). See also
- * g_mem_set_vtable().
- * </note>
+ * It's important to match g_malloc() (and wrappers such as g_new()) with
+ * g_free(), g_slice_alloc() and wrappers such as g_slice_new()) with
+ * g_slice_free(), plain malloc() with free(), and (if you're using C++)
+ * new with delete and new[] with delete[]. Otherwise bad things can happen,
+ * since these allocators may use different memory pools (and new/delete call
+ * constructors and destructors). See also g_mem_set_vtable().
  */
 
 /* --- functions --- */
@@ -145,7 +140,7 @@ g_malloc0 (gsize n_bytes)
 
 /**
  * g_realloc:
- * @mem: the memory to reallocate
+ * @mem: (allow-none): the memory to reallocate
  * @n_bytes: new size of the memory in bytes
  * 
  * Reallocates the memory pointed to by @mem, so that it now has space for
@@ -183,7 +178,7 @@ g_realloc (gpointer mem,
 
 /**
  * g_free:
- * @mem: the memory to free
+ * @mem: (allow-none): the memory to free
  * 
  * Frees the memory pointed to by @mem.
  * If @mem is %NULL it simply returns.
@@ -369,7 +364,7 @@ g_malloc0_n (gsize n_blocks,
 
 /**
  * g_realloc_n:
- * @mem: the memory to reallocate
+ * @mem: (allow-none): the memory to reallocate
  * @n_blocks: the number of blocks to allocate
  * @n_block_bytes: the size of each block in bytes
  * 
@@ -498,13 +493,17 @@ g_mem_is_system_malloc (void)
  * g_mem_set_vtable:
  * @vtable: table of memory allocation routines.
  * 
- * Sets the #GMemVTable to use for memory allocation. You can use this to provide
- * custom memory allocation routines. <emphasis>This function must be called
- * before using any other GLib functions.</emphasis> The @vtable only needs to
- * provide malloc(), realloc(), and free() functions; GLib can provide default
- * implementations of the others. The malloc() and realloc() implementations
- * should return %NULL on failure, GLib will handle error-checking for you.
- * @vtable is copied, so need not persist after this function has been called.
+ * Sets the #GMemVTable to use for memory allocation. You can use this
+ * to provide custom memory allocation routines.
+ *
+ * The @vtable only needs to provide malloc(), realloc(), and free()
+ * functions; GLib can provide default implementations of the others.
+ * The malloc() and realloc() implementations should return %NULL on
+ * failure, GLib will handle error-checking for you. @vtable is copied,
+ * so need not persist after this function has been called.
+ *
+ * Note that this function must be called before using any other GLib
+ * functions.
  */
 void
 g_mem_set_vtable (GMemVTable *vtable)

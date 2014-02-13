@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GCharsetConverter</title>
+<title>GIO Reference Manual: GCharsetConverter</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="conversion.html" title="Data conversion">
 <link rel="prev" href="GConverter.html" title="GConverter">
 <link rel="next" href="GZlibCompressor.html" title="GZlibCompressor">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GConverter.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="conversion.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GZlibCompressor.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GCharsetConverter.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GCharsetConverter.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GCharsetConverter.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
                    | 
                   <a href="#GCharsetConverter.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="conversion.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GConverter.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GZlibCompressor.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GCharsetConverter"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -84,8 +81,7 @@ GCharsetConverter implements
 <a name="GCharsetConverter.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="GCharsetConverter.html" title="GCharsetConverter"><span class="type">GCharsetConverter</span></a> is an implementation of <a class="link" href="GConverter.html" title="GConverter"><span class="type">GConverter</span></a> based on
-GIConv.
-</p>
+GIConv.</p>
 </div>
 <div class="refsect1">
 <a name="GCharsetConverter.details"></a><h2>Details</h2>
@@ -93,8 +89,7 @@ GIConv.
 <a name="GCharsetConverter-struct"></a><h3>GCharsetConverter</h3>
 <pre class="programlisting">typedef struct _GCharsetConverter GCharsetConverter;</pre>
 <p>
-Conversions between character sets.
-</p>
+Conversions between character sets.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -103,8 +98,7 @@ Conversions between character sets.
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *from_charset</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GCharsetConverter.html" title="GCharsetConverter"><span class="type">GCharsetConverter</span></a>.
-</p>
+Creates a new <a class="link" href="GCharsetConverter.html" title="GCharsetConverter"><span class="type">GCharsetConverter</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -139,8 +133,7 @@ Creates a new <a class="link" href="GCharsetConverter.html" title="GCharsetConve
                                                         (<em class="parameter"><code><a class="link" href="GCharsetConverter.html" title="GCharsetConverter"><span class="type">GCharsetConverter</span></a> *converter</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> use_fallback</code></em>);</pre>
 <p>
-Sets the <a class="link" href="GCharsetConverter.html#GCharsetConverter--use-fallback" title='The "use-fallback" property'><span class="type">"use-fallback"</span></a> property.
-</p>
+Sets the <a class="link" href="GCharsetConverter.html#GCharsetConverter--use-fallback" title='The "use-fallback" property'><span class="type">"use-fallback"</span></a> property.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -167,8 +160,7 @@ Sets the <a class="link" href="GCharsetConverter.html#GCharsetConverter--use-fal
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_charset_converter_get_use_fallback
                                                         (<em class="parameter"><code><a class="link" href="GCharsetConverter.html" title="GCharsetConverter"><span class="type">GCharsetConverter</span></a> *converter</code></em>);</pre>
 <p>
-Gets the <a class="link" href="GCharsetConverter.html#GCharsetConverter--use-fallback" title='The "use-fallback" property'><span class="type">"use-fallback"</span></a> property.
-</p>
+Gets the <a class="link" href="GCharsetConverter.html#GCharsetConverter--use-fallback" title='The "use-fallback" property'><span class="type">"use-fallback"</span></a> property.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -196,8 +188,7 @@ Gets the <a class="link" href="GCharsetConverter.html#GCharsetConverter--use-fal
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="returnvalue">guint</span></a>               g_charset_converter_get_num_fallbacks
                                                         (<em class="parameter"><code><a class="link" href="GCharsetConverter.html" title="GCharsetConverter"><span class="type">GCharsetConverter</span></a> *converter</code></em>);</pre>
 <p>
-Gets the number of fallbacks that <em class="parameter"><code>converter</code></em> has applied so far.
-</p>
+Gets the number of fallbacks that <em class="parameter"><code>converter</code></em> has applied so far.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -244,6 +235,6 @@ Gets the number of fallbacks that <em class="parameter"><code>converter</code></
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

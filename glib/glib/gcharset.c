@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -440,7 +438,7 @@ append_locale_variants (GPtrArray *array,
  * For example, if @locale is "fr_BE", then the returned list
  * is "fr_BE", "fr".
  *
- * If you need the list of variants for the <emphasis>current locale</emphasis>,
+ * If you need the list of variants for the current locale,
  * use g_get_language_names().
  *
  * Returns: (transfer full) (array zero-terminated=1) (element-type utf8): a newly

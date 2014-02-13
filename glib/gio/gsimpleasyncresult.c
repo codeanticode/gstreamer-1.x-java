@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -36,16 +34,14 @@
  * SECTION:gsimpleasyncresult
  * @short_description: Simple asynchronous results implementation
  * @include: gio/gio.h
- * @see_also: #GAsyncResult
+ * @see_also: #GAsyncResult, #GTask
  *
- * <note><para>
- *   As of GLib 2.36, #GSimpleAsyncResult is deprecated in favor of
- *   #GTask, which provides a simpler API.
- * </para></note>
+ * As of GLib 2.36, #GSimpleAsyncResult is deprecated in favor of
+ * #GTask, which provides a simpler API.
  *
  * #GSimpleAsyncResult implements #GAsyncResult.
  *
- * GSimpleAsyncResult handles #GAsyncReadyCallback<!-- -->s, error
+ * GSimpleAsyncResult handles #GAsyncReadyCallbacks, error
  * reporting, operation cancellation and the final state of an operation,
  * completely transparent to the application. Results can be returned
  * as a pointer e.g. for functions that return data that is collected
@@ -83,7 +79,7 @@
  * cause a leak if cancelled before being run).
  *
  * GSimpleAsyncResult can integrate into GLib's event loop, #GMainLoop,
- * or it can use #GThread<!-- -->s.
+ * or it can use #GThreads.
  * g_simple_async_result_complete() will finish an I/O task directly
  * from the point where it is called. g_simple_async_result_complete_in_idle()
  * will finish it from an idle handler in the <link
@@ -110,7 +106,7 @@
  * #GAsyncResult.  A typical implementation of an asynchronous operation
  * using GSimpleAsyncResult looks something like this:
  *
- * |[
+ * |[<!-- language="C" -->
  * static void
  * baked_cb (Cake    *cake,
  *           gpointer user_data)

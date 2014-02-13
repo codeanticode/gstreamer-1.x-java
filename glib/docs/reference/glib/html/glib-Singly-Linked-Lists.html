@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Singly-Linked Lists</title>
+<title>GLib Reference Manual: Singly-Linked Lists</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-data-types.html" title="GLib Data Types">
 <link rel="prev" href="glib-Doubly-Linked-Lists.html" title="Doubly-Linked Lists">
 <link rel="next" href="glib-Double-ended-Queues.html" title="Double-ended Queues">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Doubly-Linked-Lists.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-data-types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Double-ended-Queues.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Singly-Linked-Lists.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Singly-Linked-Lists.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-data-types.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Doubly-Linked-Lists.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Double-ended-Queues.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Singly-Linked-Lists"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -113,56 +110,44 @@ struct              <a class="link" href="glib-Singly-Linked-Lists.html#GSList" 
 <a name="glib-Singly-Linked-Lists.description"></a><h2>Description</h2>
 <p>
 The <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> structure and its associated functions provide a
-standard singly-linked list data structure.
-</p>
+standard singly-linked list data structure.</p>
 <p>
 Each element in the list contains a piece of data, together with a
 pointer which links to the next element in the list. Using this
 pointer it is possible to move through the list in one direction
 only (unlike the <a class="link" href="glib-Doubly-Linked-Lists.html" title="Doubly-Linked Lists">Doubly-Linked Lists</a> which
-allow movement in both directions).
-</p>
+allow movement in both directions).</p>
 <p>
 The data contained in each element can be either integer values, by
 using one of the <a class="link" href="glib-Type-Conversion-Macros.html" title="Type Conversion Macros">Type
-Conversion Macros</a>, or simply pointers to any type of data.
-</p>
+Conversion Macros</a>, or simply pointers to any type of data.</p>
 <p>
 List elements are allocated from the <a class="link" href="glib-Memory-Slices.html" title="Memory Slices">slice allocator</a>, which is more
-efficient than allocating elements individually.
-</p>
+efficient than allocating elements individually.</p>
 <p>
 Note that most of the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> functions expect to be passed a
 pointer to the first element in the list. The functions which insert
-elements return the new start of the list, which may have changed.
-</p>
+elements return the new start of the list, which may have changed.</p>
 <p>
 There is no function to create a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>. <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> is considered to be
-the empty list so you simply set a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>* to <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-</p>
+the empty list so you simply set a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>* to <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <p>
 To add elements, use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-append" title="g_slist_append ()"><code class="function">g_slist_append()</code></a>, <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-prepend" title="g_slist_prepend ()"><code class="function">g_slist_prepend()</code></a>,
-<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert" title="g_slist_insert ()"><code class="function">g_slist_insert()</code></a> and <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert-sorted" title="g_slist_insert_sorted ()"><code class="function">g_slist_insert_sorted()</code></a>.
-</p>
+<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert" title="g_slist_insert ()"><code class="function">g_slist_insert()</code></a> and <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert-sorted" title="g_slist_insert_sorted ()"><code class="function">g_slist_insert_sorted()</code></a>.</p>
 <p>
-To remove elements, use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove" title="g_slist_remove ()"><code class="function">g_slist_remove()</code></a>.
-</p>
+To remove elements, use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove" title="g_slist_remove ()"><code class="function">g_slist_remove()</code></a>.</p>
 <p>
 To find elements in the list use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-last" title="g_slist_last ()"><code class="function">g_slist_last()</code></a>, <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-next" title="g_slist_next()"><code class="function">g_slist_next()</code></a>,
 <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-nth" title="g_slist_nth ()"><code class="function">g_slist_nth()</code></a>, <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-nth-data" title="g_slist_nth_data ()"><code class="function">g_slist_nth_data()</code></a>, <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-find" title="g_slist_find ()"><code class="function">g_slist_find()</code></a> and
-<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-find-custom" title="g_slist_find_custom ()"><code class="function">g_slist_find_custom()</code></a>.
-</p>
+<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-find-custom" title="g_slist_find_custom ()"><code class="function">g_slist_find_custom()</code></a>.</p>
 <p>
 To find the index of an element use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-position" title="g_slist_position ()"><code class="function">g_slist_position()</code></a> and
-<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-index" title="g_slist_index ()"><code class="function">g_slist_index()</code></a>.
-</p>
+<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-index" title="g_slist_index ()"><code class="function">g_slist_index()</code></a>.</p>
 <p>
 To call a function for each element in the list use
-<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-foreach" title="g_slist_foreach ()"><code class="function">g_slist_foreach()</code></a>.
-</p>
+<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-foreach" title="g_slist_foreach ()"><code class="function">g_slist_foreach()</code></a>.</p>
 <p>
-To free the entire list, use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-free" title="g_slist_free ()"><code class="function">g_slist_free()</code></a>.
-</p>
+To free the entire list, use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-free" title="g_slist_free ()"><code class="function">g_slist_free()</code></a>.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Singly-Linked-Lists.details"></a><h2>Details</h2>
@@ -175,8 +160,7 @@ To free the entire list, use <a class="link" href="glib-Singly-Linked-Lists.html
 </pre>
 <p>
 The <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> struct is used for each element in the singly-linked
-list.
-</p>
+list.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -203,8 +187,7 @@ Macros</a>.</td>
 <p>
 Allocates space for one <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> element. It is called by the
 <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-append" title="g_slist_append ()"><code class="function">g_slist_append()</code></a>, <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-prepend" title="g_slist_prepend ()"><code class="function">g_slist_prepend()</code></a>, <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert" title="g_slist_insert ()"><code class="function">g_slist_insert()</code></a> and
-<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert-sorted" title="g_slist_insert_sorted ()"><code class="function">g_slist_insert_sorted()</code></a> functions and so is rarely used on its own.
-</p>
+<a class="link" href="glib-Singly-Linked-Lists.html#g-slist-insert-sorted" title="g_slist_insert_sorted ()"><code class="function">g_slist_insert_sorted()</code></a> functions and so is rarely used on its own.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -222,32 +205,15 @@ Allocates space for one <a class="link" href="glib-Singly-Linked-Lists.html#GSLi
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_append                      (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
-Adds a new element on to the end of the list.
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+Adds a new element on to the end of the list.</p>
 <p>
 The return value is the new start of the list, which may
-have changed, so make sure you store the new value.
-</p>
-</div>
-<p>
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+have changed, so make sure you store the new value.</p>
 <p>
 Note that <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-append" title="g_slist_append ()"><code class="function">g_slist_append()</code></a> has to traverse the entire list
 to find the end, which is inefficient when adding multiple
 elements. A common idiom to avoid the inefficiency is to prepend
-the elements and reverse the list when all elements have been added.
-</p>
-</div>
-<p>
-</p>
+the elements and reverse the list when all elements have been added.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -279,8 +245,6 @@ the elements and reverse the list when all elements have been added.
   </table>
 </div>
 
-<p>
-</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -310,19 +274,10 @@ the elements and reverse the list when all elements have been added.
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_prepend                     (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
-Adds a new element on to the start of the list.
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+Adds a new element on to the start of the list.</p>
 <p>
 The return value is the new start of the list, which
-may have changed, so make sure you store the new value.
-</p>
-</div>
-<p>
-</p>
+may have changed, so make sure you store the new value.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -342,8 +297,6 @@ may have changed, so make sure you store the new value.
   </table>
 </div>
 
-<p>
-</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -374,8 +327,7 @@ may have changed, so make sure you store the new value.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> position</code></em>);</pre>
 <p>
-Inserts a new element into the list at the given position.
-</p>
+Inserts a new element into the list at the given position.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -413,8 +365,7 @@ to the end of the list.</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *sibling</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
-Inserts a node before <em class="parameter"><code>sibling</code></em> containing <em class="parameter"><code>data</code></em>.
-</p>
+Inserts a node before <em class="parameter"><code>sibling</code></em> containing <em class="parameter"><code>data</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -449,8 +400,7 @@ Inserts a node before <em class="parameter"><code>sibling</code></em> containing
                                                          <em class="parameter"><code><a class="link" href="glib-Doubly-Linked-Lists.html#GCompareFunc" title="GCompareFunc ()"><span class="type">GCompareFunc</span></a> func</code></em>);</pre>
 <p>
 Inserts a new element into the list, using the given
-comparison function to determine its position.
-</p>
+comparison function to determine its position.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -488,8 +438,7 @@ comes after the second parameter in the sort order.</td>
 <p>
 Removes an element from a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
 If two elements contain the same data, only the first is removed.
-If none of the elements contain the data, the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> is unchanged.
-</p>
+If none of the elements contain the data, the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> is unchanged.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -522,18 +471,13 @@ If none of the elements contain the data, the <a class="link" href="glib-Singly-
 Removes an element from a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>, without
 freeing the element. The removed element's next
 link is set to <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, so that it becomes a
-self-contained list with one element.
-</p>
+self-contained list with one element.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>Removing arbitrary nodes from a singly-linked list
+Removing arbitrary nodes from a singly-linked list
 requires time that is proportional to the length of the list
 (ie. O(n)). If you find yourself using <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove-link" title="g_slist_remove_link ()"><code class="function">g_slist_remove_link()</code></a>
-frequently, you should consider a different data structure, such
-as the doubly-linked <a class="link" href="glib-Doubly-Linked-Lists.html#GList" title="struct GList"><span class="type">GList</span></a>.</div>
-<p>
-</p>
+frequently, you should consider a different data structure,
+such as the doubly-linked <a class="link" href="glib-Doubly-Linked-Lists.html#GList" title="struct GList"><span class="type">GList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -565,18 +509,13 @@ as the doubly-linked <a class="link" href="glib-Doubly-Linked-Lists.html#GList" 
 <p>
 Removes the node link_ from the list and frees it.
 Compare this to <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove-link" title="g_slist_remove_link ()"><code class="function">g_slist_remove_link()</code></a> which removes the node
-without freeing it.
-</p>
+without freeing it.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>Removing arbitrary nodes from a singly-linked list
-requires time that is proportional to the length of the list
-(ie. O(n)). If you find yourself using <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-delete-link" title="g_slist_delete_link ()"><code class="function">g_slist_delete_link()</code></a>
-frequently, you should consider a different data structure, such
-as the doubly-linked <a class="link" href="glib-Doubly-Linked-Lists.html#GList" title="struct GList"><span class="type">GList</span></a>.</div>
-<p>
-</p>
+Removing arbitrary nodes from a singly-linked list requires time
+that is proportional to the length of the list (ie. O(n)). If you
+find yourself using <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-delete-link" title="g_slist_delete_link ()"><code class="function">g_slist_delete_link()</code></a> frequently, you should
+consider a different data structure, such as the doubly-linked
+<a class="link" href="glib-Doubly-Linked-Lists.html#GList" title="struct GList"><span class="type">GList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -609,8 +548,7 @@ as the doubly-linked <a class="link" href="glib-Doubly-Linked-Lists.html#GList" 
 Removes all list nodes with data equal to <em class="parameter"><code>data</code></em>.
 Returns the new head of the list. Contrast with
 <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove" title="g_slist_remove ()"><code class="function">g_slist_remove()</code></a> which removes only the first node
-matching the given data.
-</p>
+matching the given data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -640,20 +578,11 @@ matching the given data.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_slist_free                        (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
 <p>
 Frees all of the memory used by a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-The freed elements are returned to the slice allocator.
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+The freed elements are returned to the slice allocator.</p>
 <p>
 If list elements contain dynamically-allocated memory,
 you should either use <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-free-full" title="g_slist_free_full ()"><code class="function">g_slist_free_full()</code></a> or free them manually
-first.
-</p>
-</div>
-<p>
-</p>
+first.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -673,8 +602,7 @@ first.
                                                          <em class="parameter"><code><a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> free_func</code></em>);</pre>
 <p>
 Convenience method, which frees all the memory used by a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>, and
-calls the specified destroy function on every element's data.
-</p>
+calls the specified destroy function on every element's data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -700,8 +628,7 @@ calls the specified destroy function on every element's data.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_slist_free_1                      (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
 <p>
 Frees one <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> element.
-It is usually used after <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove-link" title="g_slist_remove_link ()"><code class="function">g_slist_remove_link()</code></a>.
-</p>
+It is usually used after <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-remove-link" title="g_slist_remove_link ()"><code class="function">g_slist_remove_link()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -718,8 +645,7 @@ It is usually used after <a class="link" href="glib-Singly-Linked-Lists.html#g-s
 <a name="g-slist-free1"></a><h3>g_slist_free1</h3>
 <pre class="programlisting">#define             g_slist_free1</pre>
 <p>
-A macro which does the same as <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-free-1" title="g_slist_free_1 ()"><code class="function">g_slist_free_1()</code></a>.
-</p>
+A macro which does the same as <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-free-1" title="g_slist_free_1 ()"><code class="function">g_slist_free_1()</code></a>.</p>
 <p class="since">Since 2.10</p>
 </div>
 <hr>
@@ -727,19 +653,10 @@ A macro which does the same as <a class="link" href="glib-Singly-Linked-Lists.ht
 <a name="g-slist-length"></a><h3>g_slist_length ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>               g_slist_length                      (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
 <p>
-Gets the number of elements in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+Gets the number of elements in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <p>
 This function iterates over the whole list to
-count its elements.
-</p>
-</div>
-<p>
-</p>
+count its elements.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -764,21 +681,12 @@ count its elements.
 <a name="g-slist-copy"></a><h3>g_slist_copy ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_copy                        (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
 <p>
-Copies a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
+Copies a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <p>
 Note that this is a "shallow" copy. If the list elements
 consist of pointers to data, the pointers are copied but
 the actual data isn't. See <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-copy-deep" title="g_slist_copy_deep ()"><code class="function">g_slist_copy_deep()</code></a> if you need
-to copy the data as well.
-</p>
-</div>
-<p>
-</p>
+to copy the data as well.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -805,17 +713,14 @@ to copy the data as well.
                                                          <em class="parameter"><code><a class="link" href="glib-N-ary-Trees.html#GCopyFunc" title="GCopyFunc ()"><span class="type">GCopyFunc</span></a> func</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Makes a full (deep) copy of a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
+Makes a full (deep) copy of a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <p>
 In contrast with <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-copy" title="g_slist_copy ()"><code class="function">g_slist_copy()</code></a>, this function uses <em class="parameter"><code>func</code></em> to make a copy of
-each list element, in addition to copying the list container itself.
-</p>
+each list element, in addition to copying the list container itself.</p>
 <p>
 <em class="parameter"><code>func</code></em>, as a <a class="link" href="glib-N-ary-Trees.html#GCopyFunc" title="GCopyFunc ()"><span class="type">GCopyFunc</span></a>, takes two arguments, the data to be copied and a user
 pointer. It's safe to pass <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><span class="type">NULL</span></a> as user_data, if the copy function takes only
-one argument.
-</p>
+one argument.</p>
 <p>
 For instance, if <em class="parameter"><code>list</code></em> holds a list of GObjects, you can do:
 </p>
@@ -831,8 +736,6 @@ For instance, if <em class="parameter"><code>list</code></em> holds a list of GO
 </div>
 
 <p>
-</p>
-<p>
 And, to entirely free the new list, you could do:
 </p>
 <div class="informalexample">
@@ -846,8 +749,6 @@ And, to entirely free the new list, you could do:
   </table>
 </div>
 
-<p>
-</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -881,8 +782,7 @@ And, to entirely free the new list, you could do:
 <a name="g-slist-reverse"></a><h3>g_slist_reverse ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_reverse                     (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
 <p>
-Reverses a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
+Reverses a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -911,8 +811,7 @@ Reverses a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="st
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Inserts a new element into the list, using the given
-comparison function to determine its position.
-</p>
+comparison function to determine its position.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -953,8 +852,7 @@ comes after the second parameter in the sort order.</td>
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_sort                        (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Doubly-Linked-Lists.html#GCompareFunc" title="GCompareFunc ()"><span class="type">GCompareFunc</span></a> compare_func</code></em>);</pre>
 <p>
-Sorts a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> using the given comparison function.
-</p>
+Sorts a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> using the given comparison function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -989,8 +887,7 @@ the first element comes after the second.</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Doubly-Linked-Lists.html#GCompareDataFunc" title="GCompareDataFunc ()"><span class="type">GCompareDataFunc</span></a> compare_func</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Like <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-sort" title="g_slist_sort ()"><code class="function">g_slist_sort()</code></a>, but the sort function accepts a user data argument.
-</p>
+Like <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-sort" title="g_slist_sort ()"><code class="function">g_slist_sort()</code></a>, but the sort function accepts a user data argument.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1025,8 +922,7 @@ Like <a class="link" href="glib-Singly-Linked-Lists.html#g-slist-sort" title="g_
 <p>
 Adds the second <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> onto the end of the first <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
 Note that the elements of the second <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> are not copied.
-They are used directly.
-</p>
+They are used directly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1058,8 +954,7 @@ They are used directly.
                                                          <em class="parameter"><code><a class="link" href="glib-Doubly-Linked-Lists.html#GFunc" title="GFunc ()"><span class="type">GFunc</span></a> func</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Calls a function for each element of a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
+Calls a function for each element of a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1087,18 +982,9 @@ Calls a function for each element of a <a class="link" href="glib-Singly-Linked-
 <a name="g-slist-last"></a><h3>g_slist_last ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_last                        (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>);</pre>
 <p>
-Gets the last element in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
+Gets the last element in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>
-This function iterates over the whole list.
-</p>
-</div>
-<p>
-</p>
+This function iterates over the whole list.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1123,8 +1009,7 @@ or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code
 <a name="g-slist-next"></a><h3>g_slist_next()</h3>
 <pre class="programlisting">#define             g_slist_next(slist)</pre>
 <p>
-A convenience macro to get the next element in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
+A convenience macro to get the next element in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1148,8 +1033,7 @@ A convenience macro to get the next element in a <a class="link" href="glib-Sing
 <pre class="programlisting"><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="returnvalue">GSList</span></a> *            g_slist_nth                         (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> n</code></em>);</pre>
 <p>
-Gets the element at the given position in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.
-</p>
+Gets the element at the given position in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1180,8 +1064,7 @@ the end of the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="returnvalue">gpointer</span></a>            g_slist_nth_data                    (<em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> n</code></em>);</pre>
 <p>
-Gets the data of the element at the given position.
-</p>
+Gets the data of the element at the given position.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1213,8 +1096,7 @@ is off the end of the <a class="link" href="glib-Singly-Linked-Lists.html#GSList
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>);</pre>
 <p>
 Finds the element in a <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> which
-contains the given data.
-</p>
+contains the given data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1250,8 +1132,7 @@ find the desired element. It iterates over the list, calling
 the given function which should return 0 when the desired
 element is found. The function takes two <a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> arguments,
 the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> element's data as the first argument and the
-given user data.
-</p>
+given user data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1286,8 +1167,7 @@ It should return 0 when the desired element is found</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> *llink</code></em>);</pre>
 <p>
 Gets the position of the given element
-in the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> (starting from 0).
-</p>
+in the <a class="link" href="glib-Singly-Linked-Lists.html#GSList" title="struct GSList"><span class="type">GSList</span></a> (starting from 0).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1319,8 +1199,7 @@ or -1 if the element is not found</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gconstpointer" title="gconstpointer"><span class="type">gconstpointer</span></a> data</code></em>);</pre>
 <p>
 Gets the position of the element containing
-the given data (starting from 0).
-</p>
+the given data (starting from 0).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1348,6 +1227,6 @@ or -1 if the data is not found</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -43,11 +41,10 @@
  * want your code to work under both UNIX and Windows, you will need
  * to take these differences into account.
  *
- * Also, under glibc, certain non-portable functions are only visible
- * in the headers if you define <literal>_GNU_SOURCE</literal> before
- * including them. Note that this symbol must be defined before
- * including <emphasis>any</emphasis> headers, or it may not take
- * effect.
+ * Also, under GNU libc, certain non-portable functions are only visible
+ * in the headers if you define %_GNU_SOURCE before including them. Note
+ * that this symbol must be defined before including any headers, or it
+ * may not take effect.
  */
 
 /**

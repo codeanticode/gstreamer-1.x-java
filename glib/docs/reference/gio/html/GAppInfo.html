@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GAppInfo</title>
+<title>GIO Reference Manual: GAppInfo</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="types.html" title="File types and applications">
 <link rel="prev" href="gio-GContentType.html" title="GContentType">
 <link rel="next" href="gio-GAppInfoMonitor.html" title="GAppInfoMonitor">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GContentType.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-GAppInfoMonitor.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GAppInfo.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GAppInfo.description" class="shortcut">Description</a>
                    | 
@@ -32,8 +25,12 @@
                   <a href="#GAppInfo.implementations" class="shortcut">Known Implementations</a>
                    | 
                   <a href="#GAppInfo.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="types.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GContentType.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-GAppInfoMonitor.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GAppInfo"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -163,8 +160,7 @@ GAppInfo is implemented by
 <a name="GAppInfo.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> and <a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a> are used for describing and launching
-applications installed on the system.
-</p>
+applications installed on the system.</p>
 <p>
 As of GLib 2.20, URIs will always be converted to POSIX paths
 (using <a class="link" href="GFile.html#g-file-get-path" title="g_file_get_path ()"><code class="function">g_file_get_path()</code></a>) when using <a class="link" href="GAppInfo.html#g-app-info-launch" title="g_app_info_launch ()"><code class="function">g_app_info_launch()</code></a> even if
@@ -179,8 +175,7 @@ operational; if this is not the case, the URI will be passed
 unmodified to the application. Some URIs, such as
 <code class="literal">mailto:</code>, of course cannot be mapped to a POSIX
 path (in gvfs there's no FUSE mount for it); such URIs will be
-passed unmodified to the application.
-</p>
+passed unmodified to the application.</p>
 <p>
 Specifically for gvfs 2.26 and later, the POSIX URI will be mapped
 back to the GIO URI in the <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> constructors (since gvfs
@@ -189,8 +184,7 @@ needs to examine the URI, it needs to use <a class="link" href="GFile.html#g-fil
 similar on <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a>. In other words, an application cannot assume
 that the URI passed to e.g. <a class="link" href="GFile.html#g-file-new-for-commandline-arg" title="g_file_new_for_commandline_arg ()"><code class="function">g_file_new_for_commandline_arg()</code></a> is
 equal to the result of <a class="link" href="GFile.html#g-file-get-uri" title="g_file_get_uri ()"><code class="function">g_file_get_uri()</code></a>. The following snippet
-illustrates this:
-</p>
+illustrates this:</p>
 <p>
 </p>
 <pre class="programlisting">
@@ -210,15 +204,12 @@ if (g_file_has_uri_scheme (file, "cdda"))
 g_object_unref (file);
 </pre>
 <p>
-</p>
-<p>
 This code will work when both <code class="literal">cdda://sr0/Track
 1.wav</code> and <code class="literal">/home/user/.gvfs/cdda on sr0/Track
 1.wav</code> is passed to the application. It should be noted
 that it's generally not safe for applications to rely on the format
 of a particular URIs. Different launcher applications (e.g. file
-managers) may have different ideas of what a given URI means.
-</p>
+managers) may have different ideas of what a given URI means.</p>
 </div>
 <div class="refsect1">
 <a name="GAppInfo.details"></a><h2>Details</h2>
@@ -232,8 +223,7 @@ managers) may have different ideas of what a given URI means.
 } GAppInfoCreateFlags;
 </pre>
 <p>
-Flags used when creating a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.
-</p>
+Flags used when creating a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -269,8 +259,7 @@ Flags used when creating a <a class="link" href="GAppInfo.html" title="GAppInfo"
 <pre class="programlisting">typedef struct _GAppInfo GAppInfo;</pre>
 <p>
 Information about an installed application and methods to launch
-it (with file arguments).
-</p>
+it (with file arguments).</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -325,8 +314,7 @@ it (with file arguments).
 };
 </pre>
 <p>
-Application Information interface, for operating system portability.
-</p>
+Application Information interface, for operating system portability.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -441,8 +429,7 @@ Application Information interface, for operating system portability.
 <p>
 Integrating the launch with the launching application. This is used to
 handle for instance startup notification and launching the new application
-on the same screen as the launching window.
-</p>
+on the same screen as the launching window.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -452,15 +439,13 @@ on the same screen as the launching window.
                                                          <em class="parameter"><code><a class="link" href="GAppInfo.html#GAppInfoCreateFlags" title="enum GAppInfoCreateFlags"><span class="type">GAppInfoCreateFlags</span></a> flags</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> from the given information.
-</p>
+Creates a new <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> from the given information.</p>
 <p>
 Note that for <em class="parameter"><code>commandline</code></em>, the quoting rules of the Exec key of the
 <a class="ulink" href="http://freedesktop.org/Standards/desktop-entry-spec" target="_top">freedesktop.org Desktop
 Entry Specification</a> are applied. For example, if the <em class="parameter"><code>commandline</code></em> contains
 percent-encoded URIs, the percent-character must be doubled in order to prevent it from
-being swallowed by Exec key unquoting. See the specification for exact quoting rules.
-</p>
+being swallowed by Exec key unquoting. See the specification for exact quoting rules.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -498,8 +483,7 @@ being swallowed by Exec key unquoting. See the specification for exact quoting r
 <a name="g-app-info-dup"></a><h3>g_app_info_dup ()</h3>
 <pre class="programlisting"><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="returnvalue">GAppInfo</span></a> *          g_app_info_dup                      (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Creates a duplicate of a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.
-</p>
+Creates a duplicate of a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -524,8 +508,7 @@ Creates a duplicate of a <a class="link" href="GAppInfo.html" title="GAppInfo"><
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_equal                    (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo1</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo2</code></em>);</pre>
 <p>
-Checks if two <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>s are equal.
-</p>
+Checks if two <a href="GAppInfo.html"><span class="type">GAppInfos</span></a> are equal.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -556,12 +539,10 @@ Checks if two <a class="link" href="GAppInfo.html" title="GAppInfo"><span class=
 Gets the ID of an application. An id is a string that
 identifies the application. The exact format of the id is
 platform dependent. For instance, on Unix this is the
-desktop file id from the xdg menu specification.
-</p>
+desktop file id from the xdg menu specification.</p>
 <p>
 Note that the returned ID may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, depending on how
-the <em class="parameter"><code>appinfo</code></em> has been constructed.
-</p>
+the <em class="parameter"><code>appinfo</code></em> has been constructed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -584,8 +565,7 @@ the <em class="parameter"><code>appinfo</code></em> has been constructed.
 <a name="g-app-info-get-name"></a><h3>g_app_info_get_name ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_app_info_get_name                 (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Gets the installed name of the application.
-</p>
+Gets the installed name of the application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -609,8 +589,7 @@ Gets the installed name of the application.
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_app_info_get_display_name         (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
 Gets the display name of the application. The display name is often more
-descriptive to the user than the name itself.
-</p>
+descriptive to the user than the name itself.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -635,8 +614,7 @@ no display name is available.</td>
 <a name="g-app-info-get-description"></a><h3>g_app_info_get_description ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_app_info_get_description          (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Gets a human-readable description of an installed application.
-</p>
+Gets a human-readable description of an installed application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -660,8 +638,7 @@ application <em class="parameter"><code>appinfo</code></em>, or <a href="http://
 <a name="g-app-info-get-executable"></a><h3>g_app_info_get_executable ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_app_info_get_executable           (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Gets the executable's name for the installed application.
-</p>
+Gets the executable's name for the installed application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -687,8 +664,7 @@ binaries name</td>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_app_info_get_commandline          (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
 Gets the commandline with which the application will be
-started.
-</p>
+started.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -714,8 +690,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 <a name="g-app-info-get-icon"></a><h3>g_app_info_get_icon ()</h3>
 <pre class="programlisting"><a class="link" href="GIcon.html" title="GIcon"><span class="returnvalue">GIcon</span></a> *             g_app_info_get_icon                 (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Gets the icon for the application.
-</p>
+Gets the icon for the application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -746,27 +721,22 @@ if there is no default icon. <span class="annotation">[<acronym title="Don't fre
 Launches the application. Passes <em class="parameter"><code>files</code></em> to the launched application
 as arguments, using the optional <em class="parameter"><code>launch_context</code></em> to get information
 about the details of the launcher (like what screen it is on).
-On error, <em class="parameter"><code>error</code></em> will be set accordingly.
-</p>
+On error, <em class="parameter"><code>error</code></em> will be set accordingly.</p>
 <p>
-To launch the application without arguments pass a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>files</code></em> list.
-</p>
+To launch the application without arguments pass a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>files</code></em> list.</p>
 <p>
 Note that even if the launch is successful the application launched
 can fail to start if it runs into problems during startup. There is
-no way to detect this.
-</p>
+no way to detect this.</p>
 <p>
 Some URIs can be changed when passed through a GFile (for instance
 unsupported URIs with strange formats like mailto:), so if you have
 a textual URI you want to pass in as argument, consider using
-<a class="link" href="GAppInfo.html#g-app-info-launch-uris" title="g_app_info_launch_uris ()"><code class="function">g_app_info_launch_uris()</code></a> instead.
-</p>
+<a class="link" href="GAppInfo.html#g-app-info-launch-uris" title="g_app_info_launch_uris ()"><code class="function">g_app_info_launch_uris()</code></a> instead.</p>
 <p>
 The launched application inherits the environment of the launching
 process, but it can be modified with <a class="link" href="GAppInfo.html#g-app-launch-context-setenv" title="g_app_launch_context_setenv ()"><code class="function">g_app_launch_context_setenv()</code></a> and
-<a class="link" href="GAppInfo.html#g-app-launch-context-unsetenv" title="g_app_launch_context_unsetenv ()"><code class="function">g_app_launch_context_unsetenv()</code></a>.
-</p>
+<a class="link" href="GAppInfo.html#g-app-launch-context-unsetenv" title="g_app_launch_context_unsetenv ()"><code class="function">g_app_launch_context_unsetenv()</code></a>.</p>
 <p>
 On UNIX, this function sets the <code class="envar">GIO_LAUNCHED_DESKTOP_FILE</code>
 environment variable with the path of the launched desktop file and
@@ -775,8 +745,7 @@ id of the launched process. This can be used to ignore
 <code class="envar">GIO_LAUNCHED_DESKTOP_FILE</code>, should it be inherited
 by further processes. The <code class="envar">DISPLAY</code> and
 <code class="envar">DESKTOP_STARTUP_ID</code> environment variables are also
-set, based on information provided in <em class="parameter"><code>launch_context</code></em>.
-</p>
+set, based on information provided in <em class="parameter"><code>launch_context</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -816,8 +785,7 @@ set, based on information provided in <em class="parameter"><code>launch_context
 <a name="g-app-info-supports-files"></a><h3>g_app_info_supports_files ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_supports_files           (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Checks if the application accepts files as arguments.
-</p>
+Checks if the application accepts files as arguments.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -841,8 +809,7 @@ Checks if the application accepts files as arguments.
 <a name="g-app-info-supports-uris"></a><h3>g_app_info_supports_uris ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_supports_uris            (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Checks if the application supports reading files and directories from URIs.
-</p>
+Checks if the application supports reading files and directories from URIs.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -872,16 +839,13 @@ Checks if the application supports reading files and directories from URIs.
 Launches the application. This passes the <em class="parameter"><code>uris</code></em> to the launched application
 as arguments, using the optional <em class="parameter"><code>launch_context</code></em> to get information
 about the details of the launcher (like what screen it is on).
-On error, <em class="parameter"><code>error</code></em> will be set accordingly.
-</p>
+On error, <em class="parameter"><code>error</code></em> will be set accordingly.</p>
 <p>
-To launch the application without arguments pass a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>uris</code></em> list.
-</p>
+To launch the application without arguments pass a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> <em class="parameter"><code>uris</code></em> list.</p>
 <p>
 Note that even if the launch is successful the application launched
 can fail to start if it runs into problems during startup. There is
-no way to detect this.
-</p>
+no way to detect this.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -922,8 +886,7 @@ no way to detect this.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_should_show              (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
 Checks if the application info should be shown in menus that 
-list available applications.
-</p>
+list available applications.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -948,8 +911,7 @@ list available applications.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_can_delete               (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
 Obtains the information whether the <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> can be deleted.
-See <a class="link" href="GAppInfo.html#g-app-info-delete" title="g_app_info_delete ()"><code class="function">g_app_info_delete()</code></a>.
-</p>
+See <a class="link" href="GAppInfo.html#g-app-info-delete" title="g_app_info_delete ()"><code class="function">g_app_info_delete()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -975,16 +937,13 @@ See <a class="link" href="GAppInfo.html#g-app-info-delete" title="g_app_info_del
 <a name="g-app-info-delete"></a><h3>g_app_info_delete ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_delete                   (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Tries to delete a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.
-</p>
+Tries to delete a <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>.</p>
 <p>
 On some platforms, there may be a difference between user-defined
-<a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a>s which can be deleted, and system-wide ones which
-cannot. See <a class="link" href="GAppInfo.html#g-app-info-can-delete" title="g_app_info_can_delete ()"><code class="function">g_app_info_can_delete()</code></a>.
-</p>
+<a href="GAppInfo.html"><span class="type">GAppInfos</span></a> which can be deleted, and system-wide ones which cannot.
+See <a class="link" href="GAppInfo.html#g-app-info-can-delete" title="g_app_info_can_delete ()"><code class="function">g_app_info_can_delete()</code></a>.</p>
 <p>
-Virtual: do_delete
-</p>
+Virtual: do_delete</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1014,8 +973,7 @@ Removes all changes to the type associations done by
 <a class="link" href="GAppInfo.html#g-app-info-set-as-default-for-type" title="g_app_info_set_as_default_for_type ()"><code class="function">g_app_info_set_as_default_for_type()</code></a>,
 <a class="link" href="GAppInfo.html#g-app-info-set-as-default-for-extension" title="g_app_info_set_as_default_for_extension ()"><code class="function">g_app_info_set_as_default_for_extension()</code></a>,
 <a class="link" href="GAppInfo.html#g-app-info-add-supports-type" title="g_app_info_add_supports_type ()"><code class="function">g_app_info_add_supports_type()</code></a> or
-<a class="link" href="GAppInfo.html#g-app-info-remove-supports-type" title="g_app_info_remove_supports_type ()"><code class="function">g_app_info_remove_supports_type()</code></a>.
-</p>
+<a class="link" href="GAppInfo.html#g-app-info-remove-supports-type" title="g_app_info_remove_supports_type ()"><code class="function">g_app_info_remove_supports_type()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1035,8 +993,7 @@ Removes all changes to the type associations done by
                                                          <em class="parameter"><code>const <span class="type">char</span> *content_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Sets the application as the default handler for a given type.
-</p>
+Sets the application as the default handler for a given type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1071,8 +1028,7 @@ Sets the application as the default handler for a given type.
                                                          <em class="parameter"><code>const <span class="type">char</span> *extension</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Sets the application as the default handler for the given file extension.
-</p>
+Sets the application as the default handler for the given file extension.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1110,8 +1066,7 @@ Sets the application as the default handler for the given file extension.
 Sets the application as the last used application for a given type.
 This will make the application appear as first in the list returned
 by <a class="link" href="GAppInfo.html#g-app-info-get-recommended-for-type" title="g_app_info_get_recommended_for_type ()"><code class="function">g_app_info_get_recommended_for_type()</code></a>, regardless of the default
-application for that content type.
-</p>
+application for that content type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1146,8 +1101,7 @@ application for that content type.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Adds a content type to the application information to indicate the 
-application is capable of opening files with the given content type.
-</p>
+application is capable of opening files with the given content type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1179,8 +1133,7 @@ application is capable of opening files with the given content type.
 <a name="g-app-info-can-remove-supports-type"></a><h3>g_app_info_can_remove_supports_type ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_app_info_can_remove_supports_type (<em class="parameter"><code><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> *appinfo</code></em>);</pre>
 <p>
-Checks if a supported content type can be removed from an application.
-</p>
+Checks if a supported content type can be removed from an application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1207,8 +1160,7 @@ content types from a given <em class="parameter"><code>appinfo</code></em>, <a h
                                                          <em class="parameter"><code>const <span class="type">char</span> *content_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Removes a supported type from an application, if possible.
-</p>
+Removes a supported type from an application, if possible.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1245,8 +1197,7 @@ If this information is not provided by the environment, this function
 will return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
 This function does not take in consideration associations added with
 <a class="link" href="GAppInfo.html#g-app-info-add-supports-type" title="g_app_info_add_supports_type ()"><code class="function">g_app_info_add_supports_type()</code></a>, but only those exported directly by
-the application.
-</p>
+the application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1272,16 +1223,14 @@ the application.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             g_app_info_get_all                  (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
 Gets a list of all of the applications currently registered
-on this system.
-</p>
+on this system.</p>
 <p>
 For desktop files, this includes applications that have
 <code class="literal">NoDisplay=true</code> set or are excluded from
 display by means of <code class="literal">OnlyShowIn</code> or
 <code class="literal">NotShowIn</code>. See <a class="link" href="GAppInfo.html#g-app-info-should-show" title="g_app_info_should_show ()"><code class="function">g_app_info_should_show()</code></a>.
 The returned list does not include applications which have
-the <code class="literal">Hidden</code> key set.
-</p>
+the <code class="literal">Hidden</code> key set.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1302,8 +1251,7 @@ the <code class="literal">Hidden</code> key set.
 Gets a list of all <a href="GAppInfo.html"><span class="type">GAppInfos</span></a> for a given content type,
 including the recommended and fallback <a href="GAppInfo.html"><span class="type">GAppInfos</span></a>. See
 <a class="link" href="GAppInfo.html#g-app-info-get-recommended-for-type" title="g_app_info_get_recommended_for_type ()"><code class="function">g_app_info_get_recommended_for_type()</code></a> and
-<a class="link" href="GAppInfo.html#g-app-info-get-fallback-for-type" title="g_app_info_get_fallback_for_type ()"><code class="function">g_app_info_get_fallback_for_type()</code></a>.
-</p>
+<a class="link" href="GAppInfo.html#g-app-info-get-fallback-for-type" title="g_app_info_get_fallback_for_type ()"><code class="function">g_app_info_get_fallback_for_type()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1330,8 +1278,7 @@ for given <em class="parameter"><code>content_type</code></em> or <a href="http:
 <pre class="programlisting"><a class="link" href="GAppInfo.html" title="GAppInfo"><span class="returnvalue">GAppInfo</span></a> *          g_app_info_get_default_for_type     (<em class="parameter"><code>const <span class="type">char</span> *content_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> must_support_uris</code></em>);</pre>
 <p>
-Gets the default <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> for a given content type.
-</p>
+Gets the default <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> for a given content type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1366,8 +1313,7 @@ support URIs</td>
 Gets the default application for handling URIs with
 the given URI scheme. A URI scheme is the initial part
 of the URI, up to but not including the ':', e.g. "http",
-"ftp" or "sip".
-</p>
+"ftp" or "sip".</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1394,8 +1340,7 @@ of the URI, up to but not including the ':', e.g. "http",
 <p>
 Gets a list of fallback <a href="GAppInfo.html"><span class="type">GAppInfos</span></a> for a given content type, i.e.
 those applications which claim to support the given content type
-by MIME type subclassing and not directly.
-</p>
+by MIME type subclassing and not directly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1427,8 +1372,7 @@ those applications which claim to support the given content type exactly,
 and not by MIME type subclassing.
 Note that the first application of the list is the last used one, i.e.
 the last one for which <a class="link" href="GAppInfo.html#g-app-info-set-as-last-used-for-type" title="g_app_info_set_as_last_used_for_type ()"><code class="function">g_app_info_set_as_last_used_for_type()</code></a> has been
-called.
-</p>
+called.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1460,8 +1404,7 @@ for given <em class="parameter"><code>content_type</code></em> or <a href="http:
 Utility function that launches the default application
 registered to handle the specified uri. Synchronous I/O
 is done on the uri to detect the type of the file if
-required.
-</p>
+required.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1497,8 +1440,7 @@ required.
                                                          <em class="parameter"><code>const <span class="type">char</span> *value</code></em>);</pre>
 <p>
 Arranges for <em class="parameter"><code>variable</code></em> to be set to <em class="parameter"><code>value</code></em> in the child's
-environment when <em class="parameter"><code>context</code></em> is used to launch an application.
-</p>
+environment when <em class="parameter"><code>context</code></em> is used to launch an application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1529,8 +1471,7 @@ environment when <em class="parameter"><code>context</code></em> is used to laun
                                                          <em class="parameter"><code>const <span class="type">char</span> *variable</code></em>);</pre>
 <p>
 Arranges for <em class="parameter"><code>variable</code></em> to be unset in the child's environment
-when <em class="parameter"><code>context</code></em> is used to launch an application.
-</p>
+when <em class="parameter"><code>context</code></em> is used to launch an application.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1559,8 +1500,7 @@ when <em class="parameter"><code>context</code></em> is used to launch an applic
 Gets the complete environment variable list to be passed to
 the child process when <em class="parameter"><code>context</code></em> is used to launch an application.
 This is a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of strings, where each string has
-the form <code class="literal">KEY=VALUE</code>.
-</p>
+the form <code class="literal">KEY=VALUE</code>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1591,8 +1531,7 @@ child's environment. <span class="annotation">[<acronym title="Parameter points 
 <p>
 Gets the display string for the <em class="parameter"><code>context</code></em>. This is used to ensure new
 applications are started on the same display as the launching
-application, by setting the <code class="envar">DISPLAY</code> environment variable.
-</p>
+application, by setting the <code class="envar">DISPLAY</code> environment variable.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1631,12 +1570,10 @@ application, by setting the <code class="envar">DISPLAY</code> environment varia
 <p>
 Initiates startup notification for the application and returns the
 <code class="envar">DESKTOP_STARTUP_ID</code> for the launched operation,
-if supported.
-</p>
+if supported.</p>
 <p>
 Startup notification IDs are defined in the <a class="ulink" href="http://standards.freedesktop.org/startup-notification-spec/startup-notification-latest.txt" target="_top">
-FreeDesktop.Org Startup Notifications standard</a>.
-</p>
+FreeDesktop.Org Startup Notifications standard</a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1673,8 +1610,7 @@ not supported.</td>
                                                          <em class="parameter"><code>const <span class="type">char</span> *startup_notify_id</code></em>);</pre>
 <p>
 Called when an application has failed to launch, so that it can cancel
-the application startup notification started in <a class="link" href="GAppInfo.html#g-app-launch-context-get-startup-notify-id" title="g_app_launch_context_get_startup_notify_id ()"><code class="function">g_app_launch_context_get_startup_notify_id()</code></a>.
-</p>
+the application startup notification started in <a class="link" href="GAppInfo.html#g-app-launch-context-get-startup-notify-id" title="g_app_launch_context_get_startup_notify_id ()"><code class="function">g_app_launch_context_get_startup_notify_id()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1698,8 +1634,7 @@ the application startup notification started in <a class="link" href="GAppInfo.h
 <pre class="programlisting"><a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="returnvalue">GAppLaunchContext</span></a> * g_app_launch_context_new            (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
 Creates a new application launch context. This is not normally used,
-instead you instantiate a subclass of this, such as <a href="http://developer.gnome.org/gdk2/gdk3-Application-launching.html#GdkAppLaunchContext"><span class="type">GdkAppLaunchContext</span></a>.
-</p>
+instead you instantiate a subclass of this, such as <a href="http://library.gnome.org/devel/gdk3/gdk2-Application-launching.html#GdkAppLaunchContext"><span class="type">GdkAppLaunchContext</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1736,6 +1671,6 @@ instead you instantiate a subclass of this, such as <a href="http://developer.gn
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

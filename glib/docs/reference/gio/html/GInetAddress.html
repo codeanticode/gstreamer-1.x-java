@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GInetAddress</title>
+<title>GIO Reference Manual: GInetAddress</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="networking.html" title="Low-level network support">
 <link rel="prev" href="GSocket.html" title="GSocket">
 <link rel="next" href="gio-GInetAddressMask.html" title="GInetAddressMask">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GSocket.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="networking.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-GInetAddressMask.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GInetAddress.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GInetAddress.description" class="shortcut">Description</a>
                    | 
                   <a href="#GInetAddress.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GInetAddress.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="networking.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GSocket.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-GInetAddressMask.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GInetAddress"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -100,13 +97,11 @@ const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.htm
 look up the <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> for a hostname. Use
 <a class="link" href="GResolver.html#g-resolver-lookup-by-address" title="g_resolver_lookup_by_address ()"><code class="function">g_resolver_lookup_by_address()</code></a> or
 <a class="link" href="GResolver.html#g-resolver-lookup-by-address-async" title="g_resolver_lookup_by_address_async ()"><code class="function">g_resolver_lookup_by_address_async()</code></a> to look up the hostname for a
-<a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a>.
-</p>
+<a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a>.</p>
 <p>
 To actually connect to a remote host, you will need a
 <a class="link" href="GInetSocketAddress.html" title="GInetSocketAddress"><span class="type">GInetSocketAddress</span></a> (which includes a <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> as well as a
-port number).
-</p>
+port number).</p>
 </div>
 <div class="refsect1">
 <a name="GInetAddress.details"></a><h2>Details</h2>
@@ -114,16 +109,14 @@ port number).
 <a name="GInetAddress-struct"></a><h3>GInetAddress</h3>
 <pre class="programlisting">typedef struct _GInetAddress GInetAddress;</pre>
 <p>
-An IPv4 or IPv6 internet address.
-</p>
+An IPv4 or IPv6 internet address.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-inet-address-new-from-string"></a><h3>g_inet_address_new_from_string ()</h3>
 <pre class="programlisting"><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="returnvalue">GInetAddress</span></a> *      g_inet_address_new_from_string      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
 <p>
-Parses <em class="parameter"><code>string</code></em> as an IP address and creates a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a>.
-</p>
+Parses <em class="parameter"><code>string</code></em> as an IP address and creates a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -151,8 +144,7 @@ Parses <em class="parameter"><code>string</code></em> as an IP address and creat
 <p>
 Creates a new <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> from the given <em class="parameter"><code>family</code></em> and <em class="parameter"><code>bytes</code></em>.
 <em class="parameter"><code>bytes</code></em> should be 4 bytes for <a class="link" href="GSocketAddress.html#G-SOCKET-FAMILY-IPV4:CAPS"><code class="literal">G_SOCKET_FAMILY_IPV4</code></a> and 16 bytes for
-<a class="link" href="GSocketAddress.html#G-SOCKET-FAMILY-IPV6:CAPS"><code class="literal">G_SOCKET_FAMILY_IPV6</code></a>.
-</p>
+<a class="link" href="GSocketAddress.html#G-SOCKET-FAMILY-IPV6:CAPS"><code class="literal">G_SOCKET_FAMILY_IPV6</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -183,8 +175,7 @@ Creates a new <a class="link" href="GInetAddress.html" title="GInetAddress"><spa
 <pre class="programlisting"><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="returnvalue">GInetAddress</span></a> *      g_inet_address_new_any              (<em class="parameter"><code><a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="type">GSocketFamily</span></a> family</code></em>);</pre>
 <p>
 Creates a <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> for the "any" address (unassigned/"don't
-care") for <em class="parameter"><code>family</code></em>.
-</p>
+care") for <em class="parameter"><code>family</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -209,8 +200,7 @@ for <em class="parameter"><code>family</code></em>.</td>
 <a name="g-inet-address-new-loopback"></a><h3>g_inet_address_new_loopback ()</h3>
 <pre class="programlisting"><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="returnvalue">GInetAddress</span></a> *      g_inet_address_new_loopback         (<em class="parameter"><code><a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="type">GSocketFamily</span></a> family</code></em>);</pre>
 <p>
-Creates a <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> for the loopback address for <em class="parameter"><code>family</code></em>.
-</p>
+Creates a <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> for the loopback address for <em class="parameter"><code>family</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -236,8 +226,7 @@ for <em class="parameter"><code>family</code></em>.</td>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_equal                (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *other_address</code></em>);</pre>
 <p>
-Checks if two <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> instances are equal, e.g. the same address.
-</p>
+Checks if two <a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> instances are equal, e.g. the same address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -266,8 +255,7 @@ Checks if two <a class="link" href="GInetAddress.html" title="GInetAddress"><spa
 <a name="g-inet-address-to-bytes"></a><h3>g_inet_address_to_bytes ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint8"><span class="returnvalue">guint8</span></a> *      g_inet_address_to_bytes             (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Gets the raw binary address data from <em class="parameter"><code>address</code></em>.
-</p>
+Gets the raw binary address data from <em class="parameter"><code>address</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -295,8 +283,7 @@ array can be gotten with <a class="link" href="GInetAddress.html#g-inet-address-
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gsize"><span class="returnvalue">gsize</span></a>               g_inet_address_get_native_size      (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
 Gets the size of the native raw binary address for <em class="parameter"><code>address</code></em>. This
-is the size of the data that you get from <a class="link" href="GInetAddress.html#g-inet-address-to-bytes" title="g_inet_address_to_bytes ()"><code class="function">g_inet_address_to_bytes()</code></a>.
-</p>
+is the size of the data that you get from <a class="link" href="GInetAddress.html#g-inet-address-to-bytes" title="g_inet_address_to_bytes ()"><code class="function">g_inet_address_to_bytes()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -321,8 +308,7 @@ is the size of the data that you get from <a class="link" href="GInetAddress.htm
 <a name="g-inet-address-to-string"></a><h3>g_inet_address_to_string ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_inet_address_to_string            (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Converts <em class="parameter"><code>address</code></em> to string form.
-</p>
+Converts <em class="parameter"><code>address</code></em> to string form.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -348,8 +334,7 @@ freed after use.</td>
 <a name="g-inet-address-get-family"></a><h3>g_inet_address_get_family ()</h3>
 <pre class="programlisting"><a class="link" href="GSocketAddress.html#GSocketFamily" title="enum GSocketFamily"><span class="returnvalue">GSocketFamily</span></a>       g_inet_address_get_family           (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Gets <em class="parameter"><code>address</code></em>'s family
-</p>
+Gets <em class="parameter"><code>address</code></em>'s family</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -375,8 +360,7 @@ Gets <em class="parameter"><code>address</code></em>'s family
 <a name="g-inet-address-get-is-any"></a><h3>g_inet_address_get_is_any ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_any           (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is the "any" address for its family.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is the "any" address for its family.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -402,8 +386,7 @@ Tests whether <em class="parameter"><code>address</code></em> is the "any" addre
 <a name="g-inet-address-get-is-loopback"></a><h3>g_inet_address_get_is_loopback ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_loopback      (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is the loopback address for its family.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is the loopback address for its family.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -431,8 +414,7 @@ Tests whether <em class="parameter"><code>address</code></em> is the loopback ad
 <p>
 Tests whether <em class="parameter"><code>address</code></em> is a link-local address (that is, if it
 identifies a host on a local network that is not connected to the
-Internet).
-</p>
+Internet).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -461,8 +443,7 @@ Internet).
 Tests whether <em class="parameter"><code>address</code></em> is a site-local address such as 10.0.0.1
 (that is, the address identifies a host on a local network that can
 not be reached directly from the Internet, but which may have
-outgoing Internet connectivity via a NAT or firewall).
-</p>
+outgoing Internet connectivity via a NAT or firewall).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -488,8 +469,7 @@ outgoing Internet connectivity via a NAT or firewall).
 <a name="g-inet-address-get-is-multicast"></a><h3>g_inet_address_get_is_multicast ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_multicast     (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is a multicast address.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is a multicast address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -515,8 +495,7 @@ Tests whether <em class="parameter"><code>address</code></em> is a multicast add
 <a name="g-inet-address-get-is-mc-link-local"></a><h3>g_inet_address_get_is_mc_link_local ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_mc_link_local (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is a link-local multicast address.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is a link-local multicast address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -542,8 +521,7 @@ Tests whether <em class="parameter"><code>address</code></em> is a link-local mu
 <a name="g-inet-address-get-is-mc-node-local"></a><h3>g_inet_address_get_is_mc_node_local ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_mc_node_local (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is a node-local multicast address.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is a node-local multicast address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -569,8 +547,7 @@ Tests whether <em class="parameter"><code>address</code></em> is a node-local mu
 <a name="g-inet-address-get-is-mc-site-local"></a><h3>g_inet_address_get_is_mc_site_local ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_mc_site_local (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is a site-local multicast address.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is a site-local multicast address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -596,8 +573,7 @@ Tests whether <em class="parameter"><code>address</code></em> is a site-local mu
 <a name="g-inet-address-get-is-mc-org-local"></a><h3>g_inet_address_get_is_mc_org_local ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_mc_org_local  (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is an organization-local multicast address.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is an organization-local multicast address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -623,8 +599,7 @@ Tests whether <em class="parameter"><code>address</code></em> is an organization
 <a name="g-inet-address-get-is-mc-global"></a><h3>g_inet_address_get_is_mc_global ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_inet_address_get_is_mc_global     (<em class="parameter"><code><a class="link" href="GInetAddress.html" title="GInetAddress"><span class="type">GInetAddress</span></a> *address</code></em>);</pre>
 <p>
-Tests whether <em class="parameter"><code>address</code></em> is a global multicast address.
-</p>
+Tests whether <em class="parameter"><code>address</code></em> is a global multicast address.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -666,8 +641,7 @@ Tests whether <em class="parameter"><code>address</code></em> is a global multic
 <pre class="programlisting">  "is-any"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is the "any" address for its family.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-any" title="g_inet_address_get_is_any ()"><code class="function">g_inet_address_get_is_any()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-any" title="g_inet_address_get_is_any ()"><code class="function">g_inet_address_get_is_any()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -677,8 +651,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-any" title="g_
 <pre class="programlisting">  "is-link-local"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a link-local address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-link-local" title="g_inet_address_get_is_link_local ()"><code class="function">g_inet_address_get_is_link_local()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-link-local" title="g_inet_address_get_is_link_local ()"><code class="function">g_inet_address_get_is_link_local()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -688,8 +661,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-link-local" ti
 <pre class="programlisting">  "is-loopback"              <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is the loopback address for its family.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" title="g_inet_address_get_is_loopback ()"><code class="function">g_inet_address_get_is_loopback()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" title="g_inet_address_get_is_loopback ()"><code class="function">g_inet_address_get_is_loopback()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -699,8 +671,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" titl
 <pre class="programlisting">  "is-mc-global"             <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a global multicast address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-global" title="g_inet_address_get_is_mc_global ()"><code class="function">g_inet_address_get_is_mc_global()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-global" title="g_inet_address_get_is_mc_global ()"><code class="function">g_inet_address_get_is_mc_global()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -710,8 +681,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-global" tit
 <pre class="programlisting">  "is-mc-link-local"         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a link-local multicast address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-link-local" title="g_inet_address_get_is_mc_link_local ()"><code class="function">g_inet_address_get_is_mc_link_local()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-link-local" title="g_inet_address_get_is_mc_link_local ()"><code class="function">g_inet_address_get_is_mc_link_local()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -721,8 +691,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-link-local"
 <pre class="programlisting">  "is-mc-node-local"         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a node-local multicast address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-node-local" title="g_inet_address_get_is_mc_node_local ()"><code class="function">g_inet_address_get_is_mc_node_local()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-node-local" title="g_inet_address_get_is_mc_node_local ()"><code class="function">g_inet_address_get_is_mc_node_local()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -732,8 +701,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-node-local"
 <pre class="programlisting">  "is-mc-org-local"          <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is an organization-local multicast address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-org-local" title="g_inet_address_get_is_mc_org_local ()"><code class="function">g_inet_address_get_is_mc_org_local()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-org-local" title="g_inet_address_get_is_mc_org_local ()"><code class="function">g_inet_address_get_is_mc_org_local()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -743,8 +711,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-org-local" 
 <pre class="programlisting">  "is-mc-site-local"         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a site-local multicast address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-site-local" title="g_inet_address_get_is_mc_site_local ()"><code class="function">g_inet_address_get_is_mc_site_local()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-site-local" title="g_inet_address_get_is_mc_site_local ()"><code class="function">g_inet_address_get_is_mc_site_local()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -754,8 +721,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-mc-site-local"
 <pre class="programlisting">  "is-multicast"             <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a multicast address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-multicast" title="g_inet_address_get_is_multicast ()"><code class="function">g_inet_address_get_is_multicast()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-multicast" title="g_inet_address_get_is_multicast ()"><code class="function">g_inet_address_get_is_multicast()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -765,8 +731,7 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-multicast" tit
 <pre class="programlisting">  "is-site-local"            <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
 Whether this is a site-local address.
-See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" title="g_inet_address_get_is_loopback ()"><code class="function">g_inet_address_get_is_loopback()</code></a>.
-</p>
+See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" title="g_inet_address_get_is_loopback ()"><code class="function">g_inet_address_get_is_loopback()</code></a>.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.22</p>
 </div>
@@ -774,6 +739,6 @@ See <a class="link" href="GInetAddress.html#g-inet-address-get-is-loopback" titl
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

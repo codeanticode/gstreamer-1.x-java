@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSocketConnectable</title>
+<title>GIO Reference Manual: GSocketConnectable</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="resolver.html" title="DNS resolution">
 <link rel="prev" href="GSimpleProxyResolver.html" title="GSimpleProxyResolver">
 <link rel="next" href="GNetworkAddress.html" title="GNetworkAddress">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GSimpleProxyResolver.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="resolver.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GNetworkAddress.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSocketConnectable.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSocketConnectable.description" class="shortcut">Description</a>
                    | 
@@ -32,8 +25,12 @@
                   <a href="#GSocketConnectable.implementations" class="shortcut">Known Implementations</a>
                    | 
                   <a href="#GSocketConnectable.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="resolver.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GSimpleProxyResolver.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GNetworkAddress.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSocketConnectable"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -117,8 +114,7 @@ Objects that describe one or more potential socket endpoints
 implement <a class="link" href="GSocketConnectable.html" title="GSocketConnectable"><span class="type">GSocketConnectable</span></a>. Callers can then use
 <a class="link" href="GSocketConnectable.html#g-socket-connectable-enumerate" title="g_socket_connectable_enumerate ()"><code class="function">g_socket_connectable_enumerate()</code></a> to get a <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="type">GSocketAddressEnumerator</span></a>
 to try out each socket address in turn until one succeeds, as shown
-in the sample code below.
-</p>
+in the sample code below.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -236,8 +232,6 @@ in the sample code below.
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <div class="refsect1">
 <a name="GSocketConnectable.details"></a><h2>Details</h2>
@@ -245,8 +239,7 @@ in the sample code below.
 <a name="GSocketConnectable-struct"></a><h3>GSocketConnectable</h3>
 <pre class="programlisting">typedef struct _GSocketConnectable GSocketConnectable;</pre>
 <p>
-Interface for objects that contain or generate <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a>es.
-</p>
+Interface for objects that contain or generate <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a>es.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -263,8 +256,7 @@ Interface for objects that contain or generate <a class="link" href="GSocketAddr
 </pre>
 <p>
 Provides an interface for returning a <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="type">GSocketAddressEnumerator</span></a>
-and <a class="link" href="GSocketConnectable.html#GProxyAddressEnumerator"><span class="type">GProxyAddressEnumerator</span></a>
-</p>
+and <a class="link" href="GSocketConnectable.html#GProxyAddressEnumerator"><span class="type">GProxyAddressEnumerator</span></a></p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -294,8 +286,7 @@ and <a class="link" href="GSocketConnectable.html#GProxyAddressEnumerator"><span
 <pre class="programlisting"><a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="returnvalue">GSocketAddressEnumerator</span></a> * g_socket_connectable_enumerate
                                                         (<em class="parameter"><code><a class="link" href="GSocketConnectable.html" title="GSocketConnectable"><span class="type">GSocketConnectable</span></a> *connectable</code></em>);</pre>
 <p>
-Creates a <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="type">GSocketAddressEnumerator</span></a> for <em class="parameter"><code>connectable</code></em>.
-</p>
+Creates a <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="type">GSocketAddressEnumerator</span></a> for <em class="parameter"><code>connectable</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -323,14 +314,12 @@ Creates a <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator
                                                         (<em class="parameter"><code><a class="link" href="GSocketConnectable.html" title="GSocketConnectable"><span class="type">GSocketConnectable</span></a> *connectable</code></em>);</pre>
 <p>
 Creates a <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="type">GSocketAddressEnumerator</span></a> for <em class="parameter"><code>connectable</code></em> that will
-return <a class="link" href="GProxyAddress.html" title="GProxyAddress"><span class="type">GProxyAddress</span></a>es for addresses that you must connect
-to via a proxy.
-</p>
+return <span class="type">GProxyAddresses</span> for addresses that you must connect
+to via a proxy.</p>
 <p>
 If <em class="parameter"><code>connectable</code></em> does not implement
 <a class="link" href="GSocketConnectable.html#g-socket-connectable-proxy-enumerate" title="g_socket_connectable_proxy_enumerate ()"><code class="function">g_socket_connectable_proxy_enumerate()</code></a>, this will fall back to
-calling <a class="link" href="GSocketConnectable.html#g-socket-connectable-enumerate" title="g_socket_connectable_enumerate ()"><code class="function">g_socket_connectable_enumerate()</code></a>.
-</p>
+calling <a class="link" href="GSocketConnectable.html#g-socket-connectable-enumerate" title="g_socket_connectable_enumerate ()"><code class="function">g_socket_connectable_enumerate()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -357,8 +346,7 @@ calling <a class="link" href="GSocketConnectable.html#g-socket-connectable-enume
 <pre class="programlisting">typedef struct _GSocketAddressEnumerator GSocketAddressEnumerator;</pre>
 <p>
 Enumerator type for objects that contain or generate
-<a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a>es.
-</p>
+<a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a>es.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -371,8 +359,7 @@ Retrieves the next <a class="link" href="GSocketAddress.html" title="GSocketAddr
 may block for some amount of time. (Eg, a <a class="link" href="GNetworkAddress.html" title="GNetworkAddress"><span class="type">GNetworkAddress</span></a> may need
 to do a DNS lookup before it can return an address.) Use
 <a class="link" href="GSocketConnectable.html#g-socket-address-enumerator-next-async" title="g_socket_address_enumerator_next_async ()"><code class="function">g_socket_address_enumerator_next_async()</code></a> if you need to avoid
-blocking.
-</p>
+blocking.</p>
 <p>
 If <em class="parameter"><code>enumerator</code></em> is expected to yield addresses, but for some reason
 is unable to (eg, because of a DNS error), then the first call to
@@ -380,8 +367,7 @@ is unable to (eg, because of a DNS error), then the first call to
 in *<em class="parameter"><code>error</code></em>. However, if the first call to
 <a class="link" href="GSocketConnectable.html#g-socket-address-enumerator-next" title="g_socket_address_enumerator_next ()"><code class="function">g_socket_address_enumerator_next()</code></a> succeeds, then any further
 internal errors (other than <em class="parameter"><code>cancellable</code></em> being triggered) will be
-ignored.
-</p>
+ignored.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -423,8 +409,7 @@ more addresses. <span class="annotation">[<acronym title="Free data after the co
 <p>
 Asynchronously retrieves the next <a class="link" href="GSocketAddress.html" title="GSocketAddress"><span class="type">GSocketAddress</span></a> from <em class="parameter"><code>enumerator</code></em>
 and then calls <em class="parameter"><code>callback</code></em>, which must call
-<a class="link" href="GSocketConnectable.html#g-socket-address-enumerator-next-finish" title="g_socket_address_enumerator_next_finish ()"><code class="function">g_socket_address_enumerator_next_finish()</code></a> to get the result.
-</p>
+<a class="link" href="GSocketConnectable.html#g-socket-address-enumerator-next-finish" title="g_socket_address_enumerator_next_finish ()"><code class="function">g_socket_address_enumerator_next_finish()</code></a> to get the result.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -466,8 +451,7 @@ is satisfied. <span class="annotation">[<acronym title="The callback is valid un
 Retrieves the result of a completed call to
 <a class="link" href="GSocketConnectable.html#g-socket-address-enumerator-next-async" title="g_socket_address_enumerator_next_async ()"><code class="function">g_socket_address_enumerator_next_async()</code></a>. See
 <a class="link" href="GSocketConnectable.html#g-socket-address-enumerator-next" title="g_socket_address_enumerator_next ()"><code class="function">g_socket_address_enumerator_next()</code></a> for more information about
-error handling.
-</p>
+error handling.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -506,8 +490,7 @@ more addresses. <span class="annotation">[<acronym title="Free data after the co
 <p>
 A subclass of <a class="link" href="GSocketConnectable.html#GSocketAddressEnumerator"><span class="type">GSocketAddressEnumerator</span></a> that takes another address
 enumerator and wraps its results in <a class="link" href="GProxyAddress.html" title="GProxyAddress"><span class="type">GProxyAddress</span></a>es as
-directed by the default <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a>.
-</p>
+directed by the default <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a>.</p>
 </div>
 </div>
 <div class="refsect1">
@@ -523,8 +506,7 @@ directed by the default <a class="link" href="GProxyResolver.html" title="GProxy
 <pre class="programlisting">  "default-port"             <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a>                 : Read / Write / Construct Only</pre>
 <p>
 The default port to use if <a class="link" href="GSocketConnectable.html#GProxyAddressEnumerator--uri" title='The "uri" property'><span class="type">"uri"</span></a> does not
-specify one.
-</p>
+specify one.</p>
 <p>Allowed values: &lt;= 65535</p>
 <p>Default value: 0</p>
 <p class="since">Since 2.38</p>
@@ -534,8 +516,7 @@ specify one.
 <a name="GProxyAddressEnumerator--proxy-resolver"></a><h3>The <code class="literal">"proxy-resolver"</code> property</h3>
 <pre class="programlisting">  "proxy-resolver"           <a class="link" href="GProxyResolver.html" title="GProxyResolver"><span class="type">GProxyResolver</span></a>*       : Read / Write / Construct</pre>
 <p>
-The proxy resolver to use.
-</p>
+The proxy resolver to use.</p>
 <p class="since">Since 2.36</p>
 </div>
 <hr>
@@ -549,6 +530,6 @@ The proxy resolver to use.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

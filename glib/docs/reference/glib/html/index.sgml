@@ -850,7 +850,6 @@
 <ANCHOR id="glib-Character-Set-Conversion" href="glib/glib-Character-Set-Conversion.html">
 <ANCHOR id="glib-Character-Set-Conversion.synopsis" href="glib/glib-Character-Set-Conversion.html#glib-Character-Set-Conversion.synopsis">
 <ANCHOR id="glib-Character-Set-Conversion.description" href="glib/glib-Character-Set-Conversion.html#glib-Character-Set-Conversion.description">
-<ANCHOR id="file-name-encodings" href="glib/glib-Character-Set-Conversion.html#file-name-encodings">
 <ANCHOR id="glib-Character-Set-Conversion.details" href="glib/glib-Character-Set-Conversion.html#glib-Character-Set-Conversion.details">
 <ANCHOR id="g-convert" href="glib/glib-Character-Set-Conversion.html#g-convert">
 <ANCHOR id="g-convert-with-fallback" href="glib/glib-Character-Set-Conversion.html#g-convert-with-fallback">
@@ -1622,6 +1621,7 @@
 <ANCHOR id="g-spawn-async-with-pipes" href="glib/glib-Spawning-Processes.html#g-spawn-async-with-pipes">
 <ANCHOR id="g-spawn-async" href="glib/glib-Spawning-Processes.html#g-spawn-async">
 <ANCHOR id="g-spawn-sync" href="glib/glib-Spawning-Processes.html#g-spawn-sync">
+<ANCHOR id="G-SPAWN-EXIT-ERROR:CAPS" href="glib/glib-Spawning-Processes.html#G-SPAWN-EXIT-ERROR:CAPS">
 <ANCHOR id="g-spawn-check-exit-status" href="glib/glib-Spawning-Processes.html#g-spawn-check-exit-status">
 <ANCHOR id="g-spawn-command-line-async" href="glib/glib-Spawning-Processes.html#g-spawn-command-line-async">
 <ANCHOR id="g-spawn-command-line-sync" href="glib/glib-Spawning-Processes.html#g-spawn-command-line-sync">
@@ -2173,6 +2173,9 @@
 <ANCHOR id="g-test-get-filename" href="glib/glib-Testing.html#g-test-get-filename">
 <ANCHOR id="g-test-get-dir" href="glib/glib-Testing.html#g-test-get-dir">
 <ANCHOR id="g-test-fail" href="glib/glib-Testing.html#g-test-fail">
+<ANCHOR id="g-test-skip" href="glib/glib-Testing.html#g-test-skip">
+<ANCHOR id="g-test-incomplete" href="glib/glib-Testing.html#g-test-incomplete">
+<ANCHOR id="g-test-failed" href="glib/glib-Testing.html#g-test-failed">
 <ANCHOR id="g-test-message" href="glib/glib-Testing.html#g-test-message">
 <ANCHOR id="g-test-bug-base" href="glib/glib-Testing.html#g-test-bug-base">
 <ANCHOR id="g-test-bug" href="glib/glib-Testing.html#g-test-bug">
@@ -2252,6 +2255,7 @@
 <ANCHOR id="glib-Windows-Compatibility-Functions.description" href="glib/glib-Windows-Compatibility-Functions.html#glib-Windows-Compatibility-Functions.description">
 <ANCHOR id="glib-Windows-Compatibility-Functions.details" href="glib/glib-Windows-Compatibility-Functions.html#glib-Windows-Compatibility-Functions.details">
 <ANCHOR id="MAXPATHLEN:CAPS" href="glib/glib-Windows-Compatibility-Functions.html#MAXPATHLEN:CAPS">
+<ANCHOR id="g-win32-get-command-line" href="glib/glib-Windows-Compatibility-Functions.html#g-win32-get-command-line">
 <ANCHOR id="g-win32-error-message" href="glib/glib-Windows-Compatibility-Functions.html#g-win32-error-message">
 <ANCHOR id="g-win32-getlocale" href="glib/glib-Windows-Compatibility-Functions.html#g-win32-getlocale">
 <ANCHOR id="g-win32-get-package-installation-directory" href="glib/glib-Windows-Compatibility-Functions.html#g-win32-get-package-installation-directory">
@@ -2644,11 +2648,6 @@
 <ANCHOR id="g-tree-foreach" href="glib/glib-Balanced-Binary-Trees.html#g-tree-foreach">
 <ANCHOR id="g-tree-traverse" href="glib/glib-Balanced-Binary-Trees.html#g-tree-traverse">
 <ANCHOR id="GTraverseFunc" href="glib/glib-Balanced-Binary-Trees.html#GTraverseFunc">
-<ANCHOR id="GTraverseType" href="glib/glib-Balanced-Binary-Trees.html#GTraverseType">
-<ANCHOR id="G-IN-ORDER:CAPS" href="glib/glib-Balanced-Binary-Trees.html#G-IN-ORDER:CAPS">
-<ANCHOR id="G-PRE-ORDER:CAPS" href="glib/glib-Balanced-Binary-Trees.html#G-PRE-ORDER:CAPS">
-<ANCHOR id="G-POST-ORDER:CAPS" href="glib/glib-Balanced-Binary-Trees.html#G-POST-ORDER:CAPS">
-<ANCHOR id="G-LEVEL-ORDER:CAPS" href="glib/glib-Balanced-Binary-Trees.html#G-LEVEL-ORDER:CAPS">
 <ANCHOR id="g-tree-search" href="glib/glib-Balanced-Binary-Trees.html#g-tree-search">
 <ANCHOR id="g-tree-remove" href="glib/glib-Balanced-Binary-Trees.html#g-tree-remove">
 <ANCHOR id="g-tree-steal" href="glib/glib-Balanced-Binary-Trees.html#g-tree-steal">
@@ -2674,6 +2673,11 @@
 <ANCHOR id="g-node-prepend-data" href="glib/glib-N-ary-Trees.html#g-node-prepend-data">
 <ANCHOR id="g-node-reverse-children" href="glib/glib-N-ary-Trees.html#g-node-reverse-children">
 <ANCHOR id="g-node-traverse" href="glib/glib-N-ary-Trees.html#g-node-traverse">
+<ANCHOR id="GTraverseType" href="glib/glib-N-ary-Trees.html#GTraverseType">
+<ANCHOR id="G-IN-ORDER:CAPS" href="glib/glib-N-ary-Trees.html#G-IN-ORDER:CAPS">
+<ANCHOR id="G-PRE-ORDER:CAPS" href="glib/glib-N-ary-Trees.html#G-PRE-ORDER:CAPS">
+<ANCHOR id="G-POST-ORDER:CAPS" href="glib/glib-N-ary-Trees.html#G-POST-ORDER:CAPS">
+<ANCHOR id="G-LEVEL-ORDER:CAPS" href="glib/glib-N-ary-Trees.html#G-LEVEL-ORDER:CAPS">
 <ANCHOR id="GTraverseFlags" href="glib/glib-N-ary-Trees.html#GTraverseFlags">
 <ANCHOR id="G-TRAVERSE-LEAVES:CAPS" href="glib/glib-N-ary-Trees.html#G-TRAVERSE-LEAVES:CAPS">
 <ANCHOR id="G-TRAVERSE-NON-LEAVES:CAPS" href="glib/glib-N-ary-Trees.html#G-TRAVERSE-NON-LEAVES:CAPS">
@@ -2763,7 +2767,6 @@
 <ANCHOR id="glib-GVariantType" href="glib/glib-GVariantType.html">
 <ANCHOR id="glib-GVariantType.synopsis" href="glib/glib-GVariantType.html#glib-GVariantType.synopsis">
 <ANCHOR id="glib-GVariantType.description" href="glib/glib-GVariantType.html#glib-GVariantType.description">
-<ANCHOR id="gvariant-typestrings" href="glib/glib-GVariantType.html#gvariant-typestrings">
 <ANCHOR id="glib-GVariantType.details" href="glib/glib-GVariantType.html#glib-GVariantType.details">
 <ANCHOR id="GVariantType" href="glib/glib-GVariantType.html#GVariantType">
 <ANCHOR id="G-VARIANT-TYPE-BOOLEAN:CAPS" href="glib/glib-GVariantType.html#G-VARIANT-TYPE-BOOLEAN:CAPS">

@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -57,8 +55,8 @@
  * The code in the example program below demonstrates #GValue's
  * features.
  *
- * |[
- * #include &lt;glib-object.h&gt;
+ * |[<!-- language="C" --> 
+ * #include <glib-object.h>
  *
  * static void
  * int2string (const GValue *src_value,
@@ -80,34 +78,34 @@
  *   const gchar *message;
  *
  *   /&ast; The GValue starts empty &ast;/
- *   g_assert (!G_VALUE_HOLDS_STRING (&amp;a));
+ *   g_assert (!G_VALUE_HOLDS_STRING (&a));
  *
  *   /&ast; Put a string in it &ast;/
- *   g_value_init (&amp;a, G_TYPE_STRING);
- *   g_assert (G_VALUE_HOLDS_STRING (&amp;a));
- *   g_value_set_static_string (&amp;a, "Hello, world!");
- *   g_printf ("%s\n", g_value_get_string (&amp;a));
+ *   g_value_init (&a, G_TYPE_STRING);
+ *   g_assert (G_VALUE_HOLDS_STRING (&a));
+ *   g_value_set_static_string (&a, "Hello, world!");
+ *   g_printf ("%s\n", g_value_get_string (&a));
  *
  *   /&ast; Reset it to its pristine state &ast;/
- *   g_value_unset (&amp;a);
+ *   g_value_unset (&a);
  *
  *   /&ast; It can then be reused for another type &ast;/
- *   g_value_init (&amp;a, G_TYPE_INT);
- *   g_value_set_int (&amp;a, 42);
+ *   g_value_init (&a, G_TYPE_INT);
+ *   g_value_set_int (&a, 42);
  *
  *   /&ast; Attempt to transform it into a GValue of type STRING &ast;/
- *   g_value_init (&amp;b, G_TYPE_STRING);
+ *   g_value_init (&b, G_TYPE_STRING);
  *
  *   /&ast; An INT is transformable to a STRING &ast;/
  *   g_assert (g_value_type_transformable (G_TYPE_INT, G_TYPE_STRING));
  *
- *   g_value_transform (&amp;a, &amp;b);
- *   g_printf ("%s\n", g_value_get_string (&amp;b));
+ *   g_value_transform (&a, &b);
+ *   g_printf ("%s\n", g_value_get_string (&b));
  *
  *   /&ast; Attempt to transform it again using a custom transform function &ast;/
  *   g_value_register_transform_func (G_TYPE_INT, G_TYPE_STRING, int2string);
- *   g_value_transform (&amp;a, &amp;b);
- *   g_printf ("%s\n", g_value_get_string (&amp;b));
+ *   g_value_transform (&a, &b);
+ *   g_printf ("%s\n", g_value_get_string (&b));
  *   return 0;
  * }
  * ]|
@@ -466,7 +464,9 @@ g_value_register_transform_func (GType           src_type,
  * @dest_type: Target type.
  *
  * Check whether g_value_transform() is able to transform values
- * of type @src_type into values of type @dest_type.
+ * of type @src_type into values of type @dest_type. Note that for
+ * the types to be transformable, they must be compatible and a
+ * transform function must be registered.
  *
  * Returns: %TRUE if the transformation is possible, %FALSE otherwise.
  */

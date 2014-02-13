@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GResource</title>
+<title>GIO Reference Manual: GResource</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="resources.html" title="Resources">
 <link rel="prev" href="resources.html" title="Resources">
 <link rel="next" href="permissions.html" title="Permissions">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="resources.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="resources.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="permissions.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-GResource.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-GResource.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="resources.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="resources.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="permissions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-GResource"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -97,10 +94,9 @@ enum                <a class="link" href="gio-GResource.html#GResourceError" tit
 <a name="gio-GResource.description"></a><h2>Description</h2>
 <p>
 Applications and libraries often contain binary or textual data that is really part of the
-application, rather than user data. For instance <a href="http://developer.gnome.org/gtk2/GtkBuilder.html"><span class="type">GtkBuilder</span></a> .ui files, splashscreen images,
+application, rather than user data. For instance <a href="http://library.gnome.org/devel/gtk3/GtkBuilder.html"><span class="type">GtkBuilder</span></a> .ui files, splashscreen images,
 GMenu markup xml, CSS files, icons, etc. These are often shipped as files in <code class="filename">$datadir/appname</code>, or
-manually included as literal strings in the code.
-</p>
+manually included as literal strings in the code.</p>
 <p>
 The <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> API and the <a href="glib-compile-resources.html">glib-compile-resources</a> program
 provide a convenient and efficient alternative to this which has some nice properties. You
@@ -108,42 +104,35 @@ maintain the files as normal files, so its easy to edit them, but during the bui
 are combined into a binary bundle that is linked into the executable. This means that loading
 the resource files are efficient (as they are already in memory, shared with other instances) and
 simple (no need to check for things like I/O errors or locate the files in the filesystem). It
-also makes it easier to create relocatable applications.
-</p>
+also makes it easier to create relocatable applications.</p>
 <p>
 Resource files can also be marked as compressed. Such files will be included in the resource bundle
 in a compressed form, but will be automatically uncompressed when the resource is used. This
-is very useful e.g. for larger text files that are parsed once (or rarely) and then thrown away.
-</p>
+is very useful e.g. for larger text files that are parsed once (or rarely) and then thrown away.</p>
 <p>
 Resource files can also be marked to be preprocessed, by setting the value of the
 <code class="literal">preprocess</code> attribute to a comma-separated list of preprocessing options.
-The only options currently supported are:
-</p>
+The only options currently supported are:</p>
 <p>
-<code class="literal">xml-stripblanks</code> which will use <span class="command"><strong>xmllint</strong></span> to strip
+<code class="literal">xml-stripblanks</code> which will use the xmllint command to strip
 ignorable whitespace from the xml file. For this to work, the <code class="envar">XMLLINT</code>
 environment variable must be set to the full path to the xmllint executable, or xmllint
-must be in the PATH; otherwise the preprocessing step is skipped.
-</p>
+must be in the PATH; otherwise the preprocessing step is skipped.</p>
 <p>
-<code class="literal">to-pixdata</code> which will use <span class="command"><strong>gdk-pixbuf-pixdata</strong></span> to convert
+<code class="literal">to-pixdata</code> which will use the gdk-pixbuf-pixdata command to convert
 images to the GdkPixdata format, which allows you to create pixbufs directly using the data inside
 the resource file, rather than an (uncompressed) copy if it. For this, the gdk-pixbuf-pixdata
 program must be in the PATH, or the <code class="envar">GDK_PIXBUF_PIXDATA</code> environment variable must be
 set to the full path to the gdk-pixbuf-pixdata executable; otherwise the resource compiler will
-abort.
-</p>
+abort.</p>
 <p>
 Resource bundles are created by the <a href="glib-compile-resources.html">glib-compile-resources</a> program
 which takes an xml file that describes the bundle, and a set of files that the xml references. These
-are combined into a binary resource bundle.
-</p>
+are combined into a binary resource bundle.</p>
 <p>
+An example resource description:
 </p>
-<div class="example">
-<a name="resource-example"></a><p class="title"><b>Example 17. Example resource description</b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -168,47 +157,47 @@ are combined into a binary resource bundle.
   </table>
 </div>
 
-</div>
-<p><br class="example-break">
-</p>
 <p>
 This will create a resource bundle with the following files:
 </p>
-<pre class="programlisting">
-/org/gtk/Example/data/splashscreen.png
-/org/gtk/Example/dialog.ui
-/org/gtk/Example/menumarkup.xml
-</pre>
-<p>
-</p>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1
+2
+3</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="symbol">/</span><span class="normal">org</span><span class="symbol">/</span><span class="normal">gtk</span><span class="symbol">/</span><span class="normal">Example</span><span class="symbol">/</span><span class="normal">data</span><span class="symbol">/</span><span class="normal">splashscreen</span><span class="symbol">.</span><span class="normal">png</span>
+<span class="symbol">/</span><span class="normal">org</span><span class="symbol">/</span><span class="normal">gtk</span><span class="symbol">/</span><span class="normal">Example</span><span class="symbol">/</span><span class="normal">dialog</span><span class="symbol">.</span><span class="normal">ui</span>
+<span class="symbol">/</span><span class="normal">org</span><span class="symbol">/</span><span class="normal">gtk</span><span class="symbol">/</span><span class="normal">Example</span><span class="symbol">/</span><span class="normal">menumarkup</span><span class="symbol">.</span><span class="normal">xml</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
 Note that all resources in the process share the same namespace, so use java-style
-path prefixes (like in the above example) to avoid conflicts.
-</p>
+path prefixes (like in the above example) to avoid conflicts.</p>
 <p>
 You can then use <a href="glib-compile-resources.html">glib-compile-resources</a> to compile the xml to a
 binary bundle that you can load with <a class="link" href="gio-GResource.html#g-resource-load" title="g_resource_load ()"><code class="function">g_resource_load()</code></a>. However, its more common to use the --generate-source and
---generate-header arguments to create a source file and header to link directly into your application.
-</p>
+--generate-header arguments to create a source file and header to link directly into your application.</p>
 <p>
 Once a <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> has been created and registered all the data in it can be accessed globally in the process by
 using API calls like <a class="link" href="gio-GResource.html#g-resources-open-stream" title="g_resources_open_stream ()"><code class="function">g_resources_open_stream()</code></a> to stream the data or <a class="link" href="gio-GResource.html#g-resources-lookup-data" title="g_resources_lookup_data ()"><code class="function">g_resources_lookup_data()</code></a> to get a direct pointer
 to the data. You can also use uris like "resource:///org/gtk/Example/data/splashscreen.png" with <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> to access
-the resource data.
-</p>
+the resource data.</p>
 <p>
 There are two forms of the generated source, the default version uses the compiler support for constructor
 and destructor functions (where available) to automatically create and register the <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> on startup
 or library load time. If you pass --manual-register two functions to register/unregister the resource is instead
 created. This requires an explicit initialization call in your application/library, but it works on all platforms,
-even on the minor ones where this is not available. (Constructor support is available for at least Win32, MacOS and Linux.)
-</p>
+even on the minor ones where this is not available. (Constructor support is available for at least Win32, MacOS and Linux.)</p>
 <p>
 Note that resource data can point directly into the data segment of e.g. a library, so if you are unloading libraries
 during runtime you need to be very careful with keeping around pointers to data from a resource, as this goes away
 when the library is unloaded. However, in practice this is not generally a problem, since most resource accesses
-is for your own resources, and resource data is often used once, during parsing, and then released.
-</p>
+is for your own resources, and resource data is often used once, during parsing, and then released.</p>
 </div>
 <div class="refsect1">
 <a name="gio-GResource.details"></a><h2>Details</h2>
@@ -216,8 +205,7 @@ is for your own resources, and resource data is often used once, during parsing,
 <a name="GResource"></a><h3>GResource</h3>
 <pre class="programlisting">typedef struct _GResource GResource;</pre>
 <p>
-A resource bundle.
-</p>
+A resource bundle.</p>
 <p class="since">Since 2.32</p>
 </div>
 <hr>
@@ -230,8 +218,7 @@ A resource bundle.
 </pre>
 <p>
 GResourceFlags give information about a particular file inside a resource
-bundle.
-</p>
+bundle.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -260,8 +247,7 @@ bundle.
 } GResourceLookupFlags;
 </pre>
 <p>
-GResourceLookupFlags determine how resource path lookups are handled.
-</p>
+GResourceLookupFlags determine how resource path lookups are handled.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -282,12 +268,10 @@ GResourceLookupFlags determine how resource path lookups are handled.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Loads a binary resource bundle and creates a <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> representation of it, allowing
-you to query it for data.
-</p>
+you to query it for data.</p>
 <p>
 If you want to use this resource in the global resource namespace you need
-to register it with <a class="link" href="gio-GResource.html#g-resources-register" title="g_resources_register ()"><code class="function">g_resources_register()</code></a>.
-</p>
+to register it with <a class="link" href="gio-GResource.html#g-resources-register" title="g_resources_register ()"><code class="function">g_resources_register()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -321,12 +305,10 @@ to register it with <a class="link" href="gio-GResource.html#g-resources-registe
 <p>
 Creates a GResource from a reference to the binary resource bundle.
 This will keep a reference to <em class="parameter"><code>data</code></em> while the resource lives, so
-the data should not be modified or freed.
-</p>
+the data should not be modified or freed.</p>
 <p>
 If you want to use this resource in the global resource namespace you need
-to register it with <a class="link" href="gio-GResource.html#g-resources-register" title="g_resources_register ()"><code class="function">g_resources_register()</code></a>.
-</p>
+to register it with <a class="link" href="gio-GResource.html#g-resources-register" title="g_resources_register ()"><code class="function">g_resources_register()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -358,8 +340,7 @@ to register it with <a class="link" href="gio-GResource.html#g-resources-registe
 <pre class="programlisting"><a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="returnvalue">GResource</span></a> *         g_resource_ref                      (<em class="parameter"><code><a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> *resource</code></em>);</pre>
 <p>
 Atomically increments the reference count of <em class="parameter"><code>array</code></em> by one. This
-function is MT-safe and may be called from any thread.
-</p>
+function is MT-safe and may be called from any thread.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -388,8 +369,7 @@ function is MT-safe and may be called from any thread.
 Atomically decrements the reference count of <em class="parameter"><code>resource</code></em> by one. If the
 reference count drops to 0, all memory allocated by the array is
 released. This function is MT-safe and may be called from any
-thread.
-</p>
+thread.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -413,22 +393,18 @@ thread.
 <p>
 Looks for a file at the specified <em class="parameter"><code>path</code></em> in the resource and
 returns a <a href="http://library.gnome.org/devel/glib/unstable/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> that lets you directly access the data in
-memory.
-</p>
+memory.</p>
 <p>
 The data is always followed by a zero byte, so you
 can safely use the data as a C string. However, that byte
-is not included in the size of the GBytes.
-</p>
+is not included in the size of the GBytes.</p>
 <p>
 For uncompressed resource files this is a pointer directly into
 the resource bundle, which is typically in some readonly data section
 in the program binary. For compressed files we allocate memory on
-the heap and automatically uncompress the data.
-</p>
+the heap and automatically uncompress the data.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -474,11 +450,9 @@ Free the returned object with <a href="http://library.gnome.org/devel/glib/unsta
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Looks for a file at the specified <em class="parameter"><code>path</code></em> in the resource and
-returns a <a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a> that lets you read the data.
-</p>
+returns a <a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a> that lets you read the data.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -525,11 +499,9 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 <p>
 Returns all the names of children at the specified <em class="parameter"><code>path</code></em> in the resource.
 The return result is a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminated list of strings which should
-be released with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>.
-</p>
+be released with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -575,11 +547,9 @@ be released with <a href="http://library.gnome.org/devel/glib/unstable/glib-Stri
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Looks for a file at the specified <em class="parameter"><code>path</code></em> in the resource and
-if found returns information about it.
-</p>
+if found returns information about it.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -632,13 +602,11 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_resource_init              (<em class="parameter"><code><span class="type">GStaticResource</span> *static_resource</code></em>);</pre>
 <p>
 Initializes a GResource from static data using a
-GStaticResource.
-</p>
+GStaticResource.</p>
 <p>
 This is normally used by code generated by
 <a href="glib-compile-resources.html">glib-compile-resources</a>
-and is not typically used by other code.
-</p>
+and is not typically used by other code.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -657,13 +625,11 @@ and is not typically used by other code.
 <a name="g-static-resource-fini"></a><h3>g_static_resource_fini ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_resource_fini              (<em class="parameter"><code><span class="type">GStaticResource</span> *static_resource</code></em>);</pre>
 <p>
-Finalized a GResource initialized by <a class="link" href="gio-GResource.html#g-static-resource-init" title="g_static_resource_init ()"><code class="function">g_static_resource_init()</code></a>.
-</p>
+Finalized a GResource initialized by <a class="link" href="gio-GResource.html#g-static-resource-init" title="g_static_resource_init ()"><code class="function">g_static_resource_init()</code></a>.</p>
 <p>
 This is normally used by code generated by
 <a href="glib-compile-resources.html">glib-compile-resources</a>
-and is not typically used by other code.
-</p>
+and is not typically used by other code.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -682,13 +648,11 @@ and is not typically used by other code.
 <a name="g-static-resource-get-resource"></a><h3>g_static_resource_get_resource ()</h3>
 <pre class="programlisting"><a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="returnvalue">GResource</span></a> *         g_static_resource_get_resource      (<em class="parameter"><code><span class="type">GStaticResource</span> *static_resource</code></em>);</pre>
 <p>
-Gets the GResource that was registered by a call to <a class="link" href="gio-GResource.html#g-static-resource-init" title="g_static_resource_init ()"><code class="function">g_static_resource_init()</code></a>.
-</p>
+Gets the GResource that was registered by a call to <a class="link" href="gio-GResource.html#g-static-resource-init" title="g_static_resource_init ()"><code class="function">g_static_resource_init()</code></a>.</p>
 <p>
 This is normally used by code generated by
 <a href="glib-compile-resources.html">glib-compile-resources</a>
-and is not typically used by other code.
-</p>
+and is not typically used by other code.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -716,8 +680,7 @@ and is not typically used by other code.
 <p>
 Registers the resource with the process-global set of resources.
 Once a resource is registered the files in it can be accessed
-with the global resource lookup functions like <a class="link" href="gio-GResource.html#g-resources-lookup-data" title="g_resources_lookup_data ()"><code class="function">g_resources_lookup_data()</code></a>.
-</p>
+with the global resource lookup functions like <a class="link" href="gio-GResource.html#g-resources-lookup-data" title="g_resources_lookup_data ()"><code class="function">g_resources_lookup_data()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -736,8 +699,7 @@ with the global resource lookup functions like <a class="link" href="gio-GResour
 <a name="g-resources-unregister"></a><h3>g_resources_unregister ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_resources_unregister              (<em class="parameter"><code><a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> *resource</code></em>);</pre>
 <p>
-Unregisters the resource from the process-global set of resources.
-</p>
+Unregisters the resource from the process-global set of resources.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -760,22 +722,18 @@ Unregisters the resource from the process-global set of resources.
 <p>
 Looks for a file at the specified <em class="parameter"><code>path</code></em> in the set of
 globally registered resources and returns a <a href="http://library.gnome.org/devel/glib/unstable/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a> that
-lets you directly access the data in memory.
-</p>
+lets you directly access the data in memory.</p>
 <p>
 The data is always followed by a zero byte, so you
 can safely use the data as a C string. However, that byte
-is not included in the size of the GBytes.
-</p>
+is not included in the size of the GBytes.</p>
 <p>
 For uncompressed resource files this is a pointer directly into
 the resource bundle, which is typically in some readonly data section
 in the program binary. For compressed files we allocate memory on
-the heap and automatically uncompress the data.
-</p>
+the heap and automatically uncompress the data.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -816,11 +774,9 @@ Free the returned object with <a href="http://library.gnome.org/devel/glib/unsta
 <p>
 Looks for a file at the specified <em class="parameter"><code>path</code></em> in the set of
 globally registered resources and returns a <a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a>
-that lets you read the data.
-</p>
+that lets you read the data.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -862,11 +818,9 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 Returns all the names of children at the specified <em class="parameter"><code>path</code></em> in the set of
 globally registered resources.
 The return result is a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> terminated list of strings which should
-be released with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>.
-</p>
+be released with <a href="http://library.gnome.org/devel/glib/unstable/glib-String-Utility-Functions.html#g-strfreev"><code class="function">g_strfreev()</code></a>.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -906,11 +860,9 @@ be released with <a href="http://library.gnome.org/devel/glib/unstable/glib-Stri
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Looks for a file at the specified <em class="parameter"><code>path</code></em> in the set of
-globally registered resources and if found returns information about it.
-</p>
+globally registered resources and if found returns information about it.</p>
 <p>
-<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.
-</p>
+<em class="parameter"><code>lookup_flags</code></em> controls the behaviour of the lookup.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -960,8 +912,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 <p>
 Error domain for <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a>. Errors in this domain will be from the
 <a class="link" href="gio-GResource.html#GResourceError" title="enum GResourceError"><span class="type">GResourceError</span></a> enumeration. See <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for more information on
-error domains.
-</p>
+error domains.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -973,8 +924,7 @@ error domains.
 </pre>
 <p>
 An error code used with <a class="link" href="gio-GResource.html#G-RESOURCE-ERROR:CAPS" title="G_RESOURCE_ERROR"><code class="literal">G_RESOURCE_ERROR</code></a> in a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> returned
-from a <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> routine.
-</p>
+from a <a class="link" href="gio-GResource.html#GResource" title="GResource"><span class="type">GResource</span></a> routine.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -999,6 +949,6 @@ from a <a class="link" href="gio-GResource.html#GResource" title="GResource"><sp
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

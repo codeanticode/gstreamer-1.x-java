@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -139,12 +137,12 @@
  * <member>g_file_eject_mountable_with_operation() to eject a mountable file.</member>
  * </simplelist>
  *
- * <para id="gfile-etag"><indexterm><primary>entity tag</primary></indexterm>
+ * <para id="gfile-etag">
  * One notable feature of #GFiles are entity tags, or "etags" for
  * short. Entity tags are somewhat like a more abstract version of the
- * traditional mtime, and can be used to quickly determine if the file has
- * been modified from the version on the file system. See the HTTP 1.1
- * <ulink url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">specification</ulink>
+ * traditional mtime, and can be used to quickly determine if the file
+ * has been modified from the version on the file system. See the
+ * HTTP 1.1 <ulink url="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html">specification</ulink>
  * for HTTP Etag headers, which are a very similar concept.
  * </para>
  **/
@@ -449,9 +447,9 @@ g_file_has_uri_scheme (GFile      *file,
  *
  * Gets the URI scheme for a #GFile.
  * RFC 3986 decodes the scheme as:
- * <programlisting>
+ * |[
  * URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ]
- * </programlisting>
+ * ]|
  * Common schemes include "file", "http", "ftp", etc.
  *
  * This call does no blocking I/O.
@@ -6462,6 +6460,15 @@ new_for_cmdline_arg (const gchar *arg,
  * This operation never fails, but the returned object might not
  * support any I/O operation if @arg points to a malformed path.
  *
+ * Note that on Windows, this function expects its argument to be in
+ * UTF-8 -- not the system code page.  This means that you
+ * should not use this function with string from argv as it is passed
+ * to main().  g_win32_get_command_line() will return a UTF-8 version of
+ * the commandline.  #GApplication also uses UTF-8 but
+ * g_application_command_line_create_file_for_arg() may be more useful
+ * for you there.  It is also always possible to use this function with
+ * #GOptionContext arguments of type %G_OPTION_ARG_FILENAME.
+ *
  * Returns: (transfer full): a new #GFile.
  *    Free the returned object with g_object_unref().
  */
@@ -7312,10 +7319,10 @@ replace_contents_open_callback (GObject      *obj,
  * If @make_backup is %TRUE, this function will attempt to
  * make a backup of @file.
  *
- * <warning><para>No copy of @content will be made, so it must stay valid until
- * @callback is called. See g_file_replace_contents_bytes_async() for a #GBytes
- * version that will automatically hold a reference to the contents (without
- * copying) for the duration of the call.</para></warning>
+ * Note that no copy of @content will be made, so it must stay valid
+ * until @callback is called. See g_file_replace_contents_bytes_async()
+ * for a #GBytes version that will automatically hold a reference to the
+ * contents (without copying) for the duration of the call.
  */
 void
 g_file_replace_contents_async  (GFile               *file,

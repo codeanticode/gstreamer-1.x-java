@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDBusServer</title>
+<title>GIO Reference Manual: GDBusServer</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Lowlevel D-Bus Support">
 <link rel="prev" href="GDBusMethodInvocation.html" title="GDBusMethodInvocation">
 <link rel="next" href="GDBusAuthObserver.html" title="GDBusAuthObserver">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GDBusMethodInvocation.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="gdbus-lowlevel.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GDBusAuthObserver.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GDBusServer.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GDBusServer.description" class="shortcut">Description</a>
                    | 
@@ -32,8 +25,12 @@
                   <a href="#GDBusServer.properties" class="shortcut">Properties</a>
                    | 
                   <a href="#GDBusServer.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gdbus-lowlevel.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GDBusMethodInvocation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GDBusAuthObserver.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GDBusServer"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -105,16 +102,14 @@ GDBusServer implements
 connections. This can be used to create a new D-Bus server, allowing two
 peers to use the D-Bus protocol for their own specialized communication.
 A server instance provided in this way will not perform message routing or
-implement the org.freedesktop.DBus interface.
-</p>
+implement the org.freedesktop.DBus interface.</p>
 <p>
 To just export an object on a well-known name on a message bus, such as the
-session or system bus, you should instead use <a class="link" href="gio-Owning-Bus-Names.html#g-bus-own-name" title="g_bus_own_name ()"><code class="function">g_bus_own_name()</code></a>.
-</p>
+session or system bus, you should instead use <a class="link" href="gio-Owning-Bus-Names.html#g-bus-own-name" title="g_bus_own_name ()"><code class="function">g_bus_own_name()</code></a>.</p>
 <p>
 </p>
 <div class="example">
-<a name="gdbus-peer-to-peer"></a><p class="title"><b>Example 10. D-Bus peer-to-peer example</b></p>
+<a name="gdbus-peer-to-peer"></a><p class="title"><b>Example 5. D-Bus peer-to-peer example</b></p>
 <div class="example-contents">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
@@ -737,8 +732,7 @@ session or system bus, you should instead use <a class="link" href="gio-Owning-B
 </div>
 
 </div>
-<p><br class="example-break">
-</p>
+<p><br class="example-break"></p>
 </div>
 <div class="refsect1">
 <a name="GDBusServer.details"></a><h2>Details</h2>
@@ -747,8 +741,7 @@ session or system bus, you should instead use <a class="link" href="gio-Owning-B
 <pre class="programlisting">typedef struct _GDBusServer GDBusServer;</pre>
 <p>
 The <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> structure contains only private data and
-should only be accessed using the provided API.
-</p>
+should only be accessed using the provided API.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -761,8 +754,7 @@ should only be accessed using the provided API.
 } GDBusServerFlags;
 </pre>
 <p>
-Flags used when creating a <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a>.
-</p>
+Flags used when creating a <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -802,28 +794,22 @@ authentication method.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Creates a new D-Bus server that listens on the first address in
-<em class="parameter"><code>address</code></em> that works.
-</p>
+<em class="parameter"><code>address</code></em> that works.</p>
 <p>
 Once constructed, you can use <a class="link" href="GDBusServer.html#g-dbus-server-get-client-address" title="g_dbus_server_get_client_address ()"><code class="function">g_dbus_server_get_client_address()</code></a> to
-get a D-Bus address string that clients can use to connect.
-</p>
+get a D-Bus address string that clients can use to connect.</p>
 <p>
 Connect to the <a class="link" href="GDBusServer.html#GDBusServer-new-connection" title='The "new-connection" signal'><span class="type">"new-connection"</span></a> signal to handle
-incoming connections.
-</p>
+incoming connections.</p>
 <p>
 The returned <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> isn't active - you have to start it with
-<a class="link" href="GDBusServer.html#g-dbus-server-start" title="g_dbus_server_start ()"><code class="function">g_dbus_server_start()</code></a>.
-</p>
+<a class="link" href="GDBusServer.html#g-dbus-server-start" title="g_dbus_server_start ()"><code class="function">g_dbus_server_start()</code></a>.</p>
 <p>
-See <a class="xref" href="GDBusServer.html#gdbus-peer-to-peer" title="Example 10. D-Bus peer-to-peer example">Example 10, “D-Bus peer-to-peer example”</a> for how <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> can
-be used.
-</p>
+See <a class="xref" href="GDBusServer.html#gdbus-peer-to-peer" title="Example 5. D-Bus peer-to-peer example">Example 5, “D-Bus peer-to-peer example”</a> for how <a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> can
+be used.</p>
 <p>
 This is a synchronous failable constructor. See
-<code class="function">g_dbus_server_new()</code> for the asynchronous version.
-</p>
+<code class="function">g_dbus_server_new()</code> for the asynchronous version.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -870,8 +856,7 @@ This is a synchronous failable constructor. See
 <a name="g-dbus-server-start"></a><h3>g_dbus_server_start ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_server_start                 (<em class="parameter"><code><a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> *server</code></em>);</pre>
 <p>
-Starts <em class="parameter"><code>server</code></em>.
-</p>
+Starts <em class="parameter"><code>server</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -889,8 +874,7 @@ Starts <em class="parameter"><code>server</code></em>.
 <a name="g-dbus-server-stop"></a><h3>g_dbus_server_stop ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_server_stop                  (<em class="parameter"><code><a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> *server</code></em>);</pre>
 <p>
-Stops <em class="parameter"><code>server</code></em>.
-</p>
+Stops <em class="parameter"><code>server</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -908,8 +892,7 @@ Stops <em class="parameter"><code>server</code></em>.
 <a name="g-dbus-server-is-active"></a><h3>g_dbus_server_is_active ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_dbus_server_is_active             (<em class="parameter"><code><a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> *server</code></em>);</pre>
 <p>
-Gets whether <em class="parameter"><code>server</code></em> is active.
-</p>
+Gets whether <em class="parameter"><code>server</code></em> is active.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -934,8 +917,7 @@ Gets whether <em class="parameter"><code>server</code></em> is active.
 <a name="g-dbus-server-get-guid"></a><h3>g_dbus_server_get_guid ()</h3>
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_server_get_guid              (<em class="parameter"><code><a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> *server</code></em>);</pre>
 <p>
-Gets the GUID for <em class="parameter"><code>server</code></em>.
-</p>
+Gets the GUID for <em class="parameter"><code>server</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -959,8 +941,7 @@ Gets the GUID for <em class="parameter"><code>server</code></em>.
 <a name="g-dbus-server-get-flags"></a><h3>g_dbus_server_get_flags ()</h3>
 <pre class="programlisting"><a class="link" href="GDBusServer.html#GDBusServerFlags"><span class="returnvalue">GDBusServerFlags</span></a>    g_dbus_server_get_flags             (<em class="parameter"><code><a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> *server</code></em>);</pre>
 <p>
-Gets the flags for <em class="parameter"><code>server</code></em>.
-</p>
+Gets the flags for <em class="parameter"><code>server</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -985,8 +966,7 @@ Gets the flags for <em class="parameter"><code>server</code></em>.
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_server_get_client_address    (<em class="parameter"><code><a class="link" href="GDBusServer.html" title="GDBusServer"><span class="type">GDBusServer</span></a> *server</code></em>);</pre>
 <p>
 Gets a D-Bus address string that can be used by clients to connect
-to <em class="parameter"><code>server</code></em>.
-</p>
+to <em class="parameter"><code>server</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1013,8 +993,7 @@ by <em class="parameter"><code>server</code></em>.</td>
 <a name="GDBusServer--active"></a><h3>The <code class="literal">"active"</code> property</h3>
 <pre class="programlisting">  "active"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read</pre>
 <p>
-Whether the server is currently active.
-</p>
+Whether the server is currently active.</p>
 <p>Default value: FALSE</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -1023,8 +1002,7 @@ Whether the server is currently active.
 <a name="GDBusServer--address"></a><h3>The <code class="literal">"address"</code> property</h3>
 <pre class="programlisting">  "address"                  <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
 <p>
-The D-Bus address to listen on.
-</p>
+The D-Bus address to listen on.</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -1033,8 +1011,7 @@ The D-Bus address to listen on.
 <a name="GDBusServer--authentication-observer"></a><h3>The <code class="literal">"authentication-observer"</code> property</h3>
 <pre class="programlisting">  "authentication-observer"  <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a>*    : Read / Write / Construct Only</pre>
 <p>
-A <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a> object to assist in the authentication process or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+A <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span class="type">GDBusAuthObserver</span></a> object to assist in the authentication process or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -1042,8 +1019,7 @@ A <a class="link" href="GDBusAuthObserver.html" title="GDBusAuthObserver"><span 
 <a name="GDBusServer--client-address"></a><h3>The <code class="literal">"client-address"</code> property</h3>
 <pre class="programlisting">  "client-address"           <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read</pre>
 <p>
-The D-Bus address that clients can use.
-</p>
+The D-Bus address that clients can use.</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -1052,8 +1028,7 @@ The D-Bus address that clients can use.
 <a name="GDBusServer--flags"></a><h3>The <code class="literal">"flags"</code> property</h3>
 <pre class="programlisting">  "flags"                    <a class="link" href="GDBusServer.html#GDBusServerFlags"><span class="type">GDBusServerFlags</span></a>      : Read / Write / Construct Only</pre>
 <p>
-Flags from the <a class="link" href="GDBusServer.html#GDBusServerFlags"><span class="type">GDBusServerFlags</span></a> enumeration.
-</p>
+Flags from the <a class="link" href="GDBusServer.html#GDBusServerFlags"><span class="type">GDBusServerFlags</span></a> enumeration.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -1061,8 +1036,7 @@ Flags from the <a class="link" href="GDBusServer.html#GDBusServerFlags"><span cl
 <a name="GDBusServer--guid"></a><h3>The <code class="literal">"guid"</code> property</h3>
 <pre class="programlisting">  "guid"                     <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
 <p>
-The guid of the server.
-</p>
+The guid of the server.</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -1077,28 +1051,24 @@ The guid of the server.
 <p>
 Emitted when a new authenticated connection has been made. Use
 <a class="link" href="GDBusConnection.html#g-dbus-connection-get-peer-credentials" title="g_dbus_connection_get_peer_credentials ()"><code class="function">g_dbus_connection_get_peer_credentials()</code></a> to figure out what
-identity (if any), was authenticated.
-</p>
+identity (if any), was authenticated.</p>
 <p>
 If you want to accept the connection, take a reference to the
 <em class="parameter"><code>connection</code></em> object and return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>. When you are done with the
 connection call <a class="link" href="GDBusConnection.html#g-dbus-connection-close" title="g_dbus_connection_close ()"><code class="function">g_dbus_connection_close()</code></a> and give up your
 reference. Note that the other peer may disconnect at any time -
 a typical thing to do when accepting a connection is to listen to
-the <a class="link" href="GDBusConnection.html#GDBusConnection-closed" title='The "closed" signal'><span class="type">"closed"</span></a> signal.
-</p>
+the <a class="link" href="GDBusConnection.html#GDBusConnection-closed" title='The "closed" signal'><span class="type">"closed"</span></a> signal.</p>
 <p>
 If <a class="link" href="GDBusServer.html#GDBusServer--flags" title='The "flags" property'><span class="type">"flags"</span></a> contains <a class="link" href="GDBusServer.html#G-DBUS-SERVER-FLAGS-RUN-IN-THREAD:CAPS"><code class="literal">G_DBUS_SERVER_FLAGS_RUN_IN_THREAD</code></a>
 then the signal is emitted in a new thread dedicated to the
 connection. Otherwise the signal is emitted in the <GTKDOCLINK HREF="g-main-context-push-thread-default">thread-default main
-loop</GTKDOCLINK> of the thread that <em class="parameter"><code>server</code></em> was constructed in.
-</p>
+loop</GTKDOCLINK> of the thread that <em class="parameter"><code>server</code></em> was constructed in.</p>
 <p>
 You are guaranteed that signal handlers for this signal runs
 before incoming messages on <em class="parameter"><code>connection</code></em> are processed. This means
 that it's suitable to call <a class="link" href="GDBusConnection.html#g-dbus-connection-register-object" title="g_dbus_connection_register_object ()"><code class="function">g_dbus_connection_register_object()</code></a> or
-similar from the signal handler.
-</p>
+similar from the signal handler.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1131,6 +1101,6 @@ run.</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

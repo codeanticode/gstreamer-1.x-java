@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Base64 Encoding</title>
+<title>GLib Reference Manual: Base64 Encoding</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Unicode-Manipulation.html" title="Unicode Manipulation">
 <link rel="next" href="glib-Data-Checksums.html" title="Data Checksums">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Unicode-Manipulation.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Data-Checksums.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Base64-Encoding.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Base64-Encoding.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Unicode-Manipulation.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Data-Checksums.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Base64-Encoding"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -71,18 +68,15 @@ encoded as a sequence of printable ASCII characters. For the definition
 of Base64, see <a class="ulink" href="http://www.ietf.org/rfc/rfc1421.txt" target="_top">RFC
 1421</a> or <a class="ulink" href="http://www.ietf.org/rfc/rfc2045.txt" target="_top">RFC
 2045</a>. Base64 is most commonly used as a MIME transfer encoding
-for email.
-</p>
+for email.</p>
 <p>
 GLib supports incremental encoding using <a class="link" href="glib-Base64-Encoding.html#g-base64-encode-step" title="g_base64_encode_step ()"><code class="function">g_base64_encode_step()</code></a> and
 <a class="link" href="glib-Base64-Encoding.html#g-base64-encode-close" title="g_base64_encode_close ()"><code class="function">g_base64_encode_close()</code></a>. Incremental decoding can be done with
 <a class="link" href="glib-Base64-Encoding.html#g-base64-decode-step" title="g_base64_decode_step ()"><code class="function">g_base64_decode_step()</code></a>. To encode or decode data in one go, use
 <a class="link" href="glib-Base64-Encoding.html#g-base64-encode" title="g_base64_encode ()"><code class="function">g_base64_encode()</code></a> or <a class="link" href="glib-Base64-Encoding.html#g-base64-decode" title="g_base64_decode ()"><code class="function">g_base64_decode()</code></a>. To avoid memory allocation when
-decoding, you can use <a class="link" href="glib-Base64-Encoding.html#g-base64-decode-inplace" title="g_base64_decode_inplace ()"><code class="function">g_base64_decode_inplace()</code></a>.
-</p>
+decoding, you can use <a class="link" href="glib-Base64-Encoding.html#g-base64-decode-inplace" title="g_base64_decode_inplace ()"><code class="function">g_base64_decode_inplace()</code></a>.</p>
 <p>
-Support for Base64 encoding has been added in GLib 2.12.
-</p>
+Support for Base64 encoding has been added in GLib 2.12.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Base64-Encoding.details"></a><h2>Details</h2>
@@ -97,27 +91,23 @@ Support for Base64 encoding has been added in GLib 2.12.
 <p>
 Incrementally encode a sequence of binary data into its Base-64 stringified
 representation. By calling this function multiple times you can convert
-data in chunks to avoid having to have the full encoded data in memory.
-</p>
+data in chunks to avoid having to have the full encoded data in memory.</p>
 <p>
 When all of the data has been converted you must call
-<a class="link" href="glib-Base64-Encoding.html#g-base64-encode-close" title="g_base64_encode_close ()"><code class="function">g_base64_encode_close()</code></a> to flush the saved state.
-</p>
+<a class="link" href="glib-Base64-Encoding.html#g-base64-encode-close" title="g_base64_encode_close ()"><code class="function">g_base64_encode_close()</code></a> to flush the saved state.</p>
 <p>
 The output buffer must be large enough to fit all the data that will
 be written to it. Due to the way base64 encodes you will need
 at least: (<em class="parameter"><code>len</code></em> / 3 + 1) * 4 + 4 bytes (+ 4 may be needed in case of
 non-zero state). If you enable line-breaking you will need at least:
-((<em class="parameter"><code>len</code></em> / 3 + 1) * 4 + 4) / 72 + 1 bytes of extra space.
-</p>
+((<em class="parameter"><code>len</code></em> / 3 + 1) * 4 + 4) / 72 + 1 bytes of extra space.</p>
 <p>
 <em class="parameter"><code>break_lines</code></em> is typically used when putting base64-encoded data in emails.
 It breaks the lines at 72 columns instead of putting all of the text on
 the same line. This avoids problems with long lines in the email system.
 Note however that it breaks the lines with <code class="literal">LF</code>
 characters, not <code class="literal">CR LF</code> sequences, so the result cannot
-be passed directly to SMTP or certain other protocols.
-</p>
+be passed directly to SMTP or certain other protocols.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -169,13 +159,11 @@ be passed directly to SMTP or certain other protocols.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *state</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gint" title="gint"><span class="type">gint</span></a> *save</code></em>);</pre>
 <p>
-Flush the status from a sequence of calls to <a class="link" href="glib-Base64-Encoding.html#g-base64-encode-step" title="g_base64_encode_step ()"><code class="function">g_base64_encode_step()</code></a>.
-</p>
+Flush the status from a sequence of calls to <a class="link" href="glib-Base64-Encoding.html#g-base64-encode-step" title="g_base64_encode_step ()"><code class="function">g_base64_encode_step()</code></a>.</p>
 <p>
 The output buffer must be large enough to fit all the data that will
 be written to it. It will need up to 4 bytes, or up to 5 bytes if
-line-breaking is enabled.
-</p>
+line-breaking is enabled.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -216,8 +204,7 @@ line-breaking is enabled.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> len</code></em>);</pre>
 <p>
 Encode a sequence of binary data into its Base-64 stringified
-representation.
-</p>
+representation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -256,14 +243,12 @@ be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g
 <p>
 Incrementally decode a sequence of binary data from its Base-64 stringified
 representation. By calling this function multiple times you can convert
-data in chunks to avoid having to have the full encoded data in memory.
-</p>
+data in chunks to avoid having to have the full encoded data in memory.</p>
 <p>
 The output buffer must be large enough to fit all the data that will
 be written to it. Since base64 encodes 3 bytes in 4 chars you need
 at least: (<em class="parameter"><code>len</code></em> / 4) * 3 + 3 bytes (+ 3 may be needed in case of non-zero
-state).
-</p>
+state).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -310,8 +295,7 @@ state).
 <p>
 Decode a sequence of Base-64 encoded text into binary data.  Note
 that the returned binary data is not necessarily zero-terminated,
-so it should not be used as a character string.
-</p>
+so it should not be used as a character string.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -345,8 +329,7 @@ be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gsize" title="gsize"><span class="type">gsize</span></a> *out_len</code></em>);</pre>
 <p>
 Decode a sequence of Base-64 encoded text into binary data
-by overwriting the input data.
-</p>
+by overwriting the input data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -378,6 +361,6 @@ is the same as the input <em class="parameter"><code>text</code></em>. <span cla
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

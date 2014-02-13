@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDesktopAppInfo</title>
+<title>GIO Reference Manual: GDesktopAppInfo</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="types.html" title="File types and applications">
 <link rel="prev" href="gio-GAppInfoMonitor.html" title="GAppInfoMonitor">
 <link rel="next" href="volume_mon.html" title="Volumes and Drives">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GAppInfoMonitor.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="volume_mon.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-Desktop-file-based-GAppInfo.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-Desktop-file-based-GAppInfo.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#gio-Desktop-file-based-GAppInfo.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
                    | 
                   <a href="#gio-Desktop-file-based-GAppInfo.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="types.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GAppInfoMonitor.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="volume_mon.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-Desktop-file-based-GAppInfo"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -113,13 +110,11 @@ GDesktopAppInfo implements
 <a name="gio-Desktop-file-based-GAppInfo.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> is an implementation of <a class="link" href="GAppInfo.html" title="GAppInfo"><span class="type">GAppInfo</span></a> based on
-desktop files.
-</p>
+desktop files.</p>
 <p>
 Note that <code class="filename">&lt;gio/gdesktopappinfo.h&gt;</code> belongs to
 the UNIX-specific GIO interfaces, thus you have to use the
-<code class="filename">gio-unix-2.0.pc</code> pkg-config file when using it.
-</p>
+<code class="filename">gio-unix-2.0.pc</code> pkg-config file when using it.</p>
 </div>
 <div class="refsect1">
 <a name="gio-Desktop-file-based-GAppInfo.details"></a><h2>Details</h2>
@@ -127,8 +122,7 @@ the UNIX-specific GIO interfaces, thus you have to use the
 <a name="GDesktopAppInfo-struct"></a><h3>GDesktopAppInfo</h3>
 <pre class="programlisting">typedef struct _GDesktopAppInfo GDesktopAppInfo;</pre>
 <p>
-Information about an installed application from a desktop file.
-</p>
+Information about an installed application from a desktop file.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -136,8 +130,7 @@ Information about an installed application from a desktop file.
 <pre class="programlisting"><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="returnvalue">GDesktopAppInfo</span></a> *   g_desktop_app_info_new_from_filename
                                                         (<em class="parameter"><code>const <span class="type">char</span> *filename</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a>.
-</p>
+Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -160,8 +153,7 @@ Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDeskto
 <a name="g-desktop-app-info-new-from-keyfile"></a><h3>g_desktop_app_info_new_from_keyfile ()</h3>
 <pre class="programlisting"><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="returnvalue">GDesktopAppInfo</span></a> *   g_desktop_app_info_new_from_keyfile (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a> *key_file</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a>.
-</p>
+Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -186,8 +178,7 @@ Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDeskto
 <a name="g-desktop-app-info-new"></a><h3>g_desktop_app_info_new ()</h3>
 <pre class="programlisting"><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="returnvalue">GDesktopAppInfo</span></a> *   g_desktop_app_info_new              (<em class="parameter"><code>const <span class="type">char</span> *desktop_id</code></em>);</pre>
 <p>
-Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> based on a desktop file id.
-</p>
+Creates a new <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> based on a desktop file id.</p>
 <p>
 A desktop file id is the basename of the desktop file, including the
 .desktop extension. GIO is looking for a desktop file with this name
@@ -197,8 +188,7 @@ directories (i.e. the directories specified in the
 variables). GIO also supports the prefix-to-subdirectory mapping that is
 described in the <a class="ulink" href="http://standards.freedesktop.org/menu-spec/latest/" target="_top">Menu Spec</a>
 (i.e. a desktop id of kde-foo.desktop will match
-<code class="filename">/usr/share/applications/kde/foo.desktop</code>).
-</p>
+<code class="filename">/usr/share/applications/kde/foo.desktop</code>).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -223,8 +213,7 @@ described in the <a class="ulink" href="http://standards.freedesktop.org/menu-sp
 <p>
 When <em class="parameter"><code>info</code></em> was created from a known filename, return it.  In some
 situations such as the <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> returned from
-<a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-new-from-keyfile" title="g_desktop_app_info_new_from_keyfile ()"><code class="function">g_desktop_app_info_new_from_keyfile()</code></a>, this function will return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+<a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-new-from-keyfile" title="g_desktop_app_info_new_from_keyfile ()"><code class="function">g_desktop_app_info_new_from_keyfile()</code></a>, this function will return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -250,8 +239,7 @@ situations such as the <a class="link" href="gio-Desktop-file-based-GAppInfo.htm
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_desktop_app_info_get_is_hidden    (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>);</pre>
 <p>
 A desktop file is hidden if the Hidden key in it is
-set to True.
-</p>
+set to True.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -277,8 +265,7 @@ set to True.
 <p>
 Gets the value of the NoDisplay key, which helps determine if the
 application info should be shown in menus. See
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#G-KEY-FILE-DESKTOP-KEY-NO-DISPLAY:CAPS"><span class="type">G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY</span></a> and <a class="link" href="GAppInfo.html#g-app-info-should-show" title="g_app_info_should_show ()"><code class="function">g_app_info_should_show()</code></a>.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#G-KEY-FILE-DESKTOP-KEY-NO-DISPLAY:CAPS"><span class="type">G_KEY_FILE_DESKTOP_KEY_NO_DISPLAY</span></a> and <a class="link" href="GAppInfo.html#g-app-info-should-show" title="g_app_info_should_show ()"><code class="function">g_app_info_should_show()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -306,16 +293,13 @@ application info should be shown in menus. See
 <p>
 Checks if the application info should be shown in menus that list available
 applications for a specific name of the desktop, based on the
-<code class="literal">OnlyShowIn</code> and <code class="literal">NotShowIn</code> keys.
-</p>
+<code class="literal">OnlyShowIn</code> and <code class="literal">NotShowIn</code> keys.</p>
 <p>
 If <em class="parameter"><code>desktop_env</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the name of the desktop set with
-<a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-set-desktop-env" title="g_desktop_app_info_set_desktop_env ()"><code class="function">g_desktop_app_info_set_desktop_env()</code></a> is used.
-</p>
+<a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-set-desktop-env" title="g_desktop_app_info_set_desktop_env ()"><code class="function">g_desktop_app_info_set_desktop_env()</code></a> is used.</p>
 <p>
 Note that <a class="link" href="GAppInfo.html#g-app-info-should-show" title="g_app_info_should_show ()"><code class="function">g_app_info_should_show()</code></a> for <em class="parameter"><code>info</code></em> will include this check (with
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for <em class="parameter"><code>desktop_env</code></em>) as well as additional checks.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> for <em class="parameter"><code>desktop_env</code></em>) as well as additional checks.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -347,8 +331,7 @@ otherwise.</td>
 <a name="g-desktop-app-info-get-generic-name"></a><h3>g_desktop_app_info_get_generic_name ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_desktop_app_info_get_generic_name (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>);</pre>
 <p>
-Gets the generic name from the destkop file.
-</p>
+Gets the generic name from the destkop file.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -372,8 +355,7 @@ Gets the generic name from the destkop file.
 <a name="g-desktop-app-info-get-categories"></a><h3>g_desktop_app_info_get_categories ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_desktop_app_info_get_categories   (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>);</pre>
 <p>
-Gets the categories from the desktop file.
-</p>
+Gets the categories from the desktop file.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -398,8 +380,7 @@ i.e. no attempt is made to split it by ';' or validate it.</td>
 <a name="g-desktop-app-info-get-keywords"></a><h3>g_desktop_app_info_get_keywords ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> * const * g_desktop_app_info_get_keywords    (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>);</pre>
 <p>
-Gets the keywords from the desktop file.
-</p>
+Gets the keywords from the desktop file.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -428,8 +409,7 @@ Gets the keywords from the desktop file.
 <p>
 Retrieves the StartupWMClass field from <em class="parameter"><code>info</code></em>. This represents the
 WM_CLASS property of the main window of the application, if launched
-through <em class="parameter"><code>info</code></em>.
-</p>
+through <em class="parameter"><code>info</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -459,8 +439,7 @@ Sets the name of the desktop that the application is running in.
 This is used by <a class="link" href="GAppInfo.html#g-app-info-should-show" title="g_app_info_should_show ()"><code class="function">g_app_info_should_show()</code></a> and
 <a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-get-show-in" title="g_desktop_app_info_get_show_in ()"><code class="function">g_desktop_app_info_get_show_in()</code></a> to evaluate the
 <code class="literal">OnlyShowIn</code> and <code class="literal">NotShowIn</code>
-desktop entry fields.
-</p>
+desktop entry fields.</p>
 <p>
 The <a class="ulink" href="http://standards.freedesktop.org/menu-spec/latest/" target="_top">Desktop
 Menu specification</a> recognizes the following:
@@ -475,10 +454,7 @@ Menu specification</a> recognizes the following:
 <tr><td>Old</td></tr>
 </table>
 <p>
-</p>
-<p>
-Should be called only once; subsequent calls are ignored.
-</p>
+Should be called only once; subsequent calls are ignored.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -496,11 +472,9 @@ Should be called only once; subsequent calls are ignored.
 <pre class="programlisting"><span class="returnvalue">char</span> *              g_desktop_app_info_get_string       (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
 <p>
-Looks up a string value in the keyfile backing <em class="parameter"><code>info</code></em>.
-</p>
+Looks up a string value in the keyfile backing <em class="parameter"><code>info</code></em>.</p>
 <p>
-The <em class="parameter"><code>key</code></em> is looked up in the "Desktop Entry" group.
-</p>
+The <em class="parameter"><code>key</code></em> is looked up in the "Desktop Entry" group.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -531,11 +505,9 @@ is not found</td>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_desktop_app_info_get_boolean      (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
 <p>
-Looks up a boolean value in the keyfile backing <em class="parameter"><code>info</code></em>.
-</p>
+Looks up a boolean value in the keyfile backing <em class="parameter"><code>info</code></em>.</p>
 <p>
-The <em class="parameter"><code>key</code></em> is looked up in the "Desktop Entry" group.
-</p>
+The <em class="parameter"><code>key</code></em> is looked up in the "Desktop Entry" group.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -567,8 +539,7 @@ is not found</td>
                                                          <em class="parameter"><code>const <span class="type">char</span> *key</code></em>);</pre>
 <p>
 Returns whether <em class="parameter"><code>key</code></em> exists in the "Desktop Entry" group
-of the keyfile backing <em class="parameter"><code>info</code></em>.
-</p>
+of the keyfile backing <em class="parameter"><code>info</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -602,8 +573,7 @@ of the keyfile backing <em class="parameter"><code>info</code></em>.
 <p>
 During invocation, <a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-launch-uris-as-manager" title="g_desktop_app_info_launch_uris_as_manager ()"><code class="function">g_desktop_app_info_launch_uris_as_manager()</code></a> may
 create one or more child processes.  This callback is invoked once
-for each, providing the process ID.
-</p>
+for each, providing the process ID.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -643,20 +613,17 @@ for each, providing the process ID.
 This function performs the equivalent of <a class="link" href="GAppInfo.html#g-app-info-launch-uris" title="g_app_info_launch_uris ()"><code class="function">g_app_info_launch_uris()</code></a>,
 but is intended primarily for operating system components that
 launch applications.  Ordinary applications should use
-<a class="link" href="GAppInfo.html#g-app-info-launch-uris" title="g_app_info_launch_uris ()"><code class="function">g_app_info_launch_uris()</code></a>.
-</p>
+<a class="link" href="GAppInfo.html#g-app-info-launch-uris" title="g_app_info_launch_uris ()"><code class="function">g_app_info_launch_uris()</code></a>.</p>
 <p>
 If the application is launched via traditional UNIX <code class="function">fork()</code>/<code class="function">exec()</code>
 then <em class="parameter"><code>spawn_flags</code></em>, <em class="parameter"><code>user_setup</code></em> and <em class="parameter"><code>user_setup_data</code></em> are used for the
 call to <a href="http://library.gnome.org/devel/glib/unstable/glib-Spawning-Processes.html#g-spawn-async"><code class="function">g_spawn_async()</code></a>.  Additionally, <em class="parameter"><code>pid_callback</code></em> (with
 <em class="parameter"><code>pid_callback_data</code></em>) will be called to inform about the PID of the
-created process.
-</p>
+created process.</p>
 <p>
 If application launching occurs via some other mechanism (eg: D-Bus
 activation) then <em class="parameter"><code>spawn_flags</code></em>, <em class="parameter"><code>user_setup</code></em>, <em class="parameter"><code>user_setup_data</code></em>,
-<em class="parameter"><code>pid_callback</code></em> and <em class="parameter"><code>pid_callback_data</code></em> are ignored.
-</p>
+<em class="parameter"><code>pid_callback</code></em> and <em class="parameter"><code>pid_callback_data</code></em> are ignored.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -723,12 +690,10 @@ for each process. <span class="annotation">[<acronym title="The callback is vali
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> * const * g_desktop_app_info_list_actions   (<em class="parameter"><code><a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a> *info</code></em>);</pre>
 <p>
 Returns the list of "additional application actions" supported on the
-desktop file, as per the desktop file specification.
-</p>
+desktop file, as per the desktop file specification.</p>
 <p>
 As per the specification, this is the list of actions that are
-explicitly listed in the "Actions" key of the [Desktop Entry] group.
-</p>
+explicitly listed in the "Actions" key of the [Desktop Entry] group.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -756,12 +721,10 @@ explicitly listed in the "Actions" key of the [Desktop Entry] group.
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
 <p>
 Gets the user-visible display name of the "additional application
-action" specified by <em class="parameter"><code>action_name</code></em>.
-</p>
+action" specified by <em class="parameter"><code>action_name</code></em>.</p>
 <p>
 This corresponds to the "Name" key within the keyfile group for the
-action.
-</p>
+action.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -795,12 +758,10 @@ action.
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GAppInfo.html#GAppLaunchContext"><span class="type">GAppLaunchContext</span></a> *launch_context</code></em>);</pre>
 <p>
-Activates the named application action.
-</p>
+Activates the named application action.</p>
 <p>
 You may only call this function on action names that were
-returned from <a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-list-actions" title="g_desktop_app_info_list_actions ()"><code class="function">g_desktop_app_info_list_actions()</code></a>.
-</p>
+returned from <a class="link" href="gio-Desktop-file-based-GAppInfo.html#g-desktop-app-info-list-actions" title="g_desktop_app_info_list_actions ()"><code class="function">g_desktop_app_info_list_actions()</code></a>.</p>
 <p>
 Note that if the main entry of the desktop file indicates that the
 application supports startup notification, and <em class="parameter"><code>launch_context</code></em> is
@@ -808,12 +769,10 @@ non-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.h
 action (and as such, invocation of the action on the receiving side
 must signal the end of startup notification when it is completed).
 This is the expected behaviour of applications declaring additional
-actions, as per the desktop file specification.
-</p>
+actions, as per the desktop file specification.</p>
 <p>
 As with <a class="link" href="GAppInfo.html#g-app-info-launch" title="g_app_info_launch ()"><code class="function">g_app_info_launch()</code></a> there is no way to detect failures that
-occur while using this function.
-</p>
+occur while using this function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -847,14 +806,13 @@ occur while using this function.
 <a name="GDesktopAppInfo--filename"></a><h3>The <code class="literal">"filename"</code> property</h3>
 <pre class="programlisting">  "filename"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
 <p>
-The origin filename of this <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a>
-</p>
+The origin filename of this <a class="link" href="gio-Desktop-file-based-GAppInfo.html#GDesktopAppInfo"><span class="type">GDesktopAppInfo</span></a></p>
 <p>Default value: NULL</p>
 </div>
 </div>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

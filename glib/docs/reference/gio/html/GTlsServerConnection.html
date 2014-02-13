@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GTlsServerConnection</title>
+<title>GIO Reference Manual: GTlsServerConnection</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="tls.html" title="TLS (SSL) support">
 <link rel="prev" href="GTlsClientConnection.html" title="GTlsClientConnection">
 <link rel="next" href="GTlsBackend.html" title="GTlsBackend">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GTlsClientConnection.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="tls.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GTlsBackend.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GTlsServerConnection.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GTlsServerConnection.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GTlsServerConnection.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GTlsServerConnection.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="tls.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GTlsClientConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GTlsBackend.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GTlsServerConnection"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -76,8 +73,7 @@ GTlsServerConnection requires
 <a name="GTlsServerConnection.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="GTlsServerConnection.html" title="GTlsServerConnection"><span class="type">GTlsServerConnection</span></a> is the server-side subclass of <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span class="type">GTlsConnection</span></a>,
-representing a server-side TLS connection.
-</p>
+representing a server-side TLS connection.</p>
 </div>
 <div class="refsect1">
 <a name="GTlsServerConnection.details"></a><h2>Details</h2>
@@ -86,8 +82,7 @@ representing a server-side TLS connection.
 <pre class="programlisting">typedef struct _GTlsServerConnection GTlsServerConnection;</pre>
 <p>
 TLS server-side connection. This is the server-side implementation
-of a <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span class="type">GTlsConnection</span></a>.
-</p>
+of a <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span class="type">GTlsConnection</span></a>.</p>
 <p class="since">Since 2.28</p>
 </div>
 <hr>
@@ -106,8 +101,7 @@ of a <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span cla
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Creates a new <a class="link" href="GTlsServerConnection.html" title="GTlsServerConnection"><span class="type">GTlsServerConnection</span></a> wrapping <em class="parameter"><code>base_io_stream</code></em> (which
-must have pollable input and output streams).
-</p>
+must have pollable input and output streams).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -147,8 +141,7 @@ must have pollable input and output streams).
 <p>
 The <a class="link" href="gio-TLS-Overview.html#GTlsAuthenticationMode" title="enum GTlsAuthenticationMode"><span class="type">GTlsAuthenticationMode</span></a> for the server. This can be changed
 before calling <a class="link" href="GTlsConnection.html#g-tls-connection-handshake" title="g_tls_connection_handshake ()"><code class="function">g_tls_connection_handshake()</code></a> if you want to
-rehandshake with a different mode from the initial handshake.
-</p>
+rehandshake with a different mode from the initial handshake.</p>
 <p>Default value: G_TLS_AUTHENTICATION_NONE</p>
 <p class="since">Since 2.28</p>
 </div>
@@ -156,6 +149,6 @@ rehandshake with a different mode from the initial handshake.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

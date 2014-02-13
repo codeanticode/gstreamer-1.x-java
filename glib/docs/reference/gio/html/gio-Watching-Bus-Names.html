@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Watching Bus Names</title>
+<title>GIO Reference Manual: Watching Bus Names</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-convenience.html" title="Highlevel D-Bus Support">
 <link rel="prev" href="gio-Owning-Bus-Names.html" title="Owning Bus Names">
 <link rel="next" href="GDBusInterface.html" title="GDBusInterface">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-Owning-Bus-Names.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="gdbus-convenience.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GDBusInterface.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-Watching-Bus-Names.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-Watching-Bus-Names.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gdbus-convenience.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-Owning-Bus-Names.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GDBusInterface.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-Watching-Bus-Names"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -79,12 +76,11 @@ enum                <a class="link" href="gio-Watching-Bus-Names.html#GBusNameWa
 <div class="refsect1">
 <a name="gio-Watching-Bus-Names.description"></a><h2>Description</h2>
 <p>
-Convenience API for watching bus names.
-</p>
+Convenience API for watching bus names.</p>
 <p>
 </p>
 <div class="example">
-<a name="gdbus-watching-names"></a><p class="title"><b>Example 13. Simple application watching a name</b></p>
+<a name="gdbus-watching-names"></a><p class="title"><b>Example 8. Simple application watching a name</b></p>
 <div class="example-contents">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
@@ -267,8 +263,7 @@ Convenience API for watching bus names.
 </div>
 
 </div>
-<p><br class="example-break">
-</p>
+<p><br class="example-break"></p>
 </div>
 <div class="refsect1">
 <a name="gio-Watching-Bus-Names.details"></a><h2>Details</h2>
@@ -279,8 +274,7 @@ Convenience API for watching bus names.
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name_owner</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Invoked when the name being watched is known to have to have a owner.
-</p>
+Invoked when the name being watched is known to have to have a owner.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -314,13 +308,11 @@ Invoked when the name being watched is known to have to have a owner.
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Invoked when the name being watched is known not to have to have a owner.
-</p>
+Invoked when the name being watched is known not to have to have a owner.</p>
 <p>
 This is also invoked when the <span class="type">GDBusConection</span> on which the watch was
 established has been closed.  In that case, <em class="parameter"><code>connection</code></em> will be
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -353,8 +345,7 @@ established has been closed.  In that case, <em class="parameter"><code>connecti
 } GBusNameWatcherFlags;
 </pre>
 <p>
-Flags used in <a class="link" href="gio-Watching-Bus-Names.html#g-bus-watch-name" title="g_bus_watch_name ()"><code class="function">g_bus_watch_name()</code></a>.
-</p>
+Flags used in <a class="link" href="gio-Watching-Bus-Names.html#g-bus-watch-name" title="g_bus_watch_name ()"><code class="function">g_bus_watch_name()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -392,34 +383,29 @@ Starts watching <em class="parameter"><code>name</code></em> on the bus specifie
 <em class="parameter"><code>name_appeared_handler</code></em> and <em class="parameter"><code>name_vanished_handler</code></em> when the name is
 known to have a owner respectively known to lose its
 owner. Callbacks will be invoked in the <GTKDOCLINK HREF="g-main-context-push-thread-default">thread-default main
-loop</GTKDOCLINK> of the thread you are calling this function from.
-</p>
+loop</GTKDOCLINK> of the thread you are calling this function from.</p>
 <p>
 You are guaranteed that one of the handlers will be invoked after
 calling this function. When you are done watching the name, just
 call <a class="link" href="gio-Watching-Bus-Names.html#g-bus-unwatch-name" title="g_bus_unwatch_name ()"><code class="function">g_bus_unwatch_name()</code></a> with the watcher id this function
-returns.
-</p>
+returns.</p>
 <p>
 If the name vanishes or appears (for example the application owning
 the name could restart), the handlers are also invoked. If the
 <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> that is used for watching the name disconnects, then
 <em class="parameter"><code>name_vanished_handler</code></em> is invoked since it is no longer
-possible to access the name.
-</p>
+possible to access the name.</p>
 <p>
 Another guarantee is that invocations of <em class="parameter"><code>name_appeared_handler</code></em>
 and <em class="parameter"><code>name_vanished_handler</code></em> are guaranteed to alternate; that
 is, if <em class="parameter"><code>name_appeared_handler</code></em> is invoked then you are
 guaranteed that the next time one of the handlers is invoked, it
-will be <em class="parameter"><code>name_vanished_handler</code></em>. The reverse is also true.
-</p>
+will be <em class="parameter"><code>name_vanished_handler</code></em>. The reverse is also true.</p>
 <p>
 This behavior makes it very simple to write applications that wants
-to take action when a certain name exists, see <a class="xref" href="gio-Watching-Bus-Names.html#gdbus-watching-names" title="Example 13. Simple application watching a name">Example 13, “Simple application watching a name”</a>. Basically, the application
+to take action when a certain name exists, see <a class="xref" href="gio-Watching-Bus-Names.html#gdbus-watching-names" title="Example 8. Simple application watching a name">Example 8, “Simple application watching a name”</a>. Basically, the application
 should create object proxies in <em class="parameter"><code>name_appeared_handler</code></em> and destroy
-them again (if any) in <em class="parameter"><code>name_vanished_handler</code></em>.
-</p>
+them again (if any) in <em class="parameter"><code>name_vanished_handler</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -478,8 +464,7 @@ them again (if any) in <em class="parameter"><code>name_vanished_handler</code><
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> user_data_free_func</code></em>);</pre>
 <p>
 Like <a class="link" href="gio-Watching-Bus-Names.html#g-bus-watch-name" title="g_bus_watch_name ()"><code class="function">g_bus_watch_name()</code></a> but takes a <a class="link" href="GDBusConnection.html" title="GDBusConnection"><span class="type">GDBusConnection</span></a> instead of a
-<a class="link" href="GDBusConnection.html#GBusType" title="enum GBusType"><span class="type">GBusType</span></a>.
-</p>
+<a class="link" href="GDBusConnection.html#GBusType" title="enum GBusType"><span class="type">GBusType</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -531,8 +516,7 @@ Like <a class="link" href="gio-Watching-Bus-Names.html#g-bus-watch-name" title="
 <a name="g-bus-unwatch-name"></a><h3>g_bus_unwatch_name ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_bus_unwatch_name                  (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#guint"><span class="type">guint</span></a> watcher_id</code></em>);</pre>
 <p>
-Stops watching a name.
-</p>
+Stops watching a name.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -556,8 +540,7 @@ Stops watching a name.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *name_vanished_closure</code></em>);</pre>
 <p>
 Version of <a class="link" href="gio-Watching-Bus-Names.html#g-bus-watch-name" title="g_bus_watch_name ()"><code class="function">g_bus_watch_name()</code></a> using closures instead of callbacks for
-easier binding in other languages.
-</p>
+easier binding in other languages.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -611,8 +594,7 @@ Rename to: g_bus_watch_name</td>
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Closures.html#GClosure"><span class="type">GClosure</span></a> *name_vanished_closure</code></em>);</pre>
 <p>
 Version of <a class="link" href="gio-Watching-Bus-Names.html#g-bus-watch-name-on-connection" title="g_bus_watch_name_on_connection ()"><code class="function">g_bus_watch_name_on_connection()</code></a> using closures instead of callbacks for
-easier binding in other languages.
-</p>
+easier binding in other languages.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -659,6 +641,6 @@ Rename to: g_bus_watch_name_on_connection</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

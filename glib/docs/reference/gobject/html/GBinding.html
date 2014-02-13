@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GBinding</title>
+<title>GObject Reference Manual: GBinding</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="gobject-Value-arrays.html" title="Value arrays">
 <link rel="next" href="rn02.html" title="Tools Reference">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gobject-Value-arrays.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GObject Reference Manual</th>
-<td><a accesskey="n" href="rn02.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GBinding.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GBinding.description" class="shortcut">Description</a>
                    | 
                   <a href="#GBinding.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GBinding.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gobject-Value-arrays.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="rn02.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GBinding"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -105,8 +102,7 @@ const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.htm
 <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instance (or source) and another property on another <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>
 instance (or target). Whenever the source property changes, the same
 value is applied to the target property; for instance, the following
-binding:
-</p>
+binding:</p>
 <p>
 </p>
 <div class="informalexample">
@@ -125,17 +121,13 @@ binding:
 </div>
 
 <p>
-</p>
-<p>
-will cause <span class="emphasis"><em>object2:property-b</em></span> to be updated every
-time <a class="link" href="gobject-The-Base-Object-Type.html#g-object-set" title="g_object_set ()"><code class="function">g_object_set()</code></a> or the specific accessor changes the value of
-<span class="emphasis"><em>object1:property-a</em></span>.
-</p>
+will cause the property named "property-b" of <em class="parameter"><code>object2</code></em> to be updated
+every time <a class="link" href="gobject-The-Base-Object-Type.html#g-object-set" title="g_object_set ()"><code class="function">g_object_set()</code></a> or the specific accessor changes the value of
+the property "property-a" of <em class="parameter"><code>object1</code></em>.</p>
 <p>
 It is possible to create a bidirectional binding between two properties
 of two <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instances, so that if either property changes, the
-other is updated as well, for instance:
-</p>
+other is updated as well, for instance:</p>
 <p>
 </p>
 <div class="informalexample">
@@ -154,16 +146,12 @@ other is updated as well, for instance:
 </div>
 
 <p>
-</p>
-<p>
-will keep the two properties in sync.
-</p>
+will keep the two properties in sync.</p>
 <p>
 It is also possible to set a custom transformation function (in both
 directions, in case of a bidirectional binding) to apply a custom
 transformation from the source value to the target value before
-applying it; for instance, the following binding:
-</p>
+applying it; for instance, the following binding:</p>
 <p>
 </p>
 <div class="informalexample">
@@ -188,21 +176,17 @@ applying it; for instance, the following binding:
 </div>
 
 <p>
-</p>
+will keep the "value" property of the two adjustments in sync; the
+<em class="parameter"><code>celsius_to_fahrenheit</code></em> function will be called whenever the "value"
+property of <em class="parameter"><code>adjustment1</code></em> changes and will transform the current value
+of the property before applying it to the "value" property of <em class="parameter"><code>adjustment2</code></em>.</p>
 <p>
-will keep the <span class="emphasis"><em>value</em></span> property of the two adjustments
-in sync; the <code class="function">celsius_to_fahrenheit</code> function will be
-called whenever the <span class="emphasis"><em>adjustment1:value</em></span> property changes
-and will transform the current value of the property before applying it
-to the <span class="emphasis"><em>adjustment2:value</em></span> property; vice versa, the
-<code class="function">fahrenheit_to_celsius</code> function will be called whenever
-the <span class="emphasis"><em>adjustment2:value</em></span> property changes, and will
-transform the current value of the property before applying it to the
-<span class="emphasis"><em>adjustment1:value</em></span>.
-</p>
+Vice versa, the <em class="parameter"><code>fahrenheit_to_celsius</code></em> function will be called whenever
+the "value" property of <em class="parameter"><code>adjustment2</code></em> changes, and will transform the
+current value of the property before applying it to the "value" property
+of <em class="parameter"><code>adjustment1</code></em>.</p>
 <p>
-Note that <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> does not resolve cycles by itself; a cycle like
-</p>
+Note that <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> does not resolve cycles by itself; a cycle like</p>
 <p>
 </p>
 <div class="informalexample">
@@ -221,34 +205,23 @@ Note that <a class="link" href="GBinding.html" title="GBinding"><span class="typ
 </div>
 
 <p>
-</p>
-<p>
 might lead to an infinite loop. The loop, in this particular case,
 can be avoided if the objects emit the <a class="link" href="gobject-The-Base-Object-Type.html#GObject-notify" title='The "notify" signal'><span class="type">"notify"</span></a> signal only
 if the value has effectively been changed. A binding is implemented
 using the <a class="link" href="gobject-The-Base-Object-Type.html#GObject-notify" title='The "notify" signal'><span class="type">"notify"</span></a> signal, so it is susceptible to all the
 various ways of blocking a signal emission, like <a class="link" href="gobject-Signals.html#g-signal-stop-emission" title="g_signal_stop_emission ()"><code class="function">g_signal_stop_emission()</code></a>
-or <a class="link" href="gobject-Signals.html#g-signal-handler-block" title="g_signal_handler_block ()"><code class="function">g_signal_handler_block()</code></a>.
-</p>
+or <a class="link" href="gobject-Signals.html#g-signal-handler-block" title="g_signal_handler_block ()"><code class="function">g_signal_handler_block()</code></a>.</p>
 <p>
 A binding will be severed, and the resources it allocates freed, whenever
 either one of the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instances it refers to are finalized, or when
-the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance loses its last reference.
-</p>
+the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance loses its last reference.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>Bindings for languages with garbage collection can use
+Bindings for languages with garbage collection can use
 <a class="link" href="GBinding.html#g-binding-unbind" title="g_binding_unbind ()"><code class="function">g_binding_unbind()</code></a> to explicitly release a binding between the source
 and target properties, instead of relying on the last reference on the
 binding, source, and target instances to drop.</p>
-</div>
 <p>
-</p>
-<p>
-<a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> is available since GObject 2.26
-</p>
+<a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> is available since GObject 2.26</p>
 </div>
 <div class="refsect1">
 <a name="GBinding.details"></a><h2>Details</h2>
@@ -257,8 +230,7 @@ binding, source, and target instances to drop.</p>
 <pre class="programlisting">typedef struct _GBinding GBinding;</pre>
 <p>
 <span class="structname">GBinding</span> is an opaque structure whose members
-cannot be accessed directly.
-</p>
+cannot be accessed directly.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -275,11 +247,9 @@ cannot be accessed directly.
 </pre>
 <p>
 Flags to be passed to <a class="link" href="GBinding.html#g-object-bind-property" title="g_object_bind_property ()"><code class="function">g_object_bind_property()</code></a> or
-<a class="link" href="GBinding.html#g-object-bind-property-full" title="g_object_bind_property_full ()"><code class="function">g_object_bind_property_full()</code></a>.
-</p>
+<a class="link" href="GBinding.html#g-object-bind-property-full" title="g_object_bind_property_full ()"><code class="function">g_object_bind_property_full()</code></a>.</p>
 <p>
-This enumeration can be extended at later date.
-</p>
+This enumeration can be extended at later date.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -324,8 +294,7 @@ This enumeration can be extended at later date.
 <a name="g-binding-get-source"></a><h3>g_binding_get_source ()</h3>
 <pre class="programlisting"><a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="returnvalue">GObject</span></a> *           g_binding_get_source                (<em class="parameter"><code><a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> *binding</code></em>);</pre>
 <p>
-Retrieves the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instance used as the source of the binding
-</p>
+Retrieves the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instance used as the source of the binding.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -352,8 +321,7 @@ Retrieves the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_binding_get_source_property       (<em class="parameter"><code><a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> *binding</code></em>);</pre>
 <p>
 Retrieves the name of the property of <a class="link" href="GBinding.html#GBinding--source" title='The "source" property'><span class="type">"source"</span></a> used as the source
-of the binding
-</p>
+of the binding.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -378,8 +346,7 @@ of the binding
 <a name="g-binding-get-target"></a><h3>g_binding_get_target ()</h3>
 <pre class="programlisting"><a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="returnvalue">GObject</span></a> *           g_binding_get_target                (<em class="parameter"><code><a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> *binding</code></em>);</pre>
 <p>
-Retrieves the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instance used as the target of the binding
-</p>
+Retrieves the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instance used as the target of the binding.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -406,8 +373,7 @@ Retrieves the <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_binding_get_target_property       (<em class="parameter"><code><a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> *binding</code></em>);</pre>
 <p>
 Retrieves the name of the property of <a class="link" href="GBinding.html#GBinding--target" title='The "target" property'><span class="type">"target"</span></a> used as the target
-of the binding
-</p>
+of the binding.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -432,8 +398,7 @@ of the binding
 <a name="g-binding-get-flags"></a><h3>g_binding_get_flags ()</h3>
 <pre class="programlisting"><a class="link" href="GBinding.html#GBindingFlags" title="enum GBindingFlags"><span class="returnvalue">GBindingFlags</span></a>       g_binding_get_flags                 (<em class="parameter"><code><a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> *binding</code></em>);</pre>
 <p>
-Retrieves the flags passed when constructing the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a>
-</p>
+Retrieves the flags passed when constructing the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -460,17 +425,12 @@ Retrieves the flags passed when constructing the <a class="link" href="GBinding.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_binding_unbind                    (<em class="parameter"><code><a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> *binding</code></em>);</pre>
 <p>
 Explicitly releases the binding between the source and the target
-property expressed by <em class="parameter"><code>binding</code></em>.
-</p>
+property expressed by <em class="parameter"><code>binding</code></em>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>This function will release the reference that is being held on
+This function will release the reference that is being held on
 the <em class="parameter"><code>binding</code></em> instance; if you want to hold on to the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance
 after calling <a class="link" href="GBinding.html#g-binding-unbind" title="g_binding_unbind ()"><code class="function">g_binding_unbind()</code></a>, you will need to hold a reference
-to it.</div>
-<p>
-</p>
+to it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -495,8 +455,7 @@ to it.</div>
 <p>
 Creates a binding between <em class="parameter"><code>source_property</code></em> on <em class="parameter"><code>source</code></em> and <em class="parameter"><code>target_property</code></em>
 on <em class="parameter"><code>target</code></em>. Whenever the <em class="parameter"><code>source_property</code></em> is changed the <em class="parameter"><code>target_property</code></em> is
-updated using the same value. For instance:
-</p>
+updated using the same value. For instance:</p>
 <p>
 </p>
 <div class="informalexample">
@@ -511,26 +470,20 @@ updated using the same value. For instance:
 </div>
 
 <p>
-</p>
-<p>
 Will result in the "sensitive" property of the widget <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> instance to be
 updated with the same value of the "active" property of the action <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>
-instance.
-</p>
+instance.</p>
 <p>
 If <em class="parameter"><code>flags</code></em> contains <a class="link" href="GBinding.html#G-BINDING-BIDIRECTIONAL:CAPS"><code class="literal">G_BINDING_BIDIRECTIONAL</code></a> then the binding will be mutual:
 if <em class="parameter"><code>target_property</code></em> on <em class="parameter"><code>target</code></em> changes then the <em class="parameter"><code>source_property</code></em> on <em class="parameter"><code>source</code></em>
-will be updated as well.
-</p>
+will be updated as well.</p>
 <p>
 The binding will automatically be removed when either the <em class="parameter"><code>source</code></em> or the
 <em class="parameter"><code>target</code></em> instances are finalized. To remove the binding without affecting the
 <em class="parameter"><code>source</code></em> and the <em class="parameter"><code>target</code></em> you can just call <a class="link" href="gobject-The-Base-Object-Type.html#g-object-unref" title="g_object_unref ()"><code class="function">g_object_unref()</code></a> on the returned
-<a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance.
-</p>
+<a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance.</p>
 <p>
-A <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> can have multiple bindings.
-</p>
+A <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> can have multiple bindings.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -584,8 +537,7 @@ this is the <em class="parameter"><code>transform_to</code></em> function of a b
 is the <em class="parameter"><code>source_property</code></em> on the <em class="parameter"><code>source</code></em> object, and <em class="parameter"><code>to_value</code></em> is the
 <em class="parameter"><code>target_property</code></em> on the <em class="parameter"><code>target</code></em> object. If this is the
 <em class="parameter"><code>transform_from</code></em> function of a <a class="link" href="GBinding.html#G-BINDING-BIDIRECTIONAL:CAPS"><code class="literal">G_BINDING_BIDIRECTIONAL</code></a> binding,
-then those roles are reversed.
-</p>
+then those roles are reversed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -632,38 +584,29 @@ otherwise</td>
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Datasets.html#GDestroyNotify"><span class="type">GDestroyNotify</span></a> notify</code></em>);</pre>
 <p>
-Complete version of <a class="link" href="GBinding.html#g-object-bind-property" title="g_object_bind_property ()"><code class="function">g_object_bind_property()</code></a>.
-</p>
+Complete version of <a class="link" href="GBinding.html#g-object-bind-property" title="g_object_bind_property ()"><code class="function">g_object_bind_property()</code></a>.</p>
 <p>
 Creates a binding between <em class="parameter"><code>source_property</code></em> on <em class="parameter"><code>source</code></em> and <em class="parameter"><code>target_property</code></em>
 on <em class="parameter"><code>target</code></em>, allowing you to set the transformation functions to be used by
-the binding.
-</p>
+the binding.</p>
 <p>
 If <em class="parameter"><code>flags</code></em> contains <a class="link" href="GBinding.html#G-BINDING-BIDIRECTIONAL:CAPS"><code class="literal">G_BINDING_BIDIRECTIONAL</code></a> then the binding will be mutual:
 if <em class="parameter"><code>target_property</code></em> on <em class="parameter"><code>target</code></em> changes then the <em class="parameter"><code>source_property</code></em> on <em class="parameter"><code>source</code></em>
 will be updated as well. The <em class="parameter"><code>transform_from</code></em> function is only used in case
-of bidirectional bindings, otherwise it will be ignored
-</p>
+of bidirectional bindings, otherwise it will be ignored</p>
 <p>
 The binding will automatically be removed when either the <em class="parameter"><code>source</code></em> or the
 <em class="parameter"><code>target</code></em> instances are finalized. To remove the binding without affecting the
 <em class="parameter"><code>source</code></em> and the <em class="parameter"><code>target</code></em> you can just call <a class="link" href="gobject-The-Base-Object-Type.html#g-object-unref" title="g_object_unref ()"><code class="function">g_object_unref()</code></a> on the returned
-<a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance.
-</p>
+<a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a> instance.</p>
 <p>
-A <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> can have multiple bindings.
-</p>
+A <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> can have multiple bindings.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>The same <em class="parameter"><code>user_data</code></em> parameter will be used for both <em class="parameter"><code>transform_to</code></em>
+The same <em class="parameter"><code>user_data</code></em> parameter will be used for both <em class="parameter"><code>transform_to</code></em>
 and <em class="parameter"><code>transform_from</code></em> transformation functions; the <em class="parameter"><code>notify</code></em> function will
 be called once, when the binding is removed. If you need different data
 for each transformation function, please use
-<a class="link" href="GBinding.html#g-object-bind-property-with-closures" title="g_object_bind_property_with_closures ()"><code class="function">g_object_bind_property_with_closures()</code></a> instead.</div>
-<p>
-</p>
+<a class="link" href="GBinding.html#g-object-bind-property-with-closures" title="g_object_bind_property_with_closures ()"><code class="function">g_object_bind_property_with_closures()</code></a> instead.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -741,16 +684,13 @@ whenever the <a class="link" href="GBinding.html" title="GBinding"><span class="
 <p>
 Creates a binding between <em class="parameter"><code>source_property</code></em> on <em class="parameter"><code>source</code></em> and <em class="parameter"><code>target_property</code></em>
 on <em class="parameter"><code>target</code></em>, allowing you to set the transformation functions to be used by
-the binding.
-</p>
+the binding.</p>
 <p>
 This function is the language bindings friendly version of
-<a class="link" href="GBinding.html#g-object-bind-property-full" title="g_object_bind_property_full ()"><code class="function">g_object_bind_property_full()</code></a>, using <a class="link" href="gobject-Closures.html#GClosure" title="struct GClosure"><span class="type">GClosure</span></a>s instead of
-function pointers.
-</p>
+<a class="link" href="GBinding.html#g-object-bind-property-full" title="g_object_bind_property_full ()"><code class="function">g_object_bind_property_full()</code></a>, using <a href="gobject-Closures.html#GClosure"><span class="type">GClosures</span></a> instead of
+function pointers.</p>
 <p>
-Rename to: g_object_bind_property_full
-</p>
+Rename to: g_object_bind_property_full</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -808,8 +748,7 @@ whenever the <a class="link" href="GBinding.html" title="GBinding"><span class="
 <a name="GBinding--flags"></a><h3>The <code class="literal">"flags"</code> property</h3>
 <pre class="programlisting">  "flags"                    <a class="link" href="GBinding.html#GBindingFlags" title="enum GBindingFlags"><span class="type">GBindingFlags</span></a>         : Read / Write / Construct Only</pre>
 <p>
-Flags to be used to control the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a>
-</p>
+Flags to be used to control the <a class="link" href="GBinding.html" title="GBinding"><span class="type">GBinding</span></a></p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -817,8 +756,7 @@ Flags to be used to control the <a class="link" href="GBinding.html" title="GBin
 <a name="GBinding--source"></a><h3>The <code class="literal">"source"</code> property</h3>
 <pre class="programlisting">  "source"                   <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>*              : Read / Write / Construct Only</pre>
 <p>
-The <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> that should be used as the source of the binding
-</p>
+The <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> that should be used as the source of the binding</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -827,8 +765,7 @@ The <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class
 <pre class="programlisting">  "source-property"          <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
 <p>
 The name of the property of <a class="link" href="GBinding.html#GBinding--source" title='The "source" property'><span class="type">"source"</span></a> that should be used
-as the source of the binding
-</p>
+as the source of the binding</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -837,8 +774,7 @@ as the source of the binding
 <a name="GBinding--target"></a><h3>The <code class="literal">"target"</code> property</h3>
 <pre class="programlisting">  "target"                   <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a>*              : Read / Write / Construct Only</pre>
 <p>
-The <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> that should be used as the target of the binding
-</p>
+The <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class="type">GObject</span></a> that should be used as the target of the binding</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -847,8 +783,7 @@ The <a class="link" href="gobject-The-Base-Object-Type.html#GObject"><span class
 <pre class="programlisting">  "target-property"          <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write / Construct Only</pre>
 <p>
 The name of the property of <a class="link" href="GBinding.html#GBinding--target" title='The "target" property'><span class="type">"target"</span></a> that should be used
-as the target of the binding
-</p>
+as the target of the binding</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.26</p>
 </div>
@@ -856,6 +791,6 @@ as the target of the binding
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

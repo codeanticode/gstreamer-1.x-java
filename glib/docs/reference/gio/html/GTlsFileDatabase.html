@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GTlsFileDatabase</title>
+<title>GIO Reference Manual: GTlsFileDatabase</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="tls.html" title="TLS (SSL) support">
 <link rel="prev" href="GTlsDatabase.html" title="GTlsDatabase">
 <link rel="next" href="GTlsInteraction.html" title="GTlsInteraction">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GTlsDatabase.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="tls.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GTlsInteraction.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GTlsFileDatabase.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GTlsFileDatabase.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GTlsFileDatabase.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GTlsFileDatabase.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="tls.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GTlsDatabase.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GTlsInteraction.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GTlsFileDatabase"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -76,8 +73,7 @@ GTlsFileDatabase requires
 <p>
 <a class="link" href="GTlsFileDatabase.html" title="GTlsFileDatabase"><span class="type">GTlsFileDatabase</span></a> is implemented by <a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a> objects which load
 their certificate information from a file. It is an interface which
-TLS library specific subtypes implement.
-</p>
+TLS library specific subtypes implement.</p>
 </div>
 <div class="refsect1">
 <a name="GTlsFileDatabase.details"></a><h2>Details</h2>
@@ -86,8 +82,7 @@ TLS library specific subtypes implement.
 <pre class="programlisting">typedef struct _GTlsFileDatabase GTlsFileDatabase;</pre>
 <p>
 Implemented by a <a class="link" href="GTlsDatabase.html" title="GTlsDatabase"><span class="type">GTlsDatabase</span></a> which allows you to load certificates
-from a file.
-</p>
+from a file.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -98,8 +93,7 @@ from a file.
 };
 </pre>
 <p>
-Provides an interface for <a class="link" href="GTlsFileDatabase.html" title="GTlsFileDatabase"><span class="type">GTlsFileDatabase</span></a> implementations.
-</p>
+Provides an interface for <a class="link" href="GTlsFileDatabase.html" title="GTlsFileDatabase"><span class="type">GTlsFileDatabase</span></a> implementations.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -118,11 +112,9 @@ Provides an interface for <a class="link" href="GTlsFileDatabase.html" title="GT
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Creates a new <a class="link" href="GTlsFileDatabase.html" title="GTlsFileDatabase"><span class="type">GTlsFileDatabase</span></a> which uses anchor certificate authorities
-in <em class="parameter"><code>anchors</code></em> to verify certificate chains.
-</p>
+in <em class="parameter"><code>anchors</code></em> to verify certificate chains.</p>
 <p>
-The certificates in <em class="parameter"><code>anchors</code></em> must be PEM encoded.
-</p>
+The certificates in <em class="parameter"><code>anchors</code></em> must be PEM encoded.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -158,8 +150,7 @@ The certificates in <em class="parameter"><code>anchors</code></em> must be PEM 
 The path to a file containing PEM encoded certificate authority
 root anchors. The certificates in this file will be treated as
 root authorities for the purpose of verifying other certificates
-via the <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a> operation.
-</p>
+via the <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" title="g_tls_database_verify_chain ()"><code class="function">g_tls_database_verify_chain()</code></a> operation.</p>
 <p>Default value: NULL</p>
 <p class="since">Since 2.30</p>
 </div>
@@ -167,6 +158,6 @@ via the <a class="link" href="GTlsDatabase.html#g-tls-database-verify-chain" tit
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

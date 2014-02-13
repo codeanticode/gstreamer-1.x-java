@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GMountOperation</title>
+<title>GIO Reference Manual: GMountOperation</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="file_ops.html" title="File Operations">
 <link rel="prev" href="gio-GIOError.html" title="GIOError">
 <link rel="next" href="file_mon.html" title="File System Monitoring">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GIOError.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="file_ops.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="file_mon.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GMountOperation.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GMountOperation.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GMountOperation.properties" class="shortcut">Properties</a>
                    | 
                   <a href="#GMountOperation.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="file_ops.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GIOError.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="file_mon.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GMountOperation"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -113,20 +110,17 @@ const <span class="returnvalue">char</span> *        <a class="link" href="GMoun
 It can be used for authenticating mountable operations, such as loop
 mounting files, hard drive partitions or server locations. It can
 also be used to ask the user questions or show a list of applications
-preventing unmount or eject operations from completing.
-</p>
+preventing unmount or eject operations from completing.</p>
 <p>
 Note that <a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> is used for more than just <a class="link" href="GMount.html" title="GMount"><span class="type">GMount</span></a>
 objects – for example it is also used in <a class="link" href="GDrive.html#g-drive-start" title="g_drive_start ()"><code class="function">g_drive_start()</code></a> and
-<a class="link" href="GDrive.html#g-drive-stop" title="g_drive_stop ()"><code class="function">g_drive_stop()</code></a>.
-</p>
+<a class="link" href="GDrive.html#g-drive-stop" title="g_drive_stop ()"><code class="function">g_drive_stop()</code></a>.</p>
 <p>
 Users should instantiate a subclass of this that implements all the
 various callbacks to show the required dialogs, such as
-<a href="http://developer.gnome.org/gtk2/gtk3-Filesystem-utilities.html#GtkMountOperation"><span class="type">GtkMountOperation</span></a>. If no user interaction is desired (for example
+<a href="http://library.gnome.org/devel/gtk3/gtk2-Filesystem-utilities.html#GtkMountOperation"><span class="type">GtkMountOperation</span></a>. If no user interaction is desired (for example
 when automounting filesystems at login time), usually <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> can be
-passed, see each method taking a <a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> for details.
-</p>
+passed, see each method taking a <a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> for details.</p>
 </div>
 <div class="refsect1">
 <a name="GMountOperation.details"></a><h2>Details</h2>
@@ -143,8 +137,7 @@ passed, see each method taking a <a class="link" href="GMountOperation.html" tit
 <p>
 <a class="link" href="GMountOperation.html#GAskPasswordFlags"><span class="type">GAskPasswordFlags</span></a> are used to request specific information from the
 user, or to notify the user of their choices in an authentication
-situation.
-</p>
+situation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -189,12 +182,10 @@ situation.
 } GPasswordSave;
 </pre>
 <p>
-<a class="link" href="GMountOperation.html#GPasswordSave" title="enum GPasswordSave"><span class="type">GPasswordSave</span></a> is used to indicate the lifespan of a saved password.
-</p>
+<a class="link" href="GMountOperation.html#GPasswordSave" title="enum GPasswordSave"><span class="type">GPasswordSave</span></a> is used to indicate the lifespan of a saved password.</p>
 <p>
 <span class="type">Gvfs</span> stores passwords in the Gnome keyring when this flag allows it
-to, and later retrieves it again from there.
-</p>
+to, and later retrieves it again from there.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -225,8 +216,7 @@ to, and later retrieves it again from there.
 <pre class="programlisting">typedef struct _GMountOperation GMountOperation;</pre>
 <p>
 Class for providing authentication methods for mounting operations,
-such as mounting a file locally, or authenticating with a server.
-</p>
+such as mounting a file locally, or authenticating with a server.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -239,8 +229,7 @@ such as mounting a file locally, or authenticating with a server.
 </pre>
 <p>
 <a class="link" href="GMountOperation.html#GMountOperationResult" title="enum GMountOperationResult"><span class="type">GMountOperationResult</span></a> is returned as a result when a request for
-information is send by the mounting operation.
-</p>
+information is send by the mounting operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -273,8 +262,7 @@ information is send by the mounting operation.
 <a name="g-mount-operation-new"></a><h3>g_mount_operation_new ()</h3>
 <pre class="programlisting"><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="returnvalue">GMountOperation</span></a> *   g_mount_operation_new               (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a new mount operation.
-</p>
+Creates a new mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -291,8 +279,7 @@ Creates a new mount operation.
 <a name="g-mount-operation-get-username"></a><h3>g_mount_operation_get_username ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_mount_operation_get_username      (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>);</pre>
 <p>
-Get the user name from the mount operation.
-</p>
+Get the user name from the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -316,8 +303,7 @@ Get the user name from the mount operation.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_set_username      (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *username</code></em>);</pre>
 <p>
-Sets the user name within <em class="parameter"><code>op</code></em> to <em class="parameter"><code>username</code></em>.
-</p>
+Sets the user name within <em class="parameter"><code>op</code></em> to <em class="parameter"><code>username</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -340,8 +326,7 @@ Sets the user name within <em class="parameter"><code>op</code></em> to <em clas
 <a name="g-mount-operation-get-password"></a><h3>g_mount_operation_get_password ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_mount_operation_get_password      (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>);</pre>
 <p>
-Gets a password from the mount operation.
-</p>
+Gets a password from the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -365,8 +350,7 @@ Gets a password from the mount operation.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_set_password      (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *password</code></em>);</pre>
 <p>
-Sets the mount operation's password to <em class="parameter"><code>password</code></em>.
-</p>
+Sets the mount operation's password to <em class="parameter"><code>password</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -390,8 +374,7 @@ Sets the mount operation's password to <em class="parameter"><code>password</cod
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_mount_operation_get_anonymous     (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>);</pre>
 <p>
 Check to see whether the mount operation is being used 
-for an anonymous user.
-</p>
+for an anonymous user.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -416,8 +399,7 @@ for an anonymous user.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_set_anonymous     (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a> anonymous</code></em>);</pre>
 <p>
-Sets the mount operation to use an anonymous user if <em class="parameter"><code>anonymous</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.
-</p>
+Sets the mount operation to use an anonymous user if <em class="parameter"><code>anonymous</code></em> is <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -440,8 +422,7 @@ Sets the mount operation to use an anonymous user if <em class="parameter"><code
 <a name="g-mount-operation-get-domain"></a><h3>g_mount_operation_get_domain ()</h3>
 <pre class="programlisting">const <span class="returnvalue">char</span> *        g_mount_operation_get_domain        (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>);</pre>
 <p>
-Gets the domain of the mount operation.
-</p>
+Gets the domain of the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -465,8 +446,7 @@ Gets the domain of the mount operation.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_set_domain        (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *domain</code></em>);</pre>
 <p>
-Sets the mount operation's domain.
-</p>
+Sets the mount operation's domain.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -489,8 +469,7 @@ Sets the mount operation's domain.
 <a name="g-mount-operation-get-password-save"></a><h3>g_mount_operation_get_password_save ()</h3>
 <pre class="programlisting"><a class="link" href="GMountOperation.html#GPasswordSave" title="enum GPasswordSave"><span class="returnvalue">GPasswordSave</span></a>       g_mount_operation_get_password_save (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>);</pre>
 <p>
-Gets the state of saving passwords for the mount operation.
-</p>
+Gets the state of saving passwords for the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -514,8 +493,7 @@ Gets the state of saving passwords for the mount operation.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_set_password_save (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GMountOperation.html#GPasswordSave" title="enum GPasswordSave"><span class="type">GPasswordSave</span></a> save</code></em>);</pre>
 <p>
-Sets the state of saving passwords for the mount operation.
-</p>
+Sets the state of saving passwords for the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -538,8 +516,7 @@ Sets the state of saving passwords for the mount operation.
 <a name="g-mount-operation-get-choice"></a><h3>g_mount_operation_get_choice ()</h3>
 <pre class="programlisting"><span class="returnvalue">int</span>                 g_mount_operation_get_choice        (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>);</pre>
 <p>
-Gets a choice from the mount operation.
-</p>
+Gets a choice from the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -564,8 +541,7 @@ the choice's list, or <code class="literal">0</code>.</td>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_set_choice        (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code><span class="type">int</span> choice</code></em>);</pre>
 <p>
-Sets a default choice for the mount operation.
-</p>
+Sets a default choice for the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -589,8 +565,7 @@ Sets a default choice for the mount operation.
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mount_operation_reply             (<em class="parameter"><code><a class="link" href="GMountOperation.html" title="GMountOperation"><span class="type">GMountOperation</span></a> *op</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GMountOperation.html#GMountOperationResult" title="enum GMountOperationResult"><span class="type">GMountOperationResult</span></a> result</code></em>);</pre>
 <p>
-Emits the <a class="link" href="GMountOperation.html#GMountOperation-reply" title='The "reply" signal'><span class="type">"reply"</span></a> signal.
-</p>
+Emits the <a class="link" href="GMountOperation.html#GMountOperation-reply" title='The "reply" signal'><span class="type">"reply"</span></a> signal.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -617,8 +592,7 @@ Emits the <a class="link" href="GMountOperation.html#GMountOperation-reply" titl
 <a name="GMountOperation--anonymous"></a><h3>The <code class="literal">"anonymous"</code> property</h3>
 <pre class="programlisting">  "anonymous"                <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="type">gboolean</span></a>              : Read / Write</pre>
 <p>
-Whether to use an anonymous user when authenticating.
-</p>
+Whether to use an anonymous user when authenticating.</p>
 <p>Default value: FALSE</p>
 </div>
 <hr>
@@ -628,8 +602,7 @@ Whether to use an anonymous user when authenticating.
 <p>
 The index of the user's choice when a question is asked during the
 
-mount operation. See the <a class="link" href="GMountOperation.html#GMountOperation-ask-question" title='The "ask-question" signal'><span class="type">"ask-question"</span></a> signal.
-</p>
+mount operation. See the <a class="link" href="GMountOperation.html#GMountOperation-ask-question" title='The "ask-question" signal'><span class="type">"ask-question"</span></a> signal.</p>
 <p>Allowed values: &gt;= 0</p>
 <p>Default value: 0</p>
 </div>
@@ -638,8 +611,7 @@ mount operation. See the <a class="link" href="GMountOperation.html#GMountOperat
 <a name="GMountOperation--domain"></a><h3>The <code class="literal">"domain"</code> property</h3>
 <pre class="programlisting">  "domain"                   <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
 <p>
-The domain to use for the mount operation.
-</p>
+The domain to use for the mount operation.</p>
 <p>Default value: NULL</p>
 </div>
 <hr>
@@ -648,8 +620,7 @@ The domain to use for the mount operation.
 <pre class="programlisting">  "password"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
 <p>
 The password that is used for authentication when carrying out
-the mount operation.
-</p>
+the mount operation.</p>
 <p>Default value: NULL</p>
 </div>
 <hr>
@@ -657,8 +628,7 @@ the mount operation.
 <a name="GMountOperation--password-save"></a><h3>The <code class="literal">"password-save"</code> property</h3>
 <pre class="programlisting">  "password-save"            <a class="link" href="GMountOperation.html#GPasswordSave" title="enum GPasswordSave"><span class="type">GPasswordSave</span></a>         : Read / Write</pre>
 <p>
-Determines if and how the password information should be saved.
-</p>
+Determines if and how the password information should be saved.</p>
 <p>Default value: G_PASSWORD_SAVE_NEVER</p>
 </div>
 <hr>
@@ -667,8 +637,7 @@ Determines if and how the password information should be saved.
 <pre class="programlisting">  "username"                 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a>*                : Read / Write</pre>
 <p>
 The user name that is used for authentication when carrying out
-the mount operation.
-</p>
+the mount operation.</p>
 <p>Default value: NULL</p>
 </div>
 </div>
@@ -680,12 +649,10 @@ the mount operation.
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
 Emitted by the backend when e.g. a device becomes unavailable
-while a mount operation is in progress.
-</p>
+while a mount operation is in progress.</p>
 <p>
 Implementations of GMountOperation should handle this signal
-by dismissing open password dialogs.
-</p>
+by dismissing open password dialogs.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -708,13 +675,11 @@ by dismissing open password dialogs.
                                                         <a class="link" href="GMountOperation.html#GAskPasswordFlags"><span class="type">GAskPasswordFlags</span></a> flags,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>          user_data)           : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when a mount operation asks the user for a password.
-</p>
+Emitted when a mount operation asks the user for a password.</p>
 <p>
 If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <a href="http://developer.gnome.org/gtk2/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.
-</p>
+primary text in a <a href="http://library.gnome.org/devel/gtk3/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -757,13 +722,11 @@ primary text in a <a href="http://developer.gnome.org/gtk2/GtkMessageDialog.html
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
 Emitted when asking the user a question and gives a list of
-choices for the user to choose from.
-</p>
+choices for the user to choose from.</p>
 <p>
 If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <a href="http://developer.gnome.org/gtk2/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.
-</p>
+primary text in a <a href="http://library.gnome.org/devel/gtk3/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -796,8 +759,7 @@ primary text in a <a href="http://developer.gnome.org/gtk2/GtkMessageDialog.html
                                                         <a class="link" href="GMountOperation.html#GMountOperationResult" title="enum GMountOperationResult"><span class="type">GMountOperationResult</span></a> result,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>              user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when the user has replied to the mount operation.
-</p>
+Emitted when the user has replied to the mount operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -829,20 +791,17 @@ Emitted when the user has replied to the mount operation.
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
 Emitted when one or more processes are blocking an operation
-e.g. unmounting/ejecting a <a class="link" href="GMount.html" title="GMount"><span class="type">GMount</span></a> or stopping a <a class="link" href="GDrive.html" title="GDrive"><span class="type">GDrive</span></a>.
-</p>
+e.g. unmounting/ejecting a <a class="link" href="GMount.html" title="GMount"><span class="type">GMount</span></a> or stopping a <a class="link" href="GDrive.html" title="GDrive"><span class="type">GDrive</span></a>.</p>
 <p>
 Note that this signal may be emitted several times to update the
 list of blocking processes as processes close files. The
 application should only respond with <a class="link" href="GMountOperation.html#g-mount-operation-reply" title="g_mount_operation_reply ()"><code class="function">g_mount_operation_reply()</code></a> to
 the latest signal (setting <a class="link" href="GMountOperation.html#GMountOperation--choice" title='The "choice" property'><span class="type">"choice"</span></a> to the choice
-the user made).
-</p>
+the user made).</p>
 <p>
 If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <a href="http://developer.gnome.org/gtk2/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.
-</p>
+primary text in a <a href="http://library.gnome.org/devel/gtk3/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -885,25 +844,21 @@ blocking the operation. <span class="annotation">[<acronym title="Generics and d
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>         user_data)       : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
 Emitted when an unmount operation has been busy for more than some time
-(typically 1.5 seconds).
-</p>
+(typically 1.5 seconds).</p>
 <p>
 When unmounting or ejecting a volume, the kernel might need to flush
 pending data in its buffers to the volume stable storage, and this operation
 can take a considerable amount of time. This signal may be emitted several
 times as long as the unmount operation is outstanding, and then one
-last time when the operation is completed, with <em class="parameter"><code>bytes_left</code></em> set to zero.
-</p>
+last time when the operation is completed, with <em class="parameter"><code>bytes_left</code></em> set to zero.</p>
 <p>
 Implementations of GMountOperation should handle this signal by
 showing an UI notification, and then dismiss it, or show another notification
-of completion, when <em class="parameter"><code>bytes_left</code></em> reaches zero.
-</p>
+of completion, when <em class="parameter"><code>bytes_left</code></em> reaches zero.</p>
 <p>
 If the message contains a line break, the first line should be
 presented as a heading. For example, it may be used as the
-primary text in a <a href="http://developer.gnome.org/gtk2/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.
-</p>
+primary text in a <a href="http://library.gnome.org/devel/gtk3/GtkMessageDialog.html"><span class="type">GtkMessageDialog</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -941,6 +896,6 @@ is completed</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

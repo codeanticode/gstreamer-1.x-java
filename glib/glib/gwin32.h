@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -105,6 +103,9 @@ guint		g_win32_get_windows_version (void);
 
 GLIB_AVAILABLE_IN_ALL
 gchar*          g_win32_locale_filename_from_utf8 (const gchar *utf8filename);
+
+GLIB_AVAILABLE_IN_2_40
+gchar **        g_win32_get_command_line (void);
 
 /* As of GLib 2.14 we only support NT-based Windows */
 #define G_WIN32_IS_NT_BASED() TRUE

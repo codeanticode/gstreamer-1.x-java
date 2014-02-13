@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: David Zeuthen <davidz@redhat.com>
  */
@@ -543,10 +541,9 @@ g_dbus_object_manager_server_export (GDBusObjectManagerServer  *manager,
  * @object: An object.
  *
  * Like g_dbus_object_manager_server_export() but appends a string of
- * the form <literal>_N</literal> (with N being a natural number) to
- * @object<!-- -->'s object path if an object with the given path
- * already exists. As such, the #GDBusObjectProxy:g-object-path property
- * of @object may be modified.
+ * the form _N (with N being a natural number) to @object's object path
+ * if an object with the given path already exists. As such, the
+ * #GDBusObjectProxy:g-object-path property of @object may be modified.
  *
  * Since: 2.30
  */

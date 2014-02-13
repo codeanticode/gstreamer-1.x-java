@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: David Zeuthen <davidz@redhat.com>
  */
@@ -53,21 +51,19 @@
  * #GUnixCredentialsMessage, g_unix_connection_send_credentials() and
  * g_unix_connection_receive_credentials() for details.
  *
- * On Linux, the native credential type is a <type>struct ucred</type>
- * - see the
- * <citerefentry><refentrytitle>unix</refentrytitle><manvolnum>7</manvolnum></citerefentry>
- * man page for details. This corresponds to
+ * On Linux, the native credential type is a struct ucred - see the
+ * unix(7) man page for details. This corresponds to
  * %G_CREDENTIALS_TYPE_LINUX_UCRED.
  *
  * On FreeBSD, Debian GNU/kFreeBSD, and GNU/Hurd, the native
- * credential type is a <type>struct cmsgcred</type>. This corresponds
+ * credential type is a struct cmsgcred. This corresponds
  * to %G_CREDENTIALS_TYPE_FREEBSD_CMSGCRED.
  *
- * On OpenBSD, the native credential type is a <type>struct sockpeercred</type>.
+ * On OpenBSD, the native credential type is a struct sockpeercred.
  * This corresponds to %G_CREDENTIALS_TYPE_OPENBSD_SOCKPEERCRED.
  *
  * On Solaris (including OpenSolaris and its derivatives), the native
- * credential type is a <type>ucred_t</type>. This corresponds to
+ * credential type is a ucred_t. This corresponds to
  * %G_CREDENTIALS_TYPE_SOLARIS_UCRED.
  */
 

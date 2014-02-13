@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -59,8 +57,7 @@
  * well as Windows platforms via DLLs.
  *
  * A program which wants to use these functions must be linked to the
- * libraries output by the command
- * <command>pkg-config --libs gmodule-2.0</command>.
+ * libraries output by the command <literal>pkg-config --libs gmodule-2.0</literal>.
  *
  * To use them you must first determine whether dynamic loading
  * is supported on the platform by calling g_module_supported().
@@ -81,9 +78,8 @@
  * <literal>g_quark_from_static_string ("my-module-stuff")</literal>,
  * it must ensure that it is never unloaded, by calling g_module_make_resident().
  *
- * <example>
- * <title>Calling a function defined in a <structname>GModule</structname></title>
- * <programlisting>
+ * Example: Calling a function defined in a GModule
+ * |[<!-- language="C" --> 
  * /&ast; the function signature for 'say_hello' &ast;/
  * typedef void (* SayHelloFunc) (const char *message);
  *
@@ -97,16 +93,16 @@
  *   if (!module)
  *     {
  *       g_set_error (error, FOO_ERROR, FOO_ERROR_BLAH,
- *                    "&percnt;s", g_module_error ());
+ *                    "%s", g_module_error ());
  *       return FALSE;
  *     }
  *
- *   if (!g_module_symbol (module, "say_hello", (gpointer *)&amp;say_hello))
+ *   if (!g_module_symbol (module, "say_hello", (gpointer *)&say_hello))
  *     {
  *       g_set_error (error, SAY_ERROR, SAY_ERROR_OPEN,
- *                    "&percnt;s: &percnt;s", filename, g_module_error ());
+ *                    "%s: %s", filename, g_module_error ());
  *       if (!g_module_close (module))
- *         g_warning ("&percnt;s: &percnt;s", filename, g_module_error ());
+ *         g_warning ("%s: %s", filename, g_module_error ());
  *       return FALSE;
  *     }
  *
@@ -115,7 +111,7 @@
  *       g_set_error (error, SAY_ERROR, SAY_ERROR_OPEN,
  *                    "symbol say_hello is NULL");
  *       if (!g_module_close (module))
- *         g_warning ("&percnt;s: &percnt;s", filename, g_module_error ());
+ *         g_warning ("%s: %s", filename, g_module_error ());
  *       return FALSE;
  *     }
  *
@@ -123,11 +119,10 @@
  *   say_hello ("Hello world!");
  *
  *   if (!g_module_close (module))
- *     g_warning ("&percnt;s: &percnt;s", filename, g_module_error ());
+ *     g_warning ("%s: %s", filename, g_module_error ());
  *   return TRUE;
  *  }
- * </programlisting>
- * </example>
+ * ]|
  */
 
 /**
@@ -143,7 +138,6 @@
  * @module: the #GModule corresponding to the module which has just been loaded
  *
  * Specifies the type of the module initialization function.
- * <indexterm zone="g-module-check-init"><primary>g_module_check_init</primary></indexterm>
  * If a module contains a function named g_module_check_init() it is called
  * automatically when the module is loaded. It is passed the #GModule structure
  * and should return %NULL on success or a string describing the initialization
@@ -156,7 +150,6 @@
  * GModuleUnload:
  * @module: the #GModule about to be unloaded
  *
- * <indexterm zone="g-module-unload"><primary>g_module_unload</primary></indexterm>
  * Specifies the type of the module function called when it is unloaded.
  * If a module contains a function named g_module_unload() it is called
  * automatically when the module is unloaded.

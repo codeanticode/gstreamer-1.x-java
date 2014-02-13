@@ -15,8 +15,7 @@
  *
  * You should have received a copy of the GNU Lesser General Public
  * License along with GLib; see the file COPYING.LIB.  If not,
- * write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- *   Boston, MA 02111-1307, USA.
+ * see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -40,8 +39,7 @@
 
 /**
  * SECTION:markup
- * @Title: Simple XML Subset Parser
- * @Short_description: parses a subset of XML
+ * @Title: Simple XML Subset Parser * @Short_description: parses a subset of XML
  * @See_also: <ulink url="http://www.w3.org/TR/REC-xml/">XML
  *     Specification</ulink>
  *
@@ -57,31 +55,33 @@
  *
  * GMarkup is not guaranteed to signal an error on all invalid XML;
  * the parser may accept documents that an XML parser would not.
- * However, XML documents which are not well-formed<footnote
- * id="wellformed">Being wellformed is a weaker condition than being
- * valid. See the <ulink url="http://www.w3.org/TR/REC-xml/">XML
- * specification</ulink> for definitions of these terms.</footnote>
- * are not considered valid GMarkup documents.
+ * However, XML documents which are not well-formed (which is a
+ * weaker condition than being valid. See the
+ * <ulink url="http://www.w3.org/TR/REC-xml/">XML specification</ulink>
+ * for definitions of these terms.) are not considered valid GMarkup documents.
  *
  * Simplifications to XML include:
- * <itemizedlist>
- * <listitem>Only UTF-8 encoding is allowed</listitem>
- * <listitem>No user-defined entities</listitem>
- * <listitem>Processing instructions, comments and the doctype declaration
- * are "passed through" but are not interpreted in any way</listitem>
- * <listitem>No DTD or validation.</listitem>
- * </itemizedlist>
+ *
+ * - Only UTF-8 encoding is allowed
+ *
+ * - No user-defined entities
+ *
+ * - Processing instructions, comments and the doctype declaration
+ *   are "passed through" but are not interpreted in any way
+ *
+ * - No DTD or validation
  *
  * The markup format does support:
- * <itemizedlist>
- * <listitem>Elements</listitem>
- * <listitem>Attributes</listitem>
- * <listitem>5 standard entities:
- *   <literal>&amp;amp; &amp;lt; &amp;gt; &amp;quot; &amp;apos;</literal>
- * </listitem>
- * <listitem>Character references</listitem>
- * <listitem>Sections marked as CDATA</listitem>
- * </itemizedlist>
+ *
+ * - Elements
+ *
+ * - Attributes
+ *
+ * - 5 standard entities: &amp;amp; &amp;lt; &amp;gt; &amp;quot; &amp;apos;
+ *
+ * - Character references
+ *
+ * - Sections marked as CDATA
  */
 
 G_DEFINE_QUARK (g-markup-error-quark, g_markup_error)
@@ -1996,7 +1996,7 @@ g_markup_parse_context_get_user_data (GMarkupParseContext *context)
  * As an example, see the following implementation of a simple
  * parser that counts the number of tags encountered.
  *
- * |[
+ * |[<!-- language="C" --> 
  * typedef struct
  * {
  *   gint tag_count;
@@ -2038,7 +2038,7 @@ g_markup_parse_context_get_user_data (GMarkupParseContext *context)
  * In order to allow this parser to be easily used as a subparser, the
  * following interface is provided:
  *
- * |[
+ * |[<!-- language="C" --> 
  * void
  * start_counting (GMarkupParseContext *context)
  * {
@@ -2063,7 +2063,7 @@ g_markup_parse_context_get_user_data (GMarkupParseContext *context)
  *
  * The subparser would then be used as follows:
  *
- * |[
+ * |[<!-- language="C" --> 
  * static void start_element (context, element_name, ...)
  * {
  *   if (strcmp (element_name, "count-these") == 0)
@@ -2523,15 +2523,15 @@ g_markup_vprintf_escaped (const gchar *format,
  * output, without having to worry that the strings
  * might themselves contain markup.
  *
- * |[
- * const char *store = "Fortnum &amp; Mason";
+ * |[<!-- language="C" --> 
+ * const char *store = "Fortnum & Mason";
  * const char *item = "Tea";
  * char *output;
- * &nbsp;
- * output = g_markup_printf_escaped ("&lt;purchase&gt;"
- *                                   "&lt;store&gt;&percnt;s&lt;/store&gt;"
- *                                   "&lt;item&gt;&percnt;s&lt;/item&gt;"
- *                                   "&lt;/purchase&gt;",
+ * 
+ * output = g_markup_printf_escaped ("<purchase>"
+ *                                   "<store>%s</store>"
+ *                                   "<item>%s</item>"
+ *                                   "</purchase>",
  *                                   store, item);
  * ]|
  *

@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>D-Bus Utilities</title>
+<title>GIO Reference Manual: D-Bus Utilities</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-lowlevel.html" title="Lowlevel D-Bus Support">
 <link rel="prev" href="gdbus-lowlevel.html" title="Lowlevel D-Bus Support">
 <link rel="next" href="gio-D-Bus-Addresses.html" title="D-Bus Addresses">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gdbus-lowlevel.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="gdbus-lowlevel.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="gio-D-Bus-Addresses.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-D-Bus-Utilities.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-D-Bus-Utilities.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gdbus-lowlevel.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gdbus-lowlevel.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gio-D-Bus-Addresses.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-D-Bus-Utilities"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -55,8 +52,7 @@
 <div class="refsect1">
 <a name="gio-D-Bus-Utilities.description"></a><h2>Description</h2>
 <p>
-Various utility routines related to D-Bus.
-</p>
+Various utility routines related to D-Bus.</p>
 </div>
 <div class="refsect1">
 <a name="gio-D-Bus-Utilities.details"></a><h2>Details</h2>
@@ -65,12 +61,10 @@ Various utility routines related to D-Bus.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_dbus_generate_guid                (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
 Generate a D-Bus GUID that can be used with
-e.g. <a class="link" href="GDBusConnection.html#g-dbus-connection-new" title="g_dbus_connection_new ()"><code class="function">g_dbus_connection_new()</code></a>.
-</p>
+e.g. <a class="link" href="GDBusConnection.html#g-dbus-connection-new" title="g_dbus_connection_new ()"><code class="function">g_dbus_connection_new()</code></a>.</p>
 <p>
 See the D-Bus specification regarding what strings are valid D-Bus
-GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).
-</p>
+GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -88,12 +82,10 @@ GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).
 <a name="g-dbus-is-guid"></a><h3>g_dbus_is_guid ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_dbus_is_guid                      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
 <p>
-Checks if <em class="parameter"><code>string</code></em> is a D-Bus GUID.
-</p>
+Checks if <em class="parameter"><code>string</code></em> is a D-Bus GUID.</p>
 <p>
 See the D-Bus specification regarding what strings are valid D-Bus
-GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).
-</p>
+GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -118,8 +110,7 @@ GUID (for example, D-Bus GUIDs are not RFC-4122 compliant).
 <a name="g-dbus-is-name"></a><h3>g_dbus_is_name ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_dbus_is_name                      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
 <p>
-Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus bus name (either unique or well-known).
-</p>
+Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus bus name (either unique or well-known).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -144,8 +135,7 @@ Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus bus na
 <a name="g-dbus-is-unique-name"></a><h3>g_dbus_is_unique_name ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_dbus_is_unique_name               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
 <p>
-Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus unique bus name.
-</p>
+Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus unique bus name.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -170,8 +160,7 @@ Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus unique
 <a name="g-dbus-is-member-name"></a><h3>g_dbus_is_member_name ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_dbus_is_member_name               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
 <p>
-Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus member (e.g. signal or method) name.
-</p>
+Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus member (e.g. signal or method) name.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -196,8 +185,7 @@ Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus member
 <a name="g-dbus-is-interface-name"></a><h3>g_dbus_is_interface_name ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_dbus_is_interface_name            (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *string</code></em>);</pre>
 <p>
-Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus interface name.
-</p>
+Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus interface name.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -223,8 +211,7 @@ Checks if <em class="parameter"><code>string</code></em> is a valid D-Bus interf
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="returnvalue">GVariant</span></a> *          g_dbus_gvalue_to_gvariant           (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *gvalue</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a> *type</code></em>);</pre>
 <p>
-Converts a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> to a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> of the type indicated by the <em class="parameter"><code>type</code></em> parameter.
-</p>
+Converts a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> to a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> of the type indicated by the <em class="parameter"><code>type</code></em> parameter.</p>
 <p>
 The conversion is using the following rules:
 </p>
@@ -296,19 +283,15 @@ The conversion is using the following rules:
 This can fail if e.g. <em class="parameter"><code>gvalue</code></em> is of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-STRING:CAPS"><span class="type">G_TYPE_STRING</span></a> and <em class="parameter"><code>type</code></em>
 is <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#G-VARIANT-TYPE-INT32:CAPS">'i'</a>. It will
 also fail for any <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#GType"><span class="type">GType</span></a> (including e.g. <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-OBJECT:CAPS"><span class="type">G_TYPE_OBJECT</span></a> and
-<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-BOXED:CAPS"><span class="type">G_TYPE_BOXED</span></a> derived-types) not in the table above.
-</p>
+<a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-BOXED:CAPS"><span class="type">G_TYPE_BOXED</span></a> derived-types) not in the table above.</p>
 <p>
 Note that if <em class="parameter"><code>gvalue</code></em> is of type <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Type-Information.html#G-TYPE-VARIANT:CAPS"><span class="type">G_TYPE_VARIANT</span></a> and its value is
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the <span class="emphasis"><em>empty</em></span> <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> instance (never
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) for <em class="parameter"><code>type</code></em> is returned (e.g. 0 for scalar types, the empty
-string for string types, <code class="literal">'/'</code> for object path
-types, the empty array for any array type and so on).
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, the empty <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> instance (never <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>) for <em class="parameter"><code>type</code></em> is
+returned (e.g. 0 for scalar types, the empty string for string types,
+'/' for object path types, the empty array for any array type and so on).</p>
 <p>
 See the <a class="link" href="gio-D-Bus-Utilities.html#g-dbus-gvariant-to-gvalue" title="g_dbus_gvariant_to_gvalue ()"><code class="function">g_dbus_gvariant_to_gvalue()</code></a> function for how to convert a
-<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a>.
-</p>
+<a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -339,16 +322,13 @@ failure. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib-GV
 <pre class="programlisting"><span class="returnvalue">void</span>                g_dbus_gvariant_to_gvalue           (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> *value</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> *out_gvalue</code></em>);</pre>
 <p>
-Converts a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a>. If <em class="parameter"><code>value</code></em> is floating, it is consumed.
-</p>
+Converts a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariant"><span class="type">GVariant</span></a> to a <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a>. If <em class="parameter"><code>value</code></em> is floating, it is consumed.</p>
 <p>
 The rules specified in the <a class="link" href="gio-D-Bus-Utilities.html#g-dbus-gvalue-to-gvariant" title="g_dbus_gvalue_to_gvariant ()"><code class="function">g_dbus_gvalue_to_gvariant()</code></a> function are
-used - this function is essentially its reverse form.
-</p>
+used - this function is essentially its reverse form.</p>
 <p>
 The conversion never fails - a valid <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Generic-values.html#GValue"><span class="type">GValue</span></a> is always returned in
-<em class="parameter"><code>out_gvalue</code></em>.
-</p>
+<em class="parameter"><code>out_gvalue</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -372,6 +352,6 @@ The conversion never fails - a valid <a href="http://library.gnome.org/devel/gob
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

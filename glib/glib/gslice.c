@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 /* MT safe */
 
@@ -68,12 +66,11 @@
  *
  * To achieve these goals, the slice allocator uses a sophisticated,
  * layered design that has been inspired by Bonwick's slab allocator
- * <footnote><para>
- * <ulink url="http://citeseer.ist.psu.edu/bonwick94slab.html">[Bonwick94]</ulink> Jeff Bonwick, The slab allocator: An object-caching kernel
+ * (<ulink url="http://citeseer.ist.psu.edu/bonwick94slab.html">[Bonwick94]</ulink> Jeff Bonwick, The slab allocator: An object-caching kernel
  * memory allocator. USENIX 1994, and
  * <ulink url="http://citeseer.ist.psu.edu/bonwick01magazines.html">[Bonwick01]</ulink> Bonwick and Jonathan Adams, Magazines and vmem: Extending the
- * slab allocator to many cpu's and arbitrary resources. USENIX 2001
- * </para></footnote>.
+ * slab allocator to many cpu's and arbitrary resources. USENIX 2001)
+ *
  * It uses posix_memalign() to optimize allocations of many equally-sized
  * chunks, and has per-thread free lists (the so-called magazine layer)
  * to quickly satisfy allocation requests of already known structure sizes.
@@ -92,32 +89,29 @@
  * friends, as long as objects are not resized during their lifetime and the
  * object size used at allocation time is still available when freeing.
  *
- * <example>
- * <title>Using the slice allocator</title>
- * <programlisting>
+ * Here is an example for using the slice allocator:
+ * |[<!-- language="C" --> 
  * gchar *mem[10000];
  * gint i;
  *
  * /&ast; Allocate 10000 blocks. &ast;/
- * for (i = 0; i &lt; 10000; i++)
+ * for (i = 0; i < 10000; i++)
  *   {
  *     mem[i] = g_slice_alloc (50);
  *
  *     /&ast; Fill in the memory with some junk. &ast;/
- *     for (j = 0; j &lt; 50; j++)
+ *     for (j = 0; j < 50; j++)
  *       mem[i][j] = i * j;
  *   }
  *
  * /&ast; Now free all of the blocks. &ast;/
- * for (i = 0; i &lt; 10000; i++)
- *   {
- *     g_slice_free1 (50, mem[i]);
- *   }
- * </programlisting></example>
+ * for (i = 0; i < 10000; i++)
+ *   g_slice_free1 (50, mem[i]);
+ * ]|
  *
- * <example>
- * <title>Using the slice allocator with data structures</title>
- * <programlisting>
+ * And here is an example for using the using the slice allocator
+ * with data structures:
+ * |[<!-- language="C" --> 
  * GRealArray *array;
  *
  * /&ast; Allocate one block, using the g_slice_new() macro. &ast;/
@@ -133,7 +127,7 @@
  *
  * /&ast; We can free the block, so it can be reused. &ast;/
  * g_slice_free (GRealArray, array);
- * </programlisting></example>
+ * ]|
  */
 
 /* the GSlice allocator is split up into 4 layers, roughly modelled after the slab

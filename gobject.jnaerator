@@ -1,4 +1,5 @@
 glib/gobject/gobject.h
+glib/glib/glib.h
 
 -package org.glib
 

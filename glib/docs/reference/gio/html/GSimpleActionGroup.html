@@ -2,34 +2,31 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSimpleActionGroup</title>
+<title>GIO Reference Manual: GSimpleActionGroup</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="application.html" title="Application support">
 <link rel="prev" href="GActionMap.html" title="GActionMap">
 <link rel="next" href="GAction.html" title="GAction">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GActionMap.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="application.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GAction.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSimpleActionGroup.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSimpleActionGroup.description" class="shortcut">Description</a>
                    | 
                   <a href="#GSimpleActionGroup.object-hierarchy" class="shortcut">Object Hierarchy</a>
                    | 
                   <a href="#GSimpleActionGroup.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="application.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GActionMap.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GAction.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSimpleActionGroup"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -78,8 +75,7 @@ GSimpleActionGroup implements
 <a name="GSimpleActionGroup.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a> is a hash table filled with <a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a> objects,
-implementing the <a class="link" href="GActionGroup.html" title="GActionGroup"><span class="type">GActionGroup</span></a> and <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a> interfaces.
-</p>
+implementing the <a class="link" href="GActionGroup.html" title="GActionGroup"><span class="type">GActionGroup</span></a> and <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a> interfaces.</p>
 </div>
 <div class="refsect1">
 <a name="GSimpleActionGroup.details"></a><h2>Details</h2>
@@ -87,8 +83,7 @@ implementing the <a class="link" href="GActionGroup.html" title="GActionGroup"><
 <a name="GSimpleActionGroup-struct"></a><h3>GSimpleActionGroup</h3>
 <pre class="programlisting">typedef struct _GSimpleActionGroup GSimpleActionGroup;</pre>
 <p>
-The <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a> structure contains private data and should only be accessed using the provided API.
-</p>
+The <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a> structure contains private data and should only be accessed using the provided API.</p>
 <p class="since">Since 2.28</p>
 </div>
 <hr>
@@ -96,8 +91,7 @@ The <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><s
 <a name="g-simple-action-group-new"></a><h3>g_simple_action_group_new ()</h3>
 <pre class="programlisting"><a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="returnvalue">GSimpleActionGroup</span></a> * g_simple_action_group_new          (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
 <p>
-Creates a new, empty, <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.
-</p>
+Creates a new, empty, <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -116,16 +110,14 @@ Creates a new, empty, <a class="link" href="GSimpleActionGroup.html" title="GSim
 <a name="g-simple-action-group-lookup"></a><h3>g_simple_action_group_lookup ()</h3>
 <pre class="programlisting"><a class="link" href="GAction.html" title="GAction"><span class="returnvalue">GAction</span></a> *           g_simple_action_group_lookup        (<em class="parameter"><code><a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a> *simple</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_simple_action_group_lookup</code> has been deprecated since version 2.38 and should not be used in newly-written code. Use <a class="link" href="GActionMap.html#g-action-map-lookup-action" title="g_action_map_lookup_action ()"><code class="function">g_action_map_lookup_action()</code></a></p>
 </div>
 <p>
-Looks up the action with the name <em class="parameter"><code>action_name</code></em> in the group.
-</p>
+Looks up the action with the name <em class="parameter"><code>action_name</code></em> in the group.</p>
 <p>
-If no such action exists, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+If no such action exists, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -155,20 +147,17 @@ If no such action exists, returns <a href="http://library.gnome.org/devel/glib/u
 <a name="g-simple-action-group-insert"></a><h3>g_simple_action_group_insert ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_simple_action_group_insert        (<em class="parameter"><code><a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a> *simple</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a> *action</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_simple_action_group_insert</code> has been deprecated since version 2.38 and should not be used in newly-written code. Use <a class="link" href="GActionMap.html#g-action-map-add-action" title="g_action_map_add_action ()"><code class="function">g_action_map_add_action()</code></a></p>
 </div>
 <p>
-Adds an action to the action group.
-</p>
+Adds an action to the action group.</p>
 <p>
 If the action group already contains an action with the same name as
-<em class="parameter"><code>action</code></em> then the old action is dropped from the group.
-</p>
+<em class="parameter"><code>action</code></em> then the old action is dropped from the group.</p>
 <p>
-The action group takes its own reference on <em class="parameter"><code>action</code></em>.
-</p>
+The action group takes its own reference on <em class="parameter"><code>action</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -194,16 +183,14 @@ The action group takes its own reference on <em class="parameter"><code>action</
 <a name="g-simple-action-group-remove"></a><h3>g_simple_action_group_remove ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_simple_action_group_remove        (<em class="parameter"><code><a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a> *simple</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_simple_action_group_remove</code> has been deprecated since version 2.38 and should not be used in newly-written code. Use <a class="link" href="GActionMap.html#g-action-map-remove-action" title="g_action_map_remove_action ()"><code class="function">g_action_map_remove_action()</code></a></p>
 </div>
 <p>
-Removes the named action from the action group.
-</p>
+Removes the named action from the action group.</p>
 <p>
-If no action of this name is in the group then nothing happens.
-</p>
+If no action of this name is in the group then nothing happens.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -230,14 +217,13 @@ If no action of this name is in the group then nothing happens.
                                                          <em class="parameter"><code>const <a class="link" href="GActionMap.html#GActionEntry" title="struct GActionEntry"><span class="type">GActionEntry</span></a> *entries</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> n_entries</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_simple_action_group_add_entries</code> has been deprecated since version 2.38 and should not be used in newly-written code. Use <a class="link" href="GActionMap.html#g-action-map-add-action-entries" title="g_action_map_add_action_entries ()"><code class="function">g_action_map_add_action_entries()</code></a></p>
 </div>
 <p>
 A convenience function for creating multiple <a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> instances
-and adding them to the action group.
-</p>
+and adding them to the action group.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -271,6 +257,6 @@ an array of <a class="link" href="GActionMap.html#GActionEntry" title="struct GA
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GEmblem</title>
+<title>GIO Reference Manual: GEmblem</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="icons.html" title="Icons">
 <link rel="prev" href="GEmblemedIcon.html" title="GEmblemedIcon">
 <link rel="next" href="failable_initialization.html" title="Failable Initialization">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GEmblemedIcon.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="icons.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="failable_initialization.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GEmblem.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GEmblem.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GEmblem.implemented-interfaces" class="shortcut">Implemented Interfaces</a>
                    | 
                   <a href="#GEmblem.properties" class="shortcut">Properties</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="icons.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GEmblemedIcon.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="failable_initialization.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GEmblem"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -80,12 +77,10 @@ GEmblem implements
 <p>
 <a class="link" href="GEmblem.html" title="GEmblem"><span class="type">GEmblem</span></a> is an implementation of <a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a> that supports
 having an emblem, which is an icon with additional properties.
-It can than be added to a <a class="link" href="GEmblemedIcon.html" title="GEmblemedIcon"><span class="type">GEmblemedIcon</span></a>.
-</p>
+It can than be added to a <a class="link" href="GEmblemedIcon.html" title="GEmblemedIcon"><span class="type">GEmblemedIcon</span></a>.</p>
 <p>
 Currently, only metainformation about the emblem's origin is
-supported. More may be added in the future.
-</p>
+supported. More may be added in the future.</p>
 </div>
 <div class="refsect1">
 <a name="GEmblem.details"></a><h2>Details</h2>
@@ -93,8 +88,7 @@ supported. More may be added in the future.
 <a name="GEmblem-struct"></a><h3>GEmblem</h3>
 <pre class="programlisting">typedef struct _GEmblem GEmblem;</pre>
 <p>
-An object for Emblems
-</p>
+An object for Emblems</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -108,8 +102,7 @@ An object for Emblems
 </pre>
 <p>
 GEmblemOrigin is used to add information about the origin of the emblem
-to <a class="link" href="GEmblem.html" title="GEmblem"><span class="type">GEmblem</span></a>.
-</p>
+to <a class="link" href="GEmblem.html" title="GEmblem"><span class="type">GEmblem</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -145,8 +138,7 @@ to <a class="link" href="GEmblem.html" title="GEmblem"><span class="type">GEmble
 <a name="g-emblem-new"></a><h3>g_emblem_new ()</h3>
 <pre class="programlisting"><a class="link" href="GEmblem.html" title="GEmblem"><span class="returnvalue">GEmblem</span></a> *           g_emblem_new                        (<em class="parameter"><code><a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a> *icon</code></em>);</pre>
 <p>
-Creates a new emblem for <em class="parameter"><code>icon</code></em>.
-</p>
+Creates a new emblem for <em class="parameter"><code>icon</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -171,8 +163,7 @@ Creates a new emblem for <em class="parameter"><code>icon</code></em>.
 <pre class="programlisting"><a class="link" href="GEmblem.html" title="GEmblem"><span class="returnvalue">GEmblem</span></a> *           g_emblem_new_with_origin            (<em class="parameter"><code><a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a> *icon</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GEmblem.html#GEmblemOrigin" title="enum GEmblemOrigin"><span class="type">GEmblemOrigin</span></a> origin</code></em>);</pre>
 <p>
-Creates a new emblem for <em class="parameter"><code>icon</code></em>.
-</p>
+Creates a new emblem for <em class="parameter"><code>icon</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -200,8 +191,7 @@ Creates a new emblem for <em class="parameter"><code>icon</code></em>.
 <a name="g-emblem-get-icon"></a><h3>g_emblem_get_icon ()</h3>
 <pre class="programlisting"><a class="link" href="GIcon.html" title="GIcon"><span class="returnvalue">GIcon</span></a> *             g_emblem_get_icon                   (<em class="parameter"><code><a class="link" href="GEmblem.html" title="GEmblem"><span class="type">GEmblem</span></a> *emblem</code></em>);</pre>
 <p>
-Gives back the icon from <em class="parameter"><code>emblem</code></em>.
-</p>
+Gives back the icon from <em class="parameter"><code>emblem</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -227,8 +217,7 @@ the emblem and should not be modified or freed. <span class="annotation">[<acron
 <a name="g-emblem-get-origin"></a><h3>g_emblem_get_origin ()</h3>
 <pre class="programlisting"><a class="link" href="GEmblem.html#GEmblemOrigin" title="enum GEmblemOrigin"><span class="returnvalue">GEmblemOrigin</span></a>       g_emblem_get_origin                 (<em class="parameter"><code><a class="link" href="GEmblem.html" title="GEmblem"><span class="type">GEmblem</span></a> *emblem</code></em>);</pre>
 <p>
-Gets the origin of the emblem.
-</p>
+Gets the origin of the emblem.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -272,6 +261,6 @@ Gets the origin of the emblem.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

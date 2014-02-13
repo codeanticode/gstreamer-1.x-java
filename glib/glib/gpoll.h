@@ -12,9 +12,7 @@
  * Library General Public License for more details.
  *
  * You should have received a copy of the GNU Library General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #ifndef __G_POLL_H__
@@ -39,7 +37,6 @@ G_BEGIN_DECLS
  * Note that on systems with a working poll(2), that function is used
  * in place of g_poll(). Thus g_poll() must have the same signature as
  * poll(), meaning GPollFD must have the same layout as struct pollfd.
- *
  *
  * On Win32, the fd in a GPollFD should be Win32 HANDLE (*not* a file
  * descriptor as provided by the C runtime) that can be used by
@@ -79,7 +76,7 @@ typedef gint    (*GPollFunc)    (GPollFD *ufds,
 
 /**
  * GPollFD:
- * @fd: the file descriptor to poll (or a <type>HANDLE</type> on Win32)
+ * @fd: the file descriptor to poll (or a HANDLE on Win32)
  * @events: a bitwise combination from #GIOCondition, specifying which
  *     events should be polled for. Typically for reading from a file
  *     descriptor you would use %G_IO_IN | %G_IO_HUP | %G_IO_ERR, and
@@ -112,9 +109,10 @@ struct _GPollFD
 #endif
 
 GLIB_AVAILABLE_IN_ALL
-gint g_poll (GPollFD *fds,
-	     guint    nfds,
-	     gint     timeout);
+gint
+g_poll (GPollFD *fds,
+	guint    nfds,
+	gint     timeout);
 
 G_END_DECLS
 

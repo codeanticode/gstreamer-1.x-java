@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -34,7 +32,7 @@
  * to try out each socket address in turn until one succeeds, as shown
  * in the sample code below.
  *
- * |[
+ * |[<!-- language="C" -->
  * MyConnectionType *
  * connect_to_host (const char    *hostname,
  *                  guint16        port,
@@ -51,10 +49,10 @@
  *   enumerator = g_socket_connectable_enumerate (addr);
  *   g_object_unref (addr);
  *
- *   /<!-- -->* Try each sockaddr until we succeed. Record the first
- *    * connection error, but not any further ones (since they'll probably
- *    * be basically the same as the first).
- *    *<!-- -->/
+ *   /&ast; Try each sockaddr until we succeed. Record the first
+ *    &ast; connection error, but not any further ones (since they'll probably
+ *    &ast; be basically the same as the first).
+ *    &ast;/
  *   while (!conn && (sockaddr = g_socket_address_enumerator_next (enumerator, cancellable, error))
  *     {
  *       conn = connect_to_sockaddr (sockaddr, conn_error ? NULL : &conn_error);
@@ -66,18 +64,18 @@
  *     {
  *       if (conn_error)
  *         {
- *           /<!-- -->* We couldn't connect to the first address, but we succeeded
- *            * in connecting to a later address.
- *            *<!-- -->/
+ *           /&ast; We couldn't connect to the first address, but we succeeded
+ *            &ast; in connecting to a later address.
+ *            &ast;/
  *           g_error_free (conn_error);
  *         }
  *       return conn;
  *     }
  *   else if (error)
  *     {
- *       /<!-- -->* Either the initial lookup failed, or else the caller
- *        * cancelled us.
- *        *<!-- -->/
+ *       /&ast; Either the initial lookup failed, or else the caller
+ *        &ast; cancelled us.
+ *        &ast;/
  *       if (conn_error)
  *         g_error_free (conn_error);
  *       return NULL;
@@ -127,7 +125,7 @@ g_socket_connectable_enumerate (GSocketConnectable *connectable)
  * @connectable: a #GSocketConnectable
  *
  * Creates a #GSocketAddressEnumerator for @connectable that will
- * return #GProxyAddress<!-- -->es for addresses that you must connect
+ * return #GProxyAddresses for addresses that you must connect
  * to via a proxy.
  *
  * If @connectable does not implement

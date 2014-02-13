@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -138,8 +136,9 @@
  * GTK+ contains wrappers of some of these functions, e.g. gtk_main(),
  * gtk_main_quit() and gtk_events_pending().
  *
- * <refsect2><title>Creating new source types</title>
- * <para>One of the unusual features of the #GMainLoop functionality
+ * ## Creating new source types
+ *
+ * One of the unusual features of the #GMainLoop functionality
  * is that new types of event source can be created and used in
  * addition to the builtin type of event source. A new event source
  * type is used for handling GDK events. A new source type is created
@@ -149,31 +148,33 @@
  * to the new source type. To create an instance of the new source type,
  * call g_source_new() passing in the size of the derived structure and
  * a table of functions. These #GSourceFuncs determine the behavior of
- * the new source type.</para>
- * <para>New source types basically interact with the main context
+ * the new source type.
+ *
+ * New source types basically interact with the main context
  * in two ways. Their prepare function in #GSourceFuncs can set a timeout
  * to determine the maximum amount of time that the main loop will sleep
  * before checking the source again. In addition, or as well, the source
  * can add file descriptors to the set that the main context checks using
- * g_source_add_poll().</para>
- * </refsect2>
- * <refsect2><title>Customizing the main loop iteration</title>
- * <para>Single iterations of a #GMainContext can be run with
+ * g_source_add_poll().
+ *
+ * ## Customizing the main loop iteration
+ *
+ * Single iterations of a #GMainContext can be run with
  * g_main_context_iteration(). In some cases, more detailed control
  * of exactly how the details of the main loop work is desired, for
  * instance, when integrating the #GMainLoop with an external main loop.
  * In such cases, you can call the component functions of
  * g_main_context_iteration() directly. These functions are
  * g_main_context_prepare(), g_main_context_query(),
- * g_main_context_check() and g_main_context_dispatch().</para>
- * <para>The operation of these functions can best be seen in terms
- * of a state diagram, as shown in <xref linkend="mainloop-states"/>.</para>
+ * g_main_context_check() and g_main_context_dispatch().
+ *
+ * The operation of these functions can best be seen in terms
+ * of a state diagram, as shown in <xref linkend="mainloop-states"/>.
  * <figure id="mainloop-states"><title>States of a Main Context</title>
  * <graphic fileref="mainloop-states.gif" format="GIF"></graphic>
  * </figure>
- * </refsect2>
  *
- * On Unix, the GLib mainloop is incompatible with fork().  Any program
+ * On UNIX, the GLib mainloop is incompatible with fork(). Any program
  * using the mainloop must either exec() or exit() from the child
  * without returning to the mainloop.
  */
@@ -507,6 +508,7 @@ g_main_context_unref (GMainContext *context)
   GSource *source;
   GList *sl_iter;
   GSourceList *list;
+  gint i;
 
   g_return_if_fail (context != NULL);
   g_return_if_fail (g_atomic_int_get (&context->ref_count) > 0); 
@@ -517,6 +519,10 @@ g_main_context_unref (GMainContext *context)
   G_LOCK (main_context_list);
   main_context_list = g_slist_remove (main_context_list, context);
   G_UNLOCK (main_context_list);
+
+  /* Free pending dispatches */
+  for (i = 0; i < context->pending_dispatches->len; i++)
+    g_source_unref_internal (context->pending_dispatches->pdata[i], context, FALSE);
 
   /* g_source_iter_next() assumes the context is locked. */
   LOCK_CONTEXT (context);
@@ -685,10 +691,9 @@ static GPrivate thread_context_stack = G_PRIVATE_INIT (free_context_stack);
  * started in this thread to run under @context and deliver their
  * results to its main loop, rather than running under the global
  * default context in the main thread. Note that calling this function
- * changes the context returned by
- * g_main_context_get_thread_default(), <emphasis>not</emphasis> the
- * one returned by g_main_context_default(), so it does not affect the
- * context used by functions like g_idle_add().
+ * changes the context returned by g_main_context_get_thread_default(),
+ * not the one returned by g_main_context_default(), so it does not affect
+ * the context used by functions like g_idle_add().
  *
  * Normally you would call this function shortly after creating a new
  * thread, passing it a #GMainContext which will be run by a
@@ -770,7 +775,7 @@ g_main_context_pop_thread_default (GMainContext *context)
  * operations that want to be able to be run in contexts other than
  * the default one should call this method or
  * g_main_context_ref_thread_default() to get a #GMainContext to add
- * their #GSource<!-- -->s to. (Note that even in single-threaded
+ * their #GSources to. (Note that even in single-threaded
  * programs applications may sometimes want to temporarily push a
  * non-default context, so it is not safe to assume that this will
  * always return %NULL if you are running in the default thread.)
@@ -1244,7 +1249,8 @@ g_source_destroy_internal (GSource      *source,
  * 
  * Removes a source from its #GMainContext, if any, and mark it as
  * destroyed.  The source cannot be subsequently added to another
- * context.
+ * context. It is safe to call this on sources which have already been
+ * removed from their context.
  **/
 void
 g_source_destroy (GSource *source)
@@ -2739,7 +2745,7 @@ get_dispatch (void)
  * This function is useful in a situation like the following:
  * Imagine an extremely simple "garbage collected" system.
  *
- * |[
+ * |[<!-- language="C" --> 
  * static GList *free_list;
  * 
  * gpointer
@@ -2776,7 +2782,7 @@ get_dispatch (void)
  * doesn't work, since the idle function could be called from a
  * recursive callback. This can be fixed by using g_main_depth()
  *
- * |[
+ * |[<!-- language="C" --> 
  * gpointer
  * allocate_memory (gsize size)
  * { 
@@ -2821,26 +2827,17 @@ get_dispatch (void)
  * many things that the user could do. Instead, you can use the
  * following techniques:
  *
- * <orderedlist>
- *  <listitem>
- *   <para>
- *     Use gtk_widget_set_sensitive() or modal dialogs to prevent
- *     the user from interacting with elements while the main
- *     loop is recursing.
- *   </para>
- *  </listitem>
- *  <listitem>
- *   <para>
- *     Avoid main loop recursion in situations where you can't handle
- *     arbitrary  callbacks. Instead, structure your code so that you
- *     simply return to the main loop and then get called again when
- *     there is more work to do.
- *   </para>
- *  </listitem>
- * </orderedlist>
+ * 1. Use gtk_widget_set_sensitive() or modal dialogs to prevent
+ *    the user from interacting with elements while the main
+ *    loop is recursing.
+ * 
+ * 2. Avoid main loop recursion in situations where you can't handle
+ *    arbitrary  callbacks. Instead, structure your code so that you
+ *    simply return to the main loop and then get called again when
+ *    there is more work to do.
  * 
  * Return value: The main loop recursion level in the current thread
- **/
+ */
 int
 g_main_depth (void)
 {
@@ -2874,16 +2871,16 @@ g_main_current_source (void)
  * from within idle handlers, but may have freed the object 
  * before the dispatch of your idle handler.
  *
- * |[
+ * |[<!-- language="C" --> 
  * static gboolean 
  * idle_callback (gpointer data)
  * {
  *   SomeWidget *self = data;
  *    
- *   GDK_THREADS_ENTER (<!-- -->);
- *   /<!-- -->* do stuff with self *<!-- -->/
+ *   GDK_THREADS_ENTER ();
+ *   /&ast; do stuff with self &ast;/
  *   self->idle_id = 0;
- *   GDK_THREADS_LEAVE (<!-- -->);
+ *   GDK_THREADS_LEAVE ();
  *    
  *   return G_SOURCE_REMOVE;
  * }
@@ -2912,7 +2909,7 @@ g_main_current_source (void)
  * this particular problem, is to check to if the source
  * has already been destroy within the callback.
  *
- * |[
+ * |[<!-- language="C" --> 
  * static gboolean 
  * idle_callback (gpointer data)
  * {
@@ -2921,7 +2918,7 @@ g_main_current_source (void)
  *   GDK_THREADS_ENTER ();
  *   if (!g_source_is_destroyed (g_main_current_source ()))
  *     {
- *       /<!-- -->* do stuff with self *<!-- -->/
+ *       /&ast; do stuff with self &ast;/
  *     }
  *   GDK_THREADS_LEAVE ();
  *   
@@ -4328,7 +4325,7 @@ g_main_context_get_poll_func (GMainContext *context)
  * Another related use for this function is when implementing a main
  * loop with a termination condition, computed from multiple threads:
  *
- * |[
+ * |[<!-- language="C" --> 
  *   #define NUM_TASKS 10
  *   static volatile gint tasks_remaining = NUM_TASKS;
  *   ...
@@ -4338,7 +4335,7 @@ g_main_context_get_poll_func (GMainContext *context)
  * ]|
  *  
  * Then in a thread:
- * |[
+ * |[<!-- language="C" --> 
  *   perform_work();
  *
  *   if (g_atomic_int_dec_and_test (&tasks_remaining))

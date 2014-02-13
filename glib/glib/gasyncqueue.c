@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -92,7 +90,7 @@
  *
  * The GAsyncQueue struct is an opaque data structure which represents
  * an asynchronous queue. It should only be accessed through the
- * <function>g_async_queue_*</function> functions.
+ * g_async_queue_* functions.
  */
 struct _GAsyncQueue
 {
@@ -249,8 +247,8 @@ g_async_queue_unref (GAsyncQueue *queue)
  * Call g_async_queue_unlock() to drop the lock again.
  *
  * While holding the lock, you can only call the
- * <function>g_async_queue_*_unlocked()</function> functions
- * on @queue. Otherwise, deadlock may occur.
+ * g_async_queue_*_unlocked() functions on @queue. Otherwise,
+ * deadlock may occur.
  */
 void
 g_async_queue_lock (GAsyncQueue *queue)
@@ -728,7 +726,7 @@ g_async_queue_length_unlocked (GAsyncQueue *queue)
  *
  * If you were sorting a list of priority numbers to make sure the
  * lowest priority would be at the top of the queue, you could use:
- * |[
+ * |[<!-- language="C" -->
  *  gint32 id1;
  *  gint32 id2;
  *

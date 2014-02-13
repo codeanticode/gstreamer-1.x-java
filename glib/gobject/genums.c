@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -264,7 +262,7 @@ g_flags_register_static (const gchar	   *name,
  * function of a #GTypePlugin implementation, as in the following
  * example:
  *
- * |[
+ * |[<!-- language="C" --> 
  * static void
  * my_enum_complete_type_info (GTypePlugin     *plugin,
  *                             GType            g_type,

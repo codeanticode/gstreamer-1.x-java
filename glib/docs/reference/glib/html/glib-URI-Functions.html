@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>URI Functions</title>
+<title>GLib Reference Manual: URI Functions</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-File-Utilities.html" title="File Utilities">
 <link rel="next" href="glib-Hostname-Utilities.html" title="Hostname Utilities">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-File-Utilities.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Hostname-Utilities.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-URI-Functions.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-URI-Functions.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-File-Utilities.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Hostname-Utilities.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-URI-Functions"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -69,8 +66,7 @@
 Functions for manipulating Universal Resource Identifiers (URIs) as
 defined by <a class="ulink" href="http://www.ietf.org/rfc/rfc3986.txt" target="_top">
 RFC 3986</a>. It is highly recommended that you have read and
-understand RFC 3986 for understanding this API.
-</p>
+understand RFC 3986 for understanding this API.</p>
 </div>
 <div class="refsect1">
 <a name="glib-URI-Functions.details"></a><h2>Details</h2>
@@ -79,8 +75,7 @@ understand RFC 3986 for understanding this API.
 <pre class="programlisting">#define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT "/"
 </pre>
 <p>
-Allowed characters in a path. Includes "!$&amp;'()*+,;=:@/".
-</p>
+Allowed characters in a path. Includes "!$&amp;'()*+,;=:@/".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -88,8 +83,7 @@ Allowed characters in a path. Includes "!$&amp;'()*+,;=:@/".
 <pre class="programlisting">#define G_URI_RESERVED_CHARS_ALLOWED_IN_PATH_ELEMENT G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS ":@"
 </pre>
 <p>
-Allowed characters in path elements. Includes "!$&amp;'()*+,;=:@".
-</p>
+Allowed characters in path elements. Includes "!$&amp;'()*+,;=:@".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -97,8 +91,7 @@ Allowed characters in path elements. Includes "!$&amp;'()*+,;=:@".
 <pre class="programlisting">#define G_URI_RESERVED_CHARS_ALLOWED_IN_USERINFO G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS ":"
 </pre>
 <p>
-Allowed characters in userinfo as defined in RFC 3986. Includes "!$&amp;'()*+,;=:".
-</p>
+Allowed characters in userinfo as defined in RFC 3986. Includes "!$&amp;'()*+,;=:".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -106,8 +99,7 @@ Allowed characters in userinfo as defined in RFC 3986. Includes "!$&amp;'()*+,;=
 <pre class="programlisting">#define G_URI_RESERVED_CHARS_GENERIC_DELIMITERS ":/?#[]@"
 </pre>
 <p>
-Generic delimiters characters as defined in RFC 3986. Includes ":/?#[]@".
-</p>
+Generic delimiters characters as defined in RFC 3986. Includes ":/?#[]@".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -115,8 +107,7 @@ Generic delimiters characters as defined in RFC 3986. Includes ":/?#[]@".
 <pre class="programlisting">#define G_URI_RESERVED_CHARS_SUBCOMPONENT_DELIMITERS "!$&amp;'()*+,;="
 </pre>
 <p>
-Subcomponent delimiter characters as defined in RFC 3986. Includes "!$&amp;'()*+,;=".
-</p>
+Subcomponent delimiter characters as defined in RFC 3986. Includes "!$&amp;'()*+,;=".</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -125,12 +116,19 @@ Subcomponent delimiter characters as defined in RFC 3986. Includes "!$&amp;'()*+
 <p>
 Gets the scheme portion of a URI string. RFC 3986 decodes the scheme as:
 </p>
-<pre class="programlisting">
-URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ] 
-</pre>
+<div class="informalexample">
+  <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td class="listing_lines" align="right"><pre>1</pre></td>
+        <td class="listing_code"><pre class="programlisting"><span class="normal">URI </span><span class="symbol">=</span><span class="normal"> scheme </span><span class="string">":"</span><span class="normal"> hier</span><span class="symbol">-</span><span class="normal">part </span><span class="symbol">[</span><span class="normal"> </span><span class="string">"?"</span><span class="normal"> query </span><span class="symbol">]</span><span class="normal"> </span><span class="symbol">[</span><span class="normal"> </span><span class="string">"#"</span><span class="normal"> fragment </span><span class="symbol">]</span></pre></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 <p>
-Common schemes include "file", "http", "svn+ssh", etc.
-</p>
+Common schemes include "file", "http", "svn+ssh", etc.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -157,16 +155,14 @@ The returned string should be freed when no longer needed.</td>
                                                          <em class="parameter"><code>const <span class="type">char</span> *reserved_chars_allowed</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> allow_utf8</code></em>);</pre>
 <p>
-Escapes a string for use in a URI.
-</p>
+Escapes a string for use in a URI.</p>
 <p>
 Normally all characters that are not "unreserved" (i.e. ASCII alphanumerical
 characters plus dash, dot, underscore and tilde) are escaped.
 But if you specify characters in <em class="parameter"><code>reserved_chars_allowed</code></em> they are not
 escaped. This is useful for the "reserved" characters in the URI
 specification, since those are allowed unescaped in some portions of
-a URI.
-</p>
+a URI.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -203,15 +199,13 @@ freed when no longer needed.</td>
 <pre class="programlisting"><span class="returnvalue">char</span> *              g_uri_unescape_string               (<em class="parameter"><code>const <span class="type">char</span> *escaped_string</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *illegal_characters</code></em>);</pre>
 <p>
-Unescapes a whole escaped string.
-</p>
+Unescapes a whole escaped string.</p>
 <p>
 If any of the characters in <em class="parameter"><code>illegal_characters</code></em> or the character zero appears
 as an escaped character in <em class="parameter"><code>escaped_string</code></em> then that is an error and <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 will be returned. This is useful it you want to avoid for instance having a
 slash being expanded in an escaped path element, which might confuse pathname
-handling.
-</p>
+handling.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -244,15 +238,13 @@ should be freed when no longer needed.</td>
                                                          <em class="parameter"><code>const <span class="type">char</span> *escaped_string_end</code></em>,
                                                          <em class="parameter"><code>const <span class="type">char</span> *illegal_characters</code></em>);</pre>
 <p>
-Unescapes a segment of an escaped string.
-</p>
+Unescapes a segment of an escaped string.</p>
 <p>
 If any of the characters in <em class="parameter"><code>illegal_characters</code></em> or the character zero appears
 as an escaped character in <em class="parameter"><code>escaped_string</code></em> then that is an error and <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>
 will be returned. This is useful it you want to avoid for instance having a
 slash being expanded in an escaped path element, which might confuse pathname
-handling.
-</p>
+handling.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -292,8 +284,7 @@ will return <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NU
 <p>
 Splits an URI list conforming to the text/uri-list
 mime type defined in RFC 2483 into individual URIs,
-discarding any comments. The URIs are not validated.
-</p>
+discarding any comments. The URIs are not validated.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -323,8 +314,7 @@ with <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title=
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Converts an escaped ASCII-encoded URI to a local filename in the
-encoding used for filenames.
-</p>
+encoding used for filenames.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -364,8 +354,7 @@ the resulting filename, or <a class="link" href="glib-Standard-Macros.html#NULL:
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Converts an absolute filename to an escaped ASCII-encoded URI, with the path
-component following Section 3.3. of RFC 2396.
-</p>
+component following Section 3.3. of RFC 2396.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -400,6 +389,6 @@ URI, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL">
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

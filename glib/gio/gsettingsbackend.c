@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Ryan Lortie <desrt@desrt.ca>
  *          Matthias Clasen <mclasen@redhat.com>
@@ -77,13 +75,11 @@ static gboolean g_settings_has_backend;
  * g_settings_backend_create_tree() is a convenience function to create
  * suitable trees.
  *
- * <note><para>
- * The #GSettingsBackend API is exported to allow third-party
+ * The GSettingsBackend API is exported to allow third-party
  * implementations, but does not carry the same stability guarantees
  * as the public GIO API. For this reason, you have to define the
- * C preprocessor symbol #G_SETTINGS_ENABLE_BACKEND before including
+ * C preprocessor symbol %G_SETTINGS_ENABLE_BACKEND before including
  * <filename>gio/gsettingsbackend.h</filename>
- * </para></note>
  **/
 
 static gboolean

@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -47,13 +45,13 @@
  * g_value_unset() as the clear function using g_array_set_clear_func(),
  * for instance, the following code:
  *
- * |[
+ * |[<!-- language="C" --> 
  *   GValueArray *array = g_value_array_new (10);
  * ]|
  *
  * can be replaced by:
  *
- * |[
+ * |[<!-- language="C" --> 
  *   GArray *array = g_array_sized_new (FALSE, TRUE, sizeof (GValue), 10);
  *   g_array_set_clear_func (array, (GDestroyNotify) g_value_unset);
  * ]|
@@ -297,8 +295,7 @@ g_value_array_insert (GValueArray  *value_array,
  * g_value_array_remove:
  * @value_array: #GValueArray to remove an element from
  * @index_: position of value to remove, which must be less than
- *          <code>value_array-><link
- *          linkend="GValueArray.n-values">n_values</link></code>
+ *     @value_array->n_values
  *
  * Remove the value at position @index_ from @value_array.
  *

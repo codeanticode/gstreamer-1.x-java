@@ -14,8 +14,7 @@
  *
  * You should have received a copy of the GNU Lesser General Public
  * License along with GLib; see the file COPYING.LIB.  If not,
- * write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- *   Boston, MA 02111-1307, USA.
+ * see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -290,7 +289,7 @@ g_mkdir_with_parents (const gchar *pathname,
  * For example, you might think you could use %G_FILE_TEST_IS_SYMLINK
  * to know whether it is safe to write to a file without being
  * tricked into writing into a different location. It doesn't work!
- * |[
+ * |[<!-- language="C" -->
  * /&ast; DON'T DO THIS &ast;/
  *  if (!g_file_test (filename, G_FILE_TEST_IS_SYMLINK)) 
  *    {
@@ -1134,24 +1133,19 @@ write_to_temp_file (const gchar  *contents,
  *
  * This write is atomic in the sense that it is first written to a temporary
  * file which is then renamed to the final name. Notes:
- * <itemizedlist>
- * <listitem>
- *    On Unix, if @filename already exists hard links to @filename will break.
- *    Also since the file is recreated, existing permissions, access control
- *    lists, metadata etc. may be lost. If @filename is a symbolic link,
- *    the link itself will be replaced, not the linked file.
- * </listitem>
- * <listitem>
- *   On Windows renaming a file will not remove an existing file with the
+ *
+ * - On UNIX, if @filename already exists hard links to @filename will break.
+ *   Also since the file is recreated, existing permissions, access control
+ *   lists, metadata etc. may be lost. If @filename is a symbolic link,
+ *   the link itself will be replaced, not the linked file.
+ *
+ * - On Windows renaming a file will not remove an existing file with the
  *   new name, so on Windows there is a race condition between the existing
  *   file being removed and the temporary file being renamed.
- * </listitem>
- * <listitem>
- *   On Windows there is no way to remove a file that is open to some
+ *
+ * - On Windows there is no way to remove a file that is open to some
  *   process, or mapped into memory. Thus, this function will fail if
  *   @filename already exists and is open.
- * </listitem>
- * </itemizedlist>
  *
  * If the call was successful, it returns %TRUE. If the call was not successful,
  * it returns %FALSE and sets @error. The error domain is #G_FILE_ERROR.
@@ -1163,7 +1157,7 @@ write_to_temp_file (const gchar  *contents,
  * Return value: %TRUE on success, %FALSE if an error occurred
  *
  * Since: 2.8
- **/
+ */
 gboolean
 g_file_set_contents (const gchar  *filename,
 		     const gchar  *contents,

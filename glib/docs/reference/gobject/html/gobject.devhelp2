@@ -622,7 +622,7 @@
     <keyword type="macro" name="G_PARAM_SPEC_VALUE_TYPE()" link="gobject-GParamSpec.html#G-PARAM-SPEC-VALUE-TYPE:CAPS"/>
     <keyword type="struct" name="struct GParamSpec" link="gobject-GParamSpec.html#GParamSpec"/>
     <keyword type="struct" name="struct GParamSpecClass" link="gobject-GParamSpec.html#GParamSpecClass"/>
-    <keyword type="enum" name="enum GParamFlags" link="gobject-GParamSpec.html#GParamFlags"/>
+    <keyword type="enum" name="enum GParamFlags" link="gobject-GParamSpec.html#GParamFlags" deprecated=""/>
     <keyword type="macro" name="G_PARAM_READWRITE" link="gobject-GParamSpec.html#G-PARAM-READWRITE:CAPS"/>
     <keyword type="macro" name="G_PARAM_STATIC_STRINGS" link="gobject-GParamSpec.html#G-PARAM-STATIC-STRINGS:CAPS"/>
     <keyword type="macro" name="G_PARAM_MASK" link="gobject-GParamSpec.html#G-PARAM-MASK:CAPS"/>
@@ -666,7 +666,7 @@
     <keyword type="typedef" name="GSignalCMarshaller" link="gobject-Signals.html#GSignalCMarshaller"/>
     <keyword type="typedef" name="GSignalCVaMarshaller" link="gobject-Signals.html#GSignalCVaMarshaller"/>
     <keyword type="function" name="GSignalEmissionHook ()" link="gobject-Signals.html#GSignalEmissionHook"/>
-    <keyword type="enum" name="enum GSignalFlags" link="gobject-Signals.html#GSignalFlags"/>
+    <keyword type="enum" name="enum GSignalFlags" link="gobject-Signals.html#GSignalFlags" deprecated=""/>
     <keyword type="enum" name="enum GSignalMatchType" link="gobject-Signals.html#GSignalMatchType"/>
     <keyword type="struct" name="struct GSignalQuery" link="gobject-Signals.html#GSignalQuery"/>
     <keyword type="macro" name="G_SIGNAL_TYPE_STATIC_SCOPE" link="gobject-Signals.html#G-SIGNAL-TYPE-STATIC-SCOPE:CAPS"/>

@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -43,7 +41,7 @@ struct _GFileEnumeratorPrivate {
  * @short_description: Enumerated Files Routines
  * @include: gio/gio.h
  * 
- * #GFileEnumerator allows you to operate on a set of #GFile<!-- -->s, 
+ * #GFileEnumerator allows you to operate on a set of #GFiles, 
  * returning a #GFileInfo structure for each file enumerated (e.g. 
  * g_file_enumerate_children() will return a #GFileEnumerator for each 
  * of the children within a directory).
@@ -51,7 +49,7 @@ struct _GFileEnumeratorPrivate {
  * To get the next file's information from a #GFileEnumerator, use 
  * g_file_enumerator_next_file() or its asynchronous version, 
  * g_file_enumerator_next_files_async(). Note that the asynchronous 
- * version will return a list of #GFileInfo<!---->s, whereas the 
+ * version will return a list of #GFileInfos, whereas the 
  * synchronous will only return the next file in the enumerator.
  *
  * The ordering of returned files is unspecified for non-Unix
@@ -605,7 +603,7 @@ g_file_enumerator_get_container (GFileEnumerator *enumerator)
  * inside loops with g_file_enumerator_next_file().
  *
  * This is a convenience method that's equivalent to:
- * |[
+ * |[<!-- language="C" -->
  *   gchar *name = g_file_info_get_name (info);
  *   GFile *child = g_file_get_child (g_file_enumerator_get_container (enumr),
  *                                    name);

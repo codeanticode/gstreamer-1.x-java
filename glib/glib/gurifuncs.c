@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -167,9 +165,9 @@ g_uri_unescape_string (const char *escaped_string,
  * @uri: a valid URI.
  * 
  * Gets the scheme portion of a URI string. RFC 3986 decodes the scheme as:
- * <programlisting>
+ * |[
  * URI = scheme ":" hier-part [ "?" query ] [ "#" fragment ] 
- * </programlisting>
+ * ]|
  * Common schemes include "file", "http", "svn+ssh", etc.
  * 
  * Returns: The "Scheme" component of the URI, or %NULL on error. 

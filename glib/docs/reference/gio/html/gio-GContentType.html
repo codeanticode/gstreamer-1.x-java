@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GContentType</title>
+<title>GIO Reference Manual: GContentType</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="types.html" title="File types and applications">
 <link rel="prev" href="types.html" title="File types and applications">
 <link rel="next" href="GAppInfo.html" title="GAppInfo">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="types.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="types.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GAppInfo.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-GContentType.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-GContentType.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="types.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="types.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GAppInfo.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-GContentType"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -68,8 +65,7 @@ A content type is a platform specific string that defines the type
 of a file. On UNIX it is a <a class="ulink" href="http://www.wikipedia.org/wiki/Internet_media_type" target="_top">mime type</a> like "text/plain" or "image/png".
 On Win32 it is an extension string like ".doc", ".txt" or a perceived
 string like "audio". Such strings can be looked up in the registry at
-HKEY_CLASSES_ROOT.
-</p>
+HKEY_CLASSES_ROOT.</p>
 </div>
 <div class="refsect1">
 <a name="gio-GContentType.details"></a><h2>Details</h2>
@@ -78,8 +74,7 @@ HKEY_CLASSES_ROOT.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_content_type_equals               (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type1</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type2</code></em>);</pre>
 <p>
-Compares two content types for equality.
-</p>
+Compares two content types for equality.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -109,8 +104,7 @@ Compares two content types for equality.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_content_type_is_a                 (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *supertype</code></em>);</pre>
 <p>
-Determines if <em class="parameter"><code>type</code></em> is a subset of <em class="parameter"><code>supertype</code></em>.
-</p>
+Determines if <em class="parameter"><code>type</code></em> is a subset of <em class="parameter"><code>supertype</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -141,8 +135,7 @@ Determines if <em class="parameter"><code>type</code></em> is a subset of <em cl
 <p>
 Checks if the content type is the generic "unknown" type.
 On UNIX this is the "application/octet-stream" mimetype,
-while on win32 it is "*".
-</p>
+while on win32 it is "*".</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -166,8 +159,7 @@ while on win32 it is "*".
 <a name="g-content-type-get-description"></a><h3>g_content_type_get_description ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_content_type_get_description      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
 <p>
-Gets the human readable description of the content type.
-</p>
+Gets the human readable description of the content type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -192,8 +184,7 @@ returned string with <a href="http://library.gnome.org/devel/glib/unstable/glib-
 <a name="g-content-type-get-mime-type"></a><h3>g_content_type_get_mime_type ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_content_type_get_mime_type        (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
 <p>
-Gets the mime type for the content type, if one is registered.
-</p>
+Gets the mime type for the content type, if one is registered.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -218,8 +209,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 <a name="g-content-type-get-icon"></a><h3>g_content_type_get_icon ()</h3>
 <pre class="programlisting"><a class="link" href="GIcon.html" title="GIcon"><span class="returnvalue">GIcon</span></a> *             g_content_type_get_icon             (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
 <p>
-Gets the icon for a content type.
-</p>
+Gets the icon for a content type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -245,8 +235,7 @@ object with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The
 <a name="g-content-type-get-symbolic-icon"></a><h3>g_content_type_get_symbolic_icon ()</h3>
 <pre class="programlisting"><a class="link" href="GIcon.html" title="GIcon"><span class="returnvalue">GIcon</span></a> *             g_content_type_get_symbolic_icon    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
 <p>
-Gets the symbolic icon for a content type.
-</p>
+Gets the symbolic icon for a content type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -273,12 +262,10 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_content_type_get_generic_icon_name
                                                         (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
 <p>
-Gets the generic icon name for a content type.
-</p>
+Gets the generic icon name for a content type.</p>
 <p>
 See the <a class="ulink" href="http://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec" target="_top">shared-mime-info</a>
-specification for more on the generic icon name.
-</p>
+specification for more on the generic icon name.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -305,8 +292,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_content_type_can_be_executable    (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *type</code></em>);</pre>
 <p>
 Checks if a content type can be executable. Note that for instance
-things like text files can be executables (i.e. scripts and batch files).
-</p>
+things like text files can be executables (i.e. scripts and batch files).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -331,8 +317,7 @@ can be executable, <a href="http://library.gnome.org/devel/glib/unstable/glib-St
 <a name="g-content-type-from-mime-type"></a><h3>g_content_type_from_mime_type ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *             g_content_type_from_mime_type       (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *mime_type</code></em>);</pre>
 <p>
-Tries to find a content type based on the mime type name.
-</p>
+Tries to find a content type based on the mime type name.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -364,8 +349,7 @@ or <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.ht
 Guesses the content type based on example data. If the function is
 uncertain, <em class="parameter"><code>result_uncertain</code></em> will be set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#TRUE:CAPS"><code class="literal">TRUE</code></a>. Either <em class="parameter"><code>filename</code></em>
 or <em class="parameter"><code>data</code></em> may be <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, in which case the guess will be based solely
-on the other argument.
-</p>
+on the other argument.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -409,18 +393,15 @@ given data. Free with <a href="http://library.gnome.org/devel/glib/unstable/glib
 <p>
 Tries to guess the type of the tree with root <em class="parameter"><code>root</code></em>, by
 looking at the files it contains. The result is an array
-of content types, with the best guess coming first.
-</p>
+of content types, with the best guess coming first.</p>
 <p>
 The types returned all have the form x-content/foo, e.g.
 x-content/audio-cdda (for audio CDs) or x-content/image-dcf
 (for a camera memory card). See the <a class="ulink" href="http://www.freedesktop.org/wiki/Specifications/shared-mime-info-spec" target="_top">shared-mime-info</a>
-specification for more on x-content types.
-</p>
+specification for more on x-content types.</p>
 <p>
 This function is useful in the implementation of
-<a class="link" href="GMount.html#g-mount-guess-content-type" title="g_mount_guess_content_type ()"><code class="function">g_mount_guess_content_type()</code></a>.
-</p>
+<a class="link" href="GMount.html#g-mount-guess-content-type" title="g_mount_guess_content_type ()"><code class="function">g_mount_guess_content_type()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -448,12 +429,7 @@ array of zero or more content types. Free with <a href="http://library.gnome.org
 <p>
 Gets a list of strings containing all the registered content types
 known to the system. The list and its data should be freed using
-</p>
-<pre class="programlisting">
-g_list_free_full (list, g_free);
-</pre>
-<p>
-</p>
+g_list_free_full (list, g_free).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -461,8 +437,8 @@ g_list_free_full (list, g_free);
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>
-<a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="type">GList</span></a> of the registered content types. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+<td>list of the registered
+content types. <span class="annotation">[<acronym title="Generics and defining elements of containers and arrays."><span class="acronym">element-type</span></acronym> utf8][<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
 </td>
 </tr></tbody>
 </table></div>
@@ -471,6 +447,6 @@ g_list_free_full (list, g_free);
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

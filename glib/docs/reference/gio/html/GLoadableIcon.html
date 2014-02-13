@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GLoadableIcon</title>
+<title>GIO Reference Manual: GLoadableIcon</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="icons.html" title="Icons">
 <link rel="prev" href="gio-GBytesIcon.html" title="GBytesIcon">
 <link rel="next" href="GThemedIcon.html" title="GThemedIcon">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gio-GBytesIcon.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="icons.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GThemedIcon.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GLoadableIcon.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GLoadableIcon.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GLoadableIcon.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GLoadableIcon.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="icons.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gio-GBytesIcon.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GThemedIcon.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GLoadableIcon"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -87,8 +84,7 @@ GLoadableIcon is implemented by
 <a name="GLoadableIcon.description"></a><h2>Description</h2>
 <p>
 Extends the <a class="link" href="GIcon.html" title="GIcon"><span class="type">GIcon</span></a> interface and adds the ability to 
-load icons from streams.
-</p>
+load icons from streams.</p>
 </div>
 <div class="refsect1">
 <a name="GLoadableIcon.details"></a><h2>Details</h2>
@@ -97,8 +93,7 @@ load icons from streams.
 <pre class="programlisting">typedef struct _GLoadableIcon GLoadableIcon;</pre>
 <p>
 Generic type for all kinds of icons that can be loaded
-as a stream.
-</p>
+as a stream.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -125,8 +120,7 @@ as a stream.
 };
 </pre>
 <p>
-Interface for icons that can be loaded as a stream.
-</p>
+Interface for icons that can be loaded as a stream.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -162,8 +156,7 @@ Interface for icons that can be loaded as a stream.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Loads a loadable icon. For the asynchronous version of this function, 
-see <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-async" title="g_loadable_icon_load_async ()"><code class="function">g_loadable_icon_load_async()</code></a>.
-</p>
+see <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-async" title="g_loadable_icon_load_async ()"><code class="function">g_loadable_icon_load_async()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -213,8 +206,7 @@ ignore.</td>
 <p>
 Loads an icon asynchronously. To finish this function, see 
 <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-finish" title="g_loadable_icon_load_finish ()"><code class="function">g_loadable_icon_load_finish()</code></a>. For the synchronous, blocking 
-version of this function, see <a class="link" href="GLoadableIcon.html#g-loadable-icon-load" title="g_loadable_icon_load ()"><code class="function">g_loadable_icon_load()</code></a>.
-</p>
+version of this function, see <a class="link" href="GLoadableIcon.html#g-loadable-icon-load" title="g_loadable_icon_load ()"><code class="function">g_loadable_icon_load()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -256,8 +248,7 @@ request is satisfied. <span class="annotation">[<acronym title="The callback is 
                                                          <em class="parameter"><code><span class="type">char</span> **type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Finishes an asynchronous icon load started in <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-async" title="g_loadable_icon_load_async ()"><code class="function">g_loadable_icon_load_async()</code></a>.
-</p>
+Finishes an asynchronous icon load started in <a class="link" href="GLoadableIcon.html#g-loadable-icon-load-async" title="g_loadable_icon_load_async ()"><code class="function">g_loadable_icon_load_async()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -299,6 +290,6 @@ ignore.</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

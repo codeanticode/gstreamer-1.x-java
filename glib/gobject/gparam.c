@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -412,7 +410,7 @@ is_canonical (const gchar *key)
  * efficient and in fact required when using property names as detail
  * strings for signals.
  *
- * Beyond the name, #GParamSpec<!-- -->s have two more descriptive
+ * Beyond the name, #GParamSpecs have two more descriptive
  * strings associated with them, the @nick, which should be suitable
  * for use as a label for the property in a property editor, and the
  * @blurb, which should be a somewhat longer description, suitable for
@@ -859,7 +857,7 @@ value_param_lcopy_value (const GValue *value,
 /**
  * GParamSpecPool:
  *
- * A #GParamSpecPool maintains a collection of #GParamSpec<!-- -->s which can be
+ * A #GParamSpecPool maintains a collection of #GParamSpecs which can be
  * quickly accessed by owner and name. The implementation of the #GObject property
  * system uses such a pool to store the #GParamSpecs of the properties all object
  * types.
@@ -1137,12 +1135,12 @@ pool_list (gpointer key,
  * @pool: a #GParamSpecPool
  * @owner_type: the owner to look for
  *
- * Gets an #GList of all #GParamSpec<!-- -->s owned by @owner_type in
+ * Gets an #GList of all #GParamSpecs owned by @owner_type in
  * the pool.
  *
  * Returns: (transfer container) (element-type GObject.ParamSpec): a
- *          #GList of all #GParamSpec<!-- -->s owned by @owner_type in
- *          the pool#GParamSpec<!-- -->s.
+ *          #GList of all #GParamSpecs owned by @owner_type in
+ *          the pool#GParamSpecs.
  */
 GList*
 g_param_spec_pool_list_owned (GParamSpecPool *pool,
@@ -1279,7 +1277,7 @@ pool_depth_list_for_interface (gpointer key,
  * @owner_type: the owner to look for
  * @n_pspecs_p: (out): return location for the length of the returned array
  *
- * Gets an array of all #GParamSpec<!-- -->s owned by @owner_type in
+ * Gets an array of all #GParamSpecs owned by @owner_type in
  * the pool.
  *
  * Returns: (array length=n_pspecs_p) (transfer container): a newly

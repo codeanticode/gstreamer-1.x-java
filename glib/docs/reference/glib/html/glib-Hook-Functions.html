@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Hook Functions</title>
+<title>GLib Reference Manual: Hook Functions</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Random-Numbers.html" title="Random Numbers">
 <link rel="next" href="glib-Miscellaneous-Utility-Functions.html" title="Miscellaneous Utility Functions">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Random-Numbers.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Miscellaneous-Utility-Functions.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Hook-Functions.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Hook-Functions.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Random-Numbers.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Miscellaneous-Utility-Functions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Hook-Functions"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -134,8 +131,7 @@ enum                <a class="link" href="glib-Hook-Functions.html#GHookFlagMask
 <p>
 The <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>, <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> and their related functions provide support for
 lists of hook functions. Functions can be added and removed from the lists,
-and the list of hook functions can be invoked.
-</p>
+and the list of hook functions can be invoked.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Hook-Functions.details"></a><h2>Details</h2>
@@ -152,9 +148,7 @@ and the list of hook functions can be invoked.
 };
 </pre>
 <p>
-The <span class="structname">GHookList</span> struct represents a
-list of hook functions.
-</p>
+The <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> struct represents a list of hook functions.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -200,8 +194,7 @@ The default behaviour is to call the hooks <em class="parameter"><code>destroy</
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>);</pre>
 <p>
 Defines the type of function to be called when a hook in a
-list of hooks gets finalized.
-</p>
+list of hooks gets finalized.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -235,9 +228,7 @@ list of hooks gets finalized.
 };
 </pre>
 <p>
-The <span class="structname">GHook</span> struct represents a single hook
-function in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+The <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> struct represents a single hook function in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -289,8 +280,7 @@ this member of the hook that is being finalized</td>
 <pre class="programlisting"><span class="returnvalue">void</span>                (*GHookFunc)                        (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
 Defines the type of a hook function that can be invoked
-by <a class="link" href="glib-Hook-Functions.html#g-hook-list-invoke" title="g_hook_list_invoke ()"><code class="function">g_hook_list_invoke()</code></a>.
-</p>
+by <a class="link" href="glib-Hook-Functions.html#g-hook-list-invoke" title="g_hook_list_invoke ()"><code class="function">g_hook_list_invoke()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -308,8 +298,7 @@ by <a class="link" href="glib-Hook-Functions.html#g-hook-list-invoke" title="g_h
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            (*GHookCheckFunc)                   (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
 Defines the type of a hook function that can be invoked
-by <a class="link" href="glib-Hook-Functions.html#g-hook-list-invoke-check" title="g_hook_list_invoke_check ()"><code class="function">g_hook_list_invoke_check()</code></a>.
-</p>
+by <a class="link" href="glib-Hook-Functions.html#g-hook-list-invoke-check" title="g_hook_list_invoke_check ()"><code class="function">g_hook_list_invoke_check()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -335,8 +324,7 @@ by <a class="link" href="glib-Hook-Functions.html#g-hook-list-invoke-check" titl
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> hook_size</code></em>);</pre>
 <p>
 Initializes a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-This must be called before the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> is used.
-</p>
+This must be called before the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> is used.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -363,8 +351,7 @@ typically <code class="literal">sizeof (GHook)</code>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_hook_list_invoke                  (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> may_recurse</code></em>);</pre>
 <p>
-Calls all of the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> functions in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+Calls all of the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> functions in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -393,8 +380,7 @@ these are skipped</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> may_recurse</code></em>);</pre>
 <p>
 Calls all of the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> functions in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-Any function which returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> is removed from the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+Any function which returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> is removed from the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -424,8 +410,7 @@ these are skipped</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookMarshaller" title="GHookMarshaller ()"><span class="type">GHookMarshaller</span></a> marshaller</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> marshal_data</code></em>);</pre>
 <p>
-Calls a function on each valid <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.
-</p>
+Calls a function on each valid <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -463,8 +448,7 @@ these are skipped</td>
 <pre class="programlisting"><span class="returnvalue">void</span>                (*GHookMarshaller)                  (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> marshal_data</code></em>);</pre>
 <p>
-Defines the type of function used by <a class="link" href="glib-Hook-Functions.html#g-hook-list-marshal" title="g_hook_list_marshal ()"><code class="function">g_hook_list_marshal()</code></a>.
-</p>
+Defines the type of function used by <a class="link" href="glib-Hook-Functions.html#g-hook-list-marshal" title="g_hook_list_marshal ()"><code class="function">g_hook_list_marshal()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -492,8 +476,7 @@ Defines the type of function used by <a class="link" href="glib-Hook-Functions.h
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> marshal_data</code></em>);</pre>
 <p>
 Calls a function on each valid <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> and destroys it if the
-function returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>.
-</p>
+function returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -531,8 +514,7 @@ these are skipped</td>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            (*GHookCheckMarshaller)             (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> marshal_data</code></em>);</pre>
 <p>
-Defines the type of function used by <a class="link" href="glib-Hook-Functions.html#g-hook-list-marshal-check" title="g_hook_list_marshal_check ()"><code class="function">g_hook_list_marshal_check()</code></a>.
-</p>
+Defines the type of function used by <a class="link" href="glib-Hook-Functions.html#g-hook-list-marshal-check" title="g_hook_list_marshal_check ()"><code class="function">g_hook_list_marshal_check()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -561,8 +543,7 @@ Defines the type of function used by <a class="link" href="glib-Hook-Functions.h
 <a name="g-hook-list-clear"></a><h3>g_hook_list_clear ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_hook_list_clear                   (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>);</pre>
 <p>
-Removes all the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> elements from a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+Removes all the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> elements from a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -580,8 +561,7 @@ Removes all the <a class="link" href="glib-Hook-Functions.html#GHook" title="str
 <a name="g-hook-alloc"></a><h3>g_hook_alloc ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="returnvalue">GHook</span></a> *             g_hook_alloc                        (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>);</pre>
 <p>
-Allocates space for a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> and initializes it.
-</p>
+Allocates space for a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> and initializes it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -606,8 +586,7 @@ Allocates space for a <a class="link" href="glib-Hook-Functions.html#GHook" titl
 <a name="g-hook-append"></a><h3>g_hook_append()</h3>
 <pre class="programlisting">#define             g_hook_append( hook_list, hook )</pre>
 <p>
-Appends a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> onto the end of a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+Appends a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> onto the end of a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -633,8 +612,7 @@ Appends a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GH
 <pre class="programlisting"><span class="returnvalue">void</span>                g_hook_prepend                      (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>);</pre>
 <p>
-Prepends a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> on the start of a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+Prepends a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> on the start of a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -661,8 +639,7 @@ Prepends a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct G
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *sibling</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>);</pre>
 <p>
-Inserts a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> into a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>, before a given <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.
-</p>
+Inserts a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> into a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>, before a given <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -692,8 +669,7 @@ Inserts a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GH
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookCompareFunc" title="GHookCompareFunc ()"><span class="type">GHookCompareFunc</span></a> func</code></em>);</pre>
 <p>
-Inserts a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> into a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>, sorted by the given function.
-</p>
+Inserts a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> into a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>, sorted by the given function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -723,8 +699,7 @@ Inserts a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GH
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *sibling</code></em>);</pre>
 <p>
 Defines the type of function used to compare <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> elements in
-<a class="link" href="glib-Hook-Functions.html#g-hook-insert-sorted" title="g_hook_insert_sorted ()"><code class="function">g_hook_insert_sorted()</code></a>.
-</p>
+<a class="link" href="glib-Hook-Functions.html#g-hook-insert-sorted" title="g_hook_insert_sorted ()"><code class="function">g_hook_insert_sorted()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -755,8 +730,7 @@ Defines the type of function used to compare <a class="link" href="glib-Hook-Fun
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *sibling</code></em>);</pre>
 <p>
 Compares the ids of two <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> elements, returning a negative value
-if the second id is greater than the first.
-</p>
+if the second id is greater than the first.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -787,8 +761,7 @@ if the second id is greater than the first.
 <pre class="programlisting"><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="returnvalue">GHook</span></a> *             g_hook_get                          (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> hook_id</code></em>);</pre>
 <p>
-Returns the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> with the given id, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if it is not found.
-</p>
+Returns the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> with the given id, or <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> if it is not found.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -820,8 +793,7 @@ Returns the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct 
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
 Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> using the given function to
-test for a match.
-</p>
+test for a match.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -862,8 +834,7 @@ should be skipped</td>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            (*GHookFindFunc)                    (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
-Defines the type of the function passed to <a class="link" href="glib-Hook-Functions.html#g-hook-find" title="g_hook_find ()"><code class="function">g_hook_find()</code></a>.
-</p>
+Defines the type of the function passed to <a class="link" href="glib-Hook-Functions.html#g-hook-find" title="g_hook_find ()"><code class="function">g_hook_find()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -895,8 +866,7 @@ Defines the type of the function passed to <a class="link" href="glib-Hook-Funct
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> need_valids</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
-Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> with the given data.
-</p>
+Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> with the given data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -933,8 +903,7 @@ should be skipped</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> need_valids</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> func</code></em>);</pre>
 <p>
-Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> with the given function.
-</p>
+Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> with the given function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -972,8 +941,7 @@ should be skipped</td>
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> func</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>);</pre>
 <p>
-Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> with the given function and data.
-</p>
+Finds a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> with the given function and data.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1016,8 +984,7 @@ no matching <a class="link" href="glib-Hook-Functions.html#GHook" title="struct 
 Returns the first <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> which has not been destroyed.
 The reference count for the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is incremented, so you must call
 <a class="link" href="glib-Hook-Functions.html#g-hook-unref" title="g_hook_unref ()"><code class="function">g_hook_unref()</code></a> to restore it when no longer needed. (Or call
-<a class="link" href="glib-Hook-Functions.html#g-hook-next-valid" title="g_hook_next_valid ()"><code class="function">g_hook_next_valid()</code></a> if you are stepping through the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.)
-</p>
+<a class="link" href="glib-Hook-Functions.html#g-hook-next-valid" title="g_hook_next_valid ()"><code class="function">g_hook_next_valid()</code></a> if you are stepping through the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1053,8 +1020,7 @@ these are skipped</td>
 Returns the next <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> which has not been destroyed.
 The reference count for the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is incremented, so you must call
 <a class="link" href="glib-Hook-Functions.html#g-hook-unref" title="g_hook_unref ()"><code class="function">g_hook_unref()</code></a> to restore it when no longer needed. (Or continue to call
-<a class="link" href="glib-Hook-Functions.html#g-hook-next-valid" title="g_hook_next_valid ()"><code class="function">g_hook_next_valid()</code></a> until <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> is returned.)
-</p>
+<a class="link" href="glib-Hook-Functions.html#g-hook-next-valid" title="g_hook_next_valid ()"><code class="function">g_hook_next_valid()</code></a> until <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> is returned.)</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1095,8 +1061,7 @@ these are skipped</td>
 } GHookFlagMask;
 </pre>
 <p>
-Flags used internally in the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> implementation.
-</p>
+Flags used internally in the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> implementation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1128,8 +1093,7 @@ Flags used internally in the <a class="link" href="glib-Hook-Functions.html#GHoo
 <pre class="programlisting">#define G_HOOK_FLAGS(hook)		(G_HOOK (hook)-&gt;flags)
 </pre>
 <p>
-Gets the flags of a hook.
-</p>
+Gets the flags of a hook.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1151,8 +1115,7 @@ Gets the flags of a hook.
 The position of the first bit which is not reserved for internal
 use be the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> implementation, i.e.
 <code class="literal">1 &lt;&lt; G_HOOK_FLAG_USER_SHIFT</code> is the first
-bit which can be used for application-defined flags.
-</p>
+bit which can be used for application-defined flags.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -1160,8 +1123,7 @@ bit which can be used for application-defined flags.
 <pre class="programlisting">#define G_HOOK(hook)			((GHook*) (hook))
 </pre>
 <p>
-Casts a pointer to a <code class="literal">GHook*</code>.
-</p>
+Casts a pointer to a <code class="literal">GHook*</code>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1179,8 +1141,7 @@ Casts a pointer to a <code class="literal">GHook*</code>.
 <pre class="programlisting">#define             G_HOOK_IS_VALID(hook)</pre>
 <p>
 Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is valid, i.e. it is in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>,
-it is active and it has not been destroyed.
-</p>
+it is active and it has not been destroyed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1206,8 +1167,7 @@ it is active and it has not been destroyed.
 <pre class="programlisting">#define             G_HOOK_ACTIVE(hook)</pre>
 <p>
 Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is active, which is normally the case
-until the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is destroyed.
-</p>
+until the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is destroyed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1232,8 +1192,7 @@ until the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GH
 <a name="G-HOOK-IN-CALL:CAPS"></a><h3>G_HOOK_IN_CALL()</h3>
 <pre class="programlisting">#define             G_HOOK_IN_CALL(hook)</pre>
 <p>
-Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> function is currently executing.
-</p>
+Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> function is currently executing.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1258,8 +1217,7 @@ Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE">
 <a name="G-HOOK-IS-UNLINKED:CAPS"></a><h3>G_HOOK_IS_UNLINKED()</h3>
 <pre class="programlisting">#define             G_HOOK_IS_UNLINKED(hook)</pre>
 <p>
-Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is not in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.
-</p>
+Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is not in a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1286,8 +1244,7 @@ Returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE">
 <pre class="programlisting"><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="returnvalue">GHook</span></a> *             g_hook_ref                          (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>);</pre>
 <p>
-Increments the reference count for a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.
-</p>
+Increments the reference count for a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1318,8 +1275,7 @@ Increments the reference count for a <a class="link" href="glib-Hook-Functions.h
 <p>
 Decrements the reference count of a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.
 If the reference count falls to 0, the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> is removed
-from the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> and <a class="link" href="glib-Hook-Functions.html#g-hook-free" title="g_hook_free ()"><code class="function">g_hook_free()</code></a> is called to free it.
-</p>
+from the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> and <a class="link" href="glib-Hook-Functions.html#g-hook-free" title="g_hook_free ()"><code class="function">g_hook_free()</code></a> is called to free it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1345,8 +1301,7 @@ from the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>);</pre>
 <p>
 Calls the <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> <em class="parameter"><code>finalize_hook</code></em> function if it exists,
-and frees the memory allocated for the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.
-</p>
+and frees the memory allocated for the <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1371,8 +1326,7 @@ and frees the memory allocated for the <a class="link" href="glib-Hook-Functions
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_hook_destroy                      (<em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a> *hook_list</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gulong" title="gulong"><span class="type">gulong</span></a> hook_id</code></em>);</pre>
 <p>
-Destroys a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>, given its ID.
-</p>
+Destroys a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a>, given its ID.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1403,8 +1357,7 @@ Destroys a <a class="link" href="glib-Hook-Functions.html#GHook" title="struct G
                                                          <em class="parameter"><code><a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> *hook</code></em>);</pre>
 <p>
 Removes one <a class="link" href="glib-Hook-Functions.html#GHook" title="struct GHook"><span class="type">GHook</span></a> from a <a class="link" href="glib-Hook-Functions.html#GHookList" title="struct GHookList"><span class="type">GHookList</span></a>, marking it
-inactive and calling <a class="link" href="glib-Hook-Functions.html#g-hook-unref" title="g_hook_unref ()"><code class="function">g_hook_unref()</code></a> on it.
-</p>
+inactive and calling <a class="link" href="glib-Hook-Functions.html#g-hook-unref" title="g_hook_unref ()"><code class="function">g_hook_unref()</code></a> on it.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1427,6 +1380,6 @@ inactive and calling <a class="link" href="glib-Hook-Functions.html#g-hook-unref
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

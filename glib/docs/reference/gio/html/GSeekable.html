@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GSeekable</title>
+<title>GIO Reference Manual: GSeekable</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="streaming.html" title="Streaming I/O">
 <link rel="prev" href="streaming.html" title="Streaming I/O">
 <link rel="next" href="GInputStream.html" title="GInputStream">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="streaming.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="streaming.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GInputStream.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GSeekable.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GSeekable.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GSeekable.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GSeekable.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="streaming.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="streaming.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GInputStream.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GSeekable"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -85,23 +82,19 @@ GSeekable is implemented by
 <a name="GSeekable.description"></a><h2>Description</h2>
 <p>
 <a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> is implemented by streams (implementations of
-<a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a> or <a class="link" href="GOutputStream.html" title="GOutputStream"><span class="type">GOutputStream</span></a>) that support seeking.
-</p>
+<a class="link" href="GInputStream.html" title="GInputStream"><span class="type">GInputStream</span></a> or <a class="link" href="GOutputStream.html" title="GOutputStream"><span class="type">GOutputStream</span></a>) that support seeking.</p>
 <p>
 Seekable streams largely fall into two categories: resizable and
-fixed-size.
-</p>
+fixed-size.</p>
 <p>
 <a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> on fixed-sized streams is approximately the same as POSIX
 <code class="function">lseek()</code> on a block device (for example: attmepting to seek past the
 end of the device is an error).  Fixed streams typically cannot be
-truncated.
-</p>
+truncated.</p>
 <p>
 <a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> on resizable streams is approximately the same as POSIX
 <code class="function">lseek()</code> on a normal file.  Seeking past the end and writing data will
-usually cause the stream to resize by introducing zero bytes.
-</p>
+usually cause the stream to resize by introducing zero bytes.</p>
 </div>
 <div class="refsect1">
 <a name="GSeekable.details"></a><h2>Details</h2>
@@ -109,8 +102,7 @@ usually cause the stream to resize by introducing zero bytes.
 <a name="GSeekable-struct"></a><h3>GSeekable</h3>
 <pre class="programlisting">typedef struct _GSeekable GSeekable;</pre>
 <p>
-Seek object for streaming operations.
-</p>
+Seek object for streaming operations.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -139,8 +131,7 @@ Seek object for streaming operations.
 };
 </pre>
 <p>
-Provides an interface for implementing seekable functionality on I/O Streams.
-</p>
+Provides an interface for implementing seekable functionality on I/O Streams.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -179,8 +170,7 @@ Provides an interface for implementing seekable functionality on I/O Streams.
 <a name="g-seekable-tell"></a><h3>g_seekable_tell ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#goffset"><span class="returnvalue">goffset</span></a>             g_seekable_tell                     (<em class="parameter"><code><a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> *seekable</code></em>);</pre>
 <p>
-Tells the current position within the stream.
-</p>
+Tells the current position within the stream.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -203,8 +193,7 @@ Tells the current position within the stream.
 <a name="g-seekable-can-seek"></a><h3>g_seekable_can_seek ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_seekable_can_seek                 (<em class="parameter"><code><a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> *seekable</code></em>);</pre>
 <p>
-Tests if the stream supports the <a class="link" href="GSeekable.html#GSeekableIface" title="struct GSeekableIface"><span class="type">GSeekableIface</span></a>.
-</p>
+Tests if the stream supports the <a class="link" href="GSeekable.html#GSeekableIface" title="struct GSeekableIface"><span class="type">GSeekableIface</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -232,24 +221,20 @@ Tests if the stream supports the <a class="link" href="GSeekable.html#GSeekableI
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Seeks in the stream by the given <em class="parameter"><code>offset</code></em>, modified by <em class="parameter"><code>type</code></em>.
-</p>
+Seeks in the stream by the given <em class="parameter"><code>offset</code></em>, modified by <em class="parameter"><code>type</code></em>.</p>
 <p>
 Attempting to seek past the end of the stream will have different
 results depending on if the stream is fixed-sized or resizable.  If
 the stream is resizable then seeking past the end and then writing
 will result in zeros filling the empty space.  Seeking past the end
 of a resizable stream and reading will result in EOF.  Seeking past
-the end of a fixed-sized stream will fail.
-</p>
+the end of a fixed-sized stream will fail.</p>
 <p>
-Any operation that would result in a negative offset will fail.
-</p>
+Any operation that would result in a negative offset will fail.</p>
 <p>
 If <em class="parameter"><code>cancellable</code></em> is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the operation can be cancelled by
 triggering the cancellable object from another thread. If the operation
-was cancelled, the error <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> will be returned.
-</p>
+was cancelled, the error <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> will be returned.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -293,8 +278,7 @@ appropriately if present.</td>
 <a name="g-seekable-can-truncate"></a><h3>g_seekable_can_truncate ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_seekable_can_truncate             (<em class="parameter"><code><a class="link" href="GSeekable.html" title="GSeekable"><span class="type">GSeekable</span></a> *seekable</code></em>);</pre>
 <p>
-Tests if the stream can be truncated.
-</p>
+Tests if the stream can be truncated.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -321,18 +305,15 @@ Tests if the stream can be truncated.
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Truncates a stream with a given <span class="type">offset</span>. 
-</p>
+Truncates a stream with a given <span class="type">offset</span>. </p>
 <p>
 If <em class="parameter"><code>cancellable</code></em> is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, then the operation can be cancelled by
 triggering the cancellable object from another thread. If the operation
 was cancelled, the error <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> will be returned. If an
 operation was partially finished when the operation was cancelled the
-partial result will be returned, without an error.
-</p>
+partial result will be returned, without an error.</p>
 <p>
-Virtual: truncate_fn
-</p>
+Virtual: truncate_fn</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -375,6 +356,6 @@ appropriately if present.</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

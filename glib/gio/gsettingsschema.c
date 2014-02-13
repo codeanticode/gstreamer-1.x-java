@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -54,7 +52,7 @@
  *
  * Consider the following example:
  *
- * |[
+ * |[<!-- language="C" -->
  * typedef struct
  * {
  *    ...
@@ -111,7 +109,7 @@
  * ships a gschemas.compiled file as part of itself, and then simply do
  * the following:
  *
- * |[
+ * |[<!-- language="C" -->
  * {
  *   GSettings *settings;
  *   gint some_value;
@@ -253,8 +251,8 @@ g_settings_schema_source_unref (GSettingsSchemaSource *source)
  * may be useful to authors of plugin management systems.
  *
  * The directory should contain a file called
- * <filename>gschemas.compiled</filename> as produced by
- * <command>glib-compile-schemas</command>.
+ * <filename>gschemas.compiled</filename> as produced by the
+ * <link linkend="glib-compile-schemas">glib-compile-schemas</link> tool.
  *
  * If @trusted is %TRUE then <filename>gschemas.compiled</filename> is
  * trusted not to be corrupted.  This assumption has a performance

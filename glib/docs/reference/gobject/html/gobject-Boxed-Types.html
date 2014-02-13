@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Boxed Types</title>
+<title>GObject Reference Manual: Boxed Types</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="gobject-Enumeration-and-Flag-Types.html" title="Enumeration and Flag Types">
 <link rel="next" href="gobject-Generic-values.html" title="Generic values">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gobject-Enumeration-and-Flag-Types.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GObject Reference Manual</th>
-<td><a accesskey="n" href="gobject-Generic-values.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gobject-Boxed-Types.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gobject-Boxed-Types.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gobject-Enumeration-and-Flag-Types.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gobject-Generic-values.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gobject-Boxed-Types"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -84,13 +81,11 @@ typedef             <a class="link" href="gobject-Boxed-Types.html#GStrv" title=
 <p>
 GBoxed is a generic wrapper mechanism for arbitrary C structures. The only
 thing the type system needs to know about the structures is how to copy and
-free them, beyond that they are treated as opaque chunks of memory.
-</p>
+free them, beyond that they are treated as opaque chunks of memory.</p>
 <p>
 Boxed types are useful for simple value-holder structures like rectangles or
 points. They can also be used for wrapping structures defined in non-GObject
-based libraries.
-</p>
+based libraries.</p>
 </div>
 <div class="refsect1">
 <a name="gobject-Boxed-Types.details"></a><h2>Details</h2>
@@ -99,8 +94,7 @@ based libraries.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            (*GBoxedCopyFunc)                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
 <p>
 This function is provided by the user and should produce a copy
-of the passed in boxed structure.
-</p>
+of the passed in boxed structure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -124,8 +118,7 @@ of the passed in boxed structure.
 <pre class="programlisting"><span class="returnvalue">void</span>                (*GBoxedFreeFunc)                   (<em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
 <p>
 This function is provided by the user and should free the boxed
-structure passed.
-</p>
+structure passed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -143,8 +136,7 @@ structure passed.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="returnvalue">gpointer</span></a>            g_boxed_copy                        (<em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> boxed_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gconstpointer"><span class="type">gconstpointer</span></a> src_boxed</code></em>);</pre>
 <p>
-Provide a copy of a boxed structure <em class="parameter"><code>src_boxed</code></em> which is of type <em class="parameter"><code>boxed_type</code></em>.
-</p>
+Provide a copy of a boxed structure <em class="parameter"><code>src_boxed</code></em> which is of type <em class="parameter"><code>boxed_type</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -161,7 +153,8 @@ Provide a copy of a boxed structure <em class="parameter"><code>src_boxed</code>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
-<td>The newly created copy of the boxed structure.</td>
+<td>The newly created copy of the boxed structure. <span class="annotation">[<acronym title="Free data after the code is done."><span class="acronym">transfer full</span></acronym>]</span>
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -172,8 +165,7 @@ Provide a copy of a boxed structure <em class="parameter"><code>src_boxed</code>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_boxed_free                        (<em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> boxed_type</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> boxed</code></em>);</pre>
 <p>
-Free the boxed structure <em class="parameter"><code>boxed</code></em> which is of type <em class="parameter"><code>boxed_type</code></em>.
-</p>
+Free the boxed structure <em class="parameter"><code>boxed</code></em> which is of type <em class="parameter"><code>boxed_type</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -200,8 +192,7 @@ Free the boxed structure <em class="parameter"><code>boxed</code></em> which is 
 <p>
 This function creates a new <a class="link" href="gobject-Type-Information.html#G-TYPE-BOXED:CAPS" title="G_TYPE_BOXED"><code class="literal">G_TYPE_BOXED</code></a> derived type id for a new
 boxed type with name <em class="parameter"><code>name</code></em>. Boxed type handling functions have to be
-provided to copy and free opaque boxed structures of this type.
-</p>
+provided to copy and free opaque boxed structures of this type.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -233,8 +224,7 @@ provided to copy and free opaque boxed structures of this type.
 <pre class="programlisting"><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="returnvalue">GType</span></a>               g_pointer_type_register_static      (<em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *name</code></em>);</pre>
 <p>
 Creates a new <a class="link" href="gobject-Type-Information.html#G-TYPE-POINTER:CAPS" title="G_TYPE_POINTER"><code class="literal">G_TYPE_POINTER</code></a> derived type id for a new
-pointer type with name <em class="parameter"><code>name</code></em>.
-</p>
+pointer type with name <em class="parameter"><code>name</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -258,8 +248,7 @@ pointer type with name <em class="parameter"><code>name</code></em>.
 <pre class="programlisting">#define G_TYPE_HASH_TABLE (g_hash_table_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> reference.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Hash-Tables.html#GHashTable"><span class="type">GHashTable</span></a> reference.</p>
 <p class="since">Since 2.10</p>
 </div>
 <hr>
@@ -268,8 +257,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_DATE (g_date_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-Date-and-Time-Functions.html#GDate"><span class="type">GDate</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -277,8 +265,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_GSTRING (g_gstring_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-Strings.html#GString"><span class="type">GString</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -286,13 +273,11 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_STRV (g_strv_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of strings.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>-terminated array of strings.</p>
 <p>
 The code fragments in the following example show the use of a property of
 type <a class="link" href="gobject-Boxed-Types.html#G-TYPE-STRV:CAPS" title="G_TYPE_STRV"><span class="type">G_TYPE_STRV</span></a> with <a class="link" href="gobject-The-Base-Object-Type.html#g-object-class-install-property" title="g_object_class_install_property ()"><code class="function">g_object_class_install_property()</code></a>, <a class="link" href="gobject-The-Base-Object-Type.html#g-object-set" title="g_object_set ()"><code class="function">g_object_set()</code></a>
-and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title="g_object_get ()"><code class="function">g_object_get()</code></a>.
-</p>
+and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title="g_object_get ()"><code class="function">g_object_get()</code></a>.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -334,8 +319,6 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
   </table>
 </div>
 
-<p>
-</p>
 <p class="since">Since 2.4</p>
 </div>
 <hr>
@@ -344,8 +327,7 @@ and <a class="link" href="gobject-The-Base-Object-Type.html#g-object-get" title=
 <pre class="programlisting">#define G_TYPE_REGEX (g_regex_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Perl-compatible-regular-expressions.html#GRegex"><span class="type">GRegex</span></a> reference.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Perl-compatible-regular-expressions.html#GRegex"><span class="type">GRegex</span></a> reference.</p>
 <p class="since">Since 2.14</p>
 </div>
 <hr>
@@ -354,8 +336,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_MATCH_INFO (g_match_info_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Perl-compatible-regular-expressions.html#GMatchInfo"><span class="type">GMatchInfo</span></a> reference.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Perl-compatible-regular-expressions.html#GMatchInfo"><span class="type">GMatchInfo</span></a> reference.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -364,8 +345,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_ARRAY (g_array_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> reference.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> reference.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -374,8 +354,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_BYTE_ARRAY (g_byte_array_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> reference.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Byte-Arrays.html#GByteArray"><span class="type">GByteArray</span></a> reference.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -384,8 +363,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_PTR_ARRAY (g_ptr_array_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> reference.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Pointer-Arrays.html#GPtrArray"><span class="type">GPtrArray</span></a> reference.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -394,8 +372,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_BYTES (g_bytes_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-Byte-Arrays.html#GBytes"><span class="type">GBytes</span></a>.</p>
 <p class="since">Since 2.32</p>
 </div>
 <hr>
@@ -404,8 +381,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_VARIANT_TYPE (g_variant_type_get_gtype ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariantType.html#GVariantType"><span class="type">GVariantType</span></a>.</p>
 <p class="since">Since 2.24</p>
 </div>
 <hr>
@@ -414,8 +390,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_ERROR (g_error_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a>.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -424,8 +399,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_DATE_TIME (g_date_time_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GDateTime.html#GDateTime"><span class="type">GDateTime</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GDateTime.html#GDateTime"><span class="type">GDateTime</span></a>.</p>
 <p class="since">Since 2.26</p>
 </div>
 <hr>
@@ -434,8 +408,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_TIME_ZONE (g_time_zone_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GTimeZone.html#GTimeZone"><span class="type">GTimeZone</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GTimeZone.html#GTimeZone"><span class="type">GTimeZone</span></a>.</p>
 <p class="since">Since 2.34</p>
 </div>
 <hr>
@@ -444,8 +417,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_IO_CHANNEL (g_io_channel_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#GIOChannel"><span class="type">GIOChannel</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -453,8 +425,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_IO_CONDITION (g_io_condition_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#GIOCondition"><span class="type">GIOCondition</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for <a href="http://library.gnome.org/devel/glib/unstable/glib-IO-Channels.html#GIOCondition"><span class="type">GIOCondition</span></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -462,8 +433,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_VARIANT_BUILDER (g_variant_builder_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariantBuilder"><span class="type">GVariantBuilder</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-GVariant.html#GVariantBuilder"><span class="type">GVariantBuilder</span></a>.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -472,8 +442,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_KEY_FILE (g_key_file_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Key-value-file-parser.html#GKeyFile"><span class="type">GKeyFile</span></a>.</p>
 <p class="since">Since 2.32</p>
 </div>
 <hr>
@@ -482,8 +451,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_MAIN_CONTEXT (g_main_context_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainContext"><span class="type">GMainContext</span></a>.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -492,8 +460,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_MAIN_LOOP (g_main_loop_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainLoop"><span class="type">GMainLoop</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GMainLoop"><span class="type">GMainLoop</span></a>.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -502,8 +469,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_MARKUP_PARSE_CONTEXT (g_markup_parse_context_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Simple-XML-Subset-Parser.html#GMarkupParseContext"><span class="type">GMarkupParseContext</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Simple-XML-Subset-Parser.html#GMarkupParseContext"><span class="type">GMarkupParseContext</span></a>.</p>
 <p class="since">Since 2.36</p>
 </div>
 <hr>
@@ -512,8 +478,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_SOURCE (g_source_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GSource"><span class="type">GSource</span></a>.</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -522,8 +487,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_POLLFD (g_pollfd_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GPollFD"><span class="type">GPollFD</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-The-Main-Event-Loop.html#GPollFD"><span class="type">GPollFD</span></a>.</p>
 <p class="since">Since 2.36</p>
 </div>
 <hr>
@@ -532,8 +496,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">#define G_TYPE_THREAD (g_thread_get_type ())
 </pre>
 <p>
-The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Threads.html#GThread"><span class="type">GThread</span></a>.
-</p>
+The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> for a boxed type holding a <a href="http://library.gnome.org/devel/glib/unstable/glib-Threads.html#GThread"><span class="type">GThread</span></a>.</p>
 <p class="since">Since 2.36</p>
 </div>
 <hr>
@@ -542,8 +505,7 @@ The <a class="link" href="gobject-Type-Information.html#GType" title="GType"><sp
 <pre class="programlisting">typedef gchar** GStrv;
 </pre>
 <p>
-A C representable type name for <a class="link" href="gobject-Boxed-Types.html#G-TYPE-STRV:CAPS" title="G_TYPE_STRV"><span class="type">G_TYPE_STRV</span></a>.
-</p>
+A C representable type name for <a class="link" href="gobject-Boxed-Types.html#G-TYPE-STRV:CAPS" title="G_TYPE_STRV"><span class="type">G_TYPE_STRV</span></a>.</p>
 </div>
 </div>
 <div class="refsect1">
@@ -553,6 +515,6 @@ A C representable type name for <a class="link" href="gobject-Boxed-Types.html#G
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

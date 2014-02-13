@@ -15,9 +15,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -664,6 +662,7 @@ get_xattrs_from_fd (int                    fd,
 		g_free (escaped_attr);
 	      
 	      get_one_xattr_from_fd (fd, info, gio_attr, attr);
+	      g_free (gio_attr);
 	    }
 	  
 	  len = strlen (attr) + 1;
@@ -1282,7 +1281,7 @@ get_content_type (const char          *basename,
 static void
 get_thumbnail_attributes (const char     *path,
                           GFileInfo      *info,
-                          const GStatBuf *stat_buf)
+                          const GLocalFileStat *stat_buf)
 {
   GChecksum *checksum;
   char *uri;

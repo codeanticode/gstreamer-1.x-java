@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -797,21 +795,19 @@ g_get_real_name (void)
  * If the path given in <envar>HOME</envar> is non-absolute, does not
  * exist, or is not a directory, the result is undefined.
  *
- * <note><para>
- *   Before version 2.36 this function would ignore the
- *   <envar>HOME</envar> environment variable, taking the value from the
- *   <filename>passwd</filename> database instead.  This was changed to
- *   increase the compatibility of GLib with other programs (and the XDG
- *   basedir specification) and to increase testability of programs
- *   based on GLib (by making it easier to run them from test
- *   frameworks).
- * </para><para>
- *   If your program has a strong requirement for either the new or the
- *   old behaviour (and if you don't wish to increase your GLib
- *   dependency to ensure that the new behaviour is in effect) then you
- *   should either directly check the <envar>HOME</envar> environment
- *   variable yourself or unset it before calling any functions in GLib.
- * </para></note>
+ * Before version 2.36 this function would ignore the
+ * <envar>HOME</envar> environment variable, taking the value from the
+ * <filename>passwd</filename> database instead.  This was changed to
+ * increase the compatibility of GLib with other programs (and the XDG
+ * basedir specification) and to increase testability of programs
+ * based on GLib (by making it easier to run them from test
+ * frameworks).
+ *
+ * If your program has a strong requirement for either the new or the
+ * old behaviour (and if you don't wish to increase your GLib
+ * dependency to ensure that the new behaviour is in effect) then you
+ * should either directly check the <envar>HOME</envar> environment
+ * variable yourself or unset it before calling any functions in GLib.
  *
  * Returns: the current user's home directory
  */
@@ -1004,14 +1000,15 @@ static gchar *g_prgname = NULL;
 /**
  * g_get_prgname:
  *
- * Gets the name of the program. This name should <emphasis>not</emphasis> 
- * be localized, contrast with g_get_application_name().
- * (If you are using GDK or GTK+ the program name is set in gdk_init(), 
+ * Gets the name of the program. This name should not be localized,
+ * in contrast to g_get_application_name().
+ *
+ * If you are using GDK or GTK+ the program name is set in gdk_init(), 
  * which is called by gtk_init(). The program name is found by taking 
- * the last component of <literal>argv[0]</literal>.)
+ * the last component of @argv[0].
  *
  * Returns: the name of the program. The returned string belongs 
- * to GLib and must not be modified or freed.
+ *     to GLib and must not be modified or freed.
  */
 const gchar*
 g_get_prgname (void)
@@ -1052,9 +1049,10 @@ g_get_prgname (void)
  * g_set_prgname:
  * @prgname: the name of the program.
  *
- * Sets the name of the program. This name should <emphasis>not</emphasis> 
- * be localized, contrast with g_set_application_name(). Note that for 
- * thread-safety reasons this function can only be called once.
+ * Sets the name of the program. This name should not be localized,
+ * in contrast to g_set_application_name().
+ *
+ * Note that for thread-safety reasons this function can only be called once.
  */
 void
 g_set_prgname (const gchar *prgname)

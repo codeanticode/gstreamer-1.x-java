@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -79,7 +77,7 @@
  * of an extension point has a name, and a priority. Use
  * g_io_extension_point_implement() to implement an extension point.
  * 
- *  |[
+ *  |[<!-- language="C" -->
  *  GIOExtensionPoint *ep;
  *
  *  /&ast; Register an extension point &ast;/
@@ -87,7 +85,7 @@
  *  g_io_extension_point_set_required_type (ep, MY_TYPE_EXAMPLE);
  *  ]|
  *
- *  |[
+ *  |[<!-- language="C" -->
  *  /&ast; Implement an extension point &ast;/
  *  G_DEFINE_TYPE (MyExampleImpl, my_example_impl, MY_TYPE_EXAMPLE);
  *  g_io_extension_point_implement ("my-extension-point",
@@ -1229,8 +1227,8 @@ lazy_load_modules (GIOExtensionPoint *extension_point)
  * The list is sorted by priority, beginning with the highest priority.
  *
  * Returns: (element-type GIOExtension) (transfer none): a #GList of
- * #GIOExtension<!-- -->s. The list is owned by GIO and should not be
- * modified.
+ *     #GIOExtensions. The list is owned by GIO and should not be
+ *     modified.
  */
 GList *
 g_io_extension_point_get_extensions (GIOExtensionPoint *extension_point)

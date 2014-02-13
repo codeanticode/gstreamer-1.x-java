@@ -906,7 +906,6 @@ g_io_channel_win32_get_fd
 g_io_channel_error_quark
 g_io_watch_funcs
 G_IO_FLAG_IS_WRITEABLE
-g_io_channel_error_quark
 </SECTION>
 
 <SECTION>
@@ -1105,6 +1104,7 @@ GSpawnChildSetupFunc
 g_spawn_async_with_pipes
 g_spawn_async
 g_spawn_sync
+G_SPAWN_EXIT_ERROR
 g_spawn_check_exit_status
 g_spawn_command_line_async
 g_spawn_command_line_sync
@@ -1994,6 +1994,7 @@ g_completion_free
 <FILE>windows</FILE>
 MAXPATHLEN
 
+g_win32_get_command_line
 g_win32_error_message
 g_win32_getlocale
 g_win32_get_package_installation_directory
@@ -2498,7 +2499,6 @@ g_tree_lookup_extended
 g_tree_foreach
 g_tree_traverse
 GTraverseFunc
-GTraverseType
 g_tree_search
 g_tree_remove
 g_tree_steal
@@ -2531,6 +2531,7 @@ g_node_prepend_data
 <SUBSECTION>
 g_node_reverse_children
 g_node_traverse
+GTraverseType
 GTraverseFlags
 GNodeTraverseFunc
 g_node_children_foreach
@@ -2929,6 +2930,9 @@ g_test_get_filename
 g_test_get_dir
 
 g_test_fail
+g_test_skip
+g_test_incomplete
+g_test_failed
 g_test_message
 g_test_bug_base
 g_test_bug

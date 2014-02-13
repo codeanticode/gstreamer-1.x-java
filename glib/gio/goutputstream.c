@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -401,13 +399,12 @@ g_output_stream_vprintf (GOutputStream  *stream,
  * bindings or in other cases where the refcounted nature of #GBytes
  * is helpful over a bare pointer interface.
  *
- * However, note that this function <emphasis>may</emphasis> still
- * perform partial writes, just like g_output_stream_write().  If that
- * occurs, to continue writing, you will need to create a new #GBytes
- * containing just the remaining bytes, using
- * g_bytes_new_from_bytes().  Passing the same #GBytes instance
- * multiple times potentially can result in duplicated data in the
- * output stream.
+ * However, note that this function may still perform partial writes,
+ * just like g_output_stream_write().  If that occurs, to continue
+ * writing, you will need to create a new #GBytes containing just the
+ * remaining bytes, using g_bytes_new_from_bytes(). Passing the same
+ * #GBytes instance multiple times potentially can result in duplicated
+ * data in the output stream.
  *
  * Return value: Number of bytes written, or -1 on error
  **/
@@ -788,11 +785,11 @@ async_ready_write_callback_wrapper (GObject      *source_object,
  * For the synchronous, blocking version of this function, see 
  * g_output_stream_write().
  *
- * <warning><para>No copy of @buffer will be made, so it must stay valid until
- * @callback is called. See g_output_stream_write_bytes_async() for a #GBytes
- * version that will automatically hold a reference to the contents (without
- * copying) for the duration of the call.</para></warning>
- **/
+ * Note that no copy of @buffer will be made, so it must stay valid
+ * until @callback is called. See g_output_stream_write_bytes_async()
+ * for a #GBytes version that will automatically hold a reference to
+ * the contents (without copying) for the duration of the call.
+ */
 void
 g_output_stream_write_async (GOutputStream       *stream,
 			     const void          *buffer,
@@ -899,13 +896,12 @@ write_bytes_callback (GObject      *stream,
  * takes a #GBytes as input.  Due to the refcounted nature of #GBytes,
  * this allows the stream to avoid taking a copy of the data.
  *
- * However, note that this function <emphasis>may</emphasis> still
- * perform partial writes, just like g_output_stream_write_async().
- * If that occurs, to continue writing, you will need to create a new
- * #GBytes containing just the remaining bytes, using
- * g_bytes_new_from_bytes().  Passing the same #GBytes instance
- * multiple times potentially can result in duplicated data in the
- * output stream.
+ * However, note that this function may still perform partial writes,
+ * just like g_output_stream_write_async(). If that occurs, to continue
+ * writing, you will need to create a new #GBytes containing just the
+ * remaining bytes, using g_bytes_new_from_bytes(). Passing the same
+ * #GBytes instance multiple times potentially can result in duplicated
+ * data in the output stream.
  *
  * For the synchronous, blocking version of this function, see
  * g_output_stream_write_bytes().

@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GActionMap</title>
+<title>GIO Reference Manual: GActionMap</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="application.html" title="Application support">
 <link rel="prev" href="GActionGroup.html" title="GActionGroup">
 <link rel="next" href="GSimpleActionGroup.html" title="GSimpleActionGroup">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GActionGroup.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="application.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GSimpleActionGroup.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GActionMap.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GActionMap.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GActionMap.prerequisites" class="shortcut">Prerequisites</a>
                    | 
                   <a href="#GActionMap.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="application.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GActionGroup.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GSimpleActionGroup.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GActionMap"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -85,15 +82,13 @@ GActionMap is implemented by
 <p>
 The GActionMap interface is implemented by <a class="link" href="GActionGroup.html" title="GActionGroup"><span class="type">GActionGroup</span></a>
 implementations that operate by containing a number of
-named <a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a> instances, such as <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.
-</p>
+named <a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a> instances, such as <a class="link" href="GSimpleActionGroup.html" title="GSimpleActionGroup"><span class="type">GSimpleActionGroup</span></a>.</p>
 <p>
 One useful application of this interface is to map the
 names of actions from various action groups to unique,
 prefixed names (e.g. by prepending "app." or "win.").
 This is the motivation for the 'Map' part of the interface
-name.
-</p>
+name.</p>
 </div>
 <div class="refsect1">
 <a name="GActionMap.details"></a><h2>Details</h2>
@@ -116,8 +111,7 @@ name.
 };
 </pre>
 <p>
-The virtual function table for <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a>.
-</p>
+The virtual function table for <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -153,11 +147,9 @@ The virtual function table for <a class="link" href="GActionMap.html" title="GAc
 <pre class="programlisting"><a class="link" href="GAction.html" title="GAction"><span class="returnvalue">GAction</span></a> *           g_action_map_lookup_action          (<em class="parameter"><code><a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a> *action_map</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
 <p>
-Looks up the action with the name <em class="parameter"><code>action_name</code></em> in <em class="parameter"><code>action_map</code></em>.
-</p>
+Looks up the action with the name <em class="parameter"><code>action_name</code></em> in <em class="parameter"><code>action_map</code></em>.</p>
 <p>
-If no such action exists, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.
-</p>
+If no such action exists, returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -203,18 +195,15 @@ If no such action exists, returns <a href="http://library.gnome.org/devel/glib/u
 </pre>
 <p>
 This struct defines a single action.  It is for use with
-<a class="link" href="GActionMap.html#g-action-map-add-action-entries" title="g_action_map_add_action_entries ()"><code class="function">g_action_map_add_action_entries()</code></a>.
-</p>
+<a class="link" href="GActionMap.html#g-action-map-add-action-entries" title="g_action_map_add_action_entries ()"><code class="function">g_action_map_add_action_entries()</code></a>.</p>
 <p>
 The order of the items in the structure are intended to reflect
 frequency of use.  It is permissible to use an incomplete initialiser
 in order to leave some of the later values as <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>.  All values
 after <em class="parameter"><code>name</code></em> are optional.  Additional optional fields may be added in
-the future.
-</p>
+the future.</p>
 <p>
-See <a class="link" href="GActionMap.html#g-action-map-add-action-entries" title="g_action_map_add_action_entries ()"><code class="function">g_action_map_add_action_entries()</code></a> for an example.
-</p>
+See <a class="link" href="GActionMap.html#g-action-map-add-action-entries" title="g_action_map_add_action_entries ()"><code class="function">g_action_map_add_action_entries()</code></a> for an example.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -260,16 +249,12 @@ of the action</td>
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 A convenience function for creating multiple <a class="link" href="GSimpleAction.html" title="GSimpleAction"><span class="type">GSimpleAction</span></a> instances
-and adding them to a <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a>.
-</p>
+and adding them to a <a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a>.</p>
 <p>
-Each action is constructed as per one <a class="link" href="GActionMap.html#GActionEntry" title="struct GActionEntry"><span class="type">GActionEntry</span></a>.
-</p>
+Each action is constructed as per one <a class="link" href="GActionMap.html#GActionEntry" title="struct GActionEntry"><span class="type">GActionEntry</span></a>.</p>
 <p>
 </p>
-<div class="example">
-<a name="id-1.4.22.5.8.6.6.1"></a><p class="title"><b>Example 25. Using <a class="link" href="GActionMap.html#g-action-map-add-action-entries" title="g_action_map_add_action_entries ()"><code class="function">g_action_map_add_action_entries()</code></a></b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -338,9 +323,6 @@ Each action is constructed as per one <a class="link" href="GActionMap.html#GAct
   </table>
 </div>
 
-</div>
-<p><br class="example-break">
-</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -376,15 +358,12 @@ the first item in an array of <a class="link" href="GActionMap.html#GActionEntry
 <pre class="programlisting"><span class="returnvalue">void</span>                g_action_map_add_action             (<em class="parameter"><code><a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a> *action_map</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GAction.html" title="GAction"><span class="type">GAction</span></a> *action</code></em>);</pre>
 <p>
-Adds an action to the <em class="parameter"><code>action_map</code></em>.
-</p>
+Adds an action to the <em class="parameter"><code>action_map</code></em>.</p>
 <p>
 If the action map already contains an action with the same name
-as <em class="parameter"><code>action</code></em> then the old action is dropped from the action map.
-</p>
+as <em class="parameter"><code>action</code></em> then the old action is dropped from the action map.</p>
 <p>
-The action map takes its own reference on <em class="parameter"><code>action</code></em>.
-</p>
+The action map takes its own reference on <em class="parameter"><code>action</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -411,11 +390,9 @@ The action map takes its own reference on <em class="parameter"><code>action</co
 <pre class="programlisting"><span class="returnvalue">void</span>                g_action_map_remove_action          (<em class="parameter"><code><a class="link" href="GActionMap.html" title="GActionMap"><span class="type">GActionMap</span></a> *action_map</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *action_name</code></em>);</pre>
 <p>
-Removes the named action from the action map.
-</p>
+Removes the named action from the action map.</p>
 <p>
-If no action of this name is in the map then nothing happens.
-</p>
+If no action of this name is in the map then nothing happens.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -439,6 +416,6 @@ If no action of this name is in the map then nothing happens.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

@@ -19,8 +19,7 @@
  *
  * You should have received a copy of the GNU Lesser General Public
  * License along with GLib; see the file COPYING.LIB.  If not,
- * write to the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- *   Boston, MA 02111-1307, USA.
+ * see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -133,20 +132,21 @@
  *
  * This syntax is obviously inspired by the .ini files commonly met
  * on Windows, but there are some important differences:
- * <itemizedlist>
- *   <listitem>.ini files use the ';' character to begin comments,
- *     key files use the '#' character.</listitem>
- *   <listitem>Key files do not allow for ungrouped keys meaning only
- *     comments can precede the first group.</listitem>
- *   <listitem>Key files are always encoded in UTF-8.</listitem>
- *   <listitem>Key and Group names are case-sensitive. For example, a
- *     group called <literal>[GROUP]</literal> is a different from
- *     <literal>[group]</literal>.</listitem>
- *   <listitem>.ini files don't have a strongly typed boolean entry type,
- *     they only have GetProfileInt(). In key files, only
- *     <literal>true</literal> and <literal>false</literal> (in lower case)
- *     are allowed.</listitem>
- *  </itemizedlist>
+ *
+ * - .ini files use the ';' character to begin comments,
+ *   key files use the '#' character.
+ *
+ * - Key files do not allow for ungrouped keys meaning only
+ *   comments can precede the first group.
+ *
+ * - Key files are always encoded in UTF-8.
+ *
+ * - Key and Group names are case-sensitive. For example, a group called
+ *   [GROUP] is a different from [group].
+ *
+ * - .ini files don't have a strongly typed boolean entry type,
+ *    they only have GetProfileInt(). In key files, only
+ *    true and false (in lower case) are allowed.
  *
  * Note that in contrast to the
  * <ulink url="http://freedesktop.org/Standards/desktop-entry-spec">Desktop
@@ -3562,16 +3562,15 @@ g_key_file_has_key_full (GKeyFile     *key_file,
  * Looks whether the key file has the key @key in the group
  * @group_name.
  *
- * <note>This function does not follow the rules for #GError strictly;
+ * Note that this function does not follow the rules for #GError strictly;
  * the return value both carries meaning and signals an error.  To use
  * this function, you must pass a #GError pointer in @error, and check
- * whether it is not %NULL to see if an error occurred.</note>
+ * whether it is not %NULL to see if an error occurred.
  *
  * Language bindings should use g_key_file_get_value() to test whether
  * or not a key exists.
  *
- * Return value: %TRUE if @key is a part of @group_name, %FALSE
- * otherwise.
+ * Return value: %TRUE if @key is a part of @group_name, %FALSE otherwise
  *
  * Since: 2.6
  **/

@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Generic values</title>
+<title>GObject Reference Manual: Generic values</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GObject Reference Manual">
 <link rel="up" href="rn01.html" title="API Reference">
 <link rel="prev" href="gobject-Boxed-Types.html" title="Boxed Types">
 <link rel="next" href="gobject-Standard-Parameter-and-Value-Types.html" title="Parameters and Values">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="gobject-Boxed-Types.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="rn01.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GObject Reference Manual</th>
-<td><a accesskey="n" href="gobject-Standard-Parameter-and-Value-Types.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gobject-Generic-values.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gobject-Generic-values.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="rn01.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="gobject-Boxed-Types.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="gobject-Standard-Parameter-and-Value-Types.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gobject-Generic-values"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -89,12 +86,10 @@ function. A <a class="link" href="gobject-Generic-values.html#GValue" title="GVa
 The basic type operations (such as freeing and copying) are determined
 by the <a class="link" href="gobject-Type-Information.html#GTypeValueTable" title="struct GTypeValueTable"><span class="type">GTypeValueTable</span></a> associated with the type ID stored in the <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.
 Other <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> operations (such as converting values between types) are
-provided by this interface.
-</p>
+provided by this interface.</p>
 <p>
 The code in the example program below demonstrates <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>'s
-features.
-</p>
+features.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -210,8 +205,6 @@ features.
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <div class="refsect1">
 <a name="gobject-Generic-values.details"></a><h2>Details</h2>
@@ -223,8 +216,7 @@ features.
 A <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> must be initialized before it can be used.
 This macro can be used as initializer instead of an explicit
 <code class="literal">{ 0 }</code> when declaring a variable,
-but it cannot be assigned to a variable.
-</p>
+but it cannot be assigned to a variable.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -238,8 +230,6 @@ but it cannot be assigned to a variable.
   </table>
 </div>
 
-<p>
-</p>
 <p class="since">Since 2.30</p>
 </div>
 <hr>
@@ -250,8 +240,7 @@ but it cannot be assigned to a variable.
 <p>
 Checks if <em class="parameter"><code>value</code></em> holds (or contains) a value of <em class="parameter"><code>type</code></em>.
 This macro will also check for <em class="parameter"><code>value</code></em> != <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and issue a
-warning if the check fails.
-</p>
+warning if the check fails.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -280,8 +269,7 @@ warning if the check fails.
 <pre class="programlisting">#define G_VALUE_TYPE(value)		(((GValue*) (value))-&gt;g_type)
 </pre>
 <p>
-Get the type identifier of <em class="parameter"><code>value</code></em>.
-</p>
+Get the type identifier of <em class="parameter"><code>value</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -305,8 +293,7 @@ Get the type identifier of <em class="parameter"><code>value</code></em>.
 <pre class="programlisting">#define G_VALUE_TYPE_NAME(value) (g_type_name (G_VALUE_TYPE (value)))
 </pre>
 <p>
-Gets the type name of <em class="parameter"><code>value</code></em>.
-</p>
+Gets the type name of <em class="parameter"><code>value</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -332,8 +319,7 @@ Gets the type name of <em class="parameter"><code>value</code></em>.
 <p>
 Checks whether the passed in type ID can be used for <a class="link" href="gobject-Generic-values.html#g-value-init" title="g_value_init ()"><code class="function">g_value_init()</code></a>.
 That is, this macro checks whether this type provides an implementation
-of the <a class="link" href="gobject-Type-Information.html#GTypeValueTable" title="struct GTypeValueTable"><span class="type">GTypeValueTable</span></a> functions required for a type to create a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> of.
-</p>
+of the <a class="link" href="gobject-Type-Information.html#GTypeValueTable" title="struct GTypeValueTable"><span class="type">GTypeValueTable</span></a> functions required for a type to create a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> of.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -359,8 +345,7 @@ of the <a class="link" href="gobject-Type-Information.html#GTypeValueTable" titl
 <p>
 Checks if <em class="parameter"><code>type</code></em> is an abstract value type.  An abstract value type introduces
 a value table, but can't be used for <a class="link" href="gobject-Generic-values.html#g-value-init" title="g_value_init ()"><code class="function">g_value_init()</code></a> and is normally used as
-an abstract base type for derived value types.
-</p>
+an abstract base type for derived value types.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -385,8 +370,7 @@ an abstract base type for derived value types.
 <pre class="programlisting">#define G_IS_VALUE(value)		(G_TYPE_CHECK_VALUE (value))
 </pre>
 <p>
-Checks if <em class="parameter"><code>value</code></em> is a valid and initialized <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> structure.
-</p>
+Checks if <em class="parameter"><code>value</code></em> is a valid and initialized <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> structure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -419,8 +403,7 @@ the g_value_*() API. That is, code portions which implement new fundamental
 types.
 <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> users cannot make any assumptions about how data is stored
 within the 2 element <em class="parameter"><code>data</code></em> union, and the <em class="parameter"><code>g_type</code></em> member should
-only be accessed through the <a class="link" href="gobject-Generic-values.html#G-VALUE-TYPE:CAPS" title="G_VALUE_TYPE()"><code class="function">G_VALUE_TYPE()</code></a> macro.
-</p>
+only be accessed through the <a class="link" href="gobject-Generic-values.html#G-VALUE-TYPE:CAPS" title="G_VALUE_TYPE()"><code class="function">G_VALUE_TYPE()</code></a> macro.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -429,22 +412,20 @@ only be accessed through the <a class="link" href="gobject-Generic-values.html#G
 </pre>
 <p>
 The type ID of the "GValue" type which is a boxed type,
-used to pass around pointers to GValues.
-</p>
+used to pass around pointers to GValues.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="G-TYPE-VALUE-ARRAY:CAPS"></a><h3>G_TYPE_VALUE_ARRAY</h3>
 <pre class="programlisting">#define G_TYPE_VALUE_ARRAY (g_value_array_get_type ())
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">G_TYPE_VALUE_ARRAY</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a href="http://library.gnome.org/devel/glib/unstable/glib-Arrays.html#GArray"><span class="type">GArray</span></a> instead of <a class="link" href="gobject-Value-arrays.html#GValueArray" title="struct GValueArray"><span class="type">GValueArray</span></a></p>
 </div>
 <p>
 The type ID of the "GValueArray" type which is a boxed type,
-used to pass around pointers to GValueArrays.
-</p>
+used to pass around pointers to GValueArrays.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -452,8 +433,7 @@ used to pass around pointers to GValueArrays.
 <pre class="programlisting"><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="returnvalue">GValue</span></a> *            g_value_init                        (<em class="parameter"><code><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *value</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> g_type</code></em>);</pre>
 <p>
-Initializes <em class="parameter"><code>value</code></em> with the default value of <em class="parameter"><code>type</code></em>.
-</p>
+Initializes <em class="parameter"><code>value</code></em> with the default value of <em class="parameter"><code>type</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -482,8 +462,7 @@ Initializes <em class="parameter"><code>value</code></em> with the default value
 <pre class="programlisting"><span class="returnvalue">void</span>                g_value_copy                        (<em class="parameter"><code>const <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *src_value</code></em>,
                                                          <em class="parameter"><code><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *dest_value</code></em>);</pre>
 <p>
-Copies the value of <em class="parameter"><code>src_value</code></em> into <em class="parameter"><code>dest_value</code></em>.
-</p>
+Copies the value of <em class="parameter"><code>src_value</code></em> into <em class="parameter"><code>dest_value</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -507,8 +486,7 @@ Copies the value of <em class="parameter"><code>src_value</code></em> into <em c
 <pre class="programlisting"><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="returnvalue">GValue</span></a> *            g_value_reset                       (<em class="parameter"><code><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
 <p>
 Clears the current value in <em class="parameter"><code>value</code></em> and resets it to the default value
-(as if the value had just been initialized).
-</p>
+(as if the value had just been initialized).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -534,8 +512,7 @@ Clears the current value in <em class="parameter"><code>value</code></em> and re
 Clears the current value in <em class="parameter"><code>value</code></em> and "unsets" the type,
 this releases all resources associated with this GValue.
 An unset value is the same as an uninitialized (zero-filled)
-<a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> structure.
-</p>
+<a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> structure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -554,8 +531,7 @@ An unset value is the same as an uninitialized (zero-filled)
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> instance</code></em>);</pre>
 <p>
 Sets <em class="parameter"><code>value</code></em> from an instantiatable type via the
-value_table's <code class="function">collect_value()</code> function.
-</p>
+value_table's <code class="function">collect_value()</code> function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -580,8 +556,7 @@ value_table's <code class="function">collect_value()</code> function.
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_value_fits_pointer                (<em class="parameter"><code>const <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *value</code></em>);</pre>
 <p>
 Determines if <em class="parameter"><code>value</code></em> will fit inside the size of a pointer value.
-This is an internal function introduced mainly for C marshallers.
-</p>
+This is an internal function introduced mainly for C marshallers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -632,8 +607,7 @@ for C marshallers. <span class="annotation">[<acronym title="Don't free data aft
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> dest_type</code></em>);</pre>
 <p>
 Returns whether a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> of type <em class="parameter"><code>src_type</code></em> can be copied into
-a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> of type <em class="parameter"><code>dest_type</code></em>.
-</p>
+a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> of type <em class="parameter"><code>dest_type</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -663,8 +637,9 @@ a <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span
                                                          <em class="parameter"><code><a class="link" href="gobject-Type-Information.html#GType" title="GType"><span class="type">GType</span></a> dest_type</code></em>);</pre>
 <p>
 Check whether <a class="link" href="gobject-Generic-values.html#g-value-transform" title="g_value_transform ()"><code class="function">g_value_transform()</code></a> is able to transform values
-of type <em class="parameter"><code>src_type</code></em> into values of type <em class="parameter"><code>dest_type</code></em>.
-</p>
+of type <em class="parameter"><code>src_type</code></em> into values of type <em class="parameter"><code>dest_type</code></em>. Note that for
+the types to be transformable, they must be compatible and a
+transform function must be registered.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -699,8 +674,7 @@ into a <a class="link" href="gobject-Type-Information.html#G-TYPE-FLOAT:CAPS" ti
 value types might incur precision lossage. Especially
 transformations into strings might reveal seemingly arbitrary
 results and shouldn't be relied upon for production code (such
-as rcfile value or object property serialization).
-</p>
+as rcfile value or object property serialization).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -730,8 +704,7 @@ Upon failing transformations, <em class="parameter"><code>dest_value</code></em>
                                                          <em class="parameter"><code><a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a> *dest_value</code></em>);</pre>
 <p>
 The type of value transformation functions which can be registered with
-<a class="link" href="gobject-Generic-values.html#g-value-register-transform-func" title="g_value_register_transform_func ()"><code class="function">g_value_register_transform_func()</code></a>.
-</p>
+<a class="link" href="gobject-Generic-values.html#g-value-register-transform-func" title="g_value_register_transform_func ()"><code class="function">g_value_register_transform_func()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -758,8 +731,7 @@ The type of value transformation functions which can be registered with
 <p>
 Registers a value transformation function for use in <a class="link" href="gobject-Generic-values.html#g-value-transform" title="g_value_transform ()"><code class="function">g_value_transform()</code></a>.
 A previously registered transformation function for <em class="parameter"><code>src_type</code></em> and <em class="parameter"><code>dest_type</code></em>
-will be replaced.
-</p>
+will be replaced.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -791,8 +763,7 @@ into value of type <em class="parameter"><code>dest_type</code></em>
 Return a newly allocated string, which describes the contents of a
 <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>.  The main purpose of this function is to describe <a class="link" href="gobject-Generic-values.html#GValue" title="GValue"><span class="type">GValue</span></a>
 contents for debugging output, the way in which the contents are
-described may change between different GLib versions.
-</p>
+described may change between different GLib versions.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -822,6 +793,6 @@ The fundamental types which all support <a class="link" href="gobject-Generic-va
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

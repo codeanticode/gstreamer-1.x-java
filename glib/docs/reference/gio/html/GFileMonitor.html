@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GFileMonitor</title>
+<title>GIO Reference Manual: GFileMonitor</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="file_mon.html" title="File System Monitoring">
 <link rel="prev" href="file_mon.html" title="File System Monitoring">
 <link rel="next" href="utils.html" title="File-related Utilities">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="file_mon.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="file_mon.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="utils.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GFileMonitor.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GFileMonitor.description" class="shortcut">Description</a>
                    | 
@@ -30,8 +23,12 @@
                   <a href="#GFileMonitor.properties" class="shortcut">Properties</a>
                    | 
                   <a href="#GFileMonitor.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="file_mon.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="file_mon.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="utils.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GFileMonitor"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -82,13 +79,11 @@ enum                <a class="link" href="GFileMonitor.html#GFileMonitorEvent" t
 <div class="refsect1">
 <a name="GFileMonitor.description"></a><h2>Description</h2>
 <p>
-Monitors a file or directory for changes.
-</p>
+Monitors a file or directory for changes.</p>
 <p>
 To obtain a <a class="link" href="GFileMonitor.html" title="GFileMonitor"><span class="type">GFileMonitor</span></a> for a file or directory, use
 <a class="link" href="GFile.html#g-file-monitor" title="g_file_monitor ()"><code class="function">g_file_monitor()</code></a>, <a class="link" href="GFile.html#g-file-monitor-file" title="g_file_monitor_file ()"><code class="function">g_file_monitor_file()</code></a>, or
-<a class="link" href="GFile.html#g-file-monitor-directory" title="g_file_monitor_directory ()"><code class="function">g_file_monitor_directory()</code></a>.
-</p>
+<a class="link" href="GFile.html#g-file-monitor-directory" title="g_file_monitor_directory ()"><code class="function">g_file_monitor_directory()</code></a>.</p>
 <p>
 To get informed about changes to the file or directory you are
 monitoring, connect to the <a class="link" href="GFileMonitor.html#GFileMonitor-changed" title='The "changed" signal'><span class="type">"changed"</span></a> signal. The
@@ -96,8 +91,7 @@ signal will be emitted in the <GTKDOCLINK HREF="g-main-context-push-thread-defau
 context</GTKDOCLINK> of the thread that the monitor was created in
 (though if the global default main context is blocked, this may
 cause notifications to be blocked even if the thread-default
-context is still running).
-</p>
+context is still running).</p>
 </div>
 <div class="refsect1">
 <a name="GFileMonitor.details"></a><h2>Details</h2>
@@ -115,8 +109,7 @@ context is still running).
 } GFileMonitorEvent;
 </pre>
 <p>
-Specifies what type of event a monitor event is.
-</p>
+Specifies what type of event a monitor event is.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -171,16 +164,14 @@ Specifies what type of event a monitor event is.
 <a name="GFileMonitor-struct"></a><h3>GFileMonitor</h3>
 <pre class="programlisting">typedef struct _GFileMonitor GFileMonitor;</pre>
 <p>
-Watches for changes to a file.
-</p>
+Watches for changes to a file.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-file-monitor-cancel"></a><h3>g_file_monitor_cancel ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_file_monitor_cancel               (<em class="parameter"><code><a class="link" href="GFileMonitor.html" title="GFileMonitor"><span class="type">GFileMonitor</span></a> *monitor</code></em>);</pre>
 <p>
-Cancels a file monitor.
-</p>
+Cancels a file monitor.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -204,8 +195,7 @@ Cancels a file monitor.
 <a name="g-file-monitor-is-cancelled"></a><h3>g_file_monitor_is_cancelled ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gboolean"><span class="returnvalue">gboolean</span></a>            g_file_monitor_is_cancelled         (<em class="parameter"><code><a class="link" href="GFileMonitor.html" title="GFileMonitor"><span class="type">GFileMonitor</span></a> *monitor</code></em>);</pre>
 <p>
-Returns whether the monitor is canceled.
-</p>
+Returns whether the monitor is canceled.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -232,8 +222,7 @@ Returns whether the monitor is canceled.
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="type">gint</span></a> limit_msecs</code></em>);</pre>
 <p>
 Sets the rate limit to which the <em class="parameter"><code>monitor</code></em> will report
-consecutive change events to the same file.
-</p>
+consecutive change events to the same file.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -262,12 +251,10 @@ to poll for changes</td>
 <p>
 Emits the <a class="link" href="GFileMonitor.html#GFileMonitor-changed" title='The "changed" signal'><span class="type">"changed"</span></a> signal if a change
 has taken place. Should be called from file monitor 
-implementations only.
-</p>
+implementations only.</p>
 <p>
 The signal will be emitted from an idle handler (in the <GTKDOCLINK HREF="g-main-context-push-thread-default">thread-default main
-context</GTKDOCLINK>).
-</p>
+context</GTKDOCLINK>).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -327,16 +314,13 @@ context</GTKDOCLINK>).
                                                         <a class="link" href="GFileMonitor.html#GFileMonitorEvent" title="enum GFileMonitorEvent"><span class="type">GFileMonitorEvent</span></a> event_type,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>          user_data)       : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when <em class="parameter"><code>file</code></em> has been changed.
-</p>
+Emitted when <em class="parameter"><code>file</code></em> has been changed.</p>
 <p>
 If using <a class="link" href="GFile.html#G-FILE-MONITOR-SEND-MOVED:CAPS"><span class="type">G_FILE_MONITOR_SEND_MOVED</span></a> flag and <em class="parameter"><code>event_type</code></em> is
 <a class="link" href="GFileMonitor.html#G-FILE-MONITOR-EVENT-MOVED:CAPS"><span class="type">G_FILE_MONITOR_EVENT_MOVED</span></a>, <em class="parameter"><code>file</code></em> will be set to a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> containing the
-old path, and <em class="parameter"><code>other_file</code></em> will be set to a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> containing the new path.
-</p>
+old path, and <em class="parameter"><code>other_file</code></em> will be set to a <a class="link" href="GFile.html" title="GFile"><span class="type">GFile</span></a> containing the new path.</p>
 <p>
-In all the other cases, <em class="parameter"><code>other_file</code></em> will be set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><span class="type">NULL</span></a>.
-</p>
+In all the other cases, <em class="parameter"><code>other_file</code></em> will be set to <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><span class="type">NULL</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -371,6 +355,6 @@ In all the other cases, <em class="parameter"><code>other_file</code></em> will 
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

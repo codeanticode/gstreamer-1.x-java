@@ -44,7 +44,7 @@
  * @short_description: matches strings against regular expressions
  * @see_also: <xref linkend="glib-regex-syntax"/>
  *
- * The <function>g_regex_*()</function> functions implement regular
+ * The g_regex_*() functions implement regular
  * expression pattern matching using syntax and semantics similar to
  * Perl regular expression.
  *
@@ -960,7 +960,7 @@ g_match_info_expand_references (const GMatchInfo  *match_info,
  * @match_info: #GMatchInfo structure
  * @match_num: number of the sub expression
  *
- * Retrieves the text matching the @match_num<!-- -->'th capturing
+ * Retrieves the text matching the @match_num'th capturing
  * parentheses. 0 is the full text of the match, 1 is the first paren
  * set, 2 the second, and so on.
  *
@@ -1015,7 +1015,7 @@ g_match_info_fetch (const GMatchInfo *match_info,
  * @end_pos: (out) (allow-none): pointer to location where to store
  *     the end position, or %NULL
  *
- * Retrieves the position in bytes of the @match_num<!-- -->'th capturing
+ * Retrieves the position in bytes of the @match_num'th capturing
  * parentheses. 0 is the full text of the match, 1 is the first
  * paren set, 2 the second, and so on.
  *
@@ -1638,16 +1638,16 @@ g_regex_match_simple (const gchar        *pattern,
  * To retrieve all the non-overlapping matches of the pattern in
  * string you can use g_match_info_next().
  *
- * |[
+ * |[<!-- language="C" --> 
  * static void
  * print_uppercase_words (const gchar *string)
  * {
  *   /&ast; Print all uppercase-only words. &ast;/
  *   GRegex *regex;
  *   GMatchInfo *match_info;
- *   &nbsp;
+ *  
  *   regex = g_regex_new ("[A-Z]+", 0, 0, NULL);
- *   g_regex_match (regex, string, 0, &amp;match_info);
+ *   g_regex_match (regex, string, 0, &match_info);
  *   while (g_match_info_matches (match_info))
  *     {
  *       gchar *word = g_match_info_fetch (match_info, 0);
@@ -1711,7 +1711,7 @@ g_regex_match (const GRegex      *regex,
  * To retrieve all the non-overlapping matches of the pattern in
  * string you can use g_match_info_next().
  *
- * |[
+ * |[<!-- language="C" --> 
  * static void
  * print_uppercase_words (const gchar *string)
  * {
@@ -1719,15 +1719,15 @@ g_regex_match (const GRegex      *regex,
  *   GRegex *regex;
  *   GMatchInfo *match_info;
  *   GError *error = NULL;
- *   &nbsp;
+ *   
  *   regex = g_regex_new ("[A-Z]+", 0, 0, NULL);
- *   g_regex_match_full (regex, string, -1, 0, 0, &amp;match_info, &amp;error);
+ *   g_regex_match_full (regex, string, -1, 0, 0, &match_info, &error);
  *   while (g_match_info_matches (match_info))
  *     {
  *       gchar *word = g_match_info_fetch (match_info, 0);
  *       g_print ("Found: %s\n", word);
  *       g_free (word);
- *       g_match_info_next (match_info, &amp;error);
+ *       g_match_info_next (match_info, &error);
  *     }
  *   g_match_info_free (match_info);
  *   g_regex_unref (regex);
@@ -2698,35 +2698,14 @@ interpolation_list_needs_match (GList *list)
  * to the captured subexpression with the given name. '\0' refers to the
  * complete match, but '\0' followed by a number is the octal representation
  * of a character. To include a literal '\' in the replacement, write '\\'.
+ *
  * There are also escapes that changes the case of the following text:
  *
- * <variablelist>
- * <varlistentry><term>\l</term>
- * <listitem>
- * <para>Convert to lower case the next character</para>
- * </listitem>
- * </varlistentry>
- * <varlistentry><term>\u</term>
- * <listitem>
- * <para>Convert to upper case the next character</para>
- * </listitem>
- * </varlistentry>
- * <varlistentry><term>\L</term>
- * <listitem>
- * <para>Convert to lower case till \E</para>
- * </listitem>
- * </varlistentry>
- * <varlistentry><term>\U</term>
- * <listitem>
- * <para>Convert to upper case till \E</para>
- * </listitem>
- * </varlistentry>
- * <varlistentry><term>\E</term>
- * <listitem>
- * <para>End case modification</para>
- * </listitem>
- * </varlistentry>
- * </variablelist>
+ * - \l: Convert to lower case the next character
+ * - \u: Convert to upper case the next character
+ * - \L: Convert to lower case till \E
+ * - \U: Convert to upper case till \E
+ * - \E: End case modification
  *
  * If you do not need to use backreferences use g_regex_replace_literal().
  *
@@ -2855,7 +2834,7 @@ g_regex_replace_literal (const GRegex      *regex,
  *
  * The following example uses g_regex_replace_eval() to replace multiple
  * strings at once:
- * |[
+ * |[<!-- language="C" --> 
  * static gboolean
  * eval_cb (const GMatchInfo *info,
  *          GString          *res,

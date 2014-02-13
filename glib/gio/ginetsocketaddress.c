@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Christian Kellner <gicmo@gnome.org>
  *          Samuel Cormier-Iijima <sciyoshi@gmail.com>
@@ -44,8 +42,8 @@
 /**
  * GInetSocketAddress:
  *
- * An IPv4 or IPv6 socket address, corresponding to a <type>struct
- * sockaddr_in</type> or <type>struct sockaddr_in6</type>.
+ * An IPv4 or IPv6 socket address, corresponding to a struct
+ * sockaddr_in or struct sockaddr_in6.
  */
 
 struct _GInetSocketAddressPrivate

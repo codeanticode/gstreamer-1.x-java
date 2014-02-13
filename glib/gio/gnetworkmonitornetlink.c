@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 #include "config.h"
@@ -380,6 +378,16 @@ read_netlink_messages (GSocket      *socket,
 
           if (dest || gateway || oif)
             {
+              /* Unless we're processing the results of a dump, ignore
+               * IPv6 link-local multicast routes, which are added and
+               * removed all the time for some reason.
+               */
+              if (!nl->priv->dump_networks &&
+                  rtmsg->rtm_family == AF_INET6 &&
+                  rtmsg->rtm_dst_len != 0 &&
+                  IN6_IS_ADDR_MC_LINKLOCAL (dest))
+                continue;
+
               if (msg->nlmsg_type == RTM_NEWROUTE)
                 add_network (nl, rtmsg->rtm_family, rtmsg->rtm_dst_len, dest);
               else

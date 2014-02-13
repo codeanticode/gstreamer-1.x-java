@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GInitable</title>
+<title>GIO Reference Manual: GInitable</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="failable_initialization.html" title="Failable Initialization">
 <link rel="prev" href="failable_initialization.html" title="Failable Initialization">
 <link rel="next" href="GAsyncInitable.html" title="GAsyncInitable">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="failable_initialization.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="failable_initialization.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GAsyncInitable.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GInitable.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GInitable.description" class="shortcut">Description</a>
                    | 
@@ -32,8 +25,12 @@
                   <a href="#GInitable.derived-interfaces" class="shortcut">Known Derived Interfaces</a>
                    | 
                   <a href="#GInitable.implementations" class="shortcut">Known Implementations</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="failable_initialization.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="failable_initialization.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GAsyncInitable.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GInitable"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -102,15 +99,13 @@ GInitable is implemented by
 initialization. If an object implements this interface then
 it must be initialized as the first thing after construction,
 either via <a class="link" href="GInitable.html#g-initable-init" title="g_initable_init ()"><code class="function">g_initable_init()</code></a> or <a class="link" href="GAsyncInitable.html#g-async-initable-init-async" title="g_async_initable_init_async ()"><code class="function">g_async_initable_init_async()</code></a>
-(the latter is only available if it also implements <a class="link" href="GAsyncInitable.html" title="GAsyncInitable"><span class="type">GAsyncInitable</span></a>).
-</p>
+(the latter is only available if it also implements <a class="link" href="GAsyncInitable.html" title="GAsyncInitable"><span class="type">GAsyncInitable</span></a>).</p>
 <p>
 If the object is not initialized, or initialization returns with an
 error, then all operations on the object except <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-ref"><code class="function">g_object_ref()</code></a> and
 <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> are considered to be invalid, and have undefined
 behaviour. They will often fail with <a href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-critical"><code class="function">g_critical()</code></a> or <a href="http://library.gnome.org/devel/glib/unstable/glib-Message-Logging.html#g-warning"><code class="function">g_warning()</code></a>, but
-this must not be relied on.
-</p>
+this must not be relied on.</p>
 <p>
 Users of objects implementing this are not intended to use
 the interface method directly, instead it will be used automatically
@@ -118,14 +113,12 @@ in various ways. For C applications you generally just call
 <a class="link" href="GInitable.html#g-initable-new" title="g_initable_new ()"><code class="function">g_initable_new()</code></a> directly, or indirectly via a <code class="function">foo_thing_new()</code> wrapper.
 This will call <a class="link" href="GInitable.html#g-initable-init" title="g_initable_init ()"><code class="function">g_initable_init()</code></a> under the cover, returning <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and
 setting a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> on failure (at which point the instance is
-unreferenced).
-</p>
+unreferenced).</p>
 <p>
 For bindings in languages where the native constructor supports
 exceptions the binding could check for objects implemention <a class="link" href="GInitable.html" title="GInitable"><code class="literal">GInitable</code></a>
 during normal construction and automatically initialize them, throwing
-an exception on failure.
-</p>
+an exception on failure.</p>
 </div>
 <div class="refsect1">
 <a name="GInitable.details"></a><h2>Details</h2>
@@ -133,8 +126,7 @@ an exception on failure.
 <a name="GInitable-struct"></a><h3>GInitable</h3>
 <pre class="programlisting">typedef struct _GInitable GInitable;</pre>
 <p>
-Interface for initializable objects.
-</p>
+Interface for initializable objects.</p>
 <p class="since">Since 2.22</p>
 </div>
 <hr>
@@ -152,8 +144,7 @@ Interface for initializable objects.
 </pre>
 <p>
 Provides an interface for initializing object such that initialization
-may fail.
-</p>
+may fail.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -179,34 +170,29 @@ may fail.
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
-Initializes the object implementing the interface.
-</p>
+Initializes the object implementing the interface.</p>
 <p>
 The object must be initialized before any real use after initial
-construction, either with this function or <a class="link" href="GAsyncInitable.html#g-async-initable-init-async" title="g_async_initable_init_async ()"><code class="function">g_async_initable_init_async()</code></a>.
-</p>
+construction, either with this function or <a class="link" href="GAsyncInitable.html#g-async-initable-init-async" title="g_async_initable_init_async ()"><code class="function">g_async_initable_init_async()</code></a>.</p>
 <p>
 Implementations may also support cancellation. If <em class="parameter"><code>cancellable</code></em> is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>,
 then initialization can be cancelled by triggering the cancellable object
 from another thread. If the operation was cancelled, the error
 <a class="link" href="gio-GIOError.html#G-IO-ERROR-CANCELLED:CAPS"><code class="literal">G_IO_ERROR_CANCELLED</code></a> will be returned. If <em class="parameter"><code>cancellable</code></em> is not <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a> and
 the object doesn't support cancellable initialization the error
-<a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> will be returned.
-</p>
+<a class="link" href="gio-GIOError.html#G-IO-ERROR-NOT-SUPPORTED:CAPS"><code class="literal">G_IO_ERROR_NOT_SUPPORTED</code></a> will be returned.</p>
 <p>
 If the object is not initialized, or initialization returns with an
 error, then all operations on the object except <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-ref"><code class="function">g_object_ref()</code></a> and
 <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-unref"><code class="function">g_object_unref()</code></a> are considered to be invalid, and have undefined
 behaviour. See the <a class="xref" href="">???</a> section introduction
-for more details.
-</p>
+for more details.</p>
 <p>
 Implementations of this method must be idempotent, i.e. multiple calls
 to this function with the same argument should return the same results.
 Only the first call initializes the object, further calls return the result
 of the first call. This is so that it's safe to implement the singleton
-pattern in the GObject constructor function.
-</p>
+pattern in the GObject constructor function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -247,8 +233,7 @@ return <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macro
 <p>
 Helper function for constructing <a class="link" href="GInitable.html" title="GInitable"><span class="type">GInitable</span></a> object. This is
 similar to <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-new"><code class="function">g_object_new()</code></a> but also initializes the object
-and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, setting an error on failure.
-</p>
+and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, setting an error on failure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -300,8 +285,7 @@ value pairs, and ended by <a href="http://library.gnome.org/devel/glib/unstable/
 <p>
 Helper function for constructing <a class="link" href="GInitable.html" title="GInitable"><span class="type">GInitable</span></a> object. This is
 similar to <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-new-valist"><code class="function">g_object_new_valist()</code></a> but also initializes the object
-and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, setting an error on failure.
-</p>
+and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, setting an error on failure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -351,8 +335,7 @@ ignore.</td>
 <p>
 Helper function for constructing <a class="link" href="GInitable.html" title="GInitable"><span class="type">GInitable</span></a> object. This is
 similar to <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-Object-Type.html#g-object-newv"><code class="function">g_object_newv()</code></a> but also initializes the object
-and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, setting an error on failure.
-</p>
+and returns <a href="http://library.gnome.org/devel/glib/unstable/glib-Standard-Macros.html#NULL:CAPS"><code class="literal">NULL</code></a>, setting an error on failure.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -400,6 +383,6 @@ ignore.</td>
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

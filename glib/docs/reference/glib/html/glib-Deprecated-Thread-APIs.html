@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Deprecated thread API</title>
+<title>GLib Reference Manual: Deprecated thread API</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="deprecated.html" title="Deprecated APIs">
 <link rel="prev" href="deprecated.html" title="Deprecated APIs">
 <link rel="next" href="glib-Caches.html" title="Caches">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="deprecated.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="deprecated.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Caches.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Deprecated-Thread-APIs.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Deprecated-Thread-APIs.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="deprecated.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="deprecated.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Caches.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Deprecated-Thread-APIs"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -116,8 +113,7 @@ struct              <a class="link" href="glib-Deprecated-Thread-APIs.html#GStat
 <p>
 These APIs are deprecated.  You should not use them in new code.
 This section remains only to assist with understanding code that was
-written to use these APIs at some point in the past.
-</p>
+written to use these APIs at some point in the past.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Deprecated-Thread-APIs.details"></a><h2>Details</h2>
@@ -125,33 +121,31 @@ written to use these APIs at some point in the past.
 <a name="G-THREADS-IMPL-POSIX:CAPS"></a><h3>G_THREADS_IMPL_POSIX</h3>
 <pre class="programlisting">#define G_THREADS_IMPL_POSIX
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">G_THREADS_IMPL_POSIX</code> has been deprecated since version 2.32 and should not be used in newly-written code. POSIX threads are in use on all non-Windows systems.
                 Use G_OS_WIN32 to detect Windows.</p>
 </div>
 <p>
-This macro is defined if POSIX style threads are used.
-</p>
+This macro is defined if POSIX style threads are used.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="G-THREADS-IMPL-WIN32:CAPS"></a><h3>G_THREADS_IMPL_WIN32</h3>
 <pre class="programlisting">#define G_THREADS_IMPL_NONE
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">G_THREADS_IMPL_WIN32</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use G_OS_WIN32 to detect Windows.</p>
 </div>
 <p>
-This macro is defined if Windows style threads are used.
-</p>
+This macro is defined if Windows style threads are used.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-thread-init"></a><h3>g_thread_init ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_thread_init                       (<em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> vtable</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_thread_init</code> has been deprecated since version 2.32 and should not be used in newly-written code. This function is no longer necessary. The GLib
     threading system is automatically initialized at the start
@@ -159,19 +153,16 @@ This macro is defined if Windows style threads are used.
 </div>
 <p>
 If you use GLib from more than one thread, you must initialize the
-thread system by calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>.
-</p>
+thread system by calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>.</p>
 <p>
 Since version 2.24, calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> multiple times is allowed,
-but nothing happens except for the first call.
-</p>
+but nothing happens except for the first call.</p>
 <p>
 Since version 2.32, GLib does not support custom thread implementations
-anymore and the <em class="parameter"><code>vtable</code></em> parameter is ignored and you should pass <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-</p>
+anymore and the <em class="parameter"><code>vtable</code></em> parameter is ignored and you should pass <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <p>
 </p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="note">
 <h3 class="title">Note</h3>
 <p><a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> must not be called directly or indirectly
 in a callback from GLib. Also no mutexes may be currently locked while
@@ -179,9 +170,7 @@ calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" ti
 </div>
 <p>
 </p>
-<p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="note">
 <h3 class="title">Note</h3>
 <p>To use <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> in your program, you have to link
 with the libraries that the command <span class="command"><strong>pkg-config --libs
@@ -189,8 +178,6 @@ gthread-2.0</strong></span> outputs. This is not the case for all the
 other thread-related functions of GLib. Those can be used without
 having to link with the thread libraries.</p>
 </div>
-<p>
-</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -209,14 +196,16 @@ this parameter is ignored and should always be <a class="link" href="glib-Standa
 <div class="refsect2">
 <a name="g-thread-supported"></a><h3>g_thread_supported ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_thread_supported                  ();</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_thread_supported</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 This macro returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> if the thread system is initialized,
-and <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if it is not.
-</p>
+and <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> if it is not.</p>
 <p>
 For language bindings, <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-get-initialized" title="g_thread_get_initialized ()"><code class="function">g_thread_get_initialized()</code></a> provides
-the same functionality as a function.
-</p>
+the same functionality as a function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -233,9 +222,12 @@ the same functionality as a function.
 <div class="refsect2">
 <a name="g-thread-get-initialized"></a><h3>g_thread_get_initialized ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_thread_get_initialized            (<em class="parameter"><code><span class="type">void</span></code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_thread_get_initialized</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
-Indicates if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has been called.
-</p>
+Indicates if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has been called.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -256,27 +248,23 @@ Indicates if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-ini
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> joinable</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_thread_create</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-thread-new" title="g_thread_new ()"><code class="function">g_thread_new()</code></a> instead</p>
 </div>
 <p>
-This function creates a new thread.
-</p>
+This function creates a new thread.</p>
 <p>
 The new thread executes the function <em class="parameter"><code>func</code></em> with the argument <em class="parameter"><code>data</code></em>.
-If the thread was created successfully, it is returned.
-</p>
+If the thread was created successfully, it is returned.</p>
 <p>
 <em class="parameter"><code>error</code></em> can be <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to ignore errors, or non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> to report errors.
-The error is set, if and only if the function returns <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.
-</p>
+The error is set, if and only if the function returns <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>.</p>
 <p>
 This function returns a reference to the created thread only if
 <em class="parameter"><code>joinable</code></em> is <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.  In that case, you must free this reference by
 calling <a class="link" href="glib-Threads.html#g-thread-unref" title="g_thread_unref ()"><code class="function">g_thread_unref()</code></a> or <a class="link" href="glib-Threads.html#g-thread-join" title="g_thread_join ()"><code class="function">g_thread_join()</code></a>.  If <em class="parameter"><code>joinable</code></em> is <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>
-then you should probably not touch the return value.
-</p>
+then you should probably not touch the return value.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -317,14 +305,13 @@ then you should probably not touch the return value.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="type">gboolean</span></a> bound</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GThreadPriority" title="enum GThreadPriority"><span class="type">GThreadPriority</span></a> priority</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_thread_create_full</code> has been deprecated since version 2.32 and should not be used in newly-written code. The <em class="parameter"><code>bound</code></em> and <em class="parameter"><code>priority</code></em> arguments are now ignored.
 Use <a class="link" href="glib-Threads.html#g-thread-new" title="g_thread_new ()"><code class="function">g_thread_new()</code></a>.</p>
 </div>
 <p>
-This function creates a new thread.
-</p>
+This function creates a new thread.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -376,7 +363,7 @@ This function creates a new thread.
   G_THREAD_PRIORITY_URGENT
 } GThreadPriority;
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">GThreadPriority</code> has been deprecated since version 2.32 and should not be used in newly-written code. Thread priorities no longer have any effect.</p>
 </div>
@@ -414,13 +401,12 @@ This function creates a new thread.
 <a name="g-thread-set-priority"></a><h3>g_thread_set_priority ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_thread_set_priority               (<em class="parameter"><code><a class="link" href="glib-Threads.html#GThread" title="GThread"><span class="type">GThread</span></a> *thread</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GThreadPriority" title="enum GThreadPriority"><span class="type">GThreadPriority</span></a> priority</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_thread_set_priority</code> has been deprecated since version 2.32 and should not be used in newly-written code. Thread priorities no longer have any effect.</p>
 </div>
 <p>
-This function does nothing.
-</p>
+This function does nothing.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -443,7 +429,7 @@ This function does nothing.
 <a name="g-thread-foreach"></a><h3>g_thread_foreach ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_thread_foreach                    (<em class="parameter"><code><a class="link" href="glib-Doubly-Linked-Lists.html#GFunc" title="GFunc ()"><span class="type">GFunc</span></a> thread_func</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_thread_foreach</code> has been deprecated since version 2.32 and should not be used in newly-written code. There aren't many things you can do with a <a class="link" href="glib-Threads.html#GThread" title="GThread"><span class="type">GThread</span></a>,
     except comparing it with one that was returned from <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-create" title="g_thread_create ()"><code class="function">g_thread_create()</code></a>.
@@ -451,19 +437,16 @@ This function does nothing.
 </div>
 <p>
 Call <em class="parameter"><code>thread_func</code></em> on all <a href="glib-Threads.html#GThread"><span class="type">GThreads</span></a> that have been
-created with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-create" title="g_thread_create ()"><code class="function">g_thread_create()</code></a>.
-</p>
+created with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-create" title="g_thread_create ()"><code class="function">g_thread_create()</code></a>.</p>
 <p>
 Note that threads may decide to exit while <em class="parameter"><code>thread_func</code></em> is
 running, so without intimate knowledge about the lifetime of
 foreign threads, <em class="parameter"><code>thread_func</code></em> shouldn't access the GThread*
 pointer passed in as first argument. However, <em class="parameter"><code>thread_func</code></em> will
-not be called for threads which are known to have exited already.
-</p>
+not be called for threads which are known to have exited already.</p>
 <p>
 Due to thread lifetime checks, this function has an execution complexity
-which is quadratic in the number of existing threads.
-</p>
+which is quadratic in the number of existing threads.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -487,14 +470,13 @@ which is quadratic in the number of existing threads.
 <div class="refsect2">
 <a name="g-mutex-new"></a><h3>g_mutex_new ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="returnvalue">GMutex</span></a> *            g_mutex_new                         ();</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_mutex_new</code> has been deprecated since version 2.32 and should not be used in newly-written code. GMutex can now be statically allocated, or embedded
 in structures and initialised with <a class="link" href="glib-Threads.html#g-mutex-init" title="g_mutex_init ()"><code class="function">g_mutex_init()</code></a>.</p>
 </div>
 <p>
-Allocates and initializes a new <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a>.
-</p>
+Allocates and initializes a new <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -510,18 +492,16 @@ Allocates and initializes a new <a class="link" href="glib-Threads.html#GMutex" 
 <div class="refsect2">
 <a name="g-mutex-free"></a><h3>g_mutex_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_mutex_free                        (<em class="parameter"><code><a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_mutex_free</code> has been deprecated since version 2.32 and should not be used in newly-written code. GMutex can now be statically allocated, or embedded
 in structures and initialised with <a class="link" href="glib-Threads.html#g-mutex-init" title="g_mutex_init ()"><code class="function">g_mutex_init()</code></a>.</p>
 </div>
 <p>
-Destroys a <em class="parameter"><code>mutex</code></em> that has been created with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-mutex-new" title="g_mutex_new ()"><code class="function">g_mutex_new()</code></a>.
-</p>
+Destroys a <em class="parameter"><code>mutex</code></em> that has been created with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-mutex-new" title="g_mutex_new ()"><code class="function">g_mutex_new()</code></a>.</p>
 <p>
 Calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-mutex-free" title="g_mutex_free ()"><code class="function">g_mutex_free()</code></a> on a locked mutex may result
-in undefined behaviour.
-</p>
+in undefined behaviour.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -538,14 +518,13 @@ in undefined behaviour.
 <div class="refsect2">
 <a name="g-cond-new"></a><h3>g_cond_new ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="returnvalue">GCond</span></a>*              g_cond_new                          ();</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_cond_new</code> has been deprecated since version 2.32 and should not be used in newly-written code. GCond can now be statically allocated, or embedded
 in structures and initialised with <a class="link" href="glib-Threads.html#g-cond-init" title="g_cond_init ()"><code class="function">g_cond_init()</code></a>.</p>
 </div>
 <p>
-Allocates and initializes a new <a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="type">GCond</span></a>.
-</p>
+Allocates and initializes a new <a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="type">GCond</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -562,18 +541,16 @@ Allocates and initializes a new <a class="link" href="glib-Threads.html#GCond" t
 <div class="refsect2">
 <a name="g-cond-free"></a><h3>g_cond_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_cond_free                         (<em class="parameter"><code><a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="type">GCond</span></a> *cond</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_cond_free</code> has been deprecated since version 2.32 and should not be used in newly-written code. GCond can now be statically allocated, or embedded
 in structures and initialised with <a class="link" href="glib-Threads.html#g-cond-init" title="g_cond_init ()"><code class="function">g_cond_init()</code></a>.</p>
 </div>
 <p>
-Destroys a <a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="type">GCond</span></a> that has been created with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-cond-new" title="g_cond_new ()"><code class="function">g_cond_new()</code></a>.
-</p>
+Destroys a <a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="type">GCond</span></a> that has been created with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-cond-new" title="g_cond_new ()"><code class="function">g_cond_new()</code></a>.</p>
 <p>
 Calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-cond-free" title="g_cond_free ()"><code class="function">g_cond_free()</code></a> for a <a class="link" href="glib-Threads.html#GCond" title="struct GCond"><span class="type">GCond</span></a> on which threads are
-blocking leads to undefined behaviour.
-</p>
+blocking leads to undefined behaviour.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -590,14 +567,13 @@ blocking leads to undefined behaviour.
 <div class="refsect2">
 <a name="g-private-new"></a><h3>g_private_new ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Threads.html#GPrivate" title="struct GPrivate"><span class="returnvalue">GPrivate</span></a> *          g_private_new                       (<em class="parameter"><code><a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> notify</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_private_new</code> has been deprecated since version 2.32 and should not be used in newly-written code. dynamic allocation of <a class="link" href="glib-Threads.html#GPrivate" title="struct GPrivate"><span class="type">GPrivate</span></a> is a bad idea.  Use
                  static storage and <a class="link" href="glib-Threads.html#G-PRIVATE-INIT:CAPS" title="G_PRIVATE_INIT()"><code class="function">G_PRIVATE_INIT()</code></a> instead.</p>
 </div>
 <p>
-Creates a new <a class="link" href="glib-Threads.html#GPrivate" title="struct GPrivate"><span class="type">GPrivate</span></a>.
-</p>
+Creates a new <a class="link" href="glib-Threads.html#GPrivate" title="struct GPrivate"><span class="type">GPrivate</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -621,26 +597,17 @@ Creates a new <a class="link" href="glib-Threads.html#GPrivate" title="struct GP
 <a name="GStaticMutex"></a><h3>GStaticMutex</h3>
 <pre class="programlisting">typedef struct _GStaticMutex GStaticMutex;</pre>
 <p>
-A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> works like a <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a>.
-</p>
+A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> works like a <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a>.</p>
 <p>
 Prior to GLib 2.32, GStaticMutex had the significant advantage
 that it doesn't need to be created at run-time, but can be defined
 at compile-time. Since 2.32, <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a> can be statically allocated
-as well, and GStaticMutex has been deprecated.
-</p>
+as well, and GStaticMutex has been deprecated.</p>
 <p>
 Here is a version of our <code class="function">give_me_next_number()</code> example using
-a GStaticMutex.
+a GStaticMutex:
 </p>
-<p>
-</p>
-<div class="example">
-<a name="id-1.7.2.5.17.7.1"></a><p class="title"><b>Example 20. 
-  Using <span class="structname">GStaticMutex</span>
-  to simplify thread-safe programming
- </b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -675,9 +642,6 @@ a GStaticMutex.
   </table>
 </div>
 
-</div>
-<p><br class="example-break">
-</p>
 <p>
 Sometimes you would like to dynamically create a mutex. If you don't
 want to require prior calling to <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>, because your code
@@ -686,42 +650,35 @@ use <a class="link" href="glib-Deprecated-Thread-APIs.html#g-mutex-new" title="g
 <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>. In theses cases you can also use a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.
 It must be initialized with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-init" title="g_static_mutex_init ()"><code class="function">g_static_mutex_init()</code></a> before using it
 and freed with with <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-free" title="g_static_mutex_free ()"><code class="function">g_static_mutex_free()</code></a> when not needed anymore to
-free up any allocated resources.
-</p>
+free up any allocated resources.</p>
 <p>
 Even though <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> is not opaque, it should only be used with
 the following functions, as it is defined differently on different
-platforms.
-</p>
+platforms.</p>
 <p>
-All of the <code class="function">g_static_mutex_*</code> functions apart
-from <code class="function">g_static_mutex_get_mutex</code> can also be used
-even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not yet been called. Then they do
-nothing, apart from <code class="function">g_static_mutex_trylock</code>,
-which does nothing but returning <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.
-</p>
+All of the g_static_mutex_* functions apart from
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-get-mutex" title="g_static_mutex_get_mutex ()"><code class="function">g_static_mutex_get_mutex()</code></a> can also be used even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>
+has not yet been called. Then they do nothing, apart from
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-trylock" title="g_static_mutex_trylock ()"><code class="function">g_static_mutex_trylock()</code></a> which does nothing but returning <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>All of the <code class="function">g_static_mutex_*</code>
-functions are actually macros. Apart from taking their addresses, you
-can however use them as if they were functions.</p>
-</div>
-<p>
-</p>
+All of the g_static_mutex_* functions are actually macros. Apart from
+taking their addresses, you can however use them as if they were
+functions.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="G-STATIC-MUTEX-INIT:CAPS"></a><h3>G_STATIC_MUTEX_INIT</h3>
 <pre class="programlisting">#define G_STATIC_MUTEX_INIT
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">G_STATIC_MUTEX_INIT</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> must be initialized with this macro, before it can
 be used. This macro can used be to initialize a variable, but it
 cannot be assigned to a variable. In that case you have to use
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-init" title="g_static_mutex_init ()"><code class="function">g_static_mutex_init()</code></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-init" title="g_static_mutex_init ()"><code class="function">g_static_mutex_init()</code></a>.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -735,21 +692,18 @@ cannot be assigned to a variable. In that case you have to use
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-static-mutex-init"></a><h3>g_static_mutex_init ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_mutex_init                 (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_mutex_init</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-mutex-init" title="g_mutex_init ()"><code class="function">g_mutex_init()</code></a></p>
 </div>
 <p>
 Initializes <em class="parameter"><code>mutex</code></em>.
-Alternatively you can initialize it with <a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-MUTEX-INIT:CAPS" title="G_STATIC_MUTEX_INIT"><span class="type">G_STATIC_MUTEX_INIT</span></a>.
-</p>
+Alternatively you can initialize it with <a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-MUTEX-INIT:CAPS" title="G_STATIC_MUTEX_INIT"><span class="type">G_STATIC_MUTEX_INIT</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -765,13 +719,12 @@ Alternatively you can initialize it with <a class="link" href="glib-Deprecated-T
 <div class="refsect2">
 <a name="g-static-mutex-lock"></a><h3>g_static_mutex_lock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_mutex_lock                 (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_mutex_lock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-mutex-lock" title="g_mutex_lock ()"><code class="function">g_mutex_lock()</code></a></p>
 </div>
 <p>
-Works like <a class="link" href="glib-Threads.html#g-mutex-lock" title="g_mutex_lock ()"><code class="function">g_mutex_lock()</code></a>, but for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.
-</p>
+Works like <a class="link" href="glib-Threads.html#g-mutex-lock" title="g_mutex_lock ()"><code class="function">g_mutex_lock()</code></a>, but for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -787,13 +740,12 @@ Works like <a class="link" href="glib-Threads.html#g-mutex-lock" title="g_mutex_
 <div class="refsect2">
 <a name="g-static-mutex-trylock"></a><h3>g_static_mutex_trylock ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_static_mutex_trylock              (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_mutex_trylock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-mutex-trylock" title="g_mutex_trylock ()"><code class="function">g_mutex_trylock()</code></a></p>
 </div>
 <p>
-Works like <a class="link" href="glib-Threads.html#g-mutex-trylock" title="g_mutex_trylock ()"><code class="function">g_mutex_trylock()</code></a>, but for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.
-</p>
+Works like <a class="link" href="glib-Threads.html#g-mutex-trylock" title="g_mutex_trylock ()"><code class="function">g_mutex_trylock()</code></a>, but for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -816,13 +768,12 @@ Works like <a class="link" href="glib-Threads.html#g-mutex-trylock" title="g_mut
 <div class="refsect2">
 <a name="g-static-mutex-unlock"></a><h3>g_static_mutex_unlock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_mutex_unlock               (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_mutex_unlock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-mutex-unlock" title="g_mutex_unlock ()"><code class="function">g_mutex_unlock()</code></a></p>
 </div>
 <p>
-Works like <a class="link" href="glib-Threads.html#g-mutex-unlock" title="g_mutex_unlock ()"><code class="function">g_mutex_unlock()</code></a>, but for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.
-</p>
+Works like <a class="link" href="glib-Threads.html#g-mutex-unlock" title="g_mutex_unlock ()"><code class="function">g_mutex_unlock()</code></a>, but for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -838,15 +789,14 @@ Works like <a class="link" href="glib-Threads.html#g-mutex-unlock" title="g_mute
 <div class="refsect2">
 <a name="g-static-mutex-get-mutex"></a><h3>g_static_mutex_get_mutex ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="returnvalue">GMutex</span></a> *            g_static_mutex_get_mutex            (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_mutex_get_mutex</code> has been deprecated since version 2.32 and should not be used in newly-written code. Just use a <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a></p>
 </div>
 <p>
 For some operations (like <a class="link" href="glib-Threads.html#g-cond-wait" title="g_cond_wait ()"><code class="function">g_cond_wait()</code></a>) you must have a <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a>
 instead of a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>. This function will return the
-corresponding <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a> for <em class="parameter"><code>mutex</code></em>.
-</p>
+corresponding <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a> for <em class="parameter"><code>mutex</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -868,28 +818,20 @@ corresponding <a class="link" href="glib-Threads.html#GMutex" title="union GMute
 <div class="refsect2">
 <a name="g-static-mutex-free"></a><h3>g_static_mutex_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_mutex_free                 (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_mutex_free</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-mutex-clear" title="g_mutex_clear ()"><code class="function">g_mutex_clear()</code></a></p>
 </div>
 <p>
-Releases all resources allocated to <em class="parameter"><code>mutex</code></em>.
-</p>
+Releases all resources allocated to <em class="parameter"><code>mutex</code></em>.</p>
 <p>
 You don't have to call this functions for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> with an
 unbounded lifetime, i.e. objects declared 'static', but if you have
 a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a> as a member of a structure and the structure is
-freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.
-</p>
+freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>Calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-free" title="g_static_mutex_free ()"><code class="function">g_static_mutex_free()</code></a> on a locked mutex may
-result in undefined behaviour.</p>
-</div>
-<p>
-</p>
+Calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-mutex-free" title="g_static_mutex_free ()"><code class="function">g_static_mutex_free()</code></a> on a locked mutex may result in
+undefined behaviour.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -907,6 +849,10 @@ result in undefined behaviour.</p>
 <pre class="programlisting">struct GStaticRecMutex {
 };
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">GStaticRecMutex</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> works like a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>, but it can be locked
 multiple times by one thread. If you enter it n times, you have to
@@ -916,30 +862,30 @@ unlock a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex"
 number of times this mutex was locked). The depth can later be used
 to restore the state of the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> by calling
 <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-lock-full" title="g_static_rec_mutex_lock_full ()"><code class="function">g_static_rec_mutex_lock_full()</code></a>. In GLib 2.32, <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> has
-been deprecated in favor of <a class="link" href="glib-Threads.html#GRecMutex" title="struct GRecMutex"><span class="type">GRecMutex</span></a>.
-</p>
+been deprecated in favor of <a class="link" href="glib-Threads.html#GRecMutex" title="struct GRecMutex"><span class="type">GRecMutex</span></a>.</p>
 <p>
 Even though <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> is not opaque, it should only be used
-with the following functions.
-</p>
+with the following functions.</p>
 <p>
-All of the <code class="function">g_static_rec_mutex_*</code> functions can
-be used even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not been called. Then they do
-nothing, apart from <code class="function">g_static_rec_mutex_trylock</code>,
-which does nothing but returning <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.
-</p>
+All of the g_static_rec_mutex_* functions can be used even if
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not been called. Then they do nothing, apart
+from <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-trylock" title="g_static_rec_mutex_trylock ()"><code class="function">g_static_rec_mutex_trylock()</code></a>, which does nothing but returning
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="G-STATIC-REC-MUTEX-INIT:CAPS"></a><h3>G_STATIC_REC_MUTEX_INIT</h3>
 <pre class="programlisting">#define G_STATIC_REC_MUTEX_INIT { G_STATIC_MUTEX_INIT }
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">G_STATIC_REC_MUTEX_INIT</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> must be initialized with this macro before it can
 be used. This macro can used be to initialize a variable, but it
 cannot be assigned to a variable. In that case you have to use
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-init" title="g_static_rec_mutex_init ()"><code class="function">g_static_rec_mutex_init()</code></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-init" title="g_static_rec_mutex_init ()"><code class="function">g_static_rec_mutex_init()</code></a>.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -953,22 +899,19 @@ cannot be assigned to a variable. In that case you have to use
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-static-rec-mutex-init"></a><h3>g_static_rec_mutex_init ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rec_mutex_init             (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_init</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-init" title="g_rec_mutex_init ()"><code class="function">g_rec_mutex_init()</code></a></p>
 </div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> must be initialized with this function before it
 can be used. Alternatively you can initialize it with
-<a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-REC-MUTEX-INIT:CAPS" title="G_STATIC_REC_MUTEX_INIT"><span class="type">G_STATIC_REC_MUTEX_INIT</span></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-REC-MUTEX-INIT:CAPS" title="G_STATIC_REC_MUTEX_INIT"><span class="type">G_STATIC_REC_MUTEX_INIT</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -984,7 +927,7 @@ can be used. Alternatively you can initialize it with
 <div class="refsect2">
 <a name="g-static-rec-mutex-lock"></a><h3>g_static_rec_mutex_lock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rec_mutex_lock             (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_lock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-lock" title="g_rec_mutex_lock ()"><code class="function">g_rec_mutex_lock()</code></a></p>
 </div>
@@ -992,8 +935,7 @@ can be used. Alternatively you can initialize it with
 Locks <em class="parameter"><code>mutex</code></em>. If <em class="parameter"><code>mutex</code></em> is already locked by another thread, the
 current thread will block until <em class="parameter"><code>mutex</code></em> is unlocked by the other
 thread. If <em class="parameter"><code>mutex</code></em> is already locked by the calling thread, this
-functions increases the depth of <em class="parameter"><code>mutex</code></em> and returns immediately.
-</p>
+functions increases the depth of <em class="parameter"><code>mutex</code></em> and returns immediately.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1009,7 +951,7 @@ functions increases the depth of <em class="parameter"><code>mutex</code></em> a
 <div class="refsect2">
 <a name="g-static-rec-mutex-trylock"></a><h3>g_static_rec_mutex_trylock ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_static_rec_mutex_trylock          (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_trylock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-trylock" title="g_rec_mutex_trylock ()"><code class="function">g_rec_mutex_trylock()</code></a></p>
 </div>
@@ -1018,8 +960,7 @@ Tries to lock <em class="parameter"><code>mutex</code></em>. If <em class="param
 it immediately returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>. Otherwise it locks <em class="parameter"><code>mutex</code></em> and returns
 <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>. If <em class="parameter"><code>mutex</code></em> is already locked by the calling thread, this
 functions increases the depth of <em class="parameter"><code>mutex</code></em> and immediately returns
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.
-</p>
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1042,7 +983,7 @@ functions increases the depth of <em class="parameter"><code>mutex</code></em> a
 <div class="refsect2">
 <a name="g-static-rec-mutex-unlock"></a><h3>g_static_rec_mutex_unlock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rec_mutex_unlock           (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_unlock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-unlock" title="g_rec_mutex_unlock ()"><code class="function">g_rec_mutex_unlock()</code></a></p>
 </div>
@@ -1051,8 +992,7 @@ Unlocks <em class="parameter"><code>mutex</code></em>. Another thread will be al
 when it has been unlocked as many times as it had been locked
 before. If <em class="parameter"><code>mutex</code></em> is completely unlocked and another thread is
 blocked in a <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-lock" title="g_static_rec_mutex_lock ()"><code class="function">g_static_rec_mutex_lock()</code></a> call for <em class="parameter"><code>mutex</code></em>, it will be
-woken and can lock <em class="parameter"><code>mutex</code></em> itself.
-</p>
+woken and can lock <em class="parameter"><code>mutex</code></em> itself.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1069,13 +1009,12 @@ woken and can lock <em class="parameter"><code>mutex</code></em> itself.
 <a name="g-static-rec-mutex-lock-full"></a><h3>g_static_rec_mutex_lock_full ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rec_mutex_lock_full        (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="type">guint</span></a> depth</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_lock_full</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-lock" title="g_rec_mutex_lock ()"><code class="function">g_rec_mutex_lock()</code></a></p>
 </div>
 <p>
-Works like calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-lock" title="g_static_rec_mutex_lock ()"><code class="function">g_static_rec_mutex_lock()</code></a> for <em class="parameter"><code>mutex</code></em> <em class="parameter"><code>depth</code></em> times.
-</p>
+Works like calling <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-lock" title="g_static_rec_mutex_lock ()"><code class="function">g_static_rec_mutex_lock()</code></a> for <em class="parameter"><code>mutex</code></em> <em class="parameter"><code>depth</code></em> times.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1098,7 +1037,7 @@ completely unlocked.</td>
 <div class="refsect2">
 <a name="g-static-rec-mutex-unlock-full"></a><h3>g_static_rec_mutex_unlock_full ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#guint" title="guint"><span class="returnvalue">guint</span></a>               g_static_rec_mutex_unlock_full      (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_unlock_full</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-unlock" title="g_rec_mutex_unlock ()"><code class="function">g_rec_mutex_unlock()</code></a></p>
 </div>
@@ -1109,8 +1048,7 @@ lock <em class="parameter"><code>mutex</code></em> itself. This function returns
 <em class="parameter"><code>mutex</code></em> has been locked by the current thread. To restore the state
 before the call to <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-unlock-full" title="g_static_rec_mutex_unlock_full ()"><code class="function">g_static_rec_mutex_unlock_full()</code></a> you can call
 <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rec-mutex-lock-full" title="g_static_rec_mutex_lock_full ()"><code class="function">g_static_rec_mutex_lock_full()</code></a> with the depth returned by this
-function.
-</p>
+function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1133,19 +1071,17 @@ thread.</td>
 <div class="refsect2">
 <a name="g-static-rec-mutex-free"></a><h3>g_static_rec_mutex_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rec_mutex_free             (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> *mutex</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rec_mutex_free</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rec-mutex-clear" title="g_rec_mutex_clear ()"><code class="function">g_rec_mutex_clear()</code></a></p>
 </div>
 <p>
-Releases all resources allocated to a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a>.
-</p>
+Releases all resources allocated to a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a>.</p>
 <p>
 You don't have to call this functions for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> with an
 unbounded lifetime, i.e. objects declared 'static', but if you have
 a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a> as a member of a structure and the structure is
-freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a>.
-</p>
+freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRecMutex" title="struct GStaticRecMutex"><span class="type">GStaticRecMutex</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1163,7 +1099,7 @@ freed, you should also free the <a class="link" href="glib-Deprecated-Thread-API
 <pre class="programlisting">struct GStaticRWLock {
 };
 </pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">GStaticRWLock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use a <a class="link" href="glib-Threads.html#GRWLock" title="struct GRWLock"><span class="type">GRWLock</span></a> instead</p>
 </div>
@@ -1172,14 +1108,11 @@ The <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title=
 lock can be used for protecting data that some portions of code only
 read from, while others also write. In such situations it is
 desirable that several readers can read at once, whereas of course
-only one writer may write at a time. Take a look at the following
-example:
-</p>
+only one writer may write at a time.</p>
 <p>
+Take a look at the following example:
 </p>
-<div class="example">
-<a name="id-1.7.2.5.34.6.1"></a><p class="title"><b>Example 21. An array with access functions</b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -1244,7 +1177,7 @@ example:
 <span class="normal">    array </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="glib-Pointer-Arrays.html#g-ptr-array-new">g_ptr_array_new</a></span><span class="normal"> </span><span class="symbol">();</span>
 
 <span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(</span><span class="normal">index </span><span class="symbol">&gt;=</span><span class="normal"> array</span><span class="symbol">-&gt;</span><span class="normal">len</span><span class="symbol">)</span>
-<span class="normal">    </span><span class="function"><a href="glib-Pointer-Arrays.html#g-ptr-array-set-size">g_ptr_array_set_size</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">array</span><span class="symbol">,</span><span class="normal"> index</span><span class="symbol">+</span><span class="number">1</span><span class="symbol">);</span>
+<span class="normal">    </span><span class="function"><a href="glib-Pointer-Arrays.html#g-ptr-array-set-size">g_ptr_array_set_size</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">array</span><span class="symbol">,</span><span class="normal"> index </span><span class="symbol">+</span><span class="normal"> </span><span class="number">1</span><span class="symbol">);</span>
 <span class="normal">  </span><span class="function"><a href="glib-Pointer-Arrays.html#g-ptr-array-index">g_ptr_array_index</a></span><span class="normal"> </span><span class="symbol">(</span><span class="normal">array</span><span class="symbol">,</span><span class="normal"> index</span><span class="symbol">)</span><span class="normal"> </span><span class="symbol">=</span><span class="normal"> data</span><span class="symbol">;</span>
 
 <span class="normal">  </span><span class="function"><a href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-writer-unlock">g_static_rw_lock_writer_unlock</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">rwlock</span><span class="symbol">);</span>
@@ -1254,64 +1187,51 @@ example:
   </table>
 </div>
 
-</div>
-<p><br class="example-break">
-</p>
 <p>
 This example shows an array which can be accessed by many readers
-(the <code class="function"><code class="function">my_array_get()</code></code> function) simultaneously,
-whereas the writers (the <code class="function"><code class="function">my_array_set()</code></code>
-function) will only be allowed once at a time and only if no readers
-currently access the array. This is because of the potentially
-dangerous resizing of the array. Using these functions is fully
-multi-thread safe now.
-</p>
+(the <code class="function">my_array_get()</code> function) simultaneously, whereas the writers
+(the <code class="function">my_array_set()</code> function) will only be allowed once at a time
+and only if no readers currently access the array. This is because
+of the potentially dangerous resizing of the array. Using these
+functions is fully multi-thread safe now.</p>
 <p>
 Most of the time, writers should have precedence over readers. That
 means, for this implementation, that as soon as a writer wants to
 lock the data, no other reader is allowed to lock the data, whereas,
 of course, the readers that already have locked the data are allowed
 to finish their operation. As soon as the last reader unlocks the
-data, the writer will lock it.
-</p>
+data, the writer will lock it.</p>
 <p>
 Even though <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> is not opaque, it should only be used
-with the following functions.
-</p>
+with the following functions.</p>
 <p>
-All of the <code class="function">g_static_rw_lock_*</code> functions can be
-used even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not been called. Then they do
-nothing, apart from <code class="function">g_static_rw_lock_*_trylock</code>,
-which does nothing but returning <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.
-</p>
+All of the g_static_rw_lock_* functions can be used even if
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not been called. Then they do nothing, apart
+from g_static_rw_lock_*_trylock, which does nothing but returning <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p>A read-write lock has a higher overhead than a mutex. For
-example, both <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-lock" title="g_static_rw_lock_reader_lock ()"><code class="function">g_static_rw_lock_reader_lock()</code></a> and
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-unlock" title="g_static_rw_lock_reader_unlock ()"><code class="function">g_static_rw_lock_reader_unlock()</code></a> have to lock and unlock a
-<a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>, so it takes at least twice the time to lock and unlock
-a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> that it does to lock and unlock a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>. So
-only data structures that are accessed by multiple readers, and which
-keep the lock for a considerable time justify a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a>. The
-above example most probably would fare better with a
+A read-write lock has a higher overhead than a mutex. For example, both
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-lock" title="g_static_rw_lock_reader_lock ()"><code class="function">g_static_rw_lock_reader_lock()</code></a> and <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-unlock" title="g_static_rw_lock_reader_unlock ()"><code class="function">g_static_rw_lock_reader_unlock()</code></a> have
+to lock and unlock a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>, so it takes at least twice the time
+to lock and unlock a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> that it does to lock and unlock a
+<a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>. So only data structures that are accessed by multiple
+readers, and which keep the lock for a considerable time justify a
+<a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a>. The above example most probably would fare better with a
 <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.</p>
-</div>
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="G-STATIC-RW-LOCK-INIT:CAPS"></a><h3>G_STATIC_RW_LOCK_INIT</h3>
 <pre class="programlisting">#define G_STATIC_RW_LOCK_INIT { G_STATIC_MUTEX_INIT, NULL, NULL, 0, FALSE, 0, 0 }
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">G_STATIC_RW_LOCK_INIT</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> must be initialized with this macro before it can
 be used. This macro can used be to initialize a variable, but it
 cannot be assigned to a variable. In that case you have to use
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-init" title="g_static_rw_lock_init ()"><code class="function">g_static_rw_lock_init()</code></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-init" title="g_static_rw_lock_init ()"><code class="function">g_static_rw_lock_init()</code></a>.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -1325,22 +1245,19 @@ cannot be assigned to a variable. In that case you have to use
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-static-rw-lock-init"></a><h3>g_static_rw_lock_init ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rw_lock_init               (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rw_lock_init</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rw-lock-init" title="g_rw_lock_init ()"><code class="function">g_rw_lock_init()</code></a> instead</p>
 </div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> must be initialized with this function before it
 can be used. Alternatively you can initialize it with
-<a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-RW-LOCK-INIT:CAPS" title="G_STATIC_RW_LOCK_INIT"><span class="type">G_STATIC_RW_LOCK_INIT</span></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-RW-LOCK-INIT:CAPS" title="G_STATIC_RW_LOCK_INIT"><span class="type">G_STATIC_RW_LOCK_INIT</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1356,7 +1273,7 @@ can be used. Alternatively you can initialize it with
 <div class="refsect2">
 <a name="g-static-rw-lock-reader-lock"></a><h3>g_static_rw_lock_reader_lock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rw_lock_reader_lock        (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rw_lock_reader_lock</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-lock" title="g_rw_lock_reader_lock ()"><code class="function">g_rw_lock_reader_lock()</code></a> instead</p>
 </div>
@@ -1367,13 +1284,11 @@ locked for writing by another thread or if another thread is already
 waiting to lock <em class="parameter"><code>lock</code></em> for writing, this function will block until
 <em class="parameter"><code>lock</code></em> is unlocked by the other writing thread and no other writing
 threads want to lock <em class="parameter"><code>lock</code></em>. This lock has to be unlocked by
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-unlock" title="g_static_rw_lock_reader_unlock ()"><code class="function">g_static_rw_lock_reader_unlock()</code></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-unlock" title="g_static_rw_lock_reader_unlock ()"><code class="function">g_static_rw_lock_reader_unlock()</code></a>.</p>
 <p>
 <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> is not recursive. It might seem to be possible to
 recursively lock for reading, but that can result in a deadlock, due
-to writer preference.
-</p>
+to writer preference.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1389,13 +1304,16 @@ to writer preference.
 <div class="refsect2">
 <a name="g-static-rw-lock-reader-trylock"></a><h3>g_static_rw_lock_reader_trylock ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_static_rw_lock_reader_trylock     (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_rw_lock_reader_trylock</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Tries to lock <em class="parameter"><code>lock</code></em> for reading. If <em class="parameter"><code>lock</code></em> is already locked for
 writing by another thread or if another thread is already waiting to
 lock <em class="parameter"><code>lock</code></em> for writing, immediately returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>. Otherwise locks
 <em class="parameter"><code>lock</code></em> for reading and returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>. This lock has to be unlocked by
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-unlock" title="g_static_rw_lock_reader_unlock ()"><code class="function">g_static_rw_lock_reader_unlock()</code></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-reader-unlock" title="g_static_rw_lock_reader_unlock ()"><code class="function">g_static_rw_lock_reader_unlock()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1404,12 +1322,12 @@ lock <em class="parameter"><code>lock</code></em> for writing, immediately retur
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to lock for reading.</td>
+<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to lock for reading</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>, if <em class="parameter"><code>lock</code></em> could be locked for reading.
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>, if <em class="parameter"><code>lock</code></em> could be locked for reading
 Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-trylock" title="g_rw_lock_reader_trylock ()"><code class="function">g_rw_lock_reader_trylock()</code></a> instead</td>
 </tr>
 </tbody>
@@ -1419,14 +1337,16 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-
 <div class="refsect2">
 <a name="g-static-rw-lock-reader-unlock"></a><h3>g_static_rw_lock_reader_unlock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rw_lock_reader_unlock      (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_rw_lock_reader_unlock</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Unlocks <em class="parameter"><code>lock</code></em>. If a thread waits to lock <em class="parameter"><code>lock</code></em> for writing and all
 locks for reading have been unlocked, the waiting thread is woken up
-and can lock <em class="parameter"><code>lock</code></em> for writing.
-</p>
+and can lock <em class="parameter"><code>lock</code></em> for writing.</p>
 <p>
-Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-unlock" title="g_rw_lock_reader_unlock ()"><code class="function">g_rw_lock_reader_unlock()</code></a> instead
-</p>
+Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-unlock" title="g_rw_lock_reader_unlock ()"><code class="function">g_rw_lock_reader_unlock()</code></a> instead</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1434,7 +1354,7 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to unlock after reading.</td>
+<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to unlock after reading</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -1442,6 +1362,10 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-reader-
 <div class="refsect2">
 <a name="g-static-rw-lock-writer-lock"></a><h3>g_static_rw_lock_writer_lock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rw_lock_writer_lock        (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_rw_lock_writer_lock</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Locks <em class="parameter"><code>lock</code></em> for writing. If <em class="parameter"><code>lock</code></em> is already locked for writing or
 reading by other threads, this function will block until <em class="parameter"><code>lock</code></em> is
@@ -1449,11 +1373,9 @@ completely unlocked and then lock <em class="parameter"><code>lock</code></em> f
 functions waits to lock <em class="parameter"><code>lock</code></em>, no other thread can lock <em class="parameter"><code>lock</code></em> for
 reading. When <em class="parameter"><code>lock</code></em> is locked for writing, no other thread can lock
 <em class="parameter"><code>lock</code></em> (neither for reading nor writing). This lock has to be
-unlocked by <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-writer-unlock" title="g_static_rw_lock_writer_unlock ()"><code class="function">g_static_rw_lock_writer_unlock()</code></a>.
-</p>
+unlocked by <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-writer-unlock" title="g_static_rw_lock_writer_unlock ()"><code class="function">g_static_rw_lock_writer_unlock()</code></a>.</p>
 <p>
-Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-lock" title="g_rw_lock_writer_lock ()"><code class="function">g_rw_lock_writer_lock()</code></a> instead
-</p>
+Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-lock" title="g_rw_lock_writer_lock ()"><code class="function">g_rw_lock_writer_lock()</code></a> instead</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1461,7 +1383,7 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-
 </colgroup>
 <tbody><tr>
 <td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to lock for writing.</td>
+<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to lock for writing</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -1469,12 +1391,15 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-
 <div class="refsect2">
 <a name="g-static-rw-lock-writer-trylock"></a><h3>g_static_rw_lock_writer_trylock ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gboolean" title="gboolean"><span class="returnvalue">gboolean</span></a>            g_static_rw_lock_writer_trylock     (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_rw_lock_writer_trylock</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Tries to lock <em class="parameter"><code>lock</code></em> for writing. If <em class="parameter"><code>lock</code></em> is already locked (for
 either reading or writing) by another thread, it immediately returns
 <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a>. Otherwise it locks <em class="parameter"><code>lock</code></em> for writing and returns <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>. This
-lock has to be unlocked by <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-writer-unlock" title="g_static_rw_lock_writer_unlock ()"><code class="function">g_static_rw_lock_writer_unlock()</code></a>.
-</p>
+lock has to be unlocked by <a class="link" href="glib-Deprecated-Thread-APIs.html#g-static-rw-lock-writer-unlock" title="g_static_rw_lock_writer_unlock ()"><code class="function">g_static_rw_lock_writer_unlock()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1483,12 +1408,12 @@ lock has to be unlocked by <a class="link" href="glib-Deprecated-Thread-APIs.htm
 <tbody>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>lock</code></em> :</span></p></td>
-<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to lock for writing.</td>
+<td>a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> to lock for writing</td>
 </tr>
 <tr>
 <td><p><span class="term"><span class="emphasis"><em>Returns</em></span> :</span></p></td>
 <td>
-<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>, if <em class="parameter"><code>lock</code></em> could be locked for writing.
+<a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>, if <em class="parameter"><code>lock</code></em> could be locked for writing
 Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-trylock" title="g_rw_lock_writer_trylock ()"><code class="function">g_rw_lock_writer_trylock()</code></a> instead</td>
 </tr>
 </tbody>
@@ -1498,17 +1423,19 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-
 <div class="refsect2">
 <a name="g-static-rw-lock-writer-unlock"></a><h3>g_static_rw_lock_writer_unlock ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rw_lock_writer_unlock      (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_rw_lock_writer_unlock</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Unlocks <em class="parameter"><code>lock</code></em>. If a thread is waiting to lock <em class="parameter"><code>lock</code></em> for writing and
 all locks for reading have been unlocked, the waiting thread is
 woken up and can lock <em class="parameter"><code>lock</code></em> for writing. If no thread is waiting to
 lock <em class="parameter"><code>lock</code></em> for writing, and some thread or threads are waiting to
 lock <em class="parameter"><code>lock</code></em> for reading, the waiting threads are woken up and can
-lock <em class="parameter"><code>lock</code></em> for reading.
-</p>
+lock <em class="parameter"><code>lock</code></em> for reading.</p>
 <p>
-Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-unlock" title="g_rw_lock_writer_unlock ()"><code class="function">g_rw_lock_writer_unlock()</code></a> instead
-</p>
+Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-unlock" title="g_rw_lock_writer_unlock ()"><code class="function">g_rw_lock_writer_unlock()</code></a> instead</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1524,19 +1451,17 @@ Deprectated: 2.32: Use <a class="link" href="glib-Threads.html#g-rw-lock-writer-
 <div class="refsect2">
 <a name="g-static-rw-lock-free"></a><h3>g_static_rw_lock_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_rw_lock_free               (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> *lock</code></em>);</pre>
-<div class="warning" style="margin-left: 0.5in; margin-right: 0.5in;">
+<div class="warning">
 <h3 class="title">Warning</h3>
 <p><code class="literal">g_static_rw_lock_free</code> has been deprecated since version 2.32 and should not be used in newly-written code. Use a <a class="link" href="glib-Threads.html#GRWLock" title="struct GRWLock"><span class="type">GRWLock</span></a> instead</p>
 </div>
 <p>
-Releases all resources allocated to <em class="parameter"><code>lock</code></em>.
-</p>
+Releases all resources allocated to <em class="parameter"><code>lock</code></em>.</p>
 <p>
 You don't have to call this functions for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> with an
 unbounded lifetime, i.e. objects declared 'static', but if you have
 a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a> as a member of a structure, and the structure is
-freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a>.
-</p>
+freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticRWLock" title="struct GStaticRWLock"><span class="type">GStaticRWLock</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1554,19 +1479,19 @@ freed, you should also free the <a class="link" href="glib-Deprecated-Thread-API
 <pre class="programlisting">struct GStaticPrivate {
 };
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">GStaticPrivate</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 A <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> works almost like a <a class="link" href="glib-Threads.html#GPrivate" title="struct GPrivate"><span class="type">GPrivate</span></a>, but it has one
 significant advantage. It doesn't need to be created at run-time
 like a <a class="link" href="glib-Threads.html#GPrivate" title="struct GPrivate"><span class="type">GPrivate</span></a>, but can be defined at compile-time. This is
-similar to the difference between <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a> and <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>. Now
-look at our <code class="function"><code class="function">give_me_next_number()</code></code> example with
-<a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a>:
-</p>
+similar to the difference between <a class="link" href="glib-Threads.html#GMutex" title="union GMutex"><span class="type">GMutex</span></a> and <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticMutex" title="GStaticMutex"><span class="type">GStaticMutex</span></a>.</p>
 <p>
+Now look at our <code class="function">give_me_next_number()</code> example with <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a>:
 </p>
-<div class="example">
-<a name="id-1.7.2.5.44.5.1"></a><p class="title"><b>Example 22. Using GStaticPrivate for per-thread data</b></p>
-<div class="example-contents">
+<div class="informalexample">
   <table class="listing_frame" border="0" cellpadding="0" cellspacing="0">
     <tbody>
       <tr>
@@ -1595,7 +1520,7 @@ look at our <code class="function"><code class="function">give_me_next_number()<
 
 <span class="normal">  </span><span class="keyword">if</span><span class="normal"> </span><span class="symbol">(!</span><span class="normal">current_number</span><span class="symbol">)</span>
 <span class="normal">    </span><span class="cbracket">{</span>
-<span class="normal">      current_number </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="glib-Memory-Allocation.html#g-new">g_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="type">int</span><span class="symbol">,</span><span class="number">1</span><span class="symbol">);</span>
+<span class="normal">      current_number </span><span class="symbol">=</span><span class="normal"> </span><span class="function"><a href="glib-Memory-Allocation.html#g-new">g_new</a></span><span class="normal"> </span><span class="symbol">(</span><span class="type">int</span><span class="symbol">,</span><span class="normal"> </span><span class="number">1</span><span class="symbol">);</span>
 <span class="normal">      </span><span class="symbol">*</span><span class="normal">current_number </span><span class="symbol">=</span><span class="normal"> </span><span class="number">0</span><span class="symbol">;</span>
 <span class="normal">      </span><span class="function"><a href="glib-Deprecated-Thread-APIs.html#g-static-private-set">g_static_private_set</a></span><span class="normal"> </span><span class="symbol">(&amp;</span><span class="normal">current_number_key</span><span class="symbol">,</span><span class="normal"> current_number</span><span class="symbol">,</span><span class="normal"> <a href="glib-Memory-Allocation.html#g-free">g_free</a></span><span class="symbol">);</span>
 <span class="normal">    </span><span class="cbracket">}</span>
@@ -1610,18 +1535,18 @@ look at our <code class="function"><code class="function">give_me_next_number()<
 </div>
 
 </div>
-<p><br class="example-break">
-</p>
-</div>
 <hr>
 <div class="refsect2">
 <a name="G-STATIC-PRIVATE-INIT:CAPS"></a><h3>G_STATIC_PRIVATE_INIT</h3>
 <pre class="programlisting">#define G_STATIC_PRIVATE_INIT 
 </pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">G_STATIC_PRIVATE_INIT</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Every <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> must be initialized with this macro, before it
-can be used.
-</p>
+can be used.</p>
 <p>
 </p>
 <div class="informalexample">
@@ -1635,17 +1560,18 @@ can be used.
   </table>
 </div>
 
-<p>
-</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-static-private-init"></a><h3>g_static_private_init ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_private_init               (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> *private_key</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_private_init</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Initializes <em class="parameter"><code>private_key</code></em>. Alternatively you can initialize it with
-<a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-PRIVATE-INIT:CAPS" title="G_STATIC_PRIVATE_INIT"><span class="type">G_STATIC_PRIVATE_INIT</span></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#G-STATIC-PRIVATE-INIT:CAPS" title="G_STATIC_PRIVATE_INIT"><span class="type">G_STATIC_PRIVATE_INIT</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1661,12 +1587,14 @@ Initializes <em class="parameter"><code>private_key</code></em>. Alternatively y
 <div class="refsect2">
 <a name="g-static-private-get"></a><h3>g_static_private_get ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="returnvalue">gpointer</span></a>            g_static_private_get                (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> *private_key</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_private_get</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
-Works like <a class="link" href="glib-Threads.html#g-private-get" title="g_private_get ()"><code class="function">g_private_get()</code></a> only for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a>.
-</p>
+Works like <a class="link" href="glib-Threads.html#g-private-get" title="g_private_get ()"><code class="function">g_private_get()</code></a> only for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a>.</p>
 <p>
-This function works even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not yet been called.
-</p>
+This function works even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not yet been called.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1691,27 +1619,22 @@ This function works even if <a class="link" href="glib-Deprecated-Thread-APIs.ht
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_private_set                (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> *private_key</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> data</code></em>,
                                                          <em class="parameter"><code><a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> notify</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_private_set</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
 Sets the pointer keyed to <em class="parameter"><code>private_key</code></em> for the current thread and
 the function <em class="parameter"><code>notify</code></em> to be called with that pointer (<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a> or
 non-<a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>), whenever the pointer is set again or whenever the
-current thread ends.
-</p>
+current thread ends.</p>
 <p>
 This function works even if <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> has not yet been called.
 If <a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a> is called later, the <em class="parameter"><code>data</code></em> keyed to <em class="parameter"><code>private_key</code></em>
 will be inherited only by the main thread, i.e. the one that called
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>.
-</p>
+<a class="link" href="glib-Deprecated-Thread-APIs.html#g-thread-init" title="g_thread_init ()"><code class="function">g_thread_init()</code></a>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>
-<p><em class="parameter"><code>notify</code></em> is used quite differently from <em class="parameter"><code>destructor</code></em> in
-<a class="link" href="glib-Deprecated-Thread-APIs.html#g-private-new" title="g_private_new ()"><code class="function">g_private_new()</code></a>.</p>
-</div>
-<p>
-</p>
+<em class="parameter"><code>notify</code></em> is used quite differently from <em class="parameter"><code>destructor</code></em> in <a class="link" href="glib-Deprecated-Thread-APIs.html#g-private-new" title="g_private_new ()"><code class="function">g_private_new()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1739,15 +1662,17 @@ current thread ends or sets this pointer again</td>
 <div class="refsect2">
 <a name="g-static-private-free"></a><h3>g_static_private_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_static_private_free               (<em class="parameter"><code><a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> *private_key</code></em>);</pre>
+<div class="warning">
+<h3 class="title">Warning</h3>
+<p><code class="literal">g_static_private_free</code> is deprecated and should not be used in newly-written code.</p>
+</div>
 <p>
-Releases all resources allocated to <em class="parameter"><code>private_key</code></em>.
-</p>
+Releases all resources allocated to <em class="parameter"><code>private_key</code></em>.</p>
 <p>
 You don't have to call this functions for a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> with an
 unbounded lifetime, i.e. objects declared 'static', but if you have
 a <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a> as a member of a structure and the structure is
-freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a>.
-</p>
+freed, you should also free the <a class="link" href="glib-Deprecated-Thread-APIs.html#GStaticPrivate" title="struct GStaticPrivate"><span class="type">GStaticPrivate</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -1767,6 +1692,6 @@ freed, you should also free the <a class="link" href="glib-Deprecated-Thread-API
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

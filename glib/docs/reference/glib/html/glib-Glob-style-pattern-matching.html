@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Glob-style pattern matching</title>
+<title>GLib Reference Manual: Glob-style pattern matching</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Commandline-option-parser.html" title="Commandline option parser">
 <link rel="next" href="glib-Perl-compatible-regular-expressions.html" title="Perl-compatible regular expressions">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Commandline-option-parser.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Perl-compatible-regular-expressions.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Glob-style-pattern-matching.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Glob-style-pattern-matching.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Commandline-option-parser.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Perl-compatible-regular-expressions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Glob-style-pattern-matching"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -59,25 +56,20 @@
 <div class="refsect1">
 <a name="glib-Glob-style-pattern-matching.description"></a><h2>Description</h2>
 <p>
-The <code class="function">g_pattern_match*</code> functions match a string
+The g_pattern_match* functions match a string
 against a pattern containing '*' and '?' wildcards with similar
 semantics as the standard <code class="function">glob()</code> function: '*' matches an arbitrary,
-possibly empty, string, '?' matches an arbitrary character.
-</p>
+possibly empty, string, '?' matches an arbitrary character.</p>
 <p>
-Note that in contrast to <code class="function">glob()</code>, the '/' character
-<span class="emphasis"><em>can</em></span> be matched by the wildcards, there are no
-'[...]' character ranges and '*' and '?' can
-<span class="emphasis"><em>not</em></span> be escaped to include them literally in a
-pattern.
-</p>
+Note that in contrast to <code class="function">glob()</code>, the '/' character can be matched by
+the wildcards, there are no '[...]' character ranges and '*' and '?'
+can not be escaped to include them literally in a pattern.</p>
 <p>
 When multiple strings must be matched against the same pattern, it
 is better to compile the pattern to a <a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a> using
 <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-spec-new" title="g_pattern_spec_new ()"><code class="function">g_pattern_spec_new()</code></a> and use <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match-string" title="g_pattern_match_string ()"><code class="function">g_pattern_match_string()</code></a> instead of
 <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match-simple" title="g_pattern_match_simple ()"><code class="function">g_pattern_match_simple()</code></a>. This avoids the overhead of repeated
-pattern compilation.
-</p>
+pattern compilation.</p>
 </div>
 <div class="refsect1">
 <a name="glib-Glob-style-pattern-matching.details"></a><h2>Details</h2>
@@ -85,18 +77,15 @@ pattern compilation.
 <a name="GPatternSpec"></a><h3>GPatternSpec</h3>
 <pre class="programlisting">typedef struct _GPatternSpec GPatternSpec;</pre>
 <p>
-A <span class="structname">GPatternSpec</span> is the 'compiled' form of a
-pattern. This structure is opaque and its fields cannot be accessed
-directly.
-</p>
+A GPatternSpec struct is the 'compiled' form of a pattern. This
+structure is opaque and its fields cannot be accessed directly.</p>
 </div>
 <hr>
 <div class="refsect2">
 <a name="g-pattern-spec-new"></a><h3>g_pattern_spec_new ()</h3>
 <pre class="programlisting"><a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="returnvalue">GPatternSpec</span></a> *      g_pattern_spec_new                  (<em class="parameter"><code>const <a class="link" href="glib-Basic-Types.html#gchar" title="gchar"><span class="type">gchar</span></a> *pattern</code></em>);</pre>
 <p>
-Compiles a pattern to a <a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a>.
-</p>
+Compiles a pattern to a <a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -120,8 +109,7 @@ Compiles a pattern to a <a class="link" href="glib-Glob-style-pattern-matching.h
 <a name="g-pattern-spec-free"></a><h3>g_pattern_spec_free ()</h3>
 <pre class="programlisting"><span class="returnvalue">void</span>                g_pattern_spec_free                 (<em class="parameter"><code><a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a> *pspec</code></em>);</pre>
 <p>
-Frees the memory allocated for the <a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a>.
-</p>
+Frees the memory allocated for the <a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -141,8 +129,7 @@ Frees the memory allocated for the <a class="link" href="glib-Glob-style-pattern
                                                          <em class="parameter"><code><a class="link" href="glib-Glob-style-pattern-matching.html#GPatternSpec" title="GPatternSpec"><span class="type">GPatternSpec</span></a> *pspec2</code></em>);</pre>
 <p>
 Compares two compiled pattern specs and returns whether they will
-match the same set of strings.
-</p>
+match the same set of strings.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -179,22 +166,18 @@ length of the string given is mandatory. The reversed string can be
 omitted by passing <a class="link" href="glib-Standard-Macros.html#NULL:CAPS" title="NULL"><code class="literal">NULL</code></a>, this is more efficient if the reversed
 version of the string to be matched is not at hand, as
 <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match" title="g_pattern_match ()"><code class="function">g_pattern_match()</code></a> will only construct it if the compiled pattern
-requires reverse matches.
-</p>
+requires reverse matches.</p>
 <p>
 Note that, if the user code will (possibly) match a string against a
 multitude of patterns containing wildcards, chances are high that
 some patterns will require a reversed string. In this case, it's
 more efficient to provide the reversed string to avoid multiple
-constructions thereof in the various calls to <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match" title="g_pattern_match ()"><code class="function">g_pattern_match()</code></a>.
-</p>
+constructions thereof in the various calls to <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match" title="g_pattern_match ()"><code class="function">g_pattern_match()</code></a>.</p>
 <p>
 Note also that the reverse of a UTF-8 encoded string can in general
-<span class="emphasis"><em>not</em></span> be obtained by <a class="link" href="glib-String-Utility-Functions.html#g-strreverse" title="g_strreverse ()"><code class="function">g_strreverse()</code></a>. This works
-only if the string doesn't contain any multibyte characters. GLib
-offers the <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strreverse" title="g_utf8_strreverse ()"><code class="function">g_utf8_strreverse()</code></a> function to reverse UTF-8 encoded
-strings.
-</p>
+not be obtained by <a class="link" href="glib-String-Utility-Functions.html#g-strreverse" title="g_strreverse ()"><code class="function">g_strreverse()</code></a>. This works only if the string
+does not contain any multibyte characters. GLib offers the
+<a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strreverse" title="g_utf8_strreverse ()"><code class="function">g_utf8_strreverse()</code></a> function to reverse UTF-8 encoded strings.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -209,7 +192,7 @@ strings.
 <tr>
 <td><p><span class="term"><em class="parameter"><code>string_length</code></em> :</span></p></td>
 <td>the length of <em class="parameter"><code>string</code></em> (in bytes, i.e. <code class="function">strlen()</code>,
-<span class="emphasis"><em>not</em></span> <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strlen" title="g_utf8_strlen ()"><code class="function">g_utf8_strlen()</code></a>)</td>
+not <a class="link" href="glib-Unicode-Manipulation.html#g-utf8-strlen" title="g_utf8_strlen ()"><code class="function">g_utf8_strlen()</code></a>)</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>string</code></em> :</span></p></td>
@@ -237,8 +220,7 @@ strings.
 <p>
 Matches a string against a compiled pattern. If the string is to be
 matched against more than one pattern, consider using
-<a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match" title="g_pattern_match ()"><code class="function">g_pattern_match()</code></a> instead while supplying the reversed string.
-</p>
+<a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match" title="g_pattern_match ()"><code class="function">g_pattern_match()</code></a> instead while supplying the reversed string.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -272,8 +254,7 @@ matched against more than one pattern, consider using
 Matches a string against a pattern given as a string. If this
 function is to be called in a loop, it's more efficient to compile
 the pattern once with <a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-spec-new" title="g_pattern_spec_new ()"><code class="function">g_pattern_spec_new()</code></a> and call
-<a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match-string" title="g_pattern_match_string ()"><code class="function">g_pattern_match_string()</code></a> repeatedly.
-</p>
+<a class="link" href="glib-Glob-style-pattern-matching.html#g-pattern-match-string" title="g_pattern_match_string ()"><code class="function">g_pattern_match_string()</code></a> repeatedly.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -301,6 +282,6 @@ the pattern once with <a class="link" href="glib-Glob-style-pattern-matching.htm
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

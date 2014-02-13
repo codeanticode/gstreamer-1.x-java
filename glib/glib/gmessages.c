@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -35,15 +33,16 @@
  *
  * These functions provide support for outputting messages.
  *
- * The <function>g_return</function> family of macros (g_return_if_fail(),
- * g_return_val_if_fail(), g_return_if_reached(), g_return_val_if_reached())
- * should only be used for programming errors, a typical use case is
- * checking for invalid parameters at the beginning of a public function.
- * They should not be used if you just mean "if (error) return", they
- * should only be used if you mean "if (bug in program) return".
- * The program behavior is generally considered undefined after one
- * of these checks fails. They are not intended for normal control
- * flow, only to give a perhaps-helpful warning before giving up.
+ * The g_return family of macros (g_return_if_fail(),
+ * g_return_val_if_fail(), g_return_if_reached(),
+ * g_return_val_if_reached()) should only be used for programming
+ * errors, a typical use case is checking for invalid parameters at
+ * the beginning of a public function. They should not be used if
+ * you just mean "if (error) return", they should only be used if
+ * you mean "if (bug in program) return". The program behavior is
+ * generally considered undefined after one of these checks fails.
+ * They are not intended for normal control flow, only to give a
+ * perhaps-helpful warning before giving up.
  */
 
 #include "config.h"
@@ -537,31 +536,24 @@ g_log_set_fatal_mask (const gchar   *log_domain,
  * you want to set a handler for this log level you must combine it with
  * #G_LOG_FLAG_FATAL.
  *
- * <example>
- * <title>Adding a log handler for all warning messages in the default
- * (application) domain</title>
- * <programlisting>
+ * Here is an example for adding a log handler for all warning messages
+ * in the default domain:
+ * |[<!-- language="C" --> 
  * g_log_set_handler (NULL, G_LOG_LEVEL_WARNING | G_LOG_FLAG_FATAL
  *                    | G_LOG_FLAG_RECURSION, my_log_handler, NULL);
- * </programlisting>
- * </example>
+ * ]|
  *
- * <example>
- * <title>Adding a log handler for all critical messages from GTK+</title>
- * <programlisting>
+ * This example adds a log handler for all critical messages from GTK+:
+ * |[<!-- language="C" --> 
  * g_log_set_handler ("Gtk", G_LOG_LEVEL_CRITICAL | G_LOG_FLAG_FATAL
  *                    | G_LOG_FLAG_RECURSION, my_log_handler, NULL);
- * </programlisting>
- * </example>
+ * ]|
  *
- * <example>
- * <title>Adding a log handler for <emphasis>all</emphasis> messages from
- * GLib</title>
- * <programlisting>
+ * This example adds a log handler for all messages from GLib:
+ * |[<!-- language="C" --> 
  * g_log_set_handler ("GLib", G_LOG_LEVEL_MASK | G_LOG_FLAG_FATAL
  *                    | G_LOG_FLAG_RECURSION, my_log_handler, NULL);
- * </programlisting>
- * </example>
+ * ]|
  *
  * Returns: the id of the new handler
  */
@@ -1154,7 +1146,7 @@ g_assert_warning (const char *log_domain,
  *
  * For example:
  *
- * |[
+ * |[<!-- language="C" --> 
  *   /&ast; g_main_context_push_thread_default() should fail if the
  *    &ast; context is already owned by another thread.
  *    &ast;/
@@ -1352,23 +1344,14 @@ escape_string (GString *string)
  *
  * The behavior of this log handler can be influenced by a number of
  * environment variables:
- * <variablelist>
- *   <varlistentry>
- *     <term><envar>G_MESSAGES_PREFIXED</envar></term>
- *     <listitem>
- *       A :-separated list of log levels for which messages should
- *       be prefixed by the program name and PID of the aplication.
- *     </listitem>
- *   </varlistentry>
- *   <varlistentry>
- *     <term><envar>G_MESSAGES_DEBUG</envar></term>
- *     <listitem>
- *       A space-separated list of log domains for which debug and
- *       informational messages are printed. By default these
- *       messages are not printed.
- *     </listitem>
- *   </varlistentry>
- * </variablelist>
+ *
+ * - <envar>G_MESSAGES_PREFIXED</envar>: A :-separated list of log levels
+ *   for which messages should be prefixed by the program name and PID of
+ *   the aplication.
+ *
+ * - <envar>G_MESSAGES_DEBUG</envar>: A space-separated list of log domains
+ *   for which debug and informational messages are printed. By default these
+ *   messages are not printed.
  *
  * stderr is used for levels %G_LOG_LEVEL_ERROR, %G_LOG_LEVEL_CRITICAL,
  * %G_LOG_LEVEL_WARNING and %G_LOG_LEVEL_MESSAGE. stdout is used for

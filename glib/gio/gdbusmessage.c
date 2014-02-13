@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: David Zeuthen <davidz@redhat.com>
  */
@@ -3351,35 +3349,35 @@ _sort_keys_func (gconstpointer a,
  * The contents of the description has no ABI guarantees, the contents
  * and formatting is subject to change at any time. Typical output
  * looks something like this:
- * <programlisting>
- * Type&colon;    method-call
- * Flags&colon;   none
- * Version&colon; 0
- * Serial&colon;  4
- * Headers&colon;
+ * |[
+ * Type:    method-call
+ * Flags:   none
+ * Version: 0
+ * Serial:  4
+ * Headers:
  *   path -> objectpath '/org/gtk/GDBus/TestObject'
  *   interface -> 'org.gtk.GDBus.TestInterface'
  *   member -> 'GimmeStdout'
  *   destination -> ':1.146'
- * Body&colon; ()
+ * Body: ()
  * UNIX File Descriptors:
  *   (none)
- * </programlisting>
+ * ]|
  * or
- * <programlisting>
- * Type&colon;    method-return
- * Flags&colon;   no-reply-expected
- * Version&colon; 0
- * Serial&colon;  477
- * Headers&colon;
+ * |[
+ * Type:    method-return
+ * Flags:   no-reply-expected
+ * Version: 0
+ * Serial:  477
+ * Headers:
  *   reply-serial -> uint32 4
  *   destination -> ':1.159'
  *   sender -> ':1.146'
  *   num-unix-fds -> uint32 1
- * Body&colon; ()
- * UNIX File Descriptors&colon;
+ * Body: ()
+ * UNIX File Descriptors:
  *   fd 12: dev=0:10,mode=020620,ino=5,uid=500,gid=5,rdev=136:2,size=0,atime=1273085037,mtime=1273085851,ctime=1272982635
- * </programlisting>
+ * ]|
  *
  * Returns: A string that should be freed with g_free().
  *

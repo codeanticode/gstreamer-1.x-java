@@ -2,32 +2,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>TLS Overview</title>
+<title>GIO Reference Manual: TLS Overview</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="tls.html" title="TLS (SSL) support">
 <link rel="prev" href="tls.html" title="TLS (SSL) support">
 <link rel="next" href="GTlsCertificate.html" title="GTlsCertificate">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="tls.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="tls.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GTlsCertificate.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#gio-TLS-Overview.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#gio-TLS-Overview.description" class="shortcut">Description</a>
                    | 
                   <a href="#gio-TLS-Overview.object-hierarchy" class="shortcut">Object Hierarchy</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="tls.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="tls.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GTlsCertificate.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="gio-TLS-Overview"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -61,8 +58,7 @@ enum                <a class="link" href="gio-TLS-Overview.html#GTlsCertificateF
 <p>
 <a class="link" href="GTlsConnection.html" title="GTlsConnection"><span class="type">GTlsConnection</span></a> and related classes provide TLS (Transport Layer
 Security, previously known as SSL, Secure Sockets Layer) support for
-gio-based network streams.
-</p>
+gio-based network streams.</p>
 <p>
 In the simplest case, for a client connection, you can just set the
 <a class="link" href="GSocketClient.html#GSocketClient--tls" title='The "tls" property'><span class="type">"tls"</span></a> flag on a <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a>, and then any
@@ -71,21 +67,18 @@ automatically, using appropriate default settings, and rejecting
 any invalid or self-signed certificates (unless you change that
 default by setting the <a class="link" href="GSocketClient.html#GSocketClient--tls-validation-flags" title='The "tls-validation-flags" property'><span class="type">"tls-validation-flags"</span></a>
 property). The returned object will be a <a class="link" href="GTcpWrapperConnection.html" title="GTcpWrapperConnection"><span class="type">GTcpWrapperConnection</span></a>,
-which wraps the underlying <a class="link" href="GTlsClientConnection.html" title="GTlsClientConnection"><span class="type">GTlsClientConnection</span></a>.
-</p>
+which wraps the underlying <a class="link" href="GTlsClientConnection.html" title="GTlsClientConnection"><span class="type">GTlsClientConnection</span></a>.</p>
 <p>
 For greater control, you can create your own <a class="link" href="GTlsClientConnection.html" title="GTlsClientConnection"><span class="type">GTlsClientConnection</span></a>,
 wrapping a <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> (or an arbitrary <a class="link" href="GIOStream.html" title="GIOStream"><span class="type">GIOStream</span></a> with
 pollable input and output streams) and then connect to its signals,
 such as <a class="link" href="GTlsConnection.html#GTlsConnection-accept-certificate" title='The "accept-certificate" signal'><span class="type">"accept-certificate"</span></a>, before starting the
-handshake.
-</p>
+handshake.</p>
 <p>
 Server-side TLS is similar, using <a class="link" href="GTlsServerConnection.html" title="GTlsServerConnection"><span class="type">GTlsServerConnection</span></a>. At the
 moment, there is no support for automatically wrapping server-side
 connections in the way <a class="link" href="GSocketClient.html" title="GSocketClient"><span class="type">GSocketClient</span></a> does for client-side
-connections.
-</p>
+connections.</p>
 </div>
 <div class="refsect1">
 <a name="gio-TLS-Overview.details"></a><h2>Details</h2>
@@ -96,8 +89,7 @@ connections.
 <p>
 Error domain for TLS. Errors in this domain will be from the
 <a class="link" href="gio-TLS-Overview.html#GTlsError" title="enum GTlsError"><span class="type">GTlsError</span></a> enumeration. See <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> for more information on error
-domains.
-</p>
+domains.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -114,8 +106,7 @@ domains.
 </pre>
 <p>
 An error code used with <a class="link" href="gio-TLS-Overview.html#G-TLS-ERROR:CAPS" title="G_TLS_ERROR"><code class="literal">G_TLS_ERROR</code></a> in a <a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> returned from a
-TLS-related routine.
-</p>
+TLS-related routine.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -177,8 +168,7 @@ TLS-related routine.
 } GTlsAuthenticationMode;
 </pre>
 <p>
-The client authentication mode for a <a class="link" href="GTlsServerConnection.html" title="GTlsServerConnection"><span class="type">GTlsServerConnection</span></a>.
-</p>
+The client authentication mode for a <a class="link" href="GTlsServerConnection.html" title="GTlsServerConnection"><span class="type">GTlsServerConnection</span></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -224,8 +214,7 @@ A set of flags describing TLS certification validation. This can be
 used to set which validation steps to perform (eg, with
 <a class="link" href="GTlsClientConnection.html#g-tls-client-connection-set-validation-flags" title="g_tls_client_connection_set_validation_flags ()"><code class="function">g_tls_client_connection_set_validation_flags()</code></a>), or to describe why
 a particular certificate was rejected (eg, in
-<a class="link" href="GTlsConnection.html#GTlsConnection-accept-certificate" title='The "accept-certificate" signal'><span class="type">"accept-certificate"</span></a>).
-</p>
+<a class="link" href="GTlsConnection.html#GTlsConnection-accept-certificate" title='The "accept-certificate" signal'><span class="type">"accept-certificate"</span></a>).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -287,6 +276,6 @@ a particular certificate was rejected (eg, in
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>UNIX-specific utilities and integration</title>
+<title>GLib Reference Manual: UNIX-specific utilities and integration</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Testing.html" title="Testing">
 <link rel="next" href="glib-Windows-Compatibility-Functions.html" title="Windows Compatibility Functions">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Testing.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Windows-Compatibility-Functions.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-UNIX-specific-utilities-and-integration.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-UNIX-specific-utilities-and-integration.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Testing.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Windows-Compatibility-Functions.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-UNIX-specific-utilities-and-integration"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -81,12 +78,10 @@
 Most of GLib is intended to be portable; in contrast, this set of
 functions is designed for programs which explicitly target UNIX,
 or are using it to build higher level abstractions which would be
-conditionally compiled if the platform matches G_OS_UNIX.
-</p>
+conditionally compiled if the platform matches G_OS_UNIX.</p>
 <p>
 To use these functions, you must explicitly include the
-"glib-unix.h" header.
-</p>
+"glib-unix.h" header.</p>
 </div>
 <div class="refsect1">
 <a name="glib-UNIX-specific-utilities-and-integration.details"></a><h2>Details</h2>
@@ -99,15 +94,13 @@ Error domain for API in the "g_unix_" namespace.  Note that there is
 no exported enumeration mapping <code class="literal">errno</code>.  Instead, all functions
 ensure that <code class="literal">errno</code> is relevant.  The code for all <a class="link" href="glib-UNIX-specific-utilities-and-integration.html#G-UNIX-ERROR:CAPS" title="G_UNIX_ERROR"><span class="type">G_UNIX_ERROR</span></a> is
 always <code class="literal">0</code>, and the error message is always
-generated via <a class="link" href="glib-String-Utility-Functions.html#g-strerror" title="g_strerror ()"><code class="function">g_strerror()</code></a>.
-</p>
+generated via <a class="link" href="glib-String-Utility-Functions.html#g-strerror" title="g_strerror ()"><code class="function">g_strerror()</code></a>.</p>
 <p>
 It is expected that most code will not look at <code class="literal">errno</code> from these
 APIs. Important cases where one would want to differentiate between
 errors are already covered by existing cross-platform GLib API,
 such as e.g. <a href="http://library.gnome.org/devel/gio/unstable/GFile.html"><span class="type">GFile</span></a> wrapping <code class="literal">ENOENT</code>.  However, it is
-provided for completeness, at least.
-</p>
+provided for completeness, at least.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -118,19 +111,12 @@ provided for completeness, at least.
 <p>
 Similar to the UNIX <code class="function">pipe()</code> call, but on modern systems like Linux
 uses the <code class="function">pipe2()</code> system call, which atomically creates a pipe with
-the configured flags.  The only supported flag currently is
-<code class="literal">FD_CLOEXEC</code>.  If for example you want to configure
-<code class="literal">O_NONBLOCK</code>, that must still be done separately with
-<code class="function">fcntl()</code>.
-</p>
+the configured flags. The only supported flag currently is
+<code class="literal">FD_CLOEXEC</code>. If for example you want to configure <code class="literal">O_NONBLOCK</code>, that
+must still be done separately with <code class="function">fcntl()</code>.</p>
 <p>
-</p>
-<div class="note" style="margin-left: 0.5in; margin-right: 0.5in;">
-<h3 class="title">Note</h3>This function does *not* take <code class="literal">O_CLOEXEC</code>, it takes
-<code class="literal">FD_CLOEXEC</code> as if for <code class="function">fcntl()</code>; these are
-different on Linux/glibc.</div>
-<p>
-</p>
+This function does not take <code class="literal">O_CLOEXEC</code>, it takes <code class="literal">FD_CLOEXEC</code> as if
+for <code class="function">fcntl()</code>; these are different on Linux/glibc.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -143,7 +129,8 @@ different on Linux/glibc.</div>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>flags</code></em> :</span></p></td>
-<td>Bitfield of file descriptor flags, see "man 2 fcntl"</td>
+<td>Bitfield of file descriptor flags, as for <code class="function">fcntl()</code>
+</td>
 </tr>
 <tr>
 <td><p><span class="term"><em class="parameter"><code>error</code></em> :</span></p></td>
@@ -167,9 +154,8 @@ different on Linux/glibc.</div>
                                                          <em class="parameter"><code><a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Control the non-blocking state of the given file descriptor,
-according to <em class="parameter"><code>nonblock</code></em>.  On most systems this uses <code class="literal">O_NONBLOCK</code>, but
-on some older ones may use <code class="literal">O_NDELAY</code>.
-</p>
+according to <em class="parameter"><code>nonblock</code></em>. On most systems this uses <code class="literal">O_NONBLOCK</code>, but
+on some older ones may use <code class="literal">O_NDELAY</code>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -207,8 +193,7 @@ on some older ones may use <code class="literal">O_NDELAY</code>.
 <p>
 A convenience function for <a class="link" href="glib-UNIX-specific-utilities-and-integration.html#g-unix-signal-source-new" title="g_unix_signal_source_new ()"><code class="function">g_unix_signal_source_new()</code></a>, which
 attaches to the default <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>.  You can remove the watch
-using <a class="link" href="glib-The-Main-Event-Loop.html#g-source-remove" title="g_source_remove ()"><code class="function">g_source_remove()</code></a>.
-</p>
+using <a class="link" href="glib-The-Main-Event-Loop.html#g-source-remove" title="g_source_remove ()"><code class="function">g_source_remove()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -247,8 +232,7 @@ using <a class="link" href="glib-The-Main-Event-Loop.html#g-source-remove" title
 <p>
 A convenience function for <a class="link" href="glib-UNIX-specific-utilities-and-integration.html#g-unix-signal-source-new" title="g_unix_signal_source_new ()"><code class="function">g_unix_signal_source_new()</code></a>, which
 attaches to the default <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>.  You can remove the watch
-using <a class="link" href="glib-The-Main-Event-Loop.html#g-source-remove" title="g_source_remove ()"><code class="function">g_source_remove()</code></a>.
-</p>
+using <a class="link" href="glib-The-Main-Event-Loop.html#g-source-remove" title="g_source_remove ()"><code class="function">g_source_remove()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -298,13 +282,11 @@ signal <em class="parameter"><code>signum</code></em>.  In GLib versions before 
 <code class="literal">SIGHUP</code>, <code class="literal">SIGINT</code>,
 <code class="literal">SIGTERM</code> can be monitored.  In GLib 2.36,
 <code class="literal">SIGUSR1</code> and <code class="literal">SIGUSR2</code> were
-added.
-</p>
+added.</p>
 <p>
 Note that unlike the UNIX default, all sources which have created a
 watch will be dispatched, regardless of which underlying thread
-invoked <a class="link" href="glib-UNIX-specific-utilities-and-integration.html#g-unix-signal-source-new" title="g_unix_signal_source_new ()"><code class="function">g_unix_signal_source_new()</code></a>.
-</p>
+invoked <a class="link" href="glib-UNIX-specific-utilities-and-integration.html#g-unix-signal-source-new" title="g_unix_signal_source_new ()"><code class="function">g_unix_signal_source_new()</code></a>.</p>
 <p>
 For example, an effective use of this function is to handle <code class="literal">SIGTERM</code>
 cleanly; flushing any outstanding files, and then calling
@@ -312,17 +294,14 @@ cleanly; flushing any outstanding files, and then calling
 UNIX signal handler; your handler may be invoked while <code class="function">malloc()</code> or
 another library function is running, causing reentrancy if you
 attempt to use it from the handler.  None of the GLib/GObject API
-is safe against this kind of reentrancy.
-</p>
+is safe against this kind of reentrancy.</p>
 <p>
 The interaction of this source when combined with native UNIX
-functions like <code class="function">sigprocmask()</code> is not defined.
-</p>
+functions like <code class="function">sigprocmask()</code> is not defined.</p>
 <p>
 The source will not initially be associated with any <a class="link" href="glib-The-Main-Event-Loop.html#GMainContext" title="GMainContext"><span class="type">GMainContext</span></a>
 and must be added to one with <a class="link" href="glib-The-Main-Event-Loop.html#g-source-attach" title="g_source_attach ()"><code class="function">g_source_attach()</code></a> before it will be
-executed.
-</p>
+executed.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -350,8 +329,7 @@ executed.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 The type of functions to be called when a UNIX fd watch source
-triggers.
-</p>
+triggers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -389,22 +367,18 @@ triggers.
                                                          <em class="parameter"><code><a class="link" href="glib-Basic-Types.html#gpointer" title="gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
 Sets a function to be called when the IO condition, as specified by
-<em class="parameter"><code>condition</code></em> becomes true for <em class="parameter"><code>fd</code></em>.
-</p>
+<em class="parameter"><code>condition</code></em> becomes true for <em class="parameter"><code>fd</code></em>.</p>
 <p>
 <em class="parameter"><code>function</code></em> will be called when the specified IO condition becomes
 <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a>.  The function is expected to clear whatever event caused the
 IO condition to become true and return <a class="link" href="glib-Standard-Macros.html#TRUE:CAPS" title="TRUE"><code class="literal">TRUE</code></a> in order to be notified
 when it happens again.  If <em class="parameter"><code>function</code></em> returns <a class="link" href="glib-Standard-Macros.html#FALSE:CAPS" title="FALSE"><code class="literal">FALSE</code></a> then the watch
-will be cancelled.
-</p>
+will be cancelled.</p>
 <p>
 The return value of this function can be passed to <a class="link" href="glib-The-Main-Event-Loop.html#g-source-remove" title="g_source_remove ()"><code class="function">g_source_remove()</code></a>
-to cancel the watch at any time that it exists.
-</p>
+to cancel the watch at any time that it exists.</p>
 <p>
-The source will never close the fd -- you must do it yourself.
-</p>
+The source will never close the fd -- you must do it yourself.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -449,13 +423,11 @@ The source will never close the fd -- you must do it yourself.
                                                          <em class="parameter"><code><a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> notify</code></em>);</pre>
 <p>
 Sets a function to be called when the IO condition, as specified by
-<em class="parameter"><code>condition</code></em> becomes true for <em class="parameter"><code>fd</code></em>.
-</p>
+<em class="parameter"><code>condition</code></em> becomes true for <em class="parameter"><code>fd</code></em>.</p>
 <p>
 This is the same as <a class="link" href="glib-UNIX-specific-utilities-and-integration.html#g-unix-fd-add" title="g_unix_fd_add ()"><code class="function">g_unix_fd_add()</code></a>, except that it allows you to
 specify a non-default priority and a provide a <a class="link" href="glib-Datasets.html#GDestroyNotify" title="GDestroyNotify ()"><span class="type">GDestroyNotify</span></a> for
-<em class="parameter"><code>user_data</code></em>.
-</p>
+<em class="parameter"><code>user_data</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -505,11 +477,9 @@ specify a non-default priority and a provide a <a class="link" href="glib-Datase
                                                          <em class="parameter"><code><a class="link" href="glib-IO-Channels.html#GIOCondition" title="enum GIOCondition"><span class="type">GIOCondition</span></a> condition</code></em>);</pre>
 <p>
 Creates a <a class="link" href="glib-The-Main-Event-Loop.html#GSource" title="struct GSource"><span class="type">GSource</span></a> to watch for a particular IO condition on a file
-descriptor.
-</p>
+descriptor.</p>
 <p>
-The source will never close the fd -- you must do it yourself.
-</p>
+The source will never close the fd -- you must do it yourself.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -538,6 +508,6 @@ The source will never close the fd -- you must do it yourself.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

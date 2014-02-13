@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Authors: Alexander Larsson <alexl@redhat.com>
  */
@@ -68,12 +66,12 @@ G_DEFINE_BOXED_TYPE (GResource, g_resource, g_resource_ref, g_resource_unref)
  * <literal>preprocess</literal> attribute to a comma-separated list of preprocessing options.
  * The only options currently supported are:
  *
- * <literal>xml-stripblanks</literal> which will use <command>xmllint</command> to strip
+ * <literal>xml-stripblanks</literal> which will use the xmllint command to strip
  * ignorable whitespace from the xml file. For this to work, the <envar>XMLLINT</envar>
  * environment variable must be set to the full path to the xmllint executable, or xmllint
  * must be in the PATH; otherwise the preprocessing step is skipped.
  *
- * <literal>to-pixdata</literal> which will use <command>gdk-pixbuf-pixdata</command> to convert
+ * <literal>to-pixdata</literal> which will use the gdk-pixbuf-pixdata command to convert
  * images to the GdkPixdata format, which allows you to create pixbufs directly using the data inside
  * the resource file, rather than an (uncompressed) copy if it. For this, the gdk-pixbuf-pixdata
  * program must be in the PATH, or the <envar>GDK_PIXBUF_PIXDATA</envar> environment variable must be
@@ -84,8 +82,8 @@ G_DEFINE_BOXED_TYPE (GResource, g_resource, g_resource_ref, g_resource_unref)
  * which takes an xml file that describes the bundle, and a set of files that the xml references. These
  * are combined into a binary resource bundle.
  *
- * <example id="resource-example"><title>Example resource description</title>
- * <programlisting><![CDATA[
+ * An example resource description:
+ * |[
  * <?xml version="1.0" encoding="UTF-8"?>
  * <gresources>
  *   <gresource prefix="/org/gtk/Example">
@@ -94,14 +92,14 @@ G_DEFINE_BOXED_TYPE (GResource, g_resource, g_resource_ref, g_resource_unref)
  *     <file preprocess="xml-stripblanks">menumarkup.xml</file>
  *   </gresource>
  * </gresources>
- * ]]></programlisting></example>
+ * ]|
  *
  * This will create a resource bundle with the following files:
- * <programlisting><![CDATA[
+ * |[
  * /org/gtk/Example/data/splashscreen.png
  * /org/gtk/Example/dialog.ui
  * /org/gtk/Example/menumarkup.xml
- * ]]></programlisting>
+ * ]|
  *
  * Note that all resources in the process share the same namespace, so use java-style
  * path prefixes (like in the above example) to avoid conflicts.

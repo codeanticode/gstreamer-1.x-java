@@ -2,32 +2,29 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GUnixConnection</title>
+<title>GIO Reference Manual: GUnixConnection</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="highlevel-socket.html" title="High-level network functionallity">
 <link rel="prev" href="GSocketConnection.html" title="GSocketConnection">
 <link rel="next" href="GTcpConnection.html" title="GTcpConnection">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GSocketConnection.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GTcpConnection.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GUnixConnection.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GUnixConnection.description" class="shortcut">Description</a>
                    | 
                   <a href="#GUnixConnection.object-hierarchy" class="shortcut">Object Hierarchy</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="highlevel-socket.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GSocketConnection.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GTcpConnection.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GUnixConnection"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -42,7 +39,7 @@
 <pre class="synopsis">
 #include &lt;gio/gunixconnection.h&gt;
 
-                    <a class="link" href="GUnixConnection.html#GUnixConnection-struct" title="GUnixConnection">GUnixConnection</a>;
+struct              <a class="link" href="GUnixConnection.html#GUnixConnection-struct" title="struct GUnixConnection">GUnixConnection</a>;
 <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gint"><span class="returnvalue">gint</span></a>                <a class="link" href="GUnixConnection.html#g-unix-connection-receive-fd" title="g_unix_connection_receive_fd ()">g_unix_connection_receive_fd</a>        (<em class="parameter"><code><a class="link" href="GUnixConnection.html" title="GUnixConnection"><span class="type">GUnixConnection</span></a> *connection</code></em>,
                                                          <em class="parameter"><code><a class="link" href="GCancellable.html" title="GCancellable"><span class="type">GCancellable</span></a> *cancellable</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);
@@ -90,23 +87,20 @@
 <a name="GUnixConnection.description"></a><h2>Description</h2>
 <p>
 This is the subclass of <a class="link" href="GSocketConnection.html" title="GSocketConnection"><span class="type">GSocketConnection</span></a> that is created
-for UNIX domain sockets.
-</p>
+for UNIX domain sockets.</p>
 <p>
 It contains functions to do some of the UNIX socket specific
-functionality like passing file descriptors.
-</p>
+functionality like passing file descriptors.</p>
 <p>
 Note that <code class="filename">&lt;gio/gunixconnection.h&gt;</code> belongs to
 the UNIX-specific GIO interfaces, thus you have to use the
-<code class="filename">gio-unix-2.0.pc</code> pkg-config file when using it.
-</p>
+<code class="filename">gio-unix-2.0.pc</code> pkg-config file when using it.</p>
 </div>
 <div class="refsect1">
 <a name="GUnixConnection.details"></a><h2>Details</h2>
 <div class="refsect2">
-<a name="GUnixConnection-struct"></a><h3>GUnixConnection</h3>
-<pre class="programlisting">typedef struct _GUnixConnection GUnixConnection;</pre>
+<a name="GUnixConnection-struct"></a><h3>struct GUnixConnection</h3>
+<pre class="programlisting">struct GUnixConnection;</pre>
 </div>
 <hr>
 <div class="refsect2">
@@ -117,13 +111,11 @@ the UNIX-specific GIO interfaces, thus you have to use the
 <p>
 Receives a file descriptor from the sending end of the connection.
 The sending end has to call <a class="link" href="GUnixConnection.html#g-unix-connection-send-fd" title="g_unix_connection_send_fd ()"><code class="function">g_unix_connection_send_fd()</code></a> for this
-to work.
-</p>
+to work.</p>
 <p>
 As well as reading the fd this also reads a single byte from the
 stream, as this is required for fd passing to work on some
-implementations.
-</p>
+implementations.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -164,13 +156,11 @@ implementations.
 <p>
 Passes a file descriptor to the receiving side of the
 connection. The receiving end has to call <a class="link" href="GUnixConnection.html#g-unix-connection-receive-fd" title="g_unix_connection_receive_fd ()"><code class="function">g_unix_connection_receive_fd()</code></a>
-to accept the file descriptor.
-</p>
+to accept the file descriptor.</p>
 <p>
 As well as sending the fd this also writes a single byte to the
 stream, as this is required for fd passing to work on some
-implementations.
-</p>
+implementations.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -215,17 +205,14 @@ implementations.
 <p>
 Receives credentials from the sending end of the connection.  The
 sending end has to call <a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials" title="g_unix_connection_send_credentials ()"><code class="function">g_unix_connection_send_credentials()</code></a> (or
-similar) for this to work.
-</p>
+similar) for this to work.</p>
 <p>
 As well as reading the credentials this also reads (and discards) a
 single byte from the stream, as this is required for credentials
-passing to work on some implementations.
-</p>
+passing to work on some implementations.</p>
 <p>
 Other ways to exchange credentials with a foreign peer includes the
-<a class="link" href="GUnixCredentialsMessage.html" title="GUnixCredentialsMessage"><span class="type">GUnixCredentialsMessage</span></a> type and <a class="link" href="GSocket.html#g-socket-get-credentials" title="g_socket_get_credentials ()"><code class="function">g_socket_get_credentials()</code></a> function.
-</p>
+<a class="link" href="GUnixCredentialsMessage.html" title="GUnixCredentialsMessage"><span class="type">GUnixCredentialsMessage</span></a> type and <a class="link" href="GSocket.html#g-socket-get-credentials" title="g_socket_get_credentials ()"><code class="function">g_socket_get_credentials()</code></a> function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -264,16 +251,13 @@ Other ways to exchange credentials with a foreign peer includes the
                                                          <em class="parameter"><code><a class="link" href="GAsyncResult.html#GAsyncReadyCallback" title="GAsyncReadyCallback ()"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Asynchronously receive credentials.
-</p>
+Asynchronously receive credentials.</p>
 <p>
 For more details, see <a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials" title="g_unix_connection_receive_credentials ()"><code class="function">g_unix_connection_receive_credentials()</code></a> which is
-the synchronous version of this call.
-</p>
+the synchronous version of this call.</p>
 <p>
 When the operation is finished, <em class="parameter"><code>callback</code></em> will be called. You can then call
-<a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials-finish" title="g_unix_connection_receive_credentials_finish ()"><code class="function">g_unix_connection_receive_credentials_finish()</code></a> to get the result of the operation.
-</p>
+<a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials-finish" title="g_unix_connection_receive_credentials_finish ()"><code class="function">g_unix_connection_receive_credentials_finish()</code></a> to get the result of the operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -312,8 +296,7 @@ When the operation is finished, <em class="parameter"><code>callback</code></em>
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finishes an asynchronous receive credentials operation started with
-<a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials-async" title="g_unix_connection_receive_credentials_async ()"><code class="function">g_unix_connection_receive_credentials_async()</code></a>.
-</p>
+<a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials-async" title="g_unix_connection_receive_credentials_async ()"><code class="function">g_unix_connection_receive_credentials_async()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -353,17 +336,14 @@ Free the returned object with <a href="http://library.gnome.org/devel/gobject/un
 Passes the credentials of the current user the receiving side
 of the connection. The receiving end has to call
 <a class="link" href="GUnixConnection.html#g-unix-connection-receive-credentials" title="g_unix_connection_receive_credentials ()"><code class="function">g_unix_connection_receive_credentials()</code></a> (or similar) to accept the
-credentials.
-</p>
+credentials.</p>
 <p>
 As well as sending the credentials this also writes a single NUL
 byte to the stream, as this is required for credentials passing to
-work on some implementations.
-</p>
+work on some implementations.</p>
 <p>
 Other ways to exchange credentials with a foreign peer includes the
-<a class="link" href="GUnixCredentialsMessage.html" title="GUnixCredentialsMessage"><span class="type">GUnixCredentialsMessage</span></a> type and <a class="link" href="GSocket.html#g-socket-get-credentials" title="g_socket_get_credentials ()"><code class="function">g_socket_get_credentials()</code></a> function.
-</p>
+<a class="link" href="GUnixCredentialsMessage.html" title="GUnixCredentialsMessage"><span class="type">GUnixCredentialsMessage</span></a> type and <a class="link" href="GSocket.html#g-socket-get-credentials" title="g_socket_get_credentials ()"><code class="function">g_socket_get_credentials()</code></a> function.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -401,16 +381,13 @@ Other ways to exchange credentials with a foreign peer includes the
                                                          <em class="parameter"><code><a class="link" href="GAsyncResult.html#GAsyncReadyCallback" title="GAsyncReadyCallback ()"><span class="type">GAsyncReadyCallback</span></a> callback</code></em>,
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a> user_data</code></em>);</pre>
 <p>
-Asynchronously send credentials.
-</p>
+Asynchronously send credentials.</p>
 <p>
 For more details, see <a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials" title="g_unix_connection_send_credentials ()"><code class="function">g_unix_connection_send_credentials()</code></a> which is
-the synchronous version of this call.
-</p>
+the synchronous version of this call.</p>
 <p>
 When the operation is finished, <em class="parameter"><code>callback</code></em> will be called. You can then call
-<a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials-finish" title="g_unix_connection_send_credentials_finish ()"><code class="function">g_unix_connection_send_credentials_finish()</code></a> to get the result of the operation.
-</p>
+<a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials-finish" title="g_unix_connection_send_credentials_finish ()"><code class="function">g_unix_connection_send_credentials_finish()</code></a> to get the result of the operation.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -449,8 +426,7 @@ When the operation is finished, <em class="parameter"><code>callback</code></em>
                                                          <em class="parameter"><code><a href="http://library.gnome.org/devel/glib/unstable/glib-Error-Reporting.html#GError"><span class="type">GError</span></a> **error</code></em>);</pre>
 <p>
 Finishes an asynchronous send credentials operation started with
-<a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials-async" title="g_unix_connection_send_credentials_async ()"><code class="function">g_unix_connection_send_credentials_async()</code></a>.
-</p>
+<a class="link" href="GUnixConnection.html#g-unix-connection-send-credentials-async" title="g_unix_connection_send_credentials_async ()"><code class="function">g_unix_connection_send_credentials_async()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -487,6 +463,6 @@ Finishes an asynchronous send credentials operation started with
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

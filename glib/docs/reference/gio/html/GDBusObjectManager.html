@@ -2,26 +2,19 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>GDBusObjectManager</title>
+<title>GIO Reference Manual: GDBusObjectManager</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GIO Reference Manual">
 <link rel="up" href="gdbus-convenience.html" title="Highlevel D-Bus Support">
 <link rel="prev" href="GDBusObjectProxy.html" title="GDBusObjectProxy">
 <link rel="next" href="GDBusObjectManagerServer.html" title="GDBusObjectManagerServer">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="GDBusObjectProxy.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="gdbus-convenience.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GIO Reference Manual</th>
-<td><a accesskey="n" href="GDBusObjectManagerServer.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#GDBusObjectManager.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#GDBusObjectManager.description" class="shortcut">Description</a>
                    | 
@@ -32,8 +25,12 @@
                   <a href="#GDBusObjectManager.implementations" class="shortcut">Known Implementations</a>
                    | 
                   <a href="#GDBusObjectManager.signals" class="shortcut">Signals</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="gdbus-convenience.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="GDBusObjectProxy.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="GDBusObjectManagerServer.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="GDBusObjectManager"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -93,12 +90,10 @@ GDBusObjectManager is implemented by
 <p>
 The <a class="link" href="GDBusObjectManager.html" title="GDBusObjectManager"><span class="type">GDBusObjectManager</span></a> type is the base type for service- and
 client-side implementations of the standardized <a class="ulink" href="http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-objectmanager" target="_top">org.freedesktop.DBus.ObjectManager</a>
-interface.
-</p>
+interface.</p>
 <p>
 See <a class="link" href="GDBusObjectManagerClient.html" title="GDBusObjectManagerClient"><span class="type">GDBusObjectManagerClient</span></a> for the client-side implementation
-and <a class="link" href="GDBusObjectManagerServer.html" title="GDBusObjectManagerServer"><span class="type">GDBusObjectManagerServer</span></a> for the service-side implementation.
-</p>
+and <a class="link" href="GDBusObjectManagerServer.html" title="GDBusObjectManagerServer"><span class="type">GDBusObjectManagerServer</span></a> for the service-side implementation.</p>
 </div>
 <div class="refsect1">
 <a name="GDBusObjectManager.details"></a><h2>Details</h2>
@@ -136,8 +131,7 @@ and <a class="link" href="GDBusObjectManagerServer.html" title="GDBusObjectManag
 };
 </pre>
 <p>
-Base type for D-Bus object managers.
-</p>
+Base type for D-Bus object managers.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -190,8 +184,7 @@ Base type for D-Bus object managers.
 <pre class="programlisting">const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="returnvalue">gchar</span></a> *       g_dbus_object_manager_get_object_path
                                                         (<em class="parameter"><code><a class="link" href="GDBusObjectManager.html" title="GDBusObjectManager"><span class="type">GDBusObjectManager</span></a> *manager</code></em>);</pre>
 <p>
-Gets the object path that <em class="parameter"><code>manager</code></em> is for.
-</p>
+Gets the object path that <em class="parameter"><code>manager</code></em> is for.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -215,8 +208,7 @@ Gets the object path that <em class="parameter"><code>manager</code></em> is for
 <a name="g-dbus-object-manager-get-objects"></a><h3>g_dbus_object_manager_get_objects ()</h3>
 <pre class="programlisting"><a href="http://library.gnome.org/devel/glib/unstable/glib-Doubly-Linked-Lists.html#GList"><span class="returnvalue">GList</span></a> *             g_dbus_object_manager_get_objects   (<em class="parameter"><code><a class="link" href="GDBusObjectManager.html" title="GDBusObjectManager"><span class="type">GDBusObjectManager</span></a> *manager</code></em>);</pre>
 <p>
-Gets all <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> objects known to <em class="parameter"><code>manager</code></em>.
-</p>
+Gets all <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a> objects known to <em class="parameter"><code>manager</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -245,8 +237,7 @@ Gets all <a class="link" href="GDBusObject.html" title="GDBusObject"><span class
 <pre class="programlisting"><a class="link" href="GDBusObject.html" title="GDBusObject"><span class="returnvalue">GDBusObject</span></a> *       g_dbus_object_manager_get_object    (<em class="parameter"><code><a class="link" href="GDBusObjectManager.html" title="GDBusObjectManager"><span class="type">GDBusObjectManager</span></a> *manager</code></em>,
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *object_path</code></em>);</pre>
 <p>
-Gets the <a class="link" href="GDBusObjectProxy.html" title="GDBusObjectProxy"><span class="type">GDBusObjectProxy</span></a> at <em class="parameter"><code>object_path</code></em>, if any.
-</p>
+Gets the <a class="link" href="GDBusObjectProxy.html" title="GDBusObjectProxy"><span class="type">GDBusObjectProxy</span></a> at <em class="parameter"><code>object_path</code></em>, if any.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -279,8 +270,7 @@ Gets the <a class="link" href="GDBusObjectProxy.html" title="GDBusObjectProxy"><
                                                          <em class="parameter"><code>const <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gchar"><span class="type">gchar</span></a> *interface_name</code></em>);</pre>
 <p>
 Gets the interface proxy for <em class="parameter"><code>interface_name</code></em> at <em class="parameter"><code>object_path</code></em>, if
-any.
-</p>
+any.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -319,12 +309,10 @@ with <a href="http://library.gnome.org/devel/gobject/unstable/gobject-The-Base-O
                                                         <a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a>     *interface,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when <em class="parameter"><code>interface</code></em> is added to <em class="parameter"><code>object</code></em>.
-</p>
+Emitted when <em class="parameter"><code>interface</code></em> is added to <em class="parameter"><code>object</code></em>.</p>
 <p>
 This signal exists purely as a convenience to avoid having to
-connect signals to all objects managed by <em class="parameter"><code>manager</code></em>.
-</p>
+connect signals to all objects managed by <em class="parameter"><code>manager</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -359,12 +347,10 @@ connect signals to all objects managed by <em class="parameter"><code>manager</c
                                                         <a class="link" href="GDBusInterface.html" title="GDBusInterface"><span class="type">GDBusInterface</span></a>     *interface,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when <em class="parameter"><code>interface</code></em> has been removed from <em class="parameter"><code>object</code></em>.
-</p>
+Emitted when <em class="parameter"><code>interface</code></em> has been removed from <em class="parameter"><code>object</code></em>.</p>
 <p>
 This signal exists purely as a convenience to avoid having to
-connect signals to all objects managed by <em class="parameter"><code>manager</code></em>.
-</p>
+connect signals to all objects managed by <em class="parameter"><code>manager</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -398,8 +384,7 @@ connect signals to all objects managed by <em class="parameter"><code>manager</c
                                                         <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a>        *object,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when <em class="parameter"><code>object</code></em> is added to <em class="parameter"><code>manager</code></em>.
-</p>
+Emitted when <em class="parameter"><code>object</code></em> is added to <em class="parameter"><code>manager</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -429,8 +414,7 @@ Emitted when <em class="parameter"><code>object</code></em> is added to <em clas
                                                         <a class="link" href="GDBusObject.html" title="GDBusObject"><span class="type">GDBusObject</span></a>        *object,
                                                         <a href="http://library.gnome.org/devel/glib/unstable/glib-Basic-Types.html#gpointer"><span class="type">gpointer</span></a>            user_data)      : <a href="http://library.gnome.org/devel/gobject/unstable/gobject-Signals.html#G-SIGNAL-RUN-LAST:CAPS"><code class="literal">Run Last</code></a></pre>
 <p>
-Emitted when <em class="parameter"><code>object</code></em> is removed from <em class="parameter"><code>manager</code></em>.
-</p>
+Emitted when <em class="parameter"><code>object</code></em> is removed from <em class="parameter"><code>manager</code></em>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -457,6 +441,6 @@ Emitted when <em class="parameter"><code>object</code></em> is removed from <em 
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

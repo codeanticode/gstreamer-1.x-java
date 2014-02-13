@@ -2,30 +2,27 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Shell-related Utilities</title>
+<title>GLib Reference Manual: Shell-related Utilities</title>
 <meta name="generator" content="DocBook XSL Stylesheets V1.78.1">
 <link rel="home" href="index.html" title="GLib Reference Manual">
 <link rel="up" href="glib-utilities.html" title="GLib Utilities">
 <link rel="prev" href="glib-Hostname-Utilities.html" title="Hostname Utilities">
 <link rel="next" href="glib-Commandline-option-parser.html" title="Commandline option parser">
-<meta name="generator" content="GTK-Doc V1.19 (XML mode)">
+<meta name="generator" content="GTK-Doc V1.19.1 (XML mode)">
 <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 <body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
-<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="2">
-<tr valign="middle">
-<td><a accesskey="p" href="glib-Hostname-Utilities.html"><img src="left.png" width="24" height="24" border="0" alt="Prev"></a></td>
-<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="24" height="24" border="0" alt="Up"></a></td>
-<td><a accesskey="h" href="index.html"><img src="home.png" width="24" height="24" border="0" alt="Home"></a></td>
-<th width="100%" align="center">GLib Reference Manual</th>
-<td><a accesskey="n" href="glib-Commandline-option-parser.html"><img src="right.png" width="24" height="24" border="0" alt="Next"></a></td>
-</tr>
-<tr><td colspan="5" class="shortcuts">
-<a href="#glib-Shell-related-Utilities.synopsis" class="shortcut">Top</a>
+<table class="navigation" id="top" width="100%" summary="Navigation header" cellpadding="2" cellspacing="10"><tr valign="middle">
+<td width="100%" align="left">
+<a href="#" class="shortcut">Top</a>
                    | 
                   <a href="#glib-Shell-related-Utilities.description" class="shortcut">Description</a>
-</td></tr>
-</table>
+</td>
+<td><a accesskey="h" href="index.html"><img src="home.png" width="16" height="16" border="0" alt="Home"></a></td>
+<td><a accesskey="u" href="glib-utilities.html"><img src="up.png" width="16" height="16" border="0" alt="Up"></a></td>
+<td><a accesskey="p" href="glib-Hostname-Utilities.html"><img src="left.png" width="16" height="16" border="0" alt="Prev"></a></td>
+<td><a accesskey="n" href="glib-Commandline-option-parser.html"><img src="right.png" width="16" height="16" border="0" alt="Next"></a></td>
+</tr></table>
 <div class="refentry">
 <a name="glib-Shell-related-Utilities"></a><div class="titlepage"></div>
 <div class="refnamediv"><table width="100%"><tr>
@@ -67,8 +64,7 @@ enum                <a class="link" href="glib-Shell-related-Utilities.html#GShe
 } GShellError;
 </pre>
 <p>
-Error codes returned by shell functions.
-</p>
+Error codes returned by shell functions.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -101,8 +97,7 @@ Error codes returned by shell functions.
 <p>
 Error domain for shell functions. Errors in this domain will be from
 the <a class="link" href="glib-Shell-related-Utilities.html#GShellError" title="enum GShellError"><span class="type">GShellError</span></a> enumeration. See <a class="link" href="glib-Error-Reporting.html#GError" title="struct GError"><span class="type">GError</span></a> for information on error
-domains.
-</p>
+domains.</p>
 </div>
 <hr>
 <div class="refsect2">
@@ -120,8 +115,7 @@ those you would get from a UNIX98 /bin/sh, as long as the input
 contains none of the unsupported shell expansions. If the input
 does contain such expansions, they are passed through
 literally. Possible errors are those from the <a class="link" href="glib-Shell-related-Utilities.html#G-SHELL-ERROR:CAPS" title="G_SHELL_ERROR"><span class="type">G_SHELL_ERROR</span></a>
-domain. Free the returned vector with <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a>.
-</p>
+domain. Free the returned vector with <a class="link" href="glib-String-Utility-Functions.html#g-strfreev" title="g_strfreev ()"><code class="function">g_strfreev()</code></a>.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -164,8 +158,7 @@ quoted string to mean <em class="parameter"><code>unquoted_string</code></em>. I
 the shell, for example, you should first quote it with this
 function.  The return value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. The
 quoting style used is undefined (single or double quotes may be
-used).
-</p>
+used).</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -202,16 +195,14 @@ escaped text; <a class="link" href="glib-Shell-related-Utilities.html#g-shell-un
 unquotes/unescapes anything that the shell would. Both single and
 double quotes are handled, as are escapes including escaped
 newlines. The return value must be freed with <a class="link" href="glib-Memory-Allocation.html#g-free" title="g_free ()"><code class="function">g_free()</code></a>. Possible
-errors are in the <a class="link" href="glib-Shell-related-Utilities.html#G-SHELL-ERROR:CAPS" title="G_SHELL_ERROR"><span class="type">G_SHELL_ERROR</span></a> domain.
-</p>
+errors are in the <a class="link" href="glib-Shell-related-Utilities.html#G-SHELL-ERROR:CAPS" title="G_SHELL_ERROR"><span class="type">G_SHELL_ERROR</span></a> domain.</p>
 <p>
 Shell quoting rules are a bit strange. Single quotes preserve the
 literal string exactly. escape sequences are not allowed; not even
 \' - if you want a ' in the quoted text, you have to do something
 like 'foo'\''bar'.  Double quotes allow $, `, ", \, and newline to
 be escaped with backslash. Otherwise double quotes preserve things
-literally.
-</p>
+literally.</p>
 <div class="variablelist"><table border="0" class="variablelist">
 <colgroup>
 <col align="left" valign="top">
@@ -237,6 +228,6 @@ literally.
 </div>
 <div class="footer">
 <hr>
-          Generated by GTK-Doc V1.19</div>
+          Generated by GTK-Doc V1.19.1</div>
 </body>
 </html>

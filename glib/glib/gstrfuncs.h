@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -221,8 +219,7 @@ gchar*	              g_strdup_printf  (const gchar *format,
 					...) G_GNUC_PRINTF (1, 2) G_GNUC_MALLOC;
 GLIB_AVAILABLE_IN_ALL
 gchar*	              g_strdup_vprintf (const gchar *format,
-					va_list      args) G_GNUC_PRINTF(1, 0)
-					G_GNUC_MALLOC;
+					va_list      args) G_GNUC_PRINTF(1, 0) G_GNUC_MALLOC;
 GLIB_AVAILABLE_IN_ALL
 gchar*	              g_strndup	       (const gchar *str,
 					gsize        n) G_GNUC_MALLOC;  

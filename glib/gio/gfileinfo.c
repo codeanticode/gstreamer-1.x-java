@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: Alexander Larsson <alexl@redhat.com>
  */
@@ -2287,7 +2285,7 @@ matcher_optimize (GFileAttributeMatcher *matcher)
  * @attributes: an attribute string to match.
  *
  * Creates a new file attribute matcher, which matches attributes
- * against a given string. #GFileAttributeMatcher<!-- -->s are reference
+ * against a given string. #GFileAttributeMatchers are reference
  * counted structures, and are created with a reference count of 1. If
  * the number of references falls to 0, the #GFileAttributeMatcher is
  * automatically destroyed.

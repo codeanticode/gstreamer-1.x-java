@@ -13,9 +13,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General
- * Public License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place, Suite 330,
- * Boston, MA 02111-1307, USA.
+ * Public License along with this library; if not, see <http://www.gnu.org/licenses/>.
  *
  * Author: David Zeuthen <davidz@redhat.com>
  */
@@ -79,8 +77,7 @@
  * subclass #GDBusProxy, and have more natural properties and signals
  * in your derived class. See <xref linkend="gdbus-example-gdbus-codegen"/>
  * for how this can easily be done using the
- * <command><link linkend="gdbus-codegen">gdbus-codegen</link></command>
- * tool.
+ * <link linkend="gdbus-codegen">gdbus-codegen</link> tool.
  *
  * A #GDBusProxy instance can be used from multiple threads but note
  * that all signals (e.g. #GDBusProxy::g-signal, #GDBusProxy::g-properties-changed
@@ -363,27 +360,22 @@ g_dbus_proxy_class_init (GDBusProxyClass *klass)
    * Ensure that interactions with this proxy conform to the given
    * interface. This is mainly to ensure that malformed data received
    * from the other peer is ignored. The given #GDBusInterfaceInfo is
-   * said to be the <emphasis>expected interface</emphasis>.
+   * said to be the "expected interface".
    *
    * The checks performed are:
-   * <itemizedlist>
-   *   <listitem><para>
-   *     When completing a method call, if the type signature of
-   *     the reply message isn't what's expected, the reply is
-   *     discarded and the #GError is set to %G_IO_ERROR_INVALID_ARGUMENT.
-   *   </para></listitem>
-   *   <listitem><para>
-   *     Received signals that have a type signature mismatch are dropped and
-   *     a warning is logged via g_warning().
-   *   </para></listitem>
-   *   <listitem><para>
-   *     Properties received via the initial <literal>GetAll()</literal> call
-   *     or via the <literal>::PropertiesChanged</literal> signal (on the
-   *     <ulink url="http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-properties">org.freedesktop.DBus.Properties</ulink> interface) or
-   *     set using g_dbus_proxy_set_cached_property() with a type signature
-   *     mismatch are ignored and a warning is logged via g_warning().
-   *   </para></listitem>
-   * </itemizedlist>
+   * - When completing a method call, if the type signature of
+   *   the reply message isn't what's expected, the reply is
+   *   discarded and the #GError is set to %G_IO_ERROR_INVALID_ARGUMENT.
+   *
+   * - Received signals that have a type signature mismatch are dropped and
+   *   a warning is logged via g_warning().
+   *
+   * - Properties received via the initial <literal>GetAll()</literal> call
+   *   or via the <literal>::PropertiesChanged</literal> signal (on the
+   *   <ulink url="http://dbus.freedesktop.org/doc/dbus-specification.html#standard-interfaces-properties">org.freedesktop.DBus.Properties</ulink> interface) or
+   *   set using g_dbus_proxy_set_cached_property() with a type signature
+   *   mismatch are ignored and a warning is logged via g_warning().
+   *
    * Note that these checks are never done on methods, signals and
    * properties that are not referenced in the given
    * #GDBusInterfaceInfo, since extending a D-Bus interface on the
@@ -793,7 +785,7 @@ g_dbus_proxy_get_cached_property (GDBusProxy   *proxy,
  *
  * If the @value #GVariant is floating, it is consumed. This allows
  * convenient 'inline' use of g_variant_new(), e.g.
- * |[
+ * |[<!-- language="C" -->
  *  g_dbus_proxy_set_cached_property (proxy,
  *                                    "SomeProperty",
  *                                    g_variant_new ("(si)",
@@ -2973,7 +2965,7 @@ g_dbus_proxy_call_sync_internal (GDBusProxy      *proxy,
  *
  * If the @parameters #GVariant is floating, it is consumed. This allows
  * convenient 'inline' use of g_variant_new(), e.g.:
- * |[
+ * |[<!-- language="C" -->
  *  g_dbus_proxy_call (proxy,
  *                     "TwoStrings",
  *                     g_variant_new ("(ss)",
@@ -2983,7 +2975,7 @@ g_dbus_proxy_call_sync_internal (GDBusProxy      *proxy,
  *                     -1,
  *                     NULL,
  *                     (GAsyncReadyCallback) two_strings_done,
- *                     &amp;data);
+ *                     &data);
  * ]|
  *
  * If @proxy has an expected interface (see
@@ -3064,7 +3056,7 @@ g_dbus_proxy_call_finish (GDBusProxy    *proxy,
  *
  * If the @parameters #GVariant is floating, it is consumed. This allows
  * convenient 'inline' use of g_variant_new(), e.g.:
- * |[
+ * |[<!-- language="C" -->
  *  g_dbus_proxy_call_sync (proxy,
  *                          "TwoStrings",
  *                          g_variant_new ("(ss)",
@@ -3073,7 +3065,7 @@ g_dbus_proxy_call_finish (GDBusProxy    *proxy,
  *                          G_DBUS_CALL_FLAGS_NONE,
  *                          -1,
  *                          NULL,
- *                          &amp;error);
+ *                          &error);
  * ]|
  *
  * The calling thread is blocked until a reply is received. See

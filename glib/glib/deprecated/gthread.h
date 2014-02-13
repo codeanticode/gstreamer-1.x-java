@@ -12,9 +12,7 @@
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public
- * License along with this library; if not, write to the
- * Free Software Foundation, Inc., 59 Temple Place - Suite 330,
- * Boston, MA 02111-1307, USA.
+ * License along with this library; if not, see <http://www.gnu.org/licenses/>.
  */
 
 /*
@@ -34,6 +32,8 @@
 #include <glib/gthread.h>
 
 G_BEGIN_DECLS
+
+#ifndef G_DISABLE_DEPRECATED
 
 typedef enum
 {
@@ -120,6 +120,7 @@ void     g_thread_foreach      (GFunc             thread_func,
                                 gpointer          user_data);
 
 #ifndef G_OS_WIN32
+#include <sys/types.h>
 #include <pthread.h>
 #endif
 
@@ -280,6 +281,8 @@ GLIB_DEPRECATED_IN_2_32
 gboolean        g_cond_timed_wait       (GCond          *cond,
                                          GMutex         *mutex,
                                          GTimeVal       *timeval);
+
+#endif
 
 G_END_DECLS
 
