@@ -1,1 +1,3 @@
 python-dev automake bison flex
+
+using glib-2.39.4
