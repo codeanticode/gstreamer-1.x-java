@@ -16,3 +16,5 @@
 
 -mode Directory
 -parseChunks
+
+-Tgint=int
