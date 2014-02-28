@@ -1,5 +1,5 @@
-package gtk;
-import gtk.GtkLibrary.GOptionArg;
+package glib;
+import glib.GLibLibrary.GOptionArg;
 import org.bridj.BridJ;
 import org.bridj.IntValuedEnum;
 import org.bridj.Pointer;
@@ -75,7 +75,7 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GOptionEntry extends StructObject {
 	static {
 		BridJ.register();
@@ -102,7 +102,17 @@ public abstract class GOptionEntry extends StructObject {
 		this.io.setByteField(this, 1, short_name);
 		return this;
 	}
-	/** Conversion Error : gint (Unsupported type) */
+	/** C type : gint */
+	@Field(2) 
+	public int flags() {
+		return this.io.getIntField(this, 2);
+	}
+	/** C type : gint */
+	@Field(2) 
+	public GOptionEntry flags(int flags) {
+		this.io.setIntField(this, 2, flags);
+		return this;
+	}
 	/** C type : GOptionArg */
 	@Field(3) 
 	public IntValuedEnum<GOptionArg > arg() {

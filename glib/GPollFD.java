@@ -1,5 +1,6 @@
-package gtk;
+package glib;
 import org.bridj.BridJ;
+import org.bridj.Pointer;
 import org.bridj.StructObject;
 import org.bridj.ann.Field;
 import org.bridj.ann.Library;
@@ -19,12 +20,22 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
-public abstract class GPollFD extends StructObject {
+@Library("GLib") 
+public class GPollFD extends StructObject {
 	static {
 		BridJ.register();
 	}
-	/** Conversion Error : gint (Unsupported type) */
+	/** C type : gint */
+	@Field(0) 
+	public int fd() {
+		return this.io.getIntField(this, 0);
+	}
+	/** C type : gint */
+	@Field(0) 
+	public GPollFD fd(int fd) {
+		this.io.setIntField(this, 0, fd);
+		return this;
+	}
 	/** C type : gushort */
 	@Field(1) 
 	public short events() {
@@ -46,5 +57,11 @@ public abstract class GPollFD extends StructObject {
 	public GPollFD revents(short revents) {
 		this.io.setShortField(this, 2, revents);
 		return this;
+	}
+	public GPollFD() {
+		super();
+	}
+	public GPollFD(Pointer pointer) {
+		super(pointer);
 	}
 }

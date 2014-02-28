@@ -1,5 +1,5 @@
-package gtk;
-import gtk.GtkLibrary.GTestLogType;
+package glib;
+import glib.GLibLibrary.GTestLogType;
 import org.bridj.BridJ;
 import org.bridj.IntValuedEnum;
 import org.bridj.Pointer;
@@ -12,7 +12,7 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public class GTestLogMsg extends StructObject {
 	static {
 		BridJ.register();

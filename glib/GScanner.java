@@ -1,6 +1,6 @@
-package gtk;
-import gtk.GtkLibrary.GScannerMsgFunc;
-import gtk.GtkLibrary.GTokenType;
+package glib;
+import glib.GLibLibrary.GScannerMsgFunc;
+import glib.GLibLibrary.GTokenType;
 import org.bridj.BridJ;
 import org.bridj.IntValuedEnum;
 import org.bridj.Pointer;
@@ -13,7 +13,7 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GScanner extends StructObject {
 	static {
 		BridJ.register();
@@ -183,7 +183,17 @@ public abstract class GScanner extends StructObject {
 		return this;
 	}
 	/** Conversion Error : GHashTable* (failed to convert type to Java (undefined type)) */
-	/** Conversion Error : gint (Unsupported type) */
+	/** C type : gint */
+	@Field(15) 
+	public int input_fd() {
+		return this.io.getIntField(this, 15);
+	}
+	/** C type : gint */
+	@Field(15) 
+	public GScanner input_fd(int input_fd) {
+		this.io.setIntField(this, 15, input_fd);
+		return this;
+	}
 	/** C type : const gchar* */
 	@Field(16) 
 	public Pointer<Byte > text() {

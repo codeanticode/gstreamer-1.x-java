@@ -1,8 +1,8 @@
-package gtk;
-import gtk.GtkLibrary.GIOCondition;
-import gtk.GtkLibrary.GIOFlags;
-import gtk.GtkLibrary.GIOStatus;
-import gtk.GtkLibrary.GSeekType;
+package glib;
+import glib.GLibLibrary.GIOCondition;
+import glib.GLibLibrary.GIOFlags;
+import glib.GLibLibrary.GIOStatus;
+import glib.GLibLibrary.GSeekType;
 import org.bridj.BridJ;
 import org.bridj.Callback;
 import org.bridj.FlagSet;
@@ -18,7 +18,7 @@ import org.bridj.ann.Ptr;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public class GIOFuncs extends StructObject {
 	static {
 		BridJ.register();

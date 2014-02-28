@@ -1,4 +1,4 @@
-package gtk;
+package glib;
 import org.bridj.BridJ;
 import org.bridj.Pointer;
 import org.bridj.StructObject;
@@ -10,7 +10,7 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GSource extends StructObject {
 	static {
 		BridJ.register();
@@ -50,7 +50,17 @@ public abstract class GSource extends StructObject {
 		return this;
 	}
 	/** Conversion Error : GMainContext* (failed to convert type to Java (undefined type)) */
-	/** Conversion Error : gint (Unsupported type) */
+	/** C type : gint */
+	@Field(5) 
+	public int priority() {
+		return this.io.getIntField(this, 5);
+	}
+	/** C type : gint */
+	@Field(5) 
+	public GSource priority(int priority) {
+		this.io.setIntField(this, 5, priority);
+		return this;
+	}
 	/** C type : guint */
 	@Field(6) 
 	public int flags() {

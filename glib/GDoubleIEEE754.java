@@ -1,4 +1,4 @@
-package gtk;
+package glib;
 import org.bridj.BridJ;
 import org.bridj.Pointer;
 import org.bridj.StructObject;
@@ -13,7 +13,7 @@ import org.bridj.ann.Union;
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
 @Union 
-@Library("Gtk") 
+@Library("GLib") 
 public class GDoubleIEEE754 extends StructObject {
 	static {
 		BridJ.register();
@@ -31,12 +31,12 @@ public class GDoubleIEEE754 extends StructObject {
 	}
 	/** C type : mpn_struct */
 	@Field(1) 
-	public gtk.GFloatIEEE754.mpn_struct mpn() {
+	public glib.GFloatIEEE754.mpn_struct mpn() {
 		return this.io.getNativeObjectField(this, 1);
 	}
 	/** C type : mpn_struct */
 	@Field(1) 
-	public GDoubleIEEE754 mpn(gtk.GFloatIEEE754.mpn_struct mpn) {
+	public GDoubleIEEE754 mpn(glib.GFloatIEEE754.mpn_struct mpn) {
 		this.io.setNativeObjectField(this, 1, mpn);
 		return this;
 	}

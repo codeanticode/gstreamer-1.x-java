@@ -1,4 +1,4 @@
-package gtk;
+package glib;
 import org.bridj.BridJ;
 import org.bridj.Pointer;
 import org.bridj.StructObject;
@@ -13,7 +13,7 @@ import org.bridj.ann.Union;
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
 @Union 
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GMutex extends StructObject {
 	static {
 		BridJ.register();

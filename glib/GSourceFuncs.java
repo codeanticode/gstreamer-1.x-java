@@ -1,6 +1,6 @@
-package gtk;
-import gtk.GtkLibrary.GSourceDummyMarshal;
-import gtk.GtkLibrary.gboolean;
+package glib;
+import glib.GLibLibrary.GSourceDummyMarshal;
+import glib.GLibLibrary.gboolean;
 import org.bridj.BridJ;
 import org.bridj.Callback;
 import org.bridj.Pointer;
@@ -14,7 +14,7 @@ import org.bridj.ann.Ptr;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GSourceFuncs extends StructObject {
 	static {
 		BridJ.register();
@@ -89,7 +89,7 @@ public abstract class GSourceFuncs extends StructObject {
 	}
 	/** <i>native declaration : glib-2.0/glib/gmain.h:143</i> */
 	public static abstract class prepare_callback extends Callback<prepare_callback > {
-		public final gboolean apply(Pointer<GSource > source, Pointer timeout_) {
+		public final gboolean apply(Pointer<GSource > source, Pointer<Integer > timeout_) {
 			return apply(Pointer.getPeer(source), Pointer.getPeer(timeout_));
 		}
 		public abstract gboolean apply(@Ptr long source, @Ptr long timeout_);

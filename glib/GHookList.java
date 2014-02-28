@@ -1,5 +1,5 @@
-package gtk;
-import gtk.GtkLibrary.GHookFinalizeFunc;
+package glib;
+import glib.GLibLibrary.GHookFinalizeFunc;
 import org.bridj.BridJ;
 import org.bridj.Pointer;
 import org.bridj.StructObject;
@@ -14,7 +14,7 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GHookList extends StructObject {
 	static {
 		BridJ.register();

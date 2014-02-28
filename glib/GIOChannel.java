@@ -1,5 +1,5 @@
-package gtk;
-import gtk.GtkLibrary.GIConv;
+package glib;
+import glib.GLibLibrary.GIConv;
 import org.bridj.BridJ;
 import org.bridj.Pointer;
 import org.bridj.StructObject;
@@ -14,12 +14,28 @@ import org.bridj.ann.Library;
  * a tool written by <a href="http://ochafik.com/">Olivier Chafik</a> that <a href="http://code.google.com/p/jnaerator/wiki/CreditsAndLicense">uses a few opensource projects.</a>.<br>
  * For help, please visit <a href="http://nativelibs4java.googlecode.com/">NativeLibs4Java</a> or <a href="http://bridj.googlecode.com/">BridJ</a> .
  */
-@Library("Gtk") 
+@Library("GLib") 
 public abstract class GIOChannel extends StructObject {
 	static {
 		BridJ.register();
 	}
-	/** Conversion Error : gint (Unsupported type) */
+	/**
+	 * < private ><br>
+	 * C type : gint
+	 */
+	@Field(0) 
+	public int ref_count() {
+		return this.io.getIntField(this, 0);
+	}
+	/**
+	 * < private ><br>
+	 * C type : gint
+	 */
+	@Field(0) 
+	public GIOChannel ref_count(int ref_count) {
+		this.io.setIntField(this, 0, ref_count);
+		return this;
+	}
 	/** C type : GIOFuncs* */
 	@Field(1) 
 	public Pointer<GIOFuncs > funcs() {
